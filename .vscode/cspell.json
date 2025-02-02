@@ -1,0 +1,3 @@
+{
+  "import": ["@storm-software/cspell/cspell-minimal.json"]
+}

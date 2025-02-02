@@ -1,0 +1,19 @@
+# top level version field is required
+version: 2
+
+triggerPaths:
+  - "tools/*/package.json"
+  - "packages/*/package.json"
+  - "package.json"
+  - "pnpm-lock.yaml"
+  - "pnpm-workspace.yaml"
+
+projectIgnorePaths:
+  - ".github/"
+  - ".vscode/"
+  - ".verdaccio/"
+  - ".nx/"
+  - "benchmarks/"
+  - "docs/"
+  - "examples/"
+  - "test/"
