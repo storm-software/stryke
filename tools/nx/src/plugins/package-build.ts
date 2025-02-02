@@ -17,8 +17,8 @@
 
 import {
   createNodesFromFiles,
-  CreateNodesResultV2,
-  CreateNodesV2,
+  type CreateNodesResultV2,
+  type CreateNodesV2,
   readJsonFile
 } from "@nx/devkit";
 import {
