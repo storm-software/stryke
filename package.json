@@ -58,13 +58,15 @@
     "dep-graph": "nx dep-graph",
     "e2e": "nx e2e",
     "format": "nx format:write",
+    "format-prettier": "pnpm exec prettier --write --ignore-unknown --no-error-on-unmatched-pattern --config=\"./node_modules/@storm-software/prettier/config.json\" --ignore-path=\"./node_modules/@storm-software/prettier/.prettierignore\" ",
+    "format-readme": "pnpm exec storm-git readme --templates=\"tools/readme-templates\"",
     "format-sherif": "pnpm exec sherif -f -i typescript -i react -i react-dom",
+    "format-toml": "pnpm exec taplo format --config=\"./node_modules/@storm-software/linting-tools/taplo/config.toml\" --cache-path=\"./tmp/taplo\"",
     "graph": "nx graph",
     "help": "nx help",
     "install-csb": "corepack enable && pnpm install --no-frozen-lockfile",
     "lint": "pnpm storm-lint all --skip-cspell --skip-circular-deps",
     "lint-knip": "pnpm exec knip",
-    "lint-sherif": "pnp exec sherif -i typescript -i react -i react-dom",
     "local-registry": "nx local-registry @stryke/monorepo",
     "nuke": "pnpm nuke-cache && pnpm nuke-apps && pnpm nuke-packages && pnpm nuke-tools && pnpm exec rimraf --glob ./node_modules",
     "nuke-apps": "pnpm exec rimraf --no-interactive --glob apps/**/{node_modules,dist}",
@@ -74,7 +76,6 @@
     "nx": "nx",
     "prebuild": "pnpm exec tsx tools/scripts/src/build-plugins.ts",
     "push": "git push origin main:main",
-    "readme-gen": "pnpm storm-git readme-gen --templates=\"docs/readme-templates\"",
     "release": "pnpm storm-git release",
     "start": "nx serve"
   },
@@ -132,12 +133,12 @@
     "includedScripts": [
       "lint-knip",
       "lint-ls",
-      "lint-sherif",
       "lint",
       "format",
       "format-readme",
       "format-prettier",
       "format-toml",
+      "format-sherif",
       "commit",
       "release"
     ]

@@ -15,10 +15,10 @@
     "moduleResolution": "Bundler",
     "moduleDetection": "force",
     "paths": {
-      "@stryke/tools-scripts": ["tools/scripts/src/index.ts"],
-      "@stryke/tools-scripts/*": ["tools/scripts/src/*"],
+      "@stryke/tools-nx": ["tools/nx/src/index.ts"],
       "@stryke/tools-nx/*": ["tools/nx/src/*"],
-      "@stryke/tools-nx": ["tools/nx/src/index.ts"]
+      "@stryke/tools-scripts": ["tools/scripts/src/index.ts"],
+      "@stryke/tools-scripts/*": ["tools/scripts/src/*"]
     }
   }
 }
