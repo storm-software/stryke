@@ -33,9 +33,8 @@ export default getStormConfig({
     "function-paren-newline": 0,
     "space-before-function-paren": 0
   },
-  markdown: false,
-  react: false,
+  markdown: true,
+  react: true,
   useUnicorn: true,
-  typescriptEslintConfigType: "base",
-  globals: { storm: "readonly" }
+  typescriptEslintConfigType: "base"
 });
