@@ -1,0 +1,18 @@
+{
+  "name": "@strike/helpers",
+  "version": "0.0.1",
+  "type": "module",
+  "description": "A package containing miscellaneous helper functions that are used across many different Storm Software projects.",
+  "repository": {
+    "type": "github",
+    "url": "https://github.com/storm-software/stryke.git",
+    "directory": "packages/helpers"
+  },
+  "private": false,
+  "dependencies": {
+    "match-sorter": "^8.0.0"
+  },
+  "publishConfig": {
+    "access": "public"
+  }
+}

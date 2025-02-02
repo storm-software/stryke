@@ -6,10 +6,14 @@
     "rootDir": ".",
     "baseUrl": ".",
     "paths": {
+      "@strike/helpers": ["packages/helpers/src/index.ts"],
+      "@strike/helpers/*": ["packages/helpers/src/*"],
       "@stryke/tools-nx": ["tools/nx/src/index.ts"],
       "@stryke/tools-nx/*": ["tools/nx/src/*"],
       "@stryke/tools-scripts": ["tools/scripts/src/index.ts"],
-      "@stryke/tools-scripts/*": ["tools/scripts/src/*"]
+      "@stryke/tools-scripts/*": ["tools/scripts/src/*"],
+      "@stryke/types": ["packages/types/src/index.ts"],
+      "@stryke/types/*": ["packages/types/src/*"]
     }
   }
 }
