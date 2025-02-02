@@ -89,7 +89,7 @@ pre-push:
     sherif:
       files: "git diff --name-only HEAD @{push}"
       glob: "**/*.{js,ts,cjs,mjs,d.cts,d.mts,jsx,tsx,json,jsonc}"
-      run: "pnpm format-sherif"
+      run: "pnpm lint-sherif"
       stage_fixed: true
     format:
       glob: "**/*"
