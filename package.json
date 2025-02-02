@@ -40,9 +40,6 @@
     "monorepo"
   ],
   "scripts": {
-    "adr": "pnpm log4brains adr new",
-    "adr-preview": "pnpm log4brains preview",
-    "api-extractor": "pnpm storm-docs api-extractor --outputPath=\"docs/api-reference\" --clean",
     "build": "nx affected -t build --parallel=5 --nxBail --exclude=\"@stryke/monorepo\"",
     "build-all": "nx run-many -t build --parallel=3 --nxBail --exclude=\"@stryke/monorepo\"",
     "build-docs": "nx run-many -t build --projects=docs/* --parallel=5",
@@ -68,8 +65,7 @@
     "lint": "pnpm storm-lint all --skip-cspell --skip-circular-deps",
     "lint-knip": "pnpm exec knip",
     "local-registry": "nx local-registry @stryke/monorepo",
-    "nuke": "pnpm nuke-cache && pnpm nuke-apps && pnpm nuke-packages && pnpm nuke-tools && pnpm exec rimraf --glob ./node_modules",
-    "nuke-apps": "pnpm exec rimraf --no-interactive --glob apps/**/{node_modules,dist}",
+    "nuke": "pnpm nuke-cache && pnpm nuke-packages && pnpm nuke-tools && pnpm exec rimraf --glob ./node_modules",
     "nuke-cache": "nx clear-cache && pnpm exec rimraf --no-interactive -- ./.nx/cache ./.nx/workspace-data ./dist ./tmp ./pnpm-lock.yaml ./.tamagui",
     "nuke-packages": "pnpm exec rimraf --no-interactive --glob packages/**/{node_modules,dist}",
     "nuke-tools": "pnpm exec rimraf --no-interactive --glob tools/**/{node_modules,dist}",
