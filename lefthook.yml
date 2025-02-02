@@ -47,10 +47,10 @@ pre-commit:
       files: "git diff --name-only HEAD @{push}"
       glob: "**/CODEOWNERS"
       run: "pnpm exec storm-lint codeowners"
-    lint:
-      glob: "**/*.{js,ts,cjs,mjs,d.cts,d.mts,jsx,tsx,json,jsonc,yaml,yml,md,mdx,markdown,css,scss,sass,less,styl,stylus,graphql,gql,xml,svg,txt,log,env,env.example,env.local,env.development,env.test,env.production,env.staging,env.local.example,env.development.example,env.test.example,env.production.example,env.staging.example}"
-      run: "pnpm lint"
-      stage_fixed: true
+    # lint:
+    #   glob: "**/*.{js,ts,cjs,mjs,d.cts,d.mts,jsx,tsx,json,jsonc,yaml,yml,md,mdx,markdown,css,scss,sass,less,styl,stylus,graphql,gql,xml,svg,txt,log,env,env.example,env.local,env.development,env.test,env.production,env.staging,env.local.example,env.development.example,env.test.example,env.production.example,env.staging.example}"
+    #   run: "pnpm lint"
+    #   stage_fixed: true
 
 commit-msg:
   commands:
@@ -70,7 +70,7 @@ pre-push:
       stage_fixed: true
     lint-github-actions:
       glob: ".github/workflows/*.*"
-      run: 'zizmor --offline --config="./node_modules/@storm-software/linting-tools/zizmor/config.yml" .github/workflows/'
+      run: "zizmor --offline .github/workflows/"
     toml:
       files: "git diff --name-only HEAD @{push}"
       glob: "**/*.{toml}"

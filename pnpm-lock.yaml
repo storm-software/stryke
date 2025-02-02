@@ -29,40 +29,40 @@ catalogs:
       version: 20.3.2
     '@storm-software/config':
       specifier: latest
-      version: 1.101.3
+      version: 1.101.5
     '@storm-software/config-tools':
       specifier: latest
-      version: 1.148.3
+      version: 1.149.0
     '@storm-software/cspell':
       specifier: latest
-      version: 0.10.1
+      version: 0.12.0
     '@storm-software/eslint':
       specifier: latest
-      version: 0.117.6
+      version: 0.117.8
     '@storm-software/git-tools':
       specifier: latest
-      version: 2.89.21
+      version: 2.89.22
     '@storm-software/linting-tools':
       specifier: latest
-      version: 1.109.3
+      version: 1.110.1
     '@storm-software/prettier':
       specifier: latest
-      version: 0.31.9
+      version: 0.31.10
     '@storm-software/testing-tools':
       specifier: latest
-      version: 1.104.19
+      version: 1.104.20
     '@storm-software/tsconfig':
       specifier: latest
-      version: 0.35.9
+      version: 0.35.10
     '@storm-software/unbuild':
       specifier: latest
-      version: 0.36.4
+      version: 0.36.6
     '@storm-software/untyped':
       specifier: latest
-      version: 0.10.19
+      version: 0.10.21
     '@storm-software/workspace-tools':
       specifier: latest
-      version: 1.247.3
+      version: 1.247.5
     '@swc-node/register':
       specifier: ^1.10.9
       version: 1.10.9
@@ -170,37 +170,37 @@ importers:
         version: 20.3.2(@swc-node/register@1.10.9(@swc/core@1.10.12(@swc/helpers@0.5.15))(@swc/types@0.1.17)(typescript@5.7.2))(@swc/core@1.10.12(@swc/helpers@0.5.15))
       '@storm-software/config':
         specifier: 'catalog:'
-        version: 1.101.3
+        version: 1.101.5
       '@storm-software/cspell':
         specifier: 'catalog:'
-        version: 0.10.1(xnd6mkhhogpsszefrax6tvoi7u)
+        version: 0.12.0(cspell@8.8.4)(typescript@5.7.2)
       '@storm-software/eslint':
         specifier: 'catalog:'
-        version: 0.117.6(qnvz3pndnd5mcyqkvdie3wrkoe)
+        version: 0.117.8(qnvz3pndnd5mcyqkvdie3wrkoe)
       '@storm-software/git-tools':
         specifier: 'catalog:'
-        version: 2.89.21(@swc-node/register@1.10.9(@swc/core@1.10.12(@swc/helpers@0.5.15))(@swc/types@0.1.17)(typescript@5.7.2))(@swc/core@1.10.12(@swc/helpers@0.5.15))(chokidar@4.0.3)
+        version: 2.89.22(@swc-node/register@1.10.9(@swc/core@1.10.12(@swc/helpers@0.5.15))(@swc/types@0.1.17)(typescript@5.7.2))(@swc/core@1.10.12(@swc/helpers@0.5.15))(chokidar@4.0.3)
       '@storm-software/linting-tools':
         specifier: 'catalog:'
-        version: 1.109.3(dp7m7fwq2q2rgd33jchhj43gnq)
+        version: 1.110.1(chokidar@4.0.3)(cspell@8.8.4)(typescript@5.7.2)
       '@storm-software/prettier':
         specifier: 'catalog:'
-        version: 0.31.9(prettier@3.4.2)(typescript@5.7.2)
+        version: 0.31.10(prettier@3.4.2)(typescript@5.7.2)
       '@storm-software/testing-tools':
         specifier: 'catalog:'
-        version: 1.104.19(@nx/jest@20.4.0(@babel/traverse@7.26.7)(@swc-node/register@1.10.9(@swc/core@1.10.12(@swc/helpers@0.5.15))(@swc/types@0.1.17)(typescript@5.7.2))(@swc/core@1.10.12(@swc/helpers@0.5.15))(@types/node@22.13.0)(babel-plugin-macros@3.1.0)(nx@20.3.2(@swc-node/register@1.10.9(@swc/core@1.10.12(@swc/helpers@0.5.15))(@swc/types@0.1.17)(typescript@5.7.2))(@swc/core@1.10.12(@swc/helpers@0.5.15)))(ts-node@10.9.2(@swc/core@1.10.12(@swc/helpers@0.5.15))(@types/node@22.13.0)(typescript@5.7.2))(typescript@5.7.2)(verdaccio@5.32.2(typanion@3.14.0)))(jest@29.7.0(@types/node@22.13.0)(babel-plugin-macros@3.1.0)(ts-node@10.9.2(@swc/core@1.10.12(@swc/helpers@0.5.15))(@types/node@22.13.0)(typescript@5.7.2)))
+        version: 1.104.20(@nx/jest@20.4.0(@babel/traverse@7.26.7)(@swc-node/register@1.10.9(@swc/core@1.10.12(@swc/helpers@0.5.15))(@swc/types@0.1.17)(typescript@5.7.2))(@swc/core@1.10.12(@swc/helpers@0.5.15))(@types/node@22.13.0)(babel-plugin-macros@3.1.0)(nx@20.3.2(@swc-node/register@1.10.9(@swc/core@1.10.12(@swc/helpers@0.5.15))(@swc/types@0.1.17)(typescript@5.7.2))(@swc/core@1.10.12(@swc/helpers@0.5.15)))(ts-node@10.9.2(@swc/core@1.10.12(@swc/helpers@0.5.15))(@types/node@22.13.0)(typescript@5.7.2))(typescript@5.7.2)(verdaccio@5.32.2(typanion@3.14.0)))(jest@29.7.0(@types/node@22.13.0)(babel-plugin-macros@3.1.0)(ts-node@10.9.2(@swc/core@1.10.12(@swc/helpers@0.5.15))(@types/node@22.13.0)(typescript@5.7.2)))
       '@storm-software/tsconfig':
         specifier: 'catalog:'
-        version: 0.35.9
+        version: 0.35.10
       '@storm-software/unbuild':
         specifier: 'catalog:'
-        version: 0.36.4(@nx/devkit@20.4.0(nx@20.3.2(@swc-node/register@1.10.9(@swc/core@1.10.12(@swc/helpers@0.5.15))(@swc/types@0.1.17)(typescript@5.7.2))(@swc/core@1.10.12(@swc/helpers@0.5.15))))(@nx/js@20.4.0(@babel/traverse@7.26.7)(@swc-node/register@1.10.9(@swc/core@1.10.12(@swc/helpers@0.5.15))(@swc/types@0.1.17)(typescript@5.7.2))(@swc/core@1.10.12(@swc/helpers@0.5.15))(@types/node@22.13.0)(nx@20.3.2(@swc-node/register@1.10.9(@swc/core@1.10.12(@swc/helpers@0.5.15))(@swc/types@0.1.17)(typescript@5.7.2))(@swc/core@1.10.12(@swc/helpers@0.5.15)))(typescript@5.7.2)(verdaccio@5.32.2(typanion@3.14.0)))(@storm-software/config@1.101.3)(@swc/helpers@0.5.15)(nx@20.3.2(@swc-node/register@1.10.9(@swc/core@1.10.12(@swc/helpers@0.5.15))(@swc/types@0.1.17)(typescript@5.7.2))(@swc/core@1.10.12(@swc/helpers@0.5.15)))(rollup@4.34.0)(typescript@5.7.2)
+        version: 0.36.6(@nx/devkit@20.4.0(nx@20.3.2(@swc-node/register@1.10.9(@swc/core@1.10.12(@swc/helpers@0.5.15))(@swc/types@0.1.17)(typescript@5.7.2))(@swc/core@1.10.12(@swc/helpers@0.5.15))))(@nx/js@20.4.0(@babel/traverse@7.26.7)(@swc-node/register@1.10.9(@swc/core@1.10.12(@swc/helpers@0.5.15))(@swc/types@0.1.17)(typescript@5.7.2))(@swc/core@1.10.12(@swc/helpers@0.5.15))(@types/node@22.13.0)(nx@20.3.2(@swc-node/register@1.10.9(@swc/core@1.10.12(@swc/helpers@0.5.15))(@swc/types@0.1.17)(typescript@5.7.2))(@swc/core@1.10.12(@swc/helpers@0.5.15)))(typescript@5.7.2)(verdaccio@5.32.2(typanion@3.14.0)))(@storm-software/config@1.101.5)(@swc/helpers@0.5.15)(nx@20.3.2(@swc-node/register@1.10.9(@swc/core@1.10.12(@swc/helpers@0.5.15))(@swc/types@0.1.17)(typescript@5.7.2))(@swc/core@1.10.12(@swc/helpers@0.5.15)))(rollup@4.34.0)(typescript@5.7.2)
       '@storm-software/untyped':
         specifier: 'catalog:'
-        version: 0.10.19(@nx/devkit@20.4.0(nx@20.3.2(@swc-node/register@1.10.9(@swc/core@1.10.12(@swc/helpers@0.5.15))(@swc/types@0.1.17)(typescript@5.7.2))(@swc/core@1.10.12(@swc/helpers@0.5.15))))(@swc-node/register@1.10.9(@swc/core@1.10.12(@swc/helpers@0.5.15))(@swc/types@0.1.17)(typescript@5.7.2))(@swc/core@1.10.12(@swc/helpers@0.5.15))(untyped@1.5.2)
+        version: 0.10.21(@nx/devkit@20.4.0(nx@20.3.2(@swc-node/register@1.10.9(@swc/core@1.10.12(@swc/helpers@0.5.15))(@swc/types@0.1.17)(typescript@5.7.2))(@swc/core@1.10.12(@swc/helpers@0.5.15))))(@swc-node/register@1.10.9(@swc/core@1.10.12(@swc/helpers@0.5.15))(@swc/types@0.1.17)(typescript@5.7.2))(@swc/core@1.10.12(@swc/helpers@0.5.15))(untyped@1.5.2)
       '@storm-software/workspace-tools':
         specifier: 'catalog:'
-        version: 1.247.3(oqxyifv67wufg2hi3mkwokp5x4)
+        version: 1.247.5(khd6gjjvsmiun7hdixynxhzqlm)
       '@swc-node/register':
         specifier: 'catalog:'
         version: 1.10.9(@swc/core@1.10.12(@swc/helpers@0.5.15))(@swc/types@0.1.17)(typescript@5.7.2)
@@ -296,7 +296,7 @@ importers:
         version: 20.4.0(nx@20.3.2(@swc-node/register@1.10.9(@swc/core@1.10.12(@swc/helpers@0.5.15))(@swc/types@0.1.17)(typescript@5.7.2))(@swc/core@1.10.12(@swc/helpers@0.5.15)))
       '@storm-software/workspace-tools':
         specifier: 'catalog:'
-        version: 1.247.3(oqxyifv67wufg2hi3mkwokp5x4)
+        version: 1.247.5(khd6gjjvsmiun7hdixynxhzqlm)
       defu:
         specifier: 'catalog:'
         version: 6.1.4
@@ -318,7 +318,7 @@ importers:
     dependencies:
       '@storm-software/config-tools':
         specifier: 'catalog:'
-        version: 1.148.3(@storm-software/config@1.101.3)
+        version: 1.149.0(@storm-software/config@1.101.5)
       esbuild:
         specifier: 'catalog:'
         version: 0.24.2
@@ -1113,6 +1113,10 @@ packages:
     resolution: {integrity: sha512-acLWTQv3yWfeWXMds/cfQKZapslOrLHVL4VDp4rFyL/EnfgaCr7Ew9hQ7zAIARY3r/n0dByqWbOt2HKthdhx/g==}
     engines: {node: '>=18'}
 
+  '@cspell/cspell-pipe@8.17.3':
+    resolution: {integrity: sha512-DqqSWKt9NLWPGloYxZTpzUhgdW8ObMkZmOOF6TyqpJ4IbckEct8ULgskNorTNRlmmjLniaNgvg6JSHuYO3Urxw==}
+    engines: {node: '>=18'}
+
   '@cspell/cspell-pipe@8.8.4':
     resolution: {integrity: sha512-Uis9iIEcv1zOogXiDVSegm9nzo5NRmsRDsW8CteLRg6PhyZ0nnCY1PZIUy3SbGF0vIcb/M+XsdLSh2wOPqTXww==}
     engines: {node: '>=18'}
@@ -1133,8 +1137,17 @@ packages:
     resolution: {integrity: sha512-KtwJ38uPLrm2Q8osmMIAl2NToA/CMyZCxck4msQJnskdo30IPSdA1Rh0w6zXinmh1eVe0zNEVCeJ2+x23HqW+g==}
     engines: {node: '>=18'}
 
+  '@cspell/cspell-tools@8.17.3':
+    resolution: {integrity: sha512-ewmIR+lPiT1VTSM5gpED4U+S17IojinmyjOg7JABwnYJ9jhD4LrM0fQSE3uxJsmvx96MGY/KYtsEiY95MdaRIg==}
+    engines: {node: '>=18'}
+    hasBin: true
+
   '@cspell/cspell-types@8.13.1':
     resolution: {integrity: sha512-9dJdmyXLXJVesCJa/DWgwKsEC9p2RRFc6KORcLhNvtm1tE9TvCXiu5jV47sOmYXd6Hwan8IurBXXTz82CLVjPQ==}
+    engines: {node: '>=18'}
+
+  '@cspell/cspell-types@8.17.3':
+    resolution: {integrity: sha512-ozgeuSioX9z2wtlargfgdw3LKwDFAfm8gxu+xwNREvXiLsevb+lb7ZlY5/ay+MahqR5Hfs7XzYzBLTKL/ldn9g==}
     engines: {node: '>=18'}
 
   '@cspell/cspell-types@8.8.4':
@@ -1155,6 +1168,9 @@ packages:
 
   '@cspell/dict-cpp@5.1.23':
     resolution: {integrity: sha512-59VUam6bYWzn50j8FASWWLww0rBPA0PZfjMZBvvt0aqMpkvXzoJPnAAI4eDDSibPWVHKutjpqLmast+uMLHVsQ==}
+
+  '@cspell/dict-cpp@6.0.3':
+    resolution: {integrity: sha512-OFrVXdxCeGKnon36Pe3yFjBuY4kzzEwWFf3vDz+cJTodZDkjFkBifQeTtt5YfimgF8cfAJZXkBCsxjipAgmAiw==}
 
   '@cspell/dict-cryptocurrencies@5.0.4':
     resolution: {integrity: sha512-6iFu7Abu+4Mgqq08YhTKHfH59mpMpGTwdzDB2Y8bbgiwnGFCeoiSkVkgLn1Kel2++hYcZ8vsAW/MJS9oXxuMag==}
@@ -1188,6 +1204,9 @@ packages:
 
   '@cspell/dict-en-gb@1.1.33':
     resolution: {integrity: sha512-tKSSUf9BJEV+GJQAYGw5e+ouhEe2ZXE620S7BLKe3ZmpnjlNG9JqlnaBhkIMxKnNFkLY2BP/EARzw31AZnOv4g==}
+
+  '@cspell/dict-en-gb@4.1.54':
+    resolution: {integrity: sha512-STyzmSQz1ZQzzWmIgWotteZgYvn6aGcqnILszJjjxYJSzQSIAZZvq16RmdiTmPV5ZLL9K2Efa5GqfRKrz+BAAw==}
 
   '@cspell/dict-en_us@4.3.30':
     resolution: {integrity: sha512-p0G5fByj5fUnMyFUlkN3kaqE3nuQkqpYV47Gn9n8k2TszsdLY55xj9UoFE4YIcjOiyU1bR/YDJ5daiPMYXTJ/A==}
@@ -3333,137 +3352,23 @@ packages:
     engines: {node: '>=8.10'}
     hasBin: true
 
-  '@storm-software/config-tools@1.148.3':
-    resolution: {integrity: sha512-lM8zBdmBMp1lcsG7J45WCBL17L7+M1k3/J25CTSgaxGVllZNaKCiWzIJ7JckGFfB4sILm8IoVBAJIj2xWyZTNw==}
+  '@storm-software/config-tools@1.149.0':
+    resolution: {integrity: sha512-/+eVrHzbtJSWwHH1KQgYzCsplOGRBZhkfv55f49jiAY4Cqe9ddKOfcNKA5I2BvbHCUUV9Aa9Whz8Yb5OxDRlaw==}
     hasBin: true
     peerDependencies:
       '@storm-software/config': workspace:*
 
-  '@storm-software/config@1.101.3':
-    resolution: {integrity: sha512-8RSavkPHljnAFWX2jE0QYd+61z4c8Q6UFdtoH9f1fHqScSdmhktocut84g73fS4Ozmp9KFg3fL39RgOmkhfqaQ==}
+  '@storm-software/config@1.101.5':
+    resolution: {integrity: sha512-cAnyYtOX/nPdccn4k8BahRvQFK+Zy2YddvkzQSKqN1bmiG7M2FgBxkP9bAuKe7FrvupaozsuBFgy5PGHeI/nUQ==}
 
-  '@storm-software/cspell@0.10.1':
-    resolution: {integrity: sha512-yK0phWWP+REP4WfDcceQ1w1q9BXdMcbFAxPSTbxy09i9UP/yXd9rTh3KRy1D4JmPQNASV+MKG6g53uJs3U8HIQ==}
+  '@storm-software/cspell@0.12.0':
+    resolution: {integrity: sha512-JfMVKT897ZxXgNJOhTGRxaEnoMC/rEYgrZ4qDYAzp7d3Qyq+ruZCK/qFS7zzyOUYP/6V36NCy83uIbw0l1LDWg==}
     engines: {node: '>=22.4.0', pnpm: '>=9.15.2'}
     peerDependencies:
-      '@cspell/dict-aws': ^4.0.2
-      '@cspell/dict-bash': ^4.1.3
-      '@cspell/dict-companies': ^3.1.2
-      '@cspell/dict-cpp': ^6.0.3
-      '@cspell/dict-cryptocurrencies': ^5.0.0
-      '@cspell/dict-csharp': ^4.0.2
-      '@cspell/dict-css': ^4.0.12
-      '@cspell/dict-docker': ^1.1.7
-      '@cspell/dict-dotnet': ^5.0.2
-      '@cspell/dict-en-common-misspellings': ^2.0.3
-      '@cspell/dict-en-gb': ^4.1.44
-      '@cspell/dict-en_us': ^4.3.23
-      '@cspell/dict-filetypes': ^3.0.4
-      '@cspell/dict-fonts': ^4.0.0
-      '@cspell/dict-fullstack': ^3.1.8
-      '@cspell/dict-git': ^3.0.0
-      '@cspell/dict-golang': ^6.0.9
-      '@cspell/dict-html': ^4.0.5
-      '@cspell/dict-html-symbol-entities': ^4.0.0
-      '@cspell/dict-java': ^5.0.7
-      '@cspell/dict-k8s': ^1.0.5
-      '@cspell/dict-lorem-ipsum': ^4.0.0
-      '@cspell/dict-makefile': ^1.0.0
-      '@cspell/dict-node': ^5.0.1
-      '@cspell/dict-npm': ^5.0.16
-      '@cspell/dict-php': ^4.0.8
-      '@cspell/dict-powershell': ^5.0.4
-      '@cspell/dict-public-licenses': ^2.0.7
-      '@cspell/dict-python': ^4.1.11
-      '@cspell/dict-r': ^2.0.1
-      '@cspell/dict-ruby': ^5.0.2
-      '@cspell/dict-rust': ^4.0.4
-      '@cspell/dict-software-terms': ^4.2.2
-      '@cspell/dict-sql': ^2.1.3
-      '@cspell/dict-svelte': ^1.0.2
-      '@cspell/dict-swift': ^2.0.1
-      '@cspell/dict-typescript': ^3.1.5
-      '@cspell/dict-vue': ^3.0.0
-    peerDependenciesMeta:
-      '@cspell/dict-aws':
-        optional: true
-      '@cspell/dict-bash':
-        optional: true
-      '@cspell/dict-companies':
-        optional: true
-      '@cspell/dict-cpp':
-        optional: true
-      '@cspell/dict-cryptocurrencies':
-        optional: true
-      '@cspell/dict-csharp':
-        optional: true
-      '@cspell/dict-css':
-        optional: true
-      '@cspell/dict-docker':
-        optional: true
-      '@cspell/dict-dotnet':
-        optional: true
-      '@cspell/dict-en-common-misspellings':
-        optional: true
-      '@cspell/dict-en-gb':
-        optional: true
-      '@cspell/dict-en_us':
-        optional: true
-      '@cspell/dict-filetypes':
-        optional: true
-      '@cspell/dict-fonts':
-        optional: true
-      '@cspell/dict-fullstack':
-        optional: true
-      '@cspell/dict-git':
-        optional: true
-      '@cspell/dict-golang':
-        optional: true
-      '@cspell/dict-html':
-        optional: true
-      '@cspell/dict-html-symbol-entities':
-        optional: true
-      '@cspell/dict-java':
-        optional: true
-      '@cspell/dict-k8s':
-        optional: true
-      '@cspell/dict-lorem-ipsum':
-        optional: true
-      '@cspell/dict-makefile':
-        optional: true
-      '@cspell/dict-node':
-        optional: true
-      '@cspell/dict-npm':
-        optional: true
-      '@cspell/dict-php':
-        optional: true
-      '@cspell/dict-powershell':
-        optional: true
-      '@cspell/dict-public-licenses':
-        optional: true
-      '@cspell/dict-python':
-        optional: true
-      '@cspell/dict-r':
-        optional: true
-      '@cspell/dict-ruby':
-        optional: true
-      '@cspell/dict-rust':
-        optional: true
-      '@cspell/dict-software-terms':
-        optional: true
-      '@cspell/dict-sql':
-        optional: true
-      '@cspell/dict-svelte':
-        optional: true
-      '@cspell/dict-swift':
-        optional: true
-      '@cspell/dict-typescript':
-        optional: true
-      '@cspell/dict-vue':
-        optional: true
+      cspell: 8.8.4
 
-  '@storm-software/eslint@0.117.6':
-    resolution: {integrity: sha512-8QqiyL3u+BQJJ4bLRF6sojl8vzvOnyxjNyUWbfPDXcIlT7olrrgjKHKFMgZWBJmBGC0IFlHs37cLRJDEpkUu1g==}
+  '@storm-software/eslint@0.117.8':
+    resolution: {integrity: sha512-uQ0zptCtvxNbbArjtFaUA5034JUfs2mjc5Eo23GduZ7ebPtaK8Dho9EYqWEeBDx4MuYntTFinJ1l2APRthS+Tg==}
     engines: {node: '>=22.4.0', pnpm: '>=9.15.2'}
     peerDependencies:
       '@eslint/config-inspector': ^0.5.1
@@ -3477,18 +3382,18 @@ packages:
       graphql:
         optional: true
 
-  '@storm-software/git-tools@2.89.21':
-    resolution: {integrity: sha512-MVOGNMmH82mmSd91YbQt4wYXIMdQTBrDd/uRvTguOP1r3WhhcmhffFi5/rAoDhBgihr84vFg/QMv6KAM1oX+wQ==}
+  '@storm-software/git-tools@2.89.22':
+    resolution: {integrity: sha512-HcsrH4ajAfvRU0blTlvM/KhK+9SHkhy31gp33+4TwvSNBeWJiSW81k9nkfO/EnuapkH6lLT7gbKBF25SfDVxyQ==}
     engines: {node: '>=22.4.0', pnpm: '>=9.15.2'}
     hasBin: true
 
-  '@storm-software/linting-tools@1.109.3':
-    resolution: {integrity: sha512-9XdLVqncF77iI1hXvdIFmJQxi/KRxIZeOMZ06uLuO6b396BlzYLnqxN/82aQFenwDJRdcsIBjPIupO14yJE3/w==}
+  '@storm-software/linting-tools@1.110.1':
+    resolution: {integrity: sha512-e215PlZ2XCCN0zJHuEU0kMZqqKQdbVSItkJkAWWJDQm17bz9I8IBEcRvO1uWv2Lt9utRJENIwexncoUshIi4aw==}
     engines: {node: '>=22.4.0', pnpm: '>=9.15.2'}
     hasBin: true
 
-  '@storm-software/prettier@0.31.9':
-    resolution: {integrity: sha512-SKsWXuzYkXUY5amu6CJcVxepAMS1fIa1Tl6v0Qi11ga7rHDDjHpdawndfgarGDDW3lDyb8/BQ3U1ARBzVGUmaw==}
+  '@storm-software/prettier@0.31.10':
+    resolution: {integrity: sha512-FWKzqStRDQBjYwdfkb6pc1S0iDUglyDTNDIGHLUyHRr4AeqeWQ+dJcUDtvnM2NHPd/zfMAEbzga+etOsBw3L6Q==}
     peerDependencies:
       prettier: ^3.3.3
       prettier-plugin-solidity: 1.3.1
@@ -3499,17 +3404,17 @@ packages:
       prettier-plugin-tailwindcss:
         optional: true
 
-  '@storm-software/testing-tools@1.104.19':
-    resolution: {integrity: sha512-IduuBcJYw9Fyv4FEP89fjf3r6EiR9wmpp2l6Wq3nkiRVl1prO/N645OaOc9JOoavbr7uXj7WaxSfZ4ugLT0nLA==}
+  '@storm-software/testing-tools@1.104.20':
+    resolution: {integrity: sha512-i1OVps3ufV4seTiWWc4CUgjH2GQjeZFQ2C4qeFi8LXlSNuaYL81srUgTbDwXbhDWYgkKoPlkKylLnltaoJT0dw==}
     peerDependencies:
       '@nx/jest': ^20.3.1
       jest: 29.7.0
 
-  '@storm-software/tsconfig@0.35.9':
-    resolution: {integrity: sha512-ADHKycRfBJNsHfwvjDLAEfg3hhCYHWGjP8AyoTajtM35OlFcdb2heovwxrX53HVmeCmjnj2ymhlgvRZmjAOgNA==}
+  '@storm-software/tsconfig@0.35.10':
+    resolution: {integrity: sha512-HPEVNJHH2IQvJdiDULES/89JyRtaJJXEb2YZn1j3U7EOUf+jBnjFQHS88UZCCoj2P626+n4L8vPL28RcGCd6Dg==}
 
-  '@storm-software/unbuild@0.36.4':
-    resolution: {integrity: sha512-skVtDLgg2pl38NPQSv0a/5bW8wc+lUREOD2oRC3FcXExgTs+V5FGsdHoQCt9cCTo/zTr9N2QnLLyfmzsKE6HWQ==}
+  '@storm-software/unbuild@0.36.6':
+    resolution: {integrity: sha512-SNhMnqbai/gZ1CGgi0llzpnCsRr6NxZTDGKcjTH75xWRJrq4Hyc/mbkREq8Mr7hfr1YoYMhSompKQbL5GbFL7w==}
     engines: {node: '>=22.4.0', pnpm: '>=9.15.2'}
     hasBin: true
     peerDependencies:
@@ -3525,16 +3430,16 @@ packages:
       nx:
         optional: true
 
-  '@storm-software/untyped@0.10.19':
-    resolution: {integrity: sha512-auW6nCx0jCnwMylgGk94h/7uHYQsp1Q23Mw9WvXWgUVkJin9eX+lgRg88ffbnEELgPOyHtvM8Wr8yXPQHxP6qQ==}
+  '@storm-software/untyped@0.10.21':
+    resolution: {integrity: sha512-EIwkMHrB2UOmKfMCg31gDAYgTPqOIGo/58FXe+yE6WcscG4JkSEIVvKMp2mMIP8vB3AgtQ+D+9Hy/R8dlB0dpg==}
     engines: {node: '>=22.4.0', pnpm: '>=9.15.2'}
     hasBin: true
     peerDependencies:
       '@nx/devkit': ^20.3.1
       untyped: ^1.5.2
 
-  '@storm-software/workspace-tools@1.247.3':
-    resolution: {integrity: sha512-zmXYoElzkuO0kdw1geJIj5BpFKnCorTxl+5I5JDewtUgIOaLje7jANKFDy8Q2P1h/kKxFgIlm3OKXol2vqMHQA==}
+  '@storm-software/workspace-tools@1.247.5':
+    resolution: {integrity: sha512-OoUaS+5egmGx2DsauuhoLSKqoCknL7yj4nKnMBGCAsSddq7pzdihPFsNxH0BTnDyd/6C3qYwTMw0jN/69ljetQ==}
     peerDependencies:
       '@nx/devkit': ^20.3.1
       '@storm-software/esbuild': workspace:*
@@ -5060,6 +4965,10 @@ packages:
     resolution: {integrity: sha512-Vw8qHK3bZM9y/P10u3Vib8o/DdkvA2OtPtZvD871QKjy74Wj1WSKFILMPRPSdUSx5RFK1arlJzEtA4PkFgnbuA==}
     engines: {node: '>=18'}
 
+  commander@13.1.0:
+    resolution: {integrity: sha512-/rFeCpNJQbhSZjGVwO9RFV3xPqbnERS8MmIQzCtD/zl6gpJuV/bMLuN92oG3F7d8oDEHHRrujSXNUr8fpjntKw==}
+    engines: {node: '>=18'}
+
   commander@2.20.3:
     resolution: {integrity: sha512-GpVkmM8vF2vQUkj2LvZmD35JxeJOLCwJ9cUkugyk2nuhbv3+mJvpLYYt+0+USMxE+oj+ey/lJEnhZw75x/OMcQ==}
 
@@ -5309,6 +5218,10 @@ packages:
 
   cspell-trie-lib@8.13.1:
     resolution: {integrity: sha512-2moCsIYDmMT7hp5Non3CvWatfXptFWCuxjbXQGDNvWJ2Cj3oso/oBe4802GJv5GEenv9QBWmEtum/E7rFcx4JA==}
+    engines: {node: '>=18'}
+
+  cspell-trie-lib@8.17.3:
+    resolution: {integrity: sha512-6LE5BeT2Rwv0bkQckpxX0K1fnFCWfeJ8zVPFtYOaix0trtqj0VNuwWzYDnxyW+OwMioCH29yRAMODa+JDFfUrA==}
     engines: {node: '>=18'}
 
   cspell-trie-lib@8.8.4:
@@ -6825,6 +6738,9 @@ packages:
     resolution: {integrity: sha512-oWv4T4yJ52iKrufjnyZPkrN0CH3QnrUqdB6In1g5Fe1mia8GmF36gnfNySxoZtxD5+NmYw1EElVXiBk93UeskA==}
     engines: {node: '>=12'}
 
+  html-entities@2.5.2:
+    resolution: {integrity: sha512-K//PSRMQk4FZ78Kyau+mZurHn3FH0Vwr+H36eE0rPbeYkRRi9YxceYPhuN60UwWorxyKHhqoAJl2OFKa4BVtaA==}
+
   html-escaper@2.0.2:
     resolution: {integrity: sha512-H2iMtd0I4Mt5eYiapRdIDjp+XzelXQ0tFE4JS7YFwFevXXMmOp9myNrUvCg0D6ws8iqkRPBfKHgbwig1SmlLfg==}
 
@@ -6888,6 +6804,11 @@ packages:
   human-signals@2.1.0:
     resolution: {integrity: sha512-B4FFZ6q/T2jhhksgkbEW3HBvWIfDW85snkQgawt07S7J5QXTk6BkNV+0yAeZrM5QpMAdYlocGoljn0sJ/WQkFw==}
     engines: {node: '>=10.17.0'}
+
+  hunspell-reader@8.17.3:
+    resolution: {integrity: sha512-iQOkekqUcrTWyXszADBBUZBrbjrZ0rgBZ+LNfHDQtH9GZRW1SO68pT1R27i5/0cjjjpFRK8fcK8ZLocyolm8YA==}
+    engines: {node: '>=18'}
+    hasBin: true
 
   hyphenate-style-name@1.1.0:
     resolution: {integrity: sha512-WDC/ui2VVRrz3jOVi+XtjqkDjiVjTtFaAGiW37k6b+ohyQ5wYDOGkvCZa8+H0nx3gyvv0+BST9xuOgIyGQ00gw==}
@@ -13356,6 +13277,8 @@ snapshots:
 
   '@cspell/cspell-pipe@8.13.1': {}
 
+  '@cspell/cspell-pipe@8.17.3': {}
+
   '@cspell/cspell-pipe@8.8.4': {}
 
   '@cspell/cspell-resolver@8.13.1':
@@ -13370,7 +13293,21 @@ snapshots:
 
   '@cspell/cspell-service-bus@8.8.4': {}
 
+  '@cspell/cspell-tools@8.17.3(typescript@5.7.2)':
+    dependencies:
+      '@cspell/cspell-pipe': 8.17.3
+      commander: 13.1.0
+      cosmiconfig: 9.0.0(typescript@5.7.2)
+      cspell-trie-lib: 8.17.3
+      glob: 10.4.5
+      hunspell-reader: 8.17.3
+      yaml: 2.7.0
+    transitivePeerDependencies:
+      - typescript
+
   '@cspell/cspell-types@8.13.1': {}
+
+  '@cspell/cspell-types@8.17.3': {}
 
   '@cspell/cspell-types@8.8.4': {}
 
@@ -13385,6 +13322,8 @@ snapshots:
   '@cspell/dict-companies@3.1.13': {}
 
   '@cspell/dict-cpp@5.1.23': {}
+
+  '@cspell/dict-cpp@6.0.3': {}
 
   '@cspell/dict-cryptocurrencies@5.0.4': {}
 
@@ -13407,6 +13346,8 @@ snapshots:
   '@cspell/dict-en-common-misspellings@2.0.9': {}
 
   '@cspell/dict-en-gb@1.1.33': {}
+
+  '@cspell/dict-en-gb@4.1.54': {}
 
   '@cspell/dict-en_us@4.3.30': {}
 
@@ -16003,9 +15944,9 @@ snapshots:
       ignore: 5.3.2
       p-map: 4.0.0
 
-  '@storm-software/config-tools@1.148.3(@storm-software/config@1.101.3)':
+  '@storm-software/config-tools@1.149.0(@storm-software/config@1.101.5)':
     dependencies:
-      '@storm-software/config': 1.101.3
+      '@storm-software/config': 1.101.5
       c12: 2.0.1
       chalk: 4.1.2
       commander: 12.1.0
@@ -16017,23 +15958,24 @@ snapshots:
     transitivePeerDependencies:
       - magicast
 
-  '@storm-software/config@1.101.3':
+  '@storm-software/config@1.101.5':
     dependencies:
       zod: 3.24.1
 
-  '@storm-software/cspell@0.10.1(xnd6mkhhogpsszefrax6tvoi7u)':
+  '@storm-software/cspell@0.12.0(cspell@8.8.4)(typescript@5.7.2)':
     dependencies:
-      cspell: 8.8.4
-    optionalDependencies:
+      '@cspell/cspell-tools': 8.17.3(typescript@5.7.2)
       '@cspell/dict-aws': 4.0.9
       '@cspell/dict-bash': 4.2.0
       '@cspell/dict-companies': 3.1.13
+      '@cspell/dict-cpp': 6.0.3
       '@cspell/dict-cryptocurrencies': 5.0.4
       '@cspell/dict-csharp': 4.0.6
       '@cspell/dict-css': 4.0.17
       '@cspell/dict-docker': 1.1.12
       '@cspell/dict-dotnet': 5.0.9
       '@cspell/dict-en-common-misspellings': 2.0.9
+      '@cspell/dict-en-gb': 4.1.54
       '@cspell/dict-en_us': 4.3.30
       '@cspell/dict-filetypes': 3.0.10
       '@cspell/dict-fonts': 4.0.4
@@ -16061,8 +16003,11 @@ snapshots:
       '@cspell/dict-swift': 2.0.5
       '@cspell/dict-typescript': 3.2.0
       '@cspell/dict-vue': 3.0.4
+      cspell: 8.8.4
+    transitivePeerDependencies:
+      - typescript
 
-  '@storm-software/eslint@0.117.6(qnvz3pndnd5mcyqkvdie3wrkoe)':
+  '@storm-software/eslint@0.117.8(qnvz3pndnd5mcyqkvdie3wrkoe)':
     dependencies:
       '@cspell/eslint-plugin': 8.13.1(eslint@9.12.0(jiti@2.4.2))
       '@graphql-eslint/eslint-plugin': 4.3.0(@types/node@22.13.0)(bufferutil@4.0.9)(eslint@9.12.0(jiti@2.4.2))(graphql@15.10.1)(typescript@5.7.2)(utf-8-validate@5.0.10)
@@ -16124,7 +16069,7 @@ snapshots:
       - utf-8-validate
       - verdaccio
 
-  '@storm-software/git-tools@2.89.21(@swc-node/register@1.10.9(@swc/core@1.10.12(@swc/helpers@0.5.15))(@swc/types@0.1.17)(typescript@5.7.2))(@swc/core@1.10.12(@swc/helpers@0.5.15))(chokidar@4.0.3)':
+  '@storm-software/git-tools@2.89.22(@swc-node/register@1.10.9(@swc/core@1.10.12(@swc/helpers@0.5.15))(@swc/types@0.1.17)(typescript@5.7.2))(@swc/core@1.10.12(@swc/helpers@0.5.15))(chokidar@4.0.3)':
     dependencies:
       '@angular-devkit/architect': 0.1900.6(chokidar@4.0.3)
       nx: 20.4.0(@swc-node/register@1.10.9(@swc/core@1.10.12(@swc/helpers@0.5.15))(@swc/types@0.1.17)(typescript@5.7.2))(@swc/core@1.10.12(@swc/helpers@0.5.15))
@@ -16136,12 +16081,12 @@ snapshots:
       - chokidar
       - debug
 
-  '@storm-software/linting-tools@1.109.3(dp7m7fwq2q2rgd33jchhj43gnq)':
+  '@storm-software/linting-tools@1.110.1(chokidar@4.0.3)(cspell@8.8.4)(typescript@5.7.2)':
     dependencies:
       '@angular-devkit/architect': 0.1900.6(chokidar@4.0.3)
       '@manypkg/cli': 0.21.4
       '@manypkg/get-packages': 2.2.1
-      '@storm-software/cspell': 0.10.1(xnd6mkhhogpsszefrax6tvoi7u)
+      '@storm-software/cspell': 0.12.0(cspell@8.8.4)(typescript@5.7.2)
       alex: 11.0.1
       check-dependency-version-consistency: 4.1.0
       commander: 12.1.0
@@ -16165,49 +16110,13 @@ snapshots:
       unified-engine: 11.2.1
       vfile-reporter: 8.1.1
     transitivePeerDependencies:
-      - '@cspell/dict-aws'
-      - '@cspell/dict-bash'
-      - '@cspell/dict-companies'
-      - '@cspell/dict-cpp'
-      - '@cspell/dict-cryptocurrencies'
-      - '@cspell/dict-csharp'
-      - '@cspell/dict-css'
-      - '@cspell/dict-docker'
-      - '@cspell/dict-dotnet'
-      - '@cspell/dict-en-common-misspellings'
-      - '@cspell/dict-en-gb'
-      - '@cspell/dict-en_us'
-      - '@cspell/dict-filetypes'
-      - '@cspell/dict-fonts'
-      - '@cspell/dict-fullstack'
-      - '@cspell/dict-git'
-      - '@cspell/dict-golang'
-      - '@cspell/dict-html'
-      - '@cspell/dict-html-symbol-entities'
-      - '@cspell/dict-java'
-      - '@cspell/dict-k8s'
-      - '@cspell/dict-lorem-ipsum'
-      - '@cspell/dict-makefile'
-      - '@cspell/dict-node'
-      - '@cspell/dict-npm'
-      - '@cspell/dict-php'
-      - '@cspell/dict-powershell'
-      - '@cspell/dict-public-licenses'
-      - '@cspell/dict-python'
-      - '@cspell/dict-r'
-      - '@cspell/dict-ruby'
-      - '@cspell/dict-rust'
-      - '@cspell/dict-software-terms'
-      - '@cspell/dict-sql'
-      - '@cspell/dict-svelte'
-      - '@cspell/dict-swift'
-      - '@cspell/dict-typescript'
-      - '@cspell/dict-vue'
       - bluebird
       - chokidar
+      - cspell
       - supports-color
+      - typescript
 
-  '@storm-software/prettier@0.31.9(prettier@3.4.2)(typescript@5.7.2)':
+  '@storm-software/prettier@0.31.10(prettier@3.4.2)(typescript@5.7.2)':
     dependencies:
       prettier: 3.4.2
       prettier-plugin-organize-imports: 4.0.0(prettier@3.4.2)(typescript@5.7.2)
@@ -16219,16 +16128,16 @@ snapshots:
       - typescript
       - vue-tsc
 
-  '@storm-software/testing-tools@1.104.19(@nx/jest@20.4.0(@babel/traverse@7.26.7)(@swc-node/register@1.10.9(@swc/core@1.10.12(@swc/helpers@0.5.15))(@swc/types@0.1.17)(typescript@5.7.2))(@swc/core@1.10.12(@swc/helpers@0.5.15))(@types/node@22.13.0)(babel-plugin-macros@3.1.0)(nx@20.3.2(@swc-node/register@1.10.9(@swc/core@1.10.12(@swc/helpers@0.5.15))(@swc/types@0.1.17)(typescript@5.7.2))(@swc/core@1.10.12(@swc/helpers@0.5.15)))(ts-node@10.9.2(@swc/core@1.10.12(@swc/helpers@0.5.15))(@types/node@22.13.0)(typescript@5.7.2))(typescript@5.7.2)(verdaccio@5.32.2(typanion@3.14.0)))(jest@29.7.0(@types/node@22.13.0)(babel-plugin-macros@3.1.0)(ts-node@10.9.2(@swc/core@1.10.12(@swc/helpers@0.5.15))(@types/node@22.13.0)(typescript@5.7.2)))':
+  '@storm-software/testing-tools@1.104.20(@nx/jest@20.4.0(@babel/traverse@7.26.7)(@swc-node/register@1.10.9(@swc/core@1.10.12(@swc/helpers@0.5.15))(@swc/types@0.1.17)(typescript@5.7.2))(@swc/core@1.10.12(@swc/helpers@0.5.15))(@types/node@22.13.0)(babel-plugin-macros@3.1.0)(nx@20.3.2(@swc-node/register@1.10.9(@swc/core@1.10.12(@swc/helpers@0.5.15))(@swc/types@0.1.17)(typescript@5.7.2))(@swc/core@1.10.12(@swc/helpers@0.5.15)))(ts-node@10.9.2(@swc/core@1.10.12(@swc/helpers@0.5.15))(@types/node@22.13.0)(typescript@5.7.2))(typescript@5.7.2)(verdaccio@5.32.2(typanion@3.14.0)))(jest@29.7.0(@types/node@22.13.0)(babel-plugin-macros@3.1.0)(ts-node@10.9.2(@swc/core@1.10.12(@swc/helpers@0.5.15))(@types/node@22.13.0)(typescript@5.7.2)))':
     dependencies:
       '@nx/jest': 20.4.0(@babel/traverse@7.26.7)(@swc-node/register@1.10.9(@swc/core@1.10.12(@swc/helpers@0.5.15))(@swc/types@0.1.17)(typescript@5.7.2))(@swc/core@1.10.12(@swc/helpers@0.5.15))(@types/node@22.13.0)(babel-plugin-macros@3.1.0)(nx@20.3.2(@swc-node/register@1.10.9(@swc/core@1.10.12(@swc/helpers@0.5.15))(@swc/types@0.1.17)(typescript@5.7.2))(@swc/core@1.10.12(@swc/helpers@0.5.15)))(ts-node@10.9.2(@swc/core@1.10.12(@swc/helpers@0.5.15))(@types/node@22.13.0)(typescript@5.7.2))(typescript@5.7.2)(verdaccio@5.32.2(typanion@3.14.0))
       jest: 29.7.0(@types/node@22.13.0)(babel-plugin-macros@3.1.0)(ts-node@10.9.2(@swc/core@1.10.12(@swc/helpers@0.5.15))(@types/node@22.13.0)(typescript@5.7.2))
 
-  '@storm-software/tsconfig@0.35.9':
+  '@storm-software/tsconfig@0.35.10':
     dependencies:
       '@total-typescript/ts-reset': 0.5.1
 
-  '@storm-software/unbuild@0.36.4(@nx/devkit@20.4.0(nx@20.3.2(@swc-node/register@1.10.9(@swc/core@1.10.12(@swc/helpers@0.5.15))(@swc/types@0.1.17)(typescript@5.7.2))(@swc/core@1.10.12(@swc/helpers@0.5.15))))(@nx/js@20.4.0(@babel/traverse@7.26.7)(@swc-node/register@1.10.9(@swc/core@1.10.12(@swc/helpers@0.5.15))(@swc/types@0.1.17)(typescript@5.7.2))(@swc/core@1.10.12(@swc/helpers@0.5.15))(@types/node@22.13.0)(nx@20.3.2(@swc-node/register@1.10.9(@swc/core@1.10.12(@swc/helpers@0.5.15))(@swc/types@0.1.17)(typescript@5.7.2))(@swc/core@1.10.12(@swc/helpers@0.5.15)))(typescript@5.7.2)(verdaccio@5.32.2(typanion@3.14.0)))(@storm-software/config@1.101.3)(@swc/helpers@0.5.15)(nx@20.3.2(@swc-node/register@1.10.9(@swc/core@1.10.12(@swc/helpers@0.5.15))(@swc/types@0.1.17)(typescript@5.7.2))(@swc/core@1.10.12(@swc/helpers@0.5.15)))(rollup@4.34.0)(typescript@5.7.2)':
+  '@storm-software/unbuild@0.36.6(@nx/devkit@20.4.0(nx@20.3.2(@swc-node/register@1.10.9(@swc/core@1.10.12(@swc/helpers@0.5.15))(@swc/types@0.1.17)(typescript@5.7.2))(@swc/core@1.10.12(@swc/helpers@0.5.15))))(@nx/js@20.4.0(@babel/traverse@7.26.7)(@swc-node/register@1.10.9(@swc/core@1.10.12(@swc/helpers@0.5.15))(@swc/types@0.1.17)(typescript@5.7.2))(@swc/core@1.10.12(@swc/helpers@0.5.15))(@types/node@22.13.0)(nx@20.3.2(@swc-node/register@1.10.9(@swc/core@1.10.12(@swc/helpers@0.5.15))(@swc/types@0.1.17)(typescript@5.7.2))(@swc/core@1.10.12(@swc/helpers@0.5.15)))(typescript@5.7.2)(verdaccio@5.32.2(typanion@3.14.0)))(@storm-software/config@1.101.5)(@swc/helpers@0.5.15)(nx@20.3.2(@swc-node/register@1.10.9(@swc/core@1.10.12(@swc/helpers@0.5.15))(@swc/types@0.1.17)(typescript@5.7.2))(@swc/core@1.10.12(@swc/helpers@0.5.15)))(rollup@4.34.0)(typescript@5.7.2)':
     dependencies:
       '@nx/devkit': 20.4.0(nx@20.3.2(@swc-node/register@1.10.9(@swc/core@1.10.12(@swc/helpers@0.5.15))(@swc/types@0.1.17)(typescript@5.7.2))(@swc/core@1.10.12(@swc/helpers@0.5.15)))
       '@nx/js': 20.4.0(@babel/traverse@7.26.7)(@swc-node/register@1.10.9(@swc/core@1.10.12(@swc/helpers@0.5.15))(@swc/types@0.1.17)(typescript@5.7.2))(@swc/core@1.10.12(@swc/helpers@0.5.15))(@types/node@22.13.0)(nx@20.3.2(@swc-node/register@1.10.9(@swc/core@1.10.12(@swc/helpers@0.5.15))(@swc/types@0.1.17)(typescript@5.7.2))(@swc/core@1.10.12(@swc/helpers@0.5.15)))(typescript@5.7.2)(verdaccio@5.32.2(typanion@3.14.0))
@@ -16238,7 +16147,7 @@ snapshots:
       '@rollup/plugin-node-resolve': 16.0.0(rollup@4.34.0)
       '@rollup/plugin-replace': 6.0.2(rollup@4.34.0)
       '@rollup/pluginutils': 5.1.4(rollup@4.34.0)
-      '@storm-software/config': 1.101.3
+      '@storm-software/config': 1.101.5
       '@swc/core': 1.7.26(@swc/helpers@0.5.15)
       commander: 12.1.0
       defu: 6.1.4
@@ -16259,7 +16168,7 @@ snapshots:
       - vue
       - vue-tsc
 
-  '@storm-software/untyped@0.10.19(@nx/devkit@20.4.0(nx@20.3.2(@swc-node/register@1.10.9(@swc/core@1.10.12(@swc/helpers@0.5.15))(@swc/types@0.1.17)(typescript@5.7.2))(@swc/core@1.10.12(@swc/helpers@0.5.15))))(@swc-node/register@1.10.9(@swc/core@1.10.12(@swc/helpers@0.5.15))(@swc/types@0.1.17)(typescript@5.7.2))(@swc/core@1.10.12(@swc/helpers@0.5.15))(untyped@1.5.2)':
+  '@storm-software/untyped@0.10.21(@nx/devkit@20.4.0(nx@20.3.2(@swc-node/register@1.10.9(@swc/core@1.10.12(@swc/helpers@0.5.15))(@swc/types@0.1.17)(typescript@5.7.2))(@swc/core@1.10.12(@swc/helpers@0.5.15))))(@swc-node/register@1.10.9(@swc/core@1.10.12(@swc/helpers@0.5.15))(@swc/types@0.1.17)(typescript@5.7.2))(@swc/core@1.10.12(@swc/helpers@0.5.15))(untyped@1.5.2)':
     dependencies:
       '@nx/devkit': 20.4.0(nx@20.3.2(@swc-node/register@1.10.9(@swc/core@1.10.12(@swc/helpers@0.5.15))(@swc/types@0.1.17)(typescript@5.7.2))(@swc/core@1.10.12(@swc/helpers@0.5.15)))
       commander: 12.1.0
@@ -16272,7 +16181,7 @@ snapshots:
       - '@swc/core'
       - debug
 
-  '@storm-software/workspace-tools@1.247.3(oqxyifv67wufg2hi3mkwokp5x4)':
+  '@storm-software/workspace-tools@1.247.5(khd6gjjvsmiun7hdixynxhzqlm)':
     dependencies:
       '@ltd/j-toml': 1.38.0
       '@microsoft/api-extractor': 7.49.2(@types/node@22.13.0)
@@ -16281,7 +16190,7 @@ snapshots:
       '@size-limit/esbuild': 11.1.4(size-limit@11.1.4)
       '@size-limit/esbuild-why': 11.1.4(size-limit@11.1.4)
       '@size-limit/file': 11.1.4(size-limit@11.1.4)
-      '@storm-software/prettier': 0.31.9(prettier@3.4.2)(typescript@5.7.2)
+      '@storm-software/prettier': 0.31.10(prettier@3.4.2)(typescript@5.7.2)
       defu: 6.1.4
       fs-extra: 11.2.0
       glob: 11.0.1
@@ -16299,7 +16208,7 @@ snapshots:
       zod: 3.24.1
       zod-to-json-schema: 3.23.1(zod@3.24.1)
     optionalDependencies:
-      '@storm-software/unbuild': 0.36.4(@nx/devkit@20.4.0(nx@20.3.2(@swc-node/register@1.10.9(@swc/core@1.10.12(@swc/helpers@0.5.15))(@swc/types@0.1.17)(typescript@5.7.2))(@swc/core@1.10.12(@swc/helpers@0.5.15))))(@nx/js@20.4.0(@babel/traverse@7.26.7)(@swc-node/register@1.10.9(@swc/core@1.10.12(@swc/helpers@0.5.15))(@swc/types@0.1.17)(typescript@5.7.2))(@swc/core@1.10.12(@swc/helpers@0.5.15))(@types/node@22.13.0)(nx@20.3.2(@swc-node/register@1.10.9(@swc/core@1.10.12(@swc/helpers@0.5.15))(@swc/types@0.1.17)(typescript@5.7.2))(@swc/core@1.10.12(@swc/helpers@0.5.15)))(typescript@5.7.2)(verdaccio@5.32.2(typanion@3.14.0)))(@storm-software/config@1.101.3)(@swc/helpers@0.5.15)(nx@20.3.2(@swc-node/register@1.10.9(@swc/core@1.10.12(@swc/helpers@0.5.15))(@swc/types@0.1.17)(typescript@5.7.2))(@swc/core@1.10.12(@swc/helpers@0.5.15)))(rollup@4.34.0)(typescript@5.7.2)
+      '@storm-software/unbuild': 0.36.6(@nx/devkit@20.4.0(nx@20.3.2(@swc-node/register@1.10.9(@swc/core@1.10.12(@swc/helpers@0.5.15))(@swc/types@0.1.17)(typescript@5.7.2))(@swc/core@1.10.12(@swc/helpers@0.5.15))))(@nx/js@20.4.0(@babel/traverse@7.26.7)(@swc-node/register@1.10.9(@swc/core@1.10.12(@swc/helpers@0.5.15))(@swc/types@0.1.17)(typescript@5.7.2))(@swc/core@1.10.12(@swc/helpers@0.5.15))(@types/node@22.13.0)(nx@20.3.2(@swc-node/register@1.10.9(@swc/core@1.10.12(@swc/helpers@0.5.15))(@swc/types@0.1.17)(typescript@5.7.2))(@swc/core@1.10.12(@swc/helpers@0.5.15)))(typescript@5.7.2)(verdaccio@5.32.2(typanion@3.14.0)))(@storm-software/config@1.101.5)(@swc/helpers@0.5.15)(nx@20.3.2(@swc-node/register@1.10.9(@swc/core@1.10.12(@swc/helpers@0.5.15))(@swc/types@0.1.17)(typescript@5.7.2))(@swc/core@1.10.12(@swc/helpers@0.5.15)))(rollup@4.34.0)(typescript@5.7.2)
     transitivePeerDependencies:
       - '@types/node'
       - supports-color
@@ -18045,6 +17954,8 @@ snapshots:
 
   commander@12.1.0: {}
 
+  commander@13.1.0: {}
+
   commander@2.20.3: {}
 
   commander@4.1.1: {}
@@ -18379,6 +18290,12 @@ snapshots:
     dependencies:
       '@cspell/cspell-pipe': 8.13.1
       '@cspell/cspell-types': 8.13.1
+      gensequence: 7.0.0
+
+  cspell-trie-lib@8.17.3:
+    dependencies:
+      '@cspell/cspell-pipe': 8.17.3
+      '@cspell/cspell-types': 8.17.3
       gensequence: 7.0.0
 
   cspell-trie-lib@8.8.4:
@@ -20432,6 +20349,8 @@ snapshots:
     dependencies:
       whatwg-encoding: 2.0.0
 
+  html-entities@2.5.2: {}
+
   html-escaper@2.0.2: {}
 
   htmlparser2@3.10.1:
@@ -20537,6 +20456,15 @@ snapshots:
   human-signals@1.1.1: {}
 
   human-signals@2.1.0: {}
+
+  hunspell-reader@8.17.3:
+    dependencies:
+      '@cspell/cspell-pipe': 8.17.3
+      '@cspell/cspell-types': 8.17.3
+      commander: 13.1.0
+      gensequence: 7.0.0
+      html-entities: 2.5.2
+      iconv-lite: 0.6.3
 
   hyphenate-style-name@1.1.0: {}
 
