@@ -98,7 +98,11 @@ jobs:
           echo "HEAD: ${{ env.NX_HEAD }}"
         shell: bash
 
-      - name: Run build script
+      - name: Build workspace tools
+        run: pnpm build-tools
+        shell: bash
+
+      - name: Run workspace build
         run: pnpm build-prod
         shell: bash
 
