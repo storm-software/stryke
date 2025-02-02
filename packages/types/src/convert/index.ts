@@ -15,39 +15,9 @@
 
  -------------------------------------------------------------------*/
 
-import parser from "jsonc-eslint-parser";
-import baseConfig from "../../eslint.config.mjs";
-
-export default [
-  ...baseConfig,
-  {
-    files: ["**/*.json"],
-    rules: {
-      "@nx/dependency-checks": [
-        "error",
-        {
-          ignoredFiles: ["{projectRoot}/eslint.config.{js,cjs,mjs}", "{projectRoot}/tsconfig.json"]
-        }
-      ]
-    },
-    languageOptions: {
-      parser
-    }
-  },
-  {
-    "files": [
-      "./package.json",
-      "./generators.json",
-      "./executors.json",
-      "./generators.json",
-      "./executors.json",
-      "./migrations.json"
-    ],
-    rules: {
-      "@nx/nx-plugin-checks": "error"
-    },
-    languageOptions: {
-      parser
-    }
-  }
-];
+export * from "./buffer-to-string";
+export * from "./string-to-uint8-array";
+export * from "./to-array";
+export * from "./to-string-key";
+export * from "./uint8-array-to-string";
+export * from "./utf8-array-to-string";

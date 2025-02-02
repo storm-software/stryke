@@ -15,39 +15,16 @@
 
  -------------------------------------------------------------------*/
 
-import parser from "jsonc-eslint-parser";
-import baseConfig from "../../eslint.config.mjs";
+/**
+ * The types library used by Storm Software for building TypeScript applications.
+ *
+ * @remarks
+ * A package containing many base TypeScript type definitions that are shared across many projects.
+ *
+ * @packageDocumentation
+ */
 
-export default [
-  ...baseConfig,
-  {
-    files: ["**/*.json"],
-    rules: {
-      "@nx/dependency-checks": [
-        "error",
-        {
-          ignoredFiles: ["{projectRoot}/eslint.config.{js,cjs,mjs}", "{projectRoot}/tsconfig.json"]
-        }
-      ]
-    },
-    languageOptions: {
-      parser
-    }
-  },
-  {
-    "files": [
-      "./package.json",
-      "./generators.json",
-      "./executors.json",
-      "./generators.json",
-      "./executors.json",
-      "./migrations.json"
-    ],
-    rules: {
-      "@nx/nx-plugin-checks": "error"
-    },
-    languageOptions: {
-      parser
-    }
-  }
-];
+export * from "./convert";
+export * from "./helpers";
+export * from "./type-checks";
+export * from "./utility-types";

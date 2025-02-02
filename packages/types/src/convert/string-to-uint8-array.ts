@@ -15,39 +15,13 @@
 
  -------------------------------------------------------------------*/
 
-import parser from "jsonc-eslint-parser";
-import baseConfig from "../../eslint.config.mjs";
-
-export default [
-  ...baseConfig,
-  {
-    files: ["**/*.json"],
-    rules: {
-      "@nx/dependency-checks": [
-        "error",
-        {
-          ignoredFiles: ["{projectRoot}/eslint.config.{js,cjs,mjs}", "{projectRoot}/tsconfig.json"]
-        }
-      ]
-    },
-    languageOptions: {
-      parser
-    }
-  },
-  {
-    "files": [
-      "./package.json",
-      "./generators.json",
-      "./executors.json",
-      "./generators.json",
-      "./executors.json",
-      "./migrations.json"
-    ],
-    rules: {
-      "@nx/nx-plugin-checks": "error"
-    },
-    languageOptions: {
-      parser
-    }
-  }
-];
+/**
+ * Convert a string to Uint8Array
+ *
+ * @param text - The text to convert
+ * @returns The converted Uint8Array
+ */
+export const stringToUint8Array = (text: string): Uint8Array =>
+  Uint8Array.from(
+    [...encodeURIComponent(text)].map(letter => letter.codePointAt(0)!)
+  );

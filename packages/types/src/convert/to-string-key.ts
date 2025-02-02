@@ -15,39 +15,16 @@
 
  -------------------------------------------------------------------*/
 
-import parser from "jsonc-eslint-parser";
-import baseConfig from "../../eslint.config.mjs";
-
-export default [
-  ...baseConfig,
-  {
-    files: ["**/*.json"],
-    rules: {
-      "@nx/dependency-checks": [
-        "error",
-        {
-          ignoredFiles: ["{projectRoot}/eslint.config.{js,cjs,mjs}", "{projectRoot}/tsconfig.json"]
-        }
-      ]
-    },
-    languageOptions: {
-      parser
-    }
-  },
-  {
-    "files": [
-      "./package.json",
-      "./generators.json",
-      "./executors.json",
-      "./generators.json",
-      "./executors.json",
-      "./migrations.json"
-    ],
-    rules: {
-      "@nx/nx-plugin-checks": "error"
-    },
-    languageOptions: {
-      parser
-    }
+/**
+ * Converts `value` to a string key if it's not a string or symbol.
+ *
+ * @param value - The value to inspect.
+ * @returns Returns the key.
+ */
+export function toStringKey(value: number): string | symbol {
+  if (Object.is(value, -0)) {
+    return "-0";
   }
-];
+
+  return value.toString();
+}

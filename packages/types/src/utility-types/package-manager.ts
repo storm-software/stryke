@@ -15,39 +15,22 @@
 
  -------------------------------------------------------------------*/
 
-import parser from "jsonc-eslint-parser";
-import baseConfig from "../../eslint.config.mjs";
+export type PackageManagers = "npm" | "yarn" | "pnpm" | "bun";
+export const PackageManagers = {
+  NPM: "npm" as PackageManagers,
+  YARN: "yarn" as PackageManagers,
+  PNPM: "pnpm" as PackageManagers,
+  BUN: "bun" as PackageManagers
+};
 
-export default [
-  ...baseConfig,
-  {
-    files: ["**/*.json"],
-    rules: {
-      "@nx/dependency-checks": [
-        "error",
-        {
-          ignoredFiles: ["{projectRoot}/eslint.config.{js,cjs,mjs}", "{projectRoot}/tsconfig.json"]
-        }
-      ]
-    },
-    languageOptions: {
-      parser
-    }
-  },
-  {
-    "files": [
-      "./package.json",
-      "./generators.json",
-      "./executors.json",
-      "./generators.json",
-      "./executors.json",
-      "./migrations.json"
-    ],
-    rules: {
-      "@nx/nx-plugin-checks": "error"
-    },
-    languageOptions: {
-      parser
-    }
-  }
-];
+export type PackageManagerLockFiles =
+  | "package-lock.json"
+  | "yarn.lock"
+  | "pnpm-lock.yaml"
+  | "bun.lock";
+export const PackageManagerLockFiles = {
+  NPM: "package-lock.json" as PackageManagerLockFiles,
+  YARN: "yarn.lock" as PackageManagerLockFiles,
+  PNPM: "pnpm-lock.yaml" as PackageManagerLockFiles,
+  BUN: "bun.lock" as PackageManagerLockFiles
+};

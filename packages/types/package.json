@@ -1,0 +1,18 @@
+{
+  "name": "@stryke/types",
+  "version": "0.0.1",
+  "type": "module",
+  "description": "A package containing many base TypeScript type definitions that are shared across many projects.",
+  "repository": {
+    "type": "github",
+    "url": "https://github.com/storm-software/stryke.git",
+    "directory": "packages/types"
+  },
+  "private": false,
+  "publishConfig": {
+    "access": "public"
+  },
+  "devDependencies": {
+    "@types/node": "^22.13.0"
+  }
+}

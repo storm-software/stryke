@@ -15,39 +15,22 @@
 
  -------------------------------------------------------------------*/
 
-import parser from "jsonc-eslint-parser";
-import baseConfig from "../../eslint.config.mjs";
-
-export default [
-  ...baseConfig,
-  {
-    files: ["**/*.json"],
-    rules: {
-      "@nx/dependency-checks": [
-        "error",
-        {
-          ignoredFiles: ["{projectRoot}/eslint.config.{js,cjs,mjs}", "{projectRoot}/tsconfig.json"]
-        }
-      ]
-    },
-    languageOptions: {
-      parser
-    }
-  },
-  {
-    "files": [
-      "./package.json",
-      "./generators.json",
-      "./executors.json",
-      "./generators.json",
-      "./executors.json",
-      "./migrations.json"
-    ],
-    rules: {
-      "@nx/nx-plugin-checks": "error"
-    },
-    languageOptions: {
-      parser
-    }
-  }
-];
+export * from "./array";
+export * from "./async";
+export * from "./base";
+export * from "./configuration";
+export * from "./file";
+export * from "./form";
+export * from "./json";
+export * from "./logic";
+export * from "./messages";
+export * from "./navigator";
+export * from "./object";
+export * from "./package-json";
+export * from "./package-manager";
+export * from "./string";
+export * from "./system";
+export * from "./tsconfig";
+export * from "./user";
+export * from "./utilities";
+export * from "./validations";

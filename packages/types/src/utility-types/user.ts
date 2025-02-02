@@ -15,39 +15,39 @@
 
  -------------------------------------------------------------------*/
 
-import parser from "jsonc-eslint-parser";
-import baseConfig from "../../eslint.config.mjs";
+export type UserType = "internal" | "external" | "service";
 
-export default [
-  ...baseConfig,
-  {
-    files: ["**/*.json"],
-    rules: {
-      "@nx/dependency-checks": [
-        "error",
-        {
-          ignoredFiles: ["{projectRoot}/eslint.config.{js,cjs,mjs}", "{projectRoot}/tsconfig.json"]
-        }
-      ]
-    },
-    languageOptions: {
-      parser
-    }
-  },
-  {
-    "files": [
-      "./package.json",
-      "./generators.json",
-      "./executors.json",
-      "./generators.json",
-      "./executors.json",
-      "./migrations.json"
-    ],
-    rules: {
-      "@nx/nx-plugin-checks": "error"
-    },
-    languageOptions: {
-      parser
-    }
-  }
-];
+export const UserType = {
+  INTERNAL: "internal" as UserType,
+  EXTERNAL: "external" as UserType,
+  SERVICE: "service" as UserType
+};
+
+export interface UserBase {
+  /**
+   * The user's ID.
+   */
+  id: string;
+
+  /**
+   * The user's full name.
+   */
+  username?: string;
+
+  /**
+   * The user's type.
+   *
+   * @defaultValue "external"
+   */
+  type: UserType;
+
+  /**
+   * The user's email address.
+   */
+  email?: string;
+
+  /**
+   * The user's role.
+   */
+  role?: string;
+}

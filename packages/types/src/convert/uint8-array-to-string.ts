@@ -15,39 +15,17 @@
 
  -------------------------------------------------------------------*/
 
-import parser from "jsonc-eslint-parser";
-import baseConfig from "../../eslint.config.mjs";
-
-export default [
-  ...baseConfig,
-  {
-    files: ["**/*.json"],
-    rules: {
-      "@nx/dependency-checks": [
-        "error",
-        {
-          ignoredFiles: ["{projectRoot}/eslint.config.{js,cjs,mjs}", "{projectRoot}/tsconfig.json"]
-        }
-      ]
-    },
-    languageOptions: {
-      parser
-    }
-  },
-  {
-    "files": [
-      "./package.json",
-      "./generators.json",
-      "./executors.json",
-      "./generators.json",
-      "./executors.json",
-      "./migrations.json"
-    ],
-    rules: {
-      "@nx/nx-plugin-checks": "error"
-    },
-    languageOptions: {
-      parser
-    }
-  }
-];
+/**
+ * Convert a utf8 array to string
+ *
+ * @remarks
+ * This method is part of the {@linkcode Convert} namespace.
+ *
+ * @credits https://stackoverflow.com/a/41798356/1465919
+ * @credits https://stackoverflow.com/a/36949791/1465919
+ *
+ * @param array - Utf-8 Array
+ * @returns The converted string
+ */
+export const uint8ArrayToString = (arr: Uint8Array): string =>
+  decodeURIComponent(Buffer.from(arr).toString("utf8"));
