@@ -29,6 +29,7 @@ import type {
   JsonValue
 } from "./types";
 import { formatParseError } from "./utils/parse-error";
+import { stringify } from "./utils/stringify";
 
 /**
  * A static JSON parser class used by Storm Software to serialize and deserialize JSON data
@@ -58,23 +59,37 @@ export class StormJSON extends SuperJSON {
 
   /**
    * Serialize the given value with superjson
+   *
+   *
    */
   public static override serialize(object: JsonValue): JsonParserResult {
     return StormJSON.instance.serialize(object);
   }
 
   /**
-   * Parse the given value with superjson using the given metadata
+   * Parse the given string value with superjson using the given metadata
+   *
+   * @param value - The string value to parse
+   * @returns The parsed data
    */
-  public static override parse<TData = unknown>(strData: string): TData {
-    return StormJSON.instance.parse(strData);
+  public static override parse<TData = unknown>(value: string): TData {
+    return StormJSON.instance.parse(value);
   }
 
   /**
    * Stringify the given value with superjson
+   *
    */
-  public static override stringify(json: any): string {
-    return StormJSON.instance.stringify(json);
+  public static override stringify(obj: any): string {
+    const customTransformer =
+      StormJSON.instance.customTransformerRegistry.findApplicable(obj);
+
+    let result = obj;
+    if (customTransformer) {
+      result = customTransformer.serialize(result);
+    }
+
+    return stringify(result);
   }
 
   /**
@@ -85,11 +100,19 @@ export class StormJSON extends SuperJSON {
    * @param options - JSON serialize options
    * @returns the formatted JSON representation of the object
    */
-  public static stringifyJsonFile(
+  public static stringifyJson(
     json: any,
     options?: JsonSerializeOptions
   ): string {
-    return JSON.stringify(json, null, options?.spaces ?? 2);
+    const customTransformer =
+      StormJSON.instance.customTransformerRegistry.findApplicable(json);
+
+    let result = json;
+    if (customTransformer) {
+      result = customTransformer.serialize(result);
+    }
+
+    return stringify(result, options?.spaces ?? 2);
   }
 
   /**
@@ -100,7 +123,7 @@ export class StormJSON extends SuperJSON {
    * @param options - JSON parse options
    * @returns Object the JSON content represents
    */
-  public static parseJsonFile<TData = unknown>(
+  public static parseJson<TData = unknown>(
     strData: string,
     options?: JsonParseOptions
   ): TData {

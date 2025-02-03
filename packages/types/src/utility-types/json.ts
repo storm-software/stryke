@@ -45,6 +45,14 @@ export type JsonPrimitive = string | number | boolean | null;
 export type JsonValue = JsonPrimitive | JsonObject | JsonArray;
 
 /**
+ * Matches a JSON pointer's path segments.
+ *
+ * @remarks
+ * These segments are used to navigate through the JSON object structure and point to a specific, referenced value.
+ */
+export type JsonPointerPath = (string | number)[];
+
+/**
  * Create a type with the keys of the given type changed to `string` type.
  *
  * Use-case: Changing interface values to strings in order to use them in a form model.

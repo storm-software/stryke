@@ -1,9 +1,9 @@
 <!-- START header -->
 <!-- END header -->
 
-# utils-json
+# Stryke - JSON Utility
 
-A package containing parsing utilities used by Storm Software
+A package that includes the `StormJSON` utility class. This class is used in the same way as the built-in `JSON` type in NodeJs; however, it allows for more flexibility and customization. 
 
 <!-- START doctoc -->
 <!-- END doctoc -->

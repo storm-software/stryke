@@ -1,0 +1,21 @@
+{
+  "name": "@stryke/http",
+  "version": "0.0.1",
+  "type": "module",
+  "description": "A package containing HTTP communication utilities used by Storm Software.",
+  "repository": {
+    "type": "github",
+    "url": "https://github.com/storm-software/stryke.git",
+    "directory": "packages/http"
+  },
+  "private": false,
+  "dependencies": {
+    "ufo": "^1.5.4"
+  },
+  "devDependencies": {
+    "@types/node": "catalog:"
+  },
+  "publishConfig": {
+    "access": "public"
+  }
+}
