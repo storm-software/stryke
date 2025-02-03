@@ -36,10 +36,8 @@ jobs:
     #   - https://gh.io/supported-runners-and-hardware-resources
     #   - https://gh.io/using-larger-runners
     # Consider using larger runners for possible analysis time improvements.
-    if:
-      ${{ !contains(github.event.pull_request.labels.*.name, 'dependencies') }}
-    runs-on:
-      ${{ (matrix.language == 'swift' && 'macos-latest') || 'ubuntu-latest' }}
+    if: ${{ !contains(github.event.pull_request.labels.*.name, 'dependencies') }}
+    runs-on: ${{ (matrix.language == 'swift' && 'macos-latest') || 'ubuntu-latest' }}
     timeout-minutes: ${{ (matrix.language == 'swift' && 120) || 360 }}
     permissions:
       actions: read
@@ -100,7 +98,7 @@ jobs:
       #     ./location_of_script_within_repo/buildscript.sh
 
       - name: Run build script
-        run: pnpm build-all
+        run: pnpm build
         shell: bash
 
       - name: Perform CodeQL Analysis
