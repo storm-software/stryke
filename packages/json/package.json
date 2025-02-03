@@ -1,0 +1,21 @@
+{
+  "name": "@stryke/json",
+  "version": "0.0.1",
+  "type": "module",
+  "description": "A package containing JSON parsing/stringify utilities used by Storm Software.",
+  "repository": {
+    "type": "github",
+    "url": "https://github.com/storm-software/stryke.git",
+    "directory": "packages/json"
+  },
+  "private": false,
+  "dependencies": {
+    "buffer": "^6.0.3",
+    "jsonc-parser": "^3.3.1",
+    "lines-and-columns": "^2.0.4",
+    "superjson": "2.2.1"
+  },
+  "publishConfig": {
+    "access": "public"
+  }
+}
