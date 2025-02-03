@@ -11,7 +11,8 @@
 </div>
 <br />
 
-Storm Software's **🌩️ Stryke** monorepo containing TypeScript utility packages with shared functionality common to many Storm Software applications
+Storm Software's **🌩️ Stryke** monorepo containing TypeScript utility packages
+with shared functionality common to many Storm Software applications
 
 <br />
 
@@ -37,6 +38,7 @@ keeping the codebase maintainable.
 
 <!-- START doctoc -->
 <!-- DON'T EDIT THIS SECTION, INSTEAD RE-RUN doctoc TO UPDATE -->
+
 ## Table of Contents
 
 - [Quick Features](#quick-features)
@@ -179,8 +181,8 @@ from `@stryke/my-lib`.
 
 ## Code Scaffolding
 
-Run `nx g @nx/react:component my-component --project=stryke` to generate a
-new component.
+Run `nx g @nx/react:component my-component --project=stryke` to generate a new
+component.
 
 <div align="right">[ <a href="#table-of-contents">Back to top ▲</a> ]</div>
 <br />
@@ -251,8 +253,8 @@ Visit [Nx Cloud](https://nx.app/) to learn more.
 
 # Roadmap
 
-See the [open issues](https://github.com/storm-software/stryke/issues) for
-a list of proposed features (and known issues).
+See the [open issues](https://github.com/storm-software/stryke/issues) for a
+list of proposed features (and known issues).
 
 - [Top Feature Requests](https://github.com/storm-software/stryke/issues?q=label%3Aenhancement+is%3Aopen+sort%3Areactions-%2B1-desc)
   (Add your votes using the 👍 reaction)
@@ -281,8 +283,8 @@ Please try to create bug reports that are:
 Please adhere to this project's [code of conduct](.github/CODE_OF_CONDUCT.md).
 
 You can use
-[markdownlint-cli](https://github.com/storm-software/stryke/markdownlint-cli)
-to check for common markdown style inconsistency.
+[markdownlint-cli](https://github.com/storm-software/stryke/markdownlint-cli) to
+check for common markdown style inconsistency.
 
 <div align="right">[ <a href="#table-of-contents">Back to top ▲</a> ]</div>
 <br />

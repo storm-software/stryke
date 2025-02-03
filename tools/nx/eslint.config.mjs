@@ -26,7 +26,10 @@ export default [
       "@nx/dependency-checks": [
         "error",
         {
-          ignoredFiles: ["{projectRoot}/eslint.config.{js,cjs,mjs}", "{projectRoot}/tsconfig.json"]
+          ignoredFiles: [
+            "{projectRoot}/eslint.config.{js,cjs,mjs}",
+            "{projectRoot}/tsconfig.json"
+          ]
         }
       ]
     },

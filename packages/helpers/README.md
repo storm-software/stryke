@@ -3,7 +3,8 @@
 
 # Stryke - Helper Functions
 
-A package containing miscellaneous helper functions that are used across many different Storm Software projects.
+A package containing miscellaneous helper functions that are used across many
+different Storm Software projects.
 
 <!-- START doctoc -->
 <!-- END doctoc -->

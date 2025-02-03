@@ -51,9 +51,9 @@
   "prettier.configPath": "./node_modules/@storm-software/prettier/config.json",
   "prettier.ignorePath": "./node_modules/@storm-software/prettier/.prettierignore",
   "prettier.enableDebugLogs": true,
-  "eslint.useFlatConfig": true,
-  "eslint.run": "onSave",
-  "eslint.format.enable": true,
+  "markdownlint.config": {
+    "extends": "./node_modules/@storm-software/markdownlint/config/.markdownlint-cli2.json"
+  },
   "eslint.debug": false,
   "eslint.codeAction.disableRuleComment": {
     "enable": true,

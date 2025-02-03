@@ -1,5 +1,3 @@
-
-
 ## Storm Workspaces
 
 Storm workspaces are built using
@@ -75,8 +73,8 @@ Please try to create bug reports that are:
 Please adhere to this project's [code of conduct](.github/CODE_OF_CONDUCT.md).
 
 You can use
-[markdownlint-cli](https://github.com/storm-software/stryke/markdownlint-cli)
-to check for common markdown style inconsistency.
+[markdownlint-cli](https://github.com/storm-software/stryke/markdownlint-cli) to
+check for common markdown style inconsistency.
 
 <div align="right">[ <a href="#table-of-contents">Back to top ▲</a> ]</div>
 <br />

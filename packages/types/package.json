@@ -9,10 +9,10 @@
     "directory": "packages/types"
   },
   "private": false,
-  "publishConfig": {
-    "access": "public"
-  },
   "devDependencies": {
     "@types/node": "^22.13.0"
+  },
+  "publishConfig": {
+    "access": "public"
   }
 }
