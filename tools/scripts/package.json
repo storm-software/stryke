@@ -29,7 +29,7 @@
     "esbuild": "catalog:"
   },
   "devDependencies": {
-    "@types/node": "^22.10.2",
+    "@types/node": "^22.13.0",
     "rimraf": "catalog:",
     "tsup": "catalog:"
   }

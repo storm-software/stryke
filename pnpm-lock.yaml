@@ -351,7 +351,7 @@ importers:
         version: 0.24.2
     devDependencies:
       '@types/node':
-        specifier: ^22.10.2
+        specifier: ^22.13.0
         version: 22.13.0
       rimraf:
         specifier: 'catalog:'
@@ -2121,7 +2121,6 @@ packages:
 
   '@ls-lint/ls-lint@2.2.3':
     resolution: {integrity: sha512-ekM12jNm/7O2I/hsRv9HvYkRdfrHpiV1epVuI2NP+eTIcEgdIdKkKCs9KgQydu/8R5YXTov9aHdOgplmCHLupw==}
-    cpu: [x64, arm64, s390x]
     os: [darwin, linux, win32]
     hasBin: true
 
