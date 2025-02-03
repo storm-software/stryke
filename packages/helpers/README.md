@@ -51,7 +51,6 @@ different Storm Software projects.
 
 <!-- START doctoc -->
 <!-- DON'T EDIT THIS SECTION, INSTEAD RE-RUN doctoc TO UPDATE -->
-
 ## Table of Contents
 
 - [Installing](#installing)
