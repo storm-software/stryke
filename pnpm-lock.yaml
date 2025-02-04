@@ -29,7 +29,7 @@ catalogs:
       version: 1.101.17
     '@storm-software/config-tools':
       specifier: latest
-      version: 1.150.13
+      version: 1.150.14
     '@storm-software/cspell':
       specifier: latest
       version: 0.14.3
@@ -59,7 +59,7 @@ catalogs:
       version: 0.10.33
     '@storm-software/workspace-tools':
       specifier: latest
-      version: 1.249.0
+      version: 1.249.1
     '@types/jest':
       specifier: 29.5.13
       version: 29.5.13
@@ -200,7 +200,7 @@ importers:
         version: 0.10.33(@nx/devkit@20.4.0(nx@20.4.0(@swc-node/register@1.9.2(@swc/core@1.5.29(@swc/helpers@0.5.15))(@swc/types@0.1.17)(typescript@5.7.3))(@swc/core@1.5.29(@swc/helpers@0.5.15))))(@swc-node/register@1.9.2(@swc/core@1.5.29(@swc/helpers@0.5.15))(@swc/types@0.1.17)(typescript@5.7.3))(@swc/core@1.5.29(@swc/helpers@0.5.15))(untyped@1.5.2)
       '@storm-software/workspace-tools':
         specifier: 'catalog:'
-        version: 1.249.0(hlc4x4b5yu5wz3ud7vk4r3ukbu)
+        version: 1.249.1(hlc4x4b5yu5wz3ud7vk4r3ukbu)
       '@swc-node/register':
         specifier: ~1.9.1
         version: 1.9.2(@swc/core@1.5.29(@swc/helpers@0.5.15))(@swc/types@0.1.17)(typescript@5.7.3)
@@ -321,7 +321,7 @@ importers:
         version: 1.101.17
       '@storm-software/config-tools':
         specifier: 'catalog:'
-        version: 1.150.13(@storm-software/config@1.101.17)
+        version: 1.150.14(@storm-software/config@1.101.17)
       defu:
         specifier: 'catalog:'
         version: 6.1.4
@@ -447,7 +447,7 @@ importers:
         version: 20.4.0(nx@20.4.0(@swc-node/register@1.9.2(@swc/core@1.7.26(@swc/helpers@0.5.15))(@swc/types@0.1.17)(typescript@5.7.3))(@swc/core@1.7.26(@swc/helpers@0.5.15)))
       '@storm-software/workspace-tools':
         specifier: 'catalog:'
-        version: 1.249.0(g574aigqboenkvnzlhfcid37yi)
+        version: 1.249.1(g574aigqboenkvnzlhfcid37yi)
       defu:
         specifier: 'catalog:'
         version: 6.1.4
@@ -471,7 +471,7 @@ importers:
     dependencies:
       '@storm-software/config-tools':
         specifier: 'catalog:'
-        version: 1.150.13(@storm-software/config@1.101.17)
+        version: 1.150.14(@storm-software/config@1.101.17)
       esbuild:
         specifier: 'catalog:'
         version: 0.24.2
@@ -3036,8 +3036,8 @@ packages:
     engines: {node: '>=8.10'}
     hasBin: true
 
-  '@storm-software/config-tools@1.150.13':
-    resolution: {integrity: sha512-6BiN1oFIFmP4YJLtqLYFOl+we/Alf29mV03n3jWMYDeU8XdW61nDuPVW3ZBE3WXJo/2W7hFAzxuSgNIOyWXlmg==}
+  '@storm-software/config-tools@1.150.14':
+    resolution: {integrity: sha512-sr6vwK3wG93yWhCg7GFfNI9FKBUPuuz5sXIn279tZNu8yOQXnZ0l3OH91xsNmm2eLVVwBh2o4X4aMvF+GLKuRg==}
     hasBin: true
     peerDependencies:
       '@storm-software/config': workspace:*
@@ -3122,8 +3122,8 @@ packages:
       '@nx/devkit': ^20.3.1
       untyped: ^1.5.2
 
-  '@storm-software/workspace-tools@1.249.0':
-    resolution: {integrity: sha512-LqWWZ2IZcRlic2eTmnA2YziYa0YQ5LO6CIJDSPDbM/X91ONWRefeE0l7dGR7Fbn4fY+2E/xrmhZjxN86hJQLQw==}
+  '@storm-software/workspace-tools@1.249.1':
+    resolution: {integrity: sha512-nOKaV/Rebn2dRBpVqRQzpE5NUVpLYVteKoIBjlbx/XR8SJE/F7QQ5hMcTsWGZ6pSHfz3qGoXIjVJeg+3Kz7B/w==}
     peerDependencies:
       '@storm-software/esbuild': workspace:*
       '@storm-software/prettier': workspace:*
@@ -13843,7 +13843,7 @@ snapshots:
       ignore: 5.3.2
       p-map: 4.0.0
 
-  '@storm-software/config-tools@1.150.13(@storm-software/config@1.101.17)':
+  '@storm-software/config-tools@1.150.14(@storm-software/config@1.101.17)':
     dependencies:
       '@storm-software/config': 1.101.17
       c12: 2.0.1
@@ -14034,7 +14034,7 @@ snapshots:
       - '@swc/core'
       - debug
 
-  '@storm-software/workspace-tools@1.249.0(g574aigqboenkvnzlhfcid37yi)':
+  '@storm-software/workspace-tools@1.249.1(g574aigqboenkvnzlhfcid37yi)':
     dependencies:
       '@ltd/j-toml': 1.38.0
       '@microsoft/api-extractor': 7.49.2(@types/node@22.13.0)
@@ -14067,7 +14067,7 @@ snapshots:
       - supports-color
       - typescript
 
-  '@storm-software/workspace-tools@1.249.0(hlc4x4b5yu5wz3ud7vk4r3ukbu)':
+  '@storm-software/workspace-tools@1.249.1(hlc4x4b5yu5wz3ud7vk4r3ukbu)':
     dependencies:
       '@ltd/j-toml': 1.38.0
       '@microsoft/api-extractor': 7.49.2(@types/node@22.13.0)
