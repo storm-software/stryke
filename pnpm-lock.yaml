@@ -42,6 +42,9 @@ catalogs:
     '@storm-software/linting-tools':
       specifier: latest
       version: 1.113.4
+    '@storm-software/markdownlint':
+      specifier: latest
+      version: 0.13.9
     '@storm-software/prettier':
       specifier: latest
       version: 0.31.20
@@ -183,6 +186,9 @@ importers:
       '@storm-software/linting-tools':
         specifier: 'catalog:'
         version: 1.113.4(chokidar@4.0.3)
+      '@storm-software/markdownlint':
+        specifier: 'catalog:'
+        version: 0.13.9
       '@storm-software/prettier':
         specifier: 'catalog:'
         version: 0.31.20(prettier@3.4.2)(typescript@5.7.3)
@@ -2240,7 +2246,6 @@ packages:
 
   '@ls-lint/ls-lint@2.2.3':
     resolution: {integrity: sha512-ekM12jNm/7O2I/hsRv9HvYkRdfrHpiV1epVuI2NP+eTIcEgdIdKkKCs9KgQydu/8R5YXTov9aHdOgplmCHLupw==}
-    cpu: [x64, arm64, s390x]
     os: [darwin, linux, win32]
     hasBin: true
 
@@ -3078,6 +3083,10 @@ packages:
     resolution: {integrity: sha512-O1MHzPo4Afkm9nOrlckBuiCrFPzDJs8gc5+yAi+4HhZZSD3vIbBlB8pnq8J6EGXdXFziaQR/ZAwXvdx0HcY3PQ==}
     engines: {node: '>=22.4.0', pnpm: '>=9.15.2'}
     hasBin: true
+
+  '@storm-software/markdownlint@0.13.9':
+    resolution: {integrity: sha512-7NUhnjalYNLCBjUuLpdvymIQoCdKScT/+Y1qWkiHTDuFOISTGMvTR+M/phux8pasxxxHmUkYHpcB+83qOYerjA==}
+    engines: {node: '>=22.4.0', pnpm: '>=9.15.2'}
 
   '@storm-software/prettier@0.31.20':
     resolution: {integrity: sha512-HqSta/UdLblYjwWVnInDyXXI878UXt3SLY7wA3CqN4mfEzRd+7KEVXfFg4zYZidjgbPLzzNzZW4VVG5J4ovo5g==}
@@ -13981,6 +13990,13 @@ snapshots:
     transitivePeerDependencies:
       - bluebird
       - chokidar
+      - supports-color
+
+  '@storm-software/markdownlint@0.13.9':
+    dependencies:
+      defu: 6.1.4
+      markdownlint-cli2: 0.17.2
+    transitivePeerDependencies:
       - supports-color
 
   '@storm-software/prettier@0.31.20(prettier@3.4.2)(typescript@5.7.3)':
