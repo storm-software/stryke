@@ -15,7 +15,7 @@
 
  -------------------------------------------------------------------*/
 
-import { writeSuccess } from "@storm-software/config-tools/logger/console";
+// import { writeSuccess } from "@storm-software/config-tools/logger/console";
 import { build } from "esbuild";
 
 build({
@@ -33,7 +33,8 @@ build({
   platform: "node"
   // eslint-disable-next-line unicorn/prefer-top-level-await
 }).then(() => {
-  writeSuccess("Stryke workspace plugins build completed successfully!");
-
-  writeSuccess("All Stryke plugins built successfully");
+  // eslint-disable-next-line no-console
+  console.log("Stryke workspace plugins build completed successfully!");
+  // eslint-disable-next-line no-console
+  console.log("All Stryke plugins built successfully");
 });
