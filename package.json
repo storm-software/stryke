@@ -94,7 +94,7 @@
     "@swc/helpers": "~0.5.11",
     "@taplo/cli": "^0.7.0",
     "@types/jest": "catalog:",
-    "@types/node": "20.9.0",
+    "@types/node": "catalog:",
     "copyfiles": "catalog:",
     "eslint": "9.12.0",
     "jest": "catalog:",
