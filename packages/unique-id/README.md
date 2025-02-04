@@ -25,14 +25,14 @@ This package includes generator functions for the following type of identifiers:
 Using [pnpm](http://pnpm.io):
 
 ```bash
-pnpm add -D stryke/unique-id
+pnpm add -D @stryke/unique-id
 ```
 
 <details>
   <summary>Using npm</summary>
 
 ```bash
-npm install -D stryke/unique-id
+npm install -D @stryke/unique-id
 ```
 
 </details>
@@ -41,7 +41,7 @@ npm install -D stryke/unique-id
   <summary>Using yarn</summary>
 
 ```bash
-yarn add -D stryke/unique-id
+yarn add -D @stryke/unique-id
 ```
 
 </details>

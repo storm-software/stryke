@@ -1,7 +1,7 @@
 <!-- START header -->
 <!-- END header -->
 
-# hash
+# Stryke - Hash
 
 A package containing various functions that given a certain parameter will
 generate a hash string
@@ -14,14 +14,14 @@ generate a hash string
 Using [pnpm](http://pnpm.io):
 
 ```bash
-pnpm add -D stryke/hash
+pnpm add -D @stryke/hash
 ```
 
 <details>
   <summary>Using npm</summary>
 
 ```bash
-npm install -D stryke/hash
+npm install -D @stryke/hash
 ```
 
 </details>
@@ -30,7 +30,7 @@ npm install -D stryke/hash
   <summary>Using yarn</summary>
 
 ```bash
-yarn add -D stryke/hash
+yarn add -D @stryke/hash
 ```
 
 </details>

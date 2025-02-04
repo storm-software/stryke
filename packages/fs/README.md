@@ -1,7 +1,7 @@
 <!-- START header -->
 <!-- END header -->
 
-# fs
+# Stryke - File System Utilities
 
 A package containing various file system utilities that expand the functionality
 of NodeJs\&#39;s \`fs\` module
@@ -14,14 +14,14 @@ of NodeJs\&#39;s \`fs\` module
 Using [pnpm](http://pnpm.io):
 
 ```bash
-pnpm add -D stryke/fs
+pnpm add -D @stryke/fs
 ```
 
 <details>
   <summary>Using npm</summary>
 
 ```bash
-npm install -D stryke/fs
+npm install -D @stryke/fs
 ```
 
 </details>
@@ -30,7 +30,7 @@ npm install -D stryke/fs
   <summary>Using yarn</summary>
 
 ```bash
-yarn add -D stryke/fs
+yarn add -D @stryke/fs
 ```
 
 </details>

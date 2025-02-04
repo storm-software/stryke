@@ -1,7 +1,7 @@
 <!-- START header -->
 <!-- END header -->
 
-# path
+# Stryke - Path Utilities
 
 A package containing various utilities that expand the functionality of
 NodeJs&#39;s \`path\` module
@@ -14,14 +14,14 @@ NodeJs&#39;s \`path\` module
 Using [pnpm](http://pnpm.io):
 
 ```bash
-pnpm add -D stryke/path
+pnpm add -D @stryke/path
 ```
 
 <details>
   <summary>Using npm</summary>
 
 ```bash
-npm install -D stryke/path
+npm install -D @stryke/path
 ```
 
 </details>
@@ -30,7 +30,7 @@ npm install -D stryke/path
   <summary>Using yarn</summary>
 
 ```bash
-yarn add -D stryke/path
+yarn add -D @stryke/path
 ```
 
 </details>
