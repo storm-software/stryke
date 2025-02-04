@@ -70,6 +70,7 @@
     "release": "pnpm storm-git release",
     "start": "nx serve"
   },
+  "dependencies": {},
   "devDependencies": {
     "@ls-lint/ls-lint": "^2.2.3",
     "@nx/eslint-plugin": "catalog:",
@@ -94,6 +95,7 @@
     "@swc/helpers": "~0.5.11",
     "@taplo/cli": "^0.7.0",
     "@types/jest": "catalog:",
+    "@types/node": "20.9.0",
     "@types/react": "catalog:",
     "@types/react-dom": "catalog:",
     "copyfiles": "catalog:",
@@ -162,7 +164,8 @@
       "@stryke/json": "workspace:*",
       "@stryke/string-format": "workspace:*",
       "@stryke/unique-id": "workspace:*",
-      "@stryke/hash": "workspace:*"
+      "@stryke/hash": "workspace:*",
+      "@stryke/path": "workspace:*"
     }
   },
   "prettier": "@storm-software/prettier/config.json",

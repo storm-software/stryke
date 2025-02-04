@@ -14,6 +14,8 @@
       "@stryke/http/*": ["packages/http/src/*"],
       "@stryke/json": ["packages/json/src/index.ts"],
       "@stryke/json/*": ["packages/json/src/*"],
+      "@stryke/path": ["packages/path/src/index.ts"],
+      "@stryke/path/*": ["packages/path/src/*"],
       "@stryke/string-format": ["packages/string-format/src/index.ts"],
       "@stryke/string-format/*": ["packages/string-format/src/*"],
       "@stryke/tools-nx": ["tools/nx/src/index.ts"],
