@@ -69,7 +69,6 @@
     "release": "pnpm storm-git release",
     "start": "nx serve"
   },
-  "dependencies": {},
   "devDependencies": {
     "@ls-lint/ls-lint": "^2.2.3",
     "@nx/eslint-plugin": "catalog:",
@@ -103,6 +102,7 @@
     "knip": "5.33.1",
     "lefthook": "^1.7.18",
     "ls-lint": "^0.1.2",
+    "markdownlint-cli2": "^0.17.2",
     "nx": "catalog:",
     "prettier": "^3.4.2",
     "rimraf": "catalog:",
