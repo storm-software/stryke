@@ -15,24 +15,13 @@
 
  -------------------------------------------------------------------*/
 
-import { build } from "esbuild";
-import { chalk, echo, usePwsh } from "zx";
+import { $, chalk, echo, usePwsh } from "zx";
 
 usePwsh();
 
-await build({
-  entryPoints: ["tools/nx/src/plugins/package-build.ts"],
-  outdir: "dist/plugins",
-  tsconfig: "tools/nx/tsconfig.json",
-  packages: "external",
-  logLevel: "info",
-  bundle: true,
-  minify: false,
-  outExtension: {
-    ".js": ".js"
-  },
-  format: "cjs",
-  platform: "node"
-});
+await $`nx run-many --target=lint,format --all --exclude="@storm-stack/monorepo" --parallel=5`.timeout(
+  `${30 * 60}s`
+);
+await $`nx format:write`.timeout(`${30 * 60}s`);
 
-echo`${chalk.green("Completed monorepo bootstrapping successfully!")}`;
+echo`${chalk.green("Successfully formatted the monorepo's files")}`;

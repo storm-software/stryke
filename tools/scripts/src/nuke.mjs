@@ -15,24 +15,17 @@
 
  -------------------------------------------------------------------*/
 
-import { build } from "esbuild";
-import { chalk, echo, usePwsh } from "zx";
+import { $, chalk, echo, usePwsh } from "zx";
 
 usePwsh();
 
-await build({
-  entryPoints: ["tools/nx/src/plugins/package-build.ts"],
-  outdir: "dist/plugins",
-  tsconfig: "tools/nx/tsconfig.json",
-  packages: "external",
-  logLevel: "info",
-  bundle: true,
-  minify: false,
-  outExtension: {
-    ".js": ".js"
-  },
-  format: "cjs",
-  platform: "node"
-});
+await $`nx clear-cache`;
+await $`pnpm exec rimraf --no-interactive -- ./.nx/cache ./.nx/workspace-data ./dist ./tmp ./pnpm-lock.yaml`.timeout(
+  `${5 * 60}s`
+);
+await $`pnpm exec rimraf --no-interactive --glob "./*/**/{node_modules,dist}" `.timeout(
+  `${5 * 60}s`
+);
+await $`pnpm exec rimraf --no-interactive ./node_modules`.timeout(`${5 * 60}s`);
 
-echo`${chalk.green("Completed monorepo bootstrapping successfully!")}`;
+echo`${chalk.green("Successfully nuked the cache, node_modules, and dist folders")}`;

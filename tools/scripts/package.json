@@ -8,7 +8,7 @@
     "esbuild": "catalog:"
   },
   "devDependencies": {
-    "@types/node": "^22.13.0",
+    "@types/node": "catalog:",
     "rimraf": "catalog:",
     "tsup": "catalog:"
   }
