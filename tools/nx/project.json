@@ -4,6 +4,5 @@
   "sourceRoot": "tools/nx/src",
   "projectType": "library",
   "tags": [],
-  "targets": {},
-  "implicitDependencies": ["tools-scripts"]
+  "targets": {}
 }
