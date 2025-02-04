@@ -1,0 +1,40 @@
+{
+  "name": "@stryke/fs",
+  "version": "0.0.1",
+  "type": "module",
+  "description": "A package containing various file system utilities that expand the functionality of NodeJs's `fs` module.",
+  "repository": {
+    "type": "github",
+    "url": "https://github.com/storm-software/stryke.git",
+    "directory": "packages/fs"
+  },
+  "private": false,
+  "peerDependencies": {
+    "nx": "catalog:"
+  },
+  "peerDependenciesMeta": {
+    "nx": {
+      "optional": true
+    }
+  },
+  "dependencies": {
+    "@antfu/install-pkg": "^1.0.0",
+    "@antfu/ni": "^23.2.0",
+    "@zkochan/js-yaml": "^0.0.7",
+    "chalk": "5.3.0",
+    "execa": "^9.4.0",
+    "nanotar": "^0.2.0",
+    "prompts": "^2.4.2",
+    "semver": "7.6.3",
+    "terminal-link": "^3.0.0",
+    "tinyexec": "^0.3.1"
+  },
+  "devDependencies": {
+    "@types/node": "catalog:",
+    "@types/semver": "7.5.8",
+    "nx": "catalog:"
+  },
+  "publishConfig": {
+    "access": "public"
+  }
+}

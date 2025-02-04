@@ -41,8 +41,8 @@
   ],
   "scripts": {
     "build": "pnpm build-prod",
-    "build-dev": "pnpm prepare && nx run-many --target=build --all --exclude=\"@stryke/monorepo\" --configuration=development --nxBail",
-    "build-prod": "pnpm prepare && nx run-many --target=build --all --exclude=\"@stryke/monorepo\" --configuration=production --parallel=5",
+    "build-dev": "pnpm prebuild && nx run-many --target=build --all --exclude=\"@stryke/monorepo\" --configuration=development --nxBail",
+    "build-prod": "pnpm prebuild && nx run-many --target=build --all --exclude=\"@stryke/monorepo\" --configuration=production --parallel=5",
     "clean": "pnpm exec rimraf dist",
     "clean-packages": "pnpm exec rimraf dist/packages",
     "clean-tools": "pnpm exec rimraf dist/tools",
@@ -64,8 +64,7 @@
     "nuke-cache": "nx clear-cache && pnpm exec rimraf --no-interactive -- ./.nx/cache ./.nx/workspace-data ./dist ./tmp ./pnpm-lock.yaml ./.tamagui",
     "nuke-node_modules": "pnpm exec rimraf --no-interactive --glob {tools,packages}/**/{node_modules,dist}",
     "nx": "nx",
-    "postinstall": "pnpm exec tsx tools/scripts/src/build-plugins.ts",
-    "prepare": "pnpm postinstall && nx run-many --target=build --projects=tools/*",
+    "prebuild": "pnpm exec tsx tools/scripts/src/build-plugins.ts && nx run-many --target=build --projects=tools/*",
     "push": "git push origin main:main",
     "release": "pnpm storm-git release",
     "start": "nx serve"
@@ -165,7 +164,8 @@
       "@stryke/string-format": "workspace:*",
       "@stryke/unique-id": "workspace:*",
       "@stryke/hash": "workspace:*",
-      "@stryke/path": "workspace:*"
+      "@stryke/path": "workspace:*",
+      "@stryke/fs": "workspace:*"
     }
   },
   "prettier": "@storm-software/prettier/config.json",
