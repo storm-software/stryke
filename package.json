@@ -40,7 +40,7 @@
     "monorepo"
   ],
   "scripts": {
-    "bootstrap": "pnpm exec tsx tools/scripts/src/bootstrap.ts && nx run-many --target=build --projects=tools/*",
+    "bootstrap": "pnpm exec zx tools/scripts/src/bootstrap.mjs && nx run-many --target=build --projects=tools/*",
     "build": "pnpm build-prod",
     "build-dev": "pnpm bootstrap && nx run-many --target=build --all --exclude=\"@stryke/monorepo\" --configuration=development --nxBail",
     "build-prod": "pnpm bootstrap && nx run-many --target=build --all --exclude=\"@stryke/monorepo\" --configuration=production --parallel=5",
@@ -112,7 +112,8 @@
     "tslib": "^2.7.0",
     "tsx": "^4.19.2",
     "typescript": "^5.6.2",
-    "verdaccio": "5.32.2"
+    "verdaccio": "5.32.2",
+    "zx": "^8.3.2"
   },
   "manypkg": {
     "defaultBranch": "main",

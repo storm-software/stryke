@@ -3,27 +3,6 @@
   "version": "0.0.1",
   "type": "module",
   "private": true,
-  "main": "./dist/index.cjs",
-  "module": "./dist/index.js",
-  "exports": {
-    "./package.json": "./package.json",
-    ".": {
-      "import": {
-        "types": "./dist/index.d.ts",
-        "default": "./dist/index.js"
-      },
-      "require": {
-        "types": "./dist/index.d.cts",
-        "default": "./dist/index.cjs"
-      }
-    },
-    "./*": "./dist/*"
-  },
-  "types": "./dist/index.d.ts",
-  "scripts": {
-    "build": "tsup --config=tsup.config.ts",
-    "clean": "rimraf dist"
-  },
   "dependencies": {
     "@storm-software/config-tools": "catalog:",
     "esbuild": "catalog:"
