@@ -1,0 +1,29 @@
+{
+  "name": "@stryke/cli",
+  "version": "0.0.1",
+  "type": "module",
+  "description": "A package containing various CLI helper functions",
+  "repository": {
+    "type": "github",
+    "url": "https://github.com/storm-software/stryke.git",
+    "directory": "packages/cli"
+  },
+  "private": false,
+  "dependencies": {
+    "@antfu/ni": "^23.3.1",
+    "chalk": "5.3.0",
+    "commander": "13.1.0",
+    "execa": "^9.4.0",
+    "figlet": "^1.7.0",
+    "prompts": "^2.4.2",
+    "terminal-link": "^3.0.0",
+    "tinyexec": "^0.3.1"
+  },
+  "devDependencies": {
+    "@types/figlet": "^1.7.0",
+    "@types/node": "^22.10.2"
+  },
+  "publishConfig": {
+    "access": "public"
+  }
+}

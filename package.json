@@ -161,7 +161,8 @@
       "@stryke/hash": "workspace:*",
       "@stryke/path": "workspace:*",
       "@stryke/fs": "workspace:*",
-      "@stryke/hooks": "workspace:*"
+      "@stryke/hooks": "workspace:*",
+      "@stryke/cli": "workspace:*"
     }
   },
   "prettier": "@storm-software/prettier/config.json",
