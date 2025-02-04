@@ -19,7 +19,9 @@
       "@stryke/tools-scripts": ["tools/scripts/src/index.ts"],
       "@stryke/tools-scripts/*": ["tools/scripts/src/*"],
       "@stryke/types": ["packages/types/src/index.ts"],
-      "@stryke/types/*": ["packages/types/src/*"]
+      "@stryke/types/*": ["packages/types/src/*"],
+      "@stryke/unique-id": ["packages/unique-id/src/index.ts"],
+      "@stryke/unique-id/*": ["packages/unique-id/src/*"]
     }
   }
 }

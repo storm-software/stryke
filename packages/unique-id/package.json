@@ -1,0 +1,19 @@
+{
+  "name": "@stryke/unique-id",
+  "version": "0.0.1",
+  "type": "module",
+  "description": "A package containing various helper functions to generate unique identifier strings",
+  "repository": {
+    "type": "github",
+    "url": "https://github.com/storm-software/stryke.git",
+    "directory": "packages/unique-id"
+  },
+  "private": false,
+  "dependencies": {
+    "@noble/hashes": "1.5.0",
+    "nanoid": "^5.0.9"
+  },
+  "publishConfig": {
+    "access": "public"
+  }
+}

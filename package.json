@@ -160,7 +160,8 @@
       "@stryke/types": "workspace:*",
       "@stryke/http": "workspace:*",
       "@stryke/json": "workspace:*",
-      "@stryke/string-format": "workspace:*"
+      "@stryke/string-format": "workspace:*",
+      "@stryke/unique-id": "workspace:*"
     }
   },
   "prettier": "@storm-software/prettier/config.json",

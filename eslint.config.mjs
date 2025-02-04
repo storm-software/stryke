@@ -19,6 +19,7 @@ import { getStormConfig } from "@storm-software/eslint";
 
 Error.stackTraceLimit = Number.POSITIVE_INFINITY;
 
+/** @type {import('eslint').Linter.Config[]} */
 export default getStormConfig({
   name: "stryke",
   rules: {
