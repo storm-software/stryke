@@ -16,16 +16,14 @@
  -------------------------------------------------------------------*/
 
 /**
- * The unique-id library used by Storm Software for building TypeScript applications.
+ * The hashing library used by Storm Software for building TypeScript applications.
  *
  * @remarks
- * A package containing various helper functions to generate unique identifier strings
+ * A package containing utility functions that hash data using various algorithms.
  *
  * @packageDocumentation
  */
 
-export * from "./cuid";
-export * from "./nanoid";
-export * from "./random";
-export * from "./snowflake";
-export * from "./uuid";
+export * from "./hash";
+export * from "./sha-256";
+export * from "./xx-hash";

@@ -136,6 +136,7 @@ overrides:
   '@stryke/json': workspace:*
   '@stryke/string-format': workspace:*
   '@stryke/unique-id': workspace:*
+  '@stryke/hash': workspace:*
 
 importers:
 
@@ -279,6 +280,12 @@ importers:
       verdaccio:
         specifier: 5.32.2
         version: 5.32.2(typanion@3.14.0)
+
+  packages/hash:
+    dependencies:
+      js-xxhash:
+        specifier: ^4.0.0
+        version: 4.0.0
 
   packages/helpers:
     dependencies:
@@ -2135,6 +2142,7 @@ packages:
 
   '@ls-lint/ls-lint@2.2.3':
     resolution: {integrity: sha512-ekM12jNm/7O2I/hsRv9HvYkRdfrHpiV1epVuI2NP+eTIcEgdIdKkKCs9KgQydu/8R5YXTov9aHdOgplmCHLupw==}
+    cpu: [x64, arm64, s390x]
     os: [darwin, linux, win32]
     hasBin: true
 
@@ -6797,6 +6805,10 @@ packages:
 
   js-tokens@4.0.0:
     resolution: {integrity: sha512-RdJUflcE3cUzKiMqQgsCu06FPu9UdIJO0beYbPhHN4k6apgJtifcoCtT9bcxOpYBtpD2kCM6Sbzg4CausW/PKQ==}
+
+  js-xxhash@4.0.0:
+    resolution: {integrity: sha512-3Q2eIqG6s1KEBBmkj9tGM9lef8LJbuRyTVBdI3GpTnrvtytunjLPO0wqABp5qhtMzfA32jYn1FlnIV7GH1RAHQ==}
+    engines: {node: '>=18.0.0'}
 
   js-yaml@3.14.1:
     resolution: {integrity: sha512-okMH7OXXJ7YrN9Ok3/SXrnu4iX9yOk+25nqX4imS2npuvTYDmo/QEZoqwZkYaIDk3jVvBOTOIEgEhaLOynBS9g==}
@@ -19620,6 +19632,8 @@ snapshots:
   joycon@3.1.1: {}
 
   js-tokens@4.0.0: {}
+
+  js-xxhash@4.0.0: {}
 
   js-yaml@3.14.1:
     dependencies:

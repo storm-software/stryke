@@ -6,6 +6,8 @@
     "rootDir": ".",
     "baseUrl": ".",
     "paths": {
+      "@stryke/hash": ["packages/hash/src/index.ts"],
+      "@stryke/hash/*": ["packages/hash/src/*"],
       "@stryke/helpers": ["packages/helpers/src/index.ts"],
       "@stryke/helpers/*": ["packages/helpers/src/*"],
       "@stryke/http": ["packages/http/src/index.ts"],

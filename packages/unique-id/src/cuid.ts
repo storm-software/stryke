@@ -1,21 +1,21 @@
 /*-------------------------------------------------------------------
 
-                  ⚡ Storm Software - Storm Stack
+                       ⚡ Storm Software - Stryke
 
- This code was released as part of the Storm Stack project. Storm Stack
+ This code was released as part of the Stryke project. Stryke
  is maintained by Storm Software under the Apache-2.0 License, and is
  free for commercial and private use. For more information, please visit
  our licensing page.
 
  Website:         https://stormsoftware.com
- Repository:      https://github.com/storm-software/storm-stack
- Documentation:   https://stormsoftware.com/projects/storm-stack/docs
+ Repository:      https://github.com/storm-software/stryke
+ Documentation:   https://stormsoftware.com/projects/stryke/docs
  Contact:         https://stormsoftware.com/contact
- License:         https://stormsoftware.com/projects/storm-stack/license
+ License:         https://stormsoftware.com/projects/stryke/license
 
  -------------------------------------------------------------------*/
 
-import { hash } from "@storm-stack/hashing";
+import { hash } from "@stryke/hash";
 import { randomLetter } from "./random";
 
 /**
@@ -69,9 +69,9 @@ function createEntropy(length = 4, random = Math.random) {
 function fingerprint(options?: { globalObj?: any }) {
   const globalObj =
     (options?.globalObj ?? typeof globalThis === "undefined")
-      ? typeof window === "undefined"
+      ? typeof globalThis === "undefined"
         ? {}
-        : window
+        : globalThis
       : globalThis;
 
   const globals = Object.keys(globalObj).toString();
@@ -107,6 +107,7 @@ export function cuid(): string {
   const salt = createEntropy(CUID_LARGE_LENGTH, Math.random);
 
   const hashed = hash(`${time + salt + count + fingerprint()}`);
+
   return `${
     randomLetter() +
     hashed.slice(1, Math.min(hashed.length - 1, CUID_LARGE_LENGTH))
