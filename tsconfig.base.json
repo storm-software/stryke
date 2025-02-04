@@ -12,6 +12,8 @@
       "@stryke/hash/*": ["packages/hash/src/*"],
       "@stryke/helpers": ["packages/helpers/src/index.ts"],
       "@stryke/helpers/*": ["packages/helpers/src/*"],
+      "@stryke/hooks": ["packages/hooks/src/index.ts"],
+      "@stryke/hooks/*": ["packages/hooks/src/*"],
       "@stryke/http": ["packages/http/src/index.ts"],
       "@stryke/http/*": ["packages/http/src/*"],
       "@stryke/json": ["packages/json/src/index.ts"],

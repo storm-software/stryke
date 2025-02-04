@@ -95,8 +95,6 @@
     "@taplo/cli": "^0.7.0",
     "@types/jest": "catalog:",
     "@types/node": "20.9.0",
-    "@types/react": "catalog:",
-    "@types/react-dom": "catalog:",
     "copyfiles": "catalog:",
     "eslint": "9.12.0",
     "jest": "catalog:",
@@ -107,9 +105,6 @@
     "ls-lint": "^0.1.2",
     "nx": "catalog:",
     "prettier": "^3.4.2",
-    "react": "catalog:",
-    "react-dom": "catalog:",
-    "react-native": "catalog:",
     "rimraf": "catalog:",
     "sherif": "1.2.0",
     "ts-jest": "29.2.5",
@@ -165,7 +160,8 @@
       "@stryke/unique-id": "workspace:*",
       "@stryke/hash": "workspace:*",
       "@stryke/path": "workspace:*",
-      "@stryke/fs": "workspace:*"
+      "@stryke/fs": "workspace:*",
+      "@stryke/hooks": "workspace:*"
     }
   },
   "prettier": "@storm-software/prettier/config.json",

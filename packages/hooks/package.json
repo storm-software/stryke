@@ -1,0 +1,38 @@
+{
+  "name": "@stryke/hooks",
+  "version": "0.0.1",
+  "type": "module",
+  "description": "A package containing shared hooks that can be used in any React UI project",
+  "repository": {
+    "type": "github",
+    "url": "https://github.com/storm-software/stryke.git",
+    "directory": "packages/hooks"
+  },
+  "private": false,
+  "peerDependencies": {
+    "react": "catalog:",
+    "react-dom": "catalog:",
+    "react-native": "catalog:"
+  },
+  "peerDependenciesMeta": {
+    "react": {
+      "optional": false
+    },
+    "react-dom": {
+      "optional": true
+    },
+    "react-native": {
+      "optional": true
+    }
+  },
+  "devDependencies": {
+    "@types/react": "catalog:",
+    "@types/react-dom": "catalog:",
+    "react": "catalog:",
+    "react-dom": "catalog:",
+    "react-native": "catalog:"
+  },
+  "publishConfig": {
+    "access": "public"
+  }
+}
