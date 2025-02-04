@@ -25,7 +25,7 @@
       "plugin": "@nx/eslint/plugin",
       "exclude": ["packages/**/__fixtures__/**/*"],
       "options": {
-        "targetName": "lint",
+        "targetName": "lint-eslint",
         "useFlatConfig": true
       }
     },

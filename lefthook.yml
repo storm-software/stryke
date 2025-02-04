@@ -37,13 +37,11 @@ pre-commit:
       stage_fixed: true
     lint-toml:
       glob: "**/*.toml"
-      run:
-        'pnpm exec taplo format --check
+      run: 'pnpm exec taplo format --check
         --config="./node_modules/@storm-software/linting-tools/taplo/config.toml"'
     lint-filename:
       glob: "**/*.*"
-      run:
-        'pnpm exec ls-lint
+      run: 'pnpm exec ls-lint
         --config="./node_modules/@storm-software/linting-tools/ls-lint/config.yml"'
     lint-codeowners:
       files: "git diff --name-only HEAD @{push}"
@@ -85,14 +83,18 @@ pre-push:
     prettier:
       files: "git diff --name-only HEAD @{push}"
       glob: "!**/generators/*/files/**/*"
-      run:
-        "pnpm exec prettier {files} --write --ignore-unknown
+      run: "pnpm exec prettier {files} --write --ignore-unknown
         --no-error-on-unmatched-pattern --cache && git update-index"
       stage_fixed: true
     sherif:
       files: "git diff --name-only HEAD @{push}"
       glob: "**/*.{js,ts,cjs,mjs,d.cts,d.mts,jsx,tsx,json,jsonc}"
       run: "pnpm lint-sherif"
+      stage_fixed: true
+    eslint:
+      files: "git diff --name-only HEAD @{push}"
+      glob: "**/*"
+      run: 'pnpm nx run-many --target=lint --all --exclude="@stryke/monorepo" && git update-index'
       stage_fixed: true
     format:
       files: "git diff --name-only HEAD @{push}"
