@@ -486,7 +486,7 @@ importers:
         version: 0.24.2
     devDependencies:
       '@types/node':
-        specifier: ^22.13.0
+        specifier: 'catalog:'
         version: 22.13.0
       rimraf:
         specifier: 'catalog:'
