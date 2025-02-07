@@ -33,7 +33,7 @@ try {
     outExtension: {
       ".js": ".js"
     },
-    format: "cjs",
+    format: "esm",
     platform: "node"
   });
 

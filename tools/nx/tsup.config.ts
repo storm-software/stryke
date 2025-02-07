@@ -21,7 +21,7 @@ export default defineConfig({
   name: "tools-nx",
   entry: ["index.ts", "src/plugins/*.ts"],
   target: "node22",
-  format: ["cjs"],
+  format: ["cjs", "esm"],
   bundle: true,
   splitting: true,
   treeshake: true,

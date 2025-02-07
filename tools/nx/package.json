@@ -1,7 +1,6 @@
 {
   "name": "@stryke/tools-nx",
   "version": "0.0.1",
-  "type": "commonjs",
   "description": "Tools for managing the Stryke workspace, including various Nx generators and executors for common development tasks.",
   "repository": {
     "type": "github",

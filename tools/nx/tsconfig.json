@@ -3,16 +3,7 @@
   "extends": "@storm-software/tsconfig/core.json",
   "compilerOptions": {
     "outDir": "dist",
-    "target": "ES2021",
-    "skipLibCheck": true,
-    "skipDefaultLibCheck": true,
-    "module": "nodenext",
-    "moduleResolution": "nodenext",
-    "esModuleInterop": true,
-    "allowSyntheticDefaultImports": true,
-    "isolatedModules": true,
-    "importHelpers": true,
-    "verbatimModuleSyntax": false,
+    "rootDir": "../..",
     "types": ["node"]
   },
   "include": [
