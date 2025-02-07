@@ -32,19 +32,19 @@ catalogs:
       version: 1.101.26
     '@storm-software/config-tools':
       specifier: latest
-      version: 1.151.6
+      version: 1.152.0
     '@storm-software/cspell':
       specifier: latest
-      version: 0.16.3
+      version: 0.17.0
     '@storm-software/eslint':
       specifier: latest
-      version: 0.119.5
+      version: 0.120.0
     '@storm-software/git-tools':
       specifier: latest
-      version: 2.89.41
+      version: 2.90.0
     '@storm-software/linting-tools':
       specifier: latest
-      version: 1.115.11
+      version: 1.116.0
     '@storm-software/markdownlint':
       specifier: latest
       version: 0.15.1
@@ -65,7 +65,7 @@ catalogs:
       version: 0.10.42
     '@storm-software/workspace-tools':
       specifier: latest
-      version: 1.254.8
+      version: 1.255.0
     '@types/jest':
       specifier: ^29.5.13
       version: 29.5.13
@@ -182,16 +182,16 @@ importers:
         version: 1.101.26
       '@storm-software/cspell':
         specifier: 'catalog:'
-        version: 0.16.3(cspell@8.17.3)
+        version: 0.17.0(cspell@8.17.3)
       '@storm-software/eslint':
         specifier: 'catalog:'
-        version: 0.119.5(cn3lucmpqxh7e5z2lg37bwfrbu)
+        version: 0.120.0(cn3lucmpqxh7e5z2lg37bwfrbu)
       '@storm-software/git-tools':
         specifier: 'catalog:'
-        version: 2.89.41(@swc-node/register@1.9.2(@swc/core@1.5.29(@swc/helpers@0.5.15))(@swc/types@0.1.17)(typescript@5.7.3))(@swc/core@1.5.29(@swc/helpers@0.5.15))(chokidar@4.0.3)
+        version: 2.90.0(@swc-node/register@1.9.2(@swc/core@1.5.29(@swc/helpers@0.5.15))(@swc/types@0.1.17)(typescript@5.7.3))(@swc/core@1.5.29(@swc/helpers@0.5.15))(chokidar@4.0.3)
       '@storm-software/linting-tools':
         specifier: 'catalog:'
-        version: 1.115.11(chokidar@4.0.3)
+        version: 1.116.0(chokidar@4.0.3)
       '@storm-software/markdownlint':
         specifier: 'catalog:'
         version: 0.15.1
@@ -212,7 +212,7 @@ importers:
         version: 0.10.42(@nx/devkit@20.4.1(nx@20.4.1(@swc-node/register@1.9.2(@swc/core@1.5.29(@swc/helpers@0.5.15))(@swc/types@0.1.17)(typescript@5.7.3))(@swc/core@1.5.29(@swc/helpers@0.5.15))))(@swc-node/register@1.9.2(@swc/core@1.5.29(@swc/helpers@0.5.15))(@swc/types@0.1.17)(typescript@5.7.3))(@swc/core@1.5.29(@swc/helpers@0.5.15))(untyped@1.5.2)
       '@storm-software/workspace-tools':
         specifier: 'catalog:'
-        version: 1.254.8(jwmfxglznniovahl7sxll5ip3a)
+        version: 1.255.0(jwmfxglznniovahl7sxll5ip3a)
       '@swc-node/register':
         specifier: ~1.9.1
         version: 1.9.2(@swc/core@1.5.29(@swc/helpers@0.5.15))(@swc/types@0.1.17)(typescript@5.7.3)
@@ -414,7 +414,7 @@ importers:
     dependencies:
       '@storm-software/config-tools':
         specifier: 'catalog:'
-        version: 1.151.6(@storm-software/config@1.101.26)
+        version: 1.152.0(@storm-software/config@1.101.26)
       mlly:
         specifier: 1.7.4
         version: 1.7.4
@@ -440,7 +440,7 @@ importers:
         version: 20.4.1(nx@20.4.1(@swc-node/register@1.9.2(@swc/core@1.7.26(@swc/helpers@0.5.15))(@swc/types@0.1.17)(typescript@5.7.3))(@swc/core@1.7.26(@swc/helpers@0.5.15)))
       '@storm-software/workspace-tools':
         specifier: 'catalog:'
-        version: 1.254.8(5qoqdnwmn76s6cbglb4y2u3j3i)
+        version: 1.255.0(5qoqdnwmn76s6cbglb4y2u3j3i)
       defu:
         specifier: 'catalog:'
         version: 6.1.4
@@ -2582,8 +2582,8 @@ packages:
     engines: {node: '>=8.10'}
     hasBin: true
 
-  '@storm-software/config-tools@1.151.6':
-    resolution: {integrity: sha512-IbKyGgVi3Gl/0GOsT6wkrO4WZRSTK9/qw1WkUlbhgV64p8q2hWmF1W2Zu+RAaoasMdZ6wHXb0IXWouARkabneQ==}
+  '@storm-software/config-tools@1.152.0':
+    resolution: {integrity: sha512-1IwWzy+XPWipWskcIIozqoRcCN39Nfr7Eij1BAu/vm/bOMPU0BxMW7nv1ORdHZjZG5eLxBa1K//rmUpWtFL+qA==}
     hasBin: true
     peerDependencies:
       '@storm-software/config': workspace:*
@@ -2591,14 +2591,14 @@ packages:
   '@storm-software/config@1.101.26':
     resolution: {integrity: sha512-R7yyLHCLu5RZu6AFBPT3iMAx7NzT4sH2ih1kdwVPX40K27Lng8wrW1bCS5rICJhLkTQBCliP8v2QShKDHDaGaA==}
 
-  '@storm-software/cspell@0.16.3':
-    resolution: {integrity: sha512-GG4K4BV1cy6rlxHAZE6QDOa5zEqtDr1IGDIVhivrLKo4599NjjqIQ0ZGqsIPl7b+bJMWPe+sEUqdBrkCxEzm6w==}
+  '@storm-software/cspell@0.17.0':
+    resolution: {integrity: sha512-m+9Eis0DWiYdx81eYzRXWvv8H4eZXJh5PceXChFBcs8Eu2WGvIgPHke8gAfCU9pumSheLTpPeC64FYG+NdutXg==}
     engines: {node: '>=22.4.0', pnpm: '>=9.15.2'}
     peerDependencies:
       cspell: ^8.17.3
 
-  '@storm-software/eslint@0.119.5':
-    resolution: {integrity: sha512-HnTmEh3pv3vwSzaO+mvUKzhBpjz9iYyTiAK1Amvc88baNcVKDKtgrW9akNkWeo+yuwUm3gCqsqnCHrRlkkaEKw==}
+  '@storm-software/eslint@0.120.0':
+    resolution: {integrity: sha512-exO6BshafHwVXVz1kUEaDNDtze86KUSic3MRRuooFP+Vv0qua545hydyem3lgrsqy+G0a0/CoZusmdFPDgKxiQ==}
     engines: {node: '>=22.4.0', pnpm: '>=9.15.2'}
     peerDependencies:
       '@eslint/config-inspector': ^0.5.1
@@ -2612,13 +2612,13 @@ packages:
       graphql:
         optional: true
 
-  '@storm-software/git-tools@2.89.41':
-    resolution: {integrity: sha512-5gq58l6ZNCCSkiAvWGuBLHOF3SMjWBmUVIJP7NcDjh3R5Z6VE79BLbIwQ7gSP8JLVG/AJy95K/FHYibLRKs9XA==}
+  '@storm-software/git-tools@2.90.0':
+    resolution: {integrity: sha512-0/Gb3pkxax0J8IWTBNdFB7ywnnE0Rsqo416jlL+fHmtsBqrmbAnEfIrD19/3jPIeZDBttUkIPJYJHXb/lOLbgg==}
     engines: {node: '>=22.4.0', pnpm: '>=9.15.2'}
     hasBin: true
 
-  '@storm-software/linting-tools@1.115.11':
-    resolution: {integrity: sha512-Q9sPigwV5b9htVbxBIZ4sGvI45D1OQ/mfl3gDaSM5RQ4jDhG7xZ0NNvig+6hGMOfwXicLYS43qSXJR593UUYBQ==}
+  '@storm-software/linting-tools@1.116.0':
+    resolution: {integrity: sha512-4IvBe+7YnSNambqqNfgI5unm6UYzkJADQIZwZCJzbluaXjapNtBrGz3PS3IEjy0DtX7nBrH8oSvhzUb6XBEKSg==}
     engines: {node: '>=22.4.0', pnpm: '>=9.15.2'}
     hasBin: true
 
@@ -2672,8 +2672,8 @@ packages:
       '@nx/devkit': ^20.3.1
       untyped: ^1.5.2
 
-  '@storm-software/workspace-tools@1.254.8':
-    resolution: {integrity: sha512-v2vL4sEOfcanQHKiD22JmOnxlMVWQSZGJ+27iVQbC4K7iIMmLQlNvKqhehXuIbCEqw/1V+s/5VAEW937V4JgWw==}
+  '@storm-software/workspace-tools@1.255.0':
+    resolution: {integrity: sha512-Q/C5U980BAj7nEl7n9PoDPcEyXR0KYLC7C9prU4hi+CzkIQqVQXcgoj/bw+s8dIOMk1nEn23QhBVkBqRGX5KtA==}
     peerDependencies:
       '@storm-software/esbuild': workspace:*
       '@storm-software/prettier': workspace:*
@@ -11921,7 +11921,7 @@ snapshots:
       ignore: 5.3.2
       p-map: 4.0.0
 
-  '@storm-software/config-tools@1.151.6(@storm-software/config@1.101.26)':
+  '@storm-software/config-tools@1.152.0(@storm-software/config@1.101.26)':
     dependencies:
       '@storm-software/config': 1.101.26
       c12: 2.0.1
@@ -11939,11 +11939,11 @@ snapshots:
     dependencies:
       zod: 3.24.1
 
-  '@storm-software/cspell@0.16.3(cspell@8.17.3)':
+  '@storm-software/cspell@0.17.0(cspell@8.17.3)':
     dependencies:
       cspell: 8.17.3
 
-  '@storm-software/eslint@0.119.5(cn3lucmpqxh7e5z2lg37bwfrbu)':
+  '@storm-software/eslint@0.120.0(cn3lucmpqxh7e5z2lg37bwfrbu)':
     dependencies:
       '@cspell/eslint-plugin': 8.13.1(eslint@9.12.0(jiti@2.4.2))
       '@graphql-eslint/eslint-plugin': 4.3.0(@types/node@22.13.1)(eslint@9.12.0(jiti@2.4.2))(graphql@15.10.1)(typescript@5.7.3)
@@ -12006,7 +12006,7 @@ snapshots:
       - utf-8-validate
       - verdaccio
 
-  '@storm-software/git-tools@2.89.41(@swc-node/register@1.9.2(@swc/core@1.5.29(@swc/helpers@0.5.15))(@swc/types@0.1.17)(typescript@5.7.3))(@swc/core@1.5.29(@swc/helpers@0.5.15))(chokidar@4.0.3)':
+  '@storm-software/git-tools@2.90.0(@swc-node/register@1.9.2(@swc/core@1.5.29(@swc/helpers@0.5.15))(@swc/types@0.1.17)(typescript@5.7.3))(@swc/core@1.5.29(@swc/helpers@0.5.15))(chokidar@4.0.3)':
     dependencies:
       '@angular-devkit/architect': 0.1900.6(chokidar@4.0.3)
       nx: 20.4.1(@swc-node/register@1.9.2(@swc/core@1.5.29(@swc/helpers@0.5.15))(@swc/types@0.1.17)(typescript@5.7.3))(@swc/core@1.5.29(@swc/helpers@0.5.15))
@@ -12018,7 +12018,7 @@ snapshots:
       - chokidar
       - debug
 
-  '@storm-software/linting-tools@1.115.11(chokidar@4.0.3)':
+  '@storm-software/linting-tools@1.116.0(chokidar@4.0.3)':
     dependencies:
       '@angular-devkit/architect': 0.1900.6(chokidar@4.0.3)
     transitivePeerDependencies:
@@ -12096,7 +12096,7 @@ snapshots:
       - '@swc/core'
       - debug
 
-  '@storm-software/workspace-tools@1.254.8(5qoqdnwmn76s6cbglb4y2u3j3i)':
+  '@storm-software/workspace-tools@1.255.0(5qoqdnwmn76s6cbglb4y2u3j3i)':
     dependencies:
       '@ltd/j-toml': 1.38.0
       '@microsoft/api-extractor': 7.49.2(@types/node@22.13.1)
@@ -12129,7 +12129,7 @@ snapshots:
       - supports-color
       - typescript
 
-  '@storm-software/workspace-tools@1.254.8(jwmfxglznniovahl7sxll5ip3a)':
+  '@storm-software/workspace-tools@1.255.0(jwmfxglznniovahl7sxll5ip3a)':
     dependencies:
       '@ltd/j-toml': 1.38.0
       '@microsoft/api-extractor': 7.49.2(@types/node@22.13.1)

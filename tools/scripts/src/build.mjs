@@ -38,13 +38,9 @@ Building the monorepo in ${configuration} mode
   await $`pnpm bootstrap`.timeout(`60s`);
 
   if (configuration === "production") {
-    await $`pnpm nx run-many --target=build --all --exclude="@stryke/monorepo" --configuration=production --parallel=5`.timeout(
-      `600s`
-    );
+    await $`pnpm nx run-many --target=build --all --exclude="@stryke/monorepo" --configuration=production --parallel=5`;
   } else {
-    await $`pnpm nx run-many --target=build --all --exclude="@stryke/monorepo" --configuration=${configuration} --nxBail`.timeout(
-      `600s`
-    );
+    await $`pnpm nx run-many --target=build --all --exclude="@stryke/monorepo" --configuration=${configuration} --nxBail`;
   }
 
   echo`${chalk.green(`Successfully built the monorepo in ${configuration} mode!`)}`;
