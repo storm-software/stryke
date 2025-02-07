@@ -20,7 +20,7 @@ import {
   type CreateNodesResultV2,
   type CreateNodesV2,
   readJsonFile
-} from "@nx/devkit";
+} from "@nx/devkit/index.js";
 import {
   getProjectConfigFromProjectRoot,
   getProjectRoot
