@@ -52,7 +52,7 @@
     "graph": "nx graph",
     "help": "nx help",
     "install-csb": "corepack enable && pnpm install --no-frozen-lockfile",
-    "lint": "pnpm exec storm-lint all --skip-cspell --skip-circular-deps",
+    "lint": "pnpm exec zx tools/scripts/src/lint.mjs",
     "local-registry": "nx local-registry @stryke/monorepo",
     "nuke": "pnpm exec zx tools/scripts/src/nuke.mjs",
     "nx": "nx",
