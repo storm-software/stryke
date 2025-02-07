@@ -26,13 +26,14 @@ try {
     target: "node22",
     outdir: "dist/plugins",
     tsconfig: "tools/nx/tsconfig.json",
-    packages: "bundle",
-    external: ["nx"],
+    packages: "external",
+    // external: ["nx"],
     logLevel: "info",
     bundle: true,
     minify: false,
     format: "esm",
-    platform: "node"
+    platform: "node",
+    preserveSymlinks: true
   });
 
   echo`${chalk.green("Completed monorepo bootstrapping successfully!")}`;
