@@ -19,7 +19,7 @@ import { $, chalk, echo, usePwsh } from "zx";
 
 usePwsh();
 
-await $`nx clear-cache`;
+await $`pnpm nx clear-cache`;
 await $`pnpm exec rimraf --no-interactive -- ./.nx/cache ./.nx/workspace-data ./dist ./tmp ./pnpm-lock.yaml`.timeout(
   `${5 * 60}s`
 );

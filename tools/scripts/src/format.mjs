@@ -24,10 +24,10 @@ if (argv._ && argv._.length > 0) {
   files = `--files ${argv._.join(" ")}`;
 }
 
-await $`nx run-many --target=lint,format --all --exclude="@storm-stack/monorepo" --parallel=5`.timeout(
+await $`pnpm nx run-many --target=lint,format --all --exclude="@storm-stack/monorepo" --parallel=5`.timeout(
   `${30 * 60}s`
 );
-await $`nx format:write ${files} --sort-root-tsconfig-paths --all`.timeout(
+await $`pnpm nx format:write ${files} --sort-root-tsconfig-paths --all`.timeout(
   `${30 * 60}s`
 );
 

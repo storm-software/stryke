@@ -19,35 +19,37 @@ import { $, argv, chalk, echo, usePwsh } from "zx";
 
 usePwsh();
 
-// const args = minimist(argv.slice(2), {
-//   string: ["configuration"],
-//   boolean: ["dev", "prod"],
-//   default: {
-//     configuration: "production"
-//   }
-// });
-
-let configuration = argv.configuration;
-if (!configuration) {
-  if (argv.prod) {
-    configuration = "production";
-  } else if (argv.dev) {
-    configuration = "development";
-  } else {
-    configuration = "production";
+try {
+  let configuration = argv.configuration;
+  if (!configuration) {
+    if (argv.prod) {
+      configuration = "production";
+    } else if (argv.dev) {
+      configuration = "development";
+    } else {
+      configuration = "production";
+    }
   }
+
+  echo`${chalk.whiteBright(`
+Building the monorepo in ${configuration} mode
+`)}`;
+
+  await $`pnpm bootstrap`.timeout(`60s`);
+
+  if (configuration === "production") {
+    await $`pnpm nx run-many --target=build --all --exclude="@stryke/monorepo" --configuration=production --parallel=5`.timeout(
+      `${15 * 60}s`
+    );
+  } else {
+    await $`pnpm nx run-many --target=build --all --exclude="@stryke/monorepo" --configuration=${configuration} --nxBail`.timeout(
+      `${15 * 60}s`
+    );
+  }
+
+  echo`${chalk.green(`Successfully built the monorepo in ${configuration} mode!`)}`;
+} catch (error) {
+  echo`${chalk.red(`A failure occured while building the monorepo:
+${error?.message ? error.message : "No message could be found"}
+`)}`;
 }
-
-await $`pnpm bootstrap`.timeout(`60s`);
-
-if (configuration === "production") {
-  await $`nx run-many --target=build --all --exclude="@storm-stack/monorepo" --configuration=production --parallel=5`.timeout(
-    `${15 * 60}s`
-  );
-} else {
-  await $`nx run-many --target=build --all --exclude="@storm-stack/monorepo" --configuration=${configuration} --nxBail`.timeout(
-    `${15 * 60}s`
-  );
-}
-
-echo`${chalk.green(`Successfully built the monorepo in ${configuration} mode!`)}`;
