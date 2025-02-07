@@ -9,7 +9,6 @@
     "directory": "packages/unique-id"
   },
   "private": false,
-  "dependencies": {},
   "publishConfig": {
     "access": "public"
   }
