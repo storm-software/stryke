@@ -1,6 +1,6 @@
 {
   "name": "@stryke/unique-id",
-  "version": "0.0.1",
+  "version": "0.1.0",
   "type": "module",
   "description": "A package containing various helper functions to generate unique identifier strings",
   "repository": {

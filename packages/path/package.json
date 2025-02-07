@@ -1,6 +1,6 @@
 {
   "name": "@stryke/path",
-  "version": "0.0.1",
+  "version": "0.1.0",
   "type": "module",
   "description": "A package containing various utilities that expand the functionality of NodeJs's `path` module",
   "repository": {
