@@ -9,7 +9,12 @@
     "directory": "packages/json"
   },
   "private": false,
-  "dependencies": {},
+  "dependencies": {
+    "buffer": "6.0.3",
+    "jsonc-parser": "3.3.1",
+    "lines-and-columns": "2.0.4",
+    "superjson": "2.2.2"
+  },
   "publishConfig": {
     "access": "public"
   }

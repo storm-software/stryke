@@ -9,8 +9,10 @@
     "directory": "packages/hash"
   },
   "private": false,
+  "dependencies": {
+    "js-xxhash": "^4.0.0"
+  },
   "publishConfig": {
     "access": "public"
-  },
-  "dependencies": {}
+  }
 }

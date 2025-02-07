@@ -9,7 +9,6 @@
     "directory": "packages/helpers"
   },
   "private": false,
-  "dependencies": {},
   "publishConfig": {
     "access": "public"
   }

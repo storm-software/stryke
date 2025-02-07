@@ -9,9 +9,16 @@
     "directory": "packages/cli"
   },
   "private": false,
-  "dependencies": {},
+  "dependencies": {
+    "@antfu/ni": "^23.3.1",
+    "chalk": "^5.4.1",
+    "commander": "^13.1.0",
+    "execa": "^9.5.2",
+    "figlet": "^1.8.0",
+    "terminal-link": "^3.0.0"
+  },
   "devDependencies": {
-    "@types/node": "^22.10.2"
+    "@types/node": "catalog:"
   },
   "publishConfig": {
     "access": "public"

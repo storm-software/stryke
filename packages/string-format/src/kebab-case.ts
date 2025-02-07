@@ -15,7 +15,7 @@
 
  -------------------------------------------------------------------*/
 
-import { EMPTY_STRING } from "@storm-stack/types";
+import { EMPTY_STRING } from "@stryke/types";
 import { upperCaseFirst } from "./upper-case-first";
 
 /**

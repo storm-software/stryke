@@ -53,6 +53,8 @@ between processes easier in other packages/applications.
 <!-- DON'T EDIT THIS SECTION, INSTEAD RE-RUN doctoc TO UPDATE -->
 ## Table of Contents
 
+- [Stryke - Http Helpers](#stryke---http-helpers)
+  - [Table of Contents](#table-of-contents)
   - [Installing](#installing)
   - [Reduced Package Size](#reduced-package-size)
   - [Development](#development)
@@ -76,14 +78,14 @@ between processes easier in other packages/applications.
 Using [pnpm](http://pnpm.io):
 
 ```bash
-pnpm add -D @storm-stack/utils-hashing
+pnpm add -D @stryke/http
 ```
 
 <details>
   <summary>Using npm</summary>
 
 ```bash
-npm install -D @storm-stack/utils-hashing
+npm install -D @stryke/http
 ```
 
 </details>
@@ -92,7 +94,7 @@ npm install -D @storm-stack/utils-hashing
   <summary>Using yarn</summary>
 
 ```bash
-yarn add -D @storm-stack/utils-hashing
+yarn add -D @stryke/http
 ```
 
 </details>
@@ -111,16 +113,16 @@ commands are available to assist in development.
 
 ### Building
 
-Run `nx build utils-hashing` to build the library.
+Run `nx build http` to build the library.
 
 ### Running unit tests
 
-Run `nx test utils-hashing` to execute the unit tests via
+Run `nx test http` to execute the unit tests via
 [Jest](https://jestjs.io).
 
 ### Linting
 
-Run `nx lint utils-hashing` to run [ESLint](https://eslint.org/) on the package.
+Run `nx lint http` to run [ESLint](https://eslint.org/) on the package.
 
 <!-- START footer -->
 <!-- prettier-ignore-start -->

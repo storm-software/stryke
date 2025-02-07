@@ -40,7 +40,7 @@ export interface Options {
    *
    * @example
    * ```ts
-   * import { prettyBytes } from '@storm-stack/string-fns/pretty-bytes';
+   * import { prettyBytes } from '@stryke/string-fns/pretty-bytes';
    *
    * prettyBytes(1337, {bits: true});
    * //=> '1.34 kbit'
@@ -55,7 +55,7 @@ export interface Options {
    *
    * @example
    * ```ts
-   * import { prettyBytes } from '@storm-stack/string-fns/pretty-bytes';
+   * import { prettyBytes } from '@stryke/string-fns/pretty-bytes';
    *
    * prettyBytes(1000, {binary: true});
    * //=> '1000 bit'
@@ -75,7 +75,7 @@ export interface Options {
    *
    * @example
    * ```ts
-   * import { prettyBytes } from '@storm-stack/string-fns/pretty-bytes';
+   * import { prettyBytes } from '@stryke/string-fns/pretty-bytes';
    *
    * // Show the number with at least 3 fractional digits
    * prettyBytes(1900, {minimumFractionDigits: 3});
@@ -96,7 +96,7 @@ export interface Options {
    *
    * @example
    * ```ts
-   * import { prettyBytes } from '@storm-stack/string-fns/pretty-bytes';
+   * import { prettyBytes } from '@stryke/string-fns/pretty-bytes';
    *
    * // Show the number with at most 1 fractional digit
    * prettyBytes(1920, {maximumFractionDigits: 1});
@@ -115,7 +115,7 @@ export interface Options {
    *
    * @example
    * ```ts
-   * import { prettyBytes } from '@storm-stack/string-fns/pretty-bytes';
+   * import { prettyBytes } from '@stryke/string-fns/pretty-bytes';
    *
    * prettyBytes(1920, {space: false});
    * //=> '1.9kB'
@@ -203,7 +203,7 @@ export const toLocaleString = (
  *
  * @example
  * ```ts
- * import { prettyBytes } from '@storm-stack/string-fns/pretty-bytes';
+ * import { prettyBytes } from '@stryke/string-fns/pretty-bytes';
  *
  * prettyBytes(1337);
  * //=> '1.34 kB'

@@ -1,6 +1,7 @@
 {
   "name": "@stryke/monorepo",
   "version": "0.0.1",
+  "type": "module",
   "description": "🌩️ A monorepo containing TypeScript utility packages with shared functionality common to many Storm Software applications.",
   "repository": {
     "type": "github",

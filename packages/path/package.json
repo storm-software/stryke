@@ -9,7 +9,10 @@
     "directory": "packages/path"
   },
   "private": false,
-  "dependencies": {},
+  "dependencies": {
+    "@storm-software/config-tools": "catalog:",
+    "mlly": "1.7.4"
+  },
   "devDependencies": {
     "@types/node": "catalog:"
   },

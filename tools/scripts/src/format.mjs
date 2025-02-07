@@ -19,16 +19,22 @@ import { $, argv, chalk, echo, usePwsh } from "zx";
 
 usePwsh();
 
-let files = "";
-if (argv._ && argv._.length > 0) {
-  files = `--files ${argv._.join(" ")}`;
+try {
+  let files = "";
+  if (argv._ && argv._.length > 0) {
+    files = `--files ${argv._.join(" ")}`;
+  }
+
+  await $`pnpm nx run-many --target=lint,format --all --exclude="@stryke/monorepo" --parallel=5`.timeout(
+    `${30 * 60}s`
+  );
+  await $`pnpm nx format:write ${files} --sort-root-tsconfig-paths --all`.timeout(
+    `${30 * 60}s`
+  );
+
+  echo`${chalk.green("Successfully formatted the monorepo's files")}`;
+} catch (error) {
+  echo`${chalk.red(`A failure occured while formatting the monorepo:
+${error?.message ? error.message : "No message could be found"}
+`)}`;
 }
-
-await $`pnpm nx run-many --target=lint,format --all --exclude="@storm-stack/monorepo" --parallel=5`.timeout(
-  `${30 * 60}s`
-);
-await $`pnpm nx format:write ${files} --sort-root-tsconfig-paths --all`.timeout(
-  `${30 * 60}s`
-);
-
-echo`${chalk.green("Successfully formatted the monorepo's files")}`;

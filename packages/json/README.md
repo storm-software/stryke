@@ -54,19 +54,21 @@ flexibility and customization.
 <!-- DON'T EDIT THIS SECTION, INSTEAD RE-RUN doctoc TO UPDATE -->
 ## Table of Contents
 
-  - [Installing](#installing)
-  - [Reduced Package Size](#reduced-package-size)
-  - [Development](#development)
-    - [Building](#building)
-    - [Running unit tests](#running-unit-tests)
-    - [Linting](#linting)
-  - [Storm Workspaces](#storm-workspaces)
-  - [Roadmap](#roadmap)
-  - [Support](#support)
-  - [License](#license)
-  - [Changelog](#changelog)
-  - [Contributing](#contributing)
-  - [Contributors](#contributors)
+  - [Stryke - JSON Utility](#stryke---json-utility)
+    - [Table of Contents](#table-of-contents)
+    - [Installing](#installing)
+    - [Reduced Package Size](#reduced-package-size)
+    - [Development](#development)
+      - [Building](#building)
+      - [Running unit tests](#running-unit-tests)
+      - [Linting](#linting)
+    - [Storm Workspaces](#storm-workspaces)
+    - [Roadmap](#roadmap)
+    - [Support](#support)
+    - [License](#license)
+    - [Changelog](#changelog)
+    - [Contributing](#contributing)
+    - [Contributors](#contributors)
 
 <!-- END doctoc -->
 
@@ -75,14 +77,14 @@ flexibility and customization.
 Using [pnpm](http://pnpm.io):
 
 ```bash
-pnpm add -D @storm-stack/utils-json
+pnpm add -D @stryke/json
 ```
 
 <details>
   <summary>Using npm</summary>
 
 ```bash
-npm install -D @storm-stack/utils-json
+npm install -D @stryke/json
 ```
 
 </details>
@@ -91,7 +93,7 @@ npm install -D @storm-stack/utils-json
   <summary>Using yarn</summary>
 
 ```bash
-yarn add -D @storm-stack/utils-json
+yarn add -D @stryke/json
 ```
 
 </details>
@@ -110,16 +112,16 @@ commands are available to assist in development.
 
 ### Building
 
-Run `nx build utils-json` to build the library.
+Run `nx build json` to build the library.
 
 ### Running unit tests
 
-Run `nx test utils-json` to execute the unit tests via
+Run `nx test json` to execute the unit tests via
 [Jest](https://jestjs.io).
 
 ### Linting
 
-Run `nx lint utils-json` to run [ESLint](https://eslint.org/) on the package.
+Run `nx lint json` to run [ESLint](https://eslint.org/) on the package.
 
 <!-- START footer -->
 <!-- prettier-ignore-start -->

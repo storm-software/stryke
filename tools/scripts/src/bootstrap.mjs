@@ -20,19 +20,25 @@ import { chalk, echo, usePwsh } from "zx";
 
 usePwsh();
 
-await build({
-  entryPoints: ["tools/nx/src/plugins/package-build.ts"],
-  outdir: "dist/plugins",
-  tsconfig: "tools/nx/tsconfig.json",
-  packages: "external",
-  logLevel: "info",
-  bundle: true,
-  minify: false,
-  outExtension: {
-    ".js": ".js"
-  },
-  format: "cjs",
-  platform: "node"
-});
+try {
+  await build({
+    entryPoints: ["tools/nx/src/plugins/package-build.ts"],
+    outdir: "dist/plugins",
+    tsconfig: "tools/nx/tsconfig.json",
+    packages: "external",
+    logLevel: "info",
+    bundle: true,
+    minify: false,
+    outExtension: {
+      ".js": ".js"
+    },
+    format: "cjs",
+    platform: "node"
+  });
 
-echo`${chalk.green("Completed monorepo bootstrapping successfully!")}`;
+  echo`${chalk.green("Completed monorepo bootstrapping successfully!")}`;
+} catch (error) {
+  echo`${chalk.red(`A failure occured while building the monorepo:
+${error?.message ? error.message : "No message could be found"}
+`)}`;
+}

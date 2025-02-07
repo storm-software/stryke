@@ -15,7 +15,7 @@
 
  -------------------------------------------------------------------*/
 
-import { removeAccents } from "@storm-stack/utilities/helper-fns/remove-accents";
+import { removeAccents } from "@stryke/helpers/remove-accents";
 
 /**
  * Converts a string by replacing special characters and diacritical marks with their ASCII equivalents.

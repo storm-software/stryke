@@ -17,9 +17,16 @@
       "optional": true
     }
   },
-  "dependencies": {},
+  "dependencies": {
+    "@antfu/install-pkg": "^1.0.0",
+    "@zkochan/js-yaml": "^0.0.7",
+    "chalk": "^5.4.1",
+    "nanotar": "^0.2.0",
+    "semver": "7.6.3"
+  },
   "devDependencies": {
-    "@types/node": "catalog:"
+    "@types/node": "catalog:",
+    "nx": "catalog:"
   },
   "publishConfig": {
     "access": "public"

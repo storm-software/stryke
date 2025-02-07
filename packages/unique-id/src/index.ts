@@ -25,7 +25,7 @@
  */
 
 export * from "./cuid";
-export * from "./nanoid";
+export * from "./nanoid-client";
 export * from "./random";
 export * from "./snowflake";
 export * from "./uuid";

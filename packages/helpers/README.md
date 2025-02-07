@@ -53,19 +53,21 @@ different Storm Software projects.
 <!-- DON'T EDIT THIS SECTION, INSTEAD RE-RUN doctoc TO UPDATE -->
 ## Table of Contents
 
-  - [Installing](#installing)
-  - [Reduced Package Size](#reduced-package-size)
-  - [Development](#development)
-    - [Building](#building)
-    - [Running unit tests](#running-unit-tests)
-    - [Linting](#linting)
-  - [Storm Workspaces](#storm-workspaces)
-  - [Roadmap](#roadmap)
-  - [Support](#support)
-  - [License](#license)
-  - [Changelog](#changelog)
-  - [Contributing](#contributing)
-  - [Contributors](#contributors)
+  - [Stryke - Helper Functions](#stryke---helper-functions)
+    - [Table of Contents](#table-of-contents)
+    - [Installing](#installing)
+    - [Reduced Package Size](#reduced-package-size)
+    - [Development](#development)
+      - [Building](#building)
+      - [Running unit tests](#running-unit-tests)
+      - [Linting](#linting)
+    - [Storm Workspaces](#storm-workspaces)
+    - [Roadmap](#roadmap)
+    - [Support](#support)
+    - [License](#license)
+    - [Changelog](#changelog)
+    - [Contributing](#contributing)
+    - [Contributors](#contributors)
 
 <!-- END doctoc -->
 

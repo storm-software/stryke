@@ -70,7 +70,7 @@ export type List<A = any> = ReadonlyArray<A>;
  *
  * @example
  * ```ts
- * import { FunctionLike } from '@storm-stack/types'
+ * import { FunctionLike } from '@stryke/types'
  *
  * type test0 = FunctionLike<[string, number], boolean>
  * /// (args_0: string, args_1: number) => boolean

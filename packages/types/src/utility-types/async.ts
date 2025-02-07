@@ -130,7 +130,7 @@ export type Asyncify<Function_ extends FunctionLike> = SetReturnType<
  *
  * @example
  * ```ts
- * import { Await } from '@storm-stack/types'
+ * import { Await } from '@stryke/types'
  *
  * const promise = new Promise<string>((res, rej) => res('x'))
  *

@@ -19,13 +19,21 @@ import { $, chalk, echo, usePwsh } from "zx";
 
 usePwsh();
 
-await $`pnpm nx clear-cache`;
-await $`pnpm exec rimraf --no-interactive -- ./.nx/cache ./.nx/workspace-data ./dist ./tmp ./pnpm-lock.yaml`.timeout(
-  `${5 * 60}s`
-);
-await $`pnpm exec rimraf --no-interactive --glob "./*/**/{node_modules,dist}" `.timeout(
-  `${5 * 60}s`
-);
-await $`pnpm exec rimraf --no-interactive ./node_modules`.timeout(`${5 * 60}s`);
+try {
+  await $`pnpm nx clear-cache`;
+  await $`pnpm exec rimraf --no-interactive -- ./.nx/cache ./.nx/workspace-data ./dist ./tmp ./pnpm-lock.yaml`.timeout(
+    `${5 * 60}s`
+  );
+  await $`pnpm exec rimraf --no-interactive --glob "./*/**/{node_modules,dist}" `.timeout(
+    `${5 * 60}s`
+  );
+  await $`pnpm exec rimraf --no-interactive --glob "node_modules/!rimraf/**" `.timeout(
+    `${5 * 60}s`
+  );
 
-echo`${chalk.green("Successfully nuked the cache, node_modules, and dist folders")}`;
+  echo`${chalk.green("Successfully nuked the cache, node_modules, and dist folders")}`;
+} catch (error) {
+  echo`${chalk.red(`A failure occured while nuking the monorepo:
+${error?.message ? error.message : "No message could be found"}
+`)}`;
+}

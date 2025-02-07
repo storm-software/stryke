@@ -72,7 +72,7 @@ export interface NameValuePair<TValue, TName = string> {
  *
  * @example
  * ```ts
- * import { Cast } from '@storm-stack/types'
+ * import { Cast } from '@stryke/types'
  *
  * type test0 = Cast<'42', string> // '42'
  * type test1 = Cast<'42', number> // number

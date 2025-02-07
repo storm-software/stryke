@@ -15,7 +15,7 @@
 
  -------------------------------------------------------------------*/
 
-import { EMPTY_STRING } from "@storm-stack/types/utility-types/base";
+import { EMPTY_STRING } from "@stryke/types/utility-types/base";
 import { useCallback, useState } from "react";
 
 function oldSchoolCopy(text: string) {

@@ -116,8 +116,11 @@
     }
   },
   "devDependencies": {
+    "@nx/devkit": "catalog:",
     "@storm-software/tsconfig": "catalog:",
+    "@storm-software/workspace-tools": "catalog:",
     "@types/node": "catalog:",
+    "nx": "catalog:",
     "tslib": "catalog:",
     "typescript": "catalog:"
   },
