@@ -23,9 +23,11 @@ usePwsh();
 try {
   await build({
     entryPoints: ["tools/nx/src/plugins/package-build.ts"],
+    target: "node22",
     outdir: "dist/plugins",
     tsconfig: "tools/nx/tsconfig.json",
-    packages: "external",
+    packages: "bundle",
+    external: ["nx"],
     logLevel: "info",
     bundle: true,
     minify: false,
