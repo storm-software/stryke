@@ -15,17 +15,17 @@
 
  -------------------------------------------------------------------*/
 
-import { $, chalk, echo, minimist, usePwsh } from "zx";
+import { $, argv, chalk, echo, usePwsh } from "zx";
 
 usePwsh();
 
-const argv = minimist(process?.argv.slice(2), {
-  string: ["configuration"],
-  boolean: ["dev", "prod"],
-  default: {
-    configuration: "production"
-  }
-});
+// const args = minimist(argv.slice(2), {
+//   string: ["configuration"],
+//   boolean: ["dev", "prod"],
+//   default: {
+//     configuration: "production"
+//   }
+// });
 
 let configuration = argv.configuration;
 if (!configuration) {

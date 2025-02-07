@@ -12,7 +12,5 @@
   "publishConfig": {
     "access": "public"
   },
-  "dependencies": {
-    "js-xxhash": "^4.0.0"
-  }
+  "dependencies": {}
 }

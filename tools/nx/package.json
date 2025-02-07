@@ -115,15 +115,10 @@
       "optional": false
     }
   },
-  "dependencies": {
-    "@nx/devkit": "catalog:",
-    "@storm-software/workspace-tools": "catalog:",
-    "defu": "catalog:"
-  },
   "devDependencies": {
+    "@storm-software/tsconfig": "catalog:",
     "@types/node": "catalog:",
-    "nx": "catalog:",
-    "tsup": "catalog:",
+    "tslib": "catalog:",
     "typescript": "catalog:"
   },
   "publishConfig": {

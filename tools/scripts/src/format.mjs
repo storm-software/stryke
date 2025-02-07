@@ -15,13 +15,20 @@
 
  -------------------------------------------------------------------*/
 
-import { $, chalk, echo, usePwsh } from "zx";
+import { $, argv, chalk, echo, usePwsh } from "zx";
 
 usePwsh();
+
+let files = "";
+if (argv._ && argv._.length > 0) {
+  files = `--files ${argv._.join(" ")}`;
+}
 
 await $`nx run-many --target=lint,format --all --exclude="@storm-stack/monorepo" --parallel=5`.timeout(
   `${30 * 60}s`
 );
-await $`nx format:write`.timeout(`${30 * 60}s`);
+await $`nx format:write ${files} --sort-root-tsconfig-paths --all`.timeout(
+  `${30 * 60}s`
+);
 
 echo`${chalk.green("Successfully formatted the monorepo's files")}`;

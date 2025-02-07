@@ -9,18 +9,8 @@
     "directory": "packages/cli"
   },
   "private": false,
-  "dependencies": {
-    "@antfu/ni": "^23.3.1",
-    "chalk": "5.3.0",
-    "commander": "13.1.0",
-    "execa": "^9.4.0",
-    "figlet": "^1.7.0",
-    "prompts": "^2.4.2",
-    "terminal-link": "^3.0.0",
-    "tinyexec": "^0.3.1"
-  },
+  "dependencies": {},
   "devDependencies": {
-    "@types/figlet": "^1.7.0",
     "@types/node": "^22.10.2"
   },
   "publishConfig": {

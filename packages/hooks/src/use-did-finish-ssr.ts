@@ -18,6 +18,8 @@
 import { isFunction } from "@stryke/types/type-checks/is-function";
 import { useEffect, useState, useSyncExternalStore } from "react";
 
+/* eslint-disable react-hooks/rules-of-hooks */
+
 const emptyFn = () => {};
 const emptyFnFn = () => emptyFn;
 

@@ -23,7 +23,8 @@ export class WordArray {
   sigBytes: number;
 
   constructor(words?: number[], sigBytes?: number) {
-    words = this.words = words ?? [];
+    this.words = words ?? [];
+    words = this.words;
 
     this.sigBytes = sigBytes ?? words.length * 4;
   }
@@ -41,14 +42,14 @@ export class WordArray {
       // Copy one byte at a time
       for (let i = 0; i < wordArray.sigBytes; i++) {
         const thatByte =
-          (wordArray.words[i >>> 2] >>> (24 - (i % 4) * 8)) & 0xff;
-        this.words[(this.sigBytes + i) >>> 2] |=
+          (wordArray.words[i >>> 2]! >>> (24 - (i % 4) * 8)) & 0xff;
+        this.words[(this.sigBytes + i) >>> 2]! |=
           thatByte << (24 - ((this.sigBytes + i) % 4) * 8);
       }
     } else {
       // Copy one word at a time
       for (let j = 0; j < wordArray.sigBytes; j += 4) {
-        this.words[(this.sigBytes + j) >>> 2] = wordArray.words[j >>> 2];
+        this.words[(this.sigBytes + j) >>> 2]! = wordArray.words[j >>> 2]!;
       }
     }
     this.sigBytes += wordArray.sigBytes;
@@ -59,7 +60,7 @@ export class WordArray {
 
   clamp() {
     // Clamp
-    this.words[this.sigBytes >>> 2] &=
+    this.words[this.sigBytes >>> 2]! &=
       0xff_ff_ff_ff << (32 - (this.sigBytes % 4) * 8);
     this.words.length = Math.ceil(this.sigBytes / 4);
   }
@@ -74,7 +75,7 @@ export const Hex = {
     // Convert
     const hexChars: string[] = [];
     for (let i = 0; i < wordArray.sigBytes; i++) {
-      const bite = (wordArray.words[i >>> 2] >>> (24 - (i % 4) * 8)) & 0xff;
+      const bite = (wordArray.words[i >>> 2]! >>> (24 - (i % 4) * 8)) & 0xff;
       hexChars.push((bite >>> 4).toString(16), (bite & 0x0f).toString(16));
     }
 
@@ -88,11 +89,11 @@ export const Base64 = {
       "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789";
     const base64Chars: string[] = [];
     for (let i = 0; i < wordArray.sigBytes; i += 3) {
-      const byte1 = (wordArray.words[i >>> 2] >>> (24 - (i % 4) * 8)) & 0xff;
+      const byte1 = (wordArray.words[i >>> 2]! >>> (24 - (i % 4) * 8)) & 0xff;
       const byte2 =
-        (wordArray.words[(i + 1) >>> 2] >>> (24 - ((i + 1) % 4) * 8)) & 0xff;
+        (wordArray.words[(i + 1) >>> 2]! >>> (24 - ((i + 1) % 4) * 8)) & 0xff;
       const byte3 =
-        (wordArray.words[(i + 2) >>> 2] >>> (24 - ((i + 2) % 4) * 8)) & 0xff;
+        (wordArray.words[(i + 2) >>> 2]! >>> (24 - ((i + 2) % 4) * 8)) & 0xff;
 
       const triplet = (byte1 << 16) | (byte2 << 8) | byte3;
       for (let j = 0; j < 4 && i * 8 + j * 6 < wordArray.sigBytes * 8; j++) {
@@ -111,7 +112,8 @@ export const Latin1 = {
     // Convert
     const words: number[] = [];
     for (let i = 0; i < latin1StrLength; i++) {
-      words[i >>> 2] |= (latin1Str.charCodeAt(i) & 0xff) << (24 - (i % 4) * 8);
+      words[i >>> 2]! |=
+        (latin1Str.codePointAt(i)! & 0xff) << (24 - (i % 4) * 8);
     }
 
     return new WordArray(words, latin1StrLength);
@@ -145,6 +147,7 @@ export class BufferedBlockAlgorithm {
     }
 
     // Append
+    // eslint-disable-next-line unicorn/prefer-spread
     this._data.concat(data);
     this._nDataBytes += data.sigBytes;
   }
@@ -155,15 +158,13 @@ export class BufferedBlockAlgorithm {
     let processedWords;
 
     // Count blocks ready
-    let nBlocksReady = this._data.sigBytes / (this.blockSize * 4); /* bytes */
-    if (doFlush) {
-      // Round up to include partial blocks
-      nBlocksReady = Math.ceil(nBlocksReady);
-    } else {
-      // Round down to include only full blocks,
-      // less the number of blocks that must remain in the buffer
-      nBlocksReady = Math.max((nBlocksReady | 0) - this._minBufferSize, 0);
-    }
+    const nBlocksReady = doFlush
+      ? Math.ceil(this._data.sigBytes / (this.blockSize * 4))
+      : Math.max(
+          Math.trunc(this._data.sigBytes / (this.blockSize * 4)) -
+            this._minBufferSize,
+          0
+        );
 
     // Count words ready
     const nWordsReady = nBlocksReady * this.blockSize;

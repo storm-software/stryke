@@ -9,13 +9,11 @@
     "directory": "packages/path"
   },
   "private": false,
+  "dependencies": {},
   "devDependencies": {
     "@types/node": "catalog:"
   },
   "publishConfig": {
     "access": "public"
-  },
-  "dependencies": {
-    "mlly": "^1.7.4"
   }
 }

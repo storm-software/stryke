@@ -19,37 +19,66 @@ prepare:
     validate:
       glob: "**/*.*"
       run: "pnpm exec storm-prepare"
+    plugins:
+      glob: "**/*.*"
+      run: "pnpm exec zx tools/scripts/src/bootstrap.mjs"
 
 pre-commit:
   piped: true
   commands:
     install:
       glob: "./{pnpm-lock.yaml,lefthook.yml}"
-      run: "pnpm install && pnpm lefthook install && git update-index"
+      run: "pnpm install && pnpm lefthook install"
       stage_fixed: true
     prepare:
       glob: "**/{lefthook.yml,biome.json}"
       run: "pnpm exec storm-prepare"
     validate:
-      files: "git diff --name-only HEAD @{push}"
       glob: "**/*"
-      run: "pnpm exec storm-pre-commit {files}"
+      run: "pnpm exec storm-pre-commit {staged_files}"
       stage_fixed: true
-    lint-toml:
-      glob: "**/*.toml"
-      run: 'pnpm exec taplo format --check
-        --config="./node_modules/@storm-software/linting-tools/taplo/config.toml"'
-    lint-filename:
-      glob: "**/*.*"
-      run: 'pnpm exec ls-lint
-        --config="./node_modules/@storm-software/linting-tools/ls-lint/config.yml"'
-    lint-codeowners:
-      files: "git diff --name-only HEAD @{push}"
-      glob: "**/CODEOWNERS"
-      run: "pnpm exec storm-lint codeowners"
     # lint:
-    #   glob: "**/*.{js,ts,cjs,mjs,d.cts,d.mts,jsx,tsx,json,jsonc,yaml,yml,md,mdx,markdown,css,scss,sass,less,styl,stylus,graphql,gql,xml,svg,txt,log,env,env.example,env.local,env.development,env.test,env.production,env.staging,env.local.example,env.development.example,env.test.example,env.production.example,env.staging.example}"
-    #   run: "pnpm lint"
+    #   glob:
+    #     - "*.js"
+    #     - "*.ts"
+    #     - "*.cjs"
+    #     - "*.mjs"
+    #     - "*.d.cts"
+    #     - "*.d.mts"
+    #     - "*.jsx"
+    #     - "*.tsx"
+    #     - "*.json"
+    #     - "*.jsonc"
+    #     - "*.yaml"
+    #     - "*.yml"
+    #     - "*.md"
+    #     - "*.mdx"
+    #     - "*.markdown"
+    #     - "*.css"
+    #     - "*.scss"
+    #     - "*.sass"
+    #     - "*.less"
+    #     - "*.styl"
+    #     - "*.stylus"
+    #     - "*.graphql"
+    #     - "*.gql"
+    #     - "*.xml"
+    #     - "*.svg"
+    #     - "*.txt"
+    #     - "*.log"
+    #     - "*.env"
+    #     - "*.env.example"
+    #     - "*.env.local"
+    #     - "*.env.development"
+    #     - "*.env.test"
+    #     - "*.env.production"
+    #     - "*.env.staging"
+    #     - "*.env.local.example"
+    #     - "*.env.development.example"
+    #     - "*.env.test.example"
+    #     - "*.env.production.example"
+    #     - "*.env.staging.example"
+    #   run: "pnpm exec storm-lint all --skip-cspell --skip-circular-deps"
     #   stage_fixed: true
 
 commit-msg:
@@ -68,40 +97,37 @@ pre-push:
       glob: "**/*"
       run: "pnpm exec storm-pre-push {staged_files}"
       stage_fixed: true
+    lint-filename:
+      glob: "**/*"
+      run: 'pnpm exec ls-lint
+        --config="./node_modules/@storm-software/linting-tools/ls-lint/config.yml"'
+    lint-codeowners:
+      glob: "**/CODEOWNERS"
+      run: "pnpm exec storm-lint codeowners"
     lint-github-actions:
       glob: ".github/workflows/*.*"
       run: "zizmor --offline .github/workflows/"
-    toml:
-      files: "git diff --name-only HEAD @{push}"
-      glob: "**/*.{toml}"
-      run: "pnpm format-toml && git update-index"
+    sherif:
+      glob:
+        - "*.js"
+        - "*.ts"
+        - "*.cjs"
+        - "*.mjs"
+        - "*.d.cts"
+        - "*.d.mts"
+        - "*.jsx"
+        - "*.tsx"
+        - "*.json"
+        - "*.jsonc"
+      run: "pnpm exec sherif -i typescript -i react -i react-dom"
       stage_fixed: true
     readme:
-      glob: "**/{README.md,README.*.md,readme/**/*,package.json,executors.json,generators.json}"
-      run: "pnpm format-readme && git update-index"
-      stage_fixed: true
-    prettier:
-      files: "git diff --name-only HEAD @{push}"
-      glob: "!**/generators/*/files/**/*"
-      run: "pnpm exec prettier {files} --write --ignore-unknown
-        --no-error-on-unmatched-pattern --cache && git update-index"
-      stage_fixed: true
-    sherif:
-      files: "git diff --name-only HEAD @{push}"
-      glob: "**/*.{js,ts,cjs,mjs,d.cts,d.mts,jsx,tsx,json,jsonc}"
-      run: "pnpm lint-sherif"
-      stage_fixed: true
-    eslint:
-      files: "git diff --name-only HEAD @{push}"
       glob: "**/*"
-      run: 'pnpm nx run-many --target=lint --all --exclude="@stryke/monorepo" && git update-index'
+      run: 'pnpm exec storm-git readme --templates="tools/readme-templates" --project="@stryke/monorepo" '
       stage_fixed: true
     format:
-      files: "git diff --name-only HEAD @{push}"
       glob: "**/*"
-      run:
-        "pnpm nx format:write --files {files} --sort-root-tsconfig-paths --all
-        && git update-index"
+      run: "pnpm format {staged_files}"
       stage_fixed: true
 
 post-merge:

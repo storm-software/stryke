@@ -9,6 +9,10 @@
     "directory": "packages/string-format"
   },
   "private": false,
+  "devDependencies": {
+    "@storm-software/testing-tools": "catalog:",
+    "@storm-software/workspace-tools": "catalog:"
+  },
   "publishConfig": {
     "access": "public"
   }

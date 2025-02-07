@@ -16,9 +16,9 @@
  -------------------------------------------------------------------*/
 
 import type { MaybePromise } from "@stryke/types/utility-types/base";
-// eslint-disable-next-line @nx/enforce-module-boundaries
+
 import { Command } from "commander";
-// eslint-disable-next-line @nx/enforce-module-boundaries
+
 import type { Fonts, Options } from "figlet";
 
 /**

@@ -9,9 +9,7 @@
     "directory": "packages/helpers"
   },
   "private": false,
-  "dependencies": {
-    "match-sorter": "^8.0.0"
-  },
+  "dependencies": {},
   "publishConfig": {
     "access": "public"
   }

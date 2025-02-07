@@ -9,12 +9,7 @@
     "directory": "packages/env"
   },
   "private": false,
-  "dependencies": {
-    "@dotenvx/dotenvx": "^1.33.0",
-    "@storm-software/config": "catalog:",
-    "@storm-software/config-tools": "catalog:",
-    "defu": "catalog:"
-  },
+  "dependencies": {},
   "devDependencies": {
     "@types/node": "catalog:"
   },

@@ -15,7 +15,6 @@
 
  -------------------------------------------------------------------*/
 
-// eslint-disable-next-line @nx/enforce-module-boundaries
 import { type DotenvPopulateInput, parse } from "@dotenvx/dotenvx";
 import { readFile } from "@stryke/fs/files/read-file";
 import { StormJSON } from "@stryke/json";

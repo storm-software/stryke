@@ -15,7 +15,7 @@
 
  -------------------------------------------------------------------*/
 
-// eslint-disable-next-line object-curly-newline, @nx/enforce-module-boundaries
+// eslint-disable-next-line object-curly-newline
 import { RELEASE_TYPES, type ReleaseType, inc, parse, valid } from "semver";
 
 export const parseVersion = (semver: string) => parse(semver);

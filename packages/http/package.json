@@ -9,9 +9,7 @@
     "directory": "packages/http"
   },
   "private": false,
-  "dependencies": {
-    "ufo": "^1.5.4"
-  },
+  "dependencies": {},
   "devDependencies": {
     "@types/node": "catalog:"
   },

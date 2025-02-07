@@ -12,7 +12,8 @@
     "src/**/*.ts",
     "src/**/*.d.ts",
     "src/**/*.json",
-    "tsup.config.ts"
+    "tsup.config.ts",
+    "eslint.config.mjs"
   ],
   "exclude": [
     "jest.config.ts",

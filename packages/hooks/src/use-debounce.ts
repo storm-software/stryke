@@ -16,7 +16,7 @@
  -------------------------------------------------------------------*/
 
 import { debounce, DebounceOptions } from "@stryke/helpers/debounce";
-import * as React from "react";
+import { useEffect, useMemo, useRef, useState } from "react";
 
 // export function debounce<A extends Function>(
 //   func: A,
@@ -62,15 +62,15 @@ export function useDebounce<
   options: DebounceOptions = {},
   mountArgs: any[] = [fn, options, wait]
 ): DebouncedFn {
-  const dbEffect = React.useRef<DebouncedFn | null>(null);
+  const dbEffect = useRef<DebouncedFn | null>(null);
 
-  React.useEffect(() => {
+  useEffect(() => {
     return () => {
       dbEffect.current?.cancel();
     };
   }, []);
 
-  return React.useMemo(() => {
+  return useMemo(() => {
     dbEffect.current = debounce(fn, wait, options) as unknown as DebouncedFn;
     return dbEffect.current;
   }, [fn, options, wait]);
@@ -81,9 +81,9 @@ export function useDebounce<
  * Note: you may need to memo or this will keep re-rendering
  */
 export function useDebounceValue<A>(val: A, amt = 0): A {
-  const [state, setState] = React.useState(val);
+  const [state, setState] = useState(val);
 
-  React.useEffect(() => {
+  useEffect(() => {
     const tm = setTimeout(() => {
       setState(prev => {
         if (prev === val) return prev;
@@ -94,7 +94,7 @@ export function useDebounceValue<A>(val: A, amt = 0): A {
     return () => {
       clearTimeout(tm);
     };
-  }, [val]);
+  }, [amt, val]);
 
   return state;
 }

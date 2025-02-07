@@ -1,17 +1,17 @@
 /*-------------------------------------------------------------------
 
-                  ⚡ Storm Software - Storm Stack
+                       ⚡ Storm Software - Stryke
 
- This code was released as part of the Storm Stack project. Storm Stack
+ This code was released as part of the Stryke project. Stryke
  is maintained by Storm Software under the Apache-2.0 License, and is
  free for commercial and private use. For more information, please visit
  our licensing page.
 
  Website:         https://stormsoftware.com
- Repository:      https://github.com/storm-software/storm-stack
- Documentation:   https://stormsoftware.com/projects/storm-stack/docs
+ Repository:      https://github.com/storm-software/stryke
+ Documentation:   https://stormsoftware.com/projects/stryke/docs
  Contact:         https://stormsoftware.com/contact
- License:         https://stormsoftware.com/projects/storm-stack/license
+ License:         https://stormsoftware.com/projects/stryke/license
 
  -------------------------------------------------------------------*/
 
@@ -102,6 +102,7 @@ function ToBinaryString(snowflake: SnowflakeResolvable): string {
   const cached64BitZeros =
     "0000000000000000000000000000000000000000000000000000000000000000";
   const binValue = BigInt(snowflake).toString(2);
+
   return binValue.length < 64
     ? cached64BitZeros.slice(0, Math.max(0, 64 - binValue.length)) + binValue
     : binValue;

@@ -4,39 +4,8 @@
   "projectType": "library",
   "sourceRoot": "packages/string-format/src",
   "targets": {
-    "build": {
-      "executor": "@storm-software/workspace-tools:unbuild",
-      "outputs": ["{options.outputPath}"],
-      "options": {
-        "entry": ["packages/string-format/src/index.ts"],
-        "outputPath": "dist/packages/string-format",
-        "tsconfig": "packages/string-format/tsconfig.json",
-        "project": "packages/string-format/package.json",
-        "defaultConfiguration": "production",
-        "platform": "neutral",
-        "assets": [
-          {
-            "input": "packages/string-format",
-            "glob": "*.md",
-            "output": "/"
-          },
-          {
-            "input": "",
-            "glob": "LICENSE",
-            "output": "/"
-          }
-        ]
-      },
-      "configurations": {
-        "production": {
-          "debug": false,
-          "verbose": false
-        },
-        "development": {
-          "debug": true,
-          "verbose": true
-        }
-      }
+    "nx-release-publish": {
+      "executor": "@storm-software/workspace-tools:npm-publish"
     }
   },
   "tags": ["platform:neutral"]

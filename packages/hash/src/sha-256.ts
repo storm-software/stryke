@@ -74,42 +74,42 @@ export class SHA256 extends Hasher {
     // Computation
     for (let i = 0; i < 64; i++) {
       if (i < 16) {
-        W[i] = Math.trunc(M[offset + i]);
+        W[i] = Math.trunc(M[offset + i]!);
       } else {
         const gamma0x = W[i - 15];
         const gamma0 =
-          ((gamma0x << 25) | (gamma0x >>> 7)) ^
-          ((gamma0x << 14) | (gamma0x >>> 18)) ^
-          (gamma0x >>> 3);
+          ((gamma0x! << 25) | (gamma0x! >>> 7)) ^
+          ((gamma0x! << 14) | (gamma0x! >>> 18)) ^
+          (gamma0x! >>> 3);
 
         const gamma1x = W[i - 2];
         const gamma1 =
-          ((gamma1x << 15) | (gamma1x >>> 17)) ^
-          ((gamma1x << 13) | (gamma1x >>> 19)) ^
-          (gamma1x >>> 10);
+          ((gamma1x! << 15) | (gamma1x! >>> 17)) ^
+          ((gamma1x! << 13) | (gamma1x! >>> 19)) ^
+          (gamma1x! >>> 10);
 
-        W[i] = gamma0 + W[i - 7] + gamma1 + W[i - 16];
+        W[i] = gamma0 + W[i - 7]! + gamma1 + W[i - 16]!;
       }
 
-      const ch = (e & f) ^ (~e & g);
-      const maj = (a & b) ^ (a & c) ^ (b & c);
+      const ch = (e! & f!) ^ (~e! & g!);
+      const maj = (a! & b!) ^ (a! & c!) ^ (b! & c!);
 
       const sigma0 =
-        ((a << 30) | (a >>> 2)) ^
-        ((a << 19) | (a >>> 13)) ^
-        ((a << 10) | (a >>> 22));
+        ((a! << 30) | (a! >>> 2)) ^
+        ((a! << 19) | (a! >>> 13)) ^
+        ((a! << 10) | (a! >>> 22));
       const sigma1 =
-        ((e << 26) | (e >>> 6)) ^
-        ((e << 21) | (e >>> 11)) ^
-        ((e << 7) | (e >>> 25));
+        ((e! << 26) | (e! >>> 6)) ^
+        ((e! << 21) | (e! >>> 11)) ^
+        ((e! << 7) | (e! >>> 25));
 
-      const t1 = h + sigma1 + ch + K[i] + W[i];
+      const t1 = h! + sigma1 + ch + K[i]! + W[i]!;
       const t2 = sigma0 + maj;
 
       h = g;
       g = f;
       f = e;
-      e = Math.trunc(d + t1);
+      e = Math.trunc(d! + t1);
       d = c;
       c = b;
       b = a;
@@ -117,14 +117,14 @@ export class SHA256 extends Hasher {
     }
 
     // Intermediate hash value
-    H[0] = (H[0] + a) | 0;
-    H[1] = (H[1] + b) | 0;
-    H[2] = (H[2] + c) | 0;
-    H[3] = (H[3] + d) | 0;
-    H[4] = (H[4] + e) | 0;
-    H[5] = (H[5] + f) | 0;
-    H[6] = (H[6] + g) | 0;
-    H[7] = (H[7] + h) | 0;
+    H[0] = Math.trunc(H[0]! + a!);
+    H[1] = Math.trunc(H[1]! + b!);
+    H[2] = Math.trunc(H[2]! + c!);
+    H[3] = Math.trunc(H[3]! + d!);
+    H[4] = Math.trunc(H[4]! + e!);
+    H[5] = Math.trunc(H[5]! + f!);
+    H[6] = Math.trunc(H[6]! + g!);
+    H[7] = Math.trunc(H[7]! + h!);
   }
 
   /**
@@ -140,7 +140,7 @@ export class SHA256 extends Hasher {
     const nBitsLeft = this._data.sigBytes * 8;
 
     // Add padding
-    this._data.words[nBitsLeft >>> 5] |= 0x80 << (24 - (nBitsLeft % 32));
+    this._data.words[nBitsLeft >>> 5]! |= 0x80 << (24 - (nBitsLeft % 32));
     this._data.words[(((nBitsLeft + 64) >>> 9) << 4) + 14] = Math.floor(
       nBitsTotal / 0x1_00_00_00_00
     );

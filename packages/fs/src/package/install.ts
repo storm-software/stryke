@@ -15,7 +15,6 @@
 
  -------------------------------------------------------------------*/
 
-// eslint-disable-next-line @nx/enforce-module-boundaries
 import { installPackage, type InstallPackageOptions } from "@antfu/install-pkg";
 import { resolve } from "@stryke/path/resolve/resolve";
 

@@ -9,10 +9,7 @@
     "directory": "packages/unique-id"
   },
   "private": false,
-  "dependencies": {
-    "@noble/hashes": "1.5.0",
-    "nanoid": "^5.0.9"
-  },
+  "dependencies": {},
   "publishConfig": {
     "access": "public"
   }

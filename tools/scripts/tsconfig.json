@@ -3,7 +3,8 @@
   "compilerOptions": {
     "outDir": "dist",
     "baseUrl": "../..",
-    "types": ["node"]
+    "types": ["node"],
+    "lib": ["esnext", "dom"]
   },
   "include": ["**/*.ts", "*.mjs"],
   "exclude": ["jest.config.ts", "src/**/*.spec.ts", "src/**/*.test.ts"]

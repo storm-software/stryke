@@ -27,6 +27,7 @@ export * from "./is-deep-key";
 export * from "./is-empty";
 export * from "./is-empty-object";
 export * from "./is-empty-string";
+export * from "./is-equal";
 export * from "./is-error";
 export * from "./is-file-result";
 export * from "./is-float";

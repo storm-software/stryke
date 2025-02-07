@@ -1,17 +1,17 @@
 /*-------------------------------------------------------------------
 
-                  ⚡ Storm Software - Storm Stack
+                       ⚡ Storm Software - Stryke
 
- This code was released as part of the Storm Stack project. Storm Stack
+ This code was released as part of the Stryke project. Stryke
  is maintained by Storm Software under the Apache-2.0 License, and is
  free for commercial and private use. For more information, please visit
  our licensing page.
 
  Website:         https://stormsoftware.com
- Repository:      https://github.com/storm-software/storm-stack
- Documentation:   https://stormsoftware.com/projects/storm-stack/docs
+ Repository:      https://github.com/storm-software/stryke
+ Documentation:   https://stormsoftware.com/projects/stryke/docs
  Contact:         https://stormsoftware.com/contact
- License:         https://stormsoftware.com/projects/storm-stack/license
+ License:         https://stormsoftware.com/projects/stryke/license
 
  -------------------------------------------------------------------*/
 
@@ -33,7 +33,7 @@ const globalObject = (Obj => {
 
   // // biome-ignore lint/performance/noDelete: <explanation>
   // delete Obj.typeDetectGlobalObject;
-  return global;
+  return globalThis;
 })(Object.prototype);
 
 export function typeDetect(obj: unknown): string {
@@ -64,35 +64,35 @@ export function typeDetect(obj: unknown): string {
   }
 
   // https://html.spec.whatwg.org/multipage/browsers.html#location
-  if (typeof window === "object" && window !== null) {
+  if (typeof globalThis === "object" && globalThis !== null) {
     if (
-      typeof (window as any).location === "object" &&
-      obj === (window as any).location
+      typeof (globalThis as any).location === "object" &&
+      obj === (globalThis as any).location
     ) {
       return "Location";
     }
 
     // https://html.spec.whatwg.org/#document
     if (
-      typeof (window as any).document === "object" &&
-      obj === (window as any).document
+      typeof (globalThis as any).document === "object" &&
+      obj === (globalThis as any).document
     ) {
       return "Document";
     }
 
     // https://html.spec.whatwg.org/multipage/webappapis.html#mimetypearray
-    if (typeof (window as any).navigator === "object") {
+    if (typeof (globalThis as any).navigator === "object") {
       if (
-        typeof (window as any).navigator.mimeTypes === "object" &&
-        obj === (window as any).navigator.mimeTypes
+        typeof (globalThis as any).navigator.mimeTypes === "object" &&
+        obj === (globalThis as any).navigator.mimeTypes
       ) {
         return "MimeTypeArray";
       }
 
       // https://html.spec.whatwg.org/multipage/webappapis.html#pluginarray
       if (
-        typeof (window as any).navigator.plugins === "object" &&
-        obj === (window as any).navigator.plugins
+        typeof (globalThis as any).navigator.plugins === "object" &&
+        obj === (globalThis as any).navigator.plugins
       ) {
         return "PluginArray";
       }
@@ -100,9 +100,9 @@ export function typeDetect(obj: unknown): string {
 
     // https://html.spec.whatwg.org/multipage/webappapis.html#pluginarray
     if (
-      (typeof (window as any).HTMLElement === "function" ||
-        typeof (window as any).HTMLElement === "object") &&
-      obj instanceof (window as any).HTMLElement
+      (typeof (globalThis as any).HTMLElement === "function" ||
+        typeof (globalThis as any).HTMLElement === "object") &&
+      obj instanceof (globalThis as any).HTMLElement
     ) {
       if ((obj as any).tagName === "BLOCKQUOTE") {
         return "HTMLQuoteElement";

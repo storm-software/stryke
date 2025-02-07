@@ -17,7 +17,7 @@
 
 import { isFunction } from "@stryke/types/type-checks/is-function";
 import type { BatteryManager } from "@stryke/types/utility-types/navigator";
-import React from "react";
+import React, { useEffect } from "react";
 
 const defaultBatteryManagerState = {
   supported: true,
@@ -39,7 +39,7 @@ export function useBattery() {
   const key = "getBattery" as keyof typeof navigator;
   const getBattery = navigator[key] as () => Promise<BatteryManager>;
 
-  React.useEffect(() => {
+  useEffect(() => {
     if (!isFunction(getBattery)) {
       setState(s => ({
         ...s,
@@ -78,7 +78,7 @@ export function useBattery() {
         battery.removeEventListener("dischargingtimechange", handleChange);
       }
     };
-  }, []);
+  }, [getBattery]);
 
   return state;
 }
