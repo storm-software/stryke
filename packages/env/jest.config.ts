@@ -1,3 +1,3 @@
-import { getJestConfig } from '@storm-software/testing-tools';
+import { getJestConfig } from "@storm-software/testing-tools";
 
-export default getJestConfig('packages/env', true, 'env');
+export default getJestConfig("packages/env", true, "env");

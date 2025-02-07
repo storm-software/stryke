@@ -51,6 +51,7 @@ between processes easier in other packages/applications.
 
 <!-- START doctoc -->
 <!-- DON'T EDIT THIS SECTION, INSTEAD RE-RUN doctoc TO UPDATE -->
+
 ## Table of Contents
 
 - [Stryke - Http Helpers](#stryke---http-helpers)
@@ -117,8 +118,7 @@ Run `nx build http` to build the library.
 
 ### Running unit tests
 
-Run `nx test http` to execute the unit tests via
-[Jest](https://jestjs.io).
+Run `nx test http` to execute the unit tests via [Jest](https://jestjs.io).
 
 ### Linting
 
