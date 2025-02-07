@@ -25,14 +25,10 @@ try {
     entryPoints: ["tools/nx/src/plugins/package-build.ts"],
     outdir: "dist/plugins",
     tsconfig: "tools/nx/tsconfig.json",
-    packages: "bundle",
-    external: ["nx"],
+    packages: "external",
     logLevel: "info",
     bundle: true,
     minify: false,
-    outExtension: {
-      ".js": ".js"
-    },
     format: "esm",
     platform: "node"
   });

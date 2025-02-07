@@ -31,9 +31,9 @@ import {
   setDefaultProjectTags
 } from "@storm-software/workspace-tools/utils/project-tags";
 import { join } from "node:path";
-import { readNxJson } from "nx/src/config/nx-json";
-import type { ProjectConfiguration } from "nx/src/config/workspace-json-project-json";
-import { readTargetsFromPackageJson } from "nx/src/utils/package-json";
+import { readNxJson } from "nx/src/config/nx-json.js";
+import type { ProjectConfiguration } from "nx/src/config/workspace-json-project-json.js";
+import { readTargetsFromPackageJson } from "nx/src/utils/package-json.js";
 
 /* eslint-disable no-console */
 
