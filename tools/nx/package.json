@@ -123,6 +123,7 @@
     "@types/node": "catalog:",
     "nx": "catalog:",
     "tslib": "catalog:",
+    "tsup": "catalog:",
     "typescript": "catalog:"
   },
   "publishConfig": {

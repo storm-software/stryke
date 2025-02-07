@@ -39,11 +39,11 @@ Building the monorepo in ${configuration} mode
 
   if (configuration === "production") {
     await $`pnpm nx run-many --target=build --all --exclude="@stryke/monorepo" --configuration=production --parallel=5`.timeout(
-      `${15 * 60}s`
+      `600s`
     );
   } else {
     await $`pnpm nx run-many --target=build --all --exclude="@stryke/monorepo" --configuration=${configuration} --nxBail`.timeout(
-      `${15 * 60}s`
+      `600s`
     );
   }
 
