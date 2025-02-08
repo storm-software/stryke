@@ -144,6 +144,7 @@
       "postcss": ">=8.5.1",
       "follow-redirects": ">=1.15.9",
       "micromatch": ">=4.0.8",
+      "path-to-regexp": ">=0.1.12",
       "@stryke/tools-scripts": "workspace:*",
       "@stryke/tools-nx": "workspace:*",
       "@stryke/helpers": "workspace:*",
