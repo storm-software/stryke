@@ -44,5 +44,11 @@ export const CASE_SPLIT_PATTERN = /[A-Z]?[a-z]+|\d+|[A-Z]+(?![a-z])/g;
  * @returns An array of words
  */
 export function getWords(str: string): string[] {
+  if (str.length > 1000) {
+    throw new Error(
+      "The regular expression parameter of `get-words` can't handle strings longer than 1000 characters"
+    );
+  }
+
   return [...(str.match(CASE_SPLIT_PATTERN) ?? [])];
 }
