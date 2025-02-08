@@ -145,6 +145,7 @@
       "follow-redirects": ">=1.15.9",
       "micromatch": ">=4.0.8",
       "path-to-regexp": ">=0.1.12",
+      "cookie": ">=0.7.0",
       "@stryke/tools-scripts": "workspace:*",
       "@stryke/tools-nx": "workspace:*",
       "@stryke/helpers": "workspace:*",
