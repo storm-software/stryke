@@ -35,6 +35,13 @@ export function setField<
       ? toPath(path)
       : [path];
 
+  // Validate resolvedPath to prevent prototype pollution
+  for (const key of resolvedPath) {
+    if (key === '__proto__' || key === 'constructor' || key === 'prototype') {
+      throw new Error('Invalid key in path: ' + key);
+    }
+  }
+
   let current: any = object;
   for (let i = 0; i < resolvedPath.length - 1; i++) {
     const key = resolvedPath[i];
