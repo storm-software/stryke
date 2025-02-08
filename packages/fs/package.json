@@ -22,7 +22,7 @@
     "@zkochan/js-yaml": "^0.0.7",
     "chalk": "^5.4.1",
     "nanotar": "^0.2.0",
-    "semver": "7.6.3"
+    "semver": "7.7.1"
   },
   "devDependencies": {
     "@types/node": "catalog:",
