@@ -2,4 +2,4 @@
 
 ### Bug Fixes
 
-- **cli:** Resolve typing issue with `figlet` dependency ([2ad7747](https://github.com/storm-software/stryke/commit/2ad7747))
+  - **cli:** Resolve typing issue with `figlet` dependency ([2ad7747](https://github.com/storm-software/stryke/commit/2ad7747))

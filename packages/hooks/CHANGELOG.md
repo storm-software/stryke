@@ -2,4 +2,4 @@
 
 ### Miscellaneous
 
-- **monorepo:** update auto-merge non-major dependencies ([#5](https://github.com/storm-software/stryke/pull/5))
+  - **monorepo:** update auto-merge non-major dependencies ([#5](https://github.com/storm-software/stryke/pull/5))
