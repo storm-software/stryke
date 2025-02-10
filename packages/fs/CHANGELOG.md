@@ -1,3 +1,9 @@
+## 0.1.3 (2025-02-10)
+
+### Bug Fixes
+
+- **fs:** Added missing type dependencies ([278596a](https://github.com/storm-software/stryke/commit/278596a))
+
 ## 0.1.2 (2025-02-09)
 
 ### Miscellaneous
