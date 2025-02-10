@@ -26,7 +26,8 @@
   },
   "devDependencies": {
     "@types/node": "catalog:",
-    "nx": "catalog:"
+    "nx": "catalog:",
+    "tinyexec": "^0.3.2"
   },
   "publishConfig": {
     "access": "public"
