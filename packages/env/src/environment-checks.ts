@@ -31,21 +31,26 @@ export const isDebug = Boolean(process.env.DEBUG);
 /** Detect if `NODE_ENV` environment variable is `test` */
 const nodeEnv = process.env.STORM_MODE || process.env.NODE_ENV || "production";
 
-/** Detect if `NODE_ENV` environment variable is `test` */
-export const isTest =
-  nodeEnv?.toLowerCase() === "test" || Boolean(process.env.TEST);
+/** Detect if `NODE_ENV` environment variable is `production` */
+export const isProduction = ["prd", "prod", "production"].includes(
+  nodeEnv?.toLowerCase()
+);
 
 /** Detect if `NODE_ENV` environment variable is `production` */
-export const isProduction =
-  nodeEnv?.toLowerCase() === "prod" || nodeEnv?.toLowerCase() === "production";
-
-/** Detect if `NODE_ENV` environment variable is `production` */
-export const isStaging =
-  nodeEnv?.toLowerCase() === "stage" || nodeEnv?.toLowerCase() === "staging";
+export const isStaging = ["stg", "stage", "staging"].includes(
+  nodeEnv?.toLowerCase()
+);
 
 /** Detect if `NODE_ENV` environment variable is `dev` or `development` */
-export const isDevelopment =
-  nodeEnv?.toLowerCase() === "dev" || nodeEnv?.toLowerCase() === "development";
+export const isDevelopment = ["dev", "development"].includes(
+  nodeEnv?.toLowerCase()
+);
+
+/** Detect if `NODE_ENV` environment variable is `test` */
+export const isTest =
+  ["tst", "test", "testing"].includes(nodeEnv?.toLowerCase()) ||
+  isStaging ||
+  Boolean(process.env.TEST);
 
 /** Detect if MINIMAL environment variable is set, running in CI or test or TTY is unavailable */
 export const isMinimal =
