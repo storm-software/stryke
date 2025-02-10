@@ -1,3 +1,9 @@
+## 0.1.3 (2025-02-10)
+
+### Miscellaneous
+
+- **helpers:** Update version to match current tag ([e99c378](https://github.com/storm-software/stryke/commit/e99c378))
+
 ## 0.1.2 (2025-02-10)
 
 ### Miscellaneous
