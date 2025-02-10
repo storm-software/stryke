@@ -47,28 +47,28 @@ This package is part of Storm Software's **🌩️ Stryke** monorepo. Stryke pac
 # Stryke - Helper Functions
 
 A package containing miscellaneous helper functions that are used across many
-different Storm Software projects.
+different Storm Software projects. This package is not meant to depend on any other Stryke projects.
 
 <!-- START doctoc -->
 <!-- DON'T EDIT THIS SECTION, INSTEAD RE-RUN doctoc TO UPDATE -->
 
 ## Table of Contents
 
-  - [Stryke - Helper Functions](#stryke---helper-functions)
-    - [Table of Contents](#table-of-contents)
-    - [Installing](#installing)
-    - [Reduced Package Size](#reduced-package-size)
-    - [Development](#development)
-      - [Building](#building)
-      - [Running unit tests](#running-unit-tests)
-      - [Linting](#linting)
-    - [Storm Workspaces](#storm-workspaces)
-    - [Roadmap](#roadmap)
-    - [Support](#support)
-    - [License](#license)
-    - [Changelog](#changelog)
-    - [Contributing](#contributing)
-    - [Contributors](#contributors)
+- [Stryke - Helper Functions](#stryke---helper-functions)
+  - [Table of Contents](#table-of-contents)
+  - [Installing](#installing)
+  - [Reduced Package Size](#reduced-package-size)
+  - [Development](#development)
+    - [Building](#building)
+    - [Running unit tests](#running-unit-tests)
+    - [Linting](#linting)
+  - [Storm Workspaces](#storm-workspaces)
+  - [Roadmap](#roadmap)
+  - [Support](#support)
+  - [License](#license)
+  - [Changelog](#changelog)
+  - [Contributing](#contributing)
+  - [Contributors](#contributors)
 
 <!-- END doctoc -->
 
