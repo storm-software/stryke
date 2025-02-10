@@ -1,3 +1,9 @@
+## 0.1.4 (2025-02-10)
+
+### Miscellaneous
+
+- **string-format:** Updated the description for the package ([8bc583e](https://github.com/storm-software/stryke/commit/8bc583e))
+
 ## 0.1.3 (2025-02-10)
 
 ### Miscellaneous
