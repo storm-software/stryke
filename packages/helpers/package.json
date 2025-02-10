@@ -1,6 +1,6 @@
 {
   "name": "@strike/helpers",
-  "version": "0.0.1",
+  "version": "0.1.2",
   "type": "module",
   "description": "A package containing miscellaneous helper functions that are used across many different Storm Software projects.",
   "repository": {
