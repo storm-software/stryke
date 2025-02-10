@@ -1,3 +1,9 @@
+## 0.1.3 (2025-02-10)
+
+### Bug Fixes
+
+- **env:** Ensure the runtime constants are all typed consistently ([13d8dc7](https://github.com/storm-software/stryke/commit/13d8dc7))
+
 ## 0.1.2 (2025-02-10)
 
 ### Miscellaneous
