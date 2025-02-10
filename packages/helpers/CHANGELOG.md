@@ -1,3 +1,9 @@
+## 0.1.4 (2025-02-10)
+
+### Miscellaneous
+
+- **helpers:** Upgrade version in package.json to correct value ([ad92741](https://github.com/storm-software/stryke/commit/ad92741))
+
 ## 0.1.3 (2025-02-10)
 
 ### Miscellaneous
