@@ -46,28 +46,28 @@ This package is part of Storm Software's **🌩️ Stryke** monorepo. Stryke pac
 
 # Stryke - String Formatting
 
-A collection of helper functions used to manipulate string values
+A collection of helper functions used to manipulate string values. The functions in this package are responsible for transforming strings into various formats.
 
 <!-- START doctoc -->
 <!-- DON'T EDIT THIS SECTION, INSTEAD RE-RUN doctoc TO UPDATE -->
 
 ## Table of Contents
 
-  - [Stryke - String Formatting](#stryke---string-formatting)
-    - [Table of Contents](#table-of-contents)
-    - [Installing](#installing)
-    - [Reduced Package Size](#reduced-package-size)
-    - [Development](#development)
-      - [Building](#building)
-      - [Running unit tests](#running-unit-tests)
-      - [Linting](#linting)
-    - [Storm Workspaces](#storm-workspaces)
-    - [Roadmap](#roadmap)
-    - [Support](#support)
-    - [License](#license)
-    - [Changelog](#changelog)
-    - [Contributing](#contributing)
-    - [Contributors](#contributors)
+- [Stryke - String Formatting](#stryke---string-formatting)
+  - [Table of Contents](#table-of-contents)
+  - [Installing](#installing)
+  - [Reduced Package Size](#reduced-package-size)
+  - [Development](#development)
+    - [Building](#building)
+    - [Running unit tests](#running-unit-tests)
+    - [Linting](#linting)
+  - [Storm Workspaces](#storm-workspaces)
+  - [Roadmap](#roadmap)
+  - [Support](#support)
+  - [License](#license)
+  - [Changelog](#changelog)
+  - [Contributing](#contributing)
+  - [Contributors](#contributors)
 
 <!-- END doctoc -->
 
