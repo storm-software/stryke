@@ -1,6 +1,6 @@
 {
   "name": "@stryke/hooks",
-  "version": "0.1.2",
+  "version": "0.0.1",
   "type": "module",
   "description": "A package containing shared hooks that can be used in any React UI project",
   "repository": {
@@ -33,7 +33,7 @@
   "devDependencies": {
     "@types/react": "catalog:",
     "@types/react-dom": "catalog:",
-    "@types/react-native": "0.73.0"
+    "@types/react-native": "0.72.8"
   },
   "publishConfig": {
     "access": "public"
