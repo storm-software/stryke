@@ -29,19 +29,27 @@ export const hasTTY = Boolean(
 export const isDebug = Boolean(process.env.DEBUG);
 
 /** Detect if `NODE_ENV` environment variable is `test` */
+const nodeEnv = process.env.STORM_MODE || process.env.NODE_ENV || "production";
+
+/** Detect if `NODE_ENV` environment variable is `test` */
 export const isTest =
-  process.env.NODE_ENV === "test" || Boolean(process.env.TEST);
+  nodeEnv?.toLowerCase() === "test" || Boolean(process.env.TEST);
 
 /** Detect if `NODE_ENV` environment variable is `production` */
-export const isProduction = process.env.NODE_ENV === "production";
+export const isProduction =
+  nodeEnv?.toLowerCase() === "prod" || nodeEnv?.toLowerCase() === "production";
+
+/** Detect if `NODE_ENV` environment variable is `production` */
+export const isStaging =
+  nodeEnv?.toLowerCase() === "stage" || nodeEnv?.toLowerCase() === "staging";
 
 /** Detect if `NODE_ENV` environment variable is `dev` or `development` */
 export const isDevelopment =
-  process.env.NODE_ENV === "dev" || process.env.NODE_ENV === "development";
+  nodeEnv?.toLowerCase() === "dev" || nodeEnv?.toLowerCase() === "development";
 
 /** Detect if MINIMAL environment variable is set, running in CI or test or TTY is unavailable */
 export const isMinimal =
-  Boolean(process.env.MINIMAL) || isCI || isTest || !hasTTY;
+  Boolean(process.env.MINIMAL) || isCI() || isTest || !hasTTY;
 
 /** Detect if process.platform is Windows */
 export const isWindows = /^win/i.test(platform);
