@@ -1,3 +1,9 @@
+## 0.1.4 (2025-02-10)
+
+### Bug Fixes
+
+- **fs:** Add reference to the `tinyexec` package ([0721069](https://github.com/storm-software/stryke/commit/0721069))
+
 ## 0.1.3 (2025-02-10)
 
 ### Bug Fixes
