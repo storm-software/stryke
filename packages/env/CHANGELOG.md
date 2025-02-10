@@ -1,3 +1,9 @@
+## 0.2.0 (2025-02-10)
+
+### Features
+
+- **env:** Added additional aliases for environment modes ([3e1c897](https://github.com/storm-software/stryke/commit/3e1c897))
+
 ## 0.1.3 (2025-02-10)
 
 ### Bug Fixes
