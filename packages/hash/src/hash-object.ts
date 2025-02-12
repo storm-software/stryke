@@ -1,8 +1,8 @@
 /*-------------------------------------------------------------------
 
-                       ⚡ Storm Software - Stryke
+                  ⚡ Storm Software - Storm Stack
 
- This code was released as part of the Stryke project. Stryke
+ This code was released as part of the Storm Stack project. Storm Stack
  is maintained by Storm Software under the Apache-2.0 License, and is
  free for commercial and private use. For more information, please visit
  our licensing page.
@@ -14,6 +14,9 @@
  License:         https://stormsoftware.com/projects/stryke/license
 
  -------------------------------------------------------------------*/
+
+/* eslint-disable */
+// @ts-nocheck
 
 // Based on https://github.com/puleos/object-hash v3.0.0 (MIT)
 

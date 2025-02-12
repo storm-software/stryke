@@ -16,7 +16,7 @@
  -------------------------------------------------------------------*/
 
 import { isString } from "@stryke/types/type-checks/is-string";
-import { HashObjectOptions, hashObject } from "./hash-object";
+import { type HashObjectOptions, hashObject } from "./hash-object";
 import { sha256base64 } from "./sha-256";
 
 export interface HashOptions extends HashObjectOptions {
