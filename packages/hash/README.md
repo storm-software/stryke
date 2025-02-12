@@ -1,7 +1,7 @@
 <!-- START header -->
 <!-- END header -->
 
-# Stryke - Hash
+# Stryke - Hashing Utiltites
 
 A package containing various functions that given a certain parameter will
 generate a hash string
