@@ -2,13 +2,15 @@
 
 ### Bug Fixes
 
-- **hash:** Resolve issue creating hash objects ([e9045a9](https://github.com/storm-software/stryke/commit/e9045a9))
+- **hash:** Resolve issue creating hash objects
+  ([e9045a9](https://github.com/storm-software/stryke/commit/e9045a9))
 
 ## 0.2.1 (2025-02-15)
 
 ### Miscellaneous
 
-- **monorepo:** Reformat workspace files ([ad2d6a9](https://github.com/storm-software/stryke/commit/ad2d6a9))
+- **monorepo:** Reformat workspace files
+  ([ad2d6a9](https://github.com/storm-software/stryke/commit/ad2d6a9))
 
 ## 0.2.0 (2025-02-12)
 

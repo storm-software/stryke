@@ -2,7 +2,8 @@
 
 ### Features
 
-- **helpers:** Added the `deepCopy` helper function ([76b0179](https://github.com/storm-software/stryke/commit/76b0179))
+- **helpers:** Added the `deepCopy` helper function
+  ([76b0179](https://github.com/storm-software/stryke/commit/76b0179))
 
 ## 0.1.5 (2025-02-10)
 

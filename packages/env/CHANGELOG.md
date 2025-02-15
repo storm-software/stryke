@@ -2,13 +2,15 @@
 
 ### Features
 
-- **helpers:** Added the `deepCopy` helper function ([76b0179](https://github.com/storm-software/stryke/commit/76b0179))
+- **helpers:** Added the `deepCopy` helper function
+  ([76b0179](https://github.com/storm-software/stryke/commit/76b0179))
 
 ## 0.2.1 (2025-02-15)
 
 ### Miscellaneous
 
-- **monorepo:** Reformat workspace files ([ad2d6a9](https://github.com/storm-software/stryke/commit/ad2d6a9))
+- **monorepo:** Reformat workspace files
+  ([ad2d6a9](https://github.com/storm-software/stryke/commit/ad2d6a9))
 
 ## 0.2.0 (2025-02-10)
 

@@ -99,7 +99,8 @@ pre-push:
       stage_fixed: true
     lint-filename:
       glob: "**/*"
-      run: 'pnpm exec ls-lint
+      run:
+        'pnpm exec ls-lint
         --config="./node_modules/@storm-software/linting-tools/ls-lint/config.yml"'
     lint-codeowners:
       glob: "**/CODEOWNERS"
@@ -123,7 +124,8 @@ pre-push:
       stage_fixed: true
     readme:
       glob: "**/*"
-      run: 'pnpm exec storm-git readme --templates="tools/readme-templates"
+      run:
+        'pnpm exec storm-git readme --templates="tools/readme-templates"
         --project="@stryke/monorepo" '
       stage_fixed: true
     format:
