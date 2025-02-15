@@ -1,3 +1,9 @@
+## 0.2.1 (2025-02-15)
+
+### Miscellaneous
+
+- **monorepo:** Reformat monorepo files ([69ed6b7](https://github.com/storm-software/stryke/commit/69ed6b7))
+
 ## 0.2.0 (2025-02-15)
 
 ### Features
