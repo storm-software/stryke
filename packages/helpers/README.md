@@ -57,6 +57,7 @@ other Stryke projects.
 
 - [Stryke - Helper Functions](#stryke---helper-functions)
   - [Table of Contents](#table-of-contents)
+  - [Quick Features](#quick-features)
   - [Installing](#installing)
   - [Reduced Package Size](#reduced-package-size)
   - [Development](#development)
@@ -72,6 +73,35 @@ other Stryke projects.
   - [Contributors](#contributors)
 
 <!-- END doctoc -->
+
+## Quick Features
+
+The following modules are available in this package:
+
+- **arg-identity**: Provides a function that returns its argument.
+- **debounce**: Provides a function to debounce another function, delaying its execution.
+- **deep-clone**: Provides a function to create a deep clone of an object.
+- **deep-copy**: Provides a function to create a deep copy of an object.
+- **deep-merge**: Provides a function to deeply merge two objects.
+- **delay**: Provides a function to delay execution for a specified amount of time.
+- **flatten-object**: Provides a function to flatten a nested object into a single level object.
+- **get-field**: Provides a function to get the value of a field from an object.
+- **get-ordered-by**: Provides a function to order an array of objects by a specified field.
+- **get-unique**: Provides a function to get unique values from an array.
+- **identity**: Provides a function that returns its argument.
+- **is-equal**: Provides a function to check if two values are deeply equal.
+- **match-sorter**: Provides a function to sort an array based on a search query.
+- **noop**: Provides a no-operation function.
+- **remove-accents**: Provides a function to remove accents from a string.
+- **remove-empty-items**: Provides a function to remove empty items from an array.
+- **set-field**: Provides a function to set the value of a field in an object.
+- **throttle**: Provides a function to throttle another function, limiting its execution rate.
+- **timeout**: Provides a function to execute another function with a timeout.
+- **to-deep-key**: Provides a function to convert a path to a deep key.
+- **to-path**: Provides a function to convert a deep key to a path.
+- **unflatten-object**: Provides a function to unflatten a single level object into a nested object.
+- **union**: Provides a function to create a union of two arrays.
+- **with-timeout**: Provides a function to execute another function with a timeout.
 
 ## Installing
 

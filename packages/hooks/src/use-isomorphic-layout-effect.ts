@@ -15,7 +15,7 @@
 
  -------------------------------------------------------------------*/
 
-import { isRuntimeServer } from "@stryke/helpers/is-runtime-server";
+import { isRuntimeServer } from "@stryke/env/runtime-checks";
 import { useEffect, useLayoutEffect } from "react";
 
 /**
@@ -23,6 +23,6 @@ import { useEffect, useLayoutEffect } from "react";
  *
  * @returns An indicator specifying if the code is running on the server-side
  */
-export const useIsomorphicLayoutEffect = isRuntimeServer()
+export const useIsomorphicLayoutEffect = isRuntimeServer
   ? useEffect
   : useLayoutEffect;

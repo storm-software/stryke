@@ -71,6 +71,23 @@ export const isEdgeLight = Boolean(globalThis.EdgeRuntime);
 export const isWorkerd =
   globalThis.navigator?.userAgent === "Cloudflare-Workers";
 
+/**
+ * Indicates if the code is running on the server-side
+ */
+export const isRuntimeServer =
+  isNode ||
+  isBun ||
+  isDeno ||
+  isFastly ||
+  isNetlify ||
+  isEdgeLight ||
+  isWorkerd;
+
+/**
+ * Indicates if the code is running in the browser (and not on the server).
+ */
+export const isRuntimeClient = !isRuntimeServer;
+
 const runtimeChecks: [boolean, RuntimeName][] = [
   [isNetlify, "netlify"],
   [isEdgeLight, "edge-light"],

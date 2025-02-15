@@ -15,13 +15,105 @@
 
  -------------------------------------------------------------------*/
 
-import { isPrimitive, isTypedArray } from "@stryke/types";
+import { isPrimitive } from "@stryke/types/type-checks/is-primitive";
+import { isTypedArray } from "@stryke/types/type-checks/is-typed-array";
+
+export type Resolved<T> =
+  Equal<T, ResolvedMain<T>> extends true ? T : ResolvedMain<T>;
+
+type Equal<X, Y> = X extends Y ? (Y extends X ? true : false) : false;
+
+type ResolvedMain<T> = T extends [never]
+  ? never // (special trick for jsonable | null) type
+  : ValueOf<T> extends boolean | number | bigint | string
+    ? ValueOf<T>
+    : T extends (...args: any[]) => any
+      ? never
+      : T extends object
+        ? ResolvedObject<T>
+        : ValueOf<T>;
+
+type ResolvedObject<T extends object> = T extends (infer U)[]
+  ? IsTuple<T> extends true
+    ? ResolvedTuple<T>
+    : ResolvedMain<U>[]
+  : T extends Set<infer U>
+    ? Set<ResolvedMain<U>>
+    : T extends Map<infer K, infer V>
+      ? Map<ResolvedMain<K>, ResolvedMain<V>>
+      : T extends WeakSet<any> | WeakMap<any, any>
+        ? never
+        : T extends
+              | Date
+              | Uint8Array
+              | Uint8ClampedArray
+              | Uint16Array
+              | Uint32Array
+              | BigUint64Array
+              | Int8Array
+              | Int16Array
+              | Int32Array
+              | BigInt64Array
+              | Float32Array
+              | Float64Array
+              | ArrayBuffer
+              | SharedArrayBuffer
+              | DataView
+              | Blob
+              | File
+          ? T
+          : {
+              [P in keyof T]: ResolvedMain<T[P]>;
+            };
+
+type ResolvedTuple<T extends readonly any[]> = T extends []
+  ? []
+  : T extends [infer F]
+    ? [ResolvedMain<F>]
+    : T extends [infer F, ...infer Rest extends readonly any[]]
+      ? [ResolvedMain<F>, ...ResolvedTuple<Rest>]
+      : T extends [(infer F)?]
+        ? [ResolvedMain<F>?]
+        : T extends [(infer F)?, ...infer Rest extends readonly any[]]
+          ? [ResolvedMain<F>?, ...ResolvedTuple<Rest>]
+          : [];
+
+type IsTuple<T extends readonly any[] | { length: number }> = [T] extends [
+  never
+]
+  ? false
+  : T extends readonly any[]
+    ? number extends T["length"]
+      ? false
+      : true
+    : false;
+
+type ValueOf<Instance> =
+  IsValueOf<Instance, boolean> extends true
+    ? boolean
+    : IsValueOf<Instance, number> extends true
+      ? number
+      : IsValueOf<Instance, string> extends true
+        ? string
+        : Instance;
+
+type IsValueOf<Instance, O extends IValueOf<any>> = Instance extends O
+  ? O extends IValueOf<infer Primitive>
+    ? Instance extends Primitive
+      ? false
+      : true // not Primitive, but Object
+    : false // cannot be
+  : false;
+
+interface IValueOf<T> {
+  valueOf(): T;
+}
 
 /**
  * Creates a deep clone of the given object.
  *
- * @param obj - The object to clone.
- * @returns A deep clone of the given object.
+ * @remarks
+ * This function creates a deep clone of the given object, including nested objects and arrays. The resulting output will be of type `Resolved<T>`, which is a type that resolves to the most specific type possible for the given input type `T`. **If you are just looking for a way to copy an object deeply, use {@link deepCopy} instead.**
  *
  * @example
  * ```typescript
@@ -60,6 +152,9 @@ import { isPrimitive, isTypedArray } from "@stryke/types";
  * console.log(clonedObj); // { a: 1, b: { c: 1 } }
  * console.log(clonedObj === obj); // false
  * ```
+ *
+ * @param obj - The object to clone.
+ * @returns A deep clone of the given object.
  */
 export function deepClone<T>(obj: T): Resolved<T> {
   if (isPrimitive(obj)) {
@@ -158,95 +253,4 @@ function cloneDeepHelper(obj: any, clonedObj: any): void {
       clonedObj[key] = deepClone(obj[key]);
     }
   }
-}
-
-export type Resolved<T> =
-  Equal<T, ResolvedMain<T>> extends true ? T : ResolvedMain<T>;
-
-type Equal<X, Y> = X extends Y ? (Y extends X ? true : false) : false;
-
-type ResolvedMain<T> = T extends [never]
-  ? never // (special trick for jsonable | null) type
-  : ValueOf<T> extends boolean | number | bigint | string
-    ? ValueOf<T>
-    : T extends (...args: any[]) => any
-      ? never
-      : T extends object
-        ? ResolvedObject<T>
-        : ValueOf<T>;
-
-type ResolvedObject<T extends object> = T extends (infer U)[]
-  ? IsTuple<T> extends true
-    ? ResolvedTuple<T>
-    : ResolvedMain<U>[]
-  : T extends Set<infer U>
-    ? Set<ResolvedMain<U>>
-    : T extends Map<infer K, infer V>
-      ? Map<ResolvedMain<K>, ResolvedMain<V>>
-      : T extends WeakSet<any> | WeakMap<any, any>
-        ? never
-        : T extends
-              | Date
-              | Uint8Array
-              | Uint8ClampedArray
-              | Uint16Array
-              | Uint32Array
-              | BigUint64Array
-              | Int8Array
-              | Int16Array
-              | Int32Array
-              | BigInt64Array
-              | Float32Array
-              | Float64Array
-              | ArrayBuffer
-              | SharedArrayBuffer
-              | DataView
-              | Blob
-              | File
-          ? T
-          : {
-              [P in keyof T]: ResolvedMain<T[P]>;
-            };
-
-type ResolvedTuple<T extends readonly any[]> = T extends []
-  ? []
-  : T extends [infer F]
-    ? [ResolvedMain<F>]
-    : T extends [infer F, ...infer Rest extends readonly any[]]
-      ? [ResolvedMain<F>, ...ResolvedTuple<Rest>]
-      : T extends [(infer F)?]
-        ? [ResolvedMain<F>?]
-        : T extends [(infer F)?, ...infer Rest extends readonly any[]]
-          ? [ResolvedMain<F>?, ...ResolvedTuple<Rest>]
-          : [];
-
-type IsTuple<T extends readonly any[] | { length: number }> = [T] extends [
-  never
-]
-  ? false
-  : T extends readonly any[]
-    ? number extends T["length"]
-      ? false
-      : true
-    : false;
-
-type ValueOf<Instance> =
-  IsValueOf<Instance, boolean> extends true
-    ? boolean
-    : IsValueOf<Instance, number> extends true
-      ? number
-      : IsValueOf<Instance, string> extends true
-        ? string
-        : Instance;
-
-type IsValueOf<Instance, O extends IValueOf<any>> = Instance extends O
-  ? O extends IValueOf<infer Primitive>
-    ? Instance extends Primitive
-      ? false
-      : true // not Primitive, but Object
-    : false // cannot be
-  : false;
-
-interface IValueOf<T> {
-  valueOf(): T;
 }

@@ -18,6 +18,7 @@
 export * from "./arg-identity";
 export * from "./debounce";
 export * from "./deep-clone";
+export * from "./deep-copy";
 export * from "./deep-merge";
 export * from "./delay";
 export * from "./flatten-object";
@@ -26,8 +27,6 @@ export * from "./get-ordered-by";
 export * from "./get-unique";
 export * from "./identity";
 export * from "./is-equal";
-export * from "./is-production";
-export * from "./is-runtime-server";
 export * from "./match-sorter";
 export * from "./noop";
 export * from "./remove-accents";
