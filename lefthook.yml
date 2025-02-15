@@ -11,16 +11,16 @@ min_version: 1.5.0
 pre-install:
   commands:
     validate:
-      glob: "**/*.*"
+      glob: "**/*"
       run: "pnpm exec storm-pre-install"
 
 prepare:
   commands:
     validate:
-      glob: "**/*.*"
+      glob: "**/*"
       run: "pnpm exec storm-prepare"
     plugins:
-      glob: "**/*.*"
+      glob: "**/*"
       run: "pnpm exec zx tools/scripts/src/bootstrap.mjs"
 
 pre-commit:
@@ -134,18 +134,18 @@ pre-push:
 post-merge:
   commands:
     validate:
-      glob: "**/*.*"
+      glob: "**/*"
       run: "pnpm exec storm-post-merge {staged_files}"
       stage_fixed: true
 
 post-checkout:
   commands:
     validate:
-      glob: "**/*.*"
+      glob: "**/*"
       run: "pnpm exec storm-post-checkout {staged_files}"
 
 post-commit:
   commands:
     validate:
-      glob: "**/*.*"
+      glob: "**/*"
       run: "pnpm exec storm-post-commit {staged_files}"

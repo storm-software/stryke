@@ -37,8 +37,8 @@ export function setField<
 
   // Validate resolvedPath to prevent prototype pollution
   for (const key of resolvedPath) {
-    if (key === '__proto__' || key === 'constructor' || key === 'prototype') {
-      throw new Error('Invalid key in path: ' + key);
+    if (key === "__proto__" || key === "constructor" || key === "prototype") {
+      throw new Error("Invalid key in path: " + key);
     }
   }
 

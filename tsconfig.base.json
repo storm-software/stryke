@@ -6,90 +6,34 @@
     "rootDir": ".",
     "baseUrl": ".",
     "paths": {
-      "@stryke/cli": [
-        "packages/cli/src/index.ts"
-      ],
-      "@stryke/cli/*": [
-        "packages/cli/src/*"
-      ],
-      "@stryke/env": [
-        "packages/env/src/index.ts"
-      ],
-      "@stryke/env/*": [
-        "packages/env/src/*"
-      ],
-      "@stryke/fs": [
-        "packages/fs/src/index.ts"
-      ],
-      "@stryke/fs/*": [
-        "packages/fs/src/*"
-      ],
-      "@stryke/hash": [
-        "packages/hash/src/index.ts"
-      ],
-      "@stryke/hash/*": [
-        "packages/hash/src/*"
-      ],
-      "@stryke/helpers": [
-        "packages/helpers/src/index.ts"
-      ],
-      "@stryke/helpers/*": [
-        "packages/helpers/src/*"
-      ],
-      "@stryke/hooks": [
-        "packages/hooks/src/index.ts"
-      ],
-      "@stryke/hooks/*": [
-        "packages/hooks/src/*"
-      ],
-      "@stryke/http": [
-        "packages/http/src/index.ts"
-      ],
-      "@stryke/http/*": [
-        "packages/http/src/*"
-      ],
-      "@stryke/json": [
-        "packages/json/src/index.ts"
-      ],
-      "@stryke/json/*": [
-        "packages/json/src/*"
-      ],
-      "@stryke/path": [
-        "packages/path/src/index.ts"
-      ],
-      "@stryke/path/*": [
-        "packages/path/src/*"
-      ],
-      "@stryke/string-format": [
-        "packages/string-format/src/index.ts"
-      ],
-      "@stryke/string-format/*": [
-        "packages/string-format/src/*"
-      ],
-      "@stryke/tools-nx": [
-        "tools/nx/src/index.ts"
-      ],
-      "@stryke/tools-nx/*": [
-        "tools/nx/src/*"
-      ],
-      "@stryke/tools-scripts": [
-        "tools/scripts/src/index.ts"
-      ],
-      "@stryke/tools-scripts/*": [
-        "tools/scripts/src/*"
-      ],
-      "@stryke/types": [
-        "packages/types/src/index.ts"
-      ],
-      "@stryke/types/*": [
-        "packages/types/src/*"
-      ],
-      "@stryke/unique-id": [
-        "packages/unique-id/src/index.ts"
-      ],
-      "@stryke/unique-id/*": [
-        "packages/unique-id/src/*"
-      ]
+      "@stryke/cli": ["packages/cli/src/index.ts"],
+      "@stryke/cli/*": ["packages/cli/src/*"],
+      "@stryke/env": ["packages/env/src/index.ts"],
+      "@stryke/env/*": ["packages/env/src/*"],
+      "@stryke/fs": ["packages/fs/src/index.ts"],
+      "@stryke/fs/*": ["packages/fs/src/*"],
+      "@stryke/hash": ["packages/hash/src/index.ts"],
+      "@stryke/hash/*": ["packages/hash/src/*"],
+      "@stryke/helpers": ["packages/helpers/src/index.ts"],
+      "@stryke/helpers/*": ["packages/helpers/src/*"],
+      "@stryke/hooks": ["packages/hooks/src/index.ts"],
+      "@stryke/hooks/*": ["packages/hooks/src/*"],
+      "@stryke/http": ["packages/http/src/index.ts"],
+      "@stryke/http/*": ["packages/http/src/*"],
+      "@stryke/json": ["packages/json/src/index.ts"],
+      "@stryke/json/*": ["packages/json/src/*"],
+      "@stryke/path": ["packages/path/src/index.ts"],
+      "@stryke/path/*": ["packages/path/src/*"],
+      "@stryke/string-format": ["packages/string-format/src/index.ts"],
+      "@stryke/string-format/*": ["packages/string-format/src/*"],
+      "@stryke/tools-nx": ["tools/nx/src/index.ts"],
+      "@stryke/tools-nx/*": ["tools/nx/src/*"],
+      "@stryke/tools-scripts": ["tools/scripts/src/index.ts"],
+      "@stryke/tools-scripts/*": ["tools/scripts/src/*"],
+      "@stryke/types": ["packages/types/src/index.ts"],
+      "@stryke/types/*": ["packages/types/src/*"],
+      "@stryke/unique-id": ["packages/unique-id/src/index.ts"],
+      "@stryke/unique-id/*": ["packages/unique-id/src/*"]
     }
   }
 }

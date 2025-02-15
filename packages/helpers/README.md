@@ -47,7 +47,8 @@ This package is part of Storm Software's **🌩️ Stryke** monorepo. Stryke pac
 # Stryke - Helper Functions
 
 A package containing miscellaneous helper functions that are used across many
-different Storm Software projects. This package is not meant to depend on any other Stryke projects.
+different Storm Software projects. This package is not meant to depend on any
+other Stryke projects.
 
 <!-- START doctoc -->
 <!-- DON'T EDIT THIS SECTION, INSTEAD RE-RUN doctoc TO UPDATE -->

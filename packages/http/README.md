@@ -54,21 +54,21 @@ between processes easier in other packages/applications.
 
 ## Table of Contents
 
-  - [Stryke - Http Helpers](#stryke---http-helpers)
-    - [Table of Contents](#table-of-contents)
-    - [Installing](#installing)
-    - [Reduced Package Size](#reduced-package-size)
-    - [Development](#development)
-      - [Building](#building)
-      - [Running unit tests](#running-unit-tests)
-      - [Linting](#linting)
-    - [Storm Workspaces](#storm-workspaces)
-    - [Roadmap](#roadmap)
-    - [Support](#support)
-    - [License](#license)
-    - [Changelog](#changelog)
-    - [Contributing](#contributing)
-    - [Contributors](#contributors)
+- [Stryke - Http Helpers](#stryke---http-helpers)
+  - [Table of Contents](#table-of-contents)
+  - [Installing](#installing)
+  - [Reduced Package Size](#reduced-package-size)
+  - [Development](#development)
+    - [Building](#building)
+    - [Running unit tests](#running-unit-tests)
+    - [Linting](#linting)
+  - [Storm Workspaces](#storm-workspaces)
+  - [Roadmap](#roadmap)
+  - [Support](#support)
+  - [License](#license)
+  - [Changelog](#changelog)
+  - [Contributing](#contributing)
+  - [Contributors](#contributors)
 
 <!-- END doctoc -->
 

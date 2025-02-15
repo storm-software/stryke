@@ -46,7 +46,8 @@ This package is part of Storm Software's **🌩️ Stryke** monorepo. Stryke pac
 
 # Stryke - String Formatting
 
-A collection of helper functions used to manipulate string values. The functions in this package are responsible for transforming strings into various formats.
+A collection of helper functions used to manipulate string values. The functions
+in this package are responsible for transforming strings into various formats.
 
 <!-- START doctoc -->
 <!-- DON'T EDIT THIS SECTION, INSTEAD RE-RUN doctoc TO UPDATE -->
