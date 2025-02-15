@@ -1,6 +1,6 @@
 {
   "name": "@stryke/hooks",
-  "version": "0.1.3",
+  "version": "0.1.4",
   "type": "module",
   "description": "A package containing shared hooks that can be used in any React UI project",
   "repository": {
