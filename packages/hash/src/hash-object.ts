@@ -23,72 +23,72 @@
 export interface HashObjectOptions {
   /**
    * Function to determine if a key should be excluded from hashing.
-   *
+   * @optional
    * @param key - The key to check for exclusion.
-   * @returns Returns true to exclude the key from hashing.
+   * @returns {boolean} - Returns true to exclude the key from hashing.
    */
   excludeKeys?: ((key: string) => boolean) | undefined;
 
   /**
    * Specifies whether to exclude values from hashing, so that only the object keys are hashed.
-   *
+   * @optional
    */
   excludeValues?: boolean | undefined;
 
   /**
    * Specifies whether to ignore objects of unknown type (not directly serialisable) when hashing.
-   *
-   * @defaultValue false
+   * @optional
+   * @default false
    */
   ignoreUnknown?: boolean | undefined;
 
   /**
-   * A function that replaces values before they are hashed, which can be used to customize the hashing process.
-   *
+   * A function that replaces values before they are hashed, which can be used to customise the hashing process.
+   * @optional
    * @param value - The current value to be hashed.
-   * @returns The value to use for hashing instead.
+   * @returns {any} - The value to use for hashing instead.
    */
   replacer?: ((value: any) => any) | undefined;
 
   /**
    * Specifies whether the 'name' property of functions should be taken into account when hashing.
-   *
-   * @defaultValue false
+   * @optional
+   * @default false
    */
   respectFunctionNames?: boolean | undefined;
 
   /**
    * Specifies whether properties of functions should be taken into account when hashing.
-   *
-   * @defaultValue false
+   * @optional
+   * @default false
    */
   respectFunctionProperties?: boolean | undefined;
 
   /**
    * Specifies whether to include type-specific properties such as prototype or constructor in the hash to distinguish between types.
-   *
-   * @defaultValue false
+   * @optional
+   * @default false
    */
   respectType?: boolean | undefined;
 
   /**
    * Specifies whether arrays should be sorted before hashing to ensure consistent order.
-   *
-   * @defaultValue false
+   * @optional
+   * @default false
    */
   unorderedArrays?: boolean | undefined;
 
   /**
    * Specifies whether Set and Map instances should be sorted by key before hashing to ensure consistent order.
-   *
-   * @defaultValue true
+   * @optional
+   * @default true
    */
   unorderedObjects?: boolean | undefined;
 
   /**
    * Specifies whether the elements of `Set' and keys of `Map' should be sorted before hashing to ensure consistent order.
-   *
-   * @defaultValue false
+   * @optional
+   * @default false
    */
   unorderedSets?: boolean | undefined;
 }
@@ -109,18 +109,17 @@ const defaults: HashObjectOptions = Object.freeze({
 
 /**
  * Serialize any JS value into a stable, hashable string
- *
- * @param object - value to hash
- * @param options - hashing options. See {@link HashObjectOptions}.
- * @returns serialized value
+ * @param {object} object value to hash
+ * @param {HashObjectOptions} options hashing options. See {@link HashObjectOptions}.
+ * @return {string} serialized value
+ * @api public
  */
 export function hashObject(object: any, options?: HashObjectOptions): string {
-  options = options
-    ? {
-        ...defaults,
-        ...options
-      }
-    : defaults;
+  if (options) {
+    options = { ...defaults, ...options };
+  } else {
+    options = defaults;
+  }
   const hasher = createHasher(options);
   hasher.dispatch(object);
   return hasher.toString();
@@ -151,7 +150,6 @@ function createHasher(options: HashObjectOptions) {
         value = options.replacer(value);
       }
       const type = value === null ? "null" : typeof value;
-
       return this[type](value);
     },
     object(object: any): string | void {
@@ -165,14 +163,18 @@ function createHasher(options: HashObjectOptions) {
       const objectLength = objString.length;
 
       // '[object a]'.length === 10, the minimum
-      objType =
-        objectLength < 10
-          ? "unknown:[" + objString + "]"
-          : objString.slice(8, objectLength - 1);
+      if (objectLength < 10) {
+        objType = "unknown:[" + objString + "]";
+      } else {
+        // '[object '.length === 8
+        objType = objString.slice(8, objectLength - 1);
+      }
+
       objType = objType.toLowerCase();
 
-      let objectNumber = context.get(object);
-      if (objectNumber === undefined) {
+      let objectNumber = null;
+
+      if ((objectNumber = context.get(object)) === undefined) {
         context.set(object, context.size);
       } else {
         return this.dispatch("[CIRCULAR:" + objectNumber + "]");
@@ -239,7 +241,8 @@ function createHasher(options: HashObjectOptions) {
       }
     },
     array(arr: any, unordered: boolean): string | void {
-      unordered = unordered ?? options.unorderedArrays !== false; // default to options.unorderedArrays
+      unordered =
+        unordered === undefined ? options.unorderedArrays !== false : unordered; // default to options.unorderedArrays
 
       write("array:" + arr.length + ":");
       if (!unordered || arr.length <= 1) {
@@ -280,7 +283,7 @@ function createHasher(options: HashObjectOptions) {
       }
       write(":");
       if (value && typeof value.entries === "function") {
-        return this.array([...value.entries()], true /* ordered */);
+        return this.array(Array.from(value.entries()), true /* ordered */);
       }
     },
     error(err: any) {
@@ -373,13 +376,11 @@ function createHasher(options: HashObjectOptions) {
     map(map: any) {
       write("map:");
       const arr = [...map];
-
       return this.array(arr, options.unorderedSets !== false);
     },
     set(set: any) {
       write("set:");
       const arr = [...set];
-
       return this.array(arr, options.unorderedSets !== false);
     },
     file(file: any) {
