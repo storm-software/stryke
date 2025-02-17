@@ -1,3 +1,9 @@
+## 0.2.0 (2025-02-17)
+
+### Features
+
+- **types:** Update the `storm.env.types` parameter to allow `string` values ([ad7f5c0](https://github.com/storm-software/stryke/commit/ad7f5c0))
+
 ## 0.1.3 (2025-02-15)
 
 ### Miscellaneous
