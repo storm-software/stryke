@@ -43,7 +43,7 @@ export type TypeDefinitionParameter = TypeDefinition | string;
 
 export interface DotenvTypeDefinitions {
   /**
-   * A path to the type definition for the expected env configuration parameters. This value can include both a path to the typescript file and the name of the type definition to use separated by a `":"` or `"#"` character. For example: `"./src/types/env.ts#DotenvConfiguration"`.
+   * A path to the type definition for the expected env configuration parameters. This value can include both a path to the typescript file and the name of the type definition to use separated by a `":"` or `"#"` character. For example: `"./src/types/env.ts#Variables"`.
    *
    * @remarks
    * If a value is not provided for this option, the plugin will attempt to infer the type definition from the `storm.dotenv.types.config` object in the project's `package.json` file.
@@ -51,7 +51,7 @@ export interface DotenvTypeDefinitions {
   variables?: TypeDefinitionParameter;
 
   /**
-   * A path to the type definition for the expected env secret parameters. This value can include both a path to the typescript file and the name of the type definition to use separated by a `":"` or `"#"` character. For example: `"./src/types/env.ts#DotenvSecrets"`.
+   * A path to the type definition for the expected env secret parameters. This value can include both a path to the typescript file and the name of the type definition to use separated by a `":"` or `"#"` character. For example: `"./src/types/env.ts#Secrets"`.
    *
    * @remarks
    * If a value is not provided for this option, the plugin will attempt to infer the type definition from the `storm.dotenv.types.secrets` object in the project's `package.json` file.
@@ -74,10 +74,15 @@ export interface DotenvConfiguration {
 
   /**
    * The type definitions for the environment variables
+   *
+   * @remarks
+   * This value can be a {@link DotenvTypeDefinitions} or just a path to a typescript file and the `"name"` values are defaulted to the following:
+   * - {@link DotenvTypeDefinitions.variables} - `"Variables"`
+   * - {@link DotenvTypeDefinitions.secrets} - `"Secrets"`
    */
-  types?: DotenvTypeDefinitions;
+  types?: DotenvTypeDefinitions | string;
 }
 
 export interface StormConfigurationGroups {
-  dotenv?: DotenvConfiguration;
+  env?: DotenvConfiguration;
 }
