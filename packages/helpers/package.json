@@ -11,5 +11,8 @@
   "private": false,
   "publishConfig": {
     "access": "public"
+  },
+  "dependencies": {
+    "type-detect": "^4.1.0"
   }
 }

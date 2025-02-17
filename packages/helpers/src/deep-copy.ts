@@ -15,237 +15,401 @@
 
  -------------------------------------------------------------------*/
 
-/**
- * Creates a clone of `arrayBuffer`.
- *
- * @param arrayBuffer - The array buffer to clone.
- * @returns Returns the cloned array buffer.
- */
-function cloneArrayBuffer(arrayBuffer: ArrayBufferLike): ArrayBuffer {
-  const result = new ArrayBuffer(arrayBuffer.byteLength);
-  new Uint8Array(result).set(new Uint8Array(arrayBuffer));
-  return result;
+import typeDetect from "type-detect";
+
+const isBufferExists = typeof Buffer !== "undefined";
+
+const isBuffer: typeof Buffer.isBuffer = isBufferExists
+  ? Buffer.isBuffer.bind(Buffer)
+  : function isBuffer(
+      obj: Parameters<typeof Buffer.isBuffer>[0]
+    ): obj is Buffer {
+      return false;
+    };
+
+const cloneBuffer: typeof Buffer.from = isBufferExists
+  ? Buffer.from.bind(Buffer)
+  : function cloneBuffer(value: unknown): any {
+      return value;
+    };
+
+function clone(value: unknown, valueType: string): unknown {
+  switch (valueType) {
+    // deep copy
+    case "ArrayBuffer": {
+      const buffer = value as ArrayBuffer;
+
+      return buffer.slice(0);
+    }
+    case "Boolean": {
+      return Boolean((value as boolean).valueOf());
+    }
+    case "Buffer": {
+      return /* #__INLINE__ */ cloneBuffer(value as Buffer);
+    }
+    // TODO: copy ArrayBuffer?
+    case "DataView": {
+      return new DataView((value as DataView).buffer);
+    }
+    case "Date": {
+      return new Date((value as Date).getTime());
+    }
+    case "Number": {
+      return Number(value as number);
+    }
+    case "RegExp": {
+      return new RegExp((value as RegExp).source, (value as RegExp).flags);
+    }
+    case "String": {
+      return String(value as string);
+    }
+
+    // typed arrays
+    case "Float32Array": {
+      return new Float32Array(value as Float32Array);
+    }
+    case "Float64Array": {
+      return new Float64Array(value as Float64Array);
+    }
+    case "Int16Array": {
+      return new Int16Array(value as Int16Array);
+    }
+    case "Int32Array": {
+      return new Int32Array(value as Int32Array);
+    }
+    case "Int8Array": {
+      return new Int8Array(value as Int8Array);
+    }
+    case "Uint16Array": {
+      return new Uint16Array(value as Uint16Array);
+    }
+    case "Uint32Array": {
+      return new Uint32Array(value as Uint32Array);
+    }
+    case "Uint8Array": {
+      return new Uint8Array(value as Uint8Array);
+    }
+    case "Uint8ClampedArray": {
+      return new Uint8ClampedArray(value as Uint8ClampedArray);
+    }
+
+    // shallow copy
+    case "Array Iterator": {
+      return value;
+    }
+    case "Map Iterator": {
+      return value;
+    }
+    case "Promise": {
+      return value;
+    }
+    case "Set Iterator": {
+      return value;
+    }
+    case "String Iterator": {
+      return value;
+    }
+    case "function": {
+      return value;
+    }
+    case "global": {
+      return value;
+    }
+    // NOTE: WeakMap and WeakSet cannot get entries
+    case "WeakMap": {
+      return value;
+    }
+    case "WeakSet": {
+      return value;
+    }
+
+    // primitives
+    case "boolean": {
+      return value;
+    }
+    case "null": {
+      return value;
+    }
+    case "number": {
+      return value;
+    }
+    case "string": {
+      return value;
+    }
+    case "symbol": {
+      return value;
+    }
+    case "undefined": {
+      return value;
+    }
+
+    // collections
+    // NOTE: return empty value: because recursively copy later.
+    case typeArguments: {
+      return [];
+    }
+    case typeArray: {
+      return [];
+    }
+    case typeMap: {
+      return new Map<unknown, unknown>();
+    }
+    case typeObject: {
+      return {};
+    }
+    case typeSet: {
+      return new Set<unknown>();
+    }
+
+    // NOTE: type-detect returns following types
+    // 'Location'
+    // 'Document'
+    // 'MimeTypeArray'
+    // 'PluginArray'
+    // 'HTMLQuoteElement'
+    // 'HTMLTableDataCellElement'
+    // 'HTMLTableHeaderCellElement'
+
+    // TODO: is type-detect never return 'object'?
+    // 'object'
+
+    default: {
+      return value;
+    }
+  }
 }
 
-/**
- * Creates a clone of `dataView`.
- *
- * @param dataView - The data view to clone.
- * @returns Returns the cloned data view.
- */
-function cloneDataView(dataView: DataView): DataView {
-  const buffer = cloneArrayBuffer(dataView.buffer);
+type Customizer = (value: unknown, type: string) => unknown;
 
-  return new DataView(buffer, dataView.byteOffset, dataView.byteLength);
-}
+function copy(
+  value: unknown,
+  valueType: string,
+  customizer: Customizer | null = null
+): unknown {
+  if (customizer && valueType === "Object") {
+    const result = customizer(value, valueType);
 
-/**
- * Creates a clone of `date`.
- *
- * @param targetDate - The date to clone.
- * @returns Returns the cloned date.
- */
-function cloneDate(targetDate: Date): Date {
-  return new Date(targetDate.getTime());
-}
-
-/**
- * Creates a clone of `regExp`.
- *
- * @param targetMap - The regular expression to clone.
- * @returns Returns the cloned regular expression.
- */
-function cloneMap<K, V>(targetMap: Map<K, V>): Map<K, V> {
-  const map = new Map<K, V>();
-  for (const [key, value] of targetMap.entries()) {
-    map.set(deepCopy(key), deepCopy(value));
+    if (result !== undefined) {
+      return result;
+    }
   }
 
-  return map;
+  return /* #__INLINE__ */ clone(value, valueType);
 }
 
-type TypedArrayType =
-  | Float32Array
-  | Float64Array
-  | Int8Array
-  | Int16Array
-  | Int32Array
-  | Uint8Array
-  | Uint16Array
-  | Uint32Array
-  | Uint8ClampedArray
-  | BigInt64Array
-  | BigUint64Array;
+// NOTE: for the file size optimization
+const typeArguments = "Arguments";
+const typeArray = "Array";
+const typeObject = "Object";
+const typeMap = "Map";
+const typeSet = "Set";
 
-type TypedArrayConstructorType =
-  | Float32ArrayConstructor
-  | Float64ArrayConstructor
-  | Int8ArrayConstructor
-  | Int16ArrayConstructor
-  | Int32ArrayConstructor
-  | Uint8ArrayConstructor
-  | Uint16ArrayConstructor
-  | Uint32ArrayConstructor
-  | Uint8ClampedArrayConstructor
-  | BigInt64ArrayConstructor
-  | BigUint64ArrayConstructor;
+type Collection =
+  | IArguments
+  | Array<unknown>
+  | Map<unknown, unknown>
+  | Record<string | number | symbol, unknown>
+  | Set<unknown>;
 
-const TypedArrayConstructorMap: Record<string, TypedArrayConstructorType> = {
-  "[object Float32Array]": Float32Array,
-  "[object Float64Array]": Float64Array,
-  "[object Int8Array]": Int8Array,
-  "[object Int16Array]": Int16Array,
-  "[object Int32Array]": Int32Array,
-  "[object Uint8Array]": Uint8Array,
-  "[object Uint16Array]": Uint16Array,
-  "[object Uint32Array]": Uint32Array,
-  "[object Uint8ClampedArray]": Uint8ClampedArray
-};
+const collectionTypeSet = new Set([
+  typeArguments,
+  typeArray,
+  typeMap,
+  typeObject,
+  typeSet
+]);
 
-const TypedArrayMap: Record<string, Function> = {
-  "[object Date]": cloneDate,
-  "[object ArrayBuffer]": cloneArrayBuffer,
-  "[object DataView]": cloneDataView,
-  "[object Float32Array]": cloneTypedArray,
-  "[object Float64Array]": cloneTypedArray,
-  "[object Int8Array]": cloneTypedArray,
-  "[object Int16Array]": cloneTypedArray,
-  "[object Int32Array]": cloneTypedArray,
-  "[object Uint8Array]": cloneTypedArray,
-  "[object Uint8ClampedArray]": cloneTypedArray,
-  "[object Uint16Array]": cloneTypedArray,
-  "[object Uint32Array]": cloneTypedArray,
-  "[object BigInt64Array]": cloneTypedArray,
-  "[object BigUint64Array]": cloneTypedArray,
-  "[object RegExp]": cloneRegExp,
-  "[object Map]": cloneMap
-};
+function isCollection(valueType: string): boolean {
+  return /* #__INLINE__ */ collectionTypeSet.has(valueType);
+}
 
-/**
- * Creates a clone of `typedArray`.
- *
- * @param typedArray - The typed array to clone.
- * @returns Returns the cloned typed array.
- */
-function cloneTypedArray(typedArray: TypedArrayType): TypedArrayType {
-  try {
-    TypedArrayConstructorMap["[object BigInt64Array]"] = BigInt64Array;
-    TypedArrayConstructorMap["[object BigUint64Array]"] = BigUint64Array;
-  } catch {
-    // Do nothing
+function getKeys(
+  collection: Collection,
+  collectionType: string
+): Array<string | symbol> {
+  switch (collectionType) {
+    case typeArguments:
+    case typeArray: {
+      return Object.keys(collection as string[]);
+    }
+    case typeObject: {
+      // eslint-disable-next-line unicorn/prefer-spread
+      return ([] as Array<string | symbol>).concat(
+        // NOTE: Object.getOwnPropertyNames can get all own keys.
+        Object.keys(collection as Record<string, unknown>),
+        Object.getOwnPropertySymbols(collection as Record<symbol, unknown>)
+      );
+    }
+    case typeMap:
+    case typeSet: {
+      return [...(collection as Set<string | symbol>).keys()];
+    }
+    default: {
+      return [];
+    }
+  }
+}
+
+function getValue(
+  collection: Collection,
+  key: unknown,
+  collectionType: string
+): unknown {
+  switch (collectionType) {
+    case typeArguments:
+    case typeArray:
+    case typeObject: {
+      return (collection as Record<string, unknown>)[key as string];
+    }
+    case typeMap: {
+      return (collection as Map<unknown, unknown>).get(key);
+    }
+    case typeSet: {
+      // NOTE: Set.prototype.keys is alias of Set.prototype.values. It means key equals to value.
+      return key;
+    }
+    default:
+  }
+}
+
+function setValue(
+  collection: Collection,
+  key: unknown,
+  value: unknown,
+  collectionType: string
+): Collection {
+  switch (collectionType) {
+    case typeArguments:
+    case typeArray:
+    case typeObject: {
+      (collection as Record<string, unknown>)[key as string] = value;
+      break;
+    }
+    case typeMap: {
+      (collection as Map<unknown, unknown>).set(key, value);
+      break;
+    }
+    case typeSet: {
+      (collection as Set<unknown>).add(value);
+      break;
+    }
+    default:
   }
 
-  const buffer = cloneArrayBuffer(typedArray.buffer);
+  return collection;
+}
 
-  const constructor =
-    TypedArrayConstructorMap[Object.prototype.toString.call(typedArray)];
-  if (!constructor) {
-    throw new Error("Unsupported typed array type in `cloneTypedArray`.");
+function detectType(value: unknown): string {
+  // NOTE: isBuffer must execute before type-detect,
+  // because type-detect returns 'Uint8Array'.
+  if (/* #__INLINE__ */ isBuffer(value)) {
+    return "Buffer";
   }
 
-  return new constructor(buffer).subarray(
-    typedArray.byteOffset,
-    typedArray.byteOffset + typedArray.length
-  );
+  return typeDetect(value);
 }
 
-/**
- * Creates a clone of `regexp`.
- *
- * @param targetRegexp - The regexp to clone.
- * @returns Returns the cloned regexp.
- */
-export function cloneRegExp(targetRegexp: RegExp): RegExp {
-  const result = new RegExp(targetRegexp.source, targetRegexp.flags);
-  result.lastIndex = targetRegexp.lastIndex;
-  return result;
+function recursiveCopy(
+  value: unknown,
+  clone: unknown,
+  references: WeakMap<Record<string, unknown>, unknown>,
+  visited: WeakSet<Record<string, unknown>>,
+  customizer: Parameters<typeof copy>[2]
+): unknown {
+  const valueType = detectType(value);
+  const copiedValue = copy(value, valueType);
+
+  // return if not a collection value
+  if (!isCollection(valueType)) {
+    return copiedValue;
+  }
+
+  const keys = /* #__INLINE__ */ getKeys(value as Collection, valueType);
+
+  // walk within collection with iterator
+  for (const collectionKey of keys) {
+    const collectionValue = /* #__INLINE__ */ getValue(
+      value as Collection,
+      collectionKey,
+      valueType
+    ) as Record<string, unknown>;
+
+    if (visited.has(collectionValue)) {
+      // for [Circular]
+      setValue(
+        clone as Collection,
+        collectionKey,
+        references.get(collectionValue),
+        valueType
+      );
+    } else {
+      const collectionValueType = detectType(collectionValue);
+      const copiedCollectionValue = copy(collectionValue, collectionValueType);
+
+      // save reference if value is collection
+      if (isCollection(collectionValueType)) {
+        references.set(collectionValue, copiedCollectionValue);
+        visited.add(collectionValue);
+      }
+
+      setValue(
+        clone as Collection,
+        collectionKey,
+        recursiveCopy(
+          collectionValue,
+          copiedCollectionValue,
+          references,
+          visited,
+          customizer
+        ),
+        valueType
+      );
+    }
+  }
+
+  // TODO: isSealed/isFrozen/isExtensible
+
+  return clone;
 }
 
+export type Options = { customizer?: Customizer };
+
 /**
- * Creates a deep copy of `target`.
+ * Deep copy value
  *
- * @see Original source: ts-deepcopy https://github.com/ykdr2017/ts-deepcopy
- * @see Code pen https://codepen.io/erikvullings/pen/ejyBYg
- *
- * @remarks
- * **Use this method instead of {@link ./deep-clone#deepClone} if you want to deep copy a value and retain its type (not cloning into a plain object).**
- *
- * This method is a deep copy of the given value. It supports the following types:
- * - `ArrayBuffer`
- * - `DataView`
- * - `Date`
- * - `Map`
- * - `RegExp`
- * - `Set`
- * - `TypedArray`
- * - `WeakMap`
- * - `WeakSet`
- * - `Array`
- * - `Object`
- * - `null`
- * - `undefined`
- * - `string`
- * - `number`
- * - `boolean`
- * - `symbol`
- * - `bigint`
- * - `function`
- * - `Error`
- * - `Promise`
- * - `MapIterator`
- *
- * @example
- * ```typescript
- * const original = { a: 1, b: { c: 2 } };
- * const copy = deepCopy(original);
- * console.log(copy); // { a: 1, b: { c: 2 } }
- * console.log(copy !== original); // true
- * console.log(copy.b !== original.b); // true
- *
- * const date = new Date();
- * const dateCopy = deepCopy(date);
- * console.log(dateCopy); // Same date value as `date`
- * console.log(dateCopy !== date); // true
- *
- * const map = new Map([['key', 'value']]);
- * const mapCopy = deepCopy(map);
- * console.log(mapCopy.get('key')); // 'value'
- * console.log(mapCopy !== map); // true
- *
- * const arrayBuffer = new ArrayBuffer(8);
- * const arrayBufferCopy = deepCopy(arrayBuffer);
- * console.log(arrayBufferCopy.byteLength); // 8
- * console.log(arrayBufferCopy !== arrayBuffer); // true
- * ```
- *
- * @param T - Generic type of target/copied value.
- * @param target - Target value to be copied.
+ * @param value - The value to copy.
+ * @param options - The options object.
  * @returns Returns the copied value.
  */
-export function deepCopy<T>(target: T): T {
-  const tag = Object.prototype.toString.call(target);
+export function deepCopy<T extends Record<string, any>>(
+  value: T,
+  options?: Options
+): T {
+  const {
+    // TODO: before/after customizer
+    customizer = null
+    // TODO: max depth
+    // depth = Infinity,
+  } = options ?? {};
 
-  if (TypedArrayMap[tag]) {
-    return TypedArrayMap[tag](target);
+  const valueType = detectType(value);
+
+  if (!isCollection(valueType)) {
+    return copy(value, valueType, customizer) as T;
   }
-  if (target === null) {
-    return target;
-  }
-  if (Array.isArray(target)) {
-    const cp = [] as any[];
-    for (const v of target as any[]) {
-      cp.push(v);
-    }
-    return cp.map((n: any) => deepCopy<any>(n)) as any;
-  }
-  if (typeof target === "object") {
-    const cp = { ...(target as { [key: string]: any }) } as {
-      [key: string]: any;
-    };
-    for (const k of Object.keys(cp)) {
-      cp[k] = deepCopy<any>(cp[k]);
-    }
-    return cp as T;
-  }
-  return target;
+
+  const copiedValue = copy(value, valueType, customizer);
+  const references = new WeakMap<Record<string, any>, unknown>([
+    [value as Record<string, any>, copiedValue]
+  ]);
+
+  const visited = new WeakSet<Record<string, any>>([value]);
+
+  return recursiveCopy(
+    value,
+    copiedValue,
+    references,
+    visited,
+    customizer
+  ) as T;
 }
