@@ -2,19 +2,22 @@
 
 ### Bug Fixes
 
-- **helpers:** Revert back to pervious `deepCopy` method ([4e552a8](https://github.com/storm-software/stryke/commit/4e552a8))
+- **helpers:** Revert back to pervious `deepCopy` method
+  ([4e552a8](https://github.com/storm-software/stryke/commit/4e552a8))
 
 ## 0.2.2 (2025-02-17)
 
 ### Bug Fixes
 
-- **helpers:** Use different method of implementing `deepCopy` ([aab87c1](https://github.com/storm-software/stryke/commit/aab87c1))
+- **helpers:** Use different method of implementing `deepCopy`
+  ([aab87c1](https://github.com/storm-software/stryke/commit/aab87c1))
 
 ## 0.2.1 (2025-02-15)
 
 ### Miscellaneous
 
-- **monorepo:** Reformat monorepo files ([69ed6b7](https://github.com/storm-software/stryke/commit/69ed6b7))
+- **monorepo:** Reformat monorepo files
+  ([69ed6b7](https://github.com/storm-software/stryke/commit/69ed6b7))
 
 ## 0.2.0 (2025-02-15)
 

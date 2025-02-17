@@ -2,7 +2,8 @@
 
 ### Miscellaneous
 
-- **monorepo:** Reformat monorepo files ([69ed6b7](https://github.com/storm-software/stryke/commit/69ed6b7))
+- **monorepo:** Reformat monorepo files
+  ([69ed6b7](https://github.com/storm-software/stryke/commit/69ed6b7))
 
 ## 0.1.2 (2025-02-15)
 

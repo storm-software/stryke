@@ -84,5 +84,8 @@ export interface DotenvConfiguration {
 }
 
 export interface StormConfigurationGroups {
+  /**
+   * The configuration for the loading variable and secrets into the environment via `.env` files
+   */
   env?: DotenvConfiguration;
 }
