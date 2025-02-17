@@ -1,3 +1,9 @@
+## 0.2.3 (2025-02-17)
+
+### Bug Fixes
+
+- **helpers:** Revert back to pervious `deepCopy` method ([4e552a8](https://github.com/storm-software/stryke/commit/4e552a8))
+
 ## 0.2.2 (2025-02-17)
 
 ### Bug Fixes
