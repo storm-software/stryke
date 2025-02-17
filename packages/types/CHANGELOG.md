@@ -1,3 +1,9 @@
+## 0.3.0 (2025-02-17)
+
+### Features
+
+- **types:** Change `env` property name back to `dotenv` ([0aafee7](https://github.com/storm-software/stryke/commit/0aafee7))
+
 ## 0.2.1 (2025-02-17)
 
 ### Miscellaneous
