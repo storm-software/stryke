@@ -15,7 +15,7 @@
 
  -------------------------------------------------------------------*/
 
-import { isString } from "../type-checks";
+import { isObject, isString } from "../type-checks";
 import type {
   TypeDefinition,
   TypeDefinitionParameter
@@ -33,7 +33,7 @@ export const parseTypeDefinition = (
   if (isString(param)) {
     if (param.includes(":")) {
       const params = param.split(":");
-      if (params.length > 2 && params[0]) {
+      if (params.length > 1 && params[0]) {
         return {
           file: params[0],
           name: params[1]
@@ -43,7 +43,7 @@ export const parseTypeDefinition = (
 
     if (param.includes("#")) {
       const params = param.split("#");
-      if (params.length > 2 && params[0]) {
+      if (params.length > 1 && params[0]) {
         return {
           file: params[0],
           name: params[1]
@@ -56,7 +56,7 @@ export const parseTypeDefinition = (
     };
   }
 
-  if (param) {
+  if (isObject(param)) {
     return {
       file: param.file,
       name: param.name
