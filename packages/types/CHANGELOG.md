@@ -1,3 +1,9 @@
+## 0.3.1 (2025-02-18)
+
+### Bug Fixes
+
+- **types:** Resolved issue with incorrect `length` check parsing type definitions ([4ec5834](https://github.com/storm-software/stryke/commit/4ec5834))
+
 ## 0.3.0 (2025-02-17)
 
 ### Features
