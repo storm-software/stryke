@@ -1,3 +1,9 @@
+## 0.1.8 (2025-02-21)
+
+### Bug Fixes
+
+- **fs:** Resolved issue with invalid directory creation ([a7b64bf](https://github.com/storm-software/stryke/commit/a7b64bf))
+
 ## 0.1.7 (2025-02-17)
 
 ### Miscellaneous
