@@ -27,7 +27,6 @@ import {
 } from "node:fs";
 import { writeFile as writeFileFs } from "node:fs/promises";
 import type { Encoding } from "./constants";
-import { createDirectory, createDirectorySync } from "./helpers";
 
 /**
  * Write the given content to the given file path
@@ -94,7 +93,6 @@ export function writeJsonFileSync<T extends object = object>(
   data: T,
   options?: JsonWriteOptions
 ): void {
-  createDirectorySync(path);
   const serializedJson = StormJSON.stringifyJson(data, options);
 
   return writeFileSync(
@@ -115,7 +113,6 @@ export async function writeJsonFile<T extends object = object>(
   data: T,
   options?: JsonWriteOptions
 ): Promise<void> {
-  await createDirectory(path);
   const serializedJson = StormJSON.stringifyJson(data, options);
 
   return writeFile(

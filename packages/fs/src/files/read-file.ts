@@ -82,10 +82,10 @@ export function readJsonFileSync<T extends object = any>(
 
   try {
     return StormJSON.parseJson<T>(content, options);
-  } catch (error_) {
-    if (isError(error_)) {
-      error_.message = error_.message.replace("JSON", path);
-      throw error_;
+  } catch (error) {
+    if (isError(error)) {
+      error.message = error.message.replace("JSON", path);
+      throw error;
     }
 
     throw new Error(`Failed to parse JSON: ${path}`);
@@ -110,10 +110,10 @@ export async function readJsonFile<T extends object = any>(
 
   try {
     return StormJSON.parseJson<T>(content, options);
-  } catch (error_) {
-    if (isError(error_)) {
-      error_.message = error_.message.replace("JSON", path);
-      throw error_;
+  } catch (error) {
+    if (isError(error)) {
+      error.message = error.message.replace("JSON", path);
+      throw error;
     }
 
     throw new Error(`Failed to parse JSON: ${path}`);
