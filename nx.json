@@ -15,5 +15,6 @@
     "@storm-software/workspace-tools/plugins/typescript/untyped",
     "@storm-software/workspace-tools/plugins/typescript/tsup",
     "./dist/plugins/package-build.js"
-  ]
+  ],
+  "nxCloudId": "67b86034380adf1b293b5dc9"
 }

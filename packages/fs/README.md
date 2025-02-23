@@ -4,7 +4,9 @@
 # Stryke - File System Utilities
 
 A package containing various file system utilities that expand the functionality
-of NodeJs's `fs` module
+of NodeJs's `fs` module. This package is intended to be used instead of other
+modern file system libraries such as `fs-extra` or `fs-jetpack` as it provides a
+more modern and functional approach to working with the file system.
 
 <!-- START doctoc -->
 <!-- END doctoc -->
