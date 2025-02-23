@@ -1,3 +1,9 @@
+## 0.5.0 (2025-02-23)
+
+### Features
+
+- **types:** Updated definition for package.json type ([d267f32](https://github.com/storm-software/stryke/commit/d267f32))
+
 ## 0.4.0 (2025-02-23)
 
 ### Features
