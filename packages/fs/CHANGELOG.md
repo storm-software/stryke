@@ -1,3 +1,9 @@
+## 0.1.9 (2025-02-23)
+
+### Miscellaneous
+
+- **monorepo:** Upgrade the monorepos Nx version ([b32c485](https://github.com/storm-software/stryke/commit/b32c485))
+
 ## 0.1.8 (2025-02-21)
 
 ### Bug Fixes
