@@ -1,4 +1,4 @@
-/*-------------------------------------------------------------------
+/* -------------------------------------------------------------------
 
                        ⚡ Storm Software - Stryke
 
@@ -13,7 +13,7 @@
  Contact:         https://stormsoftware.com/contact
  License:         https://stormsoftware.com/projects/stryke/license
 
- -------------------------------------------------------------------*/
+ ------------------------------------------------------------------- */
 
 export const ACRONYMS = [
   "API",
@@ -55,5 +55,5 @@ export const ACRONYMS = [
   "VM",
   "XML",
   "XSS",
-  "XSRF"
+  "XSRF",
 ];

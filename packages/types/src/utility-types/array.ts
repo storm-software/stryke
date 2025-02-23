@@ -1,4 +1,4 @@
-/*-------------------------------------------------------------------
+/* -------------------------------------------------------------------
 
                        ⚡ Storm Software - Stryke
 
@@ -13,7 +13,7 @@
  Contact:         https://stormsoftware.com/contact
  License:         https://stormsoftware.com/projects/stryke/license
 
- -------------------------------------------------------------------*/
+ ------------------------------------------------------------------- */
 
 import { isEmpty } from "../type-checks";
 
@@ -151,13 +151,12 @@ export type FirstArrayElement<TArray extends UnknownArrayOrTuple> =
  */
 export type LastArrayElement<
   Elements extends readonly unknown[],
-  ElementBeforeTailingSpreadElement = never
+  ElementBeforeTailingSpreadElement = never,
 > =
   // If the last element of an array is a spread element, the `LastArrayElement` result should be `'the type of the element before the spread element' | 'the type of the spread element'`.
   Elements extends readonly []
     ? ElementBeforeTailingSpreadElement
-    : // eslint-disable-next-line no-unused-vars
-      Elements extends readonly [...infer _U, infer V]
+    : Elements extends readonly [...infer _U, infer V]
       ? V
       : Elements extends readonly [infer U, ...infer V]
         ? // If we return `V[number] | U` directly, it would be wrong for `[[string, boolean, object, ...number[]]`.
@@ -179,7 +178,7 @@ export type LastArrayElement<
  */
 export type StaticPartOfArray<
   T extends UnknownArray,
-  Result extends UnknownArray = []
+  Result extends UnknownArray = [],
 > = T extends unknown
   ? number extends T["length"]
     ? T extends readonly [infer U, ...infer V]
@@ -205,4 +204,4 @@ export type VariablePartOfArray<T extends UnknownArray> = T extends unknown
   : never; // Should never happen
 
 export const filterEmpty = <T>(values: (T | null | undefined)[] = []): T[] =>
-  values.filter(value => !isEmpty(value)) as T[];
+  values.filter((value) => !isEmpty(value)) as T[];

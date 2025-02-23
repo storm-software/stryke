@@ -1,4 +1,4 @@
-/*-------------------------------------------------------------------
+/* -------------------------------------------------------------------
 
                        ⚡ Storm Software - Stryke
 
@@ -13,7 +13,7 @@
  Contact:         https://stormsoftware.com/contact
  License:         https://stormsoftware.com/projects/stryke/license
 
- -------------------------------------------------------------------*/
+ ------------------------------------------------------------------- */
 
 import { resolvePaths } from "./file-path-fns";
 import { isDirectory, isFile } from "./is-file";
@@ -65,7 +65,7 @@ export interface GetParentPathOptions {
 export const getParentPath = (
   name: string | string[],
   cwd: string,
-  options?: Partial<GetParentPathOptions>
+  options?: Partial<GetParentPathOptions>,
 ): string | undefined => {
   const ignoreCase = options?.ignoreCase ?? true;
   const skipCwd = options?.skipCwd ?? false;
@@ -78,16 +78,16 @@ export const getParentPath = (
 
   let names = Array.isArray(name) ? name : [name];
   if (ignoreCase) {
-    names = names.map(name => name.toLowerCase());
+    names = names.map((name) => name.toLowerCase());
   }
 
   while (true) {
     const target = names.find(
-      name =>
+      (name) =>
         (isFile(joinPaths(dir, name)) &&
           (targetType === "file" || targetType === "both")) ||
         (isDirectory(joinPaths(dir, name)) &&
-          (targetType === "directory" || targetType === "both"))
+          (targetType === "directory" || targetType === "both")),
     );
     if (target) {
       return joinPaths(dir, target);

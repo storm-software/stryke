@@ -1,4 +1,4 @@
-/*-------------------------------------------------------------------
+/* -------------------------------------------------------------------
 
                        ⚡ Storm Software - Stryke
 
@@ -13,7 +13,7 @@
  Contact:         https://stormsoftware.com/contact
  License:         https://stormsoftware.com/projects/stryke/license
 
- -------------------------------------------------------------------*/
+ ------------------------------------------------------------------- */
 
 type NodePath = typeof import("node:path");
 
@@ -23,7 +23,7 @@ type NodePath = typeof import("node:path");
  * Equals to `";"` in windows and `":"` in all other platforms.
  */
 export const delimiter: ";" | ":" = /* @__PURE__ */ (() =>
-  globalThis.process?.platform === "win32" ? ";" : ":")();
+  process?.platform === "win32" ? ";" : ":")();
 
 // Mix namespaces without side-effects of object to allow tree-shaking
 
@@ -40,15 +40,23 @@ const mix = (del: ";" | ":" = delimiter) => {
     {},
     {
       get(_, prop) {
-        if (prop === "delimiter") return del;
-        if (prop === "posix") return posix;
-        if (prop === "win32") return win32;
+        if (prop === "delimiter") {
+          return del;
+        }
+        if (prop === "posix") {
+          // eslint-disable-next-line ts/no-use-before-define
+          return posix;
+        }
+        if (prop === "win32") {
+          // eslint-disable-next-line ts/no-use-before-define
+          return win32;
+        }
         return platforms[prop as keyof typeof platforms];
       }
     }
   ) as unknown as NodePath;
 };
 
-export const posix = /* @__PURE__ */ mix(":") as NodePath["posix"];
+export const posix = /* @__PURE__ */ mix(":");
 
-export const win32 = /* @__PURE__ */ mix(";") as NodePath["win32"];
+export const win32 = /* @__PURE__ */ mix(";");

@@ -1,4 +1,4 @@
-/*-------------------------------------------------------------------
+/* -------------------------------------------------------------------
 
                        ⚡ Storm Software - Stryke
 
@@ -13,7 +13,7 @@
  Contact:         https://stormsoftware.com/contact
  License:         https://stormsoftware.com/projects/stryke/license
 
- -------------------------------------------------------------------*/
+ ------------------------------------------------------------------- */
 
 /**
  * Regular expression pattern to split strings into words for various case conversions
@@ -46,7 +46,7 @@ export const CASE_SPLIT_PATTERN = /[A-Z]?[a-z]+|\d+|[A-Z]+(?![a-z])/g;
 export function getWords(str: string): string[] {
   if (str.length > 1000) {
     throw new Error(
-      "The regular expression parameter of `get-words` can't handle strings longer than 1000 characters"
+      "The regular expression parameter of `get-words` can't handle strings longer than 1000 characters",
     );
   }
 

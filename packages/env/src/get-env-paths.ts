@@ -86,7 +86,7 @@ const macos = (orgId: string): EnvPaths => {
     config: joinPaths(library, "Preferences", orgId),
     cache: joinPaths(library, "Caches", orgId),
     log: joinPaths(library, "Logs", orgId),
-    temp: joinPaths(tmpdir, orgId)
+    temp: joinPaths(tmpdir, orgId),
   };
 };
 
@@ -104,7 +104,7 @@ const windows = (orgId: string): EnvPaths => {
     config: joinPaths(appData, windowsFormattedOrgId, "Config"),
     cache: joinPaths(localAppData, "Cache", orgId),
     log: joinPaths(localAppData, windowsFormattedOrgId, "Log"),
-    temp: joinPaths(tmpdir, orgId)
+    temp: joinPaths(tmpdir, orgId),
   };
 };
 
@@ -115,22 +115,22 @@ const linux = (orgId: string): EnvPaths => {
   return {
     data: joinPaths(
       process.env.XDG_DATA_HOME || joinPaths(homedir, ".local", "share"),
-      orgId
+      orgId,
     ),
     config: joinPaths(
       process.env.XDG_CONFIG_HOME || joinPaths(homedir, ".config"),
-      orgId
+      orgId,
     ),
     cache: joinPaths(
       process.env.XDG_CACHE_HOME || joinPaths(homedir, ".cache"),
-      orgId
+      orgId,
     ),
     // https://wiki.debian.org/XDGBaseDirectorySpecification#state
     log: joinPaths(
       process.env.XDG_STATE_HOME || joinPaths(homedir, ".local", "state"),
-      orgId
+      orgId,
     ),
-    temp: joinPaths(tmpdir, username, orgId)
+    temp: joinPaths(tmpdir, username, orgId),
   };
 };
 
@@ -151,7 +151,7 @@ export function getEnvPaths(options: GetEnvPathsOptions = {}): EnvPaths {
   let orgId = options.orgId || "storm-software";
   if (!orgId) {
     throw new Error(
-      "You need to provide an orgId to the `getEnvPaths` function"
+      "You need to provide an orgId to the `getEnvPaths` function",
     );
   }
 
@@ -187,7 +187,7 @@ export function getEnvPaths(options: GetEnvPathsOptions = {}): EnvPaths {
       options.workspaceRoot,
       "node_modules",
       ".cache",
-      orgId
+      orgId,
     );
     result.temp ??= joinPaths(options.workspaceRoot, "tmp", orgId);
     result.log ??= joinPaths(result.temp, "logs");
@@ -217,6 +217,6 @@ export function getEnvPaths(options: GetEnvPathsOptions = {}): EnvPaths {
 
       return ret;
     },
-    {} as Record<string, string>
+    {} as Record<string, string>,
   ) as EnvPaths;
 }

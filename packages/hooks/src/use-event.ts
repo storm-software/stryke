@@ -38,7 +38,7 @@ const defaultValue = () => {
 function useGet<A>(
   currentValue: A,
   initialValue?: any,
-  forwardToFunction?: boolean
+  forwardToFunction?: boolean,
 ): () => A {
   const curRef = useRef<any>(initialValue ?? currentValue);
   useIsomorphicLayoutEffect(() => {
@@ -50,6 +50,6 @@ function useGet<A>(
     forwardToFunction
       ? (...args) => curRef.current?.apply(null, args)
       : () => curRef.current,
-    []
+    [],
   );
 }

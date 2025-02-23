@@ -70,7 +70,7 @@ export type ProviderName =
 type InternalProvider = [
   providerName: Uppercase<ProviderName>,
   envName?: string,
-  meta?: Record<string, any>
+  meta?: Record<string, any>,
 ];
 
 const providers: InternalProvider[] = [
@@ -125,7 +125,7 @@ const providers: InternalProvider[] = [
   ["RAILWAY", "RAILWAY_PROJECT_ID"],
   ["RAILWAY", "RAILWAY_SERVICE_ID"],
   ["DENO-DEPLOY", "DENO_DEPLOYMENT_ID"],
-  ["FIREBASE_APP_HOSTING", "FIREBASE_APP_HOSTING", { ci: true }]
+  ["FIREBASE_APP_HOSTING", "FIREBASE_APP_HOSTING", { ci: true }],
 ];
 
 export type ProviderInfo = {
@@ -142,7 +142,7 @@ function detectProvider(): ProviderInfo {
       if (globalThis.process?.env[envName]) {
         return {
           name: provider[0].toLowerCase(),
-          ...(provider[2] as any)
+          ...(provider[2] as any),
         };
       }
     }
@@ -155,13 +155,13 @@ function detectProvider(): ProviderInfo {
   ) {
     return {
       name: "stackblitz",
-      ci: false
+      ci: false,
     };
   }
 
   return {
     name: "",
-    ci: false
+    ci: false,
   };
 }
 

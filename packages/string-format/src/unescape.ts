@@ -1,4 +1,4 @@
-/*-------------------------------------------------------------------
+/* -------------------------------------------------------------------
 
                        ⚡ Storm Software - Stryke
 
@@ -13,14 +13,14 @@
  Contact:         https://stormsoftware.com/contact
  License:         https://stormsoftware.com/projects/stryke/license
 
- -------------------------------------------------------------------*/
+ ------------------------------------------------------------------- */
 
 const htmlUnescapes: Record<string, string> = {
   "&amp;": "&",
   "&lt;": "<",
   "&gt;": ">",
   "&quot;": '"',
-  "&#39;": "'"
+  "&#39;": "'",
 };
 
 /**
@@ -40,7 +40,7 @@ const htmlUnescapes: Record<string, string> = {
  */
 export function unescape(str: string): string {
   return str.replace(
-    /&(?:amp|lt|gt|quot|#(?<temp1>0+)?39);/g,
-    match => htmlUnescapes[match] || "'"
+    /&(?:amp|lt|gt|quot|#0*39);/g,
+    (match) => htmlUnescapes[match] || "'",
   );
 }

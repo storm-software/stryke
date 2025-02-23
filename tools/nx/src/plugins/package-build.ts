@@ -19,16 +19,16 @@ import {
   createNodesFromFiles,
   type CreateNodesResultV2,
   type CreateNodesV2,
-  readJsonFile
+  readJsonFile,
 } from "@nx/devkit/index.js";
 import {
   getProjectConfigFromProjectRoot,
-  getProjectRoot
+  getProjectRoot,
 } from "@storm-software/workspace-tools/utils/plugin-helpers";
 import {
   getProjectTag,
   ProjectTagConstants,
-  setDefaultProjectTags
+  setDefaultProjectTags,
 } from "@storm-software/workspace-tools/utils/project-tags";
 import { join } from "node:path";
 import { readNxJson } from "nx/src/config/nx-json.js";
@@ -52,7 +52,7 @@ export const createNodesV2: CreateNodesV2<StrykePackageBuildPluginOptions> = [
           const projectRoot = getProjectRoot(configFile, context.workspaceRoot);
           if (!projectRoot) {
             console.error(
-              `project.json file must be location in the project root directory: ${configFile}`
+              `project.json file must be location in the project root directory: ${configFile}`,
             );
             return {};
           }
@@ -60,7 +60,7 @@ export const createNodesV2: CreateNodesV2<StrykePackageBuildPluginOptions> = [
           const tsconfigJson = readJsonFile(join(projectRoot, "tsconfig.json"));
           if (!tsconfigJson) {
             console.error(
-              `No tsconfig.json found in project root: ${projectRoot}`
+              `No tsconfig.json found in project root: ${projectRoot}`,
             );
             return {};
           }
@@ -68,19 +68,19 @@ export const createNodesV2: CreateNodesV2<StrykePackageBuildPluginOptions> = [
           const packageJson = readJsonFile(join(projectRoot, "package.json"));
           if (!packageJson) {
             console.error(
-              `No package.json found in project root: ${projectRoot}`
+              `No package.json found in project root: ${projectRoot}`,
             );
             return {};
           }
 
           const project = getProjectConfigFromProjectRoot(
             projectRoot,
-            packageJson
+            packageJson,
           );
 
           const platformTag = getProjectTag(
             project,
-            ProjectTagConstants.Platform.TAG_ID
+            ProjectTagConstants.Platform.TAG_ID,
           );
 
           const nxJson = readNxJson(context.workspaceRoot);
@@ -96,16 +96,16 @@ export const createNodesV2: CreateNodesV2<StrykePackageBuildPluginOptions> = [
             defaultConfiguration: "production",
             options: {
               platform:
-                platformTag === "worker" ? "browser" : platformTag || "neutral"
+                platformTag === "worker" ? "browser" : platformTag || "neutral",
             },
             configurations: {
               production: {
-                debug: false
+                debug: false,
               },
               development: {
-                debug: true
-              }
-            }
+                debug: true,
+              },
+            },
           };
 
           let relativeRoot = projectRoot
@@ -120,15 +120,15 @@ export const createNodesV2: CreateNodesV2<StrykePackageBuildPluginOptions> = [
             inputs: [
               `{workspaceRoot}/${configFile}`,
               "typescript",
-              "^production"
+              "^production",
             ],
             outputs: ["{workspaceRoot}/dist/{projectRoot}"],
             options: {
               commands: [
                 `pnpm exec rimraf dist/${relativeRoot}`,
-                `pnpm exec rimraf ${relativeRoot}/dist`
-              ]
-            }
+                `pnpm exec rimraf ${relativeRoot}/dist`,
+              ],
+            },
           };
 
           setDefaultProjectTags(project, name);
@@ -139,9 +139,9 @@ export const createNodesV2: CreateNodesV2<StrykePackageBuildPluginOptions> = [
                   [project.name]: {
                     ...project,
                     root: relativeRoot,
-                    targets
-                  }
-                }
+                    targets,
+                  },
+                },
               }
             : {};
           console.log(`Writing Results for ${project?.name ?? "missing name"}`);
@@ -155,7 +155,7 @@ export const createNodesV2: CreateNodesV2<StrykePackageBuildPluginOptions> = [
       },
       configFiles,
       options,
-      context
+      context,
     );
-  }
+  },
 ];

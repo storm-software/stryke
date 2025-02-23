@@ -29,28 +29,28 @@ catalogs:
       version: 20.4.6
     '@storm-software/config':
       specifier: latest
-      version: 1.103.0
+      version: 1.103.3
     '@storm-software/config-tools':
       specifier: latest
-      version: 1.155.0
+      version: 1.155.3
     '@storm-software/cspell':
       specifier: latest
-      version: 0.19.9
+      version: 0.20.1
     '@storm-software/eslint':
       specifier: latest
-      version: 0.123.0
+      version: 0.129.1
     '@storm-software/git-tools':
       specifier: latest
-      version: 2.93.9
+      version: 2.93.12
     '@storm-software/linting-tools':
       specifier: latest
-      version: 1.119.9
+      version: 1.119.12
     '@storm-software/markdownlint':
       specifier: latest
-      version: 0.16.7
+      version: 0.16.10
     '@storm-software/prettier':
       specifier: latest
-      version: 0.33.0
+      version: 0.33.3
     '@storm-software/testing-tools':
       specifier: latest
       version: 1.104.37
@@ -59,13 +59,13 @@ catalogs:
       version: 0.35.27
     '@storm-software/unbuild':
       specifier: latest
-      version: 0.37.7
+      version: 0.37.10
     '@storm-software/untyped':
       specifier: latest
-      version: 0.11.7
+      version: 0.11.10
     '@storm-software/workspace-tools':
       specifier: latest
-      version: 1.259.0
+      version: 1.259.4
     '@types/jest':
       specifier: ^29.5.14
       version: 29.5.14
@@ -178,25 +178,25 @@ importers:
         version: 20.4.6(@swc-node/register@1.10.9(@swc/core@1.10.14(@swc/helpers@0.5.15))(@swc/types@0.1.17)(typescript@5.7.3))(@swc/core@1.10.14(@swc/helpers@0.5.15))
       '@storm-software/config':
         specifier: 'catalog:'
-        version: 1.103.0
+        version: 1.103.3
       '@storm-software/cspell':
         specifier: 'catalog:'
-        version: 0.19.9(cspell@8.17.3)
+        version: 0.20.1(cspell@8.17.3)
       '@storm-software/eslint':
         specifier: 'catalog:'
-        version: 0.123.0(4546357b96d3a2d1466cb137782eb4cb)
+        version: 0.129.1(ca74f1b5de8580635a4aaf4644e76700)
       '@storm-software/git-tools':
         specifier: 'catalog:'
-        version: 2.93.9(@swc-node/register@1.10.9(@swc/core@1.10.14(@swc/helpers@0.5.15))(@swc/types@0.1.17)(typescript@5.7.3))(@swc/core@1.10.14(@swc/helpers@0.5.15))(chokidar@4.0.3)
+        version: 2.93.12(@swc-node/register@1.10.9(@swc/core@1.10.14(@swc/helpers@0.5.15))(@swc/types@0.1.17)(typescript@5.7.3))(@swc/core@1.10.14(@swc/helpers@0.5.15))(chokidar@4.0.3)
       '@storm-software/linting-tools':
         specifier: 'catalog:'
-        version: 1.119.9(chokidar@4.0.3)
+        version: 1.119.12(chokidar@4.0.3)
       '@storm-software/markdownlint':
         specifier: 'catalog:'
-        version: 0.16.7
+        version: 0.16.10
       '@storm-software/prettier':
         specifier: 'catalog:'
-        version: 0.33.0(prettier-plugin-astro@0.14.1)(prettier-plugin-prisma@5.0.0(prettier@3.5.1))(prettier@3.5.1)(typescript@5.7.3)
+        version: 0.33.3(prettier-plugin-astro@0.14.1)(prettier-plugin-prisma@5.0.0(prettier@3.5.1))(prettier@3.5.1)(typescript@5.7.3)
       '@storm-software/testing-tools':
         specifier: 'catalog:'
         version: 1.104.37(@nx/jest@20.4.6(@babel/traverse@7.26.7)(@swc-node/register@1.10.9(@swc/core@1.10.14(@swc/helpers@0.5.15))(@swc/types@0.1.17)(typescript@5.7.3))(@swc/core@1.10.14(@swc/helpers@0.5.15))(@types/node@22.13.1)(babel-plugin-macros@3.1.0)(nx@20.4.6(@swc-node/register@1.10.9(@swc/core@1.10.14(@swc/helpers@0.5.15))(@swc/types@0.1.17)(typescript@5.7.3))(@swc/core@1.10.14(@swc/helpers@0.5.15)))(ts-node@10.9.2(@swc/core@1.10.14(@swc/helpers@0.5.15))(@types/node@22.13.1)(typescript@5.7.3))(typescript@5.7.3)(verdaccio@5.33.0(typanion@3.14.0)))(jest@29.7.0(@types/node@22.13.1)(babel-plugin-macros@3.1.0)(ts-node@10.9.2(@swc/core@1.10.14(@swc/helpers@0.5.15))(@types/node@22.13.1)(typescript@5.7.3)))
@@ -205,13 +205,13 @@ importers:
         version: 0.35.27
       '@storm-software/unbuild':
         specifier: 'catalog:'
-        version: 0.37.7(@nx/devkit@20.4.6(nx@20.4.6(@swc-node/register@1.10.9(@swc/core@1.10.14(@swc/helpers@0.5.15))(@swc/types@0.1.17)(typescript@5.7.3))(@swc/core@1.10.14(@swc/helpers@0.5.15))))(@nx/js@20.4.6(@babel/traverse@7.26.7)(@swc-node/register@1.10.9(@swc/core@1.10.14(@swc/helpers@0.5.15))(@swc/types@0.1.17)(typescript@5.7.3))(@swc/core@1.10.14(@swc/helpers@0.5.15))(@types/node@22.13.1)(nx@20.4.6(@swc-node/register@1.10.9(@swc/core@1.10.14(@swc/helpers@0.5.15))(@swc/types@0.1.17)(typescript@5.7.3))(@swc/core@1.10.14(@swc/helpers@0.5.15)))(typescript@5.7.3)(verdaccio@5.33.0(typanion@3.14.0)))(@storm-software/config@1.103.0)(@swc/helpers@0.5.15)(nx@20.4.6(@swc-node/register@1.10.9(@swc/core@1.10.14(@swc/helpers@0.5.15))(@swc/types@0.1.17)(typescript@5.7.3))(@swc/core@1.10.14(@swc/helpers@0.5.15)))(rollup@4.34.5)(typescript@5.7.3)
+        version: 0.37.10(@nx/devkit@20.4.6(nx@20.4.6(@swc-node/register@1.10.9(@swc/core@1.10.14(@swc/helpers@0.5.15))(@swc/types@0.1.17)(typescript@5.7.3))(@swc/core@1.10.14(@swc/helpers@0.5.15))))(@nx/js@20.4.6(@babel/traverse@7.26.7)(@swc-node/register@1.10.9(@swc/core@1.10.14(@swc/helpers@0.5.15))(@swc/types@0.1.17)(typescript@5.7.3))(@swc/core@1.10.14(@swc/helpers@0.5.15))(@types/node@22.13.1)(nx@20.4.6(@swc-node/register@1.10.9(@swc/core@1.10.14(@swc/helpers@0.5.15))(@swc/types@0.1.17)(typescript@5.7.3))(@swc/core@1.10.14(@swc/helpers@0.5.15)))(typescript@5.7.3)(verdaccio@5.33.0(typanion@3.14.0)))(@storm-software/config@1.103.3)(@swc/helpers@0.5.15)(nx@20.4.6(@swc-node/register@1.10.9(@swc/core@1.10.14(@swc/helpers@0.5.15))(@swc/types@0.1.17)(typescript@5.7.3))(@swc/core@1.10.14(@swc/helpers@0.5.15)))(rollup@4.34.5)(typescript@5.7.3)
       '@storm-software/untyped':
         specifier: 'catalog:'
-        version: 0.11.7(@nx/devkit@20.4.6(nx@20.4.6(@swc-node/register@1.10.9(@swc/core@1.10.14(@swc/helpers@0.5.15))(@swc/types@0.1.17)(typescript@5.7.3))(@swc/core@1.10.14(@swc/helpers@0.5.15))))(@swc-node/register@1.10.9(@swc/core@1.10.14(@swc/helpers@0.5.15))(@swc/types@0.1.17)(typescript@5.7.3))(@swc/core@1.10.14(@swc/helpers@0.5.15))(untyped@1.5.2)
+        version: 0.11.10(@nx/devkit@20.4.6(nx@20.4.6(@swc-node/register@1.10.9(@swc/core@1.10.14(@swc/helpers@0.5.15))(@swc/types@0.1.17)(typescript@5.7.3))(@swc/core@1.10.14(@swc/helpers@0.5.15))))(@swc-node/register@1.10.9(@swc/core@1.10.14(@swc/helpers@0.5.15))(@swc/types@0.1.17)(typescript@5.7.3))(@swc/core@1.10.14(@swc/helpers@0.5.15))(untyped@1.5.2)
       '@storm-software/workspace-tools':
         specifier: 'catalog:'
-        version: 1.259.0(a51191692f5b2adf9019281ce03fb3b5)
+        version: 1.259.4(159923a32765c21c153c66c2b12aa273)
       '@swc-node/register':
         specifier: ~1.10.9
         version: 1.10.9(@swc/core@1.10.14(@swc/helpers@0.5.15))(@swc/types@0.1.17)(typescript@5.7.3)
@@ -236,6 +236,9 @@ importers:
       eslint:
         specifier: 9.20.0
         version: 9.20.0(jiti@2.4.2)
+      eslint-flat-config-utils:
+        specifier: ^2.0.1
+        version: 2.0.1
       jest:
         specifier: 'catalog:'
         version: 29.7.0(@types/node@22.13.1)(babel-plugin-macros@3.1.0)(ts-node@10.9.2(@swc/core@1.10.14(@swc/helpers@0.5.15))(@types/node@22.13.1)(typescript@5.7.3))
@@ -260,9 +263,6 @@ importers:
       nx:
         specifier: 'catalog:'
         version: 20.4.6(@swc-node/register@1.10.9(@swc/core@1.10.14(@swc/helpers@0.5.15))(@swc/types@0.1.17)(typescript@5.7.3))(@swc/core@1.10.14(@swc/helpers@0.5.15))
-      prettier:
-        specifier: ^3.4.2
-        version: 3.5.1
       rimraf:
         specifier: 'catalog:'
         version: 6.0.1
@@ -271,7 +271,7 @@ importers:
         version: 1.3.0
       ts-jest:
         specifier: 29.2.5
-        version: 29.2.5(@babel/core@7.26.7)(@jest/transform@29.7.0)(@jest/types@29.6.3)(babel-jest@29.7.0(@babel/core@7.26.7))(jest@29.7.0(@types/node@22.13.1)(babel-plugin-macros@3.1.0)(ts-node@10.9.2(@swc/core@1.10.14(@swc/helpers@0.5.15))(@types/node@22.13.1)(typescript@5.7.3)))(typescript@5.7.3)
+        version: 29.2.5(@babel/core@7.26.7)(@jest/transform@29.7.0)(@jest/types@29.6.3)(babel-jest@29.7.0(@babel/core@7.26.7))(esbuild@0.24.2)(jest@29.7.0(@types/node@22.13.1)(babel-plugin-macros@3.1.0)(ts-node@10.9.2(@swc/core@1.10.14(@swc/helpers@0.5.15))(@types/node@22.13.1)(typescript@5.7.3)))(typescript@5.7.3)
       ts-node:
         specifier: 10.9.2
         version: 10.9.2(@swc/core@1.10.14(@swc/helpers@0.5.15))(@types/node@22.13.1)(typescript@5.7.3)
@@ -419,7 +419,7 @@ importers:
     dependencies:
       '@storm-software/config-tools':
         specifier: 'catalog:'
-        version: 1.155.0(@storm-software/config@1.103.0)
+        version: 1.155.3(@storm-software/config@1.103.3)
       mlly:
         specifier: 1.7.4
         version: 1.7.4
@@ -445,7 +445,7 @@ importers:
         version: 20.4.6(nx@20.4.6(@swc-node/register@1.10.9(@swc/core@1.10.14(@swc/helpers@0.5.15))(@swc/types@0.1.17)(typescript@5.7.3))(@swc/core@1.10.14(@swc/helpers@0.5.15)))
       '@storm-software/workspace-tools':
         specifier: 'catalog:'
-        version: 1.259.0(a51191692f5b2adf9019281ce03fb3b5)
+        version: 1.259.4(159923a32765c21c153c66c2b12aa273)
       defu:
         specifier: 'catalog:'
         version: 6.1.4
@@ -456,6 +456,9 @@ importers:
       '@types/node':
         specifier: 'catalog:'
         version: 22.13.1
+      eslint-flat-config-utils:
+        specifier: ^2.0.1
+        version: 2.0.1
       nx:
         specifier: 'catalog:'
         version: 20.4.6(@swc-node/register@1.10.9(@swc/core@1.10.14(@swc/helpers@0.5.15))(@swc/types@0.1.17)(typescript@5.7.3))(@swc/core@1.10.14(@swc/helpers@0.5.15))
@@ -2138,6 +2141,7 @@ packages:
 
   '@ls-lint/ls-lint@2.2.3':
     resolution: {integrity: sha512-ekM12jNm/7O2I/hsRv9HvYkRdfrHpiV1epVuI2NP+eTIcEgdIdKkKCs9KgQydu/8R5YXTov9aHdOgplmCHLupw==}
+    cpu: [x64, arm64, s390x]
     os: [darwin, linux, win32]
     hasBin: true
 
@@ -2693,23 +2697,23 @@ packages:
     engines: {node: '>=8.10'}
     hasBin: true
 
-  '@storm-software/config-tools@1.155.0':
-    resolution: {integrity: sha512-3l8WG8ifp+c1Hjd+BVqk4Dwk4ERexxRuii8LrTEVx+BwCR8W9SzbaSLLp/ln7E6UB0XXWCQ/5ifuFN/5r2oHGQ==}
+  '@storm-software/config-tools@1.155.3':
+    resolution: {integrity: sha512-kk0bBETM7fyMSIJAq42d6Ils3hlDKMZ/dYmPEqjWOPspwW2KWDjbB6tWHLbikB+Xmu7Rgf1DiR93Q1DP/c89bA==}
     hasBin: true
     peerDependencies:
       '@storm-software/config': workspace:*
 
-  '@storm-software/config@1.103.0':
-    resolution: {integrity: sha512-bR37HZ/bMCxnd7+6YOExFMGpyrrJCBndaxOzRJBP40K5t02muVFtLuSJJ/sQ7EiVJoejtzmxIw6guS4V4lHuQA==}
+  '@storm-software/config@1.103.3':
+    resolution: {integrity: sha512-H7gaCTNcxGgwjuhSKa61vh8TRyLLVgrZD1zPOXc8p7U5m+yka2qPavTFALp0B/IzgZIwe3XwrGxiGSZpCiScsA==}
 
-  '@storm-software/cspell@0.19.9':
-    resolution: {integrity: sha512-nVNaxanQStED2TOpKzp69XScYfrM9jWYgAKGJkQqitZm/cEstZdTqU+cTue65OnK/YF+2CNXZhJ9Uy0WjoVRFg==}
+  '@storm-software/cspell@0.20.1':
+    resolution: {integrity: sha512-LwQCbPKMDt7vzM49RkOXnDg0i7VsmMeufrN/ZwDl7pC6+p/szmV2b0zI6/FreJQvOQJFGcoHkbYu4+iPqYB/ew==}
     engines: {node: '>=22.4.0', pnpm: '>=10.3.0'}
     peerDependencies:
       cspell: ^8.17.3
 
-  '@storm-software/eslint@0.123.0':
-    resolution: {integrity: sha512-z2eEHFMpnoJqPr541CJDqpFAr19M0huZavEeuAYTPbeayIgGmz06SDsp41+cYBN56w5lljPab9y0PGFfCeTHSA==}
+  '@storm-software/eslint@0.129.1':
+    resolution: {integrity: sha512-L0wjwPYTdkKgNbI1mCtiWWCcxNt+u37JOQPAvhaL8/RoMGUa/gyhZYSFVsAzTDzJgRZwmaVZESCxv9qF6mqg6Q==}
     engines: {node: '>=22.4.0', pnpm: '>=10.3.0'}
     peerDependencies:
       '@eslint-react/eslint-plugin': ^1.19.0
@@ -2724,28 +2728,29 @@ packages:
       eslint-plugin-format: '>=0.1.0'
       eslint-plugin-react-compiler: 19.0.0-beta-21e868a-20250216
       eslint-plugin-react-hooks: ^5.0.0
+      eslint-plugin-react-native: ^5.0.0
       eslint-plugin-react-refresh: ^0.4.4
       eslint-plugin-relay: ^1.8.3
       eslint-plugin-storybook: ^0.11.0
       graphql: ^14.0.0 || ^15.0.0 || ^16.0.0
       prettier-plugin-astro: ^0.14.0
 
-  '@storm-software/git-tools@2.93.9':
-    resolution: {integrity: sha512-y6cANDbvEPJD1lTJJWhdpS90MnSyNN71p1Fw/cP43SmTTskCAgtW034jflWHhcmdnYhaxiMbFkNV8XNa4WlYBg==}
+  '@storm-software/git-tools@2.93.12':
+    resolution: {integrity: sha512-aBOscdbmBvYAvVuDKuvkKoT7ITJA7JiFsutimARJGljMxXzr8op9YOesgthoWingjWjHlABen7JDenBvUa/R7g==}
     engines: {node: '>=22.4.0', pnpm: '>=10.3.0'}
     hasBin: true
 
-  '@storm-software/linting-tools@1.119.9':
-    resolution: {integrity: sha512-MDeIvOr7zsbTdQA5TS1oFIh7eDnMJnAHo9d3Z0RfmlGiWkcpuBA34gBt5tAz5csnsz+NsWsKNxhF6Ic6WknYlg==}
+  '@storm-software/linting-tools@1.119.12':
+    resolution: {integrity: sha512-y2QrdILZ8gfQ5e07bxr63hJnQ1q+SZrTGrW8YU09JlZEJaw4G35mDm0VCRIlO986N8GviFiJyHsQZiD+xXUvDQ==}
     engines: {node: '>=22.4.0', pnpm: '>=10.3.0'}
     hasBin: true
 
-  '@storm-software/markdownlint@0.16.7':
-    resolution: {integrity: sha512-+wFMiTtIBlmRhAGP0tHzPfSUpMg+2x/m0alhCqrbwbAfFoWiFe85FmnXqT4jM6ZwmDSdmdEDz65sSQ6CvWeNgQ==}
+  '@storm-software/markdownlint@0.16.10':
+    resolution: {integrity: sha512-jdUbmli5a15eZQd4Q9RAx1k/zT5OU80Payo78q1h9xa2mSgUxLLUAvXRxQ6rTWrAMWWxk+9dYZv5HuYpoSfngg==}
     engines: {node: '>=22.4.0', pnpm: '>=10.3.0'}
 
-  '@storm-software/prettier@0.33.0':
-    resolution: {integrity: sha512-gNV4Cgu1JWWJsouo2ZkxoTe8q3rTJQa2TwZRrVQEQo46U8MoV87MFqf4WUrjAzjq8RwbnC1FqAJlWsNyK0DZaw==}
+  '@storm-software/prettier@0.33.3':
+    resolution: {integrity: sha512-WvokA1pEoCw3w/O7mLU/yivzLkcl/4BU6FwbXMeeQyQ3K4b1GubWatSLbq5h9nFroRUJHCoIU9HIq8Y6Hvw9cQ==}
     peerDependencies:
       prettier: ^3.5.1
       prettier-plugin-astro: ^0.14.1
@@ -2771,8 +2776,8 @@ packages:
   '@storm-software/tsconfig@0.35.27':
     resolution: {integrity: sha512-/Jouuf5ot+ZgrWgeVTbIRfcc4jGzi5giTe6D6t70/vh5SckJnUuUD44otn5tCywlHMersRruTQxtLLhEmVXGEw==}
 
-  '@storm-software/unbuild@0.37.7':
-    resolution: {integrity: sha512-q6uYyJdW6I8xJCImZRvAub+T4Sd1cVt9sYR6qqt62ZQz6kkwBgBY+4IemwsctO6kVz3SxUZyK9a3DZIpgdRc4g==}
+  '@storm-software/unbuild@0.37.10':
+    resolution: {integrity: sha512-DiKI/MGdEvz5lTfTlC7XJt4wwOetvPurNwEJjdy68lKvgjAUYGla0hjtgIZCgIQXhe7fJt0jQGv+c1gQsc/qCg==}
     engines: {node: '>=22.4.0', pnpm: '>=10.3.0'}
     hasBin: true
     peerDependencies:
@@ -2788,16 +2793,16 @@ packages:
       nx:
         optional: true
 
-  '@storm-software/untyped@0.11.7':
-    resolution: {integrity: sha512-TypTaYRQXCTNDlNuuaZkZ54jqmseyMCRPNLLAu+27MLBNidbvsouYNj25OJUKCHT+gwQFkMEyO3MxWmY6D2VMA==}
+  '@storm-software/untyped@0.11.10':
+    resolution: {integrity: sha512-G5i8/gC+QDd0IwpoPwkEy0CppHp9xozC64U9szYYBfnMW3aiBTXcevZeBJ/sWttM19TbtTT4vUAQnI3HEQg5OA==}
     engines: {node: '>=22.4.0', pnpm: '>=10.3.0'}
     hasBin: true
     peerDependencies:
       '@nx/devkit': ^20.3.1
       untyped: ^1.5.2
 
-  '@storm-software/workspace-tools@1.259.0':
-    resolution: {integrity: sha512-WeqXDLdwfUsJPEC2ZQ+7cz6s3lazlEokxKUdiujZfDyW+MR3OiykuBda3kdy372xuSOZJ0WVLLi9gI8OlU+OdQ==}
+  '@storm-software/workspace-tools@1.259.4':
+    resolution: {integrity: sha512-k7srv7xm+RUEumyhdbvYoIrs7z/ATViFj4yyyVs1Zjgw3DZ6Tv0XL4Dt6XI/78/66PZHq5HZKP+cJm9aOPIONw==}
     peerDependencies:
       '@storm-software/esbuild': workspace:*
       '@storm-software/prettier': workspace:*
@@ -3162,10 +3167,6 @@ packages:
       eslint: ^8.57.0 || ^9.0.0
       typescript: '>=4.8.4 <5.8.0'
 
-  '@typescript-eslint/scope-manager@8.24.0':
-    resolution: {integrity: sha512-HZIX0UByphEtdVBKaQBgTDdn9z16l4aTUz8e8zPQnyxwHBtf5vtl1L+OhH+m1FGV9DrRmoDuYKqzVrvWDcDozw==}
-    engines: {node: ^18.18.0 || ^20.9.0 || >=21.1.0}
-
   '@typescript-eslint/scope-manager@8.24.1':
     resolution: {integrity: sha512-OdQr6BNBzwRjNEXMQyaGyZzgg7wzjYKfX2ZBV3E04hUCBDv3GQCHiz9RpqdUIiVrMgJGkXm3tcEh4vFSHreS2Q==}
     engines: {node: ^18.18.0 || ^20.9.0 || >=21.1.0}
@@ -3176,10 +3177,6 @@ packages:
     peerDependencies:
       eslint: ^8.57.0 || ^9.0.0
       typescript: '>=4.8.4 <5.8.0'
-
-  '@typescript-eslint/types@8.24.0':
-    resolution: {integrity: sha512-VacJCBTyje7HGAw7xp11q439A+zeGG0p0/p2zsZwpnMzjPB5WteaWqt4g2iysgGFafrqvyLWqq6ZPZAOCoefCw==}
-    engines: {node: ^18.18.0 || ^20.9.0 || >=21.1.0}
 
   '@typescript-eslint/types@8.24.1':
     resolution: {integrity: sha512-9kqJ+2DkUXiuhoiYIUvIYjGcwle8pcPpdlfkemGvTObzgmYfJ5d0Qm6jwb4NBXP9W1I5tss0VIAnWFumz3mC5A==}
@@ -3197,10 +3194,6 @@ packages:
     peerDependencies:
       eslint: ^8.57.0 || ^9.0.0
       typescript: '>=4.8.4 <5.8.0'
-
-  '@typescript-eslint/visitor-keys@8.24.0':
-    resolution: {integrity: sha512-kArLq83QxGLbuHrTMoOEWO+l2MwsNS2TGISEdx8xgqpkbytB07XmlQyQdNDrCc1ecSqx0cnmhGvpX+VBwqqSkg==}
-    engines: {node: ^18.18.0 || ^20.9.0 || >=21.1.0}
 
   '@typescript-eslint/visitor-keys@8.24.1':
     resolution: {integrity: sha512-EwVHlp5l+2vp8CoqJm9KikPZgi3gbdZAtabKT9KPShGeOcJhsv4Zdo3oc8T8I0uKEmYoU4ItyxbptjF08enaxg==}
@@ -4727,6 +4720,12 @@ packages:
     resolution: {integrity: sha512-brcKcxGnISN2CcVhXJ/kEQlNa0MEfGRtwKtWA16SkqXHKitaKIMrfemJKLKX1YqDU5C/5JY3PvZXd5jEW04e0Q==}
     engines: {node: '>=5.0.0'}
 
+  eslint-plugin-no-secrets@2.2.1:
+    resolution: {integrity: sha512-/7BduEiFeINJ7mlc8iRmqp0sDw2a2lAFahig/RGppn7qf1dKhldXopUuv4M92kc4PX90dcxfKwKtYrW159cuhA==}
+    engines: {node: '>=18', npm: '>=8'}
+    peerDependencies:
+      eslint: '>=5'
+
   eslint-plugin-perfectionist@4.9.0:
     resolution: {integrity: sha512-76lDfJnonOcXGW3bEXuqhEGId0LrOlvIE1yLHvK/eKMMPOc0b43KchAIR2Bdbqlg+LPXU5/Q+UzuzkO+cWHT6w==}
     engines: {node: ^18.0.0 || >=20.0.0}
@@ -4798,6 +4797,14 @@ packages:
     peerDependenciesMeta:
       typescript:
         optional: true
+
+  eslint-plugin-react-native-globals@0.1.2:
+    resolution: {integrity: sha512-9aEPf1JEpiTjcFAmmyw8eiIXmcNZOqaZyHO77wgm0/dWfT/oxC1SrIq8ET38pMxHYrcB6Uew+TzUVsBeczF88g==}
+
+  eslint-plugin-react-native@5.0.0:
+    resolution: {integrity: sha512-VyWlyCC/7FC/aONibOwLkzmyKg4j9oI8fzrk9WYNs4I8/m436JuOTAFwLvEn1CVvc7La4cPfbCyspP4OYpP52Q==}
+    peerDependencies:
+      eslint: ^3.17.0 || ^4 || ^5 || ^6 || ^7 || ^8 || ^9
 
   eslint-plugin-react-refresh@0.4.19:
     resolution: {integrity: sha512-eyy8pcr/YxSYjBoqIFSrlbn9i/xvxUFa8CjzAYo9cFjgGXqq1hyjihcpZvxRLalpaWmueWR81xn7vuKmAFijDQ==}
@@ -5294,10 +5301,6 @@ packages:
 
   globals@14.0.0:
     resolution: {integrity: sha512-oahGvuMGQlPw/ivIYBjVSrWAfWLBeku5tpPE2fOPLi+WHffIWbuh2tCjhyQhTBPMf5E9jDEH4FOmTYgYwbKwtQ==}
-    engines: {node: '>=18'}
-
-  globals@15.14.0:
-    resolution: {integrity: sha512-OkToC372DtlQeje9/zHIo5CT8lRP/FUgEOKBEhU4e0abL7J7CD24fD9ohiLN5hagG/kWCYj4K5oaxxtj2Z0Dig==}
     engines: {node: '>=18'}
 
   globals@15.15.0:
@@ -11814,9 +11817,9 @@ snapshots:
       ignore: 5.3.2
       p-map: 4.0.0
 
-  '@storm-software/config-tools@1.155.0(@storm-software/config@1.103.0)':
+  '@storm-software/config-tools@1.155.3(@storm-software/config@1.103.3)':
     dependencies:
-      '@storm-software/config': 1.103.0
+      '@storm-software/config': 1.103.3
       c12: 2.0.1
       chalk: 4.1.2
       commander: 12.1.0
@@ -11828,15 +11831,15 @@ snapshots:
     transitivePeerDependencies:
       - magicast
 
-  '@storm-software/config@1.103.0':
+  '@storm-software/config@1.103.3':
     dependencies:
       zod: 3.24.1
 
-  '@storm-software/cspell@0.19.9(cspell@8.17.3)':
+  '@storm-software/cspell@0.20.1(cspell@8.17.3)':
     dependencies:
       cspell: 8.17.3
 
-  '@storm-software/eslint@0.123.0(4546357b96d3a2d1466cb137782eb4cb)':
+  '@storm-software/eslint@0.129.1(ca74f1b5de8580635a4aaf4644e76700)':
     dependencies:
       '@antfu/install-pkg': 1.0.0
       '@clack/prompts': 0.10.0
@@ -11849,7 +11852,6 @@ snapshots:
       '@nx/eslint': 20.4.6(@babel/traverse@7.26.7)(@swc-node/register@1.10.9(@swc/core@1.10.14(@swc/helpers@0.5.15))(@swc/types@0.1.17)(typescript@5.7.3))(@swc/core@1.10.14(@swc/helpers@0.5.15))(@types/node@22.13.1)(@zkochan/js-yaml@0.0.7)(eslint@9.20.0(jiti@2.4.2))(nx@20.4.6(@swc-node/register@1.10.9(@swc/core@1.10.14(@swc/helpers@0.5.15))(@swc/types@0.1.17)(typescript@5.7.3))(@swc/core@1.10.14(@swc/helpers@0.5.15)))(verdaccio@5.33.0(typanion@3.14.0))
       '@nx/eslint-plugin': 20.4.6(@babel/traverse@7.26.7)(@swc-node/register@1.10.9(@swc/core@1.10.14(@swc/helpers@0.5.15))(@swc/types@0.1.17)(typescript@5.7.3))(@swc/core@1.10.14(@swc/helpers@0.5.15))(@types/node@22.13.1)(@typescript-eslint/parser@8.24.1(eslint@9.20.0(jiti@2.4.2))(typescript@5.7.3))(eslint-config-prettier@10.0.1(eslint@9.20.0(jiti@2.4.2)))(eslint@9.20.0(jiti@2.4.2))(nx@20.4.6(@swc-node/register@1.10.9(@swc/core@1.10.14(@swc/helpers@0.5.15))(@swc/types@0.1.17)(typescript@5.7.3))(@swc/core@1.10.14(@swc/helpers@0.5.15)))(typescript@5.7.3)(verdaccio@5.33.0(typanion@3.14.0))
       '@prettier/plugin-xml': 3.4.1(prettier@3.5.1)
-      '@storm-software/config-tools': 1.155.0(@storm-software/config@1.103.0)
       '@stylistic/eslint-plugin': 4.0.1(eslint@9.20.0(jiti@2.4.2))(typescript@5.7.3)
       '@typescript-eslint/eslint-plugin': 8.24.1(@typescript-eslint/parser@8.24.1(eslint@9.20.0(jiti@2.4.2))(typescript@5.7.3))(eslint@9.20.0(jiti@2.4.2))(typescript@5.7.3)
       '@typescript-eslint/parser': 8.24.1(eslint@9.20.0(jiti@2.4.2))(typescript@5.7.3)
@@ -11876,10 +11878,12 @@ snapshots:
       eslint-plugin-mdx: 3.1.5(eslint@9.20.0(jiti@2.4.2))
       eslint-plugin-n: 17.8.1(eslint@9.20.0(jiti@2.4.2))
       eslint-plugin-no-only-tests: 3.3.0
+      eslint-plugin-no-secrets: 2.2.1(eslint@9.20.0(jiti@2.4.2))
       eslint-plugin-perfectionist: 4.9.0(eslint@9.20.0(jiti@2.4.2))(typescript@5.7.3)
       eslint-plugin-prettier: 5.2.3(eslint-config-prettier@10.0.1(eslint@9.20.0(jiti@2.4.2)))(eslint@9.20.0(jiti@2.4.2))(prettier@3.5.1)
       eslint-plugin-react-compiler: 19.0.0-beta-30d8a17-20250209(eslint@9.20.0(jiti@2.4.2))
       eslint-plugin-react-hooks: 5.1.0(eslint@9.20.0(jiti@2.4.2))
+      eslint-plugin-react-native: 5.0.0(eslint@9.20.0(jiti@2.4.2))
       eslint-plugin-react-refresh: 0.4.19(eslint@9.20.0(jiti@2.4.2))
       eslint-plugin-regexp: 2.7.0(eslint@9.20.0(jiti@2.4.2))
       eslint-plugin-relay: 1.8.3
@@ -11899,7 +11903,6 @@ snapshots:
       yaml-eslint-parser: 1.2.3
     transitivePeerDependencies:
       - '@babel/traverse'
-      - '@storm-software/config'
       - '@swc-node/register'
       - '@swc/core'
       - '@swc/wasm'
@@ -11907,7 +11910,6 @@ snapshots:
       - '@types/node'
       - bluebird
       - debug
-      - magicast
       - nx
       - prettier
       - supports-color
@@ -11915,7 +11917,7 @@ snapshots:
       - verdaccio
       - vitest
 
-  '@storm-software/git-tools@2.93.9(@swc-node/register@1.10.9(@swc/core@1.10.14(@swc/helpers@0.5.15))(@swc/types@0.1.17)(typescript@5.7.3))(@swc/core@1.10.14(@swc/helpers@0.5.15))(chokidar@4.0.3)':
+  '@storm-software/git-tools@2.93.12(@swc-node/register@1.10.9(@swc/core@1.10.14(@swc/helpers@0.5.15))(@swc/types@0.1.17)(typescript@5.7.3))(@swc/core@1.10.14(@swc/helpers@0.5.15))(chokidar@4.0.3)':
     dependencies:
       '@angular-devkit/architect': 0.1900.6(chokidar@4.0.3)
       nx: 20.4.6(@swc-node/register@1.10.9(@swc/core@1.10.14(@swc/helpers@0.5.15))(@swc/types@0.1.17)(typescript@5.7.3))(@swc/core@1.10.14(@swc/helpers@0.5.15))
@@ -11927,20 +11929,20 @@ snapshots:
       - chokidar
       - debug
 
-  '@storm-software/linting-tools@1.119.9(chokidar@4.0.3)':
+  '@storm-software/linting-tools@1.119.12(chokidar@4.0.3)':
     dependencies:
       '@angular-devkit/architect': 0.1900.6(chokidar@4.0.3)
     transitivePeerDependencies:
       - chokidar
 
-  '@storm-software/markdownlint@0.16.7':
+  '@storm-software/markdownlint@0.16.10':
     dependencies:
       defu: 6.1.4
       markdownlint-cli2: 0.17.2
     transitivePeerDependencies:
       - supports-color
 
-  '@storm-software/prettier@0.33.0(prettier-plugin-astro@0.14.1)(prettier-plugin-prisma@5.0.0(prettier@3.5.1))(prettier@3.5.1)(typescript@5.7.3)':
+  '@storm-software/prettier@0.33.3(prettier-plugin-astro@0.14.1)(prettier-plugin-prisma@5.0.0(prettier@3.5.1))(prettier@3.5.1)(typescript@5.7.3)':
     dependencies:
       prettier: 3.5.1
       prettier-plugin-organize-imports: 4.0.0(prettier@3.5.1)(typescript@5.7.3)
@@ -11963,7 +11965,7 @@ snapshots:
     dependencies:
       '@total-typescript/ts-reset': 0.5.1
 
-  '@storm-software/unbuild@0.37.7(@nx/devkit@20.4.6(nx@20.4.6(@swc-node/register@1.10.9(@swc/core@1.10.14(@swc/helpers@0.5.15))(@swc/types@0.1.17)(typescript@5.7.3))(@swc/core@1.10.14(@swc/helpers@0.5.15))))(@nx/js@20.4.6(@babel/traverse@7.26.7)(@swc-node/register@1.10.9(@swc/core@1.10.14(@swc/helpers@0.5.15))(@swc/types@0.1.17)(typescript@5.7.3))(@swc/core@1.10.14(@swc/helpers@0.5.15))(@types/node@22.13.1)(nx@20.4.6(@swc-node/register@1.10.9(@swc/core@1.10.14(@swc/helpers@0.5.15))(@swc/types@0.1.17)(typescript@5.7.3))(@swc/core@1.10.14(@swc/helpers@0.5.15)))(typescript@5.7.3)(verdaccio@5.33.0(typanion@3.14.0)))(@storm-software/config@1.103.0)(@swc/helpers@0.5.15)(nx@20.4.6(@swc-node/register@1.10.9(@swc/core@1.10.14(@swc/helpers@0.5.15))(@swc/types@0.1.17)(typescript@5.7.3))(@swc/core@1.10.14(@swc/helpers@0.5.15)))(rollup@4.34.5)(typescript@5.7.3)':
+  '@storm-software/unbuild@0.37.10(@nx/devkit@20.4.6(nx@20.4.6(@swc-node/register@1.10.9(@swc/core@1.10.14(@swc/helpers@0.5.15))(@swc/types@0.1.17)(typescript@5.7.3))(@swc/core@1.10.14(@swc/helpers@0.5.15))))(@nx/js@20.4.6(@babel/traverse@7.26.7)(@swc-node/register@1.10.9(@swc/core@1.10.14(@swc/helpers@0.5.15))(@swc/types@0.1.17)(typescript@5.7.3))(@swc/core@1.10.14(@swc/helpers@0.5.15))(@types/node@22.13.1)(nx@20.4.6(@swc-node/register@1.10.9(@swc/core@1.10.14(@swc/helpers@0.5.15))(@swc/types@0.1.17)(typescript@5.7.3))(@swc/core@1.10.14(@swc/helpers@0.5.15)))(typescript@5.7.3)(verdaccio@5.33.0(typanion@3.14.0)))(@storm-software/config@1.103.3)(@swc/helpers@0.5.15)(nx@20.4.6(@swc-node/register@1.10.9(@swc/core@1.10.14(@swc/helpers@0.5.15))(@swc/types@0.1.17)(typescript@5.7.3))(@swc/core@1.10.14(@swc/helpers@0.5.15)))(rollup@4.34.5)(typescript@5.7.3)':
     dependencies:
       '@nx/devkit': 20.4.6(nx@20.4.6(@swc-node/register@1.10.9(@swc/core@1.10.14(@swc/helpers@0.5.15))(@swc/types@0.1.17)(typescript@5.7.3))(@swc/core@1.10.14(@swc/helpers@0.5.15)))
       '@nx/js': 20.4.6(@babel/traverse@7.26.7)(@swc-node/register@1.10.9(@swc/core@1.10.14(@swc/helpers@0.5.15))(@swc/types@0.1.17)(typescript@5.7.3))(@swc/core@1.10.14(@swc/helpers@0.5.15))(@types/node@22.13.1)(nx@20.4.6(@swc-node/register@1.10.9(@swc/core@1.10.14(@swc/helpers@0.5.15))(@swc/types@0.1.17)(typescript@5.7.3))(@swc/core@1.10.14(@swc/helpers@0.5.15)))(typescript@5.7.3)(verdaccio@5.33.0(typanion@3.14.0))
@@ -11973,7 +11975,7 @@ snapshots:
       '@rollup/plugin-node-resolve': 16.0.0(rollup@4.34.5)
       '@rollup/plugin-replace': 6.0.2(rollup@4.34.5)
       '@rollup/pluginutils': 5.1.4(rollup@4.34.5)
-      '@storm-software/config': 1.103.0
+      '@storm-software/config': 1.103.3
       '@swc/core': 1.7.26(@swc/helpers@0.5.15)
       commander: 12.1.0
       defu: 6.1.4
@@ -11994,7 +11996,7 @@ snapshots:
       - vue
       - vue-tsc
 
-  '@storm-software/untyped@0.11.7(@nx/devkit@20.4.6(nx@20.4.6(@swc-node/register@1.10.9(@swc/core@1.10.14(@swc/helpers@0.5.15))(@swc/types@0.1.17)(typescript@5.7.3))(@swc/core@1.10.14(@swc/helpers@0.5.15))))(@swc-node/register@1.10.9(@swc/core@1.10.14(@swc/helpers@0.5.15))(@swc/types@0.1.17)(typescript@5.7.3))(@swc/core@1.10.14(@swc/helpers@0.5.15))(untyped@1.5.2)':
+  '@storm-software/untyped@0.11.10(@nx/devkit@20.4.6(nx@20.4.6(@swc-node/register@1.10.9(@swc/core@1.10.14(@swc/helpers@0.5.15))(@swc/types@0.1.17)(typescript@5.7.3))(@swc/core@1.10.14(@swc/helpers@0.5.15))))(@swc-node/register@1.10.9(@swc/core@1.10.14(@swc/helpers@0.5.15))(@swc/types@0.1.17)(typescript@5.7.3))(@swc/core@1.10.14(@swc/helpers@0.5.15))(untyped@1.5.2)':
     dependencies:
       '@nx/devkit': 20.4.6(nx@20.4.6(@swc-node/register@1.10.9(@swc/core@1.10.14(@swc/helpers@0.5.15))(@swc/types@0.1.17)(typescript@5.7.3))(@swc/core@1.10.14(@swc/helpers@0.5.15)))
       commander: 12.1.0
@@ -12007,7 +12009,7 @@ snapshots:
       - '@swc/core'
       - debug
 
-  '@storm-software/workspace-tools@1.259.0(a51191692f5b2adf9019281ce03fb3b5)':
+  '@storm-software/workspace-tools@1.259.4(159923a32765c21c153c66c2b12aa273)':
     dependencies:
       '@ltd/j-toml': 1.38.0
       '@microsoft/api-extractor': 7.49.2(@types/node@22.13.1)
@@ -12016,7 +12018,7 @@ snapshots:
       '@size-limit/esbuild': 11.1.4(size-limit@11.1.4)
       '@size-limit/esbuild-why': 11.1.4(size-limit@11.1.4)
       '@size-limit/file': 11.1.4(size-limit@11.1.4)
-      '@storm-software/prettier': 0.33.0(prettier-plugin-astro@0.14.1)(prettier-plugin-prisma@5.0.0(prettier@3.5.1))(prettier@3.5.1)(typescript@5.7.3)
+      '@storm-software/prettier': 0.33.3(prettier-plugin-astro@0.14.1)(prettier-plugin-prisma@5.0.0(prettier@3.5.1))(prettier@3.5.1)(typescript@5.7.3)
       defu: 6.1.4
       fs-extra: 11.2.0
       glob: 11.0.1
@@ -12035,7 +12037,7 @@ snapshots:
       zod: 3.24.1
       zod-to-json-schema: 3.23.1(zod@3.24.1)
     optionalDependencies:
-      '@storm-software/unbuild': 0.37.7(@nx/devkit@20.4.6(nx@20.4.6(@swc-node/register@1.10.9(@swc/core@1.10.14(@swc/helpers@0.5.15))(@swc/types@0.1.17)(typescript@5.7.3))(@swc/core@1.10.14(@swc/helpers@0.5.15))))(@nx/js@20.4.6(@babel/traverse@7.26.7)(@swc-node/register@1.10.9(@swc/core@1.10.14(@swc/helpers@0.5.15))(@swc/types@0.1.17)(typescript@5.7.3))(@swc/core@1.10.14(@swc/helpers@0.5.15))(@types/node@22.13.1)(nx@20.4.6(@swc-node/register@1.10.9(@swc/core@1.10.14(@swc/helpers@0.5.15))(@swc/types@0.1.17)(typescript@5.7.3))(@swc/core@1.10.14(@swc/helpers@0.5.15)))(typescript@5.7.3)(verdaccio@5.33.0(typanion@3.14.0)))(@storm-software/config@1.103.0)(@swc/helpers@0.5.15)(nx@20.4.6(@swc-node/register@1.10.9(@swc/core@1.10.14(@swc/helpers@0.5.15))(@swc/types@0.1.17)(typescript@5.7.3))(@swc/core@1.10.14(@swc/helpers@0.5.15)))(rollup@4.34.5)(typescript@5.7.3)
+      '@storm-software/unbuild': 0.37.10(@nx/devkit@20.4.6(nx@20.4.6(@swc-node/register@1.10.9(@swc/core@1.10.14(@swc/helpers@0.5.15))(@swc/types@0.1.17)(typescript@5.7.3))(@swc/core@1.10.14(@swc/helpers@0.5.15))))(@nx/js@20.4.6(@babel/traverse@7.26.7)(@swc-node/register@1.10.9(@swc/core@1.10.14(@swc/helpers@0.5.15))(@swc/types@0.1.17)(typescript@5.7.3))(@swc/core@1.10.14(@swc/helpers@0.5.15))(@types/node@22.13.1)(nx@20.4.6(@swc-node/register@1.10.9(@swc/core@1.10.14(@swc/helpers@0.5.15))(@swc/types@0.1.17)(typescript@5.7.3))(@swc/core@1.10.14(@swc/helpers@0.5.15)))(typescript@5.7.3)(verdaccio@5.33.0(typanion@3.14.0)))(@storm-software/config@1.103.3)(@swc/helpers@0.5.15)(nx@20.4.6(@swc-node/register@1.10.9(@swc/core@1.10.14(@swc/helpers@0.5.15))(@swc/types@0.1.17)(typescript@5.7.3))(@swc/core@1.10.14(@swc/helpers@0.5.15)))(rollup@4.34.5)(typescript@5.7.3)
     transitivePeerDependencies:
       - '@types/node'
       - supports-color
@@ -12385,11 +12387,6 @@ snapshots:
     transitivePeerDependencies:
       - supports-color
 
-  '@typescript-eslint/scope-manager@8.24.0':
-    dependencies:
-      '@typescript-eslint/types': 8.24.0
-      '@typescript-eslint/visitor-keys': 8.24.0
-
   '@typescript-eslint/scope-manager@8.24.1':
     dependencies:
       '@typescript-eslint/types': 8.24.1
@@ -12405,8 +12402,6 @@ snapshots:
       typescript: 5.7.3
     transitivePeerDependencies:
       - supports-color
-
-  '@typescript-eslint/types@8.24.0': {}
 
   '@typescript-eslint/types@8.24.1': {}
 
@@ -12434,11 +12429,6 @@ snapshots:
       typescript: 5.7.3
     transitivePeerDependencies:
       - supports-color
-
-  '@typescript-eslint/visitor-keys@8.24.0':
-    dependencies:
-      '@typescript-eslint/types': 8.24.0
-      eslint-visitor-keys: 4.2.0
 
   '@typescript-eslint/visitor-keys@8.24.1':
     dependencies:
@@ -14262,7 +14252,7 @@ snapshots:
   eslint-plugin-import-x@4.6.1(eslint@9.20.0(jiti@2.4.2))(typescript@5.7.3):
     dependencies:
       '@types/doctrine': 0.0.9
-      '@typescript-eslint/scope-manager': 8.24.0
+      '@typescript-eslint/scope-manager': 8.24.1
       '@typescript-eslint/utils': 8.24.1(eslint@9.20.0(jiti@2.4.2))(typescript@5.7.3)
       debug: 4.4.0
       doctrine: 3.0.0
@@ -14372,16 +14362,20 @@ snapshots:
       eslint: 9.20.0(jiti@2.4.2)
       eslint-plugin-es-x: 7.6.0(eslint@9.20.0(jiti@2.4.2))
       get-tsconfig: 4.10.0
-      globals: 15.14.0
+      globals: 15.15.0
       ignore: 5.3.2
       minimatch: 9.0.5
       semver: 7.7.1
 
   eslint-plugin-no-only-tests@3.3.0: {}
 
+  eslint-plugin-no-secrets@2.2.1(eslint@9.20.0(jiti@2.4.2)):
+    dependencies:
+      eslint: 9.20.0(jiti@2.4.2)
+
   eslint-plugin-perfectionist@4.9.0(eslint@9.20.0(jiti@2.4.2))(typescript@5.7.3):
     dependencies:
-      '@typescript-eslint/types': 8.24.0
+      '@typescript-eslint/types': 8.24.1
       '@typescript-eslint/utils': 8.24.1(eslint@9.20.0(jiti@2.4.2))(typescript@5.7.3)
       eslint: 9.20.0(jiti@2.4.2)
       natural-orderby: 5.0.0
@@ -14492,6 +14486,13 @@ snapshots:
       typescript: 5.7.3
     transitivePeerDependencies:
       - supports-color
+
+  eslint-plugin-react-native-globals@0.1.2: {}
+
+  eslint-plugin-react-native@5.0.0(eslint@9.20.0(jiti@2.4.2)):
+    dependencies:
+      eslint: 9.20.0(jiti@2.4.2)
+      eslint-plugin-react-native-globals: 0.1.2
 
   eslint-plugin-react-refresh@0.4.19(eslint@9.20.0(jiti@2.4.2)):
     dependencies:
@@ -15169,8 +15170,6 @@ snapshots:
   globals@11.12.0: {}
 
   globals@14.0.0: {}
-
-  globals@15.14.0: {}
 
   globals@15.15.0: {}
 
@@ -19091,7 +19090,7 @@ snapshots:
 
   ts-interface-checker@0.1.13: {}
 
-  ts-jest@29.2.5(@babel/core@7.26.7)(@jest/transform@29.7.0)(@jest/types@29.6.3)(babel-jest@29.7.0(@babel/core@7.26.7))(jest@29.7.0(@types/node@22.13.1)(babel-plugin-macros@3.1.0)(ts-node@10.9.2(@swc/core@1.10.14(@swc/helpers@0.5.15))(@types/node@22.13.1)(typescript@5.7.3)))(typescript@5.7.3):
+  ts-jest@29.2.5(@babel/core@7.26.7)(@jest/transform@29.7.0)(@jest/types@29.6.3)(babel-jest@29.7.0(@babel/core@7.26.7))(esbuild@0.24.2)(jest@29.7.0(@types/node@22.13.1)(babel-plugin-macros@3.1.0)(ts-node@10.9.2(@swc/core@1.10.14(@swc/helpers@0.5.15))(@types/node@22.13.1)(typescript@5.7.3)))(typescript@5.7.3):
     dependencies:
       bs-logger: 0.2.6
       ejs: 3.1.10
@@ -19109,6 +19108,7 @@ snapshots:
       '@jest/transform': 29.7.0
       '@jest/types': 29.6.3
       babel-jest: 29.7.0(@babel/core@7.26.7)
+      esbuild: 0.24.2
 
   ts-node@10.9.1(@swc/core@1.10.14(@swc/helpers@0.5.15))(@types/node@22.13.1)(typescript@5.7.3):
     dependencies:

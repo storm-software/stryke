@@ -1,4 +1,4 @@
-/*-------------------------------------------------------------------
+/* -------------------------------------------------------------------
 
                        ⚡ Storm Software - Stryke
 
@@ -13,7 +13,7 @@
  Contact:         https://stormsoftware.com/contact
  License:         https://stormsoftware.com/projects/stryke/license
 
- -------------------------------------------------------------------*/
+ ------------------------------------------------------------------- */
 
 import { existsSync as existsSyncFs } from "node:fs";
 import { access, constants } from "node:fs/promises";
@@ -34,7 +34,7 @@ export const existsSync = (filePath: string): boolean => {
  * @param filePath - The file path to check
  * @returns An indicator specifying if the file exists
  */
-export const exists = (filePath: string): Promise<boolean> => {
+export const exists = async (filePath: string): Promise<boolean> => {
   return access(filePath, constants.F_OK)
     .then(() => true)
     .catch(() => false);

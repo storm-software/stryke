@@ -1,4 +1,4 @@
-/*-------------------------------------------------------------------
+/* -------------------------------------------------------------------
 
                        ⚡ Storm Software - Stryke
 
@@ -13,7 +13,7 @@
  Contact:         https://stormsoftware.com/contact
  License:         https://stormsoftware.com/projects/stryke/license
 
- -------------------------------------------------------------------*/
+ ------------------------------------------------------------------- */
 
 import { EMPTY_STRING } from "@stryke/types";
 import { upperCaseFirst } from "./upper-case-first";
@@ -38,8 +38,8 @@ export const snakeCase = (input?: string, options?: SnakeCaseOptions) => {
   const parts =
     input
       ?.replace(
-        /(?<temp1>[A-Z])+/g,
-        (input?: string) => upperCaseFirst(input) ?? EMPTY_STRING
+        /[A-Z]+/g,
+        (input?: string) => upperCaseFirst(input) ?? EMPTY_STRING,
       )
       .split(/(?=[A-Z])|[\s._-]/)
       .map((x: string) => x.toLowerCase()) ?? [];
@@ -51,8 +51,5 @@ export const snakeCase = (input?: string, options?: SnakeCaseOptions) => {
 
   return options?.splitOnNumber === false
     ? result
-    : result.replace(
-        /(?<temp1>[A-Za-z]\d)/,
-        (val: string) => `${val[0]}_${val[1]}`
-      );
+    : result.replace(/[A-Z]\d/i, (val: string) => `${val[0]}_${val[1]}`);
 };

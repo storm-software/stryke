@@ -99,7 +99,7 @@ const TypedArrayConstructorMap: Record<string, TypedArrayConstructorType> = {
   "[object Uint8Array]": Uint8Array,
   "[object Uint16Array]": Uint16Array,
   "[object Uint32Array]": Uint32Array,
-  "[object Uint8ClampedArray]": Uint8ClampedArray
+  "[object Uint8ClampedArray]": Uint8ClampedArray,
 };
 
 const TypedArrayMap: Record<string, Function> = {
@@ -118,7 +118,7 @@ const TypedArrayMap: Record<string, Function> = {
   "[object BigInt64Array]": cloneTypedArray,
   "[object BigUint64Array]": cloneTypedArray,
   "[object RegExp]": cloneRegExp,
-  "[object Map]": cloneMap
+  "[object Map]": cloneMap,
 };
 
 /**
@@ -145,7 +145,7 @@ function cloneTypedArray(typedArray: TypedArrayType): TypedArrayType {
 
   return new constructor(buffer).subarray(
     typedArray.byteOffset,
-    typedArray.byteOffset + typedArray.length
+    typedArray.byteOffset + typedArray.length,
   );
 }
 
@@ -154,7 +154,7 @@ function recursiveCopy(
   clone: unknown,
   references: WeakMap<Record<string, unknown>, unknown>,
   visited: WeakSet<Record<string, unknown>>,
-  customizer: Parameters<typeof copy>[2]
+  customizer: Parameters<typeof copy>[2],
 ): unknown {
   const valueType = detectType(value);
   const copiedValue = copy(value, valueType);
@@ -171,7 +171,7 @@ function recursiveCopy(
     const collectionValue = /* #__INLINE__ */ getValue(
       value as Collection,
       collectionKey,
-      valueType
+      valueType,
     ) as Record<string, unknown>;
 
     if (visited.has(collectionValue)) {
@@ -180,7 +180,7 @@ function recursiveCopy(
         clone as Collection,
         collectionKey,
         references.get(collectionValue),
-        valueType
+        valueType,
       );
     } else {
       const collectionValueType = detectType(collectionValue);
@@ -200,9 +200,9 @@ function recursiveCopy(
           copiedCollectionValue,
           references,
           visited,
-          customizer
+          customizer,
         ),
-        valueType
+        valueType,
       );
     }
   }
@@ -223,11 +223,11 @@ export type Options = { customizer?: Customizer };
  */
 export function deepCopy<T extends Record<string, any>>(
   value: T,
-  options?: Options
+  options?: Options,
 ): T {
   const {
     // TODO: before/after customizer
-    customizer = null
+    customizer = null,
     // TODO: max depth
     // depth = Infinity,
   } = options ?? {};
@@ -240,7 +240,7 @@ export function deepCopy<T extends Record<string, any>>(
 
   const copiedValue = copy(value, valueType, customizer);
   const references = new WeakMap<Record<string, any>, unknown>([
-    [value as Record<string, any>, copiedValue]
+    [value as Record<string, any>, copiedValue],
   ]);
 
   const visited = new WeakSet<Record<string, any>>([value]);
@@ -250,6 +250,6 @@ export function deepCopy<T extends Record<string, any>>(
     copiedValue,
     references,
     visited,
-    customizer
+    customizer,
   ) as T;
 }

@@ -58,7 +58,7 @@ export function toDeepKey(path: string[]): string {
  */
 export function addPathToDeepKey(
   deepKey: string,
-  path: string | number
+  path: string | number,
 ): string {
   if (isNumber(path) || Number.isInteger(path)) {
     return deepKey + `[${path}]`;

@@ -79,7 +79,7 @@ type ResolvedTuple<T extends readonly any[]> = T extends []
           : [];
 
 type IsTuple<T extends readonly any[] | { length: number }> = [T] extends [
-  never
+  never,
 ]
   ? false
   : T extends readonly any[]
@@ -162,7 +162,7 @@ export function deepClone<T>(obj: T): Resolved<T> {
   }
 
   if (Array.isArray(obj)) {
-    return obj.map(item => deepClone(item)) as Resolved<T>;
+    return obj.map((item) => deepClone(item)) as Resolved<T>;
   }
 
   if (obj instanceof Date) {

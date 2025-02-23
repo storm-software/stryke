@@ -41,7 +41,7 @@ export const getUnique = <T = any>(arr: T[]): T[] => {
  */
 export function getUniqueBy<T, U>(
   arr: readonly T[],
-  mapper: (item: T) => U
+  mapper: (item: T) => U,
 ): T[] {
   const map = new Map<U, T>();
 

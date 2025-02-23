@@ -1,4 +1,4 @@
-/*-------------------------------------------------------------------
+/* -------------------------------------------------------------------
 
                        ⚡ Storm Software - Stryke
 
@@ -13,24 +13,18 @@
  Contact:         https://stormsoftware.com/contact
  License:         https://stormsoftware.com/projects/stryke/license
 
- -------------------------------------------------------------------*/
+ ------------------------------------------------------------------- */
 
-export type PackageManagers = "npm" | "yarn" | "pnpm" | "bun";
-export const PackageManagers = {
-  NPM: "npm" as PackageManagers,
-  YARN: "yarn" as PackageManagers,
-  PNPM: "pnpm" as PackageManagers,
-  BUN: "bun" as PackageManagers
-};
+export enum PackageManagers {
+  NPM = "npm",
+  YARN = "yarn",
+  PNPM = "pnpm",
+  BUN = "bun",
+}
 
-export type PackageManagerLockFiles =
-  | "package-lock.json"
-  | "yarn.lock"
-  | "pnpm-lock.yaml"
-  | "bun.lock";
-export const PackageManagerLockFiles = {
-  NPM: "package-lock.json" as PackageManagerLockFiles,
-  YARN: "yarn.lock" as PackageManagerLockFiles,
-  PNPM: "pnpm-lock.yaml" as PackageManagerLockFiles,
-  BUN: "bun.lock" as PackageManagerLockFiles
-};
+export enum PackageManagerLockFiles {
+  NPM = "package-lock.json",
+  YARN = "yarn.lock",
+  PNPM = "pnpm-lock.yaml",
+  BUN = "bun.lock",
+}

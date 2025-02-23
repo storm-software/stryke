@@ -23,7 +23,7 @@ import { providerInfo } from "./providers";
  * @returns True if the current environment is a CI environment.
  */
 export const isCI = (
-  env: Record<string, string | undefined> = process.env
+  env: Record<string, string | undefined> = process.env,
 ): boolean => {
   // From https://github.com/watson/ci-info/blob/44e98cebcdf4403f162195fbcf90b1f69fc6e047/index.js#L54-L61
   // Evaluating at runtime makes it possible to change the values in our tests
@@ -92,7 +92,7 @@ export const isCI = (
       env.CI_XCODE_PROJECT ||
       env.XCS ||
       providerInfo.ci !== false ||
-      false
+      false,
   );
 };
 

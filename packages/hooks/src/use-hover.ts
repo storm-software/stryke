@@ -38,11 +38,11 @@ export const useHover = (): [(node: HTMLElement) => void, boolean] => {
       if (previousNode.current?.nodeType === Node.ELEMENT_NODE) {
         previousNode.current.removeEventListener(
           "mouseenter",
-          handleMouseEnter
+          handleMouseEnter,
         );
         previousNode.current.removeEventListener(
           "mouseleave",
-          handleMouseLeave
+          handleMouseLeave,
         );
       }
 
@@ -53,7 +53,7 @@ export const useHover = (): [(node: HTMLElement) => void, boolean] => {
 
       previousNode.current = node;
     },
-    [handleMouseEnter, handleMouseLeave]
+    [handleMouseEnter, handleMouseLeave],
   );
 
   return [customRef, hovering];

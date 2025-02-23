@@ -1,4 +1,4 @@
-/*-------------------------------------------------------------------
+/* -------------------------------------------------------------------
 
                        ⚡ Storm Software - Stryke
 
@@ -13,7 +13,7 @@
  Contact:         https://stormsoftware.com/contact
  License:         https://stormsoftware.com/projects/stryke/license
 
- -------------------------------------------------------------------*/
+ ------------------------------------------------------------------- */
 
 import { ACRONYMS } from "./acronyms";
 import { upperCaseFirst } from "./upper-case-first";
@@ -34,10 +34,10 @@ export const titleCase = (input?: string): string | undefined => {
 
   return input
     .split(/(?=[A-Z])|[\s._-]/)
-    .map(s => s.trim())
+    .map((s) => s.trim())
     .filter(Boolean)
-    .map(s =>
-      ACRONYMS.includes(s) ? s.toUpperCase() : upperCaseFirst(s.toLowerCase())
+    .map((s) =>
+      ACRONYMS.includes(s) ? s.toUpperCase() : upperCaseFirst(s.toLowerCase()),
     )
     .join(" ");
 };

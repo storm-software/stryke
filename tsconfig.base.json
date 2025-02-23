@@ -3,8 +3,8 @@
   "extends": "@storm-software/tsconfig/core.json",
   "display": "Storm Software - Stryke",
   "compilerOptions": {
-    "rootDir": ".",
     "baseUrl": ".",
+    "rootDir": ".",
     "paths": {
       "@stryke/cli": ["packages/cli/src/index.ts"],
       "@stryke/cli/*": ["packages/cli/src/*"],

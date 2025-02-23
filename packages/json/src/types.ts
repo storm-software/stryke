@@ -121,6 +121,6 @@ export interface IJsonParser {
     name: string,
     serialize: (object: JsonValue) => TJsonValue,
     deserialize: (payload: TJsonValue) => TData,
-    isApplicable: (data: any) => data is TData
+    isApplicable: (data: any) => data is TData,
   ) => void;
 }

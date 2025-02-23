@@ -38,7 +38,7 @@ import { useMemoStable } from "./use-memo-stable";
  */
 export function useCallbackStable<TCallback extends AnyFunction = AnyFunction>(
   callback: TCallback,
-  inputs?: any[]
+  inputs?: any[],
 ): TCallback {
   return useMemoStable(() => callback, inputs);
 }

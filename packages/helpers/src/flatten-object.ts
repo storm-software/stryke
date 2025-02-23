@@ -48,7 +48,7 @@ export function flattenObject<
   TObject extends Record<string, any> = Record<string, any>,
   TDeepKeyObject extends {
     [TKey in DeepKey<TObject>]: DeepValue<TObject, TKey>;
-  } = { [TKey in DeepKey<TObject>]: DeepValue<TObject, TKey> }
+  } = { [TKey in DeepKey<TObject>]: DeepValue<TObject, TKey> },
 >(object: TObject): TDeepKeyObject {
   return flattenObjectImpl<TObject, TDeepKeyObject>(object);
 }
@@ -57,7 +57,7 @@ function flattenObjectImpl<
   TObject extends Record<string, any> = Record<string, any>,
   TDeepKeyObject extends {
     [TKey in DeepKey<TObject>]: DeepValue<TObject, TKey>;
-  } = { [TKey in DeepKey<TObject>]: DeepValue<TObject, TKey> }
+  } = { [TKey in DeepKey<TObject>]: DeepValue<TObject, TKey> },
 >(object: TObject, prefix = ""): TDeepKeyObject {
   const result = {} as TDeepKeyObject;
   const keys = Object.keys(object);
@@ -70,7 +70,7 @@ function flattenObjectImpl<
     if (isPlainObject(value) && Object.keys(value).length > 0) {
       Object.assign(
         result,
-        flattenObjectImpl<typeof value>(value, prefixedKey)
+        flattenObjectImpl<typeof value>(value, prefixedKey),
       );
     } else if (Array.isArray(value)) {
       for (const [index, element_] of value.entries()) {

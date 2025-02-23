@@ -27,7 +27,7 @@ import {
   parsePath,
   parseQuery,
   parseURL,
-  stringifyParsedURL
+  stringifyParsedURL,
 } from "ufo";
 import type { StormURL } from "./types";
 
@@ -62,7 +62,7 @@ export class StormURLBuilder {
    */
   public static create(
     url: string | StormURL,
-    options?: StormURLBuilderOptions
+    options?: StormURLBuilderOptions,
   ) {
     return new StormURLBuilder(url, options);
   }
@@ -72,7 +72,7 @@ export class StormURLBuilder {
    */
   protected constructor(
     url: string | StormURL,
-    options?: StormURLBuilderOptions
+    options?: StormURLBuilderOptions,
   ) {
     const decode = options?.decode ?? true;
 
@@ -85,7 +85,7 @@ export class StormURLBuilder {
     this.#url = {
       __typename: "StormURL",
       query: {},
-      ...parsedURL
+      ...parsedURL,
     };
     if (this.#url.host) {
       this.withHost(this.#url.host);
@@ -191,7 +191,7 @@ export class StormURLBuilder {
     const parsedPath = parsePath(path);
     this.#url = {
       ...this.#url,
-      ...parsedPath
+      ...parsedPath,
     };
 
     return this;
@@ -238,7 +238,7 @@ export class StormURLBuilder {
    * @returns The URL builder
    */
   public withQuery(
-    query: string | [string, any] | Record<string, any>
+    query: string | [string, any] | Record<string, any>,
   ): StormURLBuilder {
     this.#url.query = {} as Record<string, any>;
     this.addQueryParam(query);
@@ -253,7 +253,7 @@ export class StormURLBuilder {
    * @returns The URL builder
    */
   public addQueryParam(
-    query: string | [string, any] | Record<string, any>
+    query: string | [string, any] | Record<string, any>,
   ): StormURLBuilder {
     if (isString(query)) {
       const parsedQuery: Record<string, string | string[]> = parseQuery(query);

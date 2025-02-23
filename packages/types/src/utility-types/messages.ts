@@ -1,4 +1,4 @@
-/*-------------------------------------------------------------------
+/* -------------------------------------------------------------------
 
                        ⚡ Storm Software - Stryke
 
@@ -13,17 +13,15 @@
  Contact:         https://stormsoftware.com/contact
  License:         https://stormsoftware.com/projects/stryke/license
 
- -------------------------------------------------------------------*/
+ ------------------------------------------------------------------- */
 
-export type MessageType = "help" | "error" | "warning" | "info" | "success";
-
-export const MessageType = {
-  HELP: "help" as MessageType,
-  ERROR: "error" as MessageType,
-  WARNING: "warning" as MessageType,
-  INFO: "info" as MessageType,
-  SUCCESS: "success" as MessageType
-};
+export enum MessageType {
+  HELP = "help",
+  ERROR = "error",
+  WARNING = "warning",
+  INFO = "info",
+  SUCCESS = "success",
+}
 
 export type MessageDetails<
   TMessageType extends
@@ -36,7 +34,7 @@ export type MessageDetails<
     | typeof MessageType.ERROR
     | typeof MessageType.WARNING
     | typeof MessageType.INFO
-    | typeof MessageType.SUCCESS
+    | typeof MessageType.SUCCESS,
 > =
   | {
       code: string;

@@ -1,4 +1,4 @@
-/*-------------------------------------------------------------------
+/* -------------------------------------------------------------------
 
                        ⚡ Storm Software - Stryke
 
@@ -13,7 +13,7 @@
  Contact:         https://stormsoftware.com/contact
  License:         https://stormsoftware.com/projects/stryke/license
 
- -------------------------------------------------------------------*/
+ ------------------------------------------------------------------- */
 
 /**
  * Gets the `toStringTag` of `obj`.
@@ -22,7 +22,6 @@
  * @returns Returns the `toStringTag`.
  */
 export const getObjectTag = (value: unknown): string => {
-  // eslint-disable-next-line eqeqeq
   if (value == null) {
     return value === undefined ? "[object Undefined]" : "[object Null]";
   }

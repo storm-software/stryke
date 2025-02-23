@@ -1,4 +1,4 @@
-/*-------------------------------------------------------------------
+/* -------------------------------------------------------------------
 
                        ⚡ Storm Software - Stryke
 
@@ -13,9 +13,9 @@
  Contact:         https://stormsoftware.com/contact
  License:         https://stormsoftware.com/projects/stryke/license
 
- -------------------------------------------------------------------*/
+ ------------------------------------------------------------------- */
 
-export type BatteryManager = {
+export interface BatteryManager {
   supported: boolean;
   loading: boolean;
   level: number | null;
@@ -24,9 +24,9 @@ export type BatteryManager = {
   dischargingTime: number | null;
   addEventListener: (type: string, listener: () => void) => void;
   removeEventListener: (type: string, listener: () => void) => void;
-};
+}
 
-export type NetworkState = {
+export interface NetworkState {
   online: boolean;
   downlink: number | null;
   downlinkMax: number | null;
@@ -34,7 +34,7 @@ export type NetworkState = {
   rtt: number | null;
   saveData: boolean | null;
   type: string | null;
-};
+}
 
 // http://wicg.github.io/netinfo/#navigatornetworkinformation-interface
 export declare interface NavigatorNetworkInformation {

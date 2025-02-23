@@ -1,4 +1,4 @@
-/*-------------------------------------------------------------------
+/* -------------------------------------------------------------------
 
                        ⚡ Storm Software - Stryke
 
@@ -13,7 +13,7 @@
  Contact:         https://stormsoftware.com/contact
  License:         https://stormsoftware.com/projects/stryke/license
 
- -------------------------------------------------------------------*/
+ ------------------------------------------------------------------- */
 
 import type { NegativeInfinity, PositiveInfinity } from "./number";
 
@@ -77,7 +77,7 @@ export type StringToNumber<S extends string> =
  */
 export type StartsWith<
   S extends string,
-  SearchString extends string
+  SearchString extends string,
 > = string extends S | SearchString
   ? never
   : S extends `${SearchString}${string | number | bigint | boolean | null | undefined}`
@@ -119,7 +119,7 @@ export type StringLength<S extends string> = string extends S
  */
 export type StringToArray<
   S extends string,
-  Result extends string[] = []
+  Result extends string[] = [],
 > = string extends S
   ? never
   : S extends `${infer F}${infer R}`

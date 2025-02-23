@@ -1,4 +1,4 @@
-/*-------------------------------------------------------------------
+/* -------------------------------------------------------------------
 
                        ⚡ Storm Software - Stryke
 
@@ -13,7 +13,7 @@
  Contact:         https://stormsoftware.com/contact
  License:         https://stormsoftware.com/projects/stryke/license
 
- -------------------------------------------------------------------*/
+ ------------------------------------------------------------------- */
 
 import { build } from "esbuild";
 import { chalk, echo, usePwsh } from "zx";
@@ -33,7 +33,7 @@ try {
     minify: false,
     format: "esm",
     platform: "node",
-    preserveSymlinks: true
+    preserveSymlinks: true,
   });
 
   echo`${chalk.green("Completed monorepo bootstrapping successfully!")}`;

@@ -1,4 +1,4 @@
-/*-------------------------------------------------------------------
+/* -------------------------------------------------------------------
 
                        ⚡ Storm Software - Stryke
 
@@ -13,9 +13,19 @@
  Contact:         https://stormsoftware.com/contact
  License:         https://stormsoftware.com/projects/stryke/license
 
- -------------------------------------------------------------------*/
+ ------------------------------------------------------------------- */
 
 import { isAbsolutePath } from "./is-file";
+
+/**
+ * Replace backslash to slash
+ *
+ * @param str - The string to replace
+ * @returns The string with replaced backslashes
+ */
+export function slash(str: string) {
+  return str.replace(/\\/g, "/");
+}
 
 // Util to normalize windows paths to posix
 export function normalizeWindowsPath(input = "") {
@@ -24,7 +34,7 @@ export function normalizeWindowsPath(input = "") {
   }
   return input
     .replace(/\\/g, "/")
-    .replace(/^[A-Za-z]:\//, r => r.toUpperCase());
+    .replace(/^[A-Z]:\//i, r => r.toUpperCase());
 }
 
 /**
@@ -142,7 +152,7 @@ export function normalizePath(path?: string) {
   if (trailingSeparator) {
     path += "/";
   }
-  if (/^[A-Za-z]:$/.test(path)) {
+  if (/^[A-Z]:$/i.test(path)) {
     path += "/";
   }
 

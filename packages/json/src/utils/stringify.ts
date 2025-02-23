@@ -26,7 +26,7 @@ import { isNumber } from "@stryke/types/type-checks/is-number";
  */
 export const stringify = (
   value: unknown,
-  spacing: string | number = " "
+  spacing: string | number = " ",
 ): string => {
   const space = isNumber(spacing) ? " ".repeat(spacing) : spacing;
 
@@ -46,7 +46,7 @@ export const stringify = (
   }
 
   if (Array.isArray(value)) {
-    return `[${space}${value.map(v => stringify(v, space)).join("," + space)}${space}]`;
+    return `[${space}${value.map((v) => stringify(v, space)).join("," + space)}${space}]`;
   }
   if (value instanceof Uint8Array) {
     return `${value}`;
@@ -64,7 +64,9 @@ export const stringify = (
       const keys = Object.keys(value as object);
 
       return `{${space}${keys
-        .map(k => `${k}${space}=${space}${stringify((value as any)[k], space)}`)
+        .map(
+          (k) => `${k}${space}=${space}${stringify((value as any)[k], space)}`,
+        )
         .join("," + space)}${space}}`;
     }
   }

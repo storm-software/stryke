@@ -1,4 +1,4 @@
-/*-------------------------------------------------------------------
+/* -------------------------------------------------------------------
 
                        ⚡ Storm Software - Stryke
 
@@ -13,7 +13,7 @@
  Contact:         https://stormsoftware.com/contact
  License:         https://stormsoftware.com/projects/stryke/license
 
- -------------------------------------------------------------------*/
+ ------------------------------------------------------------------- */
 
 import { findWorkspaceRootSafe } from "@storm-software/config-tools";
 import { PackageManagerLockFiles } from "@stryke/types/utility-types/package-manager";
@@ -63,9 +63,9 @@ export const getWorkspaceRoot = (dir = process.cwd()) => {
       ".github",
       ".nx",
       ".vscode",
-      "patches"
+      "patches",
     ],
-    dir
+    dir,
   );
 
   if (result) {
@@ -90,7 +90,7 @@ export const getWorkspaceRoot = (dir = process.cwd()) => {
  * @returns The project root path
  */
 export const getProjectRoot = (dir = process.cwd()) => {
-  let result = getParentPath(["project.json", "package.json", ".storm"], dir);
+  const result = getParentPath(["project.json", "package.json", ".storm"], dir);
 
   if (result) {
     return result;

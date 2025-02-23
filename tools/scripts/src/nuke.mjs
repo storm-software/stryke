@@ -1,4 +1,4 @@
-/*-------------------------------------------------------------------
+/* -------------------------------------------------------------------
 
                        ⚡ Storm Software - Stryke
 
@@ -13,7 +13,7 @@
  Contact:         https://stormsoftware.com/contact
  License:         https://stormsoftware.com/projects/stryke/license
 
- -------------------------------------------------------------------*/
+ ------------------------------------------------------------------- */
 
 import { $, chalk, echo, usePwsh } from "zx";
 
@@ -22,13 +22,13 @@ usePwsh();
 try {
   await $`pnpm nx clear-cache`;
   await $`pnpm exec rimraf --no-interactive -- ./.nx/cache ./.nx/workspace-data ./dist ./tmp ./pnpm-lock.yaml`.timeout(
-    `${5 * 60}s`
+    `${5 * 60}s`,
   );
   await $`pnpm exec rimraf --no-interactive --glob "./*/**/{node_modules,dist}" `.timeout(
-    `${5 * 60}s`
+    `${5 * 60}s`,
   );
   await $`pnpm exec rimraf --no-interactive --glob "node_modules/!rimraf/**" `.timeout(
-    `${5 * 60}s`
+    `${5 * 60}s`,
   );
 
   echo`${chalk.green("Successfully nuked the cache, node_modules, and dist folders")}`;

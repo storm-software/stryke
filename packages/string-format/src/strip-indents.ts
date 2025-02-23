@@ -1,4 +1,4 @@
-/*-------------------------------------------------------------------
+/* -------------------------------------------------------------------
 
                        ⚡ Storm Software - Stryke
 
@@ -13,7 +13,7 @@
  Contact:         https://stormsoftware.com/contact
  License:         https://stormsoftware.com/projects/stryke/license
 
- -------------------------------------------------------------------*/
+ ------------------------------------------------------------------- */
 
 /**
  * Removes indents, which is useful for printing warning and messages.
@@ -35,9 +35,10 @@ export function stripIndents(
   strings: TemplateStringsArray,
   ...values: any[]
 ): string {
+  // eslint-disable-next-line ts/no-unsafe-argument
   return String.raw(strings, ...values)
     .split("\n")
-    .map(line => line.trim())
+    .map((line) => line.trim())
     .join("\n")
     .trim();
 }

@@ -1,4 +1,4 @@
-/*-------------------------------------------------------------------
+/* -------------------------------------------------------------------
 
                        ⚡ Storm Software - Stryke
 
@@ -13,7 +13,7 @@
  Contact:         https://stormsoftware.com/contact
  License:         https://stormsoftware.com/projects/stryke/license
 
- -------------------------------------------------------------------*/
+ ------------------------------------------------------------------- */
 
 /**
  * Convert the input string to pascal case.
@@ -28,10 +28,10 @@ export const pascalCase = (input?: string): string | undefined => {
   return input
     ? input
         .split(" ")
-        .map(i =>
+        .map((i) =>
           i.length > 0
             ? i.trim().charAt(0).toUpperCase() + i.trim().slice(1)
-            : ""
+            : "",
         )
         .join("")
     : input;

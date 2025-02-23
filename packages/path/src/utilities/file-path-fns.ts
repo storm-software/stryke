@@ -1,4 +1,4 @@
-/*-------------------------------------------------------------------
+/* -------------------------------------------------------------------
 
                        ⚡ Storm Software - Stryke
 
@@ -13,7 +13,7 @@
  Contact:         https://stormsoftware.com/contact
  License:         https://stormsoftware.com/projects/stryke/license
 
- -------------------------------------------------------------------*/
+ ------------------------------------------------------------------- */
 
 import { EMPTY_STRING } from "@stryke/types/utility-types/base";
 import { getWorkspaceRoot } from "../workspace/get-workspace-root";
@@ -21,7 +21,7 @@ import { isAbsolutePath } from "./is-file";
 import { joinPaths } from "./join-paths";
 import { normalizeString, normalizeWindowsPath, sep } from "./normalize-path";
 
-export type FindFileNameOptions = {
+export interface FindFileNameOptions {
   /**
    * Require the file extension to be present in the file name.
    *
@@ -35,14 +35,16 @@ export type FindFileNameOptions = {
    * @defaultValue true
    */
   withExtension?: boolean;
-};
+}
 
 /**
  * Find the file name from a file path.
  *
  * @example
+ * ```ts
  * const fileName = findFileName("C:\\Users\\user\\Documents\\file.txt");
  * // fileName = "file.txt"
+ * ```
  *
  * @param filePath - The file path to process
  * @param options - The options to use when processing the file name
@@ -52,19 +54,18 @@ export function findFileName(
   filePath: string,
   { requireExtension, withExtension }: FindFileNameOptions = {}
 ): string {
-  const result =
-    normalizeWindowsPath(filePath)
-      ?.split(
-        filePath?.includes(sep) ? sep : filePath?.includes("/") ? "/" : "\\"
-      )
-      ?.pop() ?? "";
+  const result = normalizeWindowsPath(filePath)
+    ?.split(
+      filePath?.includes(sep) ? sep : filePath?.includes("/") ? "/" : "\\"
+    )
+    ?.pop() ?? "";
 
   if (requireExtension === true && !result.includes(".")) {
     return EMPTY_STRING;
   }
 
   if (withExtension === false && result.includes(".")) {
-    return result.split(".").shift() ?? EMPTY_STRING;
+    return result.split(".").shift() || EMPTY_STRING;
   }
 
   return result;
@@ -74,8 +75,10 @@ export function findFileName(
  * Find the full file path's directories from a file path.
  *
  * @example
+ * ```ts
  * const folderPath = findFilePath("C:\\Users\\user\\Documents\\file.txt");
  * // folderPath = "C:\\Users\\user\\Documents"
+ * ```
  *
  * @param filePath - The file path to process
  * @returns The full file path's directories
@@ -105,7 +108,7 @@ export function findFilePath(filePath: string): string {
  * @returns The folder containing the file
  */
 export function findFolderName(filePath: string): string {
-  let segments = findFilePath(filePath).split("/");
+  const segments = findFilePath(filePath).split("/");
 
   let lastSegment = "";
   for (let i = segments.length - 1; i >= 0; i--) {
@@ -188,7 +191,7 @@ export function resolvePath(path: string, cwd = getWorkspaceRoot()) {
       continue;
     }
 
-    resolvedPath = `${path}/${resolvedPath}`;
+    resolvedPath = joinPaths(path, resolvedPath);
     resolvedAbsolute = isAbsolutePath(path);
   }
 
@@ -220,10 +223,10 @@ export function resolvePaths(...paths: string[]) {
 export function relativePath(from: string, to: string) {
   // we cast these because `split` will always be at least one string
   const _from = resolvePath(from)
-    .replace(/^\/([A-Za-z]:)?$/, "$1")
+    .replace(/^\/([A-Z]:)?$/i, "$1")
     .split("/") as [string, ...string[]];
   const _to = resolvePath(to)
-    .replace(/^\/([A-Za-z]:)?$/, "$1")
+    .replace(/^\/([A-Z]:)?$/i, "$1")
     .split("/") as [string, ...string[]];
 
   // Different windows drive letters
@@ -249,7 +252,7 @@ export function relativePath(from: string, to: string) {
  * @returns The resolved file path
  */
 export function relativeToWorkspaceRoot(filePath: string) {
-  return relativePath(filePath, getWorkspaceRoot() as string);
+  return relativePath(filePath, getWorkspaceRoot());
 }
 
 /**
@@ -260,13 +263,12 @@ export function relativeToWorkspaceRoot(filePath: string) {
  */
 export function parsePath(path: string) {
   // The root of the path such as '/' or 'c:\'
-  const root =
-    /^[/\\]|^[a-zA-Z]:[/\\]/.exec(path)?.[0]?.replace(/\\/g, "/") || "";
+  const root = /^[/\\]|^[a-z]:[/\\]/i.exec(path)?.[0]?.replace(/\\/g, "/") || "";
 
   const normalizedPath = normalizeWindowsPath(path);
 
   const segments = normalizedPath.replace(/\/$/, "").split("/").slice(0, -1);
-  if (segments.length === 1 && /^[A-Za-z]:$/.test(segments[0] as string)) {
+  if (segments.length === 1 && /^[A-Z]:$/i.test(segments[0] as string)) {
     segments[0] += "/";
   }
 

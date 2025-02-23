@@ -50,7 +50,7 @@ export type Awaitable<T> = T | PromiseLike<T>;
  */
 export type SetReturnType<
   Function_ extends (...arguments_: any[]) => any,
-  TypeToReturn
+  TypeToReturn,
 > =
   // Just using `Parameters<Fn>` isn't ideal because it doesn't handle the `this` fake parameter.
   Function_ extends (

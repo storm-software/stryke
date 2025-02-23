@@ -1,4 +1,4 @@
-/*-------------------------------------------------------------------
+/* -------------------------------------------------------------------
 
                        ⚡ Storm Software - Stryke
 
@@ -13,7 +13,7 @@
  Contact:         https://stormsoftware.com/contact
  License:         https://stormsoftware.com/projects/stryke/license
 
- -------------------------------------------------------------------*/
+ ------------------------------------------------------------------- */
 
 import { $, argv, chalk, echo, usePwsh } from "zx";
 
@@ -35,7 +35,7 @@ try {
 Building the monorepo in ${configuration} mode
 `)}`;
 
-  await $`pnpm bootstrap`.timeout(`60s`);
+  await $`pnpm bootstrap`.timeout("60s");
 
   if (configuration === "production") {
     await $`pnpm nx run-many --target=build --all --exclude="@stryke/monorepo" --configuration=production --parallel=5`;

@@ -73,7 +73,7 @@ export interface JsonReadOptions extends JsonParseOptions {
  */
 export function readJsonFileSync<T extends object = any>(
   path: string,
-  options?: JsonReadOptions
+  options?: JsonReadOptions,
 ): T {
   const content = readFileSync(path);
   if (options) {
@@ -101,7 +101,7 @@ export function readJsonFileSync<T extends object = any>(
  */
 export async function readJsonFile<T extends object = any>(
   path: string,
-  options?: JsonReadOptions
+  options?: JsonReadOptions,
 ): Promise<T> {
   const content = await readFile(path);
   if (options) {
@@ -135,14 +135,14 @@ interface YamlReadOptions {
  */
 export function readYamlFileSync<T extends object = any>(
   path: string,
-  options?: YamlReadOptions
+  options?: YamlReadOptions,
 ): T {
   const content = readFileSync(path);
   const { load } = require("@zkochan/js-yaml");
 
   return load(content, {
     ...options,
-    filename: path
+    filename: path,
   }) as T;
 }
 
@@ -154,14 +154,14 @@ export function readYamlFileSync<T extends object = any>(
  */
 export async function readYamlFile<T extends object = any>(
   path: string,
-  options?: YamlReadOptions
+  options?: YamlReadOptions,
 ): Promise<T> {
   const content = await readFile(path);
   const { load } = require("@zkochan/js-yaml");
 
   return load(content, {
     ...options,
-    filename: path
+    filename: path,
   }) as T;
 }
 

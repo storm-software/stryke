@@ -1,4 +1,4 @@
-/*-------------------------------------------------------------------
+/* -------------------------------------------------------------------
 
                        ⚡ Storm Software - Stryke
 
@@ -13,15 +13,13 @@
  Contact:         https://stormsoftware.com/contact
  License:         https://stormsoftware.com/projects/stryke/license
 
- -------------------------------------------------------------------*/
+ ------------------------------------------------------------------- */
 
-export type UserType = "internal" | "external" | "service";
-
-export const UserType = {
-  INTERNAL: "internal" as UserType,
-  EXTERNAL: "external" as UserType,
-  SERVICE: "service" as UserType
-};
+export enum UserType {
+  INTERNAL = "internal",
+  EXTERNAL = "external",
+  SERVICE = "service",
+}
 
 export interface UserBase {
   /**

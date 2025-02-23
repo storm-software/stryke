@@ -25,7 +25,7 @@ const defaultBatteryManagerState = {
   level: null,
   charging: null,
   chargingTime: null,
-  dischargingTime: null
+  dischargingTime: null,
 };
 
 /**
@@ -41,10 +41,10 @@ export function useBattery() {
 
   useEffect(() => {
     if (!isFunction(getBattery)) {
-      setState(s => ({
+      setState((s) => ({
         ...s,
         supported: false,
-        loading: false
+        loading: false,
       }));
       return;
     }
@@ -56,11 +56,11 @@ export function useBattery() {
         ...defaultBatteryManagerState,
         supported: true,
         loading: false,
-        ...battery
+        ...battery,
       });
     };
 
-    getBattery().then(b => {
+    getBattery().then((b) => {
       battery = b;
       handleChange();
 

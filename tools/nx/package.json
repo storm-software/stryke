@@ -123,6 +123,7 @@
   "devDependencies": {
     "@storm-software/tsconfig": "catalog:",
     "@types/node": "catalog:",
+    "eslint-flat-config-utils": "^2.0.1",
     "nx": "catalog:",
     "tslib": "catalog:",
     "tsup": "catalog:",

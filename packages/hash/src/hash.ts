@@ -37,7 +37,7 @@ export interface HashOptions extends HashObjectOptions {
  */
 export function hash(object: any, options?: HashOptions): string {
   const result = sha256base64(
-    isString(object) ? object : hashObject(object, options)
+    isString(object) ? object : hashObject(object, options),
   );
   const maxLength = options?.maxLength ?? 32;
 

@@ -59,11 +59,11 @@ export async function createDirectory(path: string) {
 export async function extractFileFromTar(
   tarballPath: string,
   file: string,
-  destinationFilePath: string
+  destinationFilePath: string,
 ) {
   const result = parseTar(await readFile(tarballPath));
 
-  const entry = result.find(e => e.name === file);
+  const entry = result.find((e) => e.name === file);
   if (!entry?.data) {
     return;
   }
@@ -87,11 +87,11 @@ export async function extractFileFromTar(
 export async function extractFileFromTarGzip(
   tarballPath: string,
   file: string,
-  destinationFilePath: string
+  destinationFilePath: string,
 ) {
   const result = await parseTarGzip(await readFile(tarballPath));
 
-  const entry = result.find(e => e.name === file);
+  const entry = result.find((e) => e.name === file);
   if (!entry?.data) {
     return;
   }

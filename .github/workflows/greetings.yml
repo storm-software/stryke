@@ -11,8 +11,7 @@ on:
 jobs:
   greeting:
     runs-on: ubuntu-latest
-    if:
-      github.actor != 'Stormie-Bot' && github.actor != 'dependabot[bot]' &&
+    if: github.actor != 'Stormie-Bot' && github.actor != 'dependabot[bot]' &&
       github.actor != 'mend-bolt-for-github[bot]'
     permissions:
       issues: write

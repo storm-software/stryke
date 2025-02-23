@@ -30,10 +30,10 @@ export default defineConfig({
   sourcemap: false,
   tsconfig: "./tsconfig.json",
   dts: {
-    resolve: true
+    resolve: true,
   },
   onSuccess: async () => {
     // eslint-disable-next-line no-console
     console.log("tools-nx build completed successfully!");
-  }
+  },
 });

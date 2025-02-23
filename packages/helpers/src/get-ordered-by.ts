@@ -53,7 +53,7 @@ type Order = "asc" | "desc";
 export function getOrderedBy<T>(
   collection: T[],
   keys: (keyof T)[],
-  orders: Order[]
+  orders: Order[],
 ): T[] {
   const compareValues = (a: T[keyof T], b: T[keyof T], order: Order) => {
     if (a < b) {
@@ -66,7 +66,7 @@ export function getOrderedBy<T>(
   };
 
   const effectiveOrders = keys.map(
-    (_, index) => orders[index] ?? orders.at(-1)
+    (_, index) => orders[index] ?? orders.at(-1),
   );
 
   return [...collection].sort((a, b) => {

@@ -1,4 +1,4 @@
-/*-------------------------------------------------------------------
+/* -------------------------------------------------------------------
 
                        ⚡ Storm Software - Stryke
 
@@ -13,7 +13,7 @@
  Contact:         https://stormsoftware.com/contact
  License:         https://stormsoftware.com/projects/stryke/license
 
- -------------------------------------------------------------------*/
+ ------------------------------------------------------------------- */
 
 /* eslint-disable no-tabs */
 /* eslint-disable @cspell/spellchecker */
@@ -47,7 +47,7 @@ export type PackageJsonBugsLocation =
       email?: string;
     };
 
-export type PackageJsonDirectoryLocations = {
+export interface PackageJsonDirectoryLocations {
   [directoryType: string]: JsonValue | undefined;
 
   /**
@@ -79,7 +79,7 @@ export type PackageJsonDirectoryLocations = {
    * Location for test files.
    */
   test?: string;
-};
+}
 
 export type PackageJsonScripts = {
   /**
@@ -94,132 +94,132 @@ export type PackageJsonScripts = {
 
   /**
 		Run **before** the package is prepared and packed, **only** on `npm publish`.
-		*/
+   */
   prepublishOnly?: string;
 
   /**
 		Run **before** a tarball is packed (on `npm pack`, `npm publish`, and when installing git dependencies).
-		*/
+   */
   prepack?: string;
 
   /**
 		Run **after** the tarball has been generated and moved to its final destination.
-		*/
+   */
   postpack?: string;
 
   /**
 		Run **after** the package is published.
-		*/
+   */
   publish?: string;
 
   /**
 		Run **after** the package is published.
-		*/
+   */
   postpublish?: string;
 
   /**
 		Run **before** the package is installed.
-		*/
+   */
   preinstall?: string;
 
   /**
 		Run **after** the package is installed.
-		*/
+   */
   install?: string;
 
   /**
 		Run **after** the package is installed and after `install`.
-		*/
+   */
   postinstall?: string;
 
   /**
 		Run **before** the package is uninstalled and before `uninstall`.
-		*/
+   */
   preuninstall?: string;
 
   /**
 		Run **before** the package is uninstalled.
-		*/
+   */
   uninstall?: string;
 
   /**
 		Run **after** the package is uninstalled.
-		*/
+   */
   postuninstall?: string;
 
   /**
 		Run **before** bump the package version and before `version`.
-		*/
+   */
   preversion?: string;
 
   /**
 		Run **before** bump the package version.
-		*/
+   */
   version?: string;
 
   /**
 		Run **after** bump the package version.
-		*/
+   */
   postversion?: string;
 
   /**
 		Run with the `npm test` command, before `test`.
-		*/
+   */
   pretest?: string;
 
   /**
 		Run with the `npm test` command.
-		*/
+   */
   test?: string;
 
   /**
 		Run with the `npm test` command, after `test`.
-		*/
+   */
   posttest?: string;
 
   /**
 		Run with the `npm stop` command, before `stop`.
-		*/
+   */
   prestop?: string;
 
   /**
 		Run with the `npm stop` command.
-		*/
+   */
   stop?: string;
 
   /**
 		Run with the `npm stop` command, after `stop`.
-		*/
+   */
   poststop?: string;
 
   /**
 		Run with the `npm start` command, before `start`.
-		*/
+   */
   prestart?: string;
 
   /**
 		Run with the `npm start` command.
-		*/
+   */
   start?: string;
 
   /**
 		Run with the `npm start` command, after `start`.
-		*/
+   */
   poststart?: string;
 
   /**
 		Run with the `npm restart` command, before `restart`. Note: `npm restart` will run the `stop` and `start` scripts if no `restart` script is provided.
-		*/
+   */
   prerestart?: string;
 
   /**
 		Run with the `npm restart` command. Note: `npm restart` will run the `stop` and `start` scripts if no `restart` script is provided.
-		*/
+   */
   restart?: string;
 
   /**
 		Run with the `npm restart` command, after `restart`. Note: `npm restart` will run the `stop` and `start` scripts if no `restart` script is provided.
-		*/
+   */
   postrestart?: string;
 } & Partial<Record<string, string>>;
 
@@ -252,12 +252,12 @@ export type PackageJsonImports = Record<`#${string}`, PackageJsonExports>;
 export interface PackageJsonNonStandardEntryPoints {
   /**
 		An ECMAScript module ID that is the primary entry point to the program.
-		*/
+   */
   module?: string;
 
   /**
 		A module ID with untranspiled code that is the primary entry point to the program.
-		*/
+   */
   esnext?:
     | string
     | {
@@ -268,31 +268,31 @@ export interface PackageJsonNonStandardEntryPoints {
 
   /**
 		A hint to JavaScript bundlers or component tools when packaging modules for client side use.
-		*/
+   */
   browser?: string | Partial<Record<string, string | false>>;
 
   /**
 		Denote which files in your project are "pure" and therefore safe for Webpack to prune if unused.
 
 		[Read more.](https://webpack.js.org/guides/tree-shaking/)
-		*/
+   */
   sideEffects?: boolean | string[];
 }
 
 export interface PackageJsonTypeScriptConfiguration {
   /**
 		Location of the bundled TypeScript declaration file.
-		*/
+   */
   types?: string;
 
   /**
 		Version selection map of TypeScript.
-		*/
+   */
   typesVersions?: Partial<Record<string, Partial<Record<string, string[]>>>>;
 
   /**
 		Location of the bundled TypeScript declaration file. Alias of `types`.
-		*/
+   */
   typings?: string;
 }
 
@@ -302,7 +302,7 @@ export interface PackageJsonTypeScriptConfiguration {
 export interface PackageJsonWorkspaceConfig {
   /**
 		An array of workspace pattern strings which contain the workspace packages.
-		*/
+   */
   packages?: PackageJsonWorkspacePattern[];
 
   /**
@@ -310,7 +310,7 @@ export interface PackageJsonWorkspaceConfig {
 
 		[Supported](https://classic.yarnpkg.com/blog/2018/02/15/nohoist/) by Yarn.
 		[Not supported](https://github.com/npm/rfcs/issues/287) by npm.
-		*/
+   */
   nohoist?: PackageJsonWorkspacePattern[];
 }
 
@@ -322,7 +322,7 @@ export interface PackageJsonWorkspaceConfig {
 	@example
 	`docs` → Include the docs directory and install its dependencies.
 	`packages/*` → Include all nested directories within the packages directory, like `packages/cli` and `packages/core`.
-	*/
+ */
 type PackageJsonWorkspacePattern = string;
 
 export interface PackageJsonYarnConfiguration {
@@ -330,19 +330,19 @@ export interface PackageJsonYarnConfiguration {
 		If your package only allows one version of a given dependency, and you’d like to enforce the same behavior as `yarn install --flat` on the command-line, set this to `true`.
 
 		Note that if your `package.json` contains `"flat": true` and other packages depend on yours (e.g. you are building a library rather than an app), those other packages will also need `"flat": true` in their `package.json` or be installed with `yarn install --flat` on the command-line.
-		*/
+   */
   flat?: boolean;
 
   /**
 		Selective version resolutions. Allows the definition of custom package versions inside dependencies without manual edits in the `yarn.lock` file.
-		*/
+   */
   resolutions?: PackageJsonDependency;
 }
 
 export interface PackageJsonJSPMConfiguration {
   /**
 		JSPM configuration.
-		*/
+   */
   jspm?: PackageJson;
 }
 
@@ -353,42 +353,42 @@ export interface PackageJsonJSPMConfiguration {
 export interface PackageJsonStandard {
   /**
 		The name of the package.
-		*/
+   */
   name?: string;
 
   /**
 		Package version, parseable by [`node-semver`](https://github.com/npm/node-semver).
-		*/
+   */
   version?: string;
 
   /**
 		Package description, listed in `npm search`.
-		*/
+   */
   description?: string;
 
   /**
 		Keywords associated with package, listed in `npm search`.
-		*/
+   */
   keywords?: string[];
 
   /**
 		The URL to the package's homepage.
-		*/
+   */
   homepage?: LiteralUnion<".", string>;
 
   /**
 		The URL to the package's issue tracker and/or the email address to which issues should be reported.
-		*/
+   */
   bugs?: PackageJsonBugsLocation;
 
   /**
 		The license for the package.
-		*/
+   */
   license?: string;
 
   /**
 		The licenses for the package.
-		*/
+   */
   licenses?: {
     type?: string;
     url?: string;
@@ -398,63 +398,63 @@ export interface PackageJsonStandard {
 
   /**
 		A list of people who contributed to the package.
-		*/
+   */
   contributors?: PackageJsonPerson[];
 
   /**
 		A list of people who maintain the package.
-		*/
+   */
   maintainers?: PackageJsonPerson[];
 
   /**
 		The files included in the package.
-		*/
+   */
   files?: string[];
 
   /**
 		Resolution algorithm for importing ".js" files from the package's scope.
 
 		[Read more.](https://nodejs.org/api/esm.html#esm_package_json_type_field)
-		*/
+   */
   type?: "module" | "commonjs";
 
   /**
 		The module ID that is the primary entry point to the program.
-		*/
+   */
   main?: string;
 
   /**
 		Subpath exports to define entry points of the package.
 
 		[Read more.](https://nodejs.org/api/packages.html#subpath-exports)
-		*/
+   */
   exports?: PackageJsonExports;
 
   /**
 		Subpath imports to define internal package import maps that only apply to import specifiers from within the package itself.
 
 		[Read more.](https://nodejs.org/api/packages.html#subpath-imports)
-		*/
+   */
   imports?: PackageJsonImports;
 
   /**
 		The executable files that should be installed into the `PATH`.
-		*/
+   */
   bin?: string | Partial<Record<string, string>>;
 
   /**
 		Filenames to put in place for the `man` program to find.
-		*/
+   */
   man?: string | string[];
 
   /**
 		Indicates the structure of the package.
-		*/
+   */
   directories?: PackageJsonDirectoryLocations;
 
   /**
 		Location for the code repository.
-		*/
+   */
   repository?:
     | string
     | {
@@ -463,62 +463,61 @@ export interface PackageJsonStandard {
 
         /**
 			Relative path to package.json if it is placed in non-root directory (for example if it is part of a monorepo).
-
+       
 			[Read more.](https://github.com/npm/rfcs/blob/latest/implemented/0010-monorepo-subdirectory-declaration.md)
-			*/
+       */
         directory?: string;
       };
 
   /**
 		Script commands that are run at various times in the lifecycle of the package. The key is the lifecycle event, and the value is the command to run at that point.
-		*/
+   */
   scripts?: PackageJsonScripts;
 
   /**
 		Is used to set configuration parameters used in package scripts that persist across upgrades.
-		*/
+   */
   config?: JsonObject;
 
   /**
 		The dependencies of the package.
-		*/
+   */
   dependencies?: PackageJsonDependency;
 
   /**
 		Additional tooling dependencies that are not required for the package to work. Usually test, build, or documentation tooling.
-		*/
+   */
   devDependencies?: PackageJsonDependency;
 
   /**
 		Dependencies that are skipped if they fail to install.
-		*/
+   */
   optionalDependencies?: PackageJsonDependency;
 
   /**
 		Dependencies that will usually be required by the package user directly or via another dependency.
-		*/
+   */
   peerDependencies?: PackageJsonDependency;
 
   /**
 		Indicate peer dependencies that are optional.
-		*/
+   */
   peerDependenciesMeta?: Partial<Record<string, { optional: true }>>;
 
   /**
 		Package names that are bundled when the package is published.
-		*/
+   */
   bundledDependencies?: string[];
 
   /**
 		Alias of `bundledDependencies`.
-		*/
+   */
   bundleDependencies?: string[];
 
   /**
 		Engines that this package runs on.
-		*/
+   */
   engines?: {
-    // eslint-disable-next-line no-unused-vars
     [name in "npm" | "node" | string]?: string;
   };
 
@@ -530,7 +529,7 @@ export interface PackageJsonStandard {
 
   /**
 		Operating systems the module runs on.
-		*/
+   */
   os?: LiteralUnion<
     | "aix"
     | "darwin"
@@ -551,7 +550,7 @@ export interface PackageJsonStandard {
 
   /**
 		CPU architectures the module runs on.
-		*/
+   */
   cpu?: LiteralUnion<
     | "arm"
     | "arm64"

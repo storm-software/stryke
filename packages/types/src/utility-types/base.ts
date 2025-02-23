@@ -1,4 +1,4 @@
-/*-------------------------------------------------------------------
+/* -------------------------------------------------------------------
 
                        ⚡ Storm Software - Stryke
 
@@ -13,7 +13,7 @@
  Contact:         https://stormsoftware.com/contact
  License:         https://stormsoftware.com/projects/stryke/license
 
- -------------------------------------------------------------------*/
+ ------------------------------------------------------------------- */
 
 import type { TypedArray } from "./array";
 
@@ -145,14 +145,14 @@ export interface Abstract<T> {
 }
 
 export interface Clonable<T> {
-  clone(): T;
+  clone: () => T;
 }
 
 export type MaybePromise<T> = T | Promise<T>;
 
 export type ReducerFunction<TState, TAction> = (
   state: TState,
-  action: TAction
+  action: TAction,
 ) => TState;
 
 // NOTE: for the file size optimization
@@ -227,7 +227,7 @@ interface ExceptOptions {
     Note that any omitted properties in the resulting type will be present in autocomplete as `undefined`.
 
     @defaultValue  false
-    */
+   */
   requireExactProps?: boolean;
 }
 
@@ -242,7 +242,7 @@ interface ExceptOptions {
 export type Except<
   ObjectType,
   KeysType extends keyof ObjectType,
-  Options extends ExceptOptions = { requireExactProps: false }
+  Options extends ExceptOptions = { requireExactProps: false },
 > = {
   [KeyType in keyof ObjectType as Filter<
     KeyType,
@@ -270,7 +270,7 @@ export type Simplify<T> = { [KeyType in keyof T]: T[KeyType] } & {};
  */
 export type SetRequired<
   BaseType,
-  Keys extends keyof BaseType
+  Keys extends keyof BaseType,
 > = BaseType extends unknown // type](https://www.typescriptlang.org/docs/handbook/release-notes/typescript-2-8.html#distributive-conditional-types). // union into a [distributive conditional // `extends unknown` is always going to be the case and is used to convert any
   ? Simplify<
       // Pick just the keys that are optional from the base type.
@@ -404,7 +404,7 @@ export interface AbstractClass<T, Arguments extends unknown[] = any[]>
  */
 export type AbstractConstructor<
   T,
-  Arguments extends unknown[] = any[]
+  Arguments extends unknown[] = any[],
 > = abstract new (...arguments_: Arguments) => T;
 
 /**
@@ -417,7 +417,7 @@ export type AbstractConstructor<
 export type BuildTuple<
   L extends number,
   Fill = unknown,
-  T extends readonly unknown[] = []
+  T extends readonly unknown[] = [],
 > = T["length"] extends L ? T : BuildTuple<L, Fill, [...T, Fill]>;
 
 /**
@@ -429,7 +429,7 @@ export type BuildTuple<
  * @see https://github.com/microsoft/TypeScript/issues/29732
  */
 export type HasMultipleCallSignatures<
-  T extends (...arguments_: any[]) => unknown
+  T extends (...arguments_: any[]) => unknown,
 > = T extends {
   (...arguments_: infer A): unknown;
   (...arguments_: infer B): unknown;

@@ -2,19 +2,22 @@
 
 ### Miscellaneous
 
-- **monorepo:** Upgrade the monorepos Nx version ([b32c485](https://github.com/storm-software/stryke/commit/b32c485))
+- **monorepo:** Upgrade the monorepos Nx version
+  ([b32c485](https://github.com/storm-software/stryke/commit/b32c485))
 
 ## 0.1.8 (2025-02-21)
 
 ### Bug Fixes
 
-- **fs:** Resolved issue with invalid directory creation ([a7b64bf](https://github.com/storm-software/stryke/commit/a7b64bf))
+- **fs:** Resolved issue with invalid directory creation
+  ([a7b64bf](https://github.com/storm-software/stryke/commit/a7b64bf))
 
 ## 0.1.7 (2025-02-17)
 
 ### Miscellaneous
 
-- **monorepo:** Reformat monorepo files ([1db5e06](https://github.com/storm-software/stryke/commit/1db5e06))
+- **monorepo:** Reformat monorepo files
+  ([1db5e06](https://github.com/storm-software/stryke/commit/1db5e06))
 
 ## 0.1.6 (2025-02-15)
 

@@ -28,7 +28,7 @@ import "tinyexec";
  */
 export const install = (
   names: string | string[],
-  options?: InstallPackageOptions
+  options?: InstallPackageOptions,
 ) => {
   return installPackage(names, options);
 };
@@ -41,7 +41,7 @@ export const install = (
  */
 export const packageExists = async (
   name: string,
-  options?: InstallPackageOptions
+  options?: InstallPackageOptions,
 ) => {
   const resolvePath = await resolve(options?.cwd || process.cwd());
   try {

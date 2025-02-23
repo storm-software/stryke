@@ -23,7 +23,7 @@ import { useCallbackRef } from "./use-callback-ref";
  */
 export function useEscapeKeydown(
   onEscapeKeyDownProp?: (event: KeyboardEvent) => void,
-  ownerDocument: Document = globalThis?.document
+  ownerDocument: Document = globalThis?.document,
 ) {
   const onEscapeKeyDown = useCallbackRef(onEscapeKeyDownProp);
 

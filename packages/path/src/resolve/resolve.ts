@@ -42,7 +42,7 @@ export interface PackageResolvingOptions {
  */
 export async function resolve(
   path: string,
-  options: PackageResolvingOptions = {}
+  options: PackageResolvingOptions = {},
 ) {
   const paths = options.paths ?? [];
   if (paths.length === 0) {
@@ -56,8 +56,8 @@ export async function resolve(
 
   return normalizePath(
     await resolvePath(path, {
-      url: paths
-    })
+      url: paths,
+    }),
   );
 }
 
@@ -70,7 +70,7 @@ export async function resolve(
  */
 export function resolveSync(
   path: string,
-  options: PackageResolvingOptions = {}
+  options: PackageResolvingOptions = {},
 ) {
   const paths = options.paths ?? [];
   if (paths.length === 0) {
@@ -84,8 +84,8 @@ export function resolveSync(
 
   return normalizePath(
     resolvePathSync(path, {
-      url: options.paths
-    })
+      url: options.paths,
+    }),
   );
 }
 
@@ -98,7 +98,7 @@ export function resolveSync(
  */
 export function resolveSafe(
   name: string,
-  options: PackageResolvingOptions = {}
+  options: PackageResolvingOptions = {},
 ) {
   try {
     return resolve(name, options);
@@ -116,7 +116,7 @@ export function resolveSafe(
  */
 export function resolveSafeSync(
   name: string,
-  options: PackageResolvingOptions = {}
+  options: PackageResolvingOptions = {},
 ) {
   try {
     return resolveSync(name, options);
@@ -149,7 +149,7 @@ export async function importModule<T = any>(path: string): Promise<T> {
  */
 export async function resolvePackage(
   name: string,
-  options: PackageResolvingOptions = {}
+  options: PackageResolvingOptions = {},
 ) {
   let result = await resolveSafe(joinPaths(name, "package.json"), options);
   if (!result) {
@@ -170,7 +170,7 @@ export async function resolvePackage(
  */
 export async function resolvePackageSync(
   name: string,
-  options: PackageResolvingOptions = {}
+  options: PackageResolvingOptions = {},
 ) {
   let result = await resolveSafeSync(joinPaths(name, "package.json"), options);
   if (!result) {

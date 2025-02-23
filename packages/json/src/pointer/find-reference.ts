@@ -91,7 +91,7 @@ export const find = (val: unknown, path: Reference["key"][]): Reference => {
   const ref: Reference = {
     val,
     obj,
-    key
+    key,
   };
 
   return ref;
@@ -105,7 +105,7 @@ export interface ArrayReference<T = unknown> {
 }
 
 export const isArrayReference = <T = unknown>(
-  ref: Reference
+  ref: Reference,
 ): ref is ArrayReference<T> => isArray(ref.obj) && typeof ref.key === "number";
 
 export const isArrayEnd = (ref: ArrayReference): boolean =>
@@ -118,6 +118,6 @@ export interface ObjectReference<T = unknown> {
 }
 
 export const isObjectReference = <T = unknown>(
-  ref: Reference
+  ref: Reference,
 ): ref is ObjectReference<T> =>
   typeof ref.obj === "object" && typeof ref.key === "string";

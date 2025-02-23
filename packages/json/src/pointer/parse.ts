@@ -61,7 +61,7 @@ export function parseJsonPointer(pointer: string): JsonPointerPath {
   return pointer
     .slice(1)
     .split("/")
-    .map(segment => unescapePointerSegment(segment));
+    .map((segment) => unescapePointerSegment(segment));
 }
 
 /**
@@ -74,7 +74,7 @@ export function formatJsonPointer(path: JsonPointerPath): string {
   }
 
   return (
-    "/" + path.map(segment => escapePointerSegment(String(segment))).join("/")
+    "/" + path.map((segment) => escapePointerSegment(String(segment))).join("/")
   );
 }
 

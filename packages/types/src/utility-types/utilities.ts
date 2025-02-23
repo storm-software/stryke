@@ -1,4 +1,4 @@
-/*-------------------------------------------------------------------
+/* -------------------------------------------------------------------
 
                        ⚡ Storm Software - Stryke
 
@@ -13,7 +13,7 @@
  Contact:         https://stormsoftware.com/contact
  License:         https://stormsoftware.com/projects/stryke/license
 
- -------------------------------------------------------------------*/
+ ------------------------------------------------------------------- */
 
 import type { Primitive } from "./base";
 
@@ -43,7 +43,7 @@ export type Pretty<T> = { [K in keyof T]: T[K] } & {};
 
 export type ComputeRange<
   N extends number,
-  Result extends unknown[] = []
+  Result extends unknown[] = [],
 > = Result["length"] extends N
   ? Result
   : ComputeRange<N, [...Result, Result["length"]]>;

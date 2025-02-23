@@ -24,15 +24,15 @@ import { type DotenvParseOutput, ENV_PREFIXES } from "./types";
 
 export function getEnvFilesForMode(
   envDir: string,
-  mode = "production"
+  mode = "production",
 ): string[] {
   return [
     /** default file */ ".env",
     /** local file */ ".env.local",
     /** mode file */ `.env.${mode}`,
     /** mode local file */ `.env.${mode}.local`,
-    /** local mode file */ `.env.local.${mode}`
-  ].map(file => joinPaths(envDir, file));
+    /** local mode file */ `.env.local.${mode}`,
+  ].map((file) => joinPaths(envDir, file));
 }
 
 /**
@@ -43,22 +43,22 @@ export function getEnvFilesForMode(
  */
 export async function loadEnvFile(
   envFile: string,
-  envDir: string | string[] = []
+  envDir: string | string[] = [],
 ): Promise<DotenvParseOutput> {
   const envDirs = Array.isArray(envDir) ? envDir : [envDir];
 
   return (
     await Promise.all(
       (envDir.length > 0
-        ? envDirs.map(envDir => joinPaths(envDir, envFile))
+        ? envDirs.map((envDir) => joinPaths(envDir, envFile))
         : [envFile]
-      ).map(envFilePath => {
+      ).map((envFilePath) => {
         if (!existsSync(envFilePath)) {
           return undefined;
         }
 
         return readFile(envFilePath);
-      })
+      }),
     )
   ).reduce((ret, envFileContent) => {
     if (!envFileContent) {
@@ -68,7 +68,7 @@ export async function loadEnvFile(
     const result = parse(envFileContent, {
       processEnv: { ...process.env } as DotenvPopulateInput,
       privateKey:
-        process.env.DOTENV_PRIVATE_KEY || process.env.STORM_PRIVATE_KEY
+        process.env.DOTENV_PRIVATE_KEY || process.env.STORM_PRIVATE_KEY,
     });
 
     return defu(result, ret);
@@ -93,12 +93,12 @@ export async function loadEnvFile(
 export async function loadEnv(
   envDir: string | string[],
   mode?: string,
-  prefix?: string | string[]
+  prefix?: string | string[],
 ): Promise<DotenvParseOutput> {
   if (mode === "local") {
     throw new Error(
       '"local" cannot be used as a mode name because it conflicts with ' +
-        "the .local postfix for .env files."
+        "the .local postfix for .env files.",
     );
   }
 
@@ -109,8 +109,8 @@ export async function loadEnv(
   const envFiles = envDirs.reduce((ret, envFilePath) => {
     ret.push(
       ...getEnvFilesForMode(envFilePath, mode).filter(
-        envFile => !ret.includes(envFile)
-      )
+        (envFile) => !ret.includes(envFile),
+      ),
     );
 
     return ret;
@@ -118,9 +118,9 @@ export async function loadEnv(
 
   let envParsed = (
     await Promise.all(
-      envFiles.map(filePath => {
+      envFiles.map((filePath) => {
         return loadEnvFile(filePath);
-      })
+      }),
     )
   ).reduce((ret, result) => {
     return defu(result, ret);
@@ -146,7 +146,7 @@ export async function loadEnv(
 
   // only keys that start with prefix are exposed to client
   for (const [key, value] of Object.entries(envParsed)) {
-    if (prefixes.some(prefix => key.startsWith(prefix))) {
+    if (prefixes.some((prefix) => key.startsWith(prefix))) {
       env[key] = String(value);
     }
   }
@@ -154,7 +154,7 @@ export async function loadEnv(
   // check if there are actual env variables starting with VITE_*
   // these are typically provided inline and should be prioritized
   for (const key in process.env) {
-    if (prefixes.some(prefix => key.startsWith(prefix))) {
+    if (prefixes.some((prefix) => key.startsWith(prefix))) {
       env[key] = process.env[key] as string;
     }
   }
@@ -180,7 +180,7 @@ export async function loadEnv(
 export async function loadClientEnv(
   envDir: string | string[],
   mode?: string,
-  prefix: string | string[] = ENV_PREFIXES
+  prefix: string | string[] = ENV_PREFIXES,
 ): Promise<DotenvParseOutput> {
   return loadEnv(envDir, mode, prefix);
 }
@@ -201,7 +201,7 @@ export async function loadClientEnv(
  */
 export async function loadServerEnv(
   envDir: string | string[],
-  mode: string
+  mode: string,
 ): Promise<DotenvParseOutput> {
   return loadEnv(envDir, mode);
 }

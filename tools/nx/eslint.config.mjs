@@ -1,4 +1,4 @@
-/*-------------------------------------------------------------------
+/* -------------------------------------------------------------------
 
                        ⚡ Storm Software - Stryke
 
@@ -13,44 +13,40 @@
  Contact:         https://stormsoftware.com/contact
  License:         https://stormsoftware.com/projects/stryke/license
 
- -------------------------------------------------------------------*/
+ ------------------------------------------------------------------- */
 
+import { composer } from "eslint-flat-config-utils";
 import parser from "jsonc-eslint-parser";
 import baseConfig from "../../eslint.config.mjs";
 
-export default [
-  ...baseConfig,
-  {
+export default composer(baseConfig)
+  .append({
     files: ["**/*.json"],
     rules: {
       "@nx/dependency-checks": [
         "error",
         {
-          ignoredFiles: [
-            "{projectRoot}/eslint.config.{js,cjs,mjs}",
-            "{projectRoot}/tsconfig.json"
-          ]
-        }
-      ]
+          ignoredFiles: ["{projectRoot}/eslint.config.{js,cjs,mjs}"],
+        },
+      ],
     },
     languageOptions: {
-      parser
-    }
-  },
-  {
-    "files": [
+      parser,
+    },
+  })
+  .append({
+    files: [
       "./package.json",
       "./generators.json",
       "./executors.json",
       "./generators.json",
       "./executors.json",
-      "./migrations.json"
+      "./migrations.json",
     ],
     rules: {
-      "@nx/nx-plugin-checks": "error"
+      "@nx/nx-plugin-checks": "error",
     },
     languageOptions: {
-      parser
-    }
-  }
-];
+      parser,
+    },
+  });

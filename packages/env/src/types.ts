@@ -20,7 +20,7 @@ export const ENV_PREFIXES = [
   "ONE_",
   "STORM_PUBLIC_",
   "STORM_",
-  "NEXT_PUBLIC_"
+  "NEXT_PUBLIC_",
 ];
 
 export interface DotenvParseOutput {

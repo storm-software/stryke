@@ -22,7 +22,7 @@ export const platform = globalThis.process?.platform || "";
 
 /** Detect if stdout.TTY is available */
 export const hasTTY = Boolean(
-  globalThis.process?.stdout && globalThis.process?.stdout.isTTY
+  globalThis.process?.stdout && globalThis.process?.stdout.isTTY,
 );
 
 /** Detect if `DEBUG` environment variable is set */
@@ -33,17 +33,17 @@ const nodeEnv = process.env.STORM_MODE || process.env.NODE_ENV || "production";
 
 /** Detect if `NODE_ENV` environment variable is `production` */
 export const isProduction = ["prd", "prod", "production"].includes(
-  nodeEnv?.toLowerCase()
+  nodeEnv?.toLowerCase(),
 );
 
 /** Detect if `NODE_ENV` environment variable is `production` */
 export const isStaging = ["stg", "stage", "staging"].includes(
-  nodeEnv?.toLowerCase()
+  nodeEnv?.toLowerCase(),
 );
 
 /** Detect if `NODE_ENV` environment variable is `dev` or `development` */
 export const isDevelopment = ["dev", "development"].includes(
-  nodeEnv?.toLowerCase()
+  nodeEnv?.toLowerCase(),
 );
 
 /** Detect if `NODE_ENV` environment variable is `test` */

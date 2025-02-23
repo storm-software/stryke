@@ -41,12 +41,12 @@ export function formatParseError(input: string, parseError: ParseError) {
     codeFrameColumns(input, {
       start: {
         line,
-        column
+        column,
       },
       end: {
         line,
-        column: column + length
-      }
+        column: column + length,
+      },
     }) +
     "\n"
   );

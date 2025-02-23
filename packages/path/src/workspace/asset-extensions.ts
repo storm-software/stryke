@@ -1,4 +1,4 @@
-/*-------------------------------------------------------------------
+/* -------------------------------------------------------------------
 
                        ⚡ Storm Software - Stryke
 
@@ -13,7 +13,7 @@
  Contact:         https://stormsoftware.com/contact
  License:         https://stormsoftware.com/projects/stryke/license
 
- -------------------------------------------------------------------*/
+ ------------------------------------------------------------------- */
 
 /**
  * Default asset extensions
@@ -54,5 +54,5 @@ export const DEFAULT_ASSET_EXTS = [
   "otf",
   "ttf",
   // Archives (virtual files)
-  "zip"
+  "zip",
 ];

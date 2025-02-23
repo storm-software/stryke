@@ -2,19 +2,23 @@
 
 ### Bug Fixes
 
-- **types:** Resolved issue with incorrect `length` check parsing type definitions ([4ec5834](https://github.com/storm-software/stryke/commit/4ec5834))
+- **types:** Resolved issue with incorrect `length` check parsing type
+  definitions
+  ([4ec5834](https://github.com/storm-software/stryke/commit/4ec5834))
 
 ## 0.3.0 (2025-02-17)
 
 ### Features
 
-- **types:** Change `env` property name back to `dotenv` ([0aafee7](https://github.com/storm-software/stryke/commit/0aafee7))
+- **types:** Change `env` property name back to `dotenv`
+  ([0aafee7](https://github.com/storm-software/stryke/commit/0aafee7))
 
 ## 0.2.1 (2025-02-17)
 
 ### Miscellaneous
 
-- **monorepo:** Reformat monorepo files ([1db5e06](https://github.com/storm-software/stryke/commit/1db5e06))
+- **monorepo:** Reformat monorepo files
+  ([1db5e06](https://github.com/storm-software/stryke/commit/1db5e06))
 
 ## 0.2.0 (2025-02-17)
 

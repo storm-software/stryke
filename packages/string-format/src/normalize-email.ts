@@ -1,4 +1,4 @@
-/*-------------------------------------------------------------------
+/* -------------------------------------------------------------------
 
                        ⚡ Storm Software - Stryke
 
@@ -13,7 +13,7 @@
  Contact:         https://stormsoftware.com/contact
  License:         https://stormsoftware.com/projects/stryke/license
 
- -------------------------------------------------------------------*/
+ ------------------------------------------------------------------- */
 
 const DOT_REG = /\./g;
 
@@ -25,11 +25,11 @@ const DOT_REG = /\./g;
  *
  * For example, this email
  *
- *     Michal.Loler+twitter\@Gmail.com
+ *     Mike.Johnson+twitter\@Gmail.com
  *
  * will be normalized to
  *
- *     michalloler\@gmail.com
+ *     mikejohnson\@gmail.com
  *
  */
 export const normalizeEmail = (email: string) => {
@@ -50,7 +50,7 @@ export const normalizeEmail = (email: string) => {
   }
 
   beforePlus = beforePlus.replace(DOT_REG, "");
-  const result = beforePlus.toLowerCase() + "@" + host!.toLowerCase();
+  const result = `${beforePlus.toLowerCase()}@${host!.toLowerCase()}`;
   Number(result);
 
   return result;

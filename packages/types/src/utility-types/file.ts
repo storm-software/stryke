@@ -1,4 +1,4 @@
-/*-------------------------------------------------------------------
+/* -------------------------------------------------------------------
 
                        ⚡ Storm Software - Stryke
 
@@ -13,17 +13,16 @@
  Contact:         https://stormsoftware.com/contact
  License:         https://stormsoftware.com/projects/stryke/license
 
- -------------------------------------------------------------------*/
+ ------------------------------------------------------------------- */
 
 import type { ValidationDetails } from "./validations";
 
-export type FileStatus = "initialized" | "validated" | "uploaded" | "failed";
-export const FileStatus = {
-  INITIALIZED: "initialized" as FileStatus,
-  VALIDATED: "validated" as FileStatus,
-  UPLOADED: "uploaded" as FileStatus,
-  FAILED: "failed" as FileStatus
-};
+export enum FileStatus {
+  INITIALIZED = "initialized",
+  VALIDATED = "validated",
+  UPLOADED = "uploaded",
+  FAILED = "failed",
+}
 
 /**
  * A type that representing a file object.

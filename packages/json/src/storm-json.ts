@@ -26,7 +26,7 @@ import type {
   JsonParseOptions,
   JsonParserResult,
   JsonSerializeOptions,
-  JsonValue
+  JsonValue,
 } from "./types";
 import { formatParseError } from "./utils/parse-error";
 import { stringify } from "./utils/stringify";
@@ -52,7 +52,7 @@ export class StormJSON extends SuperJSON {
    * Deserialize the given value with superjson using the given metadata
    */
   public static override deserialize<TData = unknown>(
-    payload: JsonParserResult
+    payload: JsonParserResult,
   ): TData {
     return StormJSON.instance.deserialize(payload);
   }
@@ -102,7 +102,7 @@ export class StormJSON extends SuperJSON {
    */
   public static stringifyJson(
     json: any,
-    options?: JsonSerializeOptions
+    options?: JsonSerializeOptions,
   ): string {
     const customTransformer =
       StormJSON.instance.customTransformerRegistry.findApplicable(json);
@@ -125,7 +125,7 @@ export class StormJSON extends SuperJSON {
    */
   public static parseJson<TData = unknown>(
     strData: string,
-    options?: JsonParseOptions
+    options?: JsonParseOptions,
   ): TData {
     try {
       if (options?.expectComments === false) {
@@ -138,7 +138,7 @@ export class StormJSON extends SuperJSON {
     const errors: ParseError[] = [];
     const opts = {
       allowTrailingComma: true,
-      ...options
+      ...options,
     };
     const result: TData = parse(strData, errors, opts);
 
@@ -159,20 +159,20 @@ export class StormJSON extends SuperJSON {
    */
   public static register<
     TData = any,
-    TJsonObject extends JsonValue = JsonValue
+    TJsonObject extends JsonValue = JsonValue,
   >(
     name: string,
     serialize: (data: TData) => TJsonObject,
     deserialize: (json: TJsonObject) => TData,
-    isApplicable: (data: any) => data is TData
+    isApplicable: (data: any) => data is TData,
   ) {
     StormJSON.instance.registerCustom<TData, TJsonObject>(
       {
         isApplicable,
         serialize,
-        deserialize
+        deserialize,
       },
-      name
+      name,
     );
   }
 
@@ -183,7 +183,7 @@ export class StormJSON extends SuperJSON {
    */
   public static override registerClass(
     classConstructor: Class,
-    options?: { identifier?: string; allowProps?: string[] } | string
+    options?: { identifier?: string; allowProps?: string[] } | string,
   ) {
     StormJSON.instance.registerClass(classConstructor, {
       identifier: isString(options)
@@ -195,7 +195,7 @@ export class StormJSON extends SuperJSON {
         options?.allowProps &&
         Array.isArray(options.allowProps)
           ? options.allowProps
-          : ["__typename"]
+          : ["__typename"],
     });
   }
 
@@ -207,8 +207,8 @@ export class StormJSON extends SuperJSON {
 StormJSON.instance.registerCustom<Buffer, string>(
   {
     isApplicable: (v): v is Buffer => Buffer.isBuffer(v),
-    serialize: v => v.toString("base64"),
-    deserialize: v => Buffer.from(v, "base64")
+    serialize: (v) => v.toString("base64"),
+    deserialize: (v) => Buffer.from(v, "base64"),
   },
-  "Bytes"
+  "Bytes",
 );

@@ -80,7 +80,7 @@ export const Hex = {
     }
 
     return hexChars.join("");
-  }
+  },
 };
 
 export const Base64 = {
@@ -101,7 +101,7 @@ export const Base64 = {
       }
     }
     return base64Chars.join("");
-  }
+  },
 };
 
 export const Latin1 = {
@@ -117,13 +117,13 @@ export const Latin1 = {
     }
 
     return new WordArray(words, latin1StrLength);
-  }
+  },
 };
 
 export const Utf8 = {
   parse(utf8Str: string) {
     return Latin1.parse(unescape(encodeURIComponent(utf8Str)));
-  }
+  },
 };
 
 export class BufferedBlockAlgorithm {
@@ -163,7 +163,7 @@ export class BufferedBlockAlgorithm {
       : Math.max(
           Math.trunc(this._data.sigBytes / (this.blockSize * 4)) -
             this._minBufferSize,
-          0
+          0,
         );
 
     // Count words ready

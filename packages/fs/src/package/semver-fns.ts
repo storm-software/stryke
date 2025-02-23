@@ -27,11 +27,11 @@ export const isRelativeVersionKeyword = (val: string): val is ReleaseType => {
 export const deriveNewSemverVersion = (
   currentSemverVersion: string,
   semverSpecifier: string,
-  preid?: string
+  preid?: string,
 ) => {
   if (!valid(currentSemverVersion)) {
     throw new Error(
-      `Invalid semver version "${currentSemverVersion}" provided.`
+      `Invalid semver version "${currentSemverVersion}" provided.`,
     );
   }
 
@@ -43,14 +43,14 @@ export const deriveNewSemverVersion = (
 
     if (!derivedVersion) {
       throw new Error(
-        `Unable to derive new version from current version "${currentSemverVersion}" and version specifier "${semverSpecifier}"`
+        `Unable to derive new version from current version "${currentSemverVersion}" and version specifier "${semverSpecifier}"`,
       );
     }
     newVersion = derivedVersion;
   } else if (!valid(semverSpecifier)) {
     // Ensure the new version specifier is a valid semver version, given it is not a valid semver keyword
     throw new Error(
-      `Invalid semver version specifier "${semverSpecifier}" provided. Please provide either a valid semver version or a valid semver version keyword.`
+      `Invalid semver version specifier "${semverSpecifier}" provided. Please provide either a valid semver version or a valid semver version keyword.`,
     );
   }
 

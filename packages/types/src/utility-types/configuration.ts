@@ -1,4 +1,4 @@
-/*-------------------------------------------------------------------
+/* -------------------------------------------------------------------
 
                        ⚡ Storm Software - Stryke
 
@@ -13,12 +13,12 @@
  Contact:         https://stormsoftware.com/contact
  License:         https://stormsoftware.com/projects/stryke/license
 
- -------------------------------------------------------------------*/
+ ------------------------------------------------------------------- */
 
 /**
  * Configuration values for specifying a type definition
  */
-export type TypeDefinition = {
+export interface TypeDefinition {
   /**
    * The file path to the type definition
    */
@@ -31,7 +31,7 @@ export type TypeDefinition = {
    * If no value is provided, we will attempt to infer the type definition from the module's `default` export.
    */
   name?: string;
-};
+}
 
 /**
  * Configuration parameter for the {@link TypeDefinition} utility type
