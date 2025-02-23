@@ -15,679 +15,272 @@
 
  ------------------------------------------------------------------- */
 
-/* eslint-disable no-tabs */
-/* eslint-disable @cspell/spellchecker */
-
-import type { StormConfigurationGroups } from "./configuration";
-import type { JsonObject, JsonValue } from "./json";
-import type { LiteralUnion } from "./object";
-
 /**
- * A person who has been involved in creating or maintaining the package.
+ * The `package.json` file is the only required file in a package. It must be located at the root of a package, and can contain the following fields.
  */
-export type PackageJsonPerson =
-  | string
-  | {
-      name: string;
-      url?: string;
-      email?: string;
-    };
-
-export type PackageJsonBugsLocation =
-  | string
-  | {
-      /**
-       * The URL to the package's issue tracker.
-       */
-      url?: string;
-
-      /**
-       * The email address to which issues should be reported.
-       */
-      email?: string;
-    };
-
-export interface PackageJsonDirectoryLocations {
-  [directoryType: string]: JsonValue | undefined;
-
+export interface PackageJson {
   /**
-   * Location for executable scripts. Sugar to generate entries in the `bin` property by walking the folder.
-   */
-  bin?: string;
-
-  /**
-   * Location for Markdown files.
-   */
-  doc?: string;
-
-  /**
-   * Location for example scripts.
-   */
-  example?: string;
-
-  /**
-   * Location for the bulk of the library.
-   */
-  lib?: string;
-
-  /**
-   * Location for man pages. Sugar to generate a `man` array by walking the folder.
-   */
-  man?: string;
-
-  /**
-   * Location for test files.
-   */
-  test?: string;
-}
-
-export type PackageJsonScripts = {
-  /**
-   * Run **before** the package is published (Also run on local `npm install` without any arguments).
-   */
-  prepublish?: string;
-
-  /**
-   * Run both **before** the package is packed and published, and on local `npm install` without any arguments. This is run **after** `prepublish`, but **before** `prepublishOnly`.
-   */
-  prepare?: string;
-
-  /**
-		Run **before** the package is prepared and packed, **only** on `npm publish`.
-   */
-  prepublishOnly?: string;
-
-  /**
-		Run **before** a tarball is packed (on `npm pack`, `npm publish`, and when installing git dependencies).
-   */
-  prepack?: string;
-
-  /**
-		Run **after** the tarball has been generated and moved to its final destination.
-   */
-  postpack?: string;
-
-  /**
-		Run **after** the package is published.
-   */
-  publish?: string;
-
-  /**
-		Run **after** the package is published.
-   */
-  postpublish?: string;
-
-  /**
-		Run **before** the package is installed.
-   */
-  preinstall?: string;
-
-  /**
-		Run **after** the package is installed.
-   */
-  install?: string;
-
-  /**
-		Run **after** the package is installed and after `install`.
-   */
-  postinstall?: string;
-
-  /**
-		Run **before** the package is uninstalled and before `uninstall`.
-   */
-  preuninstall?: string;
-
-  /**
-		Run **before** the package is uninstalled.
-   */
-  uninstall?: string;
-
-  /**
-		Run **after** the package is uninstalled.
-   */
-  postuninstall?: string;
-
-  /**
-		Run **before** bump the package version and before `version`.
-   */
-  preversion?: string;
-
-  /**
-		Run **before** bump the package version.
-   */
-  version?: string;
-
-  /**
-		Run **after** bump the package version.
-   */
-  postversion?: string;
-
-  /**
-		Run with the `npm test` command, before `test`.
-   */
-  pretest?: string;
-
-  /**
-		Run with the `npm test` command.
-   */
-  test?: string;
-
-  /**
-		Run with the `npm test` command, after `test`.
-   */
-  posttest?: string;
-
-  /**
-		Run with the `npm stop` command, before `stop`.
-   */
-  prestop?: string;
-
-  /**
-		Run with the `npm stop` command.
-   */
-  stop?: string;
-
-  /**
-		Run with the `npm stop` command, after `stop`.
-   */
-  poststop?: string;
-
-  /**
-		Run with the `npm start` command, before `start`.
-   */
-  prestart?: string;
-
-  /**
-		Run with the `npm start` command.
-   */
-  start?: string;
-
-  /**
-		Run with the `npm start` command, after `start`.
-   */
-  poststart?: string;
-
-  /**
-		Run with the `npm restart` command, before `restart`. Note: `npm restart` will run the `stop` and `start` scripts if no `restart` script is provided.
-   */
-  prerestart?: string;
-
-  /**
-		Run with the `npm restart` command. Note: `npm restart` will run the `stop` and `start` scripts if no `restart` script is provided.
-   */
-  restart?: string;
-
-  /**
-		Run with the `npm restart` command, after `restart`. Note: `npm restart` will run the `stop` and `start` scripts if no `restart` script is provided.
-   */
-  postrestart?: string;
-} & Partial<Record<string, string>>;
-
-/**
-	Dependencies of the package. The version range is a string which has one or more space-separated descriptors. Dependencies can also be identified with a tarball or Git URL.
-	*/
-export type PackageJsonDependency = Partial<Record<string, string>>;
-
-/**
-	A mapping of conditions and the paths to which they resolve.
-	*/
-type PackageJsonExportConditions = Record<
-  string,
-  null | string | (string | Record<string, any>)[] | Record<string, any>
->;
-
-/**
-	Entry points of a module, optionally with conditions and subpath exports.
-	*/
-export type PackageJsonExports =
-  | null
-  | string
-  | (string | PackageJsonExportConditions)[]
-  | PackageJsonExportConditions;
-
-/**
-	Import map entries of a module, optionally with conditions and subpath imports.
-	*/
-export type PackageJsonImports = Record<`#${string}`, PackageJsonExports>;
-export interface PackageJsonNonStandardEntryPoints {
-  /**
-		An ECMAScript module ID that is the primary entry point to the program.
-   */
-  module?: string;
-
-  /**
-		A module ID with untranspiled code that is the primary entry point to the program.
-   */
-  esnext?:
-    | string
-    | {
-        [moduleName: string]: string | undefined;
-        main?: string;
-        browser?: string;
-      };
-
-  /**
-		A hint to JavaScript bundlers or component tools when packaging modules for client side use.
-   */
-  browser?: string | Partial<Record<string, string | false>>;
-
-  /**
-		Denote which files in your project are "pure" and therefore safe for Webpack to prune if unused.
-
-		[Read more.](https://webpack.js.org/guides/tree-shaking/)
-   */
-  sideEffects?: boolean | string[];
-}
-
-export interface PackageJsonTypeScriptConfiguration {
-  /**
-		Location of the bundled TypeScript declaration file.
-   */
-  types?: string;
-
-  /**
-		Version selection map of TypeScript.
-   */
-  typesVersions?: Partial<Record<string, Partial<Record<string, string[]>>>>;
-
-  /**
-		Location of the bundled TypeScript declaration file. Alias of `types`.
-   */
-  typings?: string;
-}
-
-/**
-	An alternative configuration for workspaces.
-	*/
-export interface PackageJsonWorkspaceConfig {
-  /**
-		An array of workspace pattern strings which contain the workspace packages.
-   */
-  packages?: PackageJsonWorkspacePattern[];
-
-  /**
-		Designed to solve the problem of packages which break when their `node_modules` are moved to the root workspace directory - a process known as hoisting. For these packages, both within your workspace, and also some that have been installed via `node_modules`, it is important to have a mechanism for preventing the default Yarn workspace behavior. By adding workspace pattern strings here, Yarn will resume non-workspace behavior for any package which matches the defined patterns.
-
-		[Supported](https://classic.yarnpkg.com/blog/2018/02/15/nohoist/) by Yarn.
-		[Not supported](https://github.com/npm/rfcs/issues/287) by npm.
-   */
-  nohoist?: PackageJsonWorkspacePattern[];
-}
-
-/**
-	A workspace pattern points to a directory or group of directories which contain packages that should be included in the workspace installation process.
-
-	The patterns are handled with [minimatch](https://github.com/isaacs/minimatch).
-
-	@example
-	`docs` → Include the docs directory and install its dependencies.
-	`packages/*` → Include all nested directories within the packages directory, like `packages/cli` and `packages/core`.
- */
-type PackageJsonWorkspacePattern = string;
-
-export interface PackageJsonYarnConfiguration {
-  /**
-		If your package only allows one version of a given dependency, and you’d like to enforce the same behavior as `yarn install --flat` on the command-line, set this to `true`.
-
-		Note that if your `package.json` contains `"flat": true` and other packages depend on yours (e.g. you are building a library rather than an app), those other packages will also need `"flat": true` in their `package.json` or be installed with `yarn install --flat` on the command-line.
-   */
-  flat?: boolean;
-
-  /**
-		Selective version resolutions. Allows the definition of custom package versions inside dependencies without manual edits in the `yarn.lock` file.
-   */
-  resolutions?: PackageJsonDependency;
-}
-
-export interface PackageJsonJSPMConfiguration {
-  /**
-		JSPM configuration.
-   */
-  jspm?: PackageJson;
-}
-
-/**
-	Type for [npm's `package.json` file](https://docs.npmjs.com/creating-a-package-json-file). Containing standard npm properties.
-	*/
-
-export interface PackageJsonStandard {
-  /**
-		The name of the package.
+   * The name is what your thing is called.
+   * Some rules:
+   * - The name must be less than or equal to 214 characters. This includes the scope for scoped packages.
+   * - The name can’t start with a dot or an underscore.
+   * - New packages must not have uppercase letters in the name.
+   * - The name ends up being part of a URL, an argument on the command line, and a folder name. Therefore, the name can’t contain any non-URL-safe characters.
    */
   name?: string;
-
   /**
-		Package version, parseable by [`node-semver`](https://github.com/npm/node-semver).
+   * Version must be parseable by `node-semver`, which is bundled with npm as a dependency. (`npm install semver` to use it yourself.)
    */
   version?: string;
-
   /**
-		Package description, listed in `npm search`.
+   * Put a description in it. It’s a string. This helps people discover your package, as it’s listed in `npm search`.
    */
   description?: string;
-
   /**
-		Keywords associated with package, listed in `npm search`.
+   * Put keywords in it. It’s an array of strings. This helps people discover your package as it’s listed in `npm search`.
    */
   keywords?: string[];
-
   /**
-		The URL to the package's homepage.
+   * The url to the project homepage.
    */
-  homepage?: LiteralUnion<".", string>;
-
+  homepage?: string;
   /**
-		The URL to the package's issue tracker and/or the email address to which issues should be reported.
+   * The url to your project’s issue tracker and / or the email address to which issues should be reported. These are helpful for people who encounter issues with your package.
    */
-  bugs?: PackageJsonBugsLocation;
-
+  bugs?: string | {
+    url?: string;
+    email?: string;
+  };
   /**
-		The license for the package.
+   * You should specify a license for your package so that people know how they are permitted to use it, and any restrictions you’re placing on it.
    */
   license?: string;
-
   /**
-		The licenses for the package.
+   * Specify the place where your code lives. This is helpful for people who want to contribute. If the git repo is on GitHub, then the `npm docs` command will be able to find you.
+   * For GitHub, GitHub gist, Bitbucket, or GitLab repositories you can use the same shortcut syntax you use for npm install:
    */
-  licenses?: {
-    type?: string;
-    url?: string;
-  }[];
-
-  author?: PackageJsonPerson;
-
-  /**
-		A list of people who contributed to the package.
-   */
-  contributors?: PackageJsonPerson[];
-
-  /**
-		A list of people who maintain the package.
-   */
-  maintainers?: PackageJsonPerson[];
-
-  /**
-		The files included in the package.
-   */
-  files?: string[];
-
-  /**
-		Resolution algorithm for importing ".js" files from the package's scope.
-
-		[Read more.](https://nodejs.org/api/esm.html#esm_package_json_type_field)
-   */
-  type?: "module" | "commonjs";
-
-  /**
-		The module ID that is the primary entry point to the program.
-   */
-  main?: string;
-
-  /**
-		Subpath exports to define entry points of the package.
-
-		[Read more.](https://nodejs.org/api/packages.html#subpath-exports)
-   */
-  exports?: PackageJsonExports;
-
-  /**
-		Subpath imports to define internal package import maps that only apply to import specifiers from within the package itself.
-
-		[Read more.](https://nodejs.org/api/packages.html#subpath-imports)
-   */
-  imports?: PackageJsonImports;
-
-  /**
-		The executable files that should be installed into the `PATH`.
-   */
-  bin?: string | Partial<Record<string, string>>;
-
-  /**
-		Filenames to put in place for the `man` program to find.
-   */
-  man?: string | string[];
-
-  /**
-		Indicates the structure of the package.
-   */
-  directories?: PackageJsonDirectoryLocations;
-
-  /**
-		Location for the code repository.
-   */
-  repository?:
-    | string
-    | {
-        type: string;
-        url: string;
-
-        /**
-			Relative path to package.json if it is placed in non-root directory (for example if it is part of a monorepo).
-       
-			[Read more.](https://github.com/npm/rfcs/blob/latest/implemented/0010-monorepo-subdirectory-declaration.md)
-       */
-        directory?: string;
-      };
-
-  /**
-		Script commands that are run at various times in the lifecycle of the package. The key is the lifecycle event, and the value is the command to run at that point.
-   */
-  scripts?: PackageJsonScripts;
-
-  /**
-		Is used to set configuration parameters used in package scripts that persist across upgrades.
-   */
-  config?: JsonObject;
-
-  /**
-		The dependencies of the package.
-   */
-  dependencies?: PackageJsonDependency;
-
-  /**
-		Additional tooling dependencies that are not required for the package to work. Usually test, build, or documentation tooling.
-   */
-  devDependencies?: PackageJsonDependency;
-
-  /**
-		Dependencies that are skipped if they fail to install.
-   */
-  optionalDependencies?: PackageJsonDependency;
-
-  /**
-		Dependencies that will usually be required by the package user directly or via another dependency.
-   */
-  peerDependencies?: PackageJsonDependency;
-
-  /**
-		Indicate peer dependencies that are optional.
-   */
-  peerDependenciesMeta?: Partial<Record<string, { optional: true }>>;
-
-  /**
-		Package names that are bundled when the package is published.
-   */
-  bundledDependencies?: string[];
-
-  /**
-		Alias of `bundledDependencies`.
-   */
-  bundleDependencies?: string[];
-
-  /**
-		Engines that this package runs on.
-   */
-  engines?: {
-    [name in "npm" | "node" | string]?: string;
+  repository?: string | {
+    type: string;
+    url: string;
+    /**
+     * If the `package.json` for your package is not in the root directory (for example if it is part of a monorepo), you can specify the directory in which it lives:
+     */
+    directory?: string;
   };
-
   /**
-   * @deprecated
-   * This field is deprecated and will be ignored by npm. Please use {@link engines} for Node.js version requirements.
+   * The `scripts` field is a dictionary containing script commands that are run at various times in the lifecycle of your package.
    */
-  engineStrict?: boolean;
-
+  scripts?: Record<string, string>;
   /**
-		Operating systems the module runs on.
-   */
-  os?: LiteralUnion<
-    | "aix"
-    | "darwin"
-    | "freebsd"
-    | "linux"
-    | "openbsd"
-    | "sunos"
-    | "win32"
-    | "!aix"
-    | "!darwin"
-    | "!freebsd"
-    | "!linux"
-    | "!openbsd"
-    | "!sunos"
-    | "!win32",
-    string
-  >[];
-
-  /**
-		CPU architectures the module runs on.
-   */
-  cpu?: LiteralUnion<
-    | "arm"
-    | "arm64"
-    | "ia32"
-    | "mips"
-    | "mipsel"
-    | "ppc"
-    | "ppc64"
-    | "s390"
-    | "s390x"
-    | "x32"
-    | "x64"
-    | "!arm"
-    | "!arm64"
-    | "!ia32"
-    | "!mips"
-    | "!mipsel"
-    | "!ppc"
-    | "!ppc64"
-    | "!s390"
-    | "!s390x"
-    | "!x32"
-    | "!x64",
-    string
-  >[];
-
-  /**
-   * If set to `true`, a warning will be shown if package is installed locally. Useful if the package is primarily a command-line application that should be installed globally.
-   *
-   * @deprecated
-   */
-  preferGlobal?: boolean;
-
-  /**
-   * If set to `true`, then npm will refuse to publish it.
+   * If you set `"private": true` in your package.json, then npm will refuse to publish it.
    */
   private?: boolean;
-
   /**
-   * A set of config values that will be used at publish-time. It's especially handy to set the tag, registry or access, to ensure that a given package is not tagged with 'latest', published to the global public registry or that a scoped module is private by default.
+   * The “author” is one person.
    */
-  publishConfig?: PackageJsonPublishConfig;
-
+  author?: PackageJsonPerson;
   /**
-   * Describes and notifies consumers of a package's monetary support information.
-   *
-   * [Read more.](https://github.com/npm/rfcs/blob/latest/accepted/0017-add-funding-support.md)
+   * “contributors” is an array of people.
    */
-  funding?:
-    | string
-    | {
-        /**
-         * The type of funding.
-         */
-        type?: LiteralUnion<
-          | "github"
-          | "opencollective"
-          | "patreon"
-          | "individual"
-          | "foundation"
-          | "corporation",
-          string
-        >;
-
-        /**
-         * The URL to the funding page.
-         */
-        url: string;
-      };
-
+  contributors?: PackageJsonPerson[];
   /**
-   * Used to configure [npm workspaces](https://docs.npmjs.com/cli/using-npm/workspaces) / [Yarn workspaces](https://classic.yarnpkg.com/docs/workspaces/).
-   *
-   * Workspaces allow you to manage multiple packages within the same repository in such a way that you only need to run your install command once in order to install all of them in a single pass.
-   *
-   * Please note that the top-level `private` property of `package.json` **must** be set to `true` in order to use workspaces.
+   * The optional `files` field is an array of file patterns that describes the entries to be included when your package is installed as a dependency. File patterns follow a similar syntax to `.gitignore`, but reversed: including a file, directory, or glob pattern (`*`, `**\/*`, and such) will make it so that file is included in the tarball when it’s packed. Omitting the field will make it default to `["*"]`, which means it will include all files.
    */
-  workspaces?: PackageJsonWorkspacePattern[] | PackageJsonWorkspaceConfig;
-}
-
-/**
- * Type for [`package.json` file used by the Node.js runtime](https://nodejs.org/api/packages.html#nodejs-packagejson-field-definitions).
- */
-export interface PackageJsonNodeJsStandard {
+  files?: string[];
   /**
-   * Defines which package manager is expected to be used when working on the current project. It can set to any of the [supported package managers](https://nodejs.org/api/corepack.html#supported-package-managers), and will ensure that your teams use the exact same package manager versions without having to install anything else than Node.js.
+   * The main field is a module ID that is the primary entry point to your program. That is, if your package is named `foo`, and a user installs it, and then does `require("foo")`, then your main module’s exports object will be returned.
+   * This should be a module ID relative to the root of your package folder.
+   * For most modules, it makes the most sense to have a main script and often not much else.
+   */
+  main?: string;
+  /**
+   * If your module is meant to be used client-side the browser field should be used instead of the main field. This is helpful to hint users that it might rely on primitives that aren’t available in Node.js modules. (e.g. window)
+   */
+  browser?: string | Record<string, string | false>;
+  /**
+   * The `unpkg` field is used to specify the URL to a UMD module for your package. This is used by default in the unpkg.com CDN service.
+   */
+  unpkg?: string;
+  /**
+   * A map of command name to local file name. On install, npm will symlink that file into `prefix/bin` for global installs, or `./node_modules/.bin/` for local installs.
+   */
+  bin?: string | Record<string, string>;
+  /**
+   * Specify either a single file or an array of filenames to put in place for the `man` program to find.
+   */
+  man?: string | string[];
+  /**
+   * Dependencies are specified in a simple object that maps a package name to a version range. The version range is a string which has one or more space-separated descriptors. Dependencies can also be identified with a tarball or git URL.
+   */
+  dependencies?: Record<string, string>;
+  /**
+   * If someone is planning on downloading and using your module in their program, then they probably don’t want or need to download and build the external test or documentation framework that you use.
+   * In this case, it’s best to map these additional items in a `devDependencies` object.
+   */
+  devDependencies?: Record<string, string>;
+  /**
+   * If a dependency can be used, but you would like npm to proceed if it cannot be found or fails to install, then you may put it in the `optionalDependencies` object. This is a map of package name to version or url, just like the `dependencies` object. The difference is that build failures do not cause installation to fail.
+   */
+  optionalDependencies?: Record<string, string>;
+  /**
+   * In some cases, you want to express the compatibility of your package with a host tool or library, while not necessarily doing a `require` of this host. This is usually referred to as a plugin. Notably, your module may be exposing a specific interface, expected and specified by the host documentation.
+   */
+  peerDependencies?: Record<string, string>;
+  /**
+   * TypeScript typings, typically ending by `.d.ts`.
+   */
+  types?: string;
+  /**
+   * This field is synonymous with `types`.
+   */
+  typings?: string;
+  /**
+   * Non-Standard Node.js alternate entry-point to main.
+   * An initial implementation for supporting CJS packages (from main), and use module for ESM modules.
+   */
+  module?: string;
+  /**
+   * Make main entry-point be loaded as an ESM module, support "export" syntax instead of "require"
    *
-   * 	__This field is currently experimental and needs to be opted-in; check the [Corepack](https://nodejs.org/api/corepack.html) page for details about the procedure.__
+   * Docs:
+   * - https://nodejs.org/docs/latest-v14.x/api/esm.html#esm_package_json_type_field
    *
-   * 	@example
+   * @default 'commonjs'
+   * @since Node.js v14
+   */
+  type?: "module" | "commonjs";
+  /**
+   * Alternate and extensible alternative to "main" entry point.
+   *
+   * When using `{type: "module"}`, any ESM module file MUST end with `.mjs` extension.
+   *
+   * Docs:
+   * - https://nodejs.org/docs/latest-v14.x/api/esm.html#esm_exports_sugar
+   *
+   * @since Node.js v12.7
+   */
+  exports?: PackageJsonExports;
+  /**
+   *  Docs:
+   *  - https://nodejs.org/api/packages.html#imports
+   */
+  imports?: Record<string, string | Record<string, string>>;
+  /**
+   * The field is used to define a set of sub-packages (or workspaces) within a monorepo.
+   *
+   * This field is an array of glob patterns or an object with specific configurations for managing
+   * multiple packages in a single repository.
+   */
+  workspaces?: string[];
+  /**
+   * The field is is used to specify different TypeScript declaration files for
+   * different versions of TypeScript, allowing for version-specific type definitions.
+   */
+  typesVersions?: Record<string, Record<string, string[]>>;
+  /**
+   * You can specify which operating systems your module will run on:
    * ```json
-   * 	{
-   * 	"packageManager": "<package manager name>@<version>"
-   * 	}
+   * {
+   *   "os": ["darwin", "linux"]
+   * }
    * ```
+   * You can also block instead of allowing operating systems, just prepend the blocked os with a '!':
+   * ```json
+   * {
+   *   "os": ["!win32"]
+   * }
+   * ```
+   * The host operating system is determined by `process.platform`
+   * It is allowed to both block and allow an item, although there isn't any good reason to do this.
+   */
+  os?: string[];
+  /**
+   * If your code only runs on certain cpu architectures, you can specify which ones.
+   * ```json
+   * {
+   *   "cpu": ["x64", "ia32"]
+   * }
+   * ```
+   * Like the `os` option, you can also block architectures:
+   * ```json
+   * {
+   *   "cpu": ["!arm", "!mips"]
+   * }
+   * ```
+   * The host architecture is determined by `process.arch`
+   */
+  cpu?: string[];
+  /**
+   * This is a set of config values that will be used at publish-time.
+   */
+  publishConfig?: {
+    /**
+     * The registry that will be used if the package is published.
+     */
+    registry?: string;
+    /**
+     * The tag that will be used if the package is published.
+     */
+    tag?: string;
+    /**
+     * The access level that will be used if the package is published.
+     */
+    access?: "public" | "restricted";
+    /**
+     * **pnpm-only**
+     *
+     * By default, for portability reasons, no files except those listed in
+     * the bin field will be marked as executable in the resulting package
+     * archive. The executableFiles field lets you declare additional fields
+     * that must have the executable flag (+x) set even if
+     * they aren't directly accessible through the bin field.
+     */
+    executableFiles?: string[];
+    /**
+     * **pnpm-only**
+     *
+     * You also can use the field `publishConfig.directory` to customize
+     * the published subdirectory relative to the current `package.json`.
+     *
+     * It is expected to have a modified version of the current package in
+     * the specified directory (usually using third party build tools).
+     */
+    directory?: string;
+    /**
+     * **pnpm-only**
+     *
+     * When set to `true`, the project will be symlinked from the
+     * `publishConfig.directory` location during local development.
+     * @default true
+     */
+    linkDirectory?: boolean;
+  } & Pick<PackageJson, "bin" | "main" | "exports" | "types" | "typings" | "module" | "browser" | "unpkg" | "typesVersions" | "os" | "cpu">;
+  /**
+   * See: https://nodejs.org/api/packages.html#packagemanager
+   * This field defines which package manager is expected to be used when working on the current project.
+   * Should be of the format: `<name>@<version>[#hash]`
    */
   packageManager?: string;
-}
-
-export interface PackageJsonPublishConfig {
-  /**
-   * Additional, less common properties from the [npm docs on `publishConfig`](https://docs.npmjs.com/cli/v7/configuring-npm/package-json#publishconfig).
-   */
-  [additionalProperties: string]: JsonValue | undefined;
-
-  /**
-   * When publishing scoped packages, the access level defaults to restricted. If you want your scoped package to be publicly viewable (and installable) set `--access=public`. The only valid values for access are public and restricted. Unscoped packages always have an access level of public.
-   */
-  access?: "public" | "restricted";
-
-  /**
-   * The base URL of the npm registry.
-   *
-   * Default: `'https://registry.npmjs.org/'`
-   */
-  registry?: string;
-
-  /**
-   * The tag to publish the package under.
-   *
-   * Default: `'latest'`
-   */
-  tag?: string;
-}
-
-export interface PackageJsonStormConfiguration {
-  storm?: StormConfigurationGroups;
+  [key: string]: any;
 }
 
 /**
- * Type for [npm's `package.json` file](https://docs.npmjs.com/creating-a-package-json-file). Also includes types for fields used by other popular projects, like TypeScript and Yarn.
+ * A “person” is an object with a “name” field and optionally “url” and “email”. Or you can shorten that all into a single string, and npm will parse it for you.
  */
-export type PackageJson = JsonObject &
-  PackageJsonNodeJsStandard &
-  PackageJsonStandard &
-  PackageJsonNonStandardEntryPoints &
-  PackageJsonTypeScriptConfiguration &
-  PackageJsonYarnConfiguration &
-  PackageJsonJSPMConfiguration &
-  PackageJsonStormConfiguration;
+type PackageJsonPerson = string | {
+  name: string;
+  email?: string;
+  url?: string;
+};
+
+type PackageJsonExportKey = "." | "import" | "require" | "types" | "node" | "browser" | "default" | (string & {});
+
+type PackageJsonExportsObject = {
+  [P in PackageJsonExportKey]?: string |
+    PackageJsonExportsObject |
+    Array<string | PackageJsonExportsObject>;
+};
+
+type PackageJsonExports = string |
+  PackageJsonExportsObject |
+  Array<string | PackageJsonExportsObject>;
