@@ -1,3 +1,9 @@
+## 0.2.1 (2025-02-24)
+
+### Bug Fixes
+
+- **json:** Resolve issue with stringifying json values ([df99f22](https://github.com/storm-software/stryke/commit/df99f22))
+
 ## 0.2.0 (2025-02-23)
 
 ### Features
