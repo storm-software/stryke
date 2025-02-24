@@ -91,11 +91,11 @@ export function writeJsonFileSync<T extends object = object>(
   data: T,
   options?: JsonWriteOptions
 ): void {
-  const serializedJson = StormJSON.stringifyJson(data);
+  const serializedJson = StormJSON.stringifyJson(data, options);
 
   return writeFileSync(
     path,
-    options?.appendNewLine ? `${serializedJson.json}\n` : serializedJson.json
+    options?.appendNewLine ? `${serializedJson}\n` : serializedJson
   );
 }
 

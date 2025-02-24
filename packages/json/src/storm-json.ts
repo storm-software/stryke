@@ -16,6 +16,7 @@
  ------------------------------------------------------------------- */
 
 import type { ParseError } from "jsonc-parser";
+import type { SuperJSONResult } from "superjson";
 import type {
   Class,
   JsonParseOptions,
@@ -93,7 +94,10 @@ export class StormJSON extends SuperJSON {
       result = customTransformer.serialize(result) as TJson;
     }
 
-    return stringifyJson(result, options?.spaces);
+    return stringifyJson((result as SuperJSONResult)?.json
+      ? (result as SuperJSONResult)?.json
+      : result,
+    options?.spaces);
   }
 
   /**
