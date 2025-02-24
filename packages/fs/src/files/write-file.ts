@@ -91,7 +91,7 @@ export function writeJsonFileSync<T extends object = object>(
   data: T,
   options?: JsonWriteOptions
 ): void {
-  const serializedJson = StormJSON.stringifyJson(data, options);
+  const serializedJson = StormJSON.stringifyJson(data);
 
   return writeFileSync(
     path,
@@ -111,7 +111,7 @@ export async function writeJsonFile<T extends object = object>(
   data: T,
   options?: JsonWriteOptions
 ): Promise<void> {
-  const serializedJson = StormJSON.stringifyJson(data, options);
+  const serializedJson = StormJSON.stringifyJson(data);
 
   return writeFile(
     path,

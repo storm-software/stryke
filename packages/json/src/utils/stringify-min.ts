@@ -24,7 +24,7 @@ import { isNumber } from "@stryke/types/type-checks/is-number";
  * @param spacing - The spacing to use for the stringification
  * @returns The stringified value
  */
-export const stringify = (
+export const stringifyMin = (
   value: unknown,
   spacing: string | number = " "
 ): string => {
@@ -46,7 +46,7 @@ export const stringify = (
   }
 
   if (Array.isArray(value)) {
-    return `[${space}${value.map(v => stringify(v, space)).join(`,${space}`)}${space}]`;
+    return `[${space}${value.map(v => stringifyMin(v, space)).join(`,${space}`)}${space}]`;
   }
   if (value instanceof Uint8Array) {
     return value.toString();
@@ -66,7 +66,7 @@ export const stringify = (
 
       return `{${space}${keys
         .map(
-          k => `${k}${space}=${space}${stringify((value as any)[k], space)}`
+          k => `${k}${space}=${space}${stringifyMin((value as any)[k], space)}`
         )
         .join(`,${space}`)}${space}}`;
     }

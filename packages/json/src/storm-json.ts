@@ -29,7 +29,7 @@ import { Buffer } from "buffer/";
 import { parse } from "jsonc-parser";
 import SuperJSON from "superjson";
 import { formatParseError } from "./utils/parse-error";
-import { stringify } from "./utils/stringify";
+import { stringifyMin } from "./utils/stringify-min";
 
 /**
  * A static JSON parser class used by Storm Software to serialize and deserialize JSON data
@@ -80,7 +80,7 @@ export class StormJSON extends SuperJSON {
    * Stringify the given value with superjson
    *
    */
-  public static override stringify(obj: any): string {
+  public static stringifyMin(obj: any): string {
     const customTransformer = StormJSON.instance.customTransformerRegistry.findApplicable(obj);
 
     let result = obj;
@@ -88,7 +88,17 @@ export class StormJSON extends SuperJSON {
       result = customTransformer.serialize(result);
     }
 
-    return stringify(result);
+    return stringifyMin(result);
+  }
+
+  /**
+   * Stringify the given value with superjson
+   *
+   * @param obj - The object to stringify
+   * @returns The stringified object
+   */
+  public static override stringify(obj: any): string {
+    return StormJSON.instance.stringify(obj);
   }
 
   /**
@@ -96,12 +106,9 @@ export class StormJSON extends SuperJSON {
    * By default the JSON string is formatted with a 2 space indentation to be easy readable.
    *
    * @param json - Object which should be serialized to JSON
-   * @param options - JSON serialize options
    * @returns the formatted JSON representation of the object
    */
-  public static stringifyJson(
-    json: any
-  ): string {
+  public static stringifyJson(json: any): string {
     return StormJSON.instance.stringify(json);
   }
 
