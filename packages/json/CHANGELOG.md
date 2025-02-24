@@ -1,3 +1,9 @@
+## 0.3.0 (2025-02-24)
+
+### Features
+
+- **json:** Update method signature on stringify functions ([f4b9300](https://github.com/storm-software/stryke/commit/f4b9300))
+
 ## 0.2.1 (2025-02-24)
 
 ### Bug Fixes
