@@ -1,3 +1,9 @@
+## 0.4.1 (2025-02-24)
+
+### Bug Fixes
+
+- **json:** Update JSON stringify method ([06a7482](https://github.com/storm-software/stryke/commit/06a7482))
+
 ## 0.4.0 (2025-02-24)
 
 ### Features
