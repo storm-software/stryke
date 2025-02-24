@@ -1,3 +1,13 @@
+## 0.4.0 (2025-02-24)
+
+### Features
+
+- **json:** Update the JSON stringify function signature ([3f2c1c8](https://github.com/storm-software/stryke/commit/3f2c1c8))
+
+### Bug Fixes
+
+- **json:** Resolve issue stringifying json result ([99a05a9](https://github.com/storm-software/stryke/commit/99a05a9))
+
 ## 0.3.0 (2025-02-24)
 
 ### Features
