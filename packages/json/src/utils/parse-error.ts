@@ -1,4 +1,4 @@
-/*-------------------------------------------------------------------
+/* -------------------------------------------------------------------
 
                        ⚡ Storm Software - Stryke
 
@@ -13,7 +13,7 @@
  Contact:         https://stormsoftware.com/contact
  License:         https://stormsoftware.com/projects/stryke/license
 
- -------------------------------------------------------------------*/
+ ------------------------------------------------------------------- */
 
 import type { ParseError } from "jsonc-parser";
 import { printParseErrorCode } from "jsonc-parser";
@@ -29,7 +29,7 @@ import { codeFrameColumns } from "./code-frames";
  */
 export function formatParseError(input: string, parseError: ParseError) {
   const { error, offset, length } = parseError;
-  let result = new LinesAndColumns(input).locationForIndex(offset);
+  const result = new LinesAndColumns(input).locationForIndex(offset);
   let line = result?.line ?? 0;
   let column = result?.column ?? 0;
 
@@ -37,17 +37,17 @@ export function formatParseError(input: string, parseError: ParseError) {
   column++;
 
   return (
-    `${printParseErrorCode(error)} in JSON at ${line}:${column}\n` +
-    codeFrameColumns(input, {
-      start: {
-        line,
-        column,
-      },
-      end: {
-        line,
-        column: column + length,
-      },
-    }) +
-    "\n"
+    `${printParseErrorCode(error)} in JSON at ${line}:${column}\n${
+      codeFrameColumns(input, {
+        start: {
+          line,
+          column
+        },
+        end: {
+          line,
+          column: column + length
+        }
+      })
+    }\n`
   );
 }

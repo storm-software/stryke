@@ -1,4 +1,4 @@
-/*-------------------------------------------------------------------
+/* -------------------------------------------------------------------
 
                        ⚡ Storm Software - Stryke
 
@@ -13,17 +13,17 @@
  Contact:         https://stormsoftware.com/contact
  License:         https://stormsoftware.com/projects/stryke/license
 
- -------------------------------------------------------------------*/
+ ------------------------------------------------------------------- */
 
-type Location = {
+interface Location {
   column: number;
   line: number;
-};
+}
 
-type NodeLocation = {
+interface NodeLocation {
   end?: Location;
   start?: Location;
-};
+}
 
 // Adapted from https://raw.githubusercontent.com/babel/babel/4108524/packages/babel-code-frame/src/index.js
 
@@ -38,20 +38,20 @@ const NEWLINE = /\r\n|[\n\r\u2028\u2029]/;
 function getMarkerLines(
   loc: NodeLocation,
   source: string[],
-  opts: { linesAbove?: number; linesBelow?: number } = {},
+  opts: { linesAbove?: number; linesBelow?: number } = {}
 ): {
-  start: number;
-  end: number;
-  markerLines: Record<number, boolean | [number, number]>;
-} {
+    start: number;
+    end: number;
+    markerLines: Record<number, boolean | [number, number]>;
+  } {
   const startLoc: Location = {
     column: 0,
     line: -1,
-    ...loc.start,
+    ...loc.start
   };
   const endLoc: Location = {
     ...startLoc,
-    ...loc.end,
+    ...loc.end
   };
   const { linesAbove = 2, linesBelow = 3 } = opts || {};
   const startLine = startLoc.line;
@@ -100,7 +100,7 @@ function getMarkerLines(
   return {
     start,
     end,
-    markerLines,
+    markerLines
   };
 }
 
@@ -111,7 +111,7 @@ export function codeFrameColumns(
     linesAbove?: number;
     linesBelow?: number;
     highlight?: (rawLines: string) => string;
-  } = {},
+  } = {}
 ): string {
   const lines = rawLines.split(NEWLINE);
   const { start, end, markerLines } = getMarkerLines(loc, lines, opts);
@@ -119,7 +119,7 @@ export function codeFrameColumns(
   const numberMaxWidth = String(end).length;
   const highlightedLines = opts.highlight ? opts.highlight(rawLines) : rawLines;
 
-  let frame = highlightedLines
+  const frame = highlightedLines
     .split(NEWLINE)
     .slice(start, end)
     .map((line, index) => {
@@ -139,7 +139,7 @@ export function codeFrameColumns(
             "\n ",
             gutter.replace(/\d/g, " "),
             markerSpacing,
-            "^".repeat(numberOfMarkers),
+            "^".repeat(numberOfMarkers)
           ].join("");
         }
         return [">", gutter, line, markerLine].join("");

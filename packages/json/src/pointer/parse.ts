@@ -1,4 +1,4 @@
-/*-------------------------------------------------------------------
+/* -------------------------------------------------------------------
 
                        ⚡ Storm Software - Stryke
 
@@ -13,10 +13,10 @@
  Contact:         https://stormsoftware.com/contact
  License:         https://stormsoftware.com/projects/stryke/license
 
- -------------------------------------------------------------------*/
+ ------------------------------------------------------------------- */
 
-import { isNumber } from "@stryke/types/type-checks/is-number";
 import type { JsonPointerPath } from "@stryke/types/utility-types/json";
+import { isNumber } from "@stryke/types/type-checks/is-number";
 
 const TILDA_ONE = /~1/g;
 const TILDA_ZERO = /~0/g;
@@ -61,7 +61,7 @@ export function parseJsonPointer(pointer: string): JsonPointerPath {
   return pointer
     .slice(1)
     .split("/")
-    .map((segment) => unescapePointerSegment(segment));
+    .map(segment => unescapePointerSegment(segment));
 }
 
 /**
@@ -74,7 +74,7 @@ export function formatJsonPointer(path: JsonPointerPath): string {
   }
 
   return (
-    "/" + path.map((segment) => escapePointerSegment(String(segment))).join("/")
+    `/${path.map(segment => escapePointerSegment(String(segment))).join("/")}`
   );
 }
 

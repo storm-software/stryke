@@ -1,4 +1,4 @@
-/*-------------------------------------------------------------------
+/* -------------------------------------------------------------------
 
                        ⚡ Storm Software - Stryke
 
@@ -13,7 +13,7 @@
  Contact:         https://stormsoftware.com/contact
  License:         https://stormsoftware.com/projects/stryke/license
 
- -------------------------------------------------------------------*/
+ ------------------------------------------------------------------- */
 
 import { isNumber } from "@stryke/types/type-checks/is-number";
 
@@ -26,7 +26,7 @@ import { isNumber } from "@stryke/types/type-checks/is-number";
  */
 export const stringify = (
   value: unknown,
-  spacing: string | number = " ",
+  spacing: string | number = " "
 ): string => {
   const space = isNumber(spacing) ? " ".repeat(spacing) : spacing;
 
@@ -46,12 +46,13 @@ export const stringify = (
   }
 
   if (Array.isArray(value)) {
-    return `[${space}${value.map((v) => stringify(v, space)).join("," + space)}${space}]`;
+    return `[${space}${value.map(v => stringify(v, space)).join(`,${space}`)}${space}]`;
   }
   if (value instanceof Uint8Array) {
-    return `${value}`;
+    return value.toString();
   }
 
+  // eslint-disable-next-line ts/switch-exhaustiveness-check
   switch (typeof value) {
     case "number": {
       return `${value}`;
@@ -65,11 +66,11 @@ export const stringify = (
 
       return `{${space}${keys
         .map(
-          (k) => `${k}${space}=${space}${stringify((value as any)[k], space)}`,
+          k => `${k}${space}=${space}${stringify((value as any)[k], space)}`
         )
-        .join("," + space)}${space}}`;
+        .join(`,${space}`)}${space}}`;
     }
+    default:
+      return "?";
   }
-
-  return "?";
 };

@@ -1,4 +1,4 @@
-/*-------------------------------------------------------------------
+/* -------------------------------------------------------------------
 
                        ⚡ Storm Software - Stryke
 
@@ -13,20 +13,18 @@
  Contact:         https://stormsoftware.com/contact
  License:         https://stormsoftware.com/projects/stryke/license
 
- -------------------------------------------------------------------*/
+ ------------------------------------------------------------------- */
 
-import { StormJSON } from "@stryke/json/storm-json";
 import type { JsonSerializeOptions } from "@stryke/json/types";
 import type { Abortable } from "node:events";
+import type { Mode, ObjectEncodingOptions, OpenMode, WriteFileOptions } from "node:fs";
+import type { Encoding } from "./constants";
 import {
-  type Mode,
-  type ObjectEncodingOptions,
-  type OpenMode,
-  type WriteFileOptions,
-  writeFileSync as writeFileSyncFs,
+
+  writeFileSync as writeFileSyncFs
 } from "node:fs";
 import { writeFile as writeFileFs } from "node:fs/promises";
-import type { Encoding } from "./constants";
+import { StormJSON } from "@stryke/json/storm-json";
 
 /**
  * Write the given content to the given file path
@@ -37,13 +35,13 @@ import type { Encoding } from "./constants";
 export const writeFileSync = (
   filePath: string,
   content?: any,
-  options?: WriteFileOptions,
+  options?: WriteFileOptions
 ): void => {
   if (!filePath) {
     throw new Error("No file path provided to write data");
   }
 
-  writeFileSyncFs(filePath, content ?? "", options);
+  writeFileSyncFs(filePath, content || "", options);
 };
 
 /**
@@ -53,23 +51,23 @@ export const writeFileSync = (
  * @param content - The content to write to the file
  * @returns The content of the file
  */
-export const writeFile = (
+export const writeFile = async (
   filePath: string,
   content?: any,
   options?:
     | (ObjectEncodingOptions & {
-        mode?: Mode | undefined;
-        flag?: OpenMode | undefined;
-        flush?: boolean | undefined;
-      } & Abortable)
+      mode?: Mode | undefined;
+      flag?: OpenMode | undefined;
+      flush?: boolean | undefined;
+    } & Abortable)
     | Encoding
-    | null,
+    | null
 ): Promise<void> => {
   if (!filePath) {
     throw new Error("No file path provided to read data");
   }
 
-  return writeFileFs(filePath, content ?? "", options);
+  return writeFileFs(filePath, content || "", options);
 };
 
 export interface JsonWriteOptions extends JsonSerializeOptions {
@@ -91,13 +89,13 @@ export interface JsonWriteOptions extends JsonSerializeOptions {
 export function writeJsonFileSync<T extends object = object>(
   path: string,
   data: T,
-  options?: JsonWriteOptions,
+  options?: JsonWriteOptions
 ): void {
   const serializedJson = StormJSON.stringifyJson(data, options);
 
   return writeFileSync(
     path,
-    options?.appendNewLine ? `${serializedJson}\n` : serializedJson,
+    options?.appendNewLine ? `${serializedJson}\n` : serializedJson
   );
 }
 
@@ -111,12 +109,12 @@ export function writeJsonFileSync<T extends object = object>(
 export async function writeJsonFile<T extends object = object>(
   path: string,
   data: T,
-  options?: JsonWriteOptions,
+  options?: JsonWriteOptions
 ): Promise<void> {
   const serializedJson = StormJSON.stringifyJson(data, options);
 
   return writeFile(
     path,
-    options?.appendNewLine ? `${serializedJson}\n` : serializedJson,
+    options?.appendNewLine ? `${serializedJson}\n` : serializedJson
   );
 }
