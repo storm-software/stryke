@@ -20,6 +20,7 @@ import type {
   Class,
   JsonParseOptions,
   JsonParserResult,
+  JsonSerializeOptions,
   JsonValue
 } from "./types";
 // import { Decimal } from "decimal.js";
@@ -29,7 +30,7 @@ import { Buffer } from "buffer/";
 import { parse } from "jsonc-parser";
 import SuperJSON from "superjson";
 import { formatParseError } from "./utils/parse-error";
-import { stringifyMin } from "./utils/stringify-min";
+import { stringifyJson } from "./utils/stringify-json";
 
 /**
  * A static JSON parser class used by Storm Software to serialize and deserialize JSON data
@@ -77,18 +78,22 @@ export class StormJSON extends SuperJSON {
   }
 
   /**
-   * Stringify the given value with superjson
+   * Serializes the given data to a JSON string.
+   * By default the JSON string is formatted with a 2 space indentation to be easy readable.
    *
+   * @param json - Object which should be serialized to JSON
+   * @param options - JSON serialize options
+   * @returns the formatted JSON representation of the object
    */
-  public static stringifyMin(obj: any): string {
-    const customTransformer = StormJSON.instance.customTransformerRegistry.findApplicable(obj);
+  public static stringifyJson<TJson>(json: TJson, options?: JsonSerializeOptions): string {
+    const customTransformer = StormJSON.instance.customTransformerRegistry.findApplicable(json);
 
-    let result = obj;
+    let result = json;
     if (customTransformer) {
-      result = customTransformer.serialize(result);
+      result = customTransformer.serialize(result) as TJson;
     }
 
-    return stringifyMin(result);
+    return stringifyJson(result, options?.spaces);
   }
 
   /**
@@ -99,17 +104,6 @@ export class StormJSON extends SuperJSON {
    */
   public static override stringify(obj: any): string {
     return StormJSON.instance.stringify(obj);
-  }
-
-  /**
-   * Serializes the given data to a JSON string.
-   * By default the JSON string is formatted with a 2 space indentation to be easy readable.
-   *
-   * @param json - Object which should be serialized to JSON
-   * @returns the formatted JSON representation of the object
-   */
-  public static stringifyJson(json: any): string {
-    return StormJSON.instance.stringify(json);
   }
 
   /**

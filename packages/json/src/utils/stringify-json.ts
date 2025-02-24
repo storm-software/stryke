@@ -24,29 +24,29 @@ import { isNumber } from "@stryke/types/type-checks/is-number";
  * @param spacing - The spacing to use for the stringification
  * @returns The stringified value
  */
-export const stringifyMin = (
+export const stringifyJson = (
   value: unknown,
-  spacing: string | number = " "
+  spacing: string | number = 2
 ): string => {
   const space = isNumber(spacing) ? " ".repeat(spacing) : spacing;
 
   switch (value) {
     case null: {
-      return "!n";
+      return "null";
     }
     case undefined: {
-      return "!u";
+      return "undefined";
     }
     case true: {
-      return "!t";
+      return "true";
     }
     case false: {
-      return "!f";
+      return "false";
     }
   }
 
   if (Array.isArray(value)) {
-    return `[${space}${value.map(v => stringifyMin(v, space)).join(`,${space}`)}${space}]`;
+    return `[${space}${value.map(v => stringifyJson(v, space)).join(`,${space}`)}${space}]`;
   }
   if (value instanceof Uint8Array) {
     return value.toString();
@@ -66,11 +66,11 @@ export const stringifyMin = (
 
       return `{${space}${keys
         .map(
-          k => `${k}${space}=${space}${stringifyMin((value as any)[k], space)}`
+          k => `${k}${space}=${space}${stringifyJson((value as any)[k], space)}`
         )
         .join(`,${space}`)}${space}}`;
     }
     default:
-      return "?";
+      return "null";
   }
 };

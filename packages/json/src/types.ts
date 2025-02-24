@@ -1,4 +1,4 @@
-/*-------------------------------------------------------------------
+/* -------------------------------------------------------------------
 
                        ⚡ Storm Software - Stryke
 
@@ -13,15 +13,15 @@
  Contact:         https://stormsoftware.com/contact
  License:         https://stormsoftware.com/projects/stryke/license
 
- -------------------------------------------------------------------*/
+ ------------------------------------------------------------------- */
 
 import type { ParseOptions } from "jsonc-parser";
 
 export type PrimitiveJsonValue = string | number | boolean | undefined | null;
 
-export type Class = {
+export interface Class {
   new (...args: any[]): any;
-};
+}
 
 export type JsonValue = PrimitiveJsonValue | JsonArray | JsonObject;
 

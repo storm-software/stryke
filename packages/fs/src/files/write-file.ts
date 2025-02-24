@@ -95,7 +95,7 @@ export function writeJsonFileSync<T extends object = object>(
 
   return writeFileSync(
     path,
-    options?.appendNewLine ? `${serializedJson}\n` : serializedJson
+    options?.appendNewLine ? `${serializedJson.json}\n` : serializedJson.json
   );
 }
 
