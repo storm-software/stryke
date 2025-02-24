@@ -17,5 +17,5 @@
 
 export * from "./code-frames";
 export * from "./parse-error";
-export * from "./stringify-json";
+export * from "./stringify";
 export * from "./strip-comments";

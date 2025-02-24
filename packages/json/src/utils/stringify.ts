@@ -24,7 +24,7 @@ import { isNumber } from "@stryke/types/type-checks/is-number";
  * @param spacing - The spacing to use for the stringification
  * @returns The stringified value
  */
-export const stringifyJson = (
+export const stringify = (
   value: unknown,
   spacing: string | number = 2
 ): string => {
@@ -46,7 +46,7 @@ export const stringifyJson = (
   }
 
   if (Array.isArray(value)) {
-    return `[${space}${value.map(v => stringifyJson(v, space)).join(`,${space}`)}${space}]`;
+    return `[${space}${value.map(v => stringify(v, space)).join(`,${space}`)}${space}]`;
   }
   if (value instanceof Uint8Array) {
     return value.toString();
@@ -58,7 +58,6 @@ export const stringifyJson = (
       return `${value}`;
     }
     case "string": {
-      // storm-ignore-next-line
       return JSON.stringify(value);
     }
     case "object": {
@@ -66,7 +65,7 @@ export const stringifyJson = (
 
       return `{${space}${keys
         .map(
-          k => `${k}${space}=${space}${stringifyJson((value as any)[k], space)}`
+          k => `${k}: ${space}${stringify((value as any)[k], space)}`
         )
         .join(`,${space}`)}${space}}`;
     }

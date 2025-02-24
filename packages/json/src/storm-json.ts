@@ -31,7 +31,7 @@ import { Buffer } from "buffer/";
 import { parse } from "jsonc-parser";
 import SuperJSON from "superjson";
 import { formatParseError } from "./utils/parse-error";
-import { stringifyJson } from "./utils/stringify-json";
+import { stringify } from "./utils/stringify";
 
 /**
  * A static JSON parser class used by Storm Software to serialize and deserialize JSON data
@@ -82,19 +82,19 @@ export class StormJSON extends SuperJSON {
    * Serializes the given data to a JSON string.
    * By default the JSON string is formatted with a 2 space indentation to be easy readable.
    *
-   * @param json - Object which should be serialized to JSON
+   * @param value - Object which should be serialized to JSON
    * @param options - JSON serialize options
    * @returns the formatted JSON representation of the object
    */
-  public static stringifyJson<TJson>(json: TJson, options?: JsonSerializeOptions): string {
-    const customTransformer = StormJSON.instance.customTransformerRegistry.findApplicable(json);
+  public static override stringify<T>(value: T, options?: JsonSerializeOptions): string {
+    const customTransformer = StormJSON.instance.customTransformerRegistry.findApplicable(value);
 
-    let result = json;
+    let result = value;
     if (customTransformer) {
-      result = customTransformer.serialize(result) as TJson;
+      result = customTransformer.serialize(result) as T;
     }
 
-    return stringifyJson((result as SuperJSONResult)?.json
+    return stringify((result as SuperJSONResult)?.json
       ? (result as SuperJSONResult)?.json
       : result,
     options?.spaces);
@@ -106,7 +106,7 @@ export class StormJSON extends SuperJSON {
    * @param obj - The object to stringify
    * @returns The stringified object
    */
-  public static override stringify(obj: any): string {
+  public static stringifyBase(obj: any): string {
     return StormJSON.instance.stringify(obj);
   }
 
