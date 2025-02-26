@@ -1,3 +1,9 @@
+## 0.4.0 (2025-02-26)
+
+### Features
+
+- **hash:** Added the `hashFolder` function ([c6e4ff3](https://github.com/storm-software/stryke/commit/c6e4ff3))
+
 ## 0.3.0 (2025-02-23)
 
 ### Features
