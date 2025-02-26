@@ -54,5 +54,5 @@ export const DEFAULT_ASSET_EXTS = [
   "otf",
   "ttf",
   // Archives (virtual files)
-  "zip",
+  "zip"
 ];

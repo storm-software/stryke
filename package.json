@@ -1,25 +1,29 @@
 {
   "name": "@stryke/monorepo",
-  "type": "module",
   "version": "0.0.1",
-  "private": true,
-  "packageManager": "pnpm@10.3.0",
+  "type": "module",
   "description": "🌩️ A monorepo containing TypeScript utility packages with shared functionality common to many Storm Software applications.",
+  "repository": "storm-software/stryke.git",
+  "homepage": "https://stormsoftware.com",
+  "bugs": {
+    "url": "https://stormsoftware.com/support",
+    "email": "support@stormsoftware.com"
+  },
   "author": {
     "name": "Storm Software",
     "email": "contact@stormsoftware.com",
     "url": "https://stormsoftware.com"
   },
-  "license": "Apache-2.0",
   "funding": {
     "type": "github",
     "url": "https://github.com/sponsors/storm-software"
   },
-  "homepage": "https://stormsoftware.com",
-  "repository": "storm-software/stryke.git",
-  "bugs": {
-    "url": "https://stormsoftware.com/support",
-    "email": "support@stormsoftware.com"
+  "license": "Apache-2.0",
+  "private": true,
+  "packageManager": "pnpm@10.3.0",
+  "engines": {
+    "node": ">=22.13.1",
+    "pnpm": ">=10.3.0"
   },
   "keywords": [
     "stryke",
@@ -33,10 +37,6 @@
     "sullivanpj",
     "monorepo"
   ],
-  "engines": {
-    "node": ">=22.13.1",
-    "pnpm": ">=10.3.0"
-  },
   "scripts": {
     "bootstrap": "pnpm exec zx tools/scripts/src/bootstrap.mjs",
     "build": "pnpm exec zx tools/scripts/src/build.mjs --prod",
@@ -163,6 +163,6 @@
       "nx"
     ]
   },
-  "triggerEmptyDevReleaseByIncrementingThisNumber": 0,
-  "prettier": "@storm-software/prettier/config.json"
+  "prettier": "@storm-software/prettier/config.json",
+  "triggerEmptyDevReleaseByIncrementingThisNumber": 0
 }

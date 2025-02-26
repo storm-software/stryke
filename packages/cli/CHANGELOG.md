@@ -2,7 +2,8 @@
 
 ### Features
 
-- **monorepo:** Update base ESLint packages and run on files ([c59cb8e](https://github.com/storm-software/stryke/commit/c59cb8e))
+- **monorepo:** Update base ESLint packages and run on files
+  ([c59cb8e](https://github.com/storm-software/stryke/commit/c59cb8e))
 
 ## 0.1.4 (2025-02-17)
 

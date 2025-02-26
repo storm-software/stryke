@@ -86,18 +86,24 @@ export class StormJSON extends SuperJSON {
    * @param options - JSON serialize options
    * @returns the formatted JSON representation of the object
    */
-  public static override stringify<T>(value: T, options?: JsonSerializeOptions): string {
-    const customTransformer = StormJSON.instance.customTransformerRegistry.findApplicable(value);
+  public static override stringify<T>(
+    value: T,
+    options?: JsonSerializeOptions
+  ): string {
+    const customTransformer =
+      StormJSON.instance.customTransformerRegistry.findApplicable(value);
 
     let result = value;
     if (customTransformer) {
       result = customTransformer.serialize(result) as T;
     }
 
-    return stringify((result as SuperJSONResult)?.json
-      ? (result as SuperJSONResult)?.json
-      : result,
-    options?.spaces);
+    return stringify(
+      (result as SuperJSONResult)?.json
+        ? (result as SuperJSONResult)?.json
+        : result,
+      options?.spaces
+    );
   }
 
   /**

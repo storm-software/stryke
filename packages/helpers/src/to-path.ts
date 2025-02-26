@@ -33,7 +33,7 @@ const PROPERTY_REGEXP = new RegExp(
     "|" +
     // Or match "" as the space between consecutive dots or empty brackets.
     String.raw`(?=(?:\.|\[\])(?:\.|\[\]|$))`,
-  "g",
+  "g"
 );
 
 /**

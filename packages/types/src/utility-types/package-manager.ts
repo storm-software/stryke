@@ -19,12 +19,12 @@ export enum PackageManagers {
   NPM = "npm",
   YARN = "yarn",
   PNPM = "pnpm",
-  BUN = "bun",
+  BUN = "bun"
 }
 
 export enum PackageManagerLockFiles {
   NPM = "package-lock.json",
   YARN = "yarn.lock",
   PNPM = "pnpm-lock.yaml",
-  BUN = "bun.lock",
+  BUN = "bun.lock"
 }

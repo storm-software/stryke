@@ -39,7 +39,7 @@ export const snakeCase = (input?: string, options?: SnakeCaseOptions) => {
     input
       ?.replace(
         /[A-Z]+/g,
-        (input?: string) => upperCaseFirst(input) ?? EMPTY_STRING,
+        (input?: string) => upperCaseFirst(input) ?? EMPTY_STRING
       )
       .split(/(?=[A-Z])|[\s._-]/)
       .map((x: string) => x.toLowerCase()) ?? [];

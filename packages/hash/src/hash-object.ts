@@ -104,7 +104,7 @@ const defaults: HashObjectOptions = Object.freeze({
   unorderedSets: false,
   excludeKeys: undefined,
   excludeValues: undefined,
-  replacer: undefined,
+  replacer: undefined
 });
 
 /**
@@ -128,7 +128,7 @@ export function hashObject(object: any, options?: HashObjectOptions): string {
 const defaultPrototypesKeys = Object.freeze([
   "prototype",
   "__proto__",
-  "constructor",
+  "constructor"
 ]);
 
 function createHasher(options: HashObjectOptions) {
@@ -215,10 +215,10 @@ function createHasher(options: HashObjectOptions) {
         }
 
         if (options.excludeKeys) {
-          keys = keys.filter((key) => {
+          keys = keys.filter(key => {
             return !options.excludeKeys!(key);
           });
-          extraKeys = extraKeys.filter((key) => {
+          extraKeys = extraKeys.filter(key => {
             return !options.excludeKeys!(key);
           });
         }
@@ -393,7 +393,7 @@ function createHasher(options: HashObjectOptions) {
       }
       throw new Error(
         "Hashing Blob objects is currently not supported\n" +
-          'Use "options.replacer" or "options.ignoreUnknown"\n',
+          'Use "options.replacer" or "options.ignoreUnknown"\n'
       );
     },
     domwindow() {
@@ -453,7 +453,7 @@ function createHasher(options: HashObjectOptions) {
     },
     tlswrap() {
       return write("tlswrap");
-    },
+    }
   };
 }
 

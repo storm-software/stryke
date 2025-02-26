@@ -32,15 +32,15 @@ import { CLICommandType, type ResolvedCommand } from "../types";
 export const getCommand = async (
   command: CLICommandType = CLICommandType.EXECUTE,
   args: string[] = [],
-  cwd?: string,
+  cwd?: string
 ): Promise<ResolvedCommand> => {
   return getCommandBase(
     (await detect({
       autoInstall: true,
       cwd,
-      programmatic: true,
+      programmatic: true
     })) ?? "npm",
     command,
-    args,
+    args
   );
 };

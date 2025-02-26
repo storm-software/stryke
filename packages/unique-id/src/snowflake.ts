@@ -118,13 +118,13 @@ function ToBinaryString(snowflake: SnowflakeResolvable): string {
 function extractBits(
   snowflake: SnowflakeResolvable,
   start: number,
-  length?: number,
+  length?: number
 ): number {
   return Number.parseInt(
     length
       ? ToBinaryString(snowflake).slice(start, start + length)
       : ToBinaryString(snowflake).slice(Math.max(0, start)),
-    2,
+    2
   );
 }
 
@@ -154,7 +154,7 @@ function extractBits(
 export function snowflake({
   shardId,
   epoch,
-  timestamp,
+  timestamp
 }: ISnowflakeGeneratorOptions): string {
   let result =
     (BigInt(
@@ -162,7 +162,7 @@ export function snowflake({
         ? timestamp instanceof Date
           ? timestamp.valueOf()
           : new Date(timestamp).valueOf()
-        : Date.now(),
+        : Date.now()
     ) -
       BigInt(epoch ?? DEFAULT_EPOCH)) <<
     BigInt(22);
@@ -180,7 +180,7 @@ export function snowflake({
  * @returns Either the DeconstructedSnowflake object
  */
 export function deconstructSnowflake(
-  snowflake: SnowflakeResolvable,
+  snowflake: SnowflakeResolvable
 ): DeconstructedSnowflake {
   const binary = ToBinaryString(snowflake);
 
@@ -189,7 +189,7 @@ export function deconstructSnowflake(
     timestamp: extractBits(snowflake, 1, 41),
     shard_id: extractBits(snowflake, 42, 10),
     sequence: extractBits(snowflake, 52),
-    binary,
+    binary
   };
 }
 

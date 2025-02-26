@@ -75,7 +75,7 @@ export type GetField<T, P> = P extends `${infer Left}.${infer Right}`
  */
 export function getField<T extends object, K extends keyof T>(
   object: T,
-  path: K | readonly [K],
+  path: K | readonly [K]
 ): T[K];
 /**
  * Retrieves the value at a given path from an object. If the resolved value is undefined, the defaultValue is returned instead.
@@ -89,7 +89,7 @@ export function getField<T extends object, K extends keyof T>(
  */
 export function getField<T extends object, K extends keyof T>(
   object: T | null | undefined,
-  path: K | readonly [K],
+  path: K | readonly [K]
 ): T[K] | undefined;
 /**
  * Retrieves the value at a given path from an object. If the resolved value is undefined, the defaultValue is returned instead.
@@ -106,7 +106,7 @@ export function getField<T extends object, K extends keyof T>(
 export function getField<T extends object, K extends keyof T, D>(
   object: T | null | undefined,
   path: K | readonly [K],
-  defaultValue: D,
+  defaultValue: D
 ): Exclude<T[K], undefined> | D;
 /**
  * Retrieves the value at a given path from an object. If the resolved value is undefined, the defaultValue is returned instead.
@@ -122,7 +122,7 @@ export function getField<T extends object, K extends keyof T, D>(
 export function getField<
   T extends object,
   K1 extends keyof T,
-  K2 extends keyof T[K1],
+  K2 extends keyof T[K1]
 >(object: T, path: readonly [K1, K2]): T[K1][K2];
 /**
  * Retrieves the value at a given path from an object. If the resolved value is undefined, the defaultValue is returned instead.
@@ -138,7 +138,7 @@ export function getField<
 export function getField<
   T extends object,
   K1 extends keyof T,
-  K2 extends keyof T[K1],
+  K2 extends keyof T[K1]
 >(object: T | null | undefined, path: readonly [K1, K2]): T[K1][K2] | undefined;
 /**
  * Retrieves the value at a given path from an object. If the resolved value is undefined, the defaultValue is returned instead.
@@ -157,11 +157,11 @@ export function getField<
   T extends object,
   K1 extends keyof T,
   K2 extends keyof T[K1],
-  D,
+  D
 >(
   object: T | null | undefined,
   path: readonly [K1, K2],
-  defaultValue: D,
+  defaultValue: D
 ): Exclude<T[K1][K2], undefined> | D;
 /**
  * Retrieves the value at a given path from an object. If the resolved value is undefined, the defaultValue is returned instead.
@@ -179,7 +179,7 @@ export function getField<
   T extends object,
   K1 extends keyof T,
   K2 extends keyof T[K1],
-  K3 extends keyof T[K1][K2],
+  K3 extends keyof T[K1][K2]
 >(object: T, path: readonly [K1, K2, K3]): T[K1][K2][K3];
 /**
  * Retrieves the value at a given path from an object. If the resolved value is undefined, the defaultValue is returned instead.
@@ -197,10 +197,10 @@ export function getField<
   T extends object,
   K1 extends keyof T,
   K2 extends keyof T[K1],
-  K3 extends keyof T[K1][K2],
+  K3 extends keyof T[K1][K2]
 >(
   object: T | null | undefined,
-  path: readonly [K1, K2, K3],
+  path: readonly [K1, K2, K3]
 ): T[K1][K2][K3] | undefined;
 /**
  * Retrieves the value at a given path from an object. If the resolved value is undefined, the defaultValue is returned instead.
@@ -221,11 +221,11 @@ export function getField<
   K1 extends keyof T,
   K2 extends keyof T[K1],
   K3 extends keyof T[K1][K2],
-  D,
+  D
 >(
   object: T | null | undefined,
   path: readonly [K1, K2, K3],
-  defaultValue: D,
+  defaultValue: D
 ): Exclude<T[K1][K2][K3], undefined> | D;
 /**
  * Retrieves the value at a given path from an object. If the resolved value is undefined, the defaultValue is returned instead.
@@ -245,7 +245,7 @@ export function getField<
   K1 extends keyof T,
   K2 extends keyof T[K1],
   K3 extends keyof T[K1][K2],
-  K4 extends keyof T[K1][K2][K3],
+  K4 extends keyof T[K1][K2][K3]
 >(object: T, path: readonly [K1, K2, K3, K4]): T[K1][K2][K3][K4];
 /**
  * Retrieves the value at a given path from an object. If the resolved value is undefined, the defaultValue is returned instead.
@@ -265,10 +265,10 @@ export function getField<
   K1 extends keyof T,
   K2 extends keyof T[K1],
   K3 extends keyof T[K1][K2],
-  K4 extends keyof T[K1][K2][K3],
+  K4 extends keyof T[K1][K2][K3]
 >(
   object: T | null | undefined,
-  path: readonly [K1, K2, K3, K4],
+  path: readonly [K1, K2, K3, K4]
 ): T[K1][K2][K3][K4] | undefined;
 /**
  * Retrieves the value at a given path from an object. If the resolved value is undefined, the defaultValue is returned instead.
@@ -291,11 +291,11 @@ export function getField<
   K2 extends keyof T[K1],
   K3 extends keyof T[K1][K2],
   K4 extends keyof T[K1][K2][K3],
-  D,
+  D
 >(
   object: T | null | undefined,
   path: readonly [K1, K2, K3, K4],
-  defaultValue: D,
+  defaultValue: D
 ): Exclude<T[K1][K2][K3][K4], undefined> | D;
 /**
  * Retrieves the value at a given path from an object with numeric keys. If the resolved value is undefined, the defaultValue is returned instead.
@@ -318,7 +318,7 @@ export function getField<T>(object: Record<number, T>, path: number): T;
  */
 export function getField<T>(
   object: Record<number, T> | null | undefined,
-  path: number,
+  path: number
 ): T | undefined;
 /**
  * Retrieves the value at a given path from an object with numeric keys. If the resolved value is undefined, the defaultValue is returned instead.
@@ -334,7 +334,7 @@ export function getField<T>(
 export function getField<T, D>(
   object: Record<number, T> | null | undefined,
   path: number,
-  defaultValue: D,
+  defaultValue: D
 ): T | D;
 /**
  * Retrieves the value at a given path from a null or undefined object, returning the default value.
@@ -349,7 +349,7 @@ export function getField<T, D>(
 export function getField<D>(
   object: null | undefined,
   path: PropertyKey,
-  defaultValue: D,
+  defaultValue: D
 ): D;
 /**
  * Retrieves the value at a given path from a null or undefined object, returning undefined.
@@ -360,7 +360,7 @@ export function getField<D>(
  */
 export function getField(
   object: null | undefined,
-  path: PropertyKey,
+  path: PropertyKey
 ): undefined;
 /**
  * Retrieves the value at a given path from a string-keyed object. If the resolved value is undefined, the defaultValue is returned instead.
@@ -374,7 +374,7 @@ export function getField(
  */
 export function getField<T, P extends string>(
   data: T,
-  path: P,
+  path: P
 ): string extends P ? any : GetField<T, P>;
 /**
  * Retrieves the value at a given path from a string-keyed object. If the resolved value is undefined, the defaultValue is returned instead.
@@ -391,7 +391,7 @@ export function getField<T, P extends string>(
 export function getField<T, P extends string, D = GetField<T, P>>(
   data: T,
   path: P,
-  defaultValue: D,
+  defaultValue: D
 ): Exclude<GetField<T, P>, null | undefined> | D;
 /**
  * Retrieves the value at a given path from an object. If the resolved value is undefined, the defaultValue is returned instead.
@@ -404,7 +404,7 @@ export function getField<T, P extends string, D = GetField<T, P>>(
 export function getField(
   object: unknown,
   path: PropertyKey | readonly PropertyKey[],
-  defaultValue?: unknown,
+  defaultValue?: unknown
 ): any;
 /**
  * Retrieves the value at a given path from an object. If the resolved value is undefined, the defaultValue is returned instead.
@@ -417,7 +417,7 @@ export function getField(
 export function getField(
   object: any,
   path: PropertyKey | readonly PropertyKey[],
-  defaultValue?: any,
+  defaultValue?: any
 ): any {
   if (object === null) {
     return defaultValue;
@@ -472,7 +472,7 @@ export function getField(
 function getWithPath(
   object: any,
   path: readonly PropertyKey[],
-  defaultValue?: any,
+  defaultValue?: any
 ): any {
   if (path.length === 0) {
     return defaultValue;

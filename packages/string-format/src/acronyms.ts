@@ -55,5 +55,5 @@ export const ACRONYMS = [
   "VM",
   "XML",
   "XSS",
-  "XSRF",
+  "XSRF"
 ];

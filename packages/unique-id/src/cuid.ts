@@ -51,7 +51,7 @@ function createEntropy(length = 4, random = Math.random) {
 
   while (entropy.length < length) {
     entropy += Math.floor(random() * CUID_LARGE_LENGTH).toString(
-      CUID_LARGE_LENGTH,
+      CUID_LARGE_LENGTH
     );
   }
   return entropy;

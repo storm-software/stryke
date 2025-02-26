@@ -151,7 +151,7 @@ export type FirstArrayElement<TArray extends UnknownArrayOrTuple> =
  */
 export type LastArrayElement<
   Elements extends readonly unknown[],
-  ElementBeforeTailingSpreadElement = never,
+  ElementBeforeTailingSpreadElement = never
 > =
   // If the last element of an array is a spread element, the `LastArrayElement` result should be `'the type of the element before the spread element' | 'the type of the spread element'`.
   Elements extends readonly []
@@ -178,7 +178,7 @@ export type LastArrayElement<
  */
 export type StaticPartOfArray<
   T extends UnknownArray,
-  Result extends UnknownArray = [],
+  Result extends UnknownArray = []
 > = T extends unknown
   ? number extends T["length"]
     ? T extends readonly [infer U, ...infer V]
@@ -204,4 +204,4 @@ export type VariablePartOfArray<T extends UnknownArray> = T extends unknown
   : never; // Should never happen
 
 export const filterEmpty = <T>(values: (T | null | undefined)[] = []): T[] =>
-  values.filter((value) => !isEmpty(value)) as T[];
+  values.filter(value => !isEmpty(value)) as T[];

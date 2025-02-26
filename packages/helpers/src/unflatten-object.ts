@@ -49,12 +49,12 @@ export function unflattenObject<
   TObject extends Record<string, any> = Record<string, any>,
   TDeepKeyObject extends {
     [TKey in DeepKey<TObject>]: DeepValue<TObject, TKey>;
-  } = { [TKey in DeepKey<TObject>]: DeepValue<TObject, TKey> },
+  } = { [TKey in DeepKey<TObject>]: DeepValue<TObject, TKey> }
 >(deepKeyObject: TDeepKeyObject): TObject {
   return Object.entries(deepKeyObject).reduce(
     (ret: TObject, [key, value]: [string, any]) => {
       return setField<TObject>(ret, key as DeepKey<TObject>, value);
     },
-    {} as TObject,
+    {} as TObject
   );
 }

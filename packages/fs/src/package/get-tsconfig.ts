@@ -17,7 +17,7 @@
 
 import {
   findFileName,
-  findFilePath,
+  findFilePath
 } from "@stryke/path/utilities/file-path-fns";
 import { EMPTY_STRING } from "@stryke/types/utility-types/base";
 import fs from "node:fs";
@@ -43,11 +43,11 @@ const isEscaped = (jsonString: string, quotePosition: number) => {
 
 const stripJsonComments = (
   jsonString: string,
-  { whitespace = true, trailingCommas = false } = {},
+  { whitespace = true, trailingCommas = false } = {}
 ) => {
   if (typeof jsonString !== "string") {
     throw new TypeError(
-      `Expected argument \`jsonString\` to be a \`string\`, got \`${typeof jsonString}\``,
+      `Expected argument \`jsonString\` to be a \`string\`, got \`${typeof jsonString}\``
     );
   }
 
@@ -155,7 +155,7 @@ const req = createRequire(import.meta.url);
 const findUp = (
   name: string,
   startDir: string,
-  stopDir = path.parse(startDir).root,
+  stopDir = path.parse(startDir).root
 ) => {
   let dir = startDir;
   while (dir !== stopDir) {
@@ -188,7 +188,7 @@ const resolveTsConfigFromExtends = (cwd: string, name: string) => {
 const loadTsConfigInternal = (
   _dir = process.cwd(),
   name = "tsconfig.json",
-  isExtends = false,
+  isExtends = false
 ) => {
   let _a: any;
   let _b: any;
@@ -208,7 +208,7 @@ const loadTsConfigInternal = (
   if ((_a = data.compilerOptions) === null ? void 0 : _a.baseUrl) {
     data.compilerOptions.baseUrl = path.join(
       configDir,
-      data.compilerOptions.baseUrl,
+      data.compilerOptions.baseUrl
     );
   }
   const extendsFiles = [];
@@ -229,8 +229,8 @@ const loadTsConfigInternal = (
             ...((_b = parentConfig === null ? void 0 : parentConfig.data) ===
             null
               ? void 0
-              : _b.compilerOptions),
-          },
+              : _b.compilerOptions)
+          }
         });
         extendsFiles.push(...parentConfig.files);
       }
@@ -240,15 +240,15 @@ const loadTsConfigInternal = (
       ...data,
       compilerOptions: {
         ...extendsData.compilerOptions,
-        ...data.compilerOptions,
-      },
+        ...data.compilerOptions
+      }
     });
   }
   data.extends = undefined;
   return {
     path: id,
     data,
-    files: [...extendsFiles, id],
+    files: [...extendsFiles, id]
   };
 };
 

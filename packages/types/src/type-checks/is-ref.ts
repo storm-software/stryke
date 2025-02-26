@@ -24,7 +24,7 @@ import { RefObject } from "../utility-types/base";
  * @returns An indicator specifying if the object provided is of type ref
  */
 export const isRef = <TRef = unknown>(
-  value: unknown,
+  value: unknown
 ): value is RefObject<TRef> => {
   try {
     return (value as RefObject<TRef>)?.current !== undefined;

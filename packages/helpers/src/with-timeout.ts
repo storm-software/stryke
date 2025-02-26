@@ -38,7 +38,7 @@ import { timeout } from "./timeout";
  */
 export async function withTimeout<T>(
   run: () => Promise<T>,
-  ms: number,
+  ms: number
 ): Promise<T> {
   return Promise.race([run(), timeout(ms) as T]);
 }

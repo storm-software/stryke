@@ -28,7 +28,7 @@ import { constants, copyFileSync, cpSync, type CopySyncOptions } from "node:fs";
 export const copyFiles = (
   from: string,
   to: string,
-  options?: CopySyncOptions,
+  options?: CopySyncOptions
 ) => {
   cpSync(from, to, options);
 };

@@ -106,5 +106,5 @@ export const CLICommandType = {
   UPGRADE_INTERACTIVE: "upgrade-interactive" as CLICommandType,
   EXECUTE: "execute" as CLICommandType,
   UNINSTALL: "uninstall" as CLICommandType,
-  GLOBAL_UNINSTALL: "global_uninstall" as CLICommandType,
+  GLOBAL_UNINSTALL: "global_uninstall" as CLICommandType
 };

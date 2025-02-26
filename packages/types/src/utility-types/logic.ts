@@ -44,7 +44,7 @@ export type IsNotFalse<T extends boolean> = [T] extends [false] ? false : true;
 
 export type Or<A extends boolean, B extends boolean> = [
   A,
-  B,
+  B
 ][number] extends false
   ? false
   : true extends [IsEqual<A, true>, IsEqual<B, true>][number]
@@ -52,7 +52,7 @@ export type Or<A extends boolean, B extends boolean> = [
     : never;
 export type And<A extends boolean, B extends boolean> = [
   A,
-  B,
+  B
 ][number] extends true
   ? true
   : true extends [IsEqual<A, false>, IsEqual<B, false>][number]
@@ -73,7 +73,7 @@ export type And<A extends boolean, B extends boolean> = [
  */
 export type PositiveNumericCharacterGt<
   A extends string,
-  B extends string,
+  B extends string
 > = NumericString extends `${infer HeadA}${A}${infer _TailA}`
   ? NumericString extends `${infer HeadB}${B}${infer _TailB}`
     ? HeadA extends `${HeadB}${infer _}${infer __}`
@@ -96,7 +96,7 @@ export type PositiveNumericCharacterGt<
  */
 export type SameLengthPositiveNumericStringGt<
   A extends string,
-  B extends string,
+  B extends string
 > = A extends `${infer FirstA}${infer RestA}`
   ? B extends `${infer FirstB}${infer RestB}`
     ? FirstA extends FirstB
@@ -124,12 +124,12 @@ type NumericString = "0123456789";
  */
 export type PositiveNumericStringGt<
   A extends string,
-  B extends string,
+  B extends string
 > = A extends B
   ? false
   : [
         BuildTuple<StringLength<A>, 0>,
-        BuildTuple<StringLength<B>, 0>,
+        BuildTuple<StringLength<B>, 0>
       ] extends infer R extends [readonly unknown[], readonly unknown[]]
     ? R[0] extends [...R[1], ...infer Remain extends readonly unknown[]]
       ? 0 extends Remain["length"]
@@ -152,7 +152,7 @@ export type GreaterThan<A extends number, B extends number> = number extends
         IsEqual<A, PositiveInfinity>,
         IsEqual<A, NegativeInfinity>,
         IsEqual<B, PositiveInfinity>,
-        IsEqual<B, NegativeInfinity>,
+        IsEqual<B, NegativeInfinity>
       ] extends infer R extends [boolean, boolean, boolean, boolean]
     ? Or<
         And<IsEqual<R[0], true>, IsEqual<R[2], false>>,
@@ -168,7 +168,7 @@ export type GreaterThan<A extends number, B extends number> = number extends
           ? false
           : [IsNegative<A>, IsNegative<B>] extends infer R extends [
                 boolean,
-                boolean,
+                boolean
               ]
             ? [true, false] extends R
               ? false
@@ -184,7 +184,7 @@ export type GreaterThan<A extends number, B extends number> = number extends
     : never;
 export type GreaterThanOrEqual<
   A extends number,
-  B extends number,
+  B extends number
 > = number extends A | B ? never : A extends B ? true : GreaterThan<A, B>;
 
 /**
@@ -204,7 +204,7 @@ export type GreaterThanOrEqual<
  */
 export type ArrayMin<
   A extends number[],
-  Result extends number = PositiveInfinity,
+  Result extends number = PositiveInfinity
 > = number extends A[number]
   ? never
   : A extends [infer F extends number, ...infer R extends number[]]
@@ -230,7 +230,7 @@ export type ArrayMin<
  */
 export type ArrayMax<
   A extends number[],
-  Result extends number = NegativeInfinity,
+  Result extends number = NegativeInfinity
 > = number extends A[number]
   ? never
   : A extends [infer F extends number, ...infer R extends number[]]
@@ -265,7 +265,7 @@ export type Subtract<A extends number, B extends number> = number extends A | B
         IsEqual<A, PositiveInfinity>,
         IsEqual<A, NegativeInfinity>,
         IsEqual<B, PositiveInfinity>,
-        IsEqual<B, NegativeInfinity>,
+        IsEqual<B, NegativeInfinity>
       ] extends infer R extends [boolean, boolean, boolean, boolean]
     ? Or<
         And<IsEqual<R[0], true>, IsEqual<R[2], false>>,
@@ -300,7 +300,7 @@ export type Sum<A extends number, B extends number> = number extends A | B
         IsEqual<A, PositiveInfinity>,
         IsEqual<A, NegativeInfinity>,
         IsEqual<B, PositiveInfinity>,
-        IsEqual<B, NegativeInfinity>,
+        IsEqual<B, NegativeInfinity>
       ] extends infer R extends [boolean, boolean, boolean, boolean]
     ? Or<
         And<IsEqual<R[0], true>, IsEqual<R[3], false>>,

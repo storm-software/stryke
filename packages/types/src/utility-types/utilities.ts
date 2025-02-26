@@ -43,7 +43,7 @@ export type Pretty<T> = { [K in keyof T]: T[K] } & {};
 
 export type ComputeRange<
   N extends number,
-  Result extends unknown[] = [],
+  Result extends unknown[] = []
 > = Result["length"] extends N
   ? Result
   : ComputeRange<N, [...Result, Result["length"]]>;

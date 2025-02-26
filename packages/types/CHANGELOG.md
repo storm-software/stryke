@@ -2,13 +2,15 @@
 
 ### Features
 
-- **types:** Updated definition for package.json type ([d267f32](https://github.com/storm-software/stryke/commit/d267f32))
+- **types:** Updated definition for package.json type
+  ([d267f32](https://github.com/storm-software/stryke/commit/d267f32))
 
 ## 0.4.0 (2025-02-23)
 
 ### Features
 
-- **monorepo:** Update base ESLint packages and run on files ([c59cb8e](https://github.com/storm-software/stryke/commit/c59cb8e))
+- **monorepo:** Update base ESLint packages and run on files
+  ([c59cb8e](https://github.com/storm-software/stryke/commit/c59cb8e))
 
 ## 0.3.1 (2025-02-18)
 

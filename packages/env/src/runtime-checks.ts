@@ -95,11 +95,11 @@ const runtimeChecks: [boolean, RuntimeName][] = [
   [isFastly, "fastly"],
   [isDeno, "deno"],
   [isBun, "bun"],
-  [isNode, "node"],
+  [isNode, "node"]
 ];
 
 function detectRuntime(): RuntimeInfo | undefined {
-  const detectedRuntime = runtimeChecks.find((check) => check[0]);
+  const detectedRuntime = runtimeChecks.find(check => check[0]);
 
   if (detectedRuntime) {
     const name = detectedRuntime[1];

@@ -38,7 +38,7 @@ export const isFunction = (value: unknown): value is AnyFunction => {
       value instanceof Function ||
       typeof value === "function" ||
       Boolean(
-        value?.constructor && (value as any)?.call && (value as any)?.apply,
+        value?.constructor && (value as any)?.call && (value as any)?.apply
       ) ||
       isSyncFunction(value) ||
       isAsyncFunction(value)

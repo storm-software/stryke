@@ -44,7 +44,7 @@
  */
 export function throttle<F extends (...args: any[]) => void>(
   func: F,
-  throttleMs: number,
+  throttleMs: number
 ): F {
   let lastCallTime: number | null;
 

@@ -28,7 +28,7 @@ const cloneUnlessOtherwiseSpecified = (value: any, options?: any) => {
 };
 
 const defaultArrayMerge = (target: any[], source: any[], options?: any) => {
-  return [...target, ...source].map((element) => {
+  return [...target, ...source].map(element => {
     return cloneUnlessOtherwiseSpecified(element, options);
   });
 };
@@ -46,17 +46,17 @@ const getKeys = (target: Record<string, any>) => {
   return [
     ...Object.keys(target),
     ...((Object.getOwnPropertySymbols
-      ? Object.getOwnPropertySymbols(target).filter((symbol) => {
+      ? Object.getOwnPropertySymbols(target).filter(symbol => {
           return Object.propertyIsEnumerable.call(target, symbol);
         })
-      : []) as unknown as string[]),
+      : []) as unknown as string[])
   ];
 };
 
 const mergeObject = (
   target: Record<string, any>,
   source: Record<string, any>,
-  options?: any,
+  options?: any
 ) => {
   const destination: Record<string, any> = {};
   if (options.isMergeableObject(target)) {
@@ -84,7 +84,7 @@ const mergeObject = (
 export const deepMerge = <X = any, Y = any, Z = X & Y>(
   target: X,
   source: Y,
-  options: any = {},
+  options: any = {}
 ): Z => {
   if (!target || !source) {
     return (target || source) as Z;

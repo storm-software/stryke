@@ -16,7 +16,7 @@
  -------------------------------------------------------------------*/
 
 export function isTypedArray(
-  obj: any,
+  obj: any
 ): obj is
   | Uint8Array
   | Uint8ClampedArray

@@ -63,12 +63,12 @@ const areInputsEqual = (newInputs: any[], lastInputs: any[]) => {
  */
 export function useMemoStable<TResult>(
   getResult: () => TResult,
-  inputs?: any[],
+  inputs?: any[]
 ): TResult {
   // using useState to generate initial value as it is lazy
   const initial: Cache<TResult> = useState(() => ({
     inputs,
-    result: getResult(),
+    result: getResult()
   }))[0];
   const isFirstRun = useRef<boolean>(true);
   const committed = useRef<Cache<TResult>>(initial);
@@ -79,7 +79,7 @@ export function useMemoStable<TResult>(
     Boolean(
       inputs &&
         committed.current.inputs &&
-        areInputsEqual(inputs, committed.current.inputs),
+        areInputsEqual(inputs, committed.current.inputs)
     );
 
   // create a new cache if required
@@ -89,9 +89,9 @@ export function useMemoStable<TResult>(
         ? committed.current
         : {
             inputs,
-            result: getResult(),
+            result: getResult()
           },
-    [inputs, getResult, useCache],
+    [inputs, getResult, useCache]
   );
 
   // commit the cache

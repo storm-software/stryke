@@ -57,7 +57,7 @@ export interface DebounceOptions {
 export function debounce<F extends (...args: any[]) => void>(
   func: F,
   debounceMs: number,
-  { signal }: DebounceOptions = {},
+  { signal }: DebounceOptions = {}
 ): F & { cancel: () => void } {
   let timeoutId: ReturnType<typeof setTimeout> | null = null;
 

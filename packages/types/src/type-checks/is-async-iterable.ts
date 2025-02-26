@@ -25,7 +25,7 @@ import { isObject } from "./is-object";
  * @returns An indicator specifying if the object provided is `AsyncIterable`
  */
 export const isAsyncIterable = (
-  value: unknown,
+  value: unknown
 ): value is AsyncIterable<unknown> => {
   return isObject(value) && !isNull(value) && Symbol.asyncIterator in value;
 };

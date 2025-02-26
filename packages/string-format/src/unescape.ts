@@ -20,7 +20,7 @@ const htmlUnescapes: Record<string, string> = {
   "&lt;": "<",
   "&gt;": ">",
   "&quot;": '"',
-  "&#39;": "'",
+  "&#39;": "'"
 };
 
 /**
@@ -41,6 +41,6 @@ const htmlUnescapes: Record<string, string> = {
 export function unescape(str: string): string {
   return str.replace(
     /&(?:amp|lt|gt|quot|#0*39);/g,
-    (match) => htmlUnescapes[match] || "'",
+    match => htmlUnescapes[match] || "'"
   );
 }

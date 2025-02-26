@@ -21,7 +21,7 @@ export enum FileStatus {
   INITIALIZED = "initialized",
   VALIDATED = "validated",
   UPLOADED = "uploaded",
-  FAILED = "failed",
+  FAILED = "failed"
 }
 
 /**

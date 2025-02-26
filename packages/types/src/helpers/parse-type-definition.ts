@@ -18,7 +18,7 @@
 import { isObject, isString } from "../type-checks";
 import type {
   TypeDefinition,
-  TypeDefinitionParameter,
+  TypeDefinitionParameter
 } from "../utility-types/configuration";
 
 /**
@@ -28,7 +28,7 @@ import type {
  * @returns The parsed type definition
  */
 export const parseTypeDefinition = (
-  param: TypeDefinitionParameter,
+  param: TypeDefinitionParameter
 ): TypeDefinition | undefined => {
   if (isString(param)) {
     if (param.includes(":")) {
@@ -36,7 +36,7 @@ export const parseTypeDefinition = (
       if (params.length > 1 && params[0]) {
         return {
           file: params[0],
-          name: params[1],
+          name: params[1]
         };
       }
     }
@@ -46,20 +46,20 @@ export const parseTypeDefinition = (
       if (params.length > 1 && params[0]) {
         return {
           file: params[0],
-          name: params[1],
+          name: params[1]
         };
       }
     }
 
     return {
-      file: param,
+      file: param
     };
   }
 
   if (isObject(param)) {
     return {
       file: param.file,
-      name: param.name,
+      name: param.name
     };
   }
 

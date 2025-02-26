@@ -18,20 +18,20 @@
 import { StormJSON } from "@stryke/json/storm-json";
 import {
   type PackageResolvingOptions,
-  resolvePackage,
+  resolvePackage
 } from "@stryke/path/resolve";
 import {
   exists,
   findFileName,
   findFilePath,
-  joinPaths,
+  joinPaths
 } from "@stryke/path/utilities";
 import { getParentPath } from "@stryke/path/utilities/get-parent-path";
 import { getWorkspaceRoot } from "@stryke/path/workspace/get-workspace-root";
 import type { PackageJson } from "@stryke/types/utility-types/package-json";
 import {
   PackageManagerLockFiles,
-  PackageManagers,
+  PackageManagers
 } from "@stryke/types/utility-types/package-manager";
 import { readFile } from "node:fs/promises";
 
@@ -46,9 +46,9 @@ export function getPackageManager(dir = getWorkspaceRoot()): PackageManagers {
       PackageManagerLockFiles.NPM,
       PackageManagerLockFiles.YARN,
       PackageManagerLockFiles.PNPM,
-      PackageManagerLockFiles.BUN,
+      PackageManagerLockFiles.BUN
     ],
-    dir,
+    dir
   );
 
   if (!lockFile) {
@@ -101,7 +101,7 @@ async function searchPackageJSON(dir: string) {
 
 async function getPackageJsonPath(
   name: string,
-  options: PackageResolvingOptions = {},
+  options: PackageResolvingOptions = {}
 ) {
   const entry = await resolvePackage(name, options);
   if (!entry) {
@@ -120,7 +120,7 @@ async function getPackageJsonPath(
  */
 export async function getPackageInfo(
   name: string,
-  options: PackageResolvingOptions = {},
+  options: PackageResolvingOptions = {}
 ) {
   const packageJsonPath = await getPackageJsonPath(name, options);
 
@@ -129,7 +129,7 @@ export async function getPackageInfo(
   }
 
   const packageJson = StormJSON.parse<PackageJson>(
-    await readFile(packageJsonPath, "utf8"),
+    await readFile(packageJsonPath, "utf8")
   );
 
   return {
@@ -137,7 +137,7 @@ export async function getPackageInfo(
     version: packageJson.version,
     rootPath: findFilePath(packageJsonPath),
     packageJsonPath,
-    packageJson,
+    packageJson
   };
 }
 
@@ -150,14 +150,14 @@ export async function getPackageInfo(
  */
 export async function getPackageInfoSync(
   name: string,
-  options: PackageResolvingOptions = {},
+  options: PackageResolvingOptions = {}
 ) {
   const packageJsonPath = await getPackageJsonPath(name, options);
 
   if (!packageJsonPath) return;
 
   const packageJson = StormJSON.parse<PackageJson>(
-    await readFile(packageJsonPath, "utf8"),
+    await readFile(packageJsonPath, "utf8")
   );
 
   return {
@@ -165,7 +165,7 @@ export async function getPackageInfoSync(
     version: packageJson.version,
     rootPath: findFilePath(packageJsonPath),
     packageJsonPath,
-    packageJson,
+    packageJson
   };
 }
 
@@ -177,7 +177,7 @@ export async function getPackageInfoSync(
  * @returns The package info
  */
 export async function loadPackageJSON(
-  cwd = getWorkspaceRoot(),
+  cwd = getWorkspaceRoot()
 ): Promise<PackageJson | null> {
   let path = getParentPath("package.json", cwd, { skipCwd: false });
 
@@ -212,7 +212,7 @@ export async function isPackageListed(name: string, cwd?: string) {
  */
 export function isPackageExists(
   name: string,
-  options: PackageResolvingOptions = {},
+  options: PackageResolvingOptions = {}
 ) {
   return Boolean(resolvePackage(name, options));
 }

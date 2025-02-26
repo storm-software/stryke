@@ -20,7 +20,7 @@ const htmlEscapes: Record<string, string> = {
   "<": "&lt;",
   ">": "&gt;",
   '"': "&quot;",
-  "'": "&#39;",
+  "'": "&#39;"
 };
 
 /**
@@ -40,5 +40,5 @@ const htmlEscapes: Record<string, string> = {
  * @returns Returns the escaped string.
  */
 export function escape(str: string): string {
-  return str.replace(/["&'<>]/g, (match) => htmlEscapes[match] || "");
+  return str.replace(/["&'<>]/g, match => htmlEscapes[match] || "");
 }

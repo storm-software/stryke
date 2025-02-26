@@ -22,5 +22,5 @@
  * @returns The array with empty items removed
  */
 export const removeEmptyItems = <T = any>(
-  arr: (T | undefined | null)[],
+  arr: (T | undefined | null)[]
 ): NonNullable<T>[] => arr.filter(Boolean) as NonNullable<T>[];

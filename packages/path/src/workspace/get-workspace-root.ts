@@ -63,9 +63,9 @@ export const getWorkspaceRoot = (dir = process.cwd()) => {
       ".github",
       ".nx",
       ".vscode",
-      "patches",
+      "patches"
     ],
-    dir,
+    dir
   );
 
   if (result) {

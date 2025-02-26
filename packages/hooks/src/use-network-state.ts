@@ -18,7 +18,7 @@
 import { isEqual } from "@stryke/types/type-checks/is-equal";
 import {
   NetworkInformation,
-  NetworkState,
+  NetworkState
 } from "@stryke/types/utility-types/navigator";
 import { useRef, useSyncExternalStore } from "react";
 
@@ -81,7 +81,7 @@ export function useNetworkState() {
       effectiveType: connection?.effectiveType,
       rtt: connection?.rtt,
       saveData: connection?.saveData,
-      type: connection?.type,
+      type: connection?.type
     } as NetworkState;
 
     if (isEqual(cache.current, nextState)) {
@@ -94,6 +94,6 @@ export function useNetworkState() {
   return useSyncExternalStore(
     useNetworkStateSubscribe,
     getSnapshot,
-    getNetworkStateServerSnapshot,
+    getNetworkStateServerSnapshot
   );
 }

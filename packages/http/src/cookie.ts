@@ -20,7 +20,7 @@ import type {
   CookieParseOptions,
   CookieSerializeOptions,
   SetCookie,
-  SetCookieParseOptions,
+  SetCookieParseOptions
 } from "./types";
 
 /**
@@ -33,7 +33,7 @@ import type {
  */
 export function parseCookie(
   strCookie: string,
-  options?: CookieParseOptions,
+  options?: CookieParseOptions
 ): Record<string, string> {
   if (!isString(strCookie)) {
     throw new TypeError("argument str must be a string");
@@ -103,11 +103,11 @@ export function parseCookie(
  */
 export function parseSetCookie(
   setCookieValue: string,
-  options?: SetCookieParseOptions,
+  options?: SetCookieParseOptions
 ): SetCookie {
   const parts = (setCookieValue || "")
     .split(";")
-    .filter((str) => isString(str) && Boolean(str.trim()));
+    .filter(str => isString(str) && Boolean(str.trim()));
 
   const nameValuePairStr = parts.shift() || "";
 
@@ -133,7 +133,7 @@ export function parseSetCookie(
 
   const cookie: SetCookie = {
     name: name,
-    value: value,
+    value: value
   };
 
   for (const part of parts) {
@@ -193,7 +193,7 @@ const fieldContentRegExp = /^[\u0009\u0020-\u007E\u0080-\u00FF]+$/;
 export function serializeCookie(
   name: string,
   value: string,
-  options?: CookieSerializeOptions,
+  options?: CookieSerializeOptions
 ): string {
   const opt = options ?? {};
   const enc = opt.encode ?? encodeURIComponent;
@@ -326,7 +326,7 @@ export function serializeCookie(
  */
 export function splitSetCookieString(strCookie: string | string[]): string[] {
   if (Array.isArray(strCookie)) {
-    return strCookie.flatMap((c) => splitSetCookieString(c));
+    return strCookie.flatMap(c => splitSetCookieString(c));
   }
 
   if (!isString(strCookie)) {

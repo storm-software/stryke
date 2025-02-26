@@ -64,9 +64,7 @@ export const stringify = (
       const keys = Object.keys(value as object);
 
       return `{${space}${keys
-        .map(
-          k => `${k}: ${space}${stringify((value as any)[k], space)}`
-        )
+        .map(k => `${k}: ${space}${stringify((value as any)[k], space)}`)
         .join(`,${space}`)}${space}}`;
     }
     default:

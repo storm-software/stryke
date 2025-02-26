@@ -34,7 +34,7 @@ export const execute = (command: string, cwd: string = process.cwd()) => {
     preferLocal: true,
     shell: true,
     stdio: "inherit",
-    cwd,
+    cwd
   });
 };
 
@@ -52,12 +52,12 @@ export const execute = (command: string, cwd: string = process.cwd()) => {
 export const executePackage = async (
   packageName: string,
   args: string[] = [],
-  cwd?: string,
+  cwd?: string
 ) => {
   const result = await getCommand(
     CLICommandType.EXECUTE,
     [packageName, ...args],
-    cwd,
+    cwd
   );
 
   return execute(`${result.command} ${result.args.join(" ")}`, cwd);

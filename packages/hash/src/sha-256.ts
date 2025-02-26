@@ -81,7 +81,7 @@ export const Hex = {
     }
 
     return hexChars.join("");
-  },
+  }
 };
 
 export const Base64 = {
@@ -102,7 +102,7 @@ export const Base64 = {
       }
     }
     return base64Chars.join("");
-  },
+  }
 };
 
 export const Latin1 = {
@@ -117,13 +117,13 @@ export const Latin1 = {
     }
 
     return new WordArray(words, latin1StrLength);
-  },
+  }
 };
 
 export const Utf8 = {
   parse(utf8Str: string) {
     return Latin1.parse(unescape(encodeURIComponent(utf8Str)));
-  },
+  }
 };
 
 export class BufferedBlockAlgorithm {
@@ -210,7 +210,7 @@ export class Hasher extends BufferedBlockAlgorithm {
 // Initialization and round constants tables
 const H = [
   1_779_033_703, -1_150_833_019, 1_013_904_242, -1_521_486_534, 1_359_893_119,
-  -1_694_144_372, 528_734_635, 1_541_459_225,
+  -1_694_144_372, 528_734_635, 1_541_459_225
 ];
 const K = [
   1_116_352_408, 1_899_447_441, -1_245_643_825, -373_957_723, 961_987_163,
@@ -225,7 +225,7 @@ const K = [
   -694_614_492, -200_395_387, 275_423_344, 430_227_734, 506_948_616,
   659_060_556, 883_997_877, 958_139_571, 1_322_822_218, 1_537_002_063,
   1_747_873_779, 1_955_562_222, 2_024_104_815, -2_067_236_844, -1_933_114_872,
-  -1_866_530_822, -1_538_233_109, -1_090_935_817, -965_641_998,
+  -1_866_530_822, -1_538_233_109, -1_090_935_817, -965_641_998
 ];
 
 // Reusable object
@@ -330,7 +330,7 @@ export class SHA256 extends Hasher {
     // Add padding
     this._data.words[nBitsLeft >>> 5] |= 0x80 << (24 - (nBitsLeft % 32));
     this._data.words[(((nBitsLeft + 64) >>> 9) << 4) + 14] = Math.floor(
-      nBitsTotal / 0x1_00_00_00_00,
+      nBitsTotal / 0x1_00_00_00_00
     );
     this._data.words[(((nBitsLeft + 64) >>> 9) << 4) + 15] = nBitsTotal;
     this._data.sigBytes = this._data.words.length * 4;

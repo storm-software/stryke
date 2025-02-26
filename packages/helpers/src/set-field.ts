@@ -27,7 +27,7 @@ import { toPath } from "./to-path";
  * @returns The object with the value set at the given deep path.
  */
 export function setField<
-  TObject extends Record<string, any> = Record<string, any>,
+  TObject extends Record<string, any> = Record<string, any>
 >(object: TObject, path: DeepKey<TObject>, value: unknown): TObject {
   const resolvedPath = Array.isArray(path)
     ? path

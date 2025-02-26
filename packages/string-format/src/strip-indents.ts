@@ -38,7 +38,7 @@ export function stripIndents(
   // eslint-disable-next-line ts/no-unsafe-argument
   return String.raw(strings, ...values)
     .split("\n")
-    .map((line) => line.trim())
+    .map(line => line.trim())
     .join("\n")
     .trim();
 }

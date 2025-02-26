@@ -20,7 +20,7 @@ export enum MessageType {
   ERROR = "error",
   WARNING = "warning",
   INFO = "info",
-  SUCCESS = "success",
+  SUCCESS = "success"
 }
 
 export type MessageDetails<
@@ -34,7 +34,7 @@ export type MessageDetails<
     | typeof MessageType.ERROR
     | typeof MessageType.WARNING
     | typeof MessageType.INFO
-    | typeof MessageType.SUCCESS,
+    | typeof MessageType.SUCCESS
 > =
   | {
       code: string;

@@ -73,9 +73,7 @@ export function formatJsonPointer(path: JsonPointerPath): string {
     return "";
   }
 
-  return (
-    `/${path.map(segment => escapePointerSegment(String(segment))).join("/")}`
-  );
+  return `/${path.map(segment => escapePointerSegment(String(segment))).join("/")}`;
 }
 
 /**

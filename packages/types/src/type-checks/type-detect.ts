@@ -17,7 +17,7 @@
 
 import { isBuffer } from "./is-buffer";
 
-const globalObject = ((Obj) => {
+const globalObject = (Obj => {
   if (typeof globalThis === "object") {
     return globalThis;
   }
@@ -25,7 +25,7 @@ const globalObject = ((Obj) => {
     get() {
       return this;
     },
-    configurable: true,
+    configurable: true
   });
 
   // // biome-ignore lint/correctness/noUndeclaredVariables: <explanation>

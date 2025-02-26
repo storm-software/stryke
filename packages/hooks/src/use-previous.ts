@@ -20,7 +20,7 @@ import { useMemo, useRef } from "react";
 export function usePrevious<T>(value: T) {
   const ref = useRef({
     value,
-    previous: value,
+    previous: value
   });
 
   // We compare values before making an update to ensure that

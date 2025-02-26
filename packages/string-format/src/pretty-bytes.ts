@@ -137,7 +137,7 @@ const BIBYTE_UNITS = [
   "PiB",
   "EiB",
   "ZiB",
-  "YiB",
+  "YiB"
 ];
 const BIT_UNITS = [
   "b",
@@ -148,7 +148,7 @@ const BIT_UNITS = [
   "Pbit",
   "Ebit",
   "Zbit",
-  "Ybit",
+  "Ybit"
 ];
 const BIBIT_UNITS = [
   "b",
@@ -159,7 +159,7 @@ const BIBIT_UNITS = [
   "Pibit",
   "Eibit",
   "Zibit",
-  "Yibit",
+  "Yibit"
 ];
 
 /**
@@ -178,7 +178,7 @@ const BIBIT_UNITS = [
 export const toLocaleString = (
   number?: number | string,
   locale?: string | readonly string[] | boolean,
-  options: Options = {},
+  options: Options = {}
 ): string => {
   let result = number;
   let _locale = locale;
@@ -228,7 +228,7 @@ export function prettyBytes(number: number, options?: Options): string {
   let _number: string | number = number;
   if (!Number.isFinite(_number)) {
     throw new TypeError(
-      `Expected a finite number, got ${typeof _number}: ${_number}`,
+      `Expected a finite number, got ${typeof _number}: ${_number}`
     );
   }
 
@@ -236,7 +236,7 @@ export function prettyBytes(number: number, options?: Options): string {
     bits: false,
     binary: false,
     space: true,
-    ...options,
+    ...options
   };
 
   const UNITS = opts.bits
@@ -270,7 +270,7 @@ export function prettyBytes(number: number, options?: Options): string {
   if (opts.maximumFractionDigits !== undefined) {
     localeOptions = {
       maximumFractionDigits: opts.maximumFractionDigits,
-      ...localeOptions,
+      ...localeOptions
     };
   }
 
@@ -282,11 +282,9 @@ export function prettyBytes(number: number, options?: Options): string {
 
   const exponent = Math.min(
     Math.floor(
-      opts.binary
-        ? Math.log(_number) / Math.log(1024)
-        : Math.log10(_number) / 3,
+      opts.binary ? Math.log(_number) / Math.log(1024) : Math.log10(_number) / 3
     ),
-    UNITS.length - 1,
+    UNITS.length - 1
   );
   _number /= (opts.binary ? 1024 : 1000) ** exponent;
 
@@ -297,7 +295,7 @@ export function prettyBytes(number: number, options?: Options): string {
   const numberString = toLocaleString(
     Number(_number),
     opts.locale,
-    localeOptions,
+    localeOptions
   );
 
   const unit = UNITS[exponent];

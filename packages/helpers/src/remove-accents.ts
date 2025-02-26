@@ -414,7 +414,7 @@ export const characterMap: Record<string, string> = {
   X̧: "X",
   x̧: "x",
   Z̧: "Z",
-  z̧: "z",
+  z̧: "z"
 };
 
 const chars = Object.keys(characterMap).join("|");
@@ -427,4 +427,4 @@ const allAccents = new RegExp(chars, "g");
  * @returns The string without accents
  */
 export const removeAccents = (str: string) =>
-  str.replace(allAccents, (match) => characterMap[match]!);
+  str.replace(allAccents, match => characterMap[match]!);

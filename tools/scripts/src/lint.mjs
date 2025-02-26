@@ -21,10 +21,10 @@ usePwsh();
 
 try {
   await $`pnpm nx run-many --target=lint --all --exclude="@stryke/monorepo" --parallel=5`.timeout(
-    `${30 * 60}s`,
+    `${30 * 60}s`
   );
   await $`pnpm exec storm-lint all --skip-cspell --skip-circular-deps`.timeout(
-    `${30 * 60}s`,
+    `${30 * 60}s`
   );
 
   echo`${chalk.green("Successfully formatted the monorepo's files")}`;

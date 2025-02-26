@@ -27,7 +27,7 @@ export function useDidFinishSSR<A = boolean>(
   value?: A,
   options?: {
     sync?: boolean;
-  },
+  }
 ): A | false {
   if (process.env.TAMAGUI_TARGET === "native") {
     return (value ?? true) as false | A;
@@ -37,7 +37,7 @@ export function useDidFinishSSR<A = boolean>(
     return useSyncExternalStore(
       emptyFnFn,
       () => value ?? true,
-      () => false as any,
+      () => false as any
     );
   }
 
@@ -50,14 +50,14 @@ export function useDidFinishSSR<A = boolean>(
 
 export function useDidFinishSSRSync<A = boolean>(value?: A): A | false {
   return useDidFinishSSR(value, {
-    sync: true,
+    sync: true
   });
 }
 
 type FunctionOrValue<Value> = Value extends () => infer X ? X : Value;
 
 export function useClientValue<Value>(
-  value?: Value,
+  value?: Value
 ): FunctionOrValue<Value> | undefined {
   const done = useDidFinishSSR();
 

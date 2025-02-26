@@ -47,10 +47,12 @@ export interface PackageJson {
   /**
    * The url to your project’s issue tracker and / or the email address to which issues should be reported. These are helpful for people who encounter issues with your package.
    */
-  bugs?: string | {
-    url?: string;
-    email?: string;
-  };
+  bugs?:
+    | string
+    | {
+        url?: string;
+        email?: string;
+      };
   /**
    * You should specify a license for your package so that people know how they are permitted to use it, and any restrictions you’re placing on it.
    */
@@ -59,14 +61,16 @@ export interface PackageJson {
    * Specify the place where your code lives. This is helpful for people who want to contribute. If the git repo is on GitHub, then the `npm docs` command will be able to find you.
    * For GitHub, GitHub gist, Bitbucket, or GitLab repositories you can use the same shortcut syntax you use for npm install:
    */
-  repository?: string | {
-    type: string;
-    url: string;
-    /**
-     * If the `package.json` for your package is not in the root directory (for example if it is part of a monorepo), you can specify the directory in which it lives:
-     */
-    directory?: string;
-  };
+  repository?:
+    | string
+    | {
+        type: string;
+        url: string;
+        /**
+         * If the `package.json` for your package is not in the root directory (for example if it is part of a monorepo), you can specify the directory in which it lives:
+         */
+        directory?: string;
+      };
   /**
    * The `scripts` field is a dictionary containing script commands that are run at various times in the lifecycle of your package.
    */
@@ -254,7 +258,20 @@ export interface PackageJson {
      * @default true
      */
     linkDirectory?: boolean;
-  } & Pick<PackageJson, "bin" | "main" | "exports" | "types" | "typings" | "module" | "browser" | "unpkg" | "typesVersions" | "os" | "cpu">;
+  } & Pick<
+    PackageJson,
+    | "bin"
+    | "main"
+    | "exports"
+    | "types"
+    | "typings"
+    | "module"
+    | "browser"
+    | "unpkg"
+    | "typesVersions"
+    | "os"
+    | "cpu"
+  >;
   /**
    * See: https://nodejs.org/api/packages.html#packagemanager
    * This field defines which package manager is expected to be used when working on the current project.
@@ -267,20 +284,32 @@ export interface PackageJson {
 /**
  * A “person” is an object with a “name” field and optionally “url” and “email”. Or you can shorten that all into a single string, and npm will parse it for you.
  */
-type PackageJsonPerson = string | {
-  name: string;
-  email?: string;
-  url?: string;
-};
+type PackageJsonPerson =
+  | string
+  | {
+      name: string;
+      email?: string;
+      url?: string;
+    };
 
-type PackageJsonExportKey = "." | "import" | "require" | "types" | "node" | "browser" | "default" | (string & {});
+type PackageJsonExportKey =
+  | "."
+  | "import"
+  | "require"
+  | "types"
+  | "node"
+  | "browser"
+  | "default"
+  | (string & {});
 
 type PackageJsonExportsObject = {
-  [P in PackageJsonExportKey]?: string |
-    PackageJsonExportsObject |
-    Array<string | PackageJsonExportsObject>;
+  [P in PackageJsonExportKey]?:
+    | string
+    | PackageJsonExportsObject
+    | Array<string | PackageJsonExportsObject>;
 };
 
-type PackageJsonExports = string |
-  PackageJsonExportsObject |
-  Array<string | PackageJsonExportsObject>;
+type PackageJsonExports =
+  | string
+  | PackageJsonExportsObject
+  | Array<string | PackageJsonExportsObject>;

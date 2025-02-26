@@ -29,7 +29,7 @@ export const isBuffer: typeof Buffer.isBuffer = isBufferExists
    * @returns An indicator specifying if the value provided is of type `Buffer`
    */
     function isBuffer(
-      value: Parameters<typeof Buffer.isBuffer>[0],
+      value: Parameters<typeof Buffer.isBuffer>[0]
     ): value is Buffer {
       return false;
     };

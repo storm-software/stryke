@@ -40,10 +40,10 @@ function getMarkerLines(
   source: string[],
   opts: { linesAbove?: number; linesBelow?: number } = {}
 ): {
-    start: number;
-    end: number;
-    markerLines: Record<number, boolean | [number, number]>;
-  } {
+  start: number;
+  end: number;
+  markerLines: Record<number, boolean | [number, number]>;
+} {
   const startLoc: Location = {
     column: 0,
     line: -1,

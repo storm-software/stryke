@@ -16,7 +16,7 @@
  -------------------------------------------------------------------*/
 
 const alphabet = Array.from({ length: 26 }, (_x, i) =>
-  String.fromCodePoint(i + 97),
+  String.fromCodePoint(i + 97)
 );
 
 /**

@@ -81,7 +81,7 @@ const rankings = {
   CONTAINS: 3,
   ACRONYM: 2,
   MATCHES: 1,
-  NO_MATCH: 0,
+  NO_MATCH: 0
 } as const;
 
 type Ranking = (typeof rankings)[keyof typeof rankings];
@@ -99,19 +99,19 @@ const defaultBaseSortFn: BaseSorter<unknown> = (a, b) =>
 function matchSorter<ItemType = string>(
   items: ReadonlyArray<ItemType>,
   value: string,
-  options: MatchSorterOptions<ItemType> = {},
+  options: MatchSorterOptions<ItemType> = {}
 ): Array<ItemType> {
   const {
     keys,
     threshold = rankings.MATCHES,
     baseSort = defaultBaseSortFn,
-    sorter = (matchedItems) =>
-      matchedItems.sort((a, b) => sortRankedValues(a, b, baseSort)),
+    sorter = matchedItems =>
+      matchedItems.sort((a, b) => sortRankedValues(a, b, baseSort))
   } = options;
   const matchedItems = items.reduce(
     (ret: Array<RankedItem<ItemType>>, item: ItemType, index: number) =>
       reduceItemsToRanked(ret, item, index),
-    [],
+    []
   );
 
   return sorter(matchedItems).map(({ item }) => item);
@@ -119,7 +119,7 @@ function matchSorter<ItemType = string>(
   function reduceItemsToRanked(
     matches: Array<RankedItem<ItemType>>,
     item: ItemType,
-    index: number,
+    index: number
   ): Array<RankedItem<ItemType>> {
     const rankingInfo = getHighestRanking(item, keys, value, options);
     const { rank, keyThreshold = threshold } = rankingInfo;
@@ -127,7 +127,7 @@ function matchSorter<ItemType = string>(
       matches.push({
         ...rankingInfo,
         item,
-        index,
+        index
       });
     }
     return matches;
@@ -148,7 +148,7 @@ function getHighestRanking<ItemType>(
   item: ItemType,
   keys: ReadonlyArray<KeyOption<ItemType>> | undefined,
   value: string,
-  options: MatchSorterOptions<ItemType>,
+  options: MatchSorterOptions<ItemType>
 ): RankingInfo {
   if (!keys) {
     // if keys is not specified, then we assume the item given is ready to be matched
@@ -159,7 +159,7 @@ function getHighestRanking<ItemType>(
       rankedValue: stringItem,
       rank: getMatchRanking(stringItem, value, options),
       keyIndex: -1,
-      keyThreshold: options.threshold,
+      keyThreshold: options.threshold
     };
   }
   const valuesToRank = getAllValuesToRank(item, keys);
@@ -168,7 +168,7 @@ function getHighestRanking<ItemType>(
     (
       { rank, rankedValue, keyIndex, keyThreshold },
       { itemValue, attributes },
-      i,
+      i
     ) => {
       let newRank = getMatchRanking(itemValue, value, options);
       let newRankedValue = rankedValue;
@@ -188,15 +188,15 @@ function getHighestRanking<ItemType>(
         rankedValue: newRankedValue,
         rank,
         keyIndex,
-        keyThreshold,
+        keyThreshold
       };
     },
     {
       rankedValue: item as unknown as string,
       rank: rankings.NO_MATCH as Ranking,
       keyIndex: -1,
-      keyThreshold: options.threshold,
-    },
+      keyThreshold: options.threshold
+    }
   );
 }
 
@@ -210,7 +210,7 @@ function getHighestRanking<ItemType>(
 function getMatchRanking<ItemType>(
   testString: string,
   stringToRank: string,
-  options: MatchSorterOptions<ItemType>,
+  options: MatchSorterOptions<ItemType>
 ): Ranking {
   testString = prepareValueForComparison(testString, options);
   stringToRank = prepareValueForComparison(stringToRank, options);
@@ -294,14 +294,14 @@ function getAcronym(value: string): string {
  */
 function getClosenessRanking(
   testString: string,
-  stringToRank: string,
+  stringToRank: string
 ): Ranking {
   let matchingInOrderCharCount = 0;
   let charNumber = 0;
   function findMatchingCharacter(
     matchChar: string,
     string: string,
-    index: number,
+    index: number
   ) {
     for (let j = index, J = string.length; j < J; j++) {
       const stringChar = string[j];
@@ -347,7 +347,7 @@ function getClosenessRanking(
 function sortRankedValues<ItemType>(
   a: RankedItem<ItemType>,
   b: RankedItem<ItemType>,
-  baseSort: BaseSorter<ItemType>,
+  baseSort: BaseSorter<ItemType>
 ): number {
   const aFirst = -1;
   const bFirst = 1;
@@ -372,7 +372,7 @@ function sortRankedValues<ItemType>(
  */
 function prepareValueForComparison<ItemType>(
   value: string,
-  { keepDiacritics }: MatchSorterOptions<ItemType>,
+  { keepDiacritics }: MatchSorterOptions<ItemType>
 ): string {
   // value might not actually be a string at this point (we don't get to choose)
   // so part of preparing the value for comparison is ensure that it is a string
@@ -391,7 +391,7 @@ function prepareValueForComparison<ItemType>(
  */
 function getItemValues<ItemType>(
   item: ItemType,
-  key: KeyOption<ItemType>,
+  key: KeyOption<ItemType>
 ): Array<string> {
   if (typeof key === "object") {
     key = key.key as string;
@@ -429,7 +429,7 @@ function getItemValues<ItemType>(
  */
 function getNestedValues<ItemType>(
   path: string,
-  item: ItemType,
+  item: ItemType
 ): Array<string> {
   const keys = path.split(".");
 
@@ -482,7 +482,7 @@ function getNestedValues<ItemType>(
  */
 function getAllValuesToRank<ItemType>(
   item: ItemType,
-  keys: ReadonlyArray<KeyOption<ItemType>>,
+  keys: ReadonlyArray<KeyOption<ItemType>>
 ) {
   const allValues: Array<{ itemValue: string; attributes: KeyAttributes }> = [];
   for (let j = 0, J = keys.length; j < J; j++) {
@@ -492,7 +492,7 @@ function getAllValuesToRank<ItemType>(
     for (let i = 0, I = itemValues.length; i < I; i++) {
       allValues.push({
         itemValue: itemValues[i]!,
-        attributes,
+        attributes
       });
     }
   }
@@ -501,7 +501,7 @@ function getAllValuesToRank<ItemType>(
 
 const defaultKeyAttributes = {
   maxRanking: Infinity as Ranking,
-  minRanking: -Infinity as Ranking,
+  minRanking: -Infinity as Ranking
 };
 /**
  * Gets all the attributes for the given key
@@ -514,7 +514,7 @@ function getKeyAttributes<ItemType>(key: KeyOption<ItemType>): KeyAttributes {
   }
   return {
     ...defaultKeyAttributes,
-    ...key,
+    ...key
   };
 }
 
@@ -526,5 +526,5 @@ export type {
   KeyOption,
   MatchSorterOptions,
   RankingInfo,
-  ValueGetterKey,
+  ValueGetterKey
 };

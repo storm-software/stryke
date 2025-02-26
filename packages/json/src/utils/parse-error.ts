@@ -36,18 +36,17 @@ export function formatParseError(input: string, parseError: ParseError) {
   line++;
   column++;
 
-  return (
-    `${printParseErrorCode(error)} in JSON at ${line}:${column}\n${
-      codeFrameColumns(input, {
-        start: {
-          line,
-          column
-        },
-        end: {
-          line,
-          column: column + length
-        }
-      })
-    }\n`
-  );
+  return `${printParseErrorCode(error)} in JSON at ${line}:${column}\n${codeFrameColumns(
+    input,
+    {
+      start: {
+        line,
+        column
+      },
+      end: {
+        line,
+        column: column + length
+      }
+    }
+  )}\n`;
 }

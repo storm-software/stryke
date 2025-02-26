@@ -26,13 +26,13 @@ export default composer(baseConfig)
       "@nx/dependency-checks": [
         "error",
         {
-          ignoredFiles: ["{projectRoot}/eslint.config.{js,cjs,mjs}"],
-        },
-      ],
+          ignoredFiles: ["{projectRoot}/eslint.config.{js,cjs,mjs}"]
+        }
+      ]
     },
     languageOptions: {
-      parser,
-    },
+      parser
+    }
   })
   .append({
     files: [
@@ -41,12 +41,12 @@ export default composer(baseConfig)
       "./executors.json",
       "./generators.json",
       "./executors.json",
-      "./migrations.json",
+      "./migrations.json"
     ],
     rules: {
-      "@nx/nx-plugin-checks": "error",
+      "@nx/nx-plugin-checks": "error"
     },
     languageOptions: {
-      parser,
-    },
+      parser
+    }
   });

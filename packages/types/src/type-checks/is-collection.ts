@@ -23,7 +23,7 @@ const COLLECTION_TYPE_SET = new Set([
   "Array",
   "Map",
   "Object",
-  "Set",
+  "Set"
 ]);
 
 /**

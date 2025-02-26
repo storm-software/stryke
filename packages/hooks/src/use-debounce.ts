@@ -55,12 +55,12 @@ export function useDebounce<
   A extends (...args: any) => any | undefined | null,
   DebouncedFn extends A & {
     cancel: () => void;
-  },
+  }
 >(
   fn: A,
   wait: number,
   options: DebounceOptions = {},
-  mountArgs: any[] = [fn, options, wait],
+  mountArgs: any[] = [fn, options, wait]
 ): DebouncedFn {
   const dbEffect = useRef<DebouncedFn | null>(null);
 
@@ -85,7 +85,7 @@ export function useDebounceValue<A>(val: A, amt = 0): A {
 
   useEffect(() => {
     const tm = setTimeout(() => {
-      setState((prev) => {
+      setState(prev => {
         if (prev === val) return prev;
         return val;
       });

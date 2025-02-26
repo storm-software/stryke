@@ -17,12 +17,14 @@
 
 import type { JsonSerializeOptions } from "@stryke/json/types";
 import type { Abortable } from "node:events";
-import type { Mode, ObjectEncodingOptions, OpenMode, WriteFileOptions } from "node:fs";
-import type { Encoding } from "./constants";
-import {
-
-  writeFileSync as writeFileSyncFs
+import type {
+  Mode,
+  ObjectEncodingOptions,
+  OpenMode,
+  WriteFileOptions
 } from "node:fs";
+import type { Encoding } from "./constants";
+import { writeFileSync as writeFileSyncFs } from "node:fs";
 import { writeFile as writeFileFs } from "node:fs/promises";
 import { StormJSON } from "@stryke/json/storm-json";
 
@@ -56,10 +58,10 @@ export const writeFile = async (
   content?: any,
   options?:
     | (ObjectEncodingOptions & {
-      mode?: Mode | undefined;
-      flag?: OpenMode | undefined;
-      flush?: boolean | undefined;
-    } & Abortable)
+        mode?: Mode | undefined;
+        flag?: OpenMode | undefined;
+        flush?: boolean | undefined;
+      } & Abortable)
     | Encoding
     | null
 ): Promise<void> => {

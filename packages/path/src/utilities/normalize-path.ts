@@ -32,9 +32,7 @@ export function normalizeWindowsPath(input = "") {
   if (!input) {
     return input;
   }
-  return input
-    .replace(/\\/g, "/")
-    .replace(/^[A-Z]:\//i, r => r.toUpperCase());
+  return input.replace(/\\/g, "/").replace(/^[A-Z]:\//i, r => r.toUpperCase());
 }
 
 /**

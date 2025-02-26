@@ -23,13 +23,13 @@ import type { CLITitle } from "../types";
 export const writeBanner = (
   bannerOpts: CLITitle,
   byOpts: CLITitle,
-  color?: string,
+  color?: string
 ) => {
   if (bannerOpts?.hide !== true) {
     text(
       titleCase(bannerOpts?.name ?? "Storm CLI")!,
       bannerOpts?.options ?? {
-        font: bannerOpts?.font ?? "Larry 3D",
+        font: bannerOpts?.font ?? "Larry 3D"
       },
       (err, data) => {
         if (err) {
@@ -38,7 +38,7 @@ export const writeBanner = (
 
         // eslint-disable-next-line no-console
         console.log(chalk.hex(color || "#FFF")(data));
-      },
+      }
     );
 
     if (byOpts?.hide !== true) {
@@ -52,7 +52,7 @@ export const writeBanner = (
 
           // eslint-disable-next-line no-console
           console.log(chalk.hex(color || "#adbac7")(data));
-        },
+        }
       );
     }
   }

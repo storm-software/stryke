@@ -2,41 +2,48 @@
 
 ### Features
 
-- **fs:** Added `listFiles` helper function ([dc1b847](https://github.com/storm-software/stryke/commit/dc1b847))
+- **fs:** Added `listFiles` helper function
+  ([dc1b847](https://github.com/storm-software/stryke/commit/dc1b847))
 
 ## 0.4.1 (2025-02-24)
 
 ### Bug Fixes
 
-- **json:** Update JSON stringify method ([06a7482](https://github.com/storm-software/stryke/commit/06a7482))
+- **json:** Update JSON stringify method
+  ([06a7482](https://github.com/storm-software/stryke/commit/06a7482))
 
 ## 0.4.0 (2025-02-24)
 
 ### Features
 
-- **json:** Update the JSON stringify function signature ([3f2c1c8](https://github.com/storm-software/stryke/commit/3f2c1c8))
+- **json:** Update the JSON stringify function signature
+  ([3f2c1c8](https://github.com/storm-software/stryke/commit/3f2c1c8))
 
 ### Bug Fixes
 
-- **json:** Resolve issue stringifying json result ([99a05a9](https://github.com/storm-software/stryke/commit/99a05a9))
+- **json:** Resolve issue stringifying json result
+  ([99a05a9](https://github.com/storm-software/stryke/commit/99a05a9))
 
 ## 0.3.0 (2025-02-24)
 
 ### Features
 
-- **json:** Update method signature on stringify functions ([f4b9300](https://github.com/storm-software/stryke/commit/f4b9300))
+- **json:** Update method signature on stringify functions
+  ([f4b9300](https://github.com/storm-software/stryke/commit/f4b9300))
 
 ## 0.2.1 (2025-02-24)
 
 ### Bug Fixes
 
-- **json:** Resolve issue with stringifying json values ([df99f22](https://github.com/storm-software/stryke/commit/df99f22))
+- **json:** Resolve issue with stringifying json values
+  ([df99f22](https://github.com/storm-software/stryke/commit/df99f22))
 
 ## 0.2.0 (2025-02-23)
 
 ### Features
 
-- **monorepo:** Update base ESLint packages and run on files ([c59cb8e](https://github.com/storm-software/stryke/commit/c59cb8e))
+- **monorepo:** Update base ESLint packages and run on files
+  ([c59cb8e](https://github.com/storm-software/stryke/commit/c59cb8e))
 
 ## 0.1.9 (2025-02-23)
 

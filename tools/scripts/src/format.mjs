@@ -26,10 +26,10 @@ try {
   }
 
   await $`pnpm nx run-many --target=lint,format --all --exclude="@stryke/monorepo" --parallel=5`.timeout(
-    `${30 * 60}s`,
+    `${30 * 60}s`
   );
   await $`pnpm nx format:write ${files} --sort-root-tsconfig-paths --all`.timeout(
-    `${30 * 60}s`,
+    `${30 * 60}s`
   );
 
   echo`${chalk.green("Successfully formatted the monorepo's files")}`;

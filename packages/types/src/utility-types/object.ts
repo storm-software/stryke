@@ -20,7 +20,7 @@
 import type {
   StaticPartOfArray,
   UnknownArray,
-  VariablePartOfArray,
+  VariablePartOfArray
 } from "./array";
 import type {
   BuildTuple,
@@ -31,7 +31,7 @@ import type {
   NonRecursiveType,
   Nullish,
   Primitive,
-  Simplify,
+  Simplify
 } from "./base";
 import type { StringKeyOf } from "./json";
 import type { IsNotFalse, LessThan, Sum } from "./logic";
@@ -168,7 +168,7 @@ export type LiteralUnion<LiteralType, BaseType extends Primitive> =
 export type BuildObject<
   Key extends PropertyKey,
   Value,
-  CopiedFrom extends object = {},
+  CopiedFrom extends object = {}
 > = Key extends keyof CopiedFrom
   ? Pick<{ [_ in keyof CopiedFrom]: Value }, Key>
   : Key extends `${infer NumberKey extends number}`
@@ -221,7 +221,7 @@ type Paths_<T, Depth extends number = 0> = T extends
 export type InternalPaths<
   _T,
   Depth extends number = 0,
-  T = Required<_T>,
+  T = Required<_T>
 > = T extends EmptyObject | readonly []
   ? never
   : {
@@ -254,7 +254,7 @@ interface GetOptions {
 export type GetWithPath<
   BaseType,
   Keys extends readonly string[],
-  Options extends GetOptions = {},
+  Options extends GetOptions = {}
 > = Keys extends readonly []
   ? BaseType
   : Keys extends readonly [infer Head, ...infer Tail]
@@ -270,7 +270,7 @@ export type GetWithPath<
  */
 type Strictify<
   Type,
-  Options extends GetOptions,
+  Options extends GetOptions
 > = Options["strict"] extends false ? Type : Type | undefined;
 
 /**
@@ -282,7 +282,7 @@ type Strictify<
 type StrictPropertyOf<
   BaseType,
   Key extends keyof BaseType,
-  Options extends GetOptions,
+  Options extends GetOptions
 > =
   Record<string, any> extends BaseType
     ? string extends keyof BaseType
@@ -313,7 +313,7 @@ type StrictPropertyOf<
  */
 export type Split<
   S extends string,
-  Delimiter extends string,
+  Delimiter extends string
 > = S extends `${infer Head}${Delimiter}${infer Tail}`
   ? [Head, ...Split<Tail, Delimiter>]
   : S extends Delimiter
@@ -360,7 +360,7 @@ type FixPathSquareBrackets<Path extends string> =
  */
 type ConsistsOnlyOf<
   LongString extends string,
-  Substring extends string,
+  Substring extends string
 > = LongString extends ""
   ? true
   : LongString extends `${Substring}${infer Tail}`
@@ -391,7 +391,7 @@ type WithStringKeys<BaseType> = {
     Perform a `T[U]` operation if `T` supports indexing.
  */
 type UncheckedIndex<T, U extends number | string> = [T] extends [
-  Record<number | string, any>,
+  Record<number | string, any>
 ]
   ? T[U]
   : never;
@@ -406,7 +406,7 @@ type UncheckedIndex<T, U extends number | string> = [T] extends [
 type PropertyOf<
   BaseType,
   Key extends string,
-  Options extends GetOptions = {},
+  Options extends GetOptions = {}
 > = BaseType extends Nullish
   ? undefined
   : Key extends keyof BaseType
@@ -474,7 +474,7 @@ type PropertyOf<
 export type Get<
   BaseType,
   Path extends readonly string[] | string,
-  Options extends GetOptions = NonNullable<unknown>,
+  Options extends GetOptions = NonNullable<unknown>
 > = GetWithPath<BaseType, Path extends string ? ToPath<Path> : Path, Options>;
 
 /**
@@ -634,7 +634,7 @@ export type PickDeep<T, PathUnion extends Paths<T>> = T extends NonRecursiveType
  */
 type InternalPickDeep<
   T,
-  Path extends number | string,
+  Path extends number | string
 > = T extends NonRecursiveType
   ? never
   : T extends UnknownArray
@@ -648,7 +648,7 @@ type InternalPickDeep<
  */
 type PickDeepObject<
   RecordType extends object,
-  P extends number | string,
+  P extends number | string
 > = P extends `${infer RecordKeyInPath}.${infer SubPath}`
   ? ObjectValue<RecordType, RecordKeyInPath> extends infer ObjectV
     ? IsNever<ObjectV> extends false
@@ -682,12 +682,12 @@ type PickDeepArray<ArrayType extends UnknownArray, P extends number | string> =
         ArrayType extends unknown[]
         ? [
             ...BuildTuple<ArrayIndex>,
-            InternalPickDeep<NonNullable<ArrayType[ArrayIndex]>, SubPath>,
+            InternalPickDeep<NonNullable<ArrayType[ArrayIndex]>, SubPath>
           ]
         : ArrayType extends readonly unknown[]
           ? readonly [
               ...BuildTuple<ArrayIndex>,
-              InternalPickDeep<NonNullable<ArrayType[ArrayIndex]>, SubPath>,
+              InternalPickDeep<NonNullable<ArrayType[ArrayIndex]>, SubPath>
             ]
           : never
     : // When the path is equal to `number`
@@ -713,7 +713,7 @@ type IsTuple<T> = T extends { length: infer Length } & readonly any[]
 // If this type is a tuple, what indices are allowed?
 type AllowedIndexes<
   Tuple extends readonly any[],
-  Keys extends number = never,
+  Keys extends number = never
 > = Tuple extends readonly []
   ? Keys
   : Tuple extends readonly [infer _First, ...infer Tail]
@@ -727,7 +727,7 @@ type PrefixArrayAccessor<T extends any[], TDepth extends any[]> = {
 type PrefixTupleAccessor<
   T extends any[],
   TIndex extends number,
-  TDepth extends any[],
+  TDepth extends any[]
 > = {
   [K in TIndex]: `[${K}]${DeepKey<T[K], TDepth>}` | `[${K}]`;
 }[TIndex];
@@ -742,7 +742,7 @@ type PrefixObjectAccessor<T extends object, TDepth extends any[]> = {
 
 type PrefixFromDepth<
   T extends number | string,
-  TDepth extends any[],
+  TDepth extends any[]
 > = TDepth["length"] extends 0 ? T : `.${T}`;
 
 export type DeepKey<T, TDepth extends any[] = []> = TDepth["length"] extends 5
@@ -772,10 +772,10 @@ export type DeepKey<T, TDepth extends any[] = []> = TDepth["length"] extends 5
 
 export type DeepValue<
   TObject extends Record<string, unknown>,
-  TPath extends DeepKey<TObject>,
+  TPath extends DeepKey<TObject>
 > = GetWithPath<TObject, ToPath<TPath>>;
 
 export type NullableDeepValue<
   TObject extends Record<string, unknown>,
-  TPath extends DeepKey<TObject>,
+  TPath extends DeepKey<TObject>
 > = Nullable<GetWithPath<TObject, ToPath<TPath>>>;

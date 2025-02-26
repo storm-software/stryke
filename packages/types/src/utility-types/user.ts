@@ -18,7 +18,7 @@
 export enum UserType {
   INTERNAL = "internal",
   EXTERNAL = "external",
-  SERVICE = "service",
+  SERVICE = "service"
 }
 
 export interface UserBase {

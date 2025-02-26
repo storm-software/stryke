@@ -34,10 +34,10 @@ export const titleCase = (input?: string): string | undefined => {
 
   return input
     .split(/(?=[A-Z])|[\s._-]/)
-    .map((s) => s.trim())
+    .map(s => s.trim())
     .filter(Boolean)
-    .map((s) =>
-      ACRONYMS.includes(s) ? s.toUpperCase() : upperCaseFirst(s.toLowerCase()),
+    .map(s =>
+      ACRONYMS.includes(s) ? s.toUpperCase() : upperCaseFirst(s.toLowerCase())
     )
     .join(" ");
 };

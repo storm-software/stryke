@@ -28,7 +28,7 @@ export type ValidationDetails<
     | typeof MessageType.WARNING
     | typeof MessageType.INFO
     | typeof MessageType.HELP
-    | typeof MessageType.SUCCESS,
+    | typeof MessageType.SUCCESS
 > = MessageDetails<TMessageType> & {
   /**
    * The field path that the message is related to.

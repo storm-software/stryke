@@ -24,7 +24,7 @@ export type SelectOptionValue = string | number | boolean | null;
  */
 export interface SelectOption<
   TValue extends SelectOptionValue = SelectOptionValue,
-  TName = string,
+  TName = string
 > extends NameValuePair<TValue, TName> {
   /**
    * The index of the select option

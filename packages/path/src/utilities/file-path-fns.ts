@@ -54,11 +54,12 @@ export function findFileName(
   filePath: string,
   { requireExtension, withExtension }: FindFileNameOptions = {}
 ): string {
-  const result = normalizeWindowsPath(filePath)
-    ?.split(
-      filePath?.includes(sep) ? sep : filePath?.includes("/") ? "/" : "\\"
-    )
-    ?.pop() ?? "";
+  const result =
+    normalizeWindowsPath(filePath)
+      ?.split(
+        filePath?.includes(sep) ? sep : filePath?.includes("/") ? "/" : "\\"
+      )
+      ?.pop() ?? "";
 
   if (requireExtension === true && !result.includes(".")) {
     return EMPTY_STRING;
@@ -263,7 +264,8 @@ export function relativeToWorkspaceRoot(filePath: string) {
  */
 export function parsePath(path: string) {
   // The root of the path such as '/' or 'c:\'
-  const root = /^[/\\]|^[a-z]:[/\\]/i.exec(path)?.[0]?.replace(/\\/g, "/") || "";
+  const root =
+    /^[/\\]|^[a-z]:[/\\]/i.exec(path)?.[0]?.replace(/\\/g, "/") || "";
 
   const normalizedPath = normalizeWindowsPath(path);
 

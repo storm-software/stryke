@@ -33,7 +33,7 @@ try {
     minify: false,
     format: "esm",
     platform: "node",
-    preserveSymlinks: true,
+    preserveSymlinks: true
   });
 
   echo`${chalk.green("Completed monorepo bootstrapping successfully!")}`;
