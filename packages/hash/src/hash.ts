@@ -16,9 +16,6 @@
  ------------------------------------------------------------------- */
 
 import type { HashObjectOptions } from "./hash-object";
-import { statSync } from "node:fs";
-import { readdir, readFile } from "node:fs/promises";
-import { joinPaths } from "@stryke/path/join-path";
 import { isString } from "@stryke/types/type-checks/is-string";
 import { hashObject } from "./hash-object";
 import { sha256base64 } from "./sha-256";
@@ -46,39 +43,4 @@ export function hash(object: any, options?: HashOptions): string {
   const maxLength = options?.maxLength ?? 32;
 
   return result.length > maxLength ? result.slice(0, maxLength) : result;
-}
-
-/**
- * Hash a folder path into a string based on the file content
- *
- * @param dir - The folder path to hash
- * @param  options - Hashing options
- * @returns A hashed string value
- */
-export async function hashFolder(
-  dir: string,
-  options?: HashOptions
-): Promise<string> {
-  const files = [] as string[];
-  const getDirContent = async (dir: string) => {
-    const dirFiles = await readdir(dir);
-    dirFiles.forEach(file => {
-      const path = joinPaths(dir, file);
-      if (statSync(path).isDirectory()) {
-        getDirContent(path);
-      } else {
-        files.push(path);
-      }
-    });
-  };
-  await getDirContent(dir);
-
-  const result = {} as Record<string, string>;
-  await Promise.all(
-    files.map(async file => {
-      result[file] = await readFile(file, "utf8");
-    })
-  );
-
-  return hash(result, options);
 }
