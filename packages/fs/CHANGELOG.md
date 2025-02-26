@@ -1,3 +1,9 @@
+## 0.5.0 (2025-02-26)
+
+### Features
+
+- **fs:** Added `listFiles` helper function ([dc1b847](https://github.com/storm-software/stryke/commit/dc1b847))
+
 ## 0.4.1 (2025-02-24)
 
 ### Bug Fixes
