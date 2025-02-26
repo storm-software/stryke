@@ -1,4 +1,4 @@
-/*-------------------------------------------------------------------
+/* -------------------------------------------------------------------
 
                        ⚡ Storm Software - Stryke
 
@@ -13,10 +13,11 @@
  Contact:         https://stormsoftware.com/contact
  License:         https://stormsoftware.com/projects/stryke/license
 
- -------------------------------------------------------------------*/
+ ------------------------------------------------------------------- */
 
+import type { HashObjectOptions } from "./hash-object";
 import { isString } from "@stryke/types/type-checks/is-string";
-import { type HashObjectOptions, hashObject } from "./hash-object";
+import { hashObject } from "./hash-object";
 import { sha256base64 } from "./sha-256";
 
 export interface HashOptions extends HashObjectOptions {
@@ -37,7 +38,7 @@ export interface HashOptions extends HashObjectOptions {
  */
 export function hash(object: any, options?: HashOptions): string {
   const result = sha256base64(
-    isString(object) ? object : hashObject(object, options),
+    isString(object) ? object : hashObject(object, options)
   );
   const maxLength = options?.maxLength ?? 32;
 

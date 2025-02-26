@@ -1,4 +1,4 @@
-/*-------------------------------------------------------------------
+/* -------------------------------------------------------------------
 
                        ⚡ Storm Software - Stryke
 
@@ -13,12 +13,13 @@
  Contact:         https://stormsoftware.com/contact
  License:         https://stormsoftware.com/projects/stryke/license
 
- -------------------------------------------------------------------*/
+ ------------------------------------------------------------------- */
 
 export * from "./chmod-x";
 export * from "./constants";
 export * from "./copy-files";
 export * from "./helpers";
+export * from "./list-files";
 export * from "./read-file";
 export * from "./remove-file";
 export * from "./write-file";

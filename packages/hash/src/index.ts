@@ -1,4 +1,4 @@
-/*-------------------------------------------------------------------
+/* -------------------------------------------------------------------
 
                        ⚡ Storm Software - Stryke
 
@@ -13,7 +13,7 @@
  Contact:         https://stormsoftware.com/contact
  License:         https://stormsoftware.com/projects/stryke/license
 
- -------------------------------------------------------------------*/
+ ------------------------------------------------------------------- */
 
 /**
  * The hashing library used by Storm Software for building TypeScript applications.
@@ -25,5 +25,6 @@
  */
 
 export * from "./hash";
+export * from "./hash-files";
 export * from "./sha-256";
 export * from "./xx-hash";

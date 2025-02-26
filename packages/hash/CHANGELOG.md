@@ -1,3 +1,16 @@
+## 0.5.0 (2025-02-26)
+
+### Features
+
+- **fs:** Added `listFiles` helper function ([dc1b847](https://github.com/storm-software/stryke/commit/dc1b847))
+- **hash:** Added the `hashFiles` and renamed `hashDirectory` helpers ([15cc347](https://github.com/storm-software/stryke/commit/15cc347))
+
+## 0.4.0 (2025-02-26)
+
+### Features
+
+- **hash:** Added the `hashFolder` function ([c6e4ff3](https://github.com/storm-software/stryke/commit/c6e4ff3))
+
 ## 0.3.0 (2025-02-23)
 
 ### Features

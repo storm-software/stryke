@@ -28,8 +28,8 @@ import { joinPaths } from "./join-paths";
 export function isFile(path: string, additionalPath?: string): boolean {
   return Boolean(
     statSync(additionalPath ? joinPaths(additionalPath, path) : path, {
-      throwIfNoEntry: false,
-    })?.isFile(),
+      throwIfNoEntry: false
+    })?.isFile()
   );
 }
 
@@ -43,8 +43,8 @@ export function isFile(path: string, additionalPath?: string): boolean {
 export function isDirectory(path: string, additionalPath?: string): boolean {
   return Boolean(
     statSync(additionalPath ? joinPaths(additionalPath, path) : path, {
-      throwIfNoEntry: false,
-    })?.isDirectory(),
+      throwIfNoEntry: false
+    })?.isDirectory()
   );
 }
 
@@ -57,12 +57,12 @@ export function isDirectory(path: string, additionalPath?: string): boolean {
  */
 export const isFileSymlink = (
   path: string,
-  additionalPath?: string,
+  additionalPath?: string
 ): boolean => {
   return Boolean(
     lstatSync(additionalPath ? joinPaths(additionalPath, path) : path, {
-      throwIfNoEntry: false,
-    })?.isFile(),
+      throwIfNoEntry: false
+    })?.isFile()
   );
 };
 
@@ -75,12 +75,12 @@ export const isFileSymlink = (
  */
 export const isDirectorySymlink = (
   path: string,
-  additionalPath?: string,
+  additionalPath?: string
 ): boolean => {
   return Boolean(
     lstatSync(additionalPath ? joinPaths(additionalPath, path) : path, {
-      throwIfNoEntry: false,
-    })?.isDirectory(),
+      throwIfNoEntry: false
+    })?.isDirectory()
   );
 };
 
