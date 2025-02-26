@@ -1,3 +1,9 @@
+## 0.4.1 (2025-02-26)
+
+### Miscellaneous
+
+- **monorepo:** Reformat monorepo files with `prettier` ([b5d0302](https://github.com/storm-software/stryke/commit/b5d0302))
+
 ## 0.4.0 (2025-02-23)
 
 ### Features

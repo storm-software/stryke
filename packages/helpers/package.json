@@ -1,6 +1,6 @@
 {
   "name": "@stryke/helpers",
-  "version": "0.3.0",
+  "version": "0.3.1",
   "type": "module",
   "description": "A package containing miscellaneous helper functions that are used across many different Storm Software projects.",
   "repository": {
