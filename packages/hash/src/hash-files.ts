@@ -16,9 +16,8 @@
  ------------------------------------------------------------------- */
 
 import type { HashOptions } from "./hash";
-import { statSync } from "node:fs";
-import { readdir, readFile } from "node:fs/promises";
-import { joinPaths } from "@stryke/path/utilities/join-paths";
+import { readFile } from "node:fs/promises";
+import { listFiles } from "@stryke/fs/files/list-files";
 import { hash } from "./hash";
 
 /**
@@ -45,27 +44,13 @@ export async function hashFiles(
 /**
  * Hash a folder path into a string based on the file content
  *
- * @param dir - The folder path to hash
+ * @param directoryPath - The folder path to hash
  * @param  options - Hashing options
  * @returns A hashed string value
  */
 export async function hashDirectory(
-  dir: string,
+  directoryPath: string,
   options?: HashOptions
 ): Promise<string> {
-  const files = [] as string[];
-  const getDirContent = async (dir: string) => {
-    const dirFiles = await readdir(dir);
-    dirFiles.forEach(file => {
-      const path = joinPaths(dir, file);
-      if (statSync(path).isDirectory()) {
-        getDirContent(path);
-      } else {
-        files.push(path);
-      }
-    });
-  };
-  await getDirContent(dir);
-
-  return hashFiles(files, options);
+  return hashFiles(await listFiles(directoryPath), options);
 }

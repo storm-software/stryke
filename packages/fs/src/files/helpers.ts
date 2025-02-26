@@ -1,4 +1,4 @@
-/*-------------------------------------------------------------------
+/* -------------------------------------------------------------------
 
                        ⚡ Storm Software - Stryke
 
@@ -13,12 +13,12 @@
  Contact:         https://stormsoftware.com/contact
  License:         https://stormsoftware.com/projects/stryke/license
 
- -------------------------------------------------------------------*/
+ ------------------------------------------------------------------- */
 
-import { exists, existsSync } from "@stryke/path/utilities/exists";
-import { parseTar, parseTarGzip } from "nanotar";
 import { createWriteStream, mkdirSync } from "node:fs";
 import { mkdir, readFile } from "node:fs/promises";
+import { exists, existsSync } from "@stryke/path/utilities/exists";
+import { parseTar, parseTarGzip } from "nanotar";
 
 /**
  * Create a directory if it does not exist.
@@ -59,11 +59,11 @@ export async function createDirectory(path: string) {
 export async function extractFileFromTar(
   tarballPath: string,
   file: string,
-  destinationFilePath: string,
+  destinationFilePath: string
 ) {
   const result = parseTar(await readFile(tarballPath));
 
-  const entry = result.find((e) => e.name === file);
+  const entry = result.find(e => e.name === file);
   if (!entry?.data) {
     return;
   }
@@ -73,7 +73,7 @@ export async function extractFileFromTar(
   }
 
   const stream = createWriteStream(destinationFilePath);
-  await stream.write(entry.data);
+  stream.write(entry.data);
 }
 
 /**
@@ -87,11 +87,11 @@ export async function extractFileFromTar(
 export async function extractFileFromTarGzip(
   tarballPath: string,
   file: string,
-  destinationFilePath: string,
+  destinationFilePath: string
 ) {
   const result = await parseTarGzip(await readFile(tarballPath));
 
-  const entry = result.find((e) => e.name === file);
+  const entry = result.find(e => e.name === file);
   if (!entry?.data) {
     return;
   }
@@ -101,5 +101,5 @@ export async function extractFileFromTarGzip(
   }
 
   const stream = createWriteStream(destinationFilePath);
-  await stream.write(entry.data);
+  stream.write(entry.data);
 }
