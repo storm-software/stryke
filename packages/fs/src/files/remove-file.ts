@@ -1,4 +1,4 @@
-/*-------------------------------------------------------------------
+/* -------------------------------------------------------------------
 
                        ⚡ Storm Software - Stryke
 
@@ -13,7 +13,7 @@
  Contact:         https://stormsoftware.com/contact
  License:         https://stormsoftware.com/projects/stryke/license
 
- -------------------------------------------------------------------*/
+ ------------------------------------------------------------------- */
 
 import { existsSync, rmSync } from "node:fs";
 import { rm } from "node:fs/promises";
@@ -39,7 +39,7 @@ export const removeFileSync = (filePath: string): void => {
  * @param content - The content to remove to the file
  * @returns The content of the file
  */
-export const removeFile = (filePath: string): Promise<void> => {
+export const removeFile = async (filePath: string): Promise<void> => {
   if (!filePath || !existsSync(filePath)) {
     throw new Error("Invalid file path provided to remove data");
   }

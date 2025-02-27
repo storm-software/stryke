@@ -15,15 +15,15 @@
 
  ------------------------------------------------------------------- */
 
-import { createWriteStream, mkdirSync } from "node:fs";
-import { mkdir, readFile } from "node:fs/promises";
+import { createWriteStream, mkdirSync, rmdirSync } from "node:fs";
+import { mkdir, readFile, rmdir } from "node:fs/promises";
 import { exists, existsSync } from "@stryke/path/utilities/exists";
 import { parseTar, parseTarGzip } from "nanotar";
 
 /**
  * Create a directory if it does not exist.
  *
- * @param filePath - The directory path to check
+ * @param path - The directory path to check
  * @returns An indicator specifying if the directory exists
  */
 export function createDirectorySync(path: string) {
@@ -37,7 +37,7 @@ export function createDirectorySync(path: string) {
 /**
  * Create a directory if it does not exist.
  *
- * @param filePath - The directory path to check
+ * @param path - The directory path to check
  * @returns An indicator specifying if the directory exists
  */
 export async function createDirectory(path: string) {
@@ -46,6 +46,34 @@ export async function createDirectory(path: string) {
   }
 
   return mkdir(path, { recursive: true });
+}
+
+/**
+ * Remove a directory if it exists.
+ *
+ * @param path - The directory path to check
+ * @returns An indicator specifying if the directory exists
+ */
+export function removeDirectorySync(path: string) {
+  if (!existsSync(path)) {
+    return;
+  }
+
+  return rmdirSync(path, { recursive: true });
+}
+
+/**
+ * Remove a directory if it exists.
+ *
+ * @param path - The directory path to check
+ * @returns An indicator specifying if the directory exists
+ */
+export async function removeDirectory(path: string) {
+  if (!existsSync(path)) {
+    return;
+  }
+
+  return rmdir(path, { recursive: true });
 }
 
 /**
