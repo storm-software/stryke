@@ -1,3 +1,9 @@
+## 0.6.0 (2025-02-27)
+
+### Features
+
+- **fs:** Added the `removeDirectory` helper function ([95b7e54](https://github.com/storm-software/stryke/commit/95b7e54))
+
 ## 0.5.1 (2025-02-26)
 
 ### Miscellaneous
