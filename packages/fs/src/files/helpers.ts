@@ -15,10 +15,10 @@
 
  ------------------------------------------------------------------- */
 
-import { createWriteStream, mkdirSync, rmdirSync } from "node:fs";
-import { mkdir, readFile, rmdir } from "node:fs/promises";
 import { exists, existsSync } from "@stryke/path/utilities/exists";
 import { parseTar, parseTarGzip } from "nanotar";
+import { createWriteStream, mkdirSync, rmSync } from "node:fs";
+import { mkdir, readFile, rm } from "node:fs/promises";
 
 /**
  * Create a directory if it does not exist.
@@ -59,7 +59,7 @@ export function removeDirectorySync(path: string) {
     return;
   }
 
-  return rmdirSync(path, { recursive: true });
+  return rmSync(path, { recursive: true });
 }
 
 /**
@@ -73,7 +73,7 @@ export async function removeDirectory(path: string) {
     return;
   }
 
-  return rmdir(path, { recursive: true });
+  return rm(path, { recursive: true });
 }
 
 /**

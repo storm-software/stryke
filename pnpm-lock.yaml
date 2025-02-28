@@ -32,13 +32,13 @@ catalogs:
       version: 1.103.5
     '@storm-software/config-tools':
       specifier: latest
-      version: 1.155.5
+      version: 1.155.6
     '@storm-software/cspell':
       specifier: latest
       version: 0.20.3
     '@storm-software/eslint':
       specifier: latest
-      version: 0.130.0
+      version: 0.131.3
     '@storm-software/git-tools':
       specifier: latest
       version: 2.93.14
@@ -50,7 +50,7 @@ catalogs:
       version: 0.16.12
     '@storm-software/prettier':
       specifier: latest
-      version: 0.33.5
+      version: 0.35.5
     '@storm-software/testing-tools':
       specifier: latest
       version: 1.104.37
@@ -65,7 +65,7 @@ catalogs:
       version: 0.11.12
     '@storm-software/workspace-tools':
       specifier: latest
-      version: 1.259.7
+      version: 1.260.0
     '@types/jest':
       specifier: ^29.5.14
       version: 29.5.14
@@ -184,7 +184,7 @@ importers:
         version: 0.20.3(cspell@8.17.3)
       '@storm-software/eslint':
         specifier: 'catalog:'
-        version: 0.130.0(ca74f1b5de8580635a4aaf4644e76700)
+        version: 0.131.3(ca74f1b5de8580635a4aaf4644e76700)
       '@storm-software/git-tools':
         specifier: 'catalog:'
         version: 2.93.14(@swc-node/register@1.10.9(@swc/core@1.10.14(@swc/helpers@0.5.15))(@swc/types@0.1.17)(typescript@5.7.3))(@swc/core@1.10.14(@swc/helpers@0.5.15))(chokidar@4.0.3)
@@ -196,7 +196,7 @@ importers:
         version: 0.16.12
       '@storm-software/prettier':
         specifier: 'catalog:'
-        version: 0.33.5(prettier-plugin-astro@0.14.1)(prettier-plugin-prisma@5.0.0(prettier@3.5.1))(prettier-plugin-solidity@1.3.1(prettier@3.5.1))(prettier-plugin-tailwindcss@0.6.5(prettier-plugin-astro@0.14.1)(prettier-plugin-organize-imports@4.1.0(prettier@3.5.1)(typescript@5.7.3))(prettier@3.5.1))(prettier@3.5.1)(typescript@5.7.3)
+        version: 0.35.5(prettier-plugin-astro@0.14.1)(prettier-plugin-prisma@5.0.0(prettier@3.5.1))(prettier-plugin-solidity@1.3.1(prettier@3.5.1))(prettier-plugin-tailwindcss@0.6.5(prettier-plugin-astro@0.14.1)(prettier-plugin-organize-imports@4.1.0(prettier@3.5.1)(typescript@5.7.3))(prettier@3.5.1))(prettier@3.5.1)(typescript@5.7.3)
       '@storm-software/testing-tools':
         specifier: 'catalog:'
         version: 1.104.37(@nx/jest@20.4.6(@babel/traverse@7.26.7)(@swc-node/register@1.10.9(@swc/core@1.10.14(@swc/helpers@0.5.15))(@swc/types@0.1.17)(typescript@5.7.3))(@swc/core@1.10.14(@swc/helpers@0.5.15))(@types/node@22.13.1)(babel-plugin-macros@3.1.0)(nx@20.4.6(@swc-node/register@1.10.9(@swc/core@1.10.14(@swc/helpers@0.5.15))(@swc/types@0.1.17)(typescript@5.7.3))(@swc/core@1.10.14(@swc/helpers@0.5.15)))(ts-node@10.9.2(@swc/core@1.10.14(@swc/helpers@0.5.15))(@types/node@22.13.1)(typescript@5.7.3))(typescript@5.7.3)(verdaccio@5.33.0(typanion@3.14.0)))(jest@29.7.0(@types/node@22.13.1)(babel-plugin-macros@3.1.0)(ts-node@10.9.2(@swc/core@1.10.14(@swc/helpers@0.5.15))(@types/node@22.13.1)(typescript@5.7.3)))
@@ -211,7 +211,7 @@ importers:
         version: 0.11.12(@nx/devkit@20.4.6(nx@20.4.6(@swc-node/register@1.10.9(@swc/core@1.10.14(@swc/helpers@0.5.15))(@swc/types@0.1.17)(typescript@5.7.3))(@swc/core@1.10.14(@swc/helpers@0.5.15))))(@swc-node/register@1.10.9(@swc/core@1.10.14(@swc/helpers@0.5.15))(@swc/types@0.1.17)(typescript@5.7.3))(@swc/core@1.10.14(@swc/helpers@0.5.15))(untyped@1.5.2)
       '@storm-software/workspace-tools':
         specifier: 'catalog:'
-        version: 1.259.7(5a4355de754477d25adefcc39d8913a3)
+        version: 1.260.0(ca315e21d1672063809eb9c43ac0a29e)
       '@swc-node/register':
         specifier: ~1.10.9
         version: 1.10.9(@swc/core@1.10.14(@swc/helpers@0.5.15))(@swc/types@0.1.17)(typescript@5.7.3)
@@ -419,7 +419,7 @@ importers:
     dependencies:
       '@storm-software/config-tools':
         specifier: 'catalog:'
-        version: 1.155.5(@storm-software/config@1.103.5)
+        version: 1.155.6(@storm-software/config@1.103.5)
       mlly:
         specifier: 1.7.4
         version: 1.7.4
@@ -445,7 +445,7 @@ importers:
         version: 20.4.6(nx@20.4.6(@swc-node/register@1.10.9(@swc/core@1.10.14(@swc/helpers@0.5.15))(@swc/types@0.1.17)(typescript@5.7.3))(@swc/core@1.10.14(@swc/helpers@0.5.15)))
       '@storm-software/workspace-tools':
         specifier: 'catalog:'
-        version: 1.259.7(5a4355de754477d25adefcc39d8913a3)
+        version: 1.260.0(ca315e21d1672063809eb9c43ac0a29e)
       defu:
         specifier: 'catalog:'
         version: 6.1.4
@@ -2850,8 +2850,8 @@ packages:
   '@solidity-parser/parser@0.17.0':
     resolution: {integrity: sha512-Nko8R0/kUo391jsEHHxrGM07QFdnPGvlmox4rmH0kNiNAashItAilhy4Mv4pK5gQmW5f4sXAF58fwJbmlkGcVw==}
 
-  '@storm-software/config-tools@1.155.5':
-    resolution: {integrity: sha512-c/Xzyzml/nf39w7a6JWWzM0vTh7JcprJMm6hjI7BVxjoSMXcimD87cUcgtf1MXIZTibWjYJIKZWltbnMXRgNdQ==}
+  '@storm-software/config-tools@1.155.6':
+    resolution: {integrity: sha512-HpLjzL7ocM+u5H+l2hKrjidxYjRGSBPcjmm5dJWh923izoOLNE181lmMNrQhRYRM8dRXAJkjHYvbkG5rx/EuHQ==}
     hasBin: true
     peerDependencies:
       '@storm-software/config': workspace:*
@@ -2865,8 +2865,8 @@ packages:
     peerDependencies:
       cspell: ^8.17.3
 
-  '@storm-software/eslint@0.130.0':
-    resolution: {integrity: sha512-oaqmEzYLd5g92ycJLqT3C1iHRZr9Wn4/VKPQNsi/nG7E7OaK9fxdn9NnLSyswH2Q2rlZK4XOt5MbOlxS3lllNA==}
+  '@storm-software/eslint@0.131.3':
+    resolution: {integrity: sha512-7cge2JcUdXnv/w9w7gfKX4cCN8d+rx8WsdotQo0oyN9iiAmWjKduq/Pvuss/3GMz1WGPWM8JDBqHhvWWvjA6vg==}
     engines: {node: '>=22.4.0', pnpm: '>=10.3.0'}
     peerDependencies:
       '@eslint-react/eslint-plugin': ^1.19.0
@@ -2902,8 +2902,8 @@ packages:
     resolution: {integrity: sha512-5Ia+xu3dHRrO1PHBZ0GAyiBxaCTc6B6jn4nj6yTJc7OkHQtm0i62XmfdNB6jDISiyTs/745OEvk407WlYSEQIQ==}
     engines: {node: '>=22.4.0', pnpm: '>=10.3.0'}
 
-  '@storm-software/prettier@0.33.5':
-    resolution: {integrity: sha512-NqjBIzsVyxiZVZOwmuQYN3hoY7x/n+R9QQvgJ3vZ8un+8vRarpp27tXjl1+Hkcc3sc+rCQoFtuyyMWPadAmi4Q==}
+  '@storm-software/prettier@0.35.5':
+    resolution: {integrity: sha512-GOsOCUDFra5TpG9O6PXB51r00W0JqpSifDDWaL1ZP9RwqUfS/Tv4WvwQZSnEHJuptHZWIDmcyBbwSIitloCmqA==}
     peerDependencies:
       prettier: ^3.5.1
       prettier-plugin-astro: ^0.14.1
@@ -2945,8 +2945,8 @@ packages:
       '@nx/devkit': ^20.3.1
       untyped: ^1.5.2
 
-  '@storm-software/workspace-tools@1.259.7':
-    resolution: {integrity: sha512-YaECZustDz/iXrOQ9m9OyDtgN1Sy4V28GVyH2yTRltvssbbaOBhRXAINddATO1VZ2Tc54/8GRtIrAQqpedvPIw==}
+  '@storm-software/workspace-tools@1.260.0':
+    resolution: {integrity: sha512-mncVb7Wb2vxQkdO8JLqlxiXNQVwoaIZ4B56fPiWVnVuk1F9Ib64uPYVZIQ8jfDmCEzZbRr4Kpdpv8r1l3Um4Rw==}
     peerDependencies:
       '@storm-software/esbuild': workspace:*
       '@storm-software/prettier': workspace:*
@@ -12103,7 +12103,7 @@ snapshots:
 
   '@solidity-parser/parser@0.17.0': {}
 
-  '@storm-software/config-tools@1.155.5(@storm-software/config@1.103.5)':
+  '@storm-software/config-tools@1.155.6(@storm-software/config@1.103.5)':
     dependencies:
       '@storm-software/config': 1.103.5
       c12: 2.0.1
@@ -12125,7 +12125,7 @@ snapshots:
     dependencies:
       cspell: 8.17.3
 
-  '@storm-software/eslint@0.130.0(ca74f1b5de8580635a4aaf4644e76700)':
+  '@storm-software/eslint@0.131.3(ca74f1b5de8580635a4aaf4644e76700)':
     dependencies:
       '@antfu/install-pkg': 1.0.0
       '@clack/prompts': 0.10.0
@@ -12229,7 +12229,7 @@ snapshots:
     transitivePeerDependencies:
       - supports-color
 
-  '@storm-software/prettier@0.33.5(prettier-plugin-astro@0.14.1)(prettier-plugin-prisma@5.0.0(prettier@3.5.1))(prettier-plugin-solidity@1.3.1(prettier@3.5.1))(prettier-plugin-tailwindcss@0.6.5(prettier-plugin-astro@0.14.1)(prettier-plugin-organize-imports@4.1.0(prettier@3.5.1)(typescript@5.7.3))(prettier@3.5.1))(prettier@3.5.1)(typescript@5.7.3)':
+  '@storm-software/prettier@0.35.5(prettier-plugin-astro@0.14.1)(prettier-plugin-prisma@5.0.0(prettier@3.5.1))(prettier-plugin-solidity@1.3.1(prettier@3.5.1))(prettier-plugin-tailwindcss@0.6.5(prettier-plugin-astro@0.14.1)(prettier-plugin-organize-imports@4.1.0(prettier@3.5.1)(typescript@5.7.3))(prettier@3.5.1))(prettier@3.5.1)(typescript@5.7.3)':
     dependencies:
       prettier: 3.5.1
       prettier-plugin-astro: 0.14.1
@@ -12296,7 +12296,7 @@ snapshots:
       - '@swc/core'
       - debug
 
-  '@storm-software/workspace-tools@1.259.7(5a4355de754477d25adefcc39d8913a3)':
+  '@storm-software/workspace-tools@1.260.0(ca315e21d1672063809eb9c43ac0a29e)':
     dependencies:
       '@ltd/j-toml': 1.38.0
       '@microsoft/api-extractor': 7.49.2(@types/node@22.13.1)
@@ -12305,7 +12305,7 @@ snapshots:
       '@size-limit/esbuild': 11.1.4(size-limit@11.1.4)
       '@size-limit/esbuild-why': 11.1.4(size-limit@11.1.4)
       '@size-limit/file': 11.1.4(size-limit@11.1.4)
-      '@storm-software/prettier': 0.33.5(prettier-plugin-astro@0.14.1)(prettier-plugin-prisma@5.0.0(prettier@3.5.1))(prettier-plugin-solidity@1.3.1(prettier@3.5.1))(prettier-plugin-tailwindcss@0.6.5(prettier-plugin-astro@0.14.1)(prettier-plugin-organize-imports@4.1.0(prettier@3.5.1)(typescript@5.7.3))(prettier@3.5.1))(prettier@3.5.1)(typescript@5.7.3)
+      '@storm-software/prettier': 0.35.5(prettier-plugin-astro@0.14.1)(prettier-plugin-prisma@5.0.0(prettier@3.5.1))(prettier-plugin-solidity@1.3.1(prettier@3.5.1))(prettier-plugin-tailwindcss@0.6.5(prettier-plugin-astro@0.14.1)(prettier-plugin-organize-imports@4.1.0(prettier@3.5.1)(typescript@5.7.3))(prettier@3.5.1))(prettier@3.5.1)(typescript@5.7.3)
       defu: 6.1.4
       fs-extra: 11.2.0
       glob: 11.0.1
