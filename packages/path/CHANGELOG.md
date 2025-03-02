@@ -1,3 +1,9 @@
+## 0.3.2 (2025-03-02)
+
+### Bug Fixes
+
+- **path:** Adjust how path is split in `findFileName` function ([559b3ce](https://github.com/storm-software/stryke/commit/559b3ce))
+
 ## 0.3.1 (2025-02-26)
 
 ### Miscellaneous

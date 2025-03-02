@@ -1,3 +1,9 @@
+## 0.6.1 (2025-03-02)
+
+### Bug Fixes
+
+- **fs:** Updated `rmDir` calls to use `rm` due to deprecation ([d17862d](https://github.com/storm-software/stryke/commit/d17862d))
+
 ## 0.6.0 (2025-02-27)
 
 ### Features
