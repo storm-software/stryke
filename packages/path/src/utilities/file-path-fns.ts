@@ -19,7 +19,7 @@ import { EMPTY_STRING } from "@stryke/types/utility-types/base";
 import { getWorkspaceRoot } from "../workspace/get-workspace-root";
 import { isAbsolutePath } from "./is-file";
 import { joinPaths } from "./join-paths";
-import { normalizeString, normalizeWindowsPath, sep } from "./normalize-path";
+import { normalizeString, normalizeWindowsPath } from "./normalize-path";
 
 export interface FindFileNameOptions {
   /**
@@ -56,9 +56,7 @@ export function findFileName(
 ): string {
   const result =
     normalizeWindowsPath(filePath)
-      ?.split(
-        filePath?.includes(sep) ? sep : filePath?.includes("/") ? "/" : "\\"
-      )
+      ?.split(filePath?.includes("\\") ? "\\" : "/")
       ?.pop() ?? "";
 
   if (requireExtension === true && !result.includes(".")) {
@@ -66,7 +64,7 @@ export function findFileName(
   }
 
   if (withExtension === false && result.includes(".")) {
-    return result.split(".").shift() || EMPTY_STRING;
+    return result.split(".").slice(-1).join(".") || EMPTY_STRING;
   }
 
   return result;
