@@ -22,10 +22,12 @@
     "@zkochan/js-yaml": "^0.0.7",
     "chalk": "^5.4.1",
     "nanotar": "^0.2.0",
+    "picomatch": "^4.0.2",
     "semver": "7.7.1"
   },
   "devDependencies": {
     "@types/node": "catalog:",
+    "@types/picomatch": "^3.0.2",
     "nx": "catalog:",
     "tinyexec": "^0.3.2"
   },

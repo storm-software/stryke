@@ -51,6 +51,7 @@
   "prettier.configPath": "./node_modules/@storm-software/prettier/config.json",
   "prettier.ignorePath": "./node_modules/@storm-software/prettier/.prettierignore",
   "prettier.enableDebugLogs": true,
+  "prettier.enable": true,
   "markdownlint.config": {
     "extends": "./node_modules/@storm-software/markdownlint/config/config.json"
   },
@@ -65,7 +66,6 @@
   "editor.bracketPairColorization.enabled": true,
   "editor.guides.bracketPairs": "active",
   "editor.tabCompletion": "on",
-  "prettier.enable": false,
   "editor.formatOnSave": false,
   "editor.codeActionsOnSave": {
     "source.fixAll.eslint": "explicit",

@@ -15,10 +15,13 @@
 
  ------------------------------------------------------------------- */
 
-import type { HashOptions } from "./hash";
-import { readFile } from "node:fs/promises";
+import type { ListFilesOptions } from "@stryke/fs/files/list-files";
 import { listFiles } from "@stryke/fs/files/list-files";
+import { readFile } from "node:fs/promises";
+import type { HashOptions } from "./hash";
 import { hash } from "./hash";
+
+export type HashFilesOptions = HashOptions & ListFilesOptions;
 
 /**
  * Hash a list of file paths into a string based on the file content
@@ -29,7 +32,7 @@ import { hash } from "./hash";
  */
 export async function hashFiles(
   files: string[],
-  options?: HashOptions
+  options?: HashFilesOptions
 ): Promise<string> {
   const result = {} as Record<string, string>;
   await Promise.all(
@@ -45,12 +48,14 @@ export async function hashFiles(
  * Hash a folder path into a string based on the file content
  *
  * @param directoryPath - The folder path to hash
- * @param  options - Hashing options
+ * @param  options - Hashing options. By default, the `node_modules` folder is ignored.
  * @returns A hashed string value
  */
 export async function hashDirectory(
   directoryPath: string,
-  options?: HashOptions
+  options: HashFilesOptions = {}
 ): Promise<string> {
-  return hashFiles(await listFiles(directoryPath), options);
+  options.ignored = options.ignored ?? ["**/node_modules/**"];
+
+  return hashFiles(await listFiles(directoryPath, options), options);
 }

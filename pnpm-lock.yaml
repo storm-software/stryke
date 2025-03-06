@@ -29,19 +29,19 @@ catalogs:
       version: 20.4.6
     '@storm-software/config':
       specifier: latest
-      version: 1.103.5
+      version: 1.106.3
     '@storm-software/config-tools':
       specifier: latest
-      version: 1.155.6
+      version: 1.158.3
     '@storm-software/cspell':
       specifier: latest
       version: 0.20.3
     '@storm-software/eslint':
       specifier: latest
-      version: 0.131.3
+      version: 0.137.2
     '@storm-software/git-tools':
       specifier: latest
-      version: 2.93.14
+      version: 2.96.3
     '@storm-software/linting-tools':
       specifier: latest
       version: 1.119.14
@@ -50,7 +50,7 @@ catalogs:
       version: 0.16.12
     '@storm-software/prettier':
       specifier: latest
-      version: 0.35.5
+      version: 0.42.1
     '@storm-software/testing-tools':
       specifier: latest
       version: 1.104.37
@@ -65,7 +65,7 @@ catalogs:
       version: 0.11.12
     '@storm-software/workspace-tools':
       specifier: latest
-      version: 1.260.0
+      version: 1.264.1
     '@types/jest':
       specifier: ^29.5.14
       version: 29.5.14
@@ -178,16 +178,16 @@ importers:
         version: 20.4.6(@swc-node/register@1.10.9(@swc/core@1.10.14(@swc/helpers@0.5.15))(@swc/types@0.1.17)(typescript@5.7.3))(@swc/core@1.10.14(@swc/helpers@0.5.15))
       '@storm-software/config':
         specifier: 'catalog:'
-        version: 1.103.5
+        version: 1.106.3
       '@storm-software/cspell':
         specifier: 'catalog:'
         version: 0.20.3(cspell@8.17.3)
       '@storm-software/eslint':
         specifier: 'catalog:'
-        version: 0.131.3(ca74f1b5de8580635a4aaf4644e76700)
+        version: 0.137.2(ca74f1b5de8580635a4aaf4644e76700)
       '@storm-software/git-tools':
         specifier: 'catalog:'
-        version: 2.93.14(@swc-node/register@1.10.9(@swc/core@1.10.14(@swc/helpers@0.5.15))(@swc/types@0.1.17)(typescript@5.7.3))(@swc/core@1.10.14(@swc/helpers@0.5.15))(chokidar@4.0.3)
+        version: 2.96.3(@swc-node/register@1.10.9(@swc/core@1.10.14(@swc/helpers@0.5.15))(@swc/types@0.1.17)(typescript@5.7.3))(@swc/core@1.10.14(@swc/helpers@0.5.15))(chokidar@4.0.3)
       '@storm-software/linting-tools':
         specifier: 'catalog:'
         version: 1.119.14(chokidar@4.0.3)
@@ -196,7 +196,7 @@ importers:
         version: 0.16.12
       '@storm-software/prettier':
         specifier: 'catalog:'
-        version: 0.35.5(prettier-plugin-astro@0.14.1)(prettier-plugin-prisma@5.0.0(prettier@3.5.1))(prettier-plugin-solidity@1.3.1(prettier@3.5.1))(prettier-plugin-tailwindcss@0.6.5(prettier-plugin-astro@0.14.1)(prettier-plugin-organize-imports@4.1.0(prettier@3.5.1)(typescript@5.7.3))(prettier@3.5.1))(prettier@3.5.1)(typescript@5.7.3)
+        version: 0.42.1(prettier-plugin-astro@0.14.1)(prettier-plugin-organize-imports@4.1.0(prettier@3.5.1)(typescript@5.7.3))(prettier-plugin-pkg@0.18.1(prettier@3.5.1))(prettier-plugin-prisma@5.0.0(prettier@3.5.1))(prettier-plugin-sh@0.15.0(prettier@3.5.1))(prettier-plugin-solidity@1.3.1(prettier@3.5.1))(prettier-plugin-tailwindcss@0.6.5(prettier-plugin-astro@0.14.1)(prettier-plugin-organize-imports@4.1.0(prettier@3.5.1)(typescript@5.7.3))(prettier@3.5.1))(prettier@3.5.1)
       '@storm-software/testing-tools':
         specifier: 'catalog:'
         version: 1.104.37(@nx/jest@20.4.6(@babel/traverse@7.26.7)(@swc-node/register@1.10.9(@swc/core@1.10.14(@swc/helpers@0.5.15))(@swc/types@0.1.17)(typescript@5.7.3))(@swc/core@1.10.14(@swc/helpers@0.5.15))(@types/node@22.13.1)(babel-plugin-macros@3.1.0)(nx@20.4.6(@swc-node/register@1.10.9(@swc/core@1.10.14(@swc/helpers@0.5.15))(@swc/types@0.1.17)(typescript@5.7.3))(@swc/core@1.10.14(@swc/helpers@0.5.15)))(ts-node@10.9.2(@swc/core@1.10.14(@swc/helpers@0.5.15))(@types/node@22.13.1)(typescript@5.7.3))(typescript@5.7.3)(verdaccio@5.33.0(typanion@3.14.0)))(jest@29.7.0(@types/node@22.13.1)(babel-plugin-macros@3.1.0)(ts-node@10.9.2(@swc/core@1.10.14(@swc/helpers@0.5.15))(@types/node@22.13.1)(typescript@5.7.3)))
@@ -205,13 +205,13 @@ importers:
         version: 0.35.27
       '@storm-software/unbuild':
         specifier: 'catalog:'
-        version: 0.37.12(@nx/devkit@20.4.6(nx@20.4.6(@swc-node/register@1.10.9(@swc/core@1.10.14(@swc/helpers@0.5.15))(@swc/types@0.1.17)(typescript@5.7.3))(@swc/core@1.10.14(@swc/helpers@0.5.15))))(@nx/js@20.4.6(@babel/traverse@7.26.7)(@swc-node/register@1.10.9(@swc/core@1.10.14(@swc/helpers@0.5.15))(@swc/types@0.1.17)(typescript@5.7.3))(@swc/core@1.10.14(@swc/helpers@0.5.15))(@types/node@22.13.1)(nx@20.4.6(@swc-node/register@1.10.9(@swc/core@1.10.14(@swc/helpers@0.5.15))(@swc/types@0.1.17)(typescript@5.7.3))(@swc/core@1.10.14(@swc/helpers@0.5.15)))(typescript@5.7.3)(verdaccio@5.33.0(typanion@3.14.0)))(@storm-software/config@1.103.5)(@swc/helpers@0.5.15)(nx@20.4.6(@swc-node/register@1.10.9(@swc/core@1.10.14(@swc/helpers@0.5.15))(@swc/types@0.1.17)(typescript@5.7.3))(@swc/core@1.10.14(@swc/helpers@0.5.15)))(rollup@4.34.5)(typescript@5.7.3)
+        version: 0.37.12(@nx/devkit@20.4.6(nx@20.4.6(@swc-node/register@1.10.9(@swc/core@1.10.14(@swc/helpers@0.5.15))(@swc/types@0.1.17)(typescript@5.7.3))(@swc/core@1.10.14(@swc/helpers@0.5.15))))(@nx/js@20.4.6(@babel/traverse@7.26.7)(@swc-node/register@1.10.9(@swc/core@1.10.14(@swc/helpers@0.5.15))(@swc/types@0.1.17)(typescript@5.7.3))(@swc/core@1.10.14(@swc/helpers@0.5.15))(@types/node@22.13.1)(nx@20.4.6(@swc-node/register@1.10.9(@swc/core@1.10.14(@swc/helpers@0.5.15))(@swc/types@0.1.17)(typescript@5.7.3))(@swc/core@1.10.14(@swc/helpers@0.5.15)))(typescript@5.7.3)(verdaccio@5.33.0(typanion@3.14.0)))(@storm-software/config@1.106.3)(@swc/helpers@0.5.15)(nx@20.4.6(@swc-node/register@1.10.9(@swc/core@1.10.14(@swc/helpers@0.5.15))(@swc/types@0.1.17)(typescript@5.7.3))(@swc/core@1.10.14(@swc/helpers@0.5.15)))(rollup@4.34.5)(typescript@5.7.3)
       '@storm-software/untyped':
         specifier: 'catalog:'
         version: 0.11.12(@nx/devkit@20.4.6(nx@20.4.6(@swc-node/register@1.10.9(@swc/core@1.10.14(@swc/helpers@0.5.15))(@swc/types@0.1.17)(typescript@5.7.3))(@swc/core@1.10.14(@swc/helpers@0.5.15))))(@swc-node/register@1.10.9(@swc/core@1.10.14(@swc/helpers@0.5.15))(@swc/types@0.1.17)(typescript@5.7.3))(@swc/core@1.10.14(@swc/helpers@0.5.15))(untyped@1.5.2)
       '@storm-software/workspace-tools':
         specifier: 'catalog:'
-        version: 1.260.0(ca315e21d1672063809eb9c43ac0a29e)
+        version: 1.264.1(af45f6d5f6bcd6e2cca66ac1be997217)
       '@swc-node/register':
         specifier: ~1.10.9
         version: 1.10.9(@swc/core@1.10.14(@swc/helpers@0.5.15))(@swc/types@0.1.17)(typescript@5.7.3)
@@ -271,7 +271,7 @@ importers:
         version: 1.3.0
       ts-jest:
         specifier: 29.2.5
-        version: 29.2.5(@babel/core@7.26.7)(@jest/transform@29.7.0)(@jest/types@29.6.3)(babel-jest@29.7.0(@babel/core@7.26.7))(jest@29.7.0(@types/node@22.13.1)(babel-plugin-macros@3.1.0)(ts-node@10.9.2(@swc/core@1.10.14(@swc/helpers@0.5.15))(@types/node@22.13.1)(typescript@5.7.3)))(typescript@5.7.3)
+        version: 29.2.5(@babel/core@7.26.7)(@jest/transform@29.7.0)(@jest/types@29.6.3)(babel-jest@29.7.0(@babel/core@7.26.7))(esbuild@0.24.2)(jest@29.7.0(@types/node@22.13.1)(babel-plugin-macros@3.1.0)(ts-node@10.9.2(@swc/core@1.10.14(@swc/helpers@0.5.15))(@types/node@22.13.1)(typescript@5.7.3)))(typescript@5.7.3)
       ts-node:
         specifier: 10.9.2
         version: 10.9.2(@swc/core@1.10.14(@swc/helpers@0.5.15))(@types/node@22.13.1)(typescript@5.7.3)
@@ -346,6 +346,9 @@ importers:
       nanotar:
         specifier: ^0.2.0
         version: 0.2.0
+      picomatch:
+        specifier: ^4.0.2
+        version: 4.0.2
       semver:
         specifier: 7.7.1
         version: 7.7.1
@@ -353,6 +356,9 @@ importers:
       '@types/node':
         specifier: 'catalog:'
         version: 22.13.1
+      '@types/picomatch':
+        specifier: ^3.0.2
+        version: 3.0.2
       nx:
         specifier: 'catalog:'
         version: 20.4.6(@swc-node/register@1.10.9(@swc/core@1.10.14(@swc/helpers@0.5.15))(@swc/types@0.1.17)(typescript@5.7.3))(@swc/core@1.10.14(@swc/helpers@0.5.15))
@@ -419,7 +425,7 @@ importers:
     dependencies:
       '@storm-software/config-tools':
         specifier: 'catalog:'
-        version: 1.155.6(@storm-software/config@1.103.5)
+        version: 1.158.3(@storm-software/config@1.106.3)
       mlly:
         specifier: 1.7.4
         version: 1.7.4
@@ -445,7 +451,7 @@ importers:
         version: 20.4.6(nx@20.4.6(@swc-node/register@1.10.9(@swc/core@1.10.14(@swc/helpers@0.5.15))(@swc/types@0.1.17)(typescript@5.7.3))(@swc/core@1.10.14(@swc/helpers@0.5.15)))
       '@storm-software/workspace-tools':
         specifier: 'catalog:'
-        version: 1.260.0(ca315e21d1672063809eb9c43ac0a29e)
+        version: 1.264.1(af45f6d5f6bcd6e2cca66ac1be997217)
       defu:
         specifier: 'catalog:'
         version: 6.1.4
@@ -2850,14 +2856,14 @@ packages:
   '@solidity-parser/parser@0.17.0':
     resolution: {integrity: sha512-Nko8R0/kUo391jsEHHxrGM07QFdnPGvlmox4rmH0kNiNAashItAilhy4Mv4pK5gQmW5f4sXAF58fwJbmlkGcVw==}
 
-  '@storm-software/config-tools@1.155.6':
-    resolution: {integrity: sha512-HpLjzL7ocM+u5H+l2hKrjidxYjRGSBPcjmm5dJWh923izoOLNE181lmMNrQhRYRM8dRXAJkjHYvbkG5rx/EuHQ==}
+  '@storm-software/config-tools@1.158.3':
+    resolution: {integrity: sha512-pGEKbgmNWeqq5V9SBelSVL/sTvhqT3OeM68Ma8nfmsKJvU8zgXbvzPYHaxIBwYN8tRMDk4BCXuWlrLSAlzD3aQ==}
     hasBin: true
     peerDependencies:
       '@storm-software/config': workspace:*
 
-  '@storm-software/config@1.103.5':
-    resolution: {integrity: sha512-jMVi6sexxcfaMXMw9SAPSocXmRDi/zO2mVQI0vDJo4VPuwmReoVSDTv8pup2lRPRwuRMvmmSxlPw9Vx4bEOzkQ==}
+  '@storm-software/config@1.106.3':
+    resolution: {integrity: sha512-sKILgk2mzdPo6a0/MHzJP4x3/avA6MoLdWeVe3sFHU6TfTM4Z1y8PZrunyYM7orkXW6myXhWV4tAVBg70AiTNQ==}
 
   '@storm-software/cspell@0.20.3':
     resolution: {integrity: sha512-0yHpuDz4ZbV+QzDsaklCCsjzz8PWLXIZCf6+ncfKROIr9hJ34rVSgA8XQm7n9RFlYxZG1CG5Dk1R0c6/QKWs1A==}
@@ -2865,8 +2871,8 @@ packages:
     peerDependencies:
       cspell: ^8.17.3
 
-  '@storm-software/eslint@0.131.3':
-    resolution: {integrity: sha512-7cge2JcUdXnv/w9w7gfKX4cCN8d+rx8WsdotQo0oyN9iiAmWjKduq/Pvuss/3GMz1WGPWM8JDBqHhvWWvjA6vg==}
+  '@storm-software/eslint@0.137.2':
+    resolution: {integrity: sha512-VMgivpxcDqgNGrf/IQ1xgs9j94aKoviyeeZfkdDgwupuLodEdtqaG1ZNzBNIlLPmSM71JvQ6mGEbHxW97iXGZw==}
     engines: {node: '>=22.4.0', pnpm: '>=10.3.0'}
     peerDependencies:
       '@eslint-react/eslint-plugin': ^1.19.0
@@ -2888,8 +2894,8 @@ packages:
       graphql: ^14.0.0 || ^15.0.0 || ^16.0.0
       prettier-plugin-astro: ^0.14.0
 
-  '@storm-software/git-tools@2.93.14':
-    resolution: {integrity: sha512-tWcLOyFQA5n8IvMaTP1b9/F038S/jJl9CMQf0O3p+hFbdeakIbONEGd3DXdx4esSDsIfdcdoGqtHhwRR+vKj1Q==}
+  '@storm-software/git-tools@2.96.3':
+    resolution: {integrity: sha512-nVww7eoPC2tCg8DFRCXwhJMVI0vyemq9Gavz6x32HYDMSP0w5BaoCkKW4jaSiLSC7Uy+x1lg9VCNpNzCi0xthQ==}
     engines: {node: '>=22.4.0', pnpm: '>=10.3.0'}
     hasBin: true
 
@@ -2902,14 +2908,24 @@ packages:
     resolution: {integrity: sha512-5Ia+xu3dHRrO1PHBZ0GAyiBxaCTc6B6jn4nj6yTJc7OkHQtm0i62XmfdNB6jDISiyTs/745OEvk407WlYSEQIQ==}
     engines: {node: '>=22.4.0', pnpm: '>=10.3.0'}
 
-  '@storm-software/prettier@0.35.5':
-    resolution: {integrity: sha512-GOsOCUDFra5TpG9O6PXB51r00W0JqpSifDDWaL1ZP9RwqUfS/Tv4WvwQZSnEHJuptHZWIDmcyBbwSIitloCmqA==}
+  '@storm-software/prettier@0.42.1':
+    resolution: {integrity: sha512-/GhJW7+uB+5lIn7atnZ8W+tuDD2se+6bhaP9JZjgKRfjajX+IAhK2eezE83/I34tuQbMh3udvkHgAQqHxl10LQ==}
     peerDependencies:
       prettier: ^3.5.1
       prettier-plugin-astro: ^0.14.1
+      prettier-plugin-organize-imports: ^4.0.0
+      prettier-plugin-pkg: ^0.18.1
       prettier-plugin-prisma: ^5.0.0
+      prettier-plugin-sh: ^0.15.0
       prettier-plugin-solidity: 1.3.1
       prettier-plugin-tailwindcss: 0.6.5
+    peerDependenciesMeta:
+      prettier-plugin-astro:
+        optional: true
+      prettier-plugin-solidity:
+        optional: true
+      prettier-plugin-tailwindcss:
+        optional: true
 
   '@storm-software/testing-tools@1.104.37':
     resolution: {integrity: sha512-TB9wX8REBXLeKjkPeJBxRw/IaixCXbtjvf1YO/hb2nTiE8tlvSMdCIHZxr5FphPbblkI8xuNXUMK+aw92ZumwQ==}
@@ -2945,23 +2961,15 @@ packages:
       '@nx/devkit': ^20.3.1
       untyped: ^1.5.2
 
-  '@storm-software/workspace-tools@1.260.0':
-    resolution: {integrity: sha512-mncVb7Wb2vxQkdO8JLqlxiXNQVwoaIZ4B56fPiWVnVuk1F9Ib64uPYVZIQ8jfDmCEzZbRr4Kpdpv8r1l3Um4Rw==}
+  '@storm-software/workspace-tools@1.264.1':
+    resolution: {integrity: sha512-IhxR134mQa1FJftyKqz+6d634vZkA6NL0k9E0ZTCSqAWAIaF2mLGrBZnepHeLYYeGbQcQlsdVa4aOz6Aebnniw==}
     peerDependencies:
       '@storm-software/esbuild': workspace:*
       '@storm-software/prettier': workspace:*
-      '@storm-software/tsdown': workspace:*
       '@storm-software/unbuild': workspace:*
       markdownlint-cli2: ^0.17.2
       nx: ^20.3.1
       prettier: ^3.5.1
-    peerDependenciesMeta:
-      '@storm-software/esbuild':
-        optional: true
-      '@storm-software/tsdown':
-        optional: true
-      '@storm-software/unbuild':
-        optional: true
 
   '@storybook/csf@0.1.13':
     resolution: {integrity: sha512-7xOOwCLGB3ebM87eemep89MYRFTko+D8qE7EdAAq74lgdqRR5cOUtYWJLjO2dLtP94nqoOdHJo6MdLLKzg412Q==}
@@ -3257,6 +3265,9 @@ packages:
 
   '@types/parse-json@4.0.2':
     resolution: {integrity: sha512-dISoDXWWQwUquiKsyZ4Ng+HX2KsPL7LyHKHQwgGFEA3IaKac4Obd+h2a/a6waisAoepJlBcx9paWqjA8/HVjCw==}
+
+  '@types/picomatch@3.0.2':
+    resolution: {integrity: sha512-n0i8TD3UDB7paoMMxA3Y65vUncFJXjcUf7lQY7YyKGl6031FNjfsLs6pdLFCy2GNFxItPJG8GvvpbZc2skH7WA==}
 
   '@types/react-dom@19.0.3':
     resolution: {integrity: sha512-0Knk+HJiMP/qOZgMyNFamlIjw9OFCsyC2ZbigmEEyXXixgre6IQpm/4V+r3qH4GC1JPvRJKInw+on2rV6YZLeA==}
@@ -12101,11 +12112,12 @@ snapshots:
       ignore: 5.3.2
       p-map: 4.0.0
 
-  '@solidity-parser/parser@0.17.0': {}
+  '@solidity-parser/parser@0.17.0':
+    optional: true
 
-  '@storm-software/config-tools@1.155.6(@storm-software/config@1.103.5)':
+  '@storm-software/config-tools@1.158.3(@storm-software/config@1.106.3)':
     dependencies:
-      '@storm-software/config': 1.103.5
+      '@storm-software/config': 1.106.3
       c12: 2.0.1
       chalk: 4.1.2
       commander: 12.1.0
@@ -12117,7 +12129,7 @@ snapshots:
     transitivePeerDependencies:
       - magicast
 
-  '@storm-software/config@1.103.5':
+  '@storm-software/config@1.106.3':
     dependencies:
       zod: 3.24.1
 
@@ -12125,7 +12137,7 @@ snapshots:
     dependencies:
       cspell: 8.17.3
 
-  '@storm-software/eslint@0.131.3(ca74f1b5de8580635a4aaf4644e76700)':
+  '@storm-software/eslint@0.137.2(ca74f1b5de8580635a4aaf4644e76700)':
     dependencies:
       '@antfu/install-pkg': 1.0.0
       '@clack/prompts': 0.10.0
@@ -12204,7 +12216,7 @@ snapshots:
       - verdaccio
       - vitest
 
-  '@storm-software/git-tools@2.93.14(@swc-node/register@1.10.9(@swc/core@1.10.14(@swc/helpers@0.5.15))(@swc/types@0.1.17)(typescript@5.7.3))(@swc/core@1.10.14(@swc/helpers@0.5.15))(chokidar@4.0.3)':
+  '@storm-software/git-tools@2.96.3(@swc-node/register@1.10.9(@swc/core@1.10.14(@swc/helpers@0.5.15))(@swc/types@0.1.17)(typescript@5.7.3))(@swc/core@1.10.14(@swc/helpers@0.5.15))(chokidar@4.0.3)':
     dependencies:
       '@angular-devkit/architect': 0.1900.6(chokidar@4.0.3)
       nx: 20.4.6(@swc-node/register@1.10.9(@swc/core@1.10.14(@swc/helpers@0.5.15))(@swc/types@0.1.17)(typescript@5.7.3))(@swc/core@1.10.14(@swc/helpers@0.5.15))
@@ -12229,19 +12241,17 @@ snapshots:
     transitivePeerDependencies:
       - supports-color
 
-  '@storm-software/prettier@0.35.5(prettier-plugin-astro@0.14.1)(prettier-plugin-prisma@5.0.0(prettier@3.5.1))(prettier-plugin-solidity@1.3.1(prettier@3.5.1))(prettier-plugin-tailwindcss@0.6.5(prettier-plugin-astro@0.14.1)(prettier-plugin-organize-imports@4.1.0(prettier@3.5.1)(typescript@5.7.3))(prettier@3.5.1))(prettier@3.5.1)(typescript@5.7.3)':
+  '@storm-software/prettier@0.42.1(prettier-plugin-astro@0.14.1)(prettier-plugin-organize-imports@4.1.0(prettier@3.5.1)(typescript@5.7.3))(prettier-plugin-pkg@0.18.1(prettier@3.5.1))(prettier-plugin-prisma@5.0.0(prettier@3.5.1))(prettier-plugin-sh@0.15.0(prettier@3.5.1))(prettier-plugin-solidity@1.3.1(prettier@3.5.1))(prettier-plugin-tailwindcss@0.6.5(prettier-plugin-astro@0.14.1)(prettier-plugin-organize-imports@4.1.0(prettier@3.5.1)(typescript@5.7.3))(prettier@3.5.1))(prettier@3.5.1)':
     dependencies:
       prettier: 3.5.1
-      prettier-plugin-astro: 0.14.1
       prettier-plugin-organize-imports: 4.1.0(prettier@3.5.1)(typescript@5.7.3)
       prettier-plugin-pkg: 0.18.1(prettier@3.5.1)
       prettier-plugin-prisma: 5.0.0(prettier@3.5.1)
       prettier-plugin-sh: 0.15.0(prettier@3.5.1)
+    optionalDependencies:
+      prettier-plugin-astro: 0.14.1
       prettier-plugin-solidity: 1.3.1(prettier@3.5.1)
       prettier-plugin-tailwindcss: 0.6.5(prettier-plugin-astro@0.14.1)(prettier-plugin-organize-imports@4.1.0(prettier@3.5.1)(typescript@5.7.3))(prettier@3.5.1)
-    transitivePeerDependencies:
-      - typescript
-      - vue-tsc
 
   '@storm-software/testing-tools@1.104.37(@nx/jest@20.4.6(@babel/traverse@7.26.7)(@swc-node/register@1.10.9(@swc/core@1.10.14(@swc/helpers@0.5.15))(@swc/types@0.1.17)(typescript@5.7.3))(@swc/core@1.10.14(@swc/helpers@0.5.15))(@types/node@22.13.1)(babel-plugin-macros@3.1.0)(nx@20.4.6(@swc-node/register@1.10.9(@swc/core@1.10.14(@swc/helpers@0.5.15))(@swc/types@0.1.17)(typescript@5.7.3))(@swc/core@1.10.14(@swc/helpers@0.5.15)))(ts-node@10.9.2(@swc/core@1.10.14(@swc/helpers@0.5.15))(@types/node@22.13.1)(typescript@5.7.3))(typescript@5.7.3)(verdaccio@5.33.0(typanion@3.14.0)))(jest@29.7.0(@types/node@22.13.1)(babel-plugin-macros@3.1.0)(ts-node@10.9.2(@swc/core@1.10.14(@swc/helpers@0.5.15))(@types/node@22.13.1)(typescript@5.7.3)))':
     dependencies:
@@ -12252,7 +12262,7 @@ snapshots:
     dependencies:
       '@total-typescript/ts-reset': 0.5.1
 
-  '@storm-software/unbuild@0.37.12(@nx/devkit@20.4.6(nx@20.4.6(@swc-node/register@1.10.9(@swc/core@1.10.14(@swc/helpers@0.5.15))(@swc/types@0.1.17)(typescript@5.7.3))(@swc/core@1.10.14(@swc/helpers@0.5.15))))(@nx/js@20.4.6(@babel/traverse@7.26.7)(@swc-node/register@1.10.9(@swc/core@1.10.14(@swc/helpers@0.5.15))(@swc/types@0.1.17)(typescript@5.7.3))(@swc/core@1.10.14(@swc/helpers@0.5.15))(@types/node@22.13.1)(nx@20.4.6(@swc-node/register@1.10.9(@swc/core@1.10.14(@swc/helpers@0.5.15))(@swc/types@0.1.17)(typescript@5.7.3))(@swc/core@1.10.14(@swc/helpers@0.5.15)))(typescript@5.7.3)(verdaccio@5.33.0(typanion@3.14.0)))(@storm-software/config@1.103.5)(@swc/helpers@0.5.15)(nx@20.4.6(@swc-node/register@1.10.9(@swc/core@1.10.14(@swc/helpers@0.5.15))(@swc/types@0.1.17)(typescript@5.7.3))(@swc/core@1.10.14(@swc/helpers@0.5.15)))(rollup@4.34.5)(typescript@5.7.3)':
+  '@storm-software/unbuild@0.37.12(@nx/devkit@20.4.6(nx@20.4.6(@swc-node/register@1.10.9(@swc/core@1.10.14(@swc/helpers@0.5.15))(@swc/types@0.1.17)(typescript@5.7.3))(@swc/core@1.10.14(@swc/helpers@0.5.15))))(@nx/js@20.4.6(@babel/traverse@7.26.7)(@swc-node/register@1.10.9(@swc/core@1.10.14(@swc/helpers@0.5.15))(@swc/types@0.1.17)(typescript@5.7.3))(@swc/core@1.10.14(@swc/helpers@0.5.15))(@types/node@22.13.1)(nx@20.4.6(@swc-node/register@1.10.9(@swc/core@1.10.14(@swc/helpers@0.5.15))(@swc/types@0.1.17)(typescript@5.7.3))(@swc/core@1.10.14(@swc/helpers@0.5.15)))(typescript@5.7.3)(verdaccio@5.33.0(typanion@3.14.0)))(@storm-software/config@1.106.3)(@swc/helpers@0.5.15)(nx@20.4.6(@swc-node/register@1.10.9(@swc/core@1.10.14(@swc/helpers@0.5.15))(@swc/types@0.1.17)(typescript@5.7.3))(@swc/core@1.10.14(@swc/helpers@0.5.15)))(rollup@4.34.5)(typescript@5.7.3)':
     dependencies:
       '@nx/devkit': 20.4.6(nx@20.4.6(@swc-node/register@1.10.9(@swc/core@1.10.14(@swc/helpers@0.5.15))(@swc/types@0.1.17)(typescript@5.7.3))(@swc/core@1.10.14(@swc/helpers@0.5.15)))
       '@nx/js': 20.4.6(@babel/traverse@7.26.7)(@swc-node/register@1.10.9(@swc/core@1.10.14(@swc/helpers@0.5.15))(@swc/types@0.1.17)(typescript@5.7.3))(@swc/core@1.10.14(@swc/helpers@0.5.15))(@types/node@22.13.1)(nx@20.4.6(@swc-node/register@1.10.9(@swc/core@1.10.14(@swc/helpers@0.5.15))(@swc/types@0.1.17)(typescript@5.7.3))(@swc/core@1.10.14(@swc/helpers@0.5.15)))(typescript@5.7.3)(verdaccio@5.33.0(typanion@3.14.0))
@@ -12262,7 +12272,7 @@ snapshots:
       '@rollup/plugin-node-resolve': 16.0.0(rollup@4.34.5)
       '@rollup/plugin-replace': 6.0.2(rollup@4.34.5)
       '@rollup/pluginutils': 5.1.4(rollup@4.34.5)
-      '@storm-software/config': 1.103.5
+      '@storm-software/config': 1.106.3
       '@swc/core': 1.7.26(@swc/helpers@0.5.15)
       commander: 12.1.0
       defu: 6.1.4
@@ -12296,7 +12306,7 @@ snapshots:
       - '@swc/core'
       - debug
 
-  '@storm-software/workspace-tools@1.260.0(ca315e21d1672063809eb9c43ac0a29e)':
+  '@storm-software/workspace-tools@1.264.1(af45f6d5f6bcd6e2cca66ac1be997217)':
     dependencies:
       '@ltd/j-toml': 1.38.0
       '@microsoft/api-extractor': 7.49.2(@types/node@22.13.1)
@@ -12305,7 +12315,8 @@ snapshots:
       '@size-limit/esbuild': 11.1.4(size-limit@11.1.4)
       '@size-limit/esbuild-why': 11.1.4(size-limit@11.1.4)
       '@size-limit/file': 11.1.4(size-limit@11.1.4)
-      '@storm-software/prettier': 0.35.5(prettier-plugin-astro@0.14.1)(prettier-plugin-prisma@5.0.0(prettier@3.5.1))(prettier-plugin-solidity@1.3.1(prettier@3.5.1))(prettier-plugin-tailwindcss@0.6.5(prettier-plugin-astro@0.14.1)(prettier-plugin-organize-imports@4.1.0(prettier@3.5.1)(typescript@5.7.3))(prettier@3.5.1))(prettier@3.5.1)(typescript@5.7.3)
+      '@storm-software/prettier': 0.42.1(prettier-plugin-astro@0.14.1)(prettier-plugin-organize-imports@4.1.0(prettier@3.5.1)(typescript@5.7.3))(prettier-plugin-pkg@0.18.1(prettier@3.5.1))(prettier-plugin-prisma@5.0.0(prettier@3.5.1))(prettier-plugin-sh@0.15.0(prettier@3.5.1))(prettier-plugin-solidity@1.3.1(prettier@3.5.1))(prettier-plugin-tailwindcss@0.6.5(prettier-plugin-astro@0.14.1)(prettier-plugin-organize-imports@4.1.0(prettier@3.5.1)(typescript@5.7.3))(prettier@3.5.1))(prettier@3.5.1)
+      '@storm-software/unbuild': 0.37.12(@nx/devkit@20.4.6(nx@20.4.6(@swc-node/register@1.10.9(@swc/core@1.10.14(@swc/helpers@0.5.15))(@swc/types@0.1.17)(typescript@5.7.3))(@swc/core@1.10.14(@swc/helpers@0.5.15))))(@nx/js@20.4.6(@babel/traverse@7.26.7)(@swc-node/register@1.10.9(@swc/core@1.10.14(@swc/helpers@0.5.15))(@swc/types@0.1.17)(typescript@5.7.3))(@swc/core@1.10.14(@swc/helpers@0.5.15))(@types/node@22.13.1)(nx@20.4.6(@swc-node/register@1.10.9(@swc/core@1.10.14(@swc/helpers@0.5.15))(@swc/types@0.1.17)(typescript@5.7.3))(@swc/core@1.10.14(@swc/helpers@0.5.15)))(typescript@5.7.3)(verdaccio@5.33.0(typanion@3.14.0)))(@storm-software/config@1.106.3)(@swc/helpers@0.5.15)(nx@20.4.6(@swc-node/register@1.10.9(@swc/core@1.10.14(@swc/helpers@0.5.15))(@swc/types@0.1.17)(typescript@5.7.3))(@swc/core@1.10.14(@swc/helpers@0.5.15)))(rollup@4.34.5)(typescript@5.7.3)
       defu: 6.1.4
       fs-extra: 11.2.0
       glob: 11.0.1
@@ -12322,8 +12333,6 @@ snapshots:
       untyped: 1.5.2
       zod: 3.24.1
       zod-to-json-schema: 3.23.1(zod@3.24.1)
-    optionalDependencies:
-      '@storm-software/unbuild': 0.37.12(@nx/devkit@20.4.6(nx@20.4.6(@swc-node/register@1.10.9(@swc/core@1.10.14(@swc/helpers@0.5.15))(@swc/types@0.1.17)(typescript@5.7.3))(@swc/core@1.10.14(@swc/helpers@0.5.15))))(@nx/js@20.4.6(@babel/traverse@7.26.7)(@swc-node/register@1.10.9(@swc/core@1.10.14(@swc/helpers@0.5.15))(@swc/types@0.1.17)(typescript@5.7.3))(@swc/core@1.10.14(@swc/helpers@0.5.15))(@types/node@22.13.1)(nx@20.4.6(@swc-node/register@1.10.9(@swc/core@1.10.14(@swc/helpers@0.5.15))(@swc/types@0.1.17)(typescript@5.7.3))(@swc/core@1.10.14(@swc/helpers@0.5.15)))(typescript@5.7.3)(verdaccio@5.33.0(typanion@3.14.0)))(@storm-software/config@1.103.5)(@swc/helpers@0.5.15)(nx@20.4.6(@swc-node/register@1.10.9(@swc/core@1.10.14(@swc/helpers@0.5.15))(@swc/types@0.1.17)(typescript@5.7.3))(@swc/core@1.10.14(@swc/helpers@0.5.15)))(rollup@4.34.5)(typescript@5.7.3)
     transitivePeerDependencies:
       - '@types/node'
       - supports-color
@@ -12606,6 +12615,8 @@ snapshots:
   '@types/normalize-package-data@2.4.4': {}
 
   '@types/parse-json@4.0.2': {}
+
+  '@types/picomatch@3.0.2': {}
 
   '@types/react-dom@19.0.3(@types/react@19.0.8)':
     dependencies:
@@ -18325,6 +18336,7 @@ snapshots:
       prettier: 3.5.1
       semver: 7.7.1
       solidity-comments-extractor: 0.0.8
+    optional: true
 
   prettier-plugin-tailwindcss@0.6.5(prettier-plugin-astro@0.14.1)(prettier-plugin-organize-imports@4.1.0(prettier@3.5.1)(typescript@5.7.3))(prettier@3.5.1):
     dependencies:
@@ -18332,6 +18344,7 @@ snapshots:
     optionalDependencies:
       prettier-plugin-astro: 0.14.1
       prettier-plugin-organize-imports: 4.1.0(prettier@3.5.1)(typescript@5.7.3)
+    optional: true
 
   prettier@3.5.1: {}
 
@@ -18999,7 +19012,8 @@ snapshots:
 
   smol-toml@1.3.1: {}
 
-  solidity-comments-extractor@0.0.8: {}
+  solidity-comments-extractor@0.0.8:
+    optional: true
 
   sonic-boom@2.8.0:
     dependencies:
@@ -19423,7 +19437,7 @@ snapshots:
 
   ts-interface-checker@0.1.13: {}
 
-  ts-jest@29.2.5(@babel/core@7.26.7)(@jest/transform@29.7.0)(@jest/types@29.6.3)(babel-jest@29.7.0(@babel/core@7.26.7))(jest@29.7.0(@types/node@22.13.1)(babel-plugin-macros@3.1.0)(ts-node@10.9.2(@swc/core@1.10.14(@swc/helpers@0.5.15))(@types/node@22.13.1)(typescript@5.7.3)))(typescript@5.7.3):
+  ts-jest@29.2.5(@babel/core@7.26.7)(@jest/transform@29.7.0)(@jest/types@29.6.3)(babel-jest@29.7.0(@babel/core@7.26.7))(esbuild@0.24.2)(jest@29.7.0(@types/node@22.13.1)(babel-plugin-macros@3.1.0)(ts-node@10.9.2(@swc/core@1.10.14(@swc/helpers@0.5.15))(@types/node@22.13.1)(typescript@5.7.3)))(typescript@5.7.3):
     dependencies:
       bs-logger: 0.2.6
       ejs: 3.1.10
@@ -19441,6 +19455,7 @@ snapshots:
       '@jest/transform': 29.7.0
       '@jest/types': 29.6.3
       babel-jest: 29.7.0(@babel/core@7.26.7)
+      esbuild: 0.24.2
 
   ts-node@10.9.1(@swc/core@1.10.14(@swc/helpers@0.5.15))(@types/node@22.13.1)(typescript@5.7.3):
     dependencies:
