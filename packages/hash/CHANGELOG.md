@@ -1,3 +1,9 @@
+## 0.7.0 (2025-03-06)
+
+### Features
+
+- **hash:** Added additional patterns to `ignores` list for `hashDirectory` function ([649700f](https://github.com/storm-software/stryke/commit/649700f))
+
 ## 0.6.0 (2025-03-06)
 
 ### Features
