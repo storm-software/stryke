@@ -1,4 +1,4 @@
-/*-------------------------------------------------------------------
+/* -------------------------------------------------------------------
 
                        ⚡ Storm Software - Stryke
 
@@ -13,7 +13,7 @@
  Contact:         https://stormsoftware.com/contact
  License:         https://stormsoftware.com/projects/stryke/license
 
- -------------------------------------------------------------------*/
+ ------------------------------------------------------------------- */
 
 import { StormJSON } from "@stryke/json/storm-json";
 import type { JsonParseOptions } from "@stryke/json/types";
@@ -43,13 +43,13 @@ export const readFileSync = (filePath: string): string => {
  *
  * @param filePath - The file path to read to
  */
-export const readFile = (filePath: string): Promise<string> => {
+export const readFile = async (filePath: string): Promise<string> => {
   try {
     if (!filePath) {
       throw new Error("No file path provided to read data");
     }
 
-    return readFileFs(filePath, { encoding: "utf8" });
+    return await readFileFs(filePath, { encoding: "utf8" });
   } catch {
     throw new Error("An error occurred writing data to file");
   }
@@ -181,6 +181,6 @@ export function readFileIfExistingSync(path: string) {
  * @param path - The path to the file to read.
  * @returns The content of the file if it exists, otherwise an empty string.
  */
-export function readFileIfExisting(path: string) {
+export async function readFileIfExisting(path: string) {
   return existsSync(path) ? readFile(path) : "";
 }

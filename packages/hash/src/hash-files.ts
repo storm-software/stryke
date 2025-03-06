@@ -17,7 +17,7 @@
 
 import type { ListFilesOptions } from "@stryke/fs/files/list-files";
 import { listFiles } from "@stryke/fs/files/list-files";
-import { readFile } from "node:fs/promises";
+import { readFile } from "@stryke/fs/files/read-files";
 import type { HashOptions } from "./hash";
 import { hash } from "./hash";
 
@@ -37,7 +37,7 @@ export async function hashFiles(
   const result = {} as Record<string, string>;
   await Promise.all(
     files.map(async file => {
-      result[file] = await readFile(file, "utf8");
+      result[file] = await readFile(file);
     })
   );
 
@@ -48,14 +48,20 @@ export async function hashFiles(
  * Hash a folder path into a string based on the file content
  *
  * @param directoryPath - The folder path to hash
- * @param  options - Hashing options. By default, the `node_modules` folder is ignored.
+ * @param  options - Hashing options. By default, the `node_modules`, `.git`, `.nx`, `.cache`, and `tmp` folders is ignored.
  * @returns A hashed string value
  */
 export async function hashDirectory(
   directoryPath: string,
   options: HashFilesOptions = {}
 ): Promise<string> {
-  options.ignored = options.ignored ?? ["**/node_modules/**"];
+  options.ignored = options.ignored ?? [
+    "**/node_modules/**",
+    "**/.git/**",
+    "**/.nx/**",
+    "**/.cache/**",
+    "**/tmp/**"
+  ];
 
   return hashFiles(await listFiles(directoryPath, options), options);
 }
