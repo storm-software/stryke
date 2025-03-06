@@ -1,3 +1,9 @@
+## 0.6.0 (2025-03-06)
+
+### Features
+
+- **fs:** Added the options parameter to the `listFiles` helper function ([630be63](https://github.com/storm-software/stryke/commit/630be63))
+
 ## 0.5.1 (2025-02-26)
 
 ### Miscellaneous
