@@ -15,18 +15,29 @@
 
  ------------------------------------------------------------------- */
 
+import { StormJSON } from "@stryke/json/storm-json";
 import type { JsonSerializeOptions } from "@stryke/json/types";
+import { findFilePath } from "@stryke/path/utilities/file-path-fns";
 import type { Abortable } from "node:events";
 import type {
+  WriteFileOptions as FSWriteFileOptions,
   Mode,
   ObjectEncodingOptions,
-  OpenMode,
-  WriteFileOptions
+  OpenMode
 } from "node:fs";
-import type { Encoding } from "./constants";
-import { writeFileSync as writeFileSyncFs } from "node:fs";
+import { existsSync, writeFileSync as writeFileSyncFs } from "node:fs";
 import { writeFile as writeFileFs } from "node:fs/promises";
-import { StormJSON } from "@stryke/json/storm-json";
+import type { Encoding } from "./constants";
+import { createDirectory, createDirectorySync } from "./helpers";
+
+export interface WriteFileOptions {
+  /**
+   * Whether to create the directory if it does not exist
+   *
+   * @defaultValue true
+   */
+  createDirectory?: boolean;
+}
 
 /**
  * Write the given content to the given file path
@@ -37,10 +48,19 @@ import { StormJSON } from "@stryke/json/storm-json";
 export const writeFileSync = (
   filePath: string,
   content?: any,
-  options?: WriteFileOptions
+  options?: WriteFileOptions & FSWriteFileOptions
 ): void => {
   if (!filePath) {
     throw new Error("No file path provided to write data");
+  }
+
+  const directory = findFilePath(filePath);
+  if (!existsSync(directory)) {
+    if (options?.createDirectory !== false) {
+      createDirectorySync(directory);
+    } else {
+      throw new Error(`Directory ${directory} does not exist`);
+    }
   }
 
   writeFileSyncFs(filePath, content || "", options);
@@ -56,17 +76,27 @@ export const writeFileSync = (
 export const writeFile = async (
   filePath: string,
   content?: any,
-  options?:
-    | (ObjectEncodingOptions & {
-        mode?: Mode | undefined;
-        flag?: OpenMode | undefined;
-        flush?: boolean | undefined;
-      } & Abortable)
-    | Encoding
-    | null
+  options?: WriteFileOptions &
+    (
+      | (ObjectEncodingOptions & {
+          mode?: Mode | undefined;
+          flag?: OpenMode | undefined;
+          flush?: boolean | undefined;
+        } & Abortable)
+      | Encoding
+    )
 ): Promise<void> => {
   if (!filePath) {
     throw new Error("No file path provided to read data");
+  }
+
+  const directory = findFilePath(filePath);
+  if (!existsSync(directory)) {
+    if (options?.createDirectory !== false) {
+      await createDirectory(directory);
+    } else {
+      throw new Error(`Directory ${directory} does not exist`);
+    }
   }
 
   return writeFileFs(filePath, content || "", options);
