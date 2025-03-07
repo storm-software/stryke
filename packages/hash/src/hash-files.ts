@@ -17,7 +17,7 @@
 
 import type { ListFilesOptions } from "@stryke/fs/files/list-files";
 import { listFiles } from "@stryke/fs/files/list-files";
-import { readFile } from "@stryke/fs/files/read-files";
+import { readFile } from "@stryke/fs/files/read-file";
 import type { HashOptions } from "./hash";
 import { hash } from "./hash";
 
