@@ -1,3 +1,9 @@
+## 0.9.0 (2025-03-07)
+
+### Features
+
+- **fs:** Added the `createDirectory` options to the `writeFile` function ([461e2b0](https://github.com/storm-software/stryke/commit/461e2b0))
+
 ## 0.8.0 (2025-03-06)
 
 ### Features
