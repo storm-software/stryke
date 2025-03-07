@@ -1,3 +1,9 @@
+## 0.7.1 (2025-03-07)
+
+### Bug Fixes
+
+- **hash:** Resolve issue with invalid file operations ([7d85143](https://github.com/storm-software/stryke/commit/7d85143))
+
 ## 0.7.0 (2025-03-06)
 
 ### Features
