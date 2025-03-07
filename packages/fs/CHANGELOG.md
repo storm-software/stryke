@@ -1,3 +1,9 @@
+## 0.9.1 (2025-03-07)
+
+### Bug Fixes
+
+- **fs:** Normalize path prior to creating directories in `writeFile` helpers ([80c418f](https://github.com/storm-software/stryke/commit/80c418f))
+
 ## 0.9.0 (2025-03-07)
 
 ### Features
