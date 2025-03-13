@@ -1,4 +1,4 @@
-/*-------------------------------------------------------------------
+/* -------------------------------------------------------------------
 
                        ⚡ Storm Software - Stryke
 
@@ -13,7 +13,7 @@
  Contact:         https://stormsoftware.com/contact
  License:         https://stormsoftware.com/projects/stryke/license
 
- -------------------------------------------------------------------*/
+ ------------------------------------------------------------------- */
 
 import { AbortError } from "./errors";
 
@@ -54,7 +54,7 @@ interface DelayOptions {
  * @param options - The options object.
  * @returns A Promise that resolves after the specified delay.
  */
-export function delay(
+export async function delay(
   ms: number,
   { signal }: DelayOptions = {}
 ): Promise<void> {
@@ -112,6 +112,6 @@ export function delay(
  * @param options - The options object.
  * @returns A Promise that resolves after the specified sleep.
  */
-export function sleep(ms: number, options?: DelayOptions): Promise<void> {
+export async function sleep(ms: number, options?: DelayOptions): Promise<void> {
   return delay(ms, options);
 }

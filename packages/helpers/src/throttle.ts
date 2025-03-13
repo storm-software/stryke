@@ -1,4 +1,4 @@
-/*-------------------------------------------------------------------
+/* -------------------------------------------------------------------
 
                        ⚡ Storm Software - Stryke
 
@@ -13,7 +13,7 @@
  Contact:         https://stormsoftware.com/contact
  License:         https://stormsoftware.com/projects/stryke/license
 
- -------------------------------------------------------------------*/
+ ------------------------------------------------------------------- */
 
 /**
  * Creates a throttled function that only invokes the provided function at most once
@@ -51,7 +51,6 @@ export function throttle<F extends (...args: any[]) => void>(
   const throttledFunction = ((...args: Parameters<F>) => {
     const now = Date.now();
 
-    // eslint-disable-next-line eqeqeq
     if (lastCallTime == null || now - lastCallTime >= throttleMs) {
       lastCallTime = now;
       func(...args);

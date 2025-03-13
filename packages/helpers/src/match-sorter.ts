@@ -1,4 +1,4 @@
-/*-------------------------------------------------------------------
+/* -------------------------------------------------------------------
 
                        ⚡ Storm Software - Stryke
 
@@ -13,7 +13,7 @@
  Contact:         https://stormsoftware.com/contact
  License:         https://stormsoftware.com/projects/stryke/license
 
- -------------------------------------------------------------------*/
+ ------------------------------------------------------------------- */
 
 import { removeAccents } from "./remove-accents";
 
@@ -23,11 +23,11 @@ import { removeAccents } from "./remove-accents";
  * Forked from match-sorter by Kent C. Dodds
  */
 
-type KeyAttributes = {
+interface KeyAttributes {
   threshold?: Ranking;
   maxRanking: Ranking;
   minRanking: Ranking;
-};
+}
 interface RankingInfo {
   rankedValue: string;
   rank: Ranking;
@@ -466,7 +466,6 @@ function getNestedValues<ItemType>(
     // the path; don't use `.flat()` because that's not available in node.js v10
     const result: Array<string> = [];
 
-    // eslint-disable-next-line unicorn/prefer-spread
     return result.concat(...(values as Array<string>));
   }
   // Based on our logic it should be an array of strings by now...

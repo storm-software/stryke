@@ -1,4 +1,4 @@
-/*-------------------------------------------------------------------
+/* -------------------------------------------------------------------
 
                        ⚡ Storm Software - Stryke
 
@@ -13,9 +13,10 @@
  Contact:         https://stormsoftware.com/contact
  License:         https://stormsoftware.com/projects/stryke/license
 
- -------------------------------------------------------------------*/
+ ------------------------------------------------------------------- */
 
-import { isNumber, isSetString } from "@stryke/types";
+import { isNumber } from "@stryke/type-checks/is-number";
+import { isSetString } from "@stryke/type-checks/is-set-string";
 
 /**
  * Converts an array of path segments into a deep key string.
@@ -42,29 +43,32 @@ export function toDeepKey(path: string[]): string {
 /**
  * Adds a path segment to a deep key string.
  *
+ * @remarks
  * This function takes a deep key string and a path segment and combines them into a new deep key string.
  *
- * @param deepKey - The deep key string to add the path segment to.
- * @param path - The path segment to add to the deep key string.
- * @returns A new deep key string.
- *
  * @example
+ * ```ts
  * addPathToDeepKey('a.b', 'c') // Returns 'a.b.c'
  * addPathToDeepKey('a[0]', 'c') // Returns 'a[0].c'
  * addPathToDeepKey('.a.b', 'c') // Returns '.a.b.c'
  * addPathToDeepKey('a.b', 'b.c') // Returns 'a.b.b.c'
  * addPathToDeepKey('', 'a') // Returns 'a'
  * addPathToDeepKey('.a.b', 'c.d') // Returns '.a.b.c.d'
+ * ```
+ *
+ * @param deepKey - The deep key string to add the path segment to.
+ * @param path - The path segment to add to the deep key string.
+ * @returns A new deep key string.
  */
 export function addPathToDeepKey(
   deepKey: string,
   path: string | number
 ): string {
   if (isNumber(path) || Number.isInteger(path)) {
-    return deepKey + `[${path}]`;
+    return `${deepKey}[${path}]`;
   }
   if (isSetString(path)) {
-    return deepKey + `.${path}`;
+    return `${deepKey}.${path}`;
   }
 
   return deepKey;

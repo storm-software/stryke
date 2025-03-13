@@ -1,4 +1,4 @@
-/*-------------------------------------------------------------------
+/* -------------------------------------------------------------------
 
                        ⚡ Storm Software - Stryke
 
@@ -13,45 +13,46 @@
  Contact:         https://stormsoftware.com/contact
  License:         https://stormsoftware.com/projects/stryke/license
 
- -------------------------------------------------------------------*/
+ ------------------------------------------------------------------- */
 
 const DOTS_KEY = /^[\w.]+$/g;
 
 const ESCAPE_REGEXP = /\\(?<temp1>\\)?/g;
 const PROPERTY_REGEXP = new RegExp(
   // Match anything that isn't a dot or bracket.
-  String.raw`[^.[\]]+` +
-    "|" +
+  `${String.raw`[^.[\]]+`}|${
     // Or match property names within brackets.
-    String.raw`\[(?:` +
+    String.raw`\[(?:`
     // Match a non-string expression.
-    "([^\"'][^[]*)" +
-    "|" +
-    // Or match strings (supports escaping characters).
-    String.raw`(["'])((?:(?!\2)[^\\]|\\.)*?)\2` +
-    String.raw`)\]` +
-    "|" +
-    // Or match "" as the space between consecutive dots or empty brackets.
-    String.raw`(?=(?:\.|\[\])(?:\.|\[\]|$))`,
+  }([^"'][^[]*)` +
+    `|${
+      // Or match strings (supports escaping characters).
+      String.raw`(["'])((?:(?!\2)[^\\]|\\.)*?)\2`
+    }${String.raw`)\]`}|${
+      // Or match "" as the space between consecutive dots or empty brackets.
+      String.raw`(?=(?:\.|\[\])(?:\.|\[\]|$))`
+    }`,
   "g"
 );
 
 /**
  * Converts a deep key string into an array of path segments.
  *
+ * @remarks
  * This function takes a string representing a deep key (e.g., 'a.b.c' or 'a[b][c]') and breaks it down into an array of strings, each representing a segment of the path.
  *
- * @param {string} deepKey - The deep key string to convert.
- * @returns {string[]} An array of strings, each representing a segment of the path.
- *
- * Examples:
- *
+ * @example
+ * ```ts
  * toPath('a.b.c') // Returns ['a', 'b', 'c']
  * toPath('a[b][c]') // Returns ['a', 'b', 'c']
  * toPath('.a.b.c') // Returns ['', 'a', 'b', 'c']
  * toPath('a["b.c"].d') // Returns ['a', 'b.c', 'd']
  * toPath('') // Returns []
  * toPath('.a[b].c.d[e]["f.g"].h') // Returns ['', 'a', 'b', 'c', 'd', 'e', 'f.g', 'h']
+ * ```
+ *
+ * @param deepKey - The deep key string to convert.
+ * @returns An array of strings, each representing a segment of the path.
  */
 export function toPath(deepKey: string): string[] {
   if (DOTS_KEY.test(deepKey)) {

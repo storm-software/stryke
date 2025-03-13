@@ -1,4 +1,4 @@
-/*-------------------------------------------------------------------
+/* -------------------------------------------------------------------
 
                        ⚡ Storm Software - Stryke
 
@@ -13,9 +13,11 @@
  Contact:         https://stormsoftware.com/contact
  License:         https://stormsoftware.com/projects/stryke/license
 
- -------------------------------------------------------------------*/
+ ------------------------------------------------------------------- */
 
-import { isDeepKey, isNumber, toStringKey } from "@stryke/types";
+import { toStringKey } from "@stryke/convert/to-string-key";
+import { isDeepKey } from "@stryke/type-checks/is-deep-key";
+import { isNumber } from "@stryke/type-checks/is-number";
 import { toPath } from "./to-path";
 
 /**

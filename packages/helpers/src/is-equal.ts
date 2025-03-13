@@ -1,4 +1,4 @@
-/*-------------------------------------------------------------------
+/* -------------------------------------------------------------------
 
                        ⚡ Storm Software - Stryke
 
@@ -13,12 +13,10 @@
  Contact:         https://stormsoftware.com/contact
  License:         https://stormsoftware.com/projects/stryke/license
 
- -------------------------------------------------------------------*/
+ ------------------------------------------------------------------- */
 
-/* eslint-disable no-cond-assign */
-/* eslint-disable space-in-parens */
-
-import { isSet, isSetString } from "@stryke/types";
+import { isSet } from "@stryke/type-checks/is-set";
+import { isSetString } from "@stryke/type-checks/is-set-string";
 
 const hasMap = typeof Map === "function";
 const hasSet = typeof Set === "function";
@@ -34,7 +32,7 @@ function equal(a: any, b: any) {
     let length;
     if (Array.isArray(a)) {
       length = a.length;
-      // eslint-disable-next-line eqeqeq
+
       if (length != b.length) return false;
       for (let i = length; i-- !== 0; ) if (!equal(a[i], b[i])) return false;
       return true;
@@ -69,7 +67,7 @@ function equal(a: any, b: any) {
       ArrayBuffer.isView(b)
     ) {
       length = a.length;
-      // eslint-disable-next-line eqeqeq
+
       if (length != b.length) return false;
       for (let i = length; i-- !== 0; ) if (a[i] !== b[i]) return false;
       return true;

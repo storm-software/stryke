@@ -1,4 +1,4 @@
-/*-------------------------------------------------------------------
+/* -------------------------------------------------------------------
 
                        ⚡ Storm Software - Stryke
 
@@ -13,9 +13,11 @@
  Contact:         https://stormsoftware.com/contact
  License:         https://stormsoftware.com/projects/stryke/license
 
- -------------------------------------------------------------------*/
+ ------------------------------------------------------------------- */
 
-import { isFunction, isMergeableObject, propertyUnsafe } from "@stryke/types";
+import { isFunction } from "@stryke/type-checks/is-function";
+import { isMergeableObject } from "@stryke/type-checks/is-mergeable-object";
+import { propertyUnsafe } from "@stryke/type-checks/property-exists";
 
 const emptyTarget = (val: any) => {
   return Array.isArray(val) ? [] : {};

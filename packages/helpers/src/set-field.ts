@@ -1,4 +1,4 @@
-/*-------------------------------------------------------------------
+/* -------------------------------------------------------------------
 
                        ⚡ Storm Software - Stryke
 
@@ -13,9 +13,11 @@
  Contact:         https://stormsoftware.com/contact
  License:         https://stormsoftware.com/projects/stryke/license
 
- -------------------------------------------------------------------*/
+ ------------------------------------------------------------------- */
 
-import { type DeepKey, isObjectIndex, isString } from "@stryke/types";
+import { isObjectIndex } from "@stryke/type-checks/is-object-index";
+import { isString } from "@stryke/type-checks/is-string";
+import type { DeepKey } from "@stryke/types/object";
 import { toPath } from "./to-path";
 
 /**
@@ -38,7 +40,7 @@ export function setField<
   // Validate resolvedPath to prevent prototype pollution
   for (const key of resolvedPath) {
     if (key === "__proto__" || key === "constructor" || key === "prototype") {
-      throw new Error("Invalid key in path: " + key);
+      throw new Error(`Invalid key in path: ${key}`);
     }
   }
 

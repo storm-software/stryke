@@ -1,4 +1,4 @@
-/*-------------------------------------------------------------------
+/* -------------------------------------------------------------------
 
                        ⚡ Storm Software - Stryke
 
@@ -13,7 +13,7 @@
  Contact:         https://stormsoftware.com/contact
  License:         https://stormsoftware.com/projects/stryke/license
 
- -------------------------------------------------------------------*/
+ ------------------------------------------------------------------- */
 
 /**
  * Creates a clone of `arrayBuffer`.
@@ -212,7 +212,9 @@ function recursiveCopy(
   return clone;
 }
 
-export type Options = { customizer?: Customizer };
+export interface Options {
+  customizer?: Customizer;
+}
 
 /**
  * Deep copy value

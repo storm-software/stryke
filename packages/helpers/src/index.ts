@@ -1,4 +1,4 @@
-/*-------------------------------------------------------------------
+/* -------------------------------------------------------------------
 
                        ⚡ Storm Software - Stryke
 
@@ -13,7 +13,7 @@
  Contact:         https://stormsoftware.com/contact
  License:         https://stormsoftware.com/projects/stryke/license
 
- -------------------------------------------------------------------*/
+ ------------------------------------------------------------------- */
 
 export * from "./arg-identity";
 export * from "./debounce";
@@ -21,6 +21,7 @@ export * from "./deep-clone";
 export * from "./deep-copy";
 export * from "./deep-merge";
 export * from "./delay";
+export * from "./filter-empty";
 export * from "./flatten-object";
 export * from "./get-field";
 export * from "./get-ordered-by";

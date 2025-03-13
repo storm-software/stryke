@@ -1,4 +1,4 @@
-/*-------------------------------------------------------------------
+/* -------------------------------------------------------------------
 
                        ⚡ Storm Software - Stryke
 
@@ -13,9 +13,10 @@
  Contact:         https://stormsoftware.com/contact
  License:         https://stormsoftware.com/projects/stryke/license
 
- -------------------------------------------------------------------*/
+ ------------------------------------------------------------------- */
 
-import { type DeepKey, type DeepValue, isPlainObject } from "@stryke/types";
+import { isPlainObject } from "@stryke/type-checks/is-plain-object";
+import type { DeepKey, DeepValue } from "@stryke/types/object";
 
 /**
  * Flattens a nested object into a single level object with dot-separated keys.

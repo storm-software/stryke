@@ -1,4 +1,4 @@
-/*-------------------------------------------------------------------
+/* -------------------------------------------------------------------
 
                        ⚡ Storm Software - Stryke
 
@@ -13,7 +13,7 @@
  Contact:         https://stormsoftware.com/contact
  License:         https://stormsoftware.com/projects/stryke/license
 
- -------------------------------------------------------------------*/
+ ------------------------------------------------------------------- */
 
 /**
  * Returns the input value unchanged.
@@ -25,7 +25,6 @@
  * identity({ key: 'value' }); // Returns { key: 'value' }
  * ```
  *
- * @template T - The type of the input value.
  * @param x - The value to be returned.
  * @returns The input value.
  */
