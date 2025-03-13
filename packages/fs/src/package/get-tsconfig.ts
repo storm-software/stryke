@@ -1,4 +1,4 @@
-/*-------------------------------------------------------------------
+/* -------------------------------------------------------------------
 
                        ⚡ Storm Software - Stryke
 
@@ -13,7 +13,7 @@
  Contact:         https://stormsoftware.com/contact
  License:         https://stormsoftware.com/projects/stryke/license
 
- -------------------------------------------------------------------*/
+ ------------------------------------------------------------------- */
 
 import {
   findFileName,
@@ -116,7 +116,6 @@ const stripJsonComments = (
           commaIndex = -1;
         } else if (
           currentCharacter !== " " &&
-          // eslint-disable-next-line no-tabs
           currentCharacter !== "	" &&
           currentCharacter !== "\r" &&
           currentCharacter !== "\n"
@@ -204,7 +203,7 @@ const loadTsConfigInternal = (
 
   const data = jsoncParse(fs.readFileSync(id, "utf8"));
   const configDir = path.dirname(id);
-  // eslint-disable-next-line no-cond-assign
+
   if ((_a = data.compilerOptions) === null ? void 0 : _a.baseUrl) {
     data.compilerOptions.baseUrl = path.join(
       configDir,
@@ -225,7 +224,6 @@ const loadTsConfigInternal = (
           compilerOptions: {
             ...extendsData.compilerOptions,
 
-            // eslint-disable-next-line no-cond-assign
             ...((_b = parentConfig === null ? void 0 : parentConfig.data) ===
             null
               ? void 0

@@ -1,8 +1,8 @@
-/*-------------------------------------------------------------------
+/* -------------------------------------------------------------------
 
-                  ⚡ Storm Software - Storm Stack
+                       ⚡ Storm Software - Stryke
 
- This code was released as part of the Storm Stack project. Storm Stack
+ This code was released as part of the Stryke project. Stryke
  is maintained by Storm Software under the Apache-2.0 License, and is
  free for commercial and private use. For more information, please visit
  our licensing page.
@@ -13,7 +13,7 @@
  Contact:         https://stormsoftware.com/contact
  License:         https://stormsoftware.com/projects/stryke/license
 
- -------------------------------------------------------------------*/
+ ------------------------------------------------------------------- */
 
 /* eslint-disable */
 // @ts-nocheck
@@ -22,6 +22,7 @@
 
 export class WordArray {
   words: number[];
+
   sigBytes: number;
 
   constructor(words?: number[], sigBytes?: number) {
@@ -128,8 +129,11 @@ export const Utf8 = {
 
 export class BufferedBlockAlgorithm {
   _data = new WordArray();
+
   _nDataBytes = 0;
+
   _minBufferSize = 0;
+
   blockSize = 512 / 32;
 
   reset() {

@@ -1,8 +1,8 @@
-/*-------------------------------------------------------------------
+/* -------------------------------------------------------------------
 
-                  ⚡ Storm Software - Storm Stack
+                       ⚡ Storm Software - Stryke
 
- This code was released as part of the Storm Stack project. Storm Stack
+ This code was released as part of the Stryke project. Stryke
  is maintained by Storm Software under the Apache-2.0 License, and is
  free for commercial and private use. For more information, please visit
  our licensing page.
@@ -13,7 +13,7 @@
  Contact:         https://stormsoftware.com/contact
  License:         https://stormsoftware.com/projects/stryke/license
 
- -------------------------------------------------------------------*/
+ ------------------------------------------------------------------- */
 
 /* eslint-disable */
 // @ts-nocheck
@@ -150,6 +150,7 @@ function createHasher(options: HashObjectOptions) {
         value = options.replacer(value);
       }
       const type = value === null ? "null" : typeof value;
+
       return this[type](value);
     },
     object(object: any): string | void {
@@ -164,7 +165,7 @@ function createHasher(options: HashObjectOptions) {
 
       // '[object a]'.length === 10, the minimum
       if (objectLength < 10) {
-        objType = "unknown:[" + objString + "]";
+        objType = `unknown:[${objString}]`;
       } else {
         // '[object '.length === 8
         objType = objString.slice(8, objectLength - 1);
@@ -177,7 +178,7 @@ function createHasher(options: HashObjectOptions) {
       if ((objectNumber = context.get(object)) === undefined) {
         context.set(object, context.size);
       } else {
-        return this.dispatch("[CIRCULAR:" + objectNumber + "]");
+        return this.dispatch(`[CIRCULAR:${objectNumber}]`);
       }
 
       if (
@@ -223,7 +224,7 @@ function createHasher(options: HashObjectOptions) {
           });
         }
 
-        write("object:" + (keys.length + extraKeys.length) + ":");
+        write(`object:${keys.length + extraKeys.length}:`);
         const dispatchForKey = (key: string) => {
           this.dispatch(key);
           write(":");
@@ -244,7 +245,7 @@ function createHasher(options: HashObjectOptions) {
       unordered =
         unordered === undefined ? options.unorderedArrays !== false : unordered; // default to options.unorderedArrays
 
-      write("array:" + arr.length + ":");
+      write(`array:${arr.length}:`);
       if (!unordered || arr.length <= 1) {
         for (const entry of arr) {
           this.dispatch(entry);
@@ -271,10 +272,10 @@ function createHasher(options: HashObjectOptions) {
       return this.array(entries, false);
     },
     date(date: any) {
-      return write("date:" + date.toJSON());
+      return write(`date:${date.toJSON()}`);
     },
     symbol(sym: any) {
-      return write("symbol:" + sym.toString());
+      return write(`symbol:${sym.toString()}`);
     },
     unknown(value: any, type: string) {
       write(type);
@@ -287,13 +288,13 @@ function createHasher(options: HashObjectOptions) {
       }
     },
     error(err: any) {
-      return write("error:" + err.toString());
+      return write(`error:${err.toString()}`);
     },
     boolean(bool: any) {
-      return write("bool:" + bool);
+      return write(`bool:${bool}`);
     },
     string(string: any) {
-      write("string:" + string.length + ":");
+      write(`string:${string.length}:`);
       write(string);
     },
     function(fn: any) {
@@ -308,7 +309,7 @@ function createHasher(options: HashObjectOptions) {
         // Make sure we can still distinguish native functions
         // by their name, otherwise String and Function will
         // have the same hash
-        this.dispatch("function-name:" + String(fn.name));
+        this.dispatch(`function-name:${String(fn.name)}`);
       }
 
       if (options.respectFunctionProperties) {
@@ -316,10 +317,10 @@ function createHasher(options: HashObjectOptions) {
       }
     },
     number(number: any) {
-      return write("number:" + number);
+      return write(`number:${number}`);
     },
     xml(xml: any) {
-      return write("xml:" + xml.toString());
+      return write(`xml:${xml.toString()}`);
     },
     null() {
       return write("Null");
@@ -328,7 +329,7 @@ function createHasher(options: HashObjectOptions) {
       return write("Undefined");
     },
     regexp(regex: any) {
-      return write("regex:" + regex.toString());
+      return write(`regex:${regex.toString()}`);
     },
     uint8array(arr: any) {
       write("uint8array:");
@@ -371,16 +372,18 @@ function createHasher(options: HashObjectOptions) {
       return this.dispatch(new Uint8Array(arr));
     },
     url(url: any) {
-      return write("url:" + url.toString());
+      return write(`url:${url.toString()}`);
     },
     map(map: any) {
       write("map:");
       const arr = [...map];
+
       return this.array(arr, options.unorderedSets !== false);
     },
     set(set: any) {
       write("set:");
       const arr = [...set];
+
       return this.array(arr, options.unorderedSets !== false);
     },
     file(file: any) {
@@ -400,7 +403,7 @@ function createHasher(options: HashObjectOptions) {
       return write("domwindow");
     },
     bigint(number: number) {
-      return write("bigint:" + number.toString());
+      return write(`bigint:${number.toString()}`);
     },
     /* Node.js standard native objects */
     process() {

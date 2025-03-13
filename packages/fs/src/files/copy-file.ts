@@ -1,4 +1,4 @@
-/*-------------------------------------------------------------------
+/* -------------------------------------------------------------------
 
                        ⚡ Storm Software - Stryke
 
@@ -13,9 +13,10 @@
  Contact:         https://stormsoftware.com/contact
  License:         https://stormsoftware.com/projects/stryke/license
 
- -------------------------------------------------------------------*/
+ ------------------------------------------------------------------- */
 
-import { constants, copyFileSync, cpSync, type CopySyncOptions } from "node:fs";
+import type { CopySyncOptions } from "node:fs";
+import { constants, copyFileSync, cpSync } from "node:fs";
 
 /**
  * Copy files from one location to another
@@ -30,7 +31,7 @@ export const copyFiles = (
   to: string,
   options?: CopySyncOptions
 ) => {
-  cpSync(from, to, options);
+  return cpSync(from, to, options);
 };
 
 /**
@@ -41,5 +42,5 @@ export const copyFiles = (
  * @returns An indicator specifying if the copy was successful
  */
 export const copyFile = (file: string, to: string) => {
-  copyFileSync(file, to, constants.COPYFILE_FICLONE);
+  return copyFileSync(file, to, constants.COPYFILE_FICLONE);
 };

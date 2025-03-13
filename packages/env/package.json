@@ -10,7 +10,7 @@
   },
   "private": false,
   "dependencies": {
-    "@dotenvx/dotenvx": "1.35.0",
+    "@dotenvx/dotenvx": "catalog:",
     "defu": "catalog:"
   },
   "devDependencies": {

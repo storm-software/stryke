@@ -1,4 +1,4 @@
-/*-------------------------------------------------------------------
+/* -------------------------------------------------------------------
 
                        ⚡ Storm Software - Stryke
 
@@ -13,7 +13,7 @@
  Contact:         https://stormsoftware.com/contact
  License:         https://stormsoftware.com/projects/stryke/license
 
- -------------------------------------------------------------------*/
+ ------------------------------------------------------------------- */
 
 import { execaCommand } from "execa";
 import { CLICommandType } from "../types";
@@ -29,7 +29,7 @@ import { getCommand } from "./get-command";
  * @param cwd - The current working directory to use when executing the command
  * @returns The result of the command or an exception
  */
-export const execute = (command: string, cwd: string = process.cwd()) => {
+export const execute = async (command: string, cwd: string = process.cwd()) => {
   return execaCommand(command, {
     preferLocal: true,
     shell: true,

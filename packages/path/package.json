@@ -1,6 +1,6 @@
 {
   "name": "@stryke/path",
-  "version": "0.3.3",
+  "version": "0.3.2",
   "type": "module",
   "description": "A package containing various utilities that expand the functionality of NodeJs's `path` module",
   "repository": {
@@ -11,7 +11,7 @@
   "private": false,
   "dependencies": {
     "@storm-software/config-tools": "catalog:",
-    "mlly": "1.7.4"
+    "mlly": "catalog:"
   },
   "devDependencies": {
     "@types/node": "catalog:"

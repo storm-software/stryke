@@ -1,4 +1,4 @@
-/*-------------------------------------------------------------------
+/* -------------------------------------------------------------------
 
                        ⚡ Storm Software - Stryke
 
@@ -13,10 +13,10 @@
  Contact:         https://stormsoftware.com/contact
  License:         https://stormsoftware.com/projects/stryke/license
 
- -------------------------------------------------------------------*/
+ ------------------------------------------------------------------- */
 
-// eslint-disable-next-line object-curly-newline
-import { RELEASE_TYPES, type ReleaseType, inc, parse, valid } from "semver";
+import type { ReleaseType } from "semver";
+import { RELEASE_TYPES, inc, parse, valid } from "semver";
 
 export const parseVersion = (semver: string) => parse(semver);
 

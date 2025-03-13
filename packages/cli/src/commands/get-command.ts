@@ -1,4 +1,4 @@
-/*-------------------------------------------------------------------
+/* -------------------------------------------------------------------
 
                        ⚡ Storm Software - Stryke
 
@@ -13,10 +13,11 @@
  Contact:         https://stormsoftware.com/contact
  License:         https://stormsoftware.com/projects/stryke/license
 
- -------------------------------------------------------------------*/
+ ------------------------------------------------------------------- */
 
 import { detect, getCommand as getCommandBase } from "@antfu/ni";
-import { CLICommandType, type ResolvedCommand } from "../types";
+import type { ResolvedCommand } from "../types";
+import { CLICommandType } from "../types";
 
 /**
  * Get the details of a CLI command for execution

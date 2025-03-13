@@ -1,4 +1,4 @@
-/*-------------------------------------------------------------------
+/* -------------------------------------------------------------------
 
                        ⚡ Storm Software - Stryke
 
@@ -13,9 +13,10 @@
  Contact:         https://stormsoftware.com/contact
  License:         https://stormsoftware.com/projects/stryke/license
 
- -------------------------------------------------------------------*/
+ ------------------------------------------------------------------- */
 
-import { installPackage, type InstallPackageOptions } from "@antfu/install-pkg";
+import type { InstallPackageOptions } from "@antfu/install-pkg";
+import { installPackage } from "@antfu/install-pkg";
 import { resolve } from "@stryke/path/resolve/resolve";
 import "tinyexec";
 
@@ -26,7 +27,7 @@ import "tinyexec";
  * @param options - The options to use when installing the package
  * @returns The result of the command or an exception
  */
-export const install = (
+export const install = async (
   names: string | string[],
   options?: InstallPackageOptions
 ) => {

@@ -1,4 +1,4 @@
-/*-------------------------------------------------------------------
+/* -------------------------------------------------------------------
 
                        ⚡ Storm Software - Stryke
 
@@ -13,7 +13,7 @@
  Contact:         https://stormsoftware.com/contact
  License:         https://stormsoftware.com/projects/stryke/license
 
- -------------------------------------------------------------------*/
+ ------------------------------------------------------------------- */
 
 import { titleCase } from "@stryke/string-format/title-case";
 import chalk from "chalk";
@@ -27,7 +27,7 @@ export const writeBanner = (
 ) => {
   if (bannerOpts?.hide !== true) {
     text(
-      titleCase(bannerOpts?.name ?? "Storm CLI")!,
+      titleCase(bannerOpts?.name ?? "Storm CLI"),
       bannerOpts?.options ?? {
         font: bannerOpts?.font ?? "Larry 3D"
       },
@@ -36,7 +36,6 @@ export const writeBanner = (
           return;
         }
 
-        // eslint-disable-next-line no-console
         console.log(chalk.hex(color || "#FFF")(data));
       }
     );
@@ -50,7 +49,6 @@ export const writeBanner = (
             return;
           }
 
-          // eslint-disable-next-line no-console
           console.log(chalk.hex(color || "#adbac7")(data));
         }
       );

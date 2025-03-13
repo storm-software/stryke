@@ -1,4 +1,4 @@
-/*-------------------------------------------------------------------
+/* -------------------------------------------------------------------
 
                        ⚡ Storm Software - Stryke
 
@@ -13,7 +13,7 @@
  Contact:         https://stormsoftware.com/contact
  License:         https://stormsoftware.com/projects/stryke/license
 
- -------------------------------------------------------------------*/
+ ------------------------------------------------------------------- */
 
 /**
  * Create CLI options from an object.
@@ -27,7 +27,7 @@ export function createCliOptions(
   return Object.entries(obj).reduce(
     (ret: string[], [key, value]: [string, string | number | boolean]) => {
       if (value !== undefined) {
-        const kebabCase = key.replace(/[A-Z]/g, m => "-" + m.toLowerCase());
+        const kebabCase = key.replace(/[A-Z]/g, m => `-${m.toLowerCase()}`);
         ret.push(`--${kebabCase}=${value}`);
       }
       return ret;

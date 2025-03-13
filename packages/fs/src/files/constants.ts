@@ -1,4 +1,4 @@
-/*-------------------------------------------------------------------
+/* -------------------------------------------------------------------
 
                        ⚡ Storm Software - Stryke
 
@@ -13,12 +13,11 @@
  Contact:         https://stormsoftware.com/contact
  License:         https://stormsoftware.com/projects/stryke/license
 
- -------------------------------------------------------------------*/
+ ------------------------------------------------------------------- */
 
 export type Encoding =
   | "ascii"
   | "utf8"
-  // eslint-disable-next-line unicorn/text-encoding-identifier-case
   | "utf-8"
   | "utf16le"
   | "utf-16le"

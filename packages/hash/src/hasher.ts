@@ -1,4 +1,4 @@
-/*-------------------------------------------------------------------
+/* -------------------------------------------------------------------
 
                        ⚡ Storm Software - Stryke
 
@@ -13,7 +13,7 @@
  Contact:         https://stormsoftware.com/contact
  License:         https://stormsoftware.com/projects/stryke/license
 
- -------------------------------------------------------------------*/
+ ------------------------------------------------------------------- */
 
 // Based on https://github.com/brix/crypto-js 4.1.1 (MIT)
 
@@ -30,6 +30,7 @@ export class WordArray {
   }
 
   toString(encoder?: typeof Hex): string {
+    // eslint-disable-next-line ts/no-use-before-define
     return (encoder ?? Hex).stringify(this);
   }
 
@@ -49,7 +50,7 @@ export class WordArray {
     } else {
       // Copy one word at a time
       for (let j = 0; j < wordArray.sigBytes; j += 4) {
-        this.words[(this.sigBytes + j) >>> 2]! = wordArray.words[j >>> 2]!;
+        this.words[(this.sigBytes + j) >>> 2] = wordArray.words[j >>> 2]!;
       }
     }
     this.sigBytes += wordArray.sigBytes;
@@ -147,7 +148,7 @@ export class BufferedBlockAlgorithm {
     }
 
     // Append
-    // eslint-disable-next-line unicorn/prefer-spread
+
     this._data.concat(data);
     this._nDataBytes += data.sigBytes;
   }

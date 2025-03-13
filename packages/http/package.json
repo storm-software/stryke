@@ -10,7 +10,7 @@
   },
   "private": false,
   "dependencies": {
-    "ufo": "1.5.4"
+    "ufo": "catalog:"
   },
   "devDependencies": {
     "@types/node": "catalog:"

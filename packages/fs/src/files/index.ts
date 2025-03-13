@@ -17,7 +17,7 @@
 
 export * from "./chmod-x";
 export * from "./constants";
-export * from "./copy-files";
+export * from "./copy-file";
 export * from "./helpers";
 export * from "./list-files";
 export * from "./read-file";

@@ -1,4 +1,4 @@
-/*-------------------------------------------------------------------
+/* -------------------------------------------------------------------
 
                        ⚡ Storm Software - Stryke
 
@@ -13,13 +13,11 @@
  Contact:         https://stormsoftware.com/contact
  License:         https://stormsoftware.com/projects/stryke/license
 
- -------------------------------------------------------------------*/
+ ------------------------------------------------------------------- */
 
 import { StormJSON } from "@stryke/json/storm-json";
-import {
-  type PackageResolvingOptions,
-  resolvePackage
-} from "@stryke/path/resolve";
+import type { PackageResolvingOptions } from "@stryke/path/resolve";
+import { resolvePackage } from "@stryke/path/resolve";
 import {
   exists,
   findFileName,
@@ -90,7 +88,6 @@ async function searchPackageJSON(dir: string) {
     dir = newDir;
     packageJsonPath = joinPaths(dir, "package.json");
 
-    // eslint-disable-next-line no-await-in-loop
     if (await exists(packageJsonPath)) {
       break;
     }
@@ -179,7 +176,7 @@ export async function getPackageInfoSync(
 export async function loadPackageJSON(
   cwd = getWorkspaceRoot()
 ): Promise<PackageJson | null> {
-  let path = getParentPath("package.json", cwd, { skipCwd: false });
+  const path = getParentPath("package.json", cwd, { skipCwd: false });
 
   if (!path || !(await exists(path))) {
     return null;

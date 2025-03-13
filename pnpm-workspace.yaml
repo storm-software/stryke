@@ -50,6 +50,7 @@ catalog:
   "@swc/wasm": ^1.10.14
   "@swc/helpers": ^0.5.15
   "@types/react-native": 0.72.8
+  "@types/semver": ^7.5.8
   "@zkochan/js-yaml": ^0.0.7
   buffer: 6.0.3
   chalk: ^5.4.1
@@ -126,3 +127,6 @@ overrides:
   postcss: ">=8.5.1"
   shell-quote: ">=1.8.2"
   simple-git: ">=3.27.0"
+catalogs:
+  conflicts_react-native_0_77_0:
+    react-native: 0.77.0

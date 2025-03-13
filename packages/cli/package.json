@@ -10,15 +10,15 @@
   },
   "private": false,
   "dependencies": {
-    "@antfu/ni": "^23.3.1",
-    "chalk": "^5.4.1",
-    "commander": "^13.1.0",
-    "execa": "^9.5.2",
-    "figlet": "^1.8.0",
-    "terminal-link": "^3.0.0"
+    "@antfu/ni": "catalog:",
+    "chalk": "catalog:",
+    "commander": "catalog:",
+    "execa": "catalog:",
+    "figlet": "catalog:",
+    "terminal-link": "catalog:"
   },
   "devDependencies": {
-    "@types/figlet": "^1.7.0",
+    "@types/figlet": "catalog:",
     "@types/node": "catalog:"
   },
   "publishConfig": {
