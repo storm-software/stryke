@@ -1,4 +1,4 @@
-/*-------------------------------------------------------------------
+/* -------------------------------------------------------------------
 
                        ⚡ Storm Software - Stryke
 
@@ -13,22 +13,17 @@
  Contact:         https://stormsoftware.com/contact
  License:         https://stormsoftware.com/projects/stryke/license
 
- -------------------------------------------------------------------*/
+ ------------------------------------------------------------------- */
 
-import { RefObject } from "../utility-types/base";
+import type { Arrayable } from "@stryke/types/array";
+import type { Nullable } from "@stryke/types/utilities";
 
 /**
- * Check if the provided value's type is a ref
+ * Convert `Arrayable<T>` to `Array<T>`
  *
- * @param value - The value to type check
- * @returns An indicator specifying if the object provided is of type ref
+ * @category Array
  */
-export const isRef = <TRef = unknown>(
-  value: unknown
-): value is RefObject<TRef> => {
-  try {
-    return (value as RefObject<TRef>)?.current !== undefined;
-  } catch {
-    return false;
-  }
-};
+export function toArray<T>(array?: Nullable<Arrayable<T>>): Array<T> {
+  array = array ?? [];
+  return Array.isArray(array) ? array : [array];
+}

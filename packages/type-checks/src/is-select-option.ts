@@ -15,15 +15,22 @@
 
  -------------------------------------------------------------------*/
 
-import { Integer } from "../utility-types/number";
-import { isNumber } from "./is-number";
-import { isString } from "./is-string";
+import { SelectOption } from "@stryke/types/form";
+import { isEmpty } from "./is-empty";
 
 /**
- * Check if the provided value's type is an integer
+ * Check if the provided value's type is SelectOption
  *
  * @param value - The value to type check
- * @returns An indicator specifying if the value provided is of type `number` and is an integer
+ * @returns An indicator specifying if the object provided is of type SelectOption
  */
-export const isInteger = <T extends number>(value: T): value is Integer<T> =>
-  isNumber(value) && !isString(value) && value % 1 === 0;
+export const isSelectOption = (value: unknown): value is SelectOption => {
+  try {
+    return (
+      !isEmpty((value as SelectOption)?.name) &&
+      "value" in (value as SelectOption)
+    );
+  } catch {
+    return false;
+  }
+};

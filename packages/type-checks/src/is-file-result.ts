@@ -15,4 +15,22 @@
 
  -------------------------------------------------------------------*/
 
-export const bufferToString = (buf: Buffer): string => buf.toString("utf8");
+import { FileResult, FileStatus } from "@stryke/types/file";
+import { isSetObject } from "./is-set-object";
+import { isSetString } from "./is-set-string";
+
+/**
+ * Check if the provided value is a `FileResult` object
+ *
+ * @param value - The value to type check
+ * @returns An indicator specifying if the value provided is a `FileResult` object
+ */
+export const isFileResult = (value: any): value is FileResult => {
+  return (
+    isSetObject(value) &&
+    "status" in value &&
+    Object.values(FileStatus).includes(value.status as FileStatus) &&
+    (isSetString((value as FileResult)?.uri) ||
+      isSetObject((value as FileResult)?.file))
+  );
+};

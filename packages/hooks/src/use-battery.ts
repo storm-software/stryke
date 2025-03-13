@@ -1,4 +1,4 @@
-/*-------------------------------------------------------------------
+/* -------------------------------------------------------------------
 
                        ⚡ Storm Software - Stryke
 
@@ -13,10 +13,10 @@
  Contact:         https://stormsoftware.com/contact
  License:         https://stormsoftware.com/projects/stryke/license
 
- -------------------------------------------------------------------*/
+ ------------------------------------------------------------------- */
 
-import { isFunction } from "@stryke/types/type-checks/is-function";
-import type { BatteryManager } from "@stryke/types/utility-types/navigator";
+import { isFunction } from "@stryke/type-checks/is-function";
+import type { BatteryManager } from "@stryke/types/navigator";
 import React, { useEffect } from "react";
 
 const defaultBatteryManagerState = {

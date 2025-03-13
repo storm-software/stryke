@@ -15,8 +15,8 @@
 
  ------------------------------------------------------------------- */
 
-import type { JsonPointerPath } from "@stryke/types/utility-types/json";
-import { isNumber } from "@stryke/types/type-checks/is-number";
+import { isNumber } from "@stryke/type-checks/is-number";
+import type { JsonPointerPath } from "@stryke/types/json";
 
 const TILDA_ONE = /~1/g;
 const TILDA_ZERO = /~0/g;

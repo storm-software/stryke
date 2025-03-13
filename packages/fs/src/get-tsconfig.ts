@@ -18,7 +18,7 @@
 import { existsSync } from "@stryke/path/exists";
 import { findFileName, findFilePath } from "@stryke/path/file-path-fns";
 import { joinPaths } from "@stryke/path/join-paths";
-import { EMPTY_STRING } from "@stryke/types/utility-types/base";
+import { EMPTY_STRING } from "@stryke/types/base";
 import { createRequire } from "node:module";
 import path from "node:path";
 import { readFileSync } from "./read-file";

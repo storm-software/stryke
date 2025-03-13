@@ -15,8 +15,8 @@
 
  ------------------------------------------------------------------- */
 
-import { isSetObject } from "@stryke/types/type-checks/is-set-object";
-import { isString } from "@stryke/types/type-checks/is-string";
+import { isSetObject } from "@stryke/type-checks/is-set-object";
+import { isString } from "@stryke/type-checks/is-string";
 
 export interface Reference {
   /** Target value where pointer is pointing. */

@@ -15,7 +15,7 @@
 
  ------------------------------------------------------------------- */
 
-import type { MaybePromise } from "@stryke/types/utility-types/base";
+import type { MaybePromise } from "@stryke/types/base";
 import type { Command } from "commander";
 import type { Fonts, Options } from "figlet";
 

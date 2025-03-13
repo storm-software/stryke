@@ -1,4 +1,4 @@
-/*-------------------------------------------------------------------
+/* -------------------------------------------------------------------
 
                        ⚡ Storm Software - Stryke
 
@@ -13,9 +13,9 @@
  Contact:         https://stormsoftware.com/contact
  License:         https://stormsoftware.com/projects/stryke/license
 
- -------------------------------------------------------------------*/
+ ------------------------------------------------------------------- */
 
-import { EMPTY_STRING } from "@stryke/types/utility-types/base";
+import { EMPTY_STRING } from "@stryke/types/base";
 import { useCallback, useState } from "react";
 
 function oldSchoolCopy(text: string) {

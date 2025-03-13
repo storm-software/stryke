@@ -15,33 +15,35 @@
 
  -------------------------------------------------------------------*/
 
-import type { AnyNumber } from "../utility-types/base";
+import { AnyFunction } from "@stryke/types/base";
 import { getObjectTag } from "./get-object-tag";
 
+export function isSyncFunction(value?: any): value is AnyFunction {
+  return getObjectTag(value) === "[object Function]";
+}
+
+export function isAsyncFunction(value?: any): value is AnyFunction {
+  return getObjectTag(value) === "[object AsyncFunction]";
+}
+
 /**
- * Check if the provided value's type is `number`
+ * Check if the provided value's type is `Function`
  *
  * @param value - The value to type check
- * @returns An indicator specifying if the value provided is of type `number`
+ * @returns An indicator specifying if the value provided is of type `Function`
  */
-export const isNumber = (value: unknown): value is number => {
+export const isFunction = (value: unknown): value is AnyFunction => {
   try {
     return (
-      value instanceof Number ||
-      typeof value === "number" ||
-      Number(value) === value
+      value instanceof Function ||
+      typeof value === "function" ||
+      Boolean(
+        value?.constructor && (value as any)?.call && (value as any)?.apply
+      ) ||
+      isSyncFunction(value) ||
+      isAsyncFunction(value)
     );
   } catch {
     return false;
   }
 };
-
-/**
- * Check if the provided value's type is `AnyNumber`
- *
- * @param value - The value to type check
- * @returns An indicator specifying if the value provided is of type `AnyNumber`
- */
-export function isAnyNumber(value?: any): value is AnyNumber {
-  return isNumber(value) || getObjectTag(value) === "[object Number]";
-}

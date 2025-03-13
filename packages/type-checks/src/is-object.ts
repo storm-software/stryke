@@ -15,7 +15,7 @@
 
  -------------------------------------------------------------------*/
 
-import type { NativeClass } from "../utility-types/base";
+import type { NativeClass } from "@stryke/types/base";
 import { isPlainObject } from "./is-plain-object";
 
 // Prepare

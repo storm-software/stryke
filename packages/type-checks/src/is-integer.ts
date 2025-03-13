@@ -15,23 +15,15 @@
 
  -------------------------------------------------------------------*/
 
-import { Collection } from "../utility-types/base";
-import { typeDetect } from "./type-detect";
-
-const COLLECTION_TYPE_SET = new Set([
-  "Arguments",
-  "Array",
-  "Map",
-  "Object",
-  "Set"
-]);
+import { Integer } from "@stryke/types/number";
+import { isNumber } from "./is-number";
+import { isString } from "./is-string";
 
 /**
- * Check if the provided value's type is `Collection`
+ * Check if the provided value's type is an integer
  *
  * @param value - The value to type check
- * @returns An indicator specifying if the value provided is of type `Collection`
+ * @returns An indicator specifying if the value provided is of type `number` and is an integer
  */
-export function isCollection(value: any): value is Collection {
-  return COLLECTION_TYPE_SET.has(typeDetect(value));
-}
+export const isInteger = <T extends number>(value: T): value is Integer<T> =>
+  isNumber(value) && !isString(value) && value % 1 === 0;

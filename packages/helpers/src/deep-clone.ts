@@ -1,4 +1,4 @@
-/*-------------------------------------------------------------------
+/* -------------------------------------------------------------------
 
                        ⚡ Storm Software - Stryke
 
@@ -13,10 +13,10 @@
  Contact:         https://stormsoftware.com/contact
  License:         https://stormsoftware.com/projects/stryke/license
 
- -------------------------------------------------------------------*/
+ ------------------------------------------------------------------- */
 
-import { isPrimitive } from "@stryke/types/type-checks/is-primitive";
-import { isTypedArray } from "@stryke/types/type-checks/is-typed-array";
+import { isPrimitive } from "@stryke/type-checks/is-primitive";
+import { isTypedArray } from "@stryke/type-checks/is-typed-array";
 
 export type Resolved<T> =
   Equal<T, ResolvedMain<T>> extends true ? T : ResolvedMain<T>;
@@ -106,7 +106,7 @@ type IsValueOf<Instance, O extends IValueOf<any>> = Instance extends O
   : false;
 
 interface IValueOf<T> {
-  valueOf(): T;
+  valueOf: () => T;
 }
 
 /**

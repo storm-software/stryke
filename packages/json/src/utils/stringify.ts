@@ -15,7 +15,7 @@
 
  ------------------------------------------------------------------- */
 
-import { isNumber } from "@stryke/types/type-checks/is-number";
+import { isNumber } from "@stryke/type-checks/is-number";
 
 /**
  * Stringify a value to a JSON-like string.

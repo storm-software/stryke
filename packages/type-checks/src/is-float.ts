@@ -15,7 +15,7 @@
 
  -------------------------------------------------------------------*/
 
-import { Float } from "../utility-types/number";
+import { Float } from "@stryke/types/number";
 import { isNumber } from "./is-number";
 
 /**

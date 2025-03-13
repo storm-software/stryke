@@ -1,4 +1,4 @@
-/*-------------------------------------------------------------------
+/* -------------------------------------------------------------------
 
                        ⚡ Storm Software - Stryke
 
@@ -13,9 +13,9 @@
  Contact:         https://stormsoftware.com/contact
  License:         https://stormsoftware.com/projects/stryke/license
 
- -------------------------------------------------------------------*/
+ ------------------------------------------------------------------- */
 
-import { isFunction } from "@stryke/types/type-checks/is-function";
+import { isFunction } from "@stryke/type-checks/is-function";
 import { useEffect, useState, useSyncExternalStore } from "react";
 
 /* eslint-disable react-hooks/rules-of-hooks */

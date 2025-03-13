@@ -15,7 +15,7 @@
 
  -------------------------------------------------------------------*/
 
-import type { Platform } from "@stryke/types/utility-types/system";
+import type { Platform } from "@stryke/types/system";
 import { interopDefault, resolvePath, resolvePathSync } from "mlly";
 import process from "node:process";
 import { joinPaths, normalizePath } from "../utilities";

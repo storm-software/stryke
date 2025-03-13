@@ -1,4 +1,4 @@
-/*-------------------------------------------------------------------
+/* -------------------------------------------------------------------
 
                        ⚡ Storm Software - Stryke
 
@@ -13,17 +13,16 @@
  Contact:         https://stormsoftware.com/contact
  License:         https://stormsoftware.com/projects/stryke/license
 
- -------------------------------------------------------------------*/
+ ------------------------------------------------------------------- */
 
 import { StormJSON } from "@stryke/json/storm-json";
-import { isString } from "@stryke/types/type-checks/is-string";
+import { isString } from "@stryke/type-checks/is-string";
+import type { ParsedAuth, ParsedHost } from "ufo";
 import {
   cleanDoubleSlashes,
   decode as decodeURL,
   encode as encodeURL,
   parseAuth,
-  type ParsedAuth,
-  type ParsedHost,
   parsePath,
   parseQuery,
   parseURL,
@@ -31,14 +30,14 @@ import {
 } from "ufo";
 import type { StormURL } from "./types";
 
-export type StormURLBuilderOptions = {
+export interface StormURLBuilderOptions {
   /**
    * Should the URL be decoded
    *
    * @defaultValue `true`
    */
   decode: boolean;
-};
+}
 
 /**
  * A class used to build URLs

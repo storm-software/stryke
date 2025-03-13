@@ -1,4 +1,4 @@
-/*-------------------------------------------------------------------
+/* -------------------------------------------------------------------
 
                        ⚡ Storm Software - Stryke
 
@@ -13,21 +13,20 @@
  Contact:         https://stormsoftware.com/contact
  License:         https://stormsoftware.com/projects/stryke/license
 
- -------------------------------------------------------------------*/
-
-import { EMPTY_STRING } from "../utility-types/base";
-import { isString } from "./is-string";
+ ------------------------------------------------------------------- */
 
 /**
- * Determine if the type is string and is empty
+ * Convert a utf8 array to string
  *
- * @param value - The value to type check
- * @returns An indicator specifying if the value provided is of type `""`
+ * @remarks
+ * This method is part of the {@linkcode Convert} namespace.
+ *
+ * @credits https://stackoverflow.com/a/41798356/1465919
+ * @credits https://stackoverflow.com/a/36949791/1465919
+ *
+ * @param array - Utf-8 Array
+ * @returns The converted string
  */
-export const isEmptyString = (value: unknown): value is string => {
-  try {
-    return isString(value) && value === EMPTY_STRING;
-  } catch {
-    return false;
-  }
+export const utf8ArrayToString = (array: Uint8Array) => {
+  return new TextDecoder().decode(array);
 };

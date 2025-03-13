@@ -15,6 +15,15 @@
 
  ------------------------------------------------------------------- */
 
+/**
+ * The type-checks library used by Storm Software for building TypeScript applications.
+ *
+ * @remarks
+ * A package containing many base TypeScript type definitions that are shared across many projects.
+ *
+ * @packageDocumentation
+ */
+
 export * from "./get-object-tag";
 export * from "./is-array-like";
 export * from "./is-async-iterable";

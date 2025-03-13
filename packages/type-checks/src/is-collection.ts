@@ -15,18 +15,23 @@
 
  -------------------------------------------------------------------*/
 
+import { Collection } from "@stryke/types/base";
+import { typeDetect } from "./type-detect";
+
+const COLLECTION_TYPE_SET = new Set([
+  "Arguments",
+  "Array",
+  "Map",
+  "Object",
+  "Set"
+]);
+
 /**
- * Convert a utf8 array to string
+ * Check if the provided value's type is `Collection`
  *
- * @remarks
- * This method is part of the {@linkcode Convert} namespace.
- *
- * @credits https://stackoverflow.com/a/41798356/1465919
- * @credits https://stackoverflow.com/a/36949791/1465919
- *
- * @param array - Utf-8 Array
- * @returns The converted string
+ * @param value - The value to type check
+ * @returns An indicator specifying if the value provided is of type `Collection`
  */
-export const utf8ArrayToString = (array: Uint8Array) => {
-  return new TextDecoder().decode(array);
-};
+export function isCollection(value: any): value is Collection {
+  return COLLECTION_TYPE_SET.has(typeDetect(value));
+}

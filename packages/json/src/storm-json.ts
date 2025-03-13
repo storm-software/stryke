@@ -25,8 +25,8 @@ import type {
   JsonValue
 } from "./types";
 // import { Decimal } from "decimal.js";
-import { isObject } from "@stryke/types/type-checks/is-object";
-import { isString } from "@stryke/types/type-checks/is-string";
+import { isObject } from "@stryke/type-checks/is-object";
+import { isString } from "@stryke/type-checks/is-string";
 import { Buffer } from "buffer/";
 import { parse } from "jsonc-parser";
 import SuperJSON from "superjson";

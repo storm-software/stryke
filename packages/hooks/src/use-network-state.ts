@@ -1,4 +1,4 @@
-/*-------------------------------------------------------------------
+/* -------------------------------------------------------------------
 
                        ⚡ Storm Software - Stryke
 
@@ -13,13 +13,10 @@
  Contact:         https://stormsoftware.com/contact
  License:         https://stormsoftware.com/projects/stryke/license
 
- -------------------------------------------------------------------*/
+ ------------------------------------------------------------------- */
 
-import { isEqual } from "@stryke/types/type-checks/is-equal";
-import {
-  NetworkInformation,
-  NetworkState
-} from "@stryke/types/utility-types/navigator";
+import { isEqual } from "@stryke/type-checks/is-equal";
+import type { NetworkInformation, NetworkState } from "@stryke/types/navigator";
 import { useRef, useSyncExternalStore } from "react";
 
 const getConnection = (): NetworkInformation | undefined => {

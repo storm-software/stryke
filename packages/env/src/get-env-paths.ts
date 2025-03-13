@@ -17,7 +17,7 @@
 
 import { joinPaths } from "@stryke/path/join-paths";
 import { titleCase } from "@stryke/string-format/title-case";
-import { isString } from "@stryke/types/type-checks/is-string";
+import { isString } from "@stryke/type-checks/is-string";
 import os from "node:os";
 import path from "node:path";
 

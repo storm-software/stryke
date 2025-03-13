@@ -17,7 +17,7 @@
 
 import { StormJSON } from "@stryke/json/storm-json";
 import type { JsonParseOptions } from "@stryke/json/types";
-import { isError } from "@stryke/types/type-checks/is-error";
+import { isError } from "@stryke/type-checks/is-error";
 import { existsSync, readFileSync as readFileSyncFs } from "node:fs";
 import { readFile as readFileFs } from "node:fs/promises";
 

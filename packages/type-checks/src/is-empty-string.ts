@@ -15,15 +15,19 @@
 
  -------------------------------------------------------------------*/
 
-import type { Arrayable } from "../utility-types/array";
-import type { Nullable } from "../utility-types/utilities";
+import { EMPTY_STRING } from "@stryke/types/base";
+import { isString } from "./is-string";
 
 /**
- * Convert `Arrayable<T>` to `Array<T>`
+ * Determine if the type is string and is empty
  *
- * @category Array
+ * @param value - The value to type check
+ * @returns An indicator specifying if the value provided is of type `""`
  */
-export function toArray<T>(array?: Nullable<Arrayable<T>>): Array<T> {
-  array = array ?? [];
-  return Array.isArray(array) ? array : [array];
-}
+export const isEmptyString = (value: unknown): value is string => {
+  try {
+    return isString(value) && value === EMPTY_STRING;
+  } catch {
+    return false;
+  }
+};

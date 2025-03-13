@@ -15,7 +15,7 @@
 
  ------------------------------------------------------------------- */
 
-import { EMPTY_STRING } from "@stryke/types/utility-types/base";
+import { EMPTY_STRING } from "@stryke/types/base";
 import { getWorkspaceRoot } from "../workspace/get-workspace-root";
 import { isAbsolutePath } from "./is-file";
 import { joinPaths } from "./join-paths";

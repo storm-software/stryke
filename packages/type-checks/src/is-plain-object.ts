@@ -15,7 +15,7 @@
 
  -------------------------------------------------------------------*/
 
-import { PlainObject } from "../utility-types/base";
+import { PlainObject } from "@stryke/types/base";
 import { getObjectTag } from "./get-object-tag";
 
 /**

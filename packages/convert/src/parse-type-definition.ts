@@ -1,4 +1,4 @@
-/*-------------------------------------------------------------------
+/* -------------------------------------------------------------------
 
                        ⚡ Storm Software - Stryke
 
@@ -13,13 +13,13 @@
  Contact:         https://stormsoftware.com/contact
  License:         https://stormsoftware.com/projects/stryke/license
 
- -------------------------------------------------------------------*/
+ ------------------------------------------------------------------- */
 
-import { isObject, isString } from "../type-checks";
+import { isObject, isString } from "@stryke/type-checks";
 import type {
   TypeDefinition,
   TypeDefinitionParameter
-} from "../utility-types/configuration";
+} from "@stryke/types/configuration";
 
 /**
  * Parse a type definition parameter into a {@link TypeDefinition} object

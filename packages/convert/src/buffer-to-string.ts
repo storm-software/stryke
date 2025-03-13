@@ -1,4 +1,4 @@
-/*-------------------------------------------------------------------
+/* -------------------------------------------------------------------
 
                        ⚡ Storm Software - Stryke
 
@@ -13,11 +13,6 @@
  Contact:         https://stormsoftware.com/contact
  License:         https://stormsoftware.com/projects/stryke/license
 
- -------------------------------------------------------------------*/
+ ------------------------------------------------------------------- */
 
-export * from "./buffer-to-string";
-export * from "./string-to-uint8-array";
-export * from "./to-array";
-export * from "./to-string-key";
-export * from "./uint8-array-to-string";
-export * from "./utf8-array-to-string";
+export const bufferToString = (buf: Buffer): string => buf.toString("utf8");

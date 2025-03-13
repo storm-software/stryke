@@ -15,22 +15,19 @@
 
  ------------------------------------------------------------------- */
 
-export * from "./array";
-export * from "./async";
-export * from "./base";
-export * from "./configuration";
-export * from "./file";
-export * from "./form";
-export * from "./json";
-export * from "./logic";
-export * from "./messages";
-export * from "./navigator";
-export * from "./object";
-export * from "./package-json";
-export * from "./package-manager";
-export * from "./string";
-export * from "./system";
-export * from "./tsconfig";
-export * from "./user";
-export * from "./utilities";
-export * from "./validations";
+/**
+ * The convert library used by Storm Software for building TypeScript applications.
+ *
+ * @remarks
+ * A utility package that helps convert between different data types
+ *
+ * @packageDocumentation
+ */
+
+export * from "./buffer-to-string";
+export * from "./parse-type-definition";
+export * from "./string-to-uint8-array";
+export * from "./to-array";
+export * from "./to-string-key";
+export * from "./uint8-array-to-string";
+export * from "./utf8-array-to-string";

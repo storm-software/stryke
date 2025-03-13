@@ -1,0 +1,15 @@
+{
+  "name": "@stryke/convert",
+  "version": "0.0.1",
+  "type": "module",
+  "description": "A utility package that helps convert between different data types.",
+  "repository": {
+    "type": "github",
+    "url": "https://github.com/storm-software/stryke.git",
+    "directory": "packages/convert"
+  },
+  "private": false,
+  "publishConfig": {
+    "access": "public"
+  }
+}

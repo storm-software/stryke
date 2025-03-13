@@ -1,4 +1,4 @@
-/*-------------------------------------------------------------------
+/* -------------------------------------------------------------------
 
                        ⚡ Storm Software - Stryke
 
@@ -13,9 +13,9 @@
  Contact:         https://stormsoftware.com/contact
  License:         https://stormsoftware.com/projects/stryke/license
 
- -------------------------------------------------------------------*/
+ ------------------------------------------------------------------- */
 
-import { isDate, isFunction, isSet, isString } from "@stryke/types/type-checks";
+import { isDate, isFunction, isSet, isString } from "@stryke/type-checks";
 import type {
   CookieParseOptions,
   CookieSerializeOptions,
@@ -132,8 +132,8 @@ export function parseSetCookie(
   }
 
   const cookie: SetCookie = {
-    name: name,
-    value: value
+    name,
+    value
   };
 
   for (const part of parts) {
@@ -177,8 +177,8 @@ export function parseSetCookie(
  * field-vchar   = VCHAR / obs-text
  * obs-text      = %x80-FF
  */
-// eslint-disable-next-line no-control-regex
-const fieldContentRegExp = /^[\u0009\u0020-\u007E\u0080-\u00FF]+$/;
+
+const fieldContentRegExp = /^[\t\u0020-\u007E\u0080-\u00FF]+$/;
 
 /**
  * Serialize a cookie name-value pair into a `Set-Cookie` header string.
@@ -212,7 +212,7 @@ export function serializeCookie(
     throw new TypeError("argument val is invalid");
   }
 
-  let str = name + "=" + encodedValue;
+  let str = `${name}=${encodedValue}`;
 
   if (!isSet(opt.maxAge)) {
     const maxAge = Number(opt.maxAge);
@@ -221,7 +221,7 @@ export function serializeCookie(
       throw new TypeError("option maxAge is invalid");
     }
 
-    str += "; Max-Age=" + Math.floor(maxAge);
+    str += `; Max-Age=${Math.floor(maxAge)}`;
   }
 
   if (opt.domain) {
@@ -229,7 +229,7 @@ export function serializeCookie(
       throw new TypeError("option domain is invalid");
     }
 
-    str += "; Domain=" + opt.domain;
+    str += `; Domain=${opt.domain}`;
   }
 
   if (opt.path) {
@@ -237,7 +237,7 @@ export function serializeCookie(
       throw new TypeError("option path is invalid");
     }
 
-    str += "; Path=" + opt.path;
+    str += `; Path=${opt.path}`;
   }
 
   if (opt.expires) {
@@ -245,7 +245,7 @@ export function serializeCookie(
       throw new TypeError("option expires is invalid");
     }
 
-    str += "; Expires=" + opt.expires.toUTCString();
+    str += `; Expires=${opt.expires.toUTCString()}`;
   }
 
   if (opt.httpOnly) {

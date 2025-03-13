@@ -15,21 +15,19 @@
 
  -------------------------------------------------------------------*/
 
-import { SelectOption } from "../utility-types/form";
-import { isEmpty } from "./is-empty";
+import { ITyped } from "@stryke/types/base";
+import { isObject } from "./is-object";
+import { isSet } from "./is-set";
 
 /**
- * Check if the provided value's type is SelectOption
+ * Check if the provided value has a `__typename` property
  *
  * @param value - The value to type check
- * @returns An indicator specifying if the object provided is of type SelectOption
+ * @returns An indicator specifying if the value provided has a `__typename` property
  */
-export const isSelectOption = (value: unknown): value is SelectOption => {
+export const isTyped = (value: unknown): value is ITyped => {
   try {
-    return (
-      !isEmpty((value as SelectOption)?.name) &&
-      "value" in (value as SelectOption)
-    );
+    return isSet(value) && isObject(value) && "__typename" in value;
   } catch {
     return false;
   }

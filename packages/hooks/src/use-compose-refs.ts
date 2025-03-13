@@ -1,4 +1,4 @@
-/*-------------------------------------------------------------------
+/* -------------------------------------------------------------------
 
                        ⚡ Storm Software - Stryke
 
@@ -13,10 +13,11 @@
  Contact:         https://stormsoftware.com/contact
  License:         https://stormsoftware.com/projects/stryke/license
 
- -------------------------------------------------------------------*/
+ ------------------------------------------------------------------- */
 
-import { isFunction } from "@stryke/types/type-checks/is-function";
-import { type Ref, type RefObject, useCallback } from "react";
+import { isFunction } from "@stryke/type-checks/is-function";
+import type { Ref, RefObject } from "react";
+import { useCallback } from "react";
 
 // from radix
 // https://raw.githubusercontent.com/radix-ui/primitives/main/packages/react/compose-refs/src/composeRefs.tsx

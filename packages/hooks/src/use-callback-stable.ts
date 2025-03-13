@@ -1,4 +1,4 @@
-/*-------------------------------------------------------------------
+/* -------------------------------------------------------------------
 
                        ⚡ Storm Software - Stryke
 
@@ -13,9 +13,9 @@
  Contact:         https://stormsoftware.com/contact
  License:         https://stormsoftware.com/projects/stryke/license
 
- -------------------------------------------------------------------*/
+ ------------------------------------------------------------------- */
 
-import { AnyFunction } from "@stryke/types/utility-types/base";
+import type { AnyFunction } from "@stryke/types/base";
 import { useMemoStable } from "./use-memo-stable";
 
 /**

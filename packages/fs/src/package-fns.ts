@@ -21,11 +21,11 @@ import { getParentPath } from "@stryke/path/get-parent-path";
 import { getWorkspaceRoot } from "@stryke/path/get-workspace-root";
 import type { PackageResolvingOptions } from "@stryke/path/resolve";
 import { resolvePackage } from "@stryke/path/resolve";
-import type { PackageJson } from "@stryke/types/utility-types/package-json";
+import type { PackageJson } from "@stryke/types/package-json";
 import {
   PackageManagerLockFiles,
   PackageManagers
-} from "@stryke/types/utility-types/package-manager";
+} from "@stryke/types/package-manager";
 import { readFile } from "./read-file";
 
 /**
