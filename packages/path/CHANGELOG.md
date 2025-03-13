@@ -1,3 +1,13 @@
+## 0.4.3 (2025-03-13)
+
+### Miscellaneous
+
+- **monorepo:** Format monorepo project files ([f28fdbe](https://github.com/storm-software/stryke/commit/f28fdbe))
+
+### 🧱 Updated Dependencies
+
+- Updated types to 0.6.2
+
 ## 0.4.2 (2025-03-13)
 
 ### Bug Fixes
