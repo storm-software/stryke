@@ -1,4 +1,4 @@
-/*-------------------------------------------------------------------
+/* -------------------------------------------------------------------
 
                        ⚡ Storm Software - Stryke
 
@@ -13,7 +13,7 @@
  Contact:         https://stormsoftware.com/contact
  License:         https://stormsoftware.com/projects/stryke/license
 
- -------------------------------------------------------------------*/
+ ------------------------------------------------------------------- */
 
 import type { FunctionLike, IsUnknown } from "./base";
 
@@ -26,8 +26,6 @@ import type { FunctionLike, IsUnknown } from "./base";
  *
  * const value: Awaited<Promise<string>> = 'foo';
  * ```
- *
- * @category Async
  */
 export type Awaitable<T> = T | PromiseLike<T>;
 
@@ -45,8 +43,6 @@ export type Awaitable<T> = T | PromiseLike<T>;
  * type MyWrappedFunction = SetReturnType<MyFunctionThatCanThrow, SomeOtherType | undefined>;
  * //=> type MyWrappedFunction = (foo: SomeType, bar: unknown) => SomeOtherType | undefined;
  * ```
- *
- * @category Function
  */
 export type SetReturnType<
   Function_ extends (...arguments_: any[]) => any,
@@ -84,8 +80,6 @@ export type AsyncFunction = (...arguments_: any[]) => Promise<unknown>;
  *
  * asyncFunction().then(value => doSomething(value));
  * ```
- *
- * @category Async
  */
 export type AsyncReturnType<Target extends AsyncFunction> = Awaited<
   ReturnType<Target>
@@ -117,8 +111,6 @@ export type AsyncReturnType<Target extends AsyncFunction> = Awaited<
  *   // …
  * }
  * ```
- *
- * @category Async
  */
 export type Asyncify<Function_ extends FunctionLike> = SetReturnType<
   Function_,
@@ -140,7 +132,5 @@ export type Asyncify<Function_ extends FunctionLike> = SetReturnType<
  *
  * @param P - A promise
  * @returns [[Any]]
- *
- * @category Async
  */
-export type Await<P extends any> = P extends Promise<infer A> ? A : P;
+export type Await<P> = P extends Promise<infer A> ? A : P;

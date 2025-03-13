@@ -15,12 +15,8 @@
 
  ------------------------------------------------------------------- */
 
-import { isEmpty } from "../type-checks";
-
 /**
  * Matches any array or array-like object.
- *
- * @category Array
  */
 export type Arrayable<T> = T | T[];
 
@@ -28,8 +24,6 @@ export type UnknownArray = readonly unknown[];
 
 /**
  * Matches any [typed array](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/TypedArray), like `Uint8Array` or `Float64Array`.
- *
- * @category Array
  */
 export type TypedArray =
   | BigInt64Array
@@ -82,8 +76,6 @@ export type ArrayElement<T> = T extends readonly unknown[] ? T[0] : never;
  * ```
  *
  * @see {@link ArrayIndices}
- *
- * @category Array
  */
 export type ArrayValues<T extends readonly unknown[]> = T[number];
 
@@ -105,8 +97,6 @@ export type ArrayValues<T extends readonly unknown[]> = T[number];
  * ```
  *
  * @see {@link ArrayValues}
- *
- * @category Array
  */
 export type ArrayIndices<Element extends readonly unknown[]> = Exclude<
   Partial<Element>["length"],
@@ -145,9 +135,6 @@ export type FirstArrayElement<TArray extends UnknownArrayOrTuple> =
  * typeof lastOf(array);
  * //=> 2
  * ```
- *
- * @category Array
- * @category Template literal
  */
 export type LastArrayElement<
   Elements extends readonly unknown[],
@@ -202,6 +189,3 @@ export type VariablePartOfArray<T extends UnknownArray> = T extends unknown
     ? U
     : []
   : never; // Should never happen
-
-export const filterEmpty = <T>(values: (T | null | undefined)[] = []): T[] =>
-  values.filter(value => !isEmpty(value)) as T[];

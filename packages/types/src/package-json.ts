@@ -149,8 +149,7 @@ export interface PackageJson {
    * Docs:
    * - https://nodejs.org/docs/latest-v14.x/api/esm.html#esm_package_json_type_field
    *
-   * @default 'commonjs'
-   * @since Node.js v14
+   * @defaultValue 'commonjs'
    */
   type?: "module" | "commonjs";
   /**
@@ -160,8 +159,6 @@ export interface PackageJson {
    *
    * Docs:
    * - https://nodejs.org/docs/latest-v14.x/api/esm.html#esm_exports_sugar
-   *
-   * @since Node.js v12.7
    */
   exports?: PackageJsonExports;
   /**
@@ -255,7 +252,8 @@ export interface PackageJson {
      *
      * When set to `true`, the project will be symlinked from the
      * `publishConfig.directory` location during local development.
-     * @default true
+     *
+     * @defaultValue true
      */
     linkDirectory?: boolean;
   } & Pick<

@@ -31,6 +31,7 @@ type NarrowRaw<A> =
   | (A extends [] ? [] : never)
   | (A extends Narrowable ? A : never)
   | {
+      // eslint-disable-next-line ts/no-unsafe-function-type
       [K in keyof A]: A[K] extends Function ? A[K] : NarrowRaw<A[K]>;
     };
 
@@ -82,7 +83,7 @@ export interface NameValuePair<TValue, TName = string> {
  * @param A2 - to cast to
  * @returns `A1 | A2`
  */
-export type Cast<A1 extends any, A2 extends any> = A1 extends A2 ? A1 : A2;
+export type Cast<A1, A2> = A1 extends A2 ? A1 : A2;
 
 // type Primitive = undefined | null | boolean | string | number;
 

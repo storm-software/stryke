@@ -40,10 +40,6 @@ import type { NegativeInfinity, PositiveInfinity } from "./number";
  * type NegativeInfinity = StringToNumber<'-Infinity'>;
  * //=> -Infinity
  * ```
- *
- * @category String
- * @category Numeric
- * @category Template literal
  */
 export type StringToNumber<S extends string> =
   S extends `${infer N extends number}`
@@ -71,9 +67,6 @@ export type StringToNumber<S extends string> =
  * StartsWith<'abcde', string>;
  * //=> never
  * ```
- *
- * @category String
- * @category Template literal
  */
 export type StartsWith<
   S extends string,
@@ -95,9 +88,6 @@ export type StartsWith<
  * StringLength<string>;
  * //=> never
  * ```
- *
- * @category String
- * @category Template literal
  */
 export type StringLength<S extends string> = string extends S
   ? never
@@ -114,8 +104,6 @@ export type StringLength<S extends string> = string extends S
  * StringToArray<string>;
  * //=> never
  * ```
- *
- * @category String
  */
 export type StringToArray<
   S extends string,

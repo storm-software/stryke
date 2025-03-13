@@ -27,8 +27,6 @@ export type Zero = 0 | 0n;
  * Please upvote [this issue](https://github.com/microsoft/TypeScript/issues/32277) if you want to have this type as a built-in in TypeScript.
  *
  * @see NegativeInfinity
- *
- * @category Numeric
  */
 // See https://github.com/microsoft/TypeScript/issues/31752
 
@@ -41,8 +39,6 @@ export type PositiveInfinity = 1e999;
  * Please upvote [this issue](https://github.com/microsoft/TypeScript/issues/32277) if you want to have this type as a built-in in TypeScript.
  *
  * @see PositiveInfinity
- *
- * @category Numeric
  */
 // See https://github.com/microsoft/TypeScript/issues/31752
 
@@ -63,8 +59,6 @@ export type NegativeInfinity = -1e999;
  *
  * declare function setScore<T extends number>(length: Finite<T>): void;
  * ```
- *
- * @category Numeric
  */
 export type Finite<T extends number> = T extends
   | PositiveInfinity
@@ -112,8 +106,6 @@ export type Finite<T extends number> = T extends
  *
  * @see NegativeInteger
  * @see NonNegativeInteger
- *
- * @category Numeric
  */
 // `${bigint}` is a type that matches a valid bigint literal without the `n` (ex. 1, 0b1, 0o1, 0x1)
 // Because T is a number and not a string we can effectively use this to filter out any numbers containing decimal points
@@ -154,8 +146,6 @@ export type IsFloat<T> = T extends number
  * ```
  *
  * @see Integer
- *
- * @category Numeric
  */
 export type Float<T> = T extends unknown // To distributive type
   ? IsFloat<T> extends true
@@ -171,8 +161,6 @@ export type Float<T> = T extends unknown // To distributive type
  *
  * @see Negative
  * @see Float
- *
- * @category Numeric
  */
 export type NegativeFloat<T extends number> = Negative<Float<T>>;
 
@@ -183,8 +171,6 @@ export type NegativeFloat<T extends number> = Negative<Float<T>>;
  *
  * @see NegativeInteger
  * @see NonNegative
- *
- * @category Numeric
  */
 export type Negative<T extends Numeric> = T extends Zero
   ? never
@@ -202,8 +188,6 @@ export type Negative<T extends Numeric> = T extends Zero
  *
  * @see Negative
  * @see Integer
- *
- * @category Numeric
  */
 export type NegativeInteger<T extends number> = Negative<Integer<T>>;
 
@@ -221,8 +205,6 @@ export type NegativeInteger<T extends number> = Negative<Integer<T>>;
  *
  * declare function setLength<T extends number>(length: NonNegative<T>): void;
  * ```
- *
- * @category Numeric
  */
 export type NonNegative<T extends Numeric> = T extends Zero
   ? T
@@ -247,8 +229,6 @@ export type NonNegative<T extends Numeric> = T extends Zero
  *
  * declare function setLength<T extends number>(length: NonNegativeInteger<T>): void;
  * ```
- *
- * @category Numeric
  */
 export type NonNegativeInteger<T extends number> = NonNegative<Integer<T>>;
 
@@ -264,8 +244,6 @@ export type NonNegativeInteger<T extends number> = NonNegative<Integer<T>>;
  * type ShouldBeFalse = IsNegative<1>;
  * type ShouldBeTrue = IsNegative<-1>;
  * ```
- *
- * @category Numeric
  */
 export type IsNegative<T extends Numeric> =
   T extends Negative<T> ? true : false;

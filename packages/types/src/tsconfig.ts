@@ -1148,8 +1148,6 @@ export interface References {
 
 /**
  * Type for [TypeScript's `tsconfig.json` file](https://www.typescriptlang.org/docs/handbook/tsconfig-json.html) (TypeScript 3.7).
- *
- * @category File
  */
 export interface TsConfigJson {
   /**

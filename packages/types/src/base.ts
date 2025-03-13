@@ -34,6 +34,7 @@ export type BuiltIns = Primitive | void | Date | RegExp;
 /**
  * Matches any non-primitive object
  */
+// eslint-disable-next-line ts/no-unsafe-function-type
 export type AtomicObject = Function | Promise<any> | Date | RegExp;
 
 /** Determines if the passed value is of a specific type */
@@ -80,9 +81,7 @@ export type List<A = any> = ReadonlyArray<A>;
  * @param R - return type
  * @returns [[Function]]
  */
-export type FunctionLike<P extends List = any, R extends any = any> = (
-  ...args: P
-) => R;
+export type FunctionLike<P extends List = any, R = any> = (...args: P) => R;
 
 export type AnyFunction = FunctionLike<any, any>;
 export type Nullish = undefined | null;
@@ -187,8 +186,8 @@ export type Rollback = Record<
 /**
  * Extract all required keys from the given type.
  *
- * @remarks This is useful when you want to create a new type that contains different type values for the required keys only or use the list of keys for validation purposes, etc...
- * @category Utilities
+ * @remarks
+ * This is useful when you want to create a new type that contains different type values for the required keys only or use the list of keys for validation purposes, etc...
  */
 export type RequiredKeysOf<BaseType extends object> = Exclude<
   {
@@ -202,11 +201,11 @@ export type RequiredKeysOf<BaseType extends object> = Exclude<
 /**
  * Returns a boolean for whether the two given types are equal.
  *
- * @remarks Use-cases: If you want to make a conditional branch based on the result of a comparison of two types.
- * @link https://github.com/microsoft/TypeScript/issues/27024#issuecomment-421529650
- * @link https://stackoverflow.com/questions/68961864/how-does-the-equals-work-in-typescript/68963796#68963796
- * @category Type Guard
- * @category Utilities
+ * @remarks
+ * Use-cases: If you want to make a conditional branch based on the result of a comparison of two types.
+ *
+ * @see https://github.com/microsoft/TypeScript/issues/27024#issuecomment-421529650
+ * @see https://stackoverflow.com/questions/68961864/how-does-the-equals-work-in-typescript/68963796#68963796
  */
 export type IsEqual<A, B> =
   (<G>() => G extends A ? 1 : 2) extends <G>() => G extends B ? 1 : 2
@@ -234,10 +233,12 @@ interface ExceptOptions {
 /**
  * Create a type from an object type without certain keys.
  *
- * @remarks We recommend setting the `requireExactProps` option to `true`.
- * @remarks This type is a stricter version of [`Omit`](https://www.typescriptlang.org/docs/handbook/release-notes/typescript-3-5.html#the-omit-helper-type). The `Omit` type does not restrict the omitted keys to be keys present on the given type, while `Except` does. The benefits of a stricter type are avoiding typos and allowing the compiler to pick up on rename refactors automatically.
- * @remarks This type was proposed to the TypeScript team, which declined it, saying they prefer that libraries implement stricter versions of the built-in types ([microsoft/TypeScript#30825](https://github.com/microsoft/TypeScript/issues/30825#issuecomment-523668235)).
- * @category Object
+ * @remarks
+ * We recommend setting the `requireExactProps` option to `true`.
+ *
+ * This type is a stricter version of [`Omit`](https://www.typescriptlang.org/docs/handbook/release-notes/typescript-3-5.html#the-omit-helper-type). The `Omit` type does not restrict the omitted keys to be keys present on the given type, while `Except` does. The benefits of a stricter type are avoiding typos and allowing the compiler to pick up on rename refactors automatically.
+ *
+ * This type was proposed to the TypeScript team, which declined it, saying they prefer that libraries implement stricter versions of the built-in types ([microsoft/TypeScript#30825](https://github.com/microsoft/TypeScript/issues/30825#issuecomment-523668235)).
  */
 export type Except<
   ObjectType,
@@ -255,18 +256,20 @@ export type Except<
 /**
  * Useful to flatten the type output to improve type hints shown in editors. And also to transform an interface into a type to aide with assignability.
  *
- * @remarks Sometimes it is desired to pass a value as a function argument that has a different type. At first inspection it may seem assignable, and then you discover it is not because the `value`'s type definition was defined as an interface. In the following example, `fn` requires an argument of type `Record<string, unknown>`. If the value is defined as a literal, then it is assignable. And if the `value` is defined as type using the `Simplify` utility the value is assignable.  But if the `value` is defined as an interface, it is not assignable because the interface is not sealed and elsewhere a non-string property could be added to the interface.
- * @remarks If the type definition must be an interface (perhaps it was defined in a third-party npm package), then the `value` can be defined as `const value: Simplify<SomeInterface> = ...`. Then `value` will be assignable to the `fn` argument.  Or the `value` can be cast as `Simplify<SomeInterface>` if you can't re-declare the `value`.
- * @link https://github.com/microsoft/TypeScript/issues/15300
- * @category Object
+ * @remarks
+ * Sometimes it is desired to pass a value as a function argument that has a different type. At first inspection it may seem assignable, and then you discover it is not because the `value`'s type definition was defined as an interface. In the following example, `fn` requires an argument of type `Record<string, unknown>`. If the value is defined as a literal, then it is assignable. And if the `value` is defined as type using the `Simplify` utility the value is assignable.  But if the `value` is defined as an interface, it is not assignable because the interface is not sealed and elsewhere a non-string property could be added to the interface.
+ *
+ * If the type definition must be an interface (perhaps it was defined in a third-party npm package), then the `value` can be defined as `const value: Simplify<SomeInterface> = ...`. Then `value` will be assignable to the `fn` argument.  Or the `value` can be cast as `Simplify<SomeInterface>` if you can't re-declare the `value`.
+ *
+ * @see https://github.com/microsoft/TypeScript/issues/15300
  */
 export type Simplify<T> = { [KeyType in keyof T]: T[KeyType] } & {};
 
 /**
  * Create a type that makes the given keys required. The remaining keys are kept as is. The sister of the `SetOptional` type.
  *
- * @remarks Use-case: You want to define a single model where the only thing that changes is whether or not some of the keys are required.
- * @category Object
+ * @remarks
+ * Use-case: You want to define a single model where the only thing that changes is whether or not some of the keys are required.
  */
 export type SetRequired<
   BaseType,
@@ -326,6 +329,7 @@ export interface ClassTypeCheckable<T> extends ITyped {
  */
 export type NonRecursiveType =
   | BuiltIns
+  // eslint-disable-next-line ts/no-unsafe-function-type
   | Function
   | (new (...arguments_: any[]) => unknown);
 
@@ -359,15 +363,11 @@ export type IsFunction<T> = T extends AnyFunction ? true : false;
  *
  * (globalThis as ExtraGlobals).GLOBAL_TOKEN;
  * ```
- *
- * @category Type
  */
 export type GlobalThis = typeof globalThis;
 
 /**
  * Matches a [`class`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Classes).
- *
- * @category Class
  */
 export interface Class<T, Arguments extends unknown[] = any[]> {
   prototype: Pick<T, keyof T>;
@@ -376,8 +376,6 @@ export interface Class<T, Arguments extends unknown[] = any[]> {
 
 /**
  * Matches a [`class` constructor](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Classes).
- *
- * @category Class
  */
 export type Constructor<T, Arguments extends unknown[] = any[]> = new (
   ...arguments_: Arguments
@@ -385,8 +383,6 @@ export type Constructor<T, Arguments extends unknown[] = any[]> = new (
 
 /**
  * Matches an [`abstract class`](https://www.typescriptlang.org/docs/handbook/classes.html#abstract-classes).
- *
- * @category Class
  *
  * @privateRemarks
  * We cannot use a `type` here because TypeScript throws: 'abstract' modifier cannot appear on a type member. (1070)
@@ -399,8 +395,6 @@ export interface AbstractClass<T, Arguments extends unknown[] = any[]>
 
 /**
  * Matches an [`abstract class`](https://www.typescriptlang.org/docs/handbook/release-notes/typescript-4-2.html#abstract-construct-signatures) constructor.
- *
- * @category Class
  */
 export type AbstractConstructor<
   T,
@@ -412,7 +406,7 @@ export type AbstractConstructor<
  *
  * If `<Fill>` is not provided, it will default to `unknown`.
  *
- * @link https://itnext.io/implementing-arithmetic-within-typescripts-type-system-a1ef140a6f6f
+ * @see https://itnext.io/implementing-arithmetic-within-typescripts-type-system-a1ef140a6f6f
  */
 export type BuildTuple<
   L extends number,
@@ -527,8 +521,6 @@ type StructuredCloneableCollection =
  * structuredClone(good);
  * //=> {number: 3, date: Date(2022-10-17 22:22:35.920), map: Map {'key' -> 1}}
  * ```
- *
- * @category Structured clone
  */
 export type StructuredCloneable =
   | StructuredCloneablePrimitive

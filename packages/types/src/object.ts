@@ -143,8 +143,6 @@ export type LiteralKeyOf<T> = keyof {
  * const pet: Pet2 = '';
  * // You **will** get auto-completion for `dog` and `cat` literals.
  * ```
- *
- * @category Type
  */
 export type LiteralUnion<LiteralType, BaseType extends Primitive> =
   | (BaseType & Record<never, never>)
@@ -168,6 +166,7 @@ export type LiteralUnion<LiteralType, BaseType extends Primitive> =
 export type BuildObject<
   Key extends PropertyKey,
   Value,
+  // eslint-disable-next-line ts/no-empty-object-type
   CopiedFrom extends object = {}
 > = Key extends keyof CopiedFrom
   ? Pick<{ [_ in keyof CopiedFrom]: Value }, Key>
@@ -254,6 +253,7 @@ interface GetOptions {
 export type GetWithPath<
   BaseType,
   Keys extends readonly string[],
+  // eslint-disable-next-line ts/no-empty-object-type
   Options extends GetOptions = {}
 > = Keys extends readonly []
   ? BaseType
@@ -307,9 +307,6 @@ type StrictPropertyOf<
  *
  * array = split(items, ',');
  * ```
- *
- * @category String
- * @category Template literal
  */
 export type Split<
   S extends string,
@@ -335,7 +332,7 @@ export type Split<
 export type ToPath<S extends string> = Split<FixPathSquareBrackets<S>, ".">;
 
 /**
- * Replaces square-bracketed dot notation with dots, for example, `foo[0].bar` -> `foo.0.bar`.
+ * Replaces square-bracketed dot notation with dots, for example, `foo[0].bar` -\> `foo.0.bar`.
  */
 type FixPathSquareBrackets<Path extends string> =
   Path extends `[${infer Head}]${infer Tail}`
@@ -406,6 +403,7 @@ type UncheckedIndex<T, U extends number | string> = [T] extends [
 type PropertyOf<
   BaseType,
   Key extends string,
+  // eslint-disable-next-line ts/no-empty-object-type
   Options extends GetOptions = {}
 > = BaseType extends Nullish
   ? undefined
@@ -466,10 +464,6 @@ type PropertyOf<
  * Get<string[], '3', {strict: false}> //=> string
  * Get<Record<string, string>, 'foo', {strict: true}> // => string
  * ```
- *
- * @category Object
- * @category Array
- * @category Template literal
  */
 export type Get<
   BaseType,
@@ -519,8 +513,6 @@ export type Get<
  * type Intersection = UnionToIntersection<Union>;
  * //=> {a1(): void; b1(): void; a2(argA: string): void; b2(argB: string): void}
  * ```
- *
- * @category Type
  */
 export type UnionToIntersection<Union> =
   // `extends unknown` is always going to be the case and is used to convert the
@@ -607,9 +599,6 @@ export type UnionToIntersection<Union> =
  * //  };
  * // }
  * ```
- *
- * @category Object
- * @category Array
  */
 export type PickDeep<T, PathUnion extends Paths<T>> = T extends NonRecursiveType
   ? never
