@@ -17,7 +17,7 @@
 
 import type { InstallPackageOptions } from "@antfu/install-pkg";
 import { installPackage } from "@antfu/install-pkg";
-import { resolve } from "@stryke/path/resolve/resolve";
+import { resolve } from "@stryke/path/resolve";
 import "tinyexec";
 
 /**

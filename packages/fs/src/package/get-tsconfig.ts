@@ -15,10 +15,7 @@
 
  ------------------------------------------------------------------- */
 
-import {
-  findFileName,
-  findFilePath
-} from "@stryke/path/utilities/file-path-fns";
+import { findFileName, findFilePath } from "@stryke/path/file-path-fns";
 import { EMPTY_STRING } from "@stryke/types/utility-types/base";
 import fs from "node:fs";
 import { createRequire } from "node:module";

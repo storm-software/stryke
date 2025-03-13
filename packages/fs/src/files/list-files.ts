@@ -15,8 +15,8 @@
 
  ------------------------------------------------------------------- */
 
-import { isDirectory } from "@stryke/path/utilities/is-file";
-import { joinPaths } from "@stryke/path/utilities/join-paths";
+import { isDirectory } from "@stryke/path/is-file";
+import { joinPaths } from "@stryke/path/join-paths";
 import { readdir } from "node:fs/promises";
 import isMatch from "picomatch";
 

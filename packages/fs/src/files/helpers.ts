@@ -15,7 +15,7 @@
 
  ------------------------------------------------------------------- */
 
-import { exists, existsSync } from "@stryke/path/utilities/exists";
+import { exists, existsSync } from "@stryke/path/exists";
 import { parseTar, parseTarGzip } from "nanotar";
 import { createWriteStream, mkdirSync, rmSync } from "node:fs";
 import { mkdir, readFile, rm } from "node:fs/promises";

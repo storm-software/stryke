@@ -17,9 +17,9 @@
 
 import { StormJSON } from "@stryke/json/storm-json";
 import type { JsonSerializeOptions } from "@stryke/json/types";
-import { existsSync } from "@stryke/path/utilities/exists";
-import { findFilePath } from "@stryke/path/utilities/file-path-fns";
-import { normalizePath } from "@stryke/path/utilities/normalize-path";
+import { existsSync } from "@stryke/path/exists";
+import { findFilePath } from "@stryke/path/file-path-fns";
+import { normalizePath } from "@stryke/path/normalize-path";
 import type { Abortable } from "node:events";
 import type {
   WriteFileOptions as FSWriteFileOptions,

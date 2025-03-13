@@ -16,15 +16,10 @@
  ------------------------------------------------------------------- */
 
 import { StormJSON } from "@stryke/json/storm-json";
+import { exists, findFileName, findFilePath, joinPaths } from "@stryke/path";
+import { getParentPath } from "@stryke/path/get-parent-path";
 import type { PackageResolvingOptions } from "@stryke/path/resolve";
 import { resolvePackage } from "@stryke/path/resolve";
-import {
-  exists,
-  findFileName,
-  findFilePath,
-  joinPaths
-} from "@stryke/path/utilities";
-import { getParentPath } from "@stryke/path/utilities/get-parent-path";
 import { getWorkspaceRoot } from "@stryke/path/workspace/get-workspace-root";
 import type { PackageJson } from "@stryke/types/utility-types/package-json";
 import {

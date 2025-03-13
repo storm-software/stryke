@@ -1,4 +1,4 @@
-/*-------------------------------------------------------------------
+/* -------------------------------------------------------------------
 
                        ⚡ Storm Software - Stryke
 
@@ -13,9 +13,9 @@
  Contact:         https://stormsoftware.com/contact
  License:         https://stormsoftware.com/projects/stryke/license
 
- -------------------------------------------------------------------*/
+ ------------------------------------------------------------------- */
 
-import { joinPaths } from "@stryke/path/utilities/join-paths";
+import { joinPaths } from "@stryke/path/join-paths";
 import { titleCase } from "@stryke/string-format/title-case";
 import { isString } from "@stryke/types/type-checks/is-string";
 import os from "node:os";
@@ -29,7 +29,7 @@ const tmpdir = os.tmpdir();
 /**
  * Options for the `getEnvPaths` function.
  */
-export type GetEnvPathsOptions = {
+export interface GetEnvPathsOptions {
   /**
    * The name of the organization
    *
@@ -68,15 +68,15 @@ export type GetEnvPathsOptions = {
    * The root directory of the workspace that is used for determining the `cache` and `tmp` paths if they were not already set by other means.
    */
   workspaceRoot?: string;
-};
+}
 
-export type EnvPaths = {
+export interface EnvPaths {
   data: string;
   config: string;
   cache: string;
   log: string;
   temp: string;
-};
+}
 
 const macos = (orgId: string): EnvPaths => {
   const library = joinPaths(homedir, "Library");
