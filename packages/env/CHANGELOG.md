@@ -1,3 +1,11 @@
+## 0.5.0 (2025-03-13)
+
+### Features
+
+- **monorepo:** Split `types` project into `type-checks` and `convert` packages ([fcc5832](https://github.com/storm-software/stryke/commit/fcc5832))
+- **fs:** Moved the helper functions to root package directory ([9e77f62](https://github.com/storm-software/stryke/commit/9e77f62))
+- **path:** Move the utilities modules to package root directory ([004bb13](https://github.com/storm-software/stryke/commit/004bb13))
+
 ## 0.4.2 (2025-03-13)
 
 ### Miscellaneous
