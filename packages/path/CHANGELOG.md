@@ -1,3 +1,9 @@
+## 0.4.1 (2025-03-13)
+
+### Bug Fixes
+
+- **path:** Resolve issue with incorrect internal package paths ([7117bc1](https://github.com/storm-software/stryke/commit/7117bc1))
+
 ## 0.4.0 (2025-03-13)
 
 ### Features
