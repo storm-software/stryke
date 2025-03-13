@@ -1,3 +1,9 @@
+## 0.4.2 (2025-03-13)
+
+### Bug Fixes
+
+- **path:** Added the missing `@stryke/types` dependency ([a207de5](https://github.com/storm-software/stryke/commit/a207de5))
+
 ## 0.4.1 (2025-03-13)
 
 ### Bug Fixes
