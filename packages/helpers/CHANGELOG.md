@@ -2,19 +2,22 @@
 
 ### Bug Fixes
 
-- **helpers:** Resolve path issues with the `@stryke` packages ([c0ca2ff](https://github.com/storm-software/stryke/commit/c0ca2ff))
+- **helpers:** Resolve path issues with the `@stryke` packages
+  ([c0ca2ff](https://github.com/storm-software/stryke/commit/c0ca2ff))
 
 ## 0.4.0 (2025-03-13)
 
 ### Features
 
-- **monorepo:** Split `types` project into `type-checks` and `convert` packages ([fcc5832](https://github.com/storm-software/stryke/commit/fcc5832))
+- **monorepo:** Split `types` project into `type-checks` and `convert` packages
+  ([fcc5832](https://github.com/storm-software/stryke/commit/fcc5832))
 
 ## 0.3.1 (2025-02-26)
 
 ### Miscellaneous
 
-- **monorepo:** Reformat monorepo files with `prettier` ([b5d0302](https://github.com/storm-software/stryke/commit/b5d0302))
+- **monorepo:** Reformat monorepo files with `prettier`
+  ([b5d0302](https://github.com/storm-software/stryke/commit/b5d0302))
 
 ## 0.3.0 (2025-02-23)
 

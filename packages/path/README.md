@@ -46,8 +46,8 @@ This package is part of Storm Software's **🌩️ Stryke** monorepo. Stryke pac
 
 # Stryke - Path Helpers
 
-A package containing various utilities that expand the functionality of
-NodeJs's built-in \`path\` module
+A package containing various utilities that expand the functionality of NodeJs's
+built-in \`path\` module
 
 <!-- START doctoc -->
 <!-- DON'T EDIT THIS SECTION, INSTEAD RE-RUN doctoc TO UPDATE -->

@@ -2,7 +2,7 @@
   "name": "@stryke/fs",
   "version": "0.10.1",
   "type": "module",
-  "description": "A package containing various file system utilities that expand the functionality of NodeJs's `fs` module.",
+  "description": "A package containing various file system utilities that expand the functionality of NodeJs's built-in `fs` module.",
   "repository": {
     "type": "github",
     "url": "https://github.com/storm-software/stryke.git",

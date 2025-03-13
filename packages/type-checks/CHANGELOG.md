@@ -2,4 +2,5 @@
 
 ### Features
 
-- **monorepo:** Split `types` project into `type-checks` and `convert` packages ([fcc5832](https://github.com/storm-software/stryke/commit/fcc5832))
+- **monorepo:** Split `types` project into `type-checks` and `convert` packages
+  ([fcc5832](https://github.com/storm-software/stryke/commit/fcc5832))

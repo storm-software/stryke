@@ -2,21 +2,26 @@
 
 ### Features
 
-- **monorepo:** Split `types` project into `type-checks` and `convert` packages ([fcc5832](https://github.com/storm-software/stryke/commit/fcc5832))
-- **fs:** Moved the helper functions to root package directory ([9e77f62](https://github.com/storm-software/stryke/commit/9e77f62))
-- **path:** Move the utilities modules to package root directory ([004bb13](https://github.com/storm-software/stryke/commit/004bb13))
+- **monorepo:** Split `types` project into `type-checks` and `convert` packages
+  ([fcc5832](https://github.com/storm-software/stryke/commit/fcc5832))
+- **fs:** Moved the helper functions to root package directory
+  ([9e77f62](https://github.com/storm-software/stryke/commit/9e77f62))
+- **path:** Move the utilities modules to package root directory
+  ([004bb13](https://github.com/storm-software/stryke/commit/004bb13))
 
 ## 0.4.2 (2025-03-13)
 
 ### Miscellaneous
 
-- **monorepo:** Reformat monorepo package files ([a453428](https://github.com/storm-software/stryke/commit/a453428))
+- **monorepo:** Reformat monorepo package files
+  ([a453428](https://github.com/storm-software/stryke/commit/a453428))
 
 ## 0.4.1 (2025-02-26)
 
 ### Miscellaneous
 
-- **monorepo:** Reformat monorepo files with `prettier` ([b5d0302](https://github.com/storm-software/stryke/commit/b5d0302))
+- **monorepo:** Reformat monorepo files with `prettier`
+  ([b5d0302](https://github.com/storm-software/stryke/commit/b5d0302))
 
 ## 0.4.0 (2025-02-23)
 

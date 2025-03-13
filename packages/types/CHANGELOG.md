@@ -2,19 +2,22 @@
 
 ### Miscellaneous
 
-- **types:** Resolve package linting issues ([f51aa0e](https://github.com/storm-software/stryke/commit/f51aa0e))
+- **types:** Resolve package linting issues
+  ([f51aa0e](https://github.com/storm-software/stryke/commit/f51aa0e))
 
 ## 0.6.0 (2025-03-13)
 
 ### Features
 
-- **monorepo:** Split `types` project into `type-checks` and `convert` packages ([fcc5832](https://github.com/storm-software/stryke/commit/fcc5832))
+- **monorepo:** Split `types` project into `type-checks` and `convert` packages
+  ([fcc5832](https://github.com/storm-software/stryke/commit/fcc5832))
 
 ## 0.5.1 (2025-02-26)
 
 ### Miscellaneous
 
-- **monorepo:** Reformat monorepo files with `prettier` ([b5d0302](https://github.com/storm-software/stryke/commit/b5d0302))
+- **monorepo:** Reformat monorepo files with `prettier`
+  ([b5d0302](https://github.com/storm-software/stryke/commit/b5d0302))
 
 ## 0.5.0 (2025-02-23)
 

@@ -2,62 +2,73 @@
 
 ### Bug Fixes
 
-- **fs:** Resolve issue with invalid module name ([fc49298](https://github.com/storm-software/stryke/commit/fc49298))
+- **fs:** Resolve issue with invalid module name
+  ([fc49298](https://github.com/storm-software/stryke/commit/fc49298))
 
 ## 0.10.0 (2025-03-13)
 
 ### Features
 
-- **monorepo:** Split `types` project into `type-checks` and `convert` packages ([fcc5832](https://github.com/storm-software/stryke/commit/fcc5832))
-- **fs:** Moved the helper functions to root package directory ([9e77f62](https://github.com/storm-software/stryke/commit/9e77f62))
+- **monorepo:** Split `types` project into `type-checks` and `convert` packages
+  ([fcc5832](https://github.com/storm-software/stryke/commit/fcc5832))
+- **fs:** Moved the helper functions to root package directory
+  ([9e77f62](https://github.com/storm-software/stryke/commit/9e77f62))
 
 ## 0.9.2 (2025-03-13)
 
 ### Miscellaneous
 
-- **monorepo:** Reformat monorepo package files ([a453428](https://github.com/storm-software/stryke/commit/a453428))
+- **monorepo:** Reformat monorepo package files
+  ([a453428](https://github.com/storm-software/stryke/commit/a453428))
 
 ## 0.9.1 (2025-03-07)
 
 ### Bug Fixes
 
-- **fs:** Normalize path prior to creating directories in `writeFile` helpers ([80c418f](https://github.com/storm-software/stryke/commit/80c418f))
+- **fs:** Normalize path prior to creating directories in `writeFile` helpers
+  ([80c418f](https://github.com/storm-software/stryke/commit/80c418f))
 
 ## 0.9.0 (2025-03-07)
 
 ### Features
 
-- **fs:** Added the `createDirectory` options to the `writeFile` function ([461e2b0](https://github.com/storm-software/stryke/commit/461e2b0))
+- **fs:** Added the `createDirectory` options to the `writeFile` function
+  ([461e2b0](https://github.com/storm-software/stryke/commit/461e2b0))
 
 ## 0.8.0 (2025-03-06)
 
 ### Features
 
-- **hash:** Added additional patterns to `ignores` list for `hashDirectory` function ([649700f](https://github.com/storm-software/stryke/commit/649700f))
+- **hash:** Added additional patterns to `ignores` list for `hashDirectory`
+  function ([649700f](https://github.com/storm-software/stryke/commit/649700f))
 
 ## 0.7.0 (2025-03-06)
 
 ### Features
 
-- **fs:** Added the options parameter to the `listFiles` helper function ([630be63](https://github.com/storm-software/stryke/commit/630be63))
+- **fs:** Added the options parameter to the `listFiles` helper function
+  ([630be63](https://github.com/storm-software/stryke/commit/630be63))
 
 ## 0.6.1 (2025-03-02)
 
 ### Bug Fixes
 
-- **fs:** Updated `rmDir` calls to use `rm` due to deprecation ([d17862d](https://github.com/storm-software/stryke/commit/d17862d))
+- **fs:** Updated `rmDir` calls to use `rm` due to deprecation
+  ([d17862d](https://github.com/storm-software/stryke/commit/d17862d))
 
 ## 0.6.0 (2025-02-27)
 
 ### Features
 
-- **fs:** Added the `removeDirectory` helper function ([95b7e54](https://github.com/storm-software/stryke/commit/95b7e54))
+- **fs:** Added the `removeDirectory` helper function
+  ([95b7e54](https://github.com/storm-software/stryke/commit/95b7e54))
 
 ## 0.5.1 (2025-02-26)
 
 ### Miscellaneous
 
-- **monorepo:** Reformat monorepo files with `prettier` ([b5d0302](https://github.com/storm-software/stryke/commit/b5d0302))
+- **monorepo:** Reformat monorepo files with `prettier`
+  ([b5d0302](https://github.com/storm-software/stryke/commit/b5d0302))
 
 ## 0.5.0 (2025-02-26)
 

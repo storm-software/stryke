@@ -2,44 +2,52 @@
 
 ### Features
 
-- **monorepo:** Split `types` project into `type-checks` and `convert` packages ([fcc5832](https://github.com/storm-software/stryke/commit/fcc5832))
-- **fs:** Moved the helper functions to root package directory ([9e77f62](https://github.com/storm-software/stryke/commit/9e77f62))
+- **monorepo:** Split `types` project into `type-checks` and `convert` packages
+  ([fcc5832](https://github.com/storm-software/stryke/commit/fcc5832))
+- **fs:** Moved the helper functions to root package directory
+  ([9e77f62](https://github.com/storm-software/stryke/commit/9e77f62))
 
 ## 0.7.3 (2025-03-13)
 
 ### Miscellaneous
 
-- **monorepo:** Reformat monorepo package files ([a453428](https://github.com/storm-software/stryke/commit/a453428))
+- **monorepo:** Reformat monorepo package files
+  ([a453428](https://github.com/storm-software/stryke/commit/a453428))
 
 ## 0.7.2 (2025-03-13)
 
 ### Bug Fixes
 
-- **path:** Resolve issue formatting paths in `joinPaths` helper ([0270f8d](https://github.com/storm-software/stryke/commit/0270f8d))
+- **path:** Resolve issue formatting paths in `joinPaths` helper
+  ([0270f8d](https://github.com/storm-software/stryke/commit/0270f8d))
 
 ## 0.7.1 (2025-03-07)
 
 ### Bug Fixes
 
-- **hash:** Resolve issue with invalid file operations ([7d85143](https://github.com/storm-software/stryke/commit/7d85143))
+- **hash:** Resolve issue with invalid file operations
+  ([7d85143](https://github.com/storm-software/stryke/commit/7d85143))
 
 ## 0.7.0 (2025-03-06)
 
 ### Features
 
-- **hash:** Added additional patterns to `ignores` list for `hashDirectory` function ([649700f](https://github.com/storm-software/stryke/commit/649700f))
+- **hash:** Added additional patterns to `ignores` list for `hashDirectory`
+  function ([649700f](https://github.com/storm-software/stryke/commit/649700f))
 
 ## 0.6.0 (2025-03-06)
 
 ### Features
 
-- **fs:** Added the options parameter to the `listFiles` helper function ([630be63](https://github.com/storm-software/stryke/commit/630be63))
+- **fs:** Added the options parameter to the `listFiles` helper function
+  ([630be63](https://github.com/storm-software/stryke/commit/630be63))
 
 ## 0.5.1 (2025-02-26)
 
 ### Miscellaneous
 
-- **monorepo:** Reformat monorepo files with `prettier` ([b5d0302](https://github.com/storm-software/stryke/commit/b5d0302))
+- **monorepo:** Reformat monorepo files with `prettier`
+  ([b5d0302](https://github.com/storm-software/stryke/commit/b5d0302))
 
 ## 0.5.0 (2025-02-26)
 
