@@ -25,6 +25,7 @@
  */
 
 export * from "./asset-extensions";
+export * from "./correct-path";
 export * from "./delimiter";
 export * from "./exists";
 export * from "./file-path-fns";
@@ -33,5 +34,4 @@ export * from "./get-workspace-root";
 export * from "./is-file";
 export * from "./is-root-dir";
 export * from "./join-paths";
-export * from "./normalize-path";
 export * from "./resolve";

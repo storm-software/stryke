@@ -16,10 +16,10 @@
  ------------------------------------------------------------------- */
 
 import { EMPTY_STRING } from "@stryke/types/base";
-import { getWorkspaceRoot } from "../workspace/get-workspace-root";
+import { normalizeString, normalizeWindowsPath } from "./correct-path";
+import { getWorkspaceRoot } from "./get-workspace-root";
 import { isAbsolutePath } from "./is-file";
 import { joinPaths } from "./join-paths";
-import { normalizeString, normalizeWindowsPath } from "./normalize-path";
 
 export interface FindFileNameOptions {
   /**

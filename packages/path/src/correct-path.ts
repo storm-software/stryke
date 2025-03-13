@@ -42,7 +42,13 @@ export function normalizeWindowsPath(input = "") {
 const _UNC_REGEX = /^[/\\]{2}/;
 const _DRIVE_LETTER_RE = /^[A-Z]:$/i;
 
-export const correctPaths = (path?: string) => {
+/**
+ * Corrects/normalized a file path.
+ *
+ * @param path - The path to correct.
+ * @returns The corrected path.
+ */
+export function correctPath(path?: string) {
   if (!path || path.length === 0) {
     return ".";
   }
@@ -78,7 +84,7 @@ export const correctPaths = (path?: string) => {
   }
 
   return isPathAbsolute && !isAbsolutePath(path) ? `/${path}` : path;
-};
+}
 
 /**
  * Resolves a string path, resolving '.' and '.' segments and allowing paths above the root.

@@ -1,4 +1,4 @@
-/*-------------------------------------------------------------------
+/* -------------------------------------------------------------------
 
                        ⚡ Storm Software - Stryke
 
@@ -13,13 +13,13 @@
  Contact:         https://stormsoftware.com/contact
  License:         https://stormsoftware.com/projects/stryke/license
 
- -------------------------------------------------------------------*/
+ ------------------------------------------------------------------- */
 
 import type { Platform } from "@stryke/types/system";
 import { interopDefault, resolvePath, resolvePathSync } from "mlly";
-import process from "node:process";
-import { joinPaths, normalizePath } from "../utilities";
-import { getWorkspaceRoot } from "../workspace/get-workspace-root";
+import { correctPath } from "./correct-path";
+import { getWorkspaceRoot } from "./get-workspace-root";
+import { joinPaths } from "./join-paths";
 
 export interface PackageResolvingOptions {
   /**
@@ -54,7 +54,7 @@ export async function resolve(
     paths.push(workspaceRoot);
   }
 
-  return normalizePath(
+  return correctPath(
     await resolvePath(path, {
       url: paths
     })
@@ -82,7 +82,7 @@ export function resolveSync(
     paths.push(workspaceRoot);
   }
 
-  return normalizePath(
+  return correctPath(
     resolvePathSync(path, {
       url: options.paths
     })
@@ -96,12 +96,12 @@ export function resolveSync(
  * @param options - The options to use when resolving the module
  * @returns A promise for the path to the module
  */
-export function resolveSafe(
+export async function resolveSafe(
   name: string,
   options: PackageResolvingOptions = {}
 ) {
   try {
-    return resolve(name, options);
+    return await resolve(name, options);
   } catch {
     return undefined;
   }
@@ -172,11 +172,11 @@ export async function resolvePackageSync(
   name: string,
   options: PackageResolvingOptions = {}
 ) {
-  let result = await resolveSafeSync(joinPaths(name, "package.json"), options);
+  let result = resolveSafeSync(joinPaths(name, "package.json"), options);
   if (!result) {
-    result = await resolveSafeSync(joinPaths(name, "index.js"), options);
+    result = resolveSafeSync(joinPaths(name, "index.js"), options);
     if (!result) {
-      result = await resolveSafeSync(name, options);
+      result = resolveSafeSync(name, options);
     }
   }
 

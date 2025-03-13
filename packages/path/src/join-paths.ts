@@ -16,7 +16,7 @@
  ------------------------------------------------------------------- */
 
 import type path from "node:path";
-import { correctPaths } from "./normalize-path";
+import { correctPath } from "./correct-path";
 
 /**
  * Join multiple path segments together, resolving '.' and '..' segments, and normalizing the resulting path.
@@ -48,5 +48,5 @@ export const joinPaths: typeof path.join = (...segments) => {
     }
   }
 
-  return correctPaths(path);
+  return correctPath(path);
 };
