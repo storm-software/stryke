@@ -1,3 +1,9 @@
+## 0.10.1 (2025-03-13)
+
+### Bug Fixes
+
+- **fs:** Resolve issue with invalid module name ([fc49298](https://github.com/storm-software/stryke/commit/fc49298))
+
 ## 0.10.0 (2025-03-13)
 
 ### Features
