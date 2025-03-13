@@ -60,6 +60,7 @@ export async function hashDirectory(
     "**/.git/**",
     "**/.nx/**",
     "**/.cache/**",
+    "**/.storm/**",
     "**/tmp/**"
   ];
 

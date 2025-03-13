@@ -27,27 +27,65 @@ export function slash(str: string) {
   return str.replace(/\\/g, "/");
 }
 
+const _DRIVE_LETTER_START_RE = /^[A-Z]:\//i;
+
 // Util to normalize windows paths to posix
 export function normalizeWindowsPath(input = "") {
   if (!input) {
     return input;
   }
-  return input.replace(/\\/g, "/").replace(/^[A-Z]:\//i, r => r.toUpperCase());
+  return input
+    .replace(/\\/g, "/")
+    .replace(_DRIVE_LETTER_START_RE, r => r.toUpperCase());
 }
 
-/**
- * Constant for path separator.
- *
- * Always equals to `"/"`.
- */
-export const sep = "/";
+const _UNC_REGEX = /^[/\\]{2}/;
+const _DRIVE_LETTER_RE = /^[A-Z]:$/i;
+
+export const correctPaths = (path?: string) => {
+  if (!path || path.length === 0) {
+    return ".";
+  }
+
+  // Normalize windows argument
+  path = normalizeWindowsPath(path);
+
+  const isUNCPath = path.match(_UNC_REGEX);
+  const isPathAbsolute = isAbsolutePath(path);
+  const trailingSeparator = path[path.length - 1] === "/";
+
+  // Normalize the path
+  path = normalizeString(path, !isPathAbsolute);
+
+  if (path.length === 0) {
+    if (isPathAbsolute) {
+      return "/";
+    }
+    return trailingSeparator ? "./" : ".";
+  }
+  if (trailingSeparator) {
+    path += "/";
+  }
+  if (_DRIVE_LETTER_RE.test(path)) {
+    path += "/";
+  }
+
+  if (isUNCPath) {
+    if (!isPathAbsolute) {
+      return `//./${path}`;
+    }
+    return `//${path}`;
+  }
+
+  return isPathAbsolute && !isAbsolutePath(path) ? `/${path}` : path;
+};
 
 /**
  * Resolves a string path, resolving '.' and '.' segments and allowing paths above the root.
  *
  * @param path - The path to normalize.
  * @param allowAboveRoot - Whether to allow the resulting path to be above the root directory.
- * @returns the normalized path string.
+ * @returns the normalize path string.
  */
 export function normalizeString(path: string, allowAboveRoot: boolean) {
   let res = "";
@@ -71,8 +109,8 @@ export function normalizeString(path: string, allowAboveRoot: boolean) {
         if (
           res.length < 2 ||
           lastSegmentLength !== 2 ||
-          res.at(-1) !== "." ||
-          res.at(-2) !== "."
+          res[res.length - 1] !== "." ||
+          res[res.length - 2] !== "."
         ) {
           if (res.length > 2) {
             const lastSlashIndex = res.lastIndexOf("/");
@@ -115,51 +153,4 @@ export function normalizeString(path: string, allowAboveRoot: boolean) {
     }
   }
   return res;
-}
-
-/**
- * Normalizes the given path.
- *
- * @remarks
- * Removes duplicate slashes, removes trailing slashes, adds a leading slash.
- *
- * @param path - The path to normalize
- * @returns The normalized path
- */
-export function normalizePath(path?: string) {
-  if (!path || path.length === 0) {
-    return ".";
-  }
-
-  // Normalize windows argument
-  path = normalizeWindowsPath(path);
-
-  const isUNCPath = path.match(/^[/\\]{2}/);
-  const isPathAbsolute = isAbsolutePath(path);
-  const trailingSeparator = path.at(-1) === "/";
-
-  // Normalize the path
-  path = normalizeString(path, !isPathAbsolute);
-
-  if (path.length === 0) {
-    if (isPathAbsolute) {
-      return "/";
-    }
-    return trailingSeparator ? "./" : ".";
-  }
-  if (trailingSeparator) {
-    path += "/";
-  }
-  if (/^[A-Z]:$/i.test(path)) {
-    path += "/";
-  }
-
-  if (isUNCPath) {
-    if (!isPathAbsolute) {
-      return `//./${path}`;
-    }
-    return `//${path}`;
-  }
-
-  return isPathAbsolute && !isAbsolutePath(path) ? `/${path}` : path;
 }

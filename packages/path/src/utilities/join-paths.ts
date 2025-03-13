@@ -15,23 +15,27 @@
 
  ------------------------------------------------------------------- */
 
-import { normalizePath } from "./normalize-path";
+import type path from "node:path";
+import { correctPaths } from "./normalize-path";
 
 /**
- * Join multiple paths together.
+ * Join multiple path segments together, resolving '.' and '..' segments, and normalizing the resulting path.
  *
- * @param paths - The paths to join
- * @returns The joined path
+ * @remarks
+ * This helper utility performs string joining similar to the `node:path` module's `join` function, and then normalizes the resulting path.
+ *
+ * @param segments - The path segments to join.
+ * @returns The joined path string.
  */
-export function joinPaths(...paths: string[]): string {
+export const joinPaths: typeof path.join = (...segments) => {
   let path = "";
 
-  for (const seg of paths) {
+  for (const seg of segments) {
     if (!seg) {
       continue;
     }
     if (path.length > 0) {
-      const pathTrailing = path.at(-1) === "/";
+      const pathTrailing = path[path.length - 1] === "/";
       const segLeading = seg[0] === "/";
       const both = pathTrailing && segLeading;
       if (both) {
@@ -44,5 +48,5 @@ export function joinPaths(...paths: string[]): string {
     }
   }
 
-  return normalizePath(path);
-}
+  return correctPaths(path);
+};
