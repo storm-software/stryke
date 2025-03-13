@@ -1,3 +1,9 @@
+## 0.3.3 (2025-03-13)
+
+### Bug Fixes
+
+- **path:** Resolve issue formatting paths in `joinPaths` helper ([0270f8d](https://github.com/storm-software/stryke/commit/0270f8d))
+
 ## 0.3.2 (2025-03-02)
 
 ### Bug Fixes
