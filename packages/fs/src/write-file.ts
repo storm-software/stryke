@@ -17,9 +17,9 @@
 
 import { StormJSON } from "@stryke/json/storm-json";
 import type { JsonSerializeOptions } from "@stryke/json/types";
+import { correctPath } from "@stryke/path/correct-path";
 import { existsSync } from "@stryke/path/exists";
 import { findFilePath } from "@stryke/path/file-path-fns";
-import { normalizePath } from "@stryke/path/normalize-path";
 import type { Abortable } from "node:events";
 import type {
   WriteFileOptions as FSWriteFileOptions,
@@ -56,7 +56,7 @@ export const writeFileSync = (
     throw new Error("No file path provided to write data");
   }
 
-  const directory = findFilePath(normalizePath(filePath));
+  const directory = findFilePath(correctPath(filePath));
   if (!existsSync(directory)) {
     if (options?.createDirectory !== false) {
       createDirectorySync(directory);
@@ -92,7 +92,7 @@ export const writeFile = async (
     throw new Error("No file path provided to read data");
   }
 
-  const directory = findFilePath(normalizePath(filePath));
+  const directory = findFilePath(correctPath(filePath));
   if (!existsSync(directory)) {
     if (options?.createDirectory !== false) {
       await createDirectory(directory);
