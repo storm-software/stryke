@@ -1,3 +1,9 @@
+## 0.6.1 (2025-03-13)
+
+### Miscellaneous
+
+- **types:** Resolve package linting issues ([f51aa0e](https://github.com/storm-software/stryke/commit/f51aa0e))
+
 ## 0.6.0 (2025-03-13)
 
 ### Features

@@ -1,3 +1,9 @@
+## 0.4.1 (2025-03-13)
+
+### Bug Fixes
+
+- **helpers:** Resolve path issues with the `@stryke` packages ([c0ca2ff](https://github.com/storm-software/stryke/commit/c0ca2ff))
+
 ## 0.4.0 (2025-03-13)
 
 ### Features
