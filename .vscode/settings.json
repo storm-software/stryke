@@ -50,12 +50,12 @@
   "prettier.bracketSameLine": true,
   "prettier.configPath": "./node_modules/@storm-software/prettier/config.json",
   "prettier.ignorePath": "./node_modules/@storm-software/prettier/.prettierignore",
-  "prettier.enableDebugLogs": true,
+  "prettier.enableDebugLogs": false,
   "prettier.enable": true,
   "markdownlint.config": {
     "extends": "./node_modules/@storm-software/markdownlint/config/config.json"
   },
-  "eslint.debug": false,
+  "eslint.debug": true,
   "eslint.codeAction.disableRuleComment": {
     "enable": true,
     "location": "separateLine"
@@ -63,6 +63,7 @@
   "eslint.codeAction.showDocumentation": {
     "enable": true
   },
+  "eslint.useFlatConfig": true,
   "editor.bracketPairColorization.enabled": true,
   "editor.guides.bracketPairs": "active",
   "editor.tabCompletion": "on",
@@ -72,9 +73,6 @@
     "source.organizeImports": "never"
   },
   "editor.defaultFormatter": "esbenp.prettier-vscode",
-  "eslint.rules.customizations": [
-    { "rule": "format/*", "severity": "off", "fixable": true }
-  ],
   "files.associations": {
     "*.hbs": "handlebars",
     "*.acid": "acidic",
@@ -82,7 +80,7 @@
   },
   "[javascript]": {
     "editor.formatOnSave": true,
-    "editor.defaultFormatter": "esbenp.prettier-vscode",
+    "editor.defaultFormatter": "dbaeumer.vscode-eslint",
     "editor.codeActionsOnSave": {
       "source.fixAll.eslint": "explicit",
       "quickfix.biome": "explicit",
@@ -100,7 +98,7 @@
   },
   "[typescript]": {
     "editor.formatOnSave": true,
-    "editor.defaultFormatter": "esbenp.prettier-vscode",
+    "editor.defaultFormatter": "dbaeumer.vscode-eslint",
     "editor.codeActionsOnSave": {
       "source.fixAll.eslint": "explicit",
       "quickfix.biome": "explicit",

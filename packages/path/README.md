@@ -44,29 +44,31 @@ This package is part of Storm Software's **🌩️ Stryke** monorepo. Stryke pac
 
 <!-- END header -->
 
-# Stryke - Path Utilities
+# Stryke - Path Helpers
 
 A package containing various utilities that expand the functionality of
-NodeJs&#39;s \`path\` module
+NodeJs's built-in \`path\` module
 
 <!-- START doctoc -->
 <!-- DON'T EDIT THIS SECTION, INSTEAD RE-RUN doctoc TO UPDATE -->
 
 ## Table of Contents
 
-- [Installing](#installing)
-- [Reduced Package Size](#reduced-package-size)
-- [Development](#development)
-  - [Building](#building)
-  - [Running unit tests](#running-unit-tests)
-  - [Linting](#linting)
-- [Storm Workspaces](#storm-workspaces)
-- [Roadmap](#roadmap)
-- [Support](#support)
-- [License](#license)
-- [Changelog](#changelog)
-- [Contributing](#contributing)
-- [Contributors](#contributors)
+- [Stryke - Path Helpers](#stryke---path-helpers)
+  - [Table of Contents](#table-of-contents)
+  - [Installing](#installing)
+  - [Reduced Package Size](#reduced-package-size)
+  - [Development](#development)
+    - [Building](#building)
+    - [Running unit tests](#running-unit-tests)
+    - [Linting](#linting)
+  - [Storm Workspaces](#storm-workspaces)
+  - [Roadmap](#roadmap)
+  - [Support](#support)
+  - [License](#license)
+  - [Changelog](#changelog)
+  - [Contributing](#contributing)
+  - [Contributors](#contributors)
 
 <!-- END doctoc -->
 

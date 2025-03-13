@@ -2,7 +2,7 @@
   "name": "@stryke/path",
   "version": "0.4.1",
   "type": "module",
-  "description": "A package containing various utilities that expand the functionality of NodeJs's `path` module",
+  "description": "A package containing various utilities that expand the functionality of NodeJs's built-in `path` module",
   "repository": {
     "type": "github",
     "url": "https://github.com/storm-software/stryke.git",
@@ -14,6 +14,7 @@
     "mlly": "catalog:"
   },
   "devDependencies": {
+    "@stryke/types": "workspace:*",
     "@types/node": "catalog:"
   },
   "publishConfig": {
