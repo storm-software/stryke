@@ -1,4 +1,4 @@
-/*-------------------------------------------------------------------
+/* -------------------------------------------------------------------
 
                        ⚡ Storm Software - Stryke
 
@@ -13,14 +13,10 @@
  Contact:         https://stormsoftware.com/contact
  License:         https://stormsoftware.com/projects/stryke/license
 
- -------------------------------------------------------------------*/
+ ------------------------------------------------------------------- */
 
-import {
-  createNodesFromFiles,
-  type CreateNodesResultV2,
-  type CreateNodesV2,
-  readJsonFile
-} from "@nx/devkit/index.js";
+import type { CreateNodesResultV2, CreateNodesV2 } from "@nx/devkit/index.js";
+import { createNodesFromFiles, readJsonFile } from "@nx/devkit/index.js";
 import {
   getProjectConfigFromProjectRoot,
   getProjectRoot

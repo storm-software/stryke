@@ -19,9 +19,8 @@ import { getStormConfig } from "@storm-software/eslint";
 
 Error.stackTraceLimit = Number.POSITIVE_INFINITY;
 
-/** @type {import('eslint-flat-config-utils').FlatConfigComposer } */
 const config = getStormConfig({
-  name: "stryke"
+  repositoryName: "stryke"
 });
 
 export default config;

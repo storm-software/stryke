@@ -95,43 +95,21 @@
     "storm",
     "sullivanpj"
   ],
-  "peerDependencies": {
-    "@nx/devkit": "catalog:",
-    "@storm-software/workspace-tools": "catalog:",
-    "nx": "catalog:",
-    "typescript": "^5.6.2"
-  },
-  "peerDependenciesMeta": {
-    "@nx/devkit": {
-      "optional": false
-    },
-    "@storm-software/workspace-tools": {
-      "optional": false
-    },
-    "nx": {
-      "optional": false
-    },
-    "typescript": {
-      "optional": false
-    }
-  },
   "dependencies": {
     "@nx/devkit": "catalog:",
     "@storm-software/workspace-tools": "catalog:",
-    "defu": "catalog:"
+    "nx": "catalog:",
+    "tsup": "catalog:"
   },
   "devDependencies": {
     "@storm-software/tsconfig": "catalog:",
     "@types/node": "catalog:",
-    "eslint-flat-config-utils": "^2.0.1",
-    "nx": "catalog:",
+    "eslint-flat-config-utils": "catalog:",
     "tslib": "catalog:",
     "tsup": "catalog:",
-    "typescript": "^5.6.2"
+    "typescript": "~5.7.3"
   },
   "publishConfig": {
     "access": "public"
-  },
-  "executors": "./executors.json",
-  "generators": "./generators.json"
+  }
 }

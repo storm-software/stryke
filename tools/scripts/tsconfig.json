@@ -1,10 +1,10 @@
 {
   "extends": "../../tsconfig.base.json",
   "compilerOptions": {
-    "outDir": "dist",
+    "lib": ["esnext", "dom"],
     "baseUrl": "../..",
     "types": ["node"],
-    "lib": ["esnext", "dom"]
+    "outDir": "dist"
   },
   "include": ["**/*.ts", "*.mjs"],
   "exclude": ["jest.config.ts", "src/**/*.spec.ts", "src/**/*.test.ts"]
