@@ -1,3 +1,4 @@
+#!/usr/bin/env zx
 /* -------------------------------------------------------------------
 
                        ⚡ Storm Software - Stryke
@@ -21,6 +22,8 @@ import { chalk, echo, usePwsh } from "zx";
 usePwsh();
 
 try {
+  await echo`${chalk.whiteBright("⚙️  Bootstrapping the monorepo...")}`;
+
   await build({
     entryPoints: ["tools/nx/src/plugins/package-build.ts"],
     target: "node22",
@@ -36,9 +39,20 @@ try {
     preserveSymlinks: true
   });
 
+  // const proc = $`pnpm nx reset`.timeout(`${5 * 60}s`);
+  // proc.stdout.on("data", data => {
+  //   echo`${data}`;
+  // });
+  // const result = await proc;
+  // if (!result.ok) {
+  //   throw new Error(
+  //     `An error occured while resetting the Nx deamon process: \n\n${result.message}\n`
+  //   );
+  // }
+
   echo`${chalk.green("Completed monorepo bootstrapping successfully!")}`;
 } catch (error) {
-  echo`${chalk.red(`A failure occured while building the monorepo:
-${error?.message ? error.message : "No message could be found"}
-`)}`;
+  echo`${chalk.red(error?.message ? error.message : "A failure occured while bootstrapping the monorepo")}`;
+
+  process.exit(1);
 }
