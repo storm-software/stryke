@@ -24,5 +24,15 @@
  * @packageDocumentation
  */
 
-export * from "./files";
-export * from "./package";
+export * from "./chmod-x";
+export * from "./constants";
+export * from "./copy-file";
+export * from "./get-tsconfig";
+export * from "./helpers";
+export * from "./install";
+export * from "./list-files";
+export * from "./package-fns";
+export * from "./read-file";
+export * from "./remove-file";
+export * from "./semver-fns";
+export * from "./write-file";

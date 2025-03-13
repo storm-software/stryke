@@ -18,15 +18,15 @@
 import { StormJSON } from "@stryke/json/storm-json";
 import { exists, findFileName, findFilePath, joinPaths } from "@stryke/path";
 import { getParentPath } from "@stryke/path/get-parent-path";
+import { getWorkspaceRoot } from "@stryke/path/get-workspace-root";
 import type { PackageResolvingOptions } from "@stryke/path/resolve";
 import { resolvePackage } from "@stryke/path/resolve";
-import { getWorkspaceRoot } from "@stryke/path/workspace/get-workspace-root";
 import type { PackageJson } from "@stryke/types/utility-types/package-json";
 import {
   PackageManagerLockFiles,
   PackageManagers
 } from "@stryke/types/utility-types/package-manager";
-import { readFile } from "node:fs/promises";
+import { readFile } from "./read-file";
 
 /**
  * Get the package manager used in the project
@@ -121,7 +121,7 @@ export async function getPackageInfo(
   }
 
   const packageJson = StormJSON.parse<PackageJson>(
-    await readFile(packageJsonPath, "utf8")
+    await readFile(packageJsonPath)
   );
 
   return {
@@ -149,7 +149,7 @@ export async function getPackageInfoSync(
   if (!packageJsonPath) return;
 
   const packageJson = StormJSON.parse<PackageJson>(
-    await readFile(packageJsonPath, "utf8")
+    await readFile(packageJsonPath)
   );
 
   return {
@@ -177,7 +177,7 @@ export async function loadPackageJSON(
     return null;
   }
 
-  return StormJSON.parse<PackageJson>(await readFile(path, "utf8"));
+  return StormJSON.parse<PackageJson>(await readFile(path));
 }
 
 /**

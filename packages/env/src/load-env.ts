@@ -1,4 +1,4 @@
-/*-------------------------------------------------------------------
+/* -------------------------------------------------------------------
 
                        ⚡ Storm Software - Stryke
 
@@ -13,14 +13,16 @@
  Contact:         https://stormsoftware.com/contact
  License:         https://stormsoftware.com/projects/stryke/license
 
- -------------------------------------------------------------------*/
+ ------------------------------------------------------------------- */
 
-import { type DotenvPopulateInput, parse } from "@dotenvx/dotenvx";
-import { readFile } from "@stryke/fs/files/read-file";
+import type { DotenvPopulateInput } from "@dotenvx/dotenvx";
+import { parse } from "@dotenvx/dotenvx";
+import { readFile } from "@stryke/fs/read-file";
 import { StormJSON } from "@stryke/json";
 import { existsSync, joinPaths } from "@stryke/path";
 import defu from "defu";
-import { type DotenvParseOutput, ENV_PREFIXES } from "./types";
+import type { DotenvParseOutput } from "./types";
+import { ENV_PREFIXES } from "./types";
 
 export function getEnvFilesForMode(
   envDir: string,
@@ -118,7 +120,7 @@ export async function loadEnv(
 
   let envParsed = (
     await Promise.all(
-      envFiles.map(filePath => {
+      envFiles.map(async filePath => {
         return loadEnvFile(filePath);
       })
     )

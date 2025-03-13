@@ -17,8 +17,8 @@
 
 import { findWorkspaceRootSafe } from "@storm-software/config-tools";
 import { PackageManagerLockFiles } from "@stryke/types/utility-types/package-manager";
-import { getParentPath } from "../utilities/get-parent-path";
-import { isSystemRoot } from "../utilities/is-root-dir";
+import { getParentPath } from "./get-parent-path";
+import { isSystemRoot } from "./is-root-dir";
 
 /**
  * Get the workspace root path

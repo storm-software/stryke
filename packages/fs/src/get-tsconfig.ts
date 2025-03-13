@@ -15,11 +15,13 @@
 
  ------------------------------------------------------------------- */
 
+import { existsSync } from "@stryke/path/exists";
 import { findFileName, findFilePath } from "@stryke/path/file-path-fns";
+import { joinPaths } from "@stryke/path/join-paths";
 import { EMPTY_STRING } from "@stryke/types/utility-types/base";
-import fs from "node:fs";
 import { createRequire } from "node:module";
 import path from "node:path";
+import { readFileSync } from "./read-file";
 
 const singleComment = Symbol("singleComment");
 const multiComment = Symbol("multiComment");
@@ -140,7 +142,7 @@ const stripJsonComments = (
 
 const jsoncParse = (data: string) => {
   try {
-    // eslint-disable-next-line no-new-func
+    // eslint-disable-next-line no-new-func, ts/no-implied-eval, ts/no-unsafe-call
     return new Function(`return ${stripJsonComments(data).trim()}`)();
   } catch {
     return {};
@@ -155,11 +157,11 @@ const findUp = (
 ) => {
   let dir = startDir;
   while (dir !== stopDir) {
-    const file = path.join(dir, name);
-    if (fs.existsSync(file)) return file;
+    const file = joinPaths(dir, name);
+    if (existsSync(file)) return file;
     if (!file.endsWith(".json")) {
       const fileWithExt = `${file}.json`;
-      if (fs.existsSync(fileWithExt)) return fileWithExt;
+      if (existsSync(fileWithExt)) return fileWithExt;
     }
     dir = path.dirname(dir);
   }
@@ -168,13 +170,13 @@ const findUp = (
 
 const resolveTsConfigFromFile = (cwd: string, filename: string) => {
   if (path.isAbsolute(filename)) {
-    return fs.existsSync(filename) ? filename : null;
+    return existsSync(filename) ? filename : null;
   }
   return findUp(filename, cwd);
 };
 
 const resolveTsConfigFromExtends = (cwd: string, name: string) => {
-  if (path.isAbsolute(name)) return fs.existsSync(name) ? name : null;
+  if (path.isAbsolute(name)) return existsSync(name) ? name : null;
   if (name.startsWith(".")) return findUp(name, cwd);
   const id = req.resolve(name, { paths: [cwd] });
 
@@ -198,11 +200,11 @@ const loadTsConfigInternal = (
     return null;
   }
 
-  const data = jsoncParse(fs.readFileSync(id, "utf8"));
+  const data = jsoncParse(readFileSync(id));
   const configDir = path.dirname(id);
 
   if ((_a = data.compilerOptions) === null ? void 0 : _a.baseUrl) {
-    data.compilerOptions.baseUrl = path.join(
+    data.compilerOptions.baseUrl = joinPaths(
       configDir,
       data.compilerOptions.baseUrl
     );
