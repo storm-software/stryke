@@ -1,3 +1,9 @@
+## 0.9.2 (2025-03-13)
+
+### Miscellaneous
+
+- **monorepo:** Reformat monorepo package files ([a453428](https://github.com/storm-software/stryke/commit/a453428))
+
 ## 0.9.1 (2025-03-07)
 
 ### Bug Fixes
