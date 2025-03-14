@@ -17,47 +17,30 @@
 
 import type { MessageDetails, MessageType } from "./messages";
 
-export type ValidationDetails<
-  TMessageType extends
-    | typeof MessageType.ERROR
-    | typeof MessageType.WARNING
-    | typeof MessageType.INFO
-    | typeof MessageType.HELP
-    | typeof MessageType.SUCCESS =
-    | typeof MessageType.ERROR
-    | typeof MessageType.WARNING
-    | typeof MessageType.INFO
-    | typeof MessageType.HELP
-    | typeof MessageType.SUCCESS
-> = MessageDetails<TMessageType> & {
-  /**
-   * The field path that the message is related to.
-   *
-   * @remarks
-   * If `undefined` or `null`, the message is not related to a specific field - in this case it is likely a global/form message.
-   */
-  field?: string | null;
-};
+export type ValidationDetail<TMessageType extends MessageType = MessageType> =
+  MessageDetails<TMessageType> & {
+    /**
+     * The field path that the message is related to.
+     *
+     * @remarks
+     * If `undefined` or `null`, the message is not related to a specific field - in this case it is likely a global/form message.
+     */
+    path?: string | null;
+  };
 
-export type ErrorValidationDetails = ValidationDetails<
-  typeof MessageType.ERROR
->;
-export type WarningValidationDetails = ValidationDetails<
-  typeof MessageType.WARNING
->;
-export type InfoValidationDetails = ValidationDetails<typeof MessageType.INFO>;
-export type HelpValidationDetails = ValidationDetails<typeof MessageType.HELP>;
-export type SuccessValidationDetails = ValidationDetails<
-  typeof MessageType.SUCCESS
->;
+export type ErrorValidationDetail = ValidationDetail<"error">;
+export type WarningValidationDetail = ValidationDetail<"warning">;
+export type InfoValidationDetail = ValidationDetail<"info">;
+export type HelpValidationDetail = ValidationDetail<"help">;
+export type SuccessValidationDetail = ValidationDetail<"success">;
 
 export type InferValidationType<TMessageType extends MessageType> =
-  TMessageType extends typeof MessageType.ERROR
-    ? ErrorValidationDetails
-    : TMessageType extends typeof MessageType.WARNING
-      ? WarningValidationDetails
-      : TMessageType extends typeof MessageType.INFO
-        ? InfoValidationDetails
-        : TMessageType extends typeof MessageType.SUCCESS
-          ? SuccessValidationDetails
-          : ValidationDetails;
+  TMessageType extends "error"
+    ? ErrorValidationDetail
+    : TMessageType extends "warning"
+      ? WarningValidationDetail
+      : TMessageType extends "help"
+        ? InfoValidationDetail
+        : TMessageType extends "info"
+          ? SuccessValidationDetail
+          : ValidationDetail;

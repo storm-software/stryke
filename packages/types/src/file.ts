@@ -15,7 +15,7 @@
 
  ------------------------------------------------------------------- */
 
-import type { ValidationDetails } from "./validations";
+import type { ValidationDetail } from "./validations";
 
 export type FileStatus = "initialized" | "validated" | "uploaded" | "failed";
 
@@ -25,7 +25,7 @@ export type FileStatus = "initialized" | "validated" | "uploaded" | "failed";
 export type FileResult = {
   name: string;
   status: FileStatus;
-  issues?: ValidationDetails[];
+  issues?: ValidationDetail[];
   size?: number;
   mimeType?: string;
   lastModified?: number;
