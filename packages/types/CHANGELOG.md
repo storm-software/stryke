@@ -1,3 +1,9 @@
+## 0.6.3 (2025-03-14)
+
+### Bug Fixes
+
+- **types:** Update enums to be union types ([9e3bcaf](https://github.com/storm-software/stryke/commit/9e3bcaf))
+
 ## 0.6.2 (2025-03-13)
 
 ### Miscellaneous
