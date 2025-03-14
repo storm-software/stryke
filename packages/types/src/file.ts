@@ -17,12 +17,7 @@
 
 import type { ValidationDetails } from "./validations";
 
-export enum FileStatus {
-  INITIALIZED = "initialized",
-  VALIDATED = "validated",
-  UPLOADED = "uploaded",
-  FAILED = "failed"
-}
+export type FileStatus = "initialized" | "validated" | "uploaded" | "failed";
 
 /**
  * A type that representing a file object.

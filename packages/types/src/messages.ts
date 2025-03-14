@@ -15,27 +15,9 @@
 
  ------------------------------------------------------------------- */
 
-export enum MessageType {
-  HELP = "help",
-  ERROR = "error",
-  WARNING = "warning",
-  INFO = "info",
-  SUCCESS = "success"
-}
+export type MessageType = "help" | "error" | "warning" | "info" | "success";
 
-export type MessageDetails<
-  TMessageType extends
-    | typeof MessageType.HELP
-    | typeof MessageType.ERROR
-    | typeof MessageType.WARNING
-    | typeof MessageType.INFO
-    | typeof MessageType.SUCCESS =
-    | typeof MessageType.HELP
-    | typeof MessageType.ERROR
-    | typeof MessageType.WARNING
-    | typeof MessageType.INFO
-    | typeof MessageType.SUCCESS
-> =
+export type MessageDetails<TMessageType extends MessageType = MessageType> =
   | {
       code: string;
       message?: string;
@@ -49,8 +31,8 @@ export type MessageDetails<
       params?: Record<string, any>;
     };
 
-export type HelpMessageDetails = MessageDetails<typeof MessageType.HELP>;
-export type ErrorMessageDetails = MessageDetails<typeof MessageType.ERROR>;
-export type WarningMessageDetails = MessageDetails<typeof MessageType.WARNING>;
-export type InfoMessageDetails = MessageDetails<typeof MessageType.INFO>;
-export type SuccessMessageDetails = MessageDetails<typeof MessageType.SUCCESS>;
+export type HelpMessageDetails = MessageDetails<"help">;
+export type ErrorMessageDetails = MessageDetails<"error">;
+export type WarningMessageDetails = MessageDetails<"warning">;
+export type InfoMessageDetails = MessageDetails<"info">;
+export type SuccessMessageDetails = MessageDetails<"success">;

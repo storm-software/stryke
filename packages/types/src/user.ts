@@ -15,11 +15,7 @@
 
  ------------------------------------------------------------------- */
 
-export enum UserType {
-  INTERNAL = "internal",
-  EXTERNAL = "external",
-  SERVICE = "service"
-}
+export type UserType = "external" | "internal" | "service" | "admin";
 
 export interface UserBase {
   /**

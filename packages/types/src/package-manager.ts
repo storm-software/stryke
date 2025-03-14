@@ -15,16 +15,9 @@
 
  ------------------------------------------------------------------- */
 
-export enum PackageManagers {
-  NPM = "npm",
-  YARN = "yarn",
-  PNPM = "pnpm",
-  BUN = "bun"
-}
-
-export enum PackageManagerLockFiles {
-  NPM = "package-lock.json",
-  YARN = "yarn.lock",
-  PNPM = "pnpm-lock.yaml",
-  BUN = "bun.lock"
-}
+export type PackageManager = "npm" | "yarn" | "pnpm" | "bun";
+export type PackageManagerLockFile =
+  | "package-lock.json"
+  | "yarn.lock"
+  | "pnpm-lock.yaml"
+  | "bun.lock";
