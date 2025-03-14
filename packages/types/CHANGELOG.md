@@ -1,3 +1,9 @@
+## 0.7.0 (2025-03-14)
+
+### Features
+
+- **types:** Rename the `ValidationDetail` type definition ([75f3957](https://github.com/storm-software/stryke/commit/75f3957))
+
 ## 0.6.3 (2025-03-14)
 
 ### Bug Fixes
