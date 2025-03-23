@@ -2,13 +2,15 @@
 
 ### Features
 
-- **http:** Update `query` to `queryParams` on `StormURL` ([878d527](https://github.com/storm-software/stryke/commit/878d527))
+- **http:** Update `query` to `queryParams` on `StormURL`
+  ([878d527](https://github.com/storm-software/stryke/commit/878d527))
 
 ## 0.3.1 (2025-03-13)
 
 ### Miscellaneous
 
-- **monorepo:** Format monorepo project files ([f28fdbe](https://github.com/storm-software/stryke/commit/f28fdbe))
+- **monorepo:** Format monorepo project files
+  ([f28fdbe](https://github.com/storm-software/stryke/commit/f28fdbe))
 
 ## 0.3.0 (2025-03-13)
 

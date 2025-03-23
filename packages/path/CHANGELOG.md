@@ -2,13 +2,15 @@
 
 ### Bug Fixes
 
-- **path:** Resolve issue with `joinPaths` helper function ([14a3ef8](https://github.com/storm-software/stryke/commit/14a3ef8))
+- **path:** Resolve issue with `joinPaths` helper function
+  ([14a3ef8](https://github.com/storm-software/stryke/commit/14a3ef8))
 
 ## 0.4.3 (2025-03-13)
 
 ### Miscellaneous
 
-- **monorepo:** Format monorepo project files ([f28fdbe](https://github.com/storm-software/stryke/commit/f28fdbe))
+- **monorepo:** Format monorepo project files
+  ([f28fdbe](https://github.com/storm-software/stryke/commit/f28fdbe))
 
 ### 🧱 Updated Dependencies
 

@@ -2,7 +2,8 @@
 
 ### Miscellaneous
 
-- **monorepo:** Format monorepo project files ([f28fdbe](https://github.com/storm-software/stryke/commit/f28fdbe))
+- **monorepo:** Format monorepo project files
+  ([f28fdbe](https://github.com/storm-software/stryke/commit/f28fdbe))
 
 ## 0.2.1 (2025-02-26)
 
