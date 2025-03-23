@@ -2,6 +2,13 @@
 
 # Changelog for Stryke - Http
 
+## [0.5.0](https://github.com/storm-software/stryke/releases/tag/http%400.5.0) (2025-03-23)
+
+### Features
+
+- **http:** Added `paths` to the `StormURL` type
+  ([799ff5b](https://github.com/storm-software/stryke/commit/799ff5b))
+
 ## [0.4.1](https://github.com/storm-software/stryke/releases/tag/http%400.4.1) (2025-03-23)
 
 ### Miscellaneous
