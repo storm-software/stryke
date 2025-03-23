@@ -2,6 +2,13 @@
 
 # Changelog for Stryke - Type Checks
 
+## [0.1.3](https://github.com/storm-software/stryke/releases/tag/type-checks%400.1.3) (2025-03-23)
+
+### Bug Fixes
+
+- **monorepo:** Resolve issue with TypeScript compilation
+  ([72e995f](https://github.com/storm-software/stryke/commit/72e995f))
+
 ## [0.1.2](https://github.com/storm-software/stryke/releases/tag/type-checks%400.1.2) (2025-03-23)
 
 ### Miscellaneous

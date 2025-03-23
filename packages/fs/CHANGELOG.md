@@ -2,6 +2,13 @@
 
 # Changelog for Stryke - Fs
 
+## [0.10.4](https://github.com/storm-software/stryke/releases/tag/fs%400.10.4) (2025-03-23)
+
+### Bug Fixes
+
+- **monorepo:** Resolve issue with TypeScript compilation
+  ([72e995f](https://github.com/storm-software/stryke/commit/72e995f))
+
 ## [0.10.3](https://github.com/storm-software/stryke/releases/tag/fs%400.10.3) (2025-03-23)
 
 ### Miscellaneous

@@ -2,6 +2,13 @@
 
 # Changelog for Stryke - Types
 
+## [0.7.2](https://github.com/storm-software/stryke/releases/tag/types%400.7.2) (2025-03-23)
+
+### Bug Fixes
+
+- **monorepo:** Resolve issue with TypeScript compilation
+  ([72e995f](https://github.com/storm-software/stryke/commit/72e995f))
+
 ## [0.7.1](https://github.com/storm-software/stryke/releases/tag/types%400.7.1) (2025-03-23)
 
 ### Miscellaneous

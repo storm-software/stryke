@@ -2,6 +2,13 @@
 
 # Changelog for Stryke - Hooks
 
+## [0.4.3](https://github.com/storm-software/stryke/releases/tag/hooks%400.4.3) (2025-03-23)
+
+### Bug Fixes
+
+- **monorepo:** Resolve issue with TypeScript compilation
+  ([72e995f](https://github.com/storm-software/stryke/commit/72e995f))
+
 ## [0.4.2](https://github.com/storm-software/stryke/releases/tag/hooks%400.4.2) (2025-03-23)
 
 ### Miscellaneous

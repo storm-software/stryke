@@ -2,6 +2,13 @@
 
 # Changelog for Stryke - Json
 
+## [0.5.3](https://github.com/storm-software/stryke/releases/tag/json%400.5.3) (2025-03-23)
+
+### Bug Fixes
+
+- **monorepo:** Resolve issue with TypeScript compilation
+  ([72e995f](https://github.com/storm-software/stryke/commit/72e995f))
+
 ## [0.5.2](https://github.com/storm-software/stryke/releases/tag/json%400.5.2) (2025-03-23)
 
 ### Miscellaneous

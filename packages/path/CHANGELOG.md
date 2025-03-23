@@ -2,6 +2,17 @@
 
 # Changelog for Stryke - Path
 
+## [0.4.6](https://github.com/storm-software/stryke/releases/tag/path%400.4.6) (2025-03-23)
+
+### Bug Fixes
+
+- **monorepo:** Resolve issue with TypeScript compilation
+  ([72e995f](https://github.com/storm-software/stryke/commit/72e995f))
+
+### Updated Dependencies
+
+- Updated types to 0.7.2
+
 ## [0.4.5](https://github.com/storm-software/stryke/releases/tag/path%400.4.5) (2025-03-23)
 
 ### Miscellaneous

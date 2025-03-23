@@ -2,6 +2,13 @@
 
 # Changelog for Stryke - Http
 
+## [0.5.1](https://github.com/storm-software/stryke/releases/tag/http%400.5.1) (2025-03-23)
+
+### Bug Fixes
+
+- **monorepo:** Resolve issue with TypeScript compilation
+  ([72e995f](https://github.com/storm-software/stryke/commit/72e995f))
+
 ## [0.5.0](https://github.com/storm-software/stryke/releases/tag/http%400.5.0) (2025-03-23)
 
 ### Features

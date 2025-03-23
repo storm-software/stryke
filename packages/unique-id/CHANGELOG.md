@@ -2,6 +2,13 @@
 
 # Changelog for Stryke - Unique Id
 
+## [0.2.4](https://github.com/storm-software/stryke/releases/tag/unique-id%400.2.4) (2025-03-23)
+
+### Bug Fixes
+
+- **monorepo:** Resolve issue with TypeScript compilation
+  ([72e995f](https://github.com/storm-software/stryke/commit/72e995f))
+
 ## [0.2.3](https://github.com/storm-software/stryke/releases/tag/unique-id%400.2.3) (2025-03-23)
 
 ### Miscellaneous

@@ -2,6 +2,13 @@
 
 # Changelog for Stryke - Cli
 
+## [0.3.3](https://github.com/storm-software/stryke/releases/tag/cli%400.3.3) (2025-03-23)
+
+### Bug Fixes
+
+- **monorepo:** Resolve issue with TypeScript compilation
+  ([72e995f](https://github.com/storm-software/stryke/commit/72e995f))
+
 ## [0.3.2](https://github.com/storm-software/stryke/releases/tag/cli%400.3.2) (2025-03-23)
 
 ### Miscellaneous

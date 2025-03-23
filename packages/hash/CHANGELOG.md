@@ -2,6 +2,13 @@
 
 # Changelog for Stryke - Hash
 
+## [0.8.3](https://github.com/storm-software/stryke/releases/tag/hash%400.8.3) (2025-03-23)
+
+### Bug Fixes
+
+- **monorepo:** Resolve issue with TypeScript compilation
+  ([72e995f](https://github.com/storm-software/stryke/commit/72e995f))
+
 ## [0.8.2](https://github.com/storm-software/stryke/releases/tag/hash%400.8.2) (2025-03-23)
 
 ### Miscellaneous

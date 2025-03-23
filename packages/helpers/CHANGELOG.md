@@ -2,6 +2,13 @@
 
 # Changelog for Stryke - Helpers
 
+## [0.4.4](https://github.com/storm-software/stryke/releases/tag/helpers%400.4.4) (2025-03-23)
+
+### Bug Fixes
+
+- **monorepo:** Resolve issue with TypeScript compilation
+  ([72e995f](https://github.com/storm-software/stryke/commit/72e995f))
+
 ## [0.4.3](https://github.com/storm-software/stryke/releases/tag/helpers%400.4.3) (2025-03-23)
 
 ### Miscellaneous
