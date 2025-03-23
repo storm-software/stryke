@@ -2,6 +2,13 @@
 
 # Changelog for Stryke - Http
 
+## [0.5.2](https://github.com/storm-software/stryke/releases/tag/http%400.5.2) (2025-03-23)
+
+### Bug Fixes
+
+- **http:** Resolve issue with missing slash before `pathname` string
+  ([97794ef](https://github.com/storm-software/stryke/commit/97794ef))
+
 ## [0.5.1](https://github.com/storm-software/stryke/releases/tag/http%400.5.1) (2025-03-23)
 
 ### Bug Fixes
