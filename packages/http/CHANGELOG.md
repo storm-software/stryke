@@ -1,3 +1,9 @@
+## 0.4.0 (2025-03-23)
+
+### Features
+
+- **http:** Update `query` to `queryParams` on `StormURL` ([878d527](https://github.com/storm-software/stryke/commit/878d527))
+
 ## 0.3.1 (2025-03-13)
 
 ### Miscellaneous
