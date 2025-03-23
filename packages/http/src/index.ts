@@ -1,4 +1,4 @@
-/*-------------------------------------------------------------------
+/* -------------------------------------------------------------------
 
                        ⚡ Storm Software - Stryke
 
@@ -13,8 +13,9 @@
  Contact:         https://stormsoftware.com/contact
  License:         https://stormsoftware.com/projects/stryke/license
 
- -------------------------------------------------------------------*/
+ ------------------------------------------------------------------- */
 
 export * from "./cookie";
 export * from "./format-data-uri";
+export * from "./types";
 export * from "./url-builder";

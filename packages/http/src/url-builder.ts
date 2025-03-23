@@ -84,7 +84,10 @@ export class StormURLBuilder {
     this.#url = {
       __typename: "StormURL",
       queryParams: {},
-      ...parsedURL
+      ...parsedURL,
+      paths: parsedURL.pathname
+        ? parsedURL.pathname.split("/").filter(Boolean)
+        : []
     };
     if (this.#url.host) {
       this.withHost(this.#url.host);
@@ -190,7 +193,8 @@ export class StormURLBuilder {
     const parsedPath = parsePath(path);
     this.#url = {
       ...this.#url,
-      ...parsedPath
+      ...parsedPath,
+      paths: parsedPath.pathname.split("/").filter(Boolean)
     };
 
     return this;

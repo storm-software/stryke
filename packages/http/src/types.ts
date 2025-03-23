@@ -20,6 +20,7 @@ import type { ParsedURL } from "ufo";
 export type StormURL = ParsedURL & {
   __typename: "StormURL";
   queryParams: Record<string, any>;
+  paths: string[];
   username?: string;
   password?: string;
   hostname?: string;
