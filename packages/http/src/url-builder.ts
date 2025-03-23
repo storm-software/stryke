@@ -190,7 +190,7 @@ export class StormURLBuilder {
    * @returns The URL builder
    */
   public withPath(path: string): StormURLBuilder {
-    const parsedPath = parsePath(path);
+    const parsedPath = parsePath(path.startsWith("/") ? path : `/${path}`);
     this.#url = {
       ...this.#url,
       ...parsedPath,
