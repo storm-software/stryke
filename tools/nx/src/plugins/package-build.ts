@@ -83,12 +83,26 @@ export const createNodesV2: CreateNodesV2<StrykePackageBuildPluginOptions> = [
           const targets: ProjectConfiguration["targets"] =
             readTargetsFromPackageJson(packageJson, nxJson);
 
+          targets["type-check"] ??= {
+            cache: true,
+            inputs: ["typescript", "^production"],
+            outputs: ["{workspaceRoot}/dist/{projectRoot}"],
+            executor: "nx:run-commands",
+            dependsOn: ["^type-check", "^build"],
+            options: {
+              command: `pnpm exec tsc --noEmit --pretty --project ${join(
+                projectRoot,
+                "tsconfig.json"
+              )}`
+            }
+          };
+
           targets.build ??= {
             cache: true,
             inputs: ["typescript", "^production"],
             outputs: ["{workspaceRoot}/dist/{projectRoot}"],
             executor: "@storm-software/workspace-tools:unbuild",
-            dependsOn: ["^build"],
+            dependsOn: ["type-check"],
             defaultConfiguration: "production",
             options: {
               platform:
