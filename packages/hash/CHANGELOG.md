@@ -1,3 +1,14 @@
+![Storm Software](https://public.storm-cdn.com/brand-banner.png)
+
+# Changelog for Stryke - Hash
+
+## [0.8.2](https://github.com/storm-software/stryke/releases/tag/hash%400.8.2) (2025-03-23)
+
+### Miscellaneous
+
+- **monorepo:** Update base storm software packages
+  ([8942201](https://github.com/storm-software/stryke/commit/8942201))
+
 ## 0.8.1 (2025-03-13)
 
 ### Miscellaneous

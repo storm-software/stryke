@@ -547,7 +547,7 @@ importers:
         version: 1.7.4
     devDependencies:
       '@stryke/types':
-        specifier: 0.7.0
+        specifier: 0.7.1
         version: link:../types
       '@types/node':
         specifier: 'catalog:'

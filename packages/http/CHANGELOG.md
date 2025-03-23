@@ -1,3 +1,14 @@
+![Storm Software](https://public.storm-cdn.com/brand-banner.png)
+
+# Changelog for Stryke - Http
+
+## [0.4.1](https://github.com/storm-software/stryke/releases/tag/http%400.4.1) (2025-03-23)
+
+### Miscellaneous
+
+- **monorepo:** Update base storm software packages
+  ([8942201](https://github.com/storm-software/stryke/commit/8942201))
+
 ## 0.4.0 (2025-03-23)
 
 ### Features

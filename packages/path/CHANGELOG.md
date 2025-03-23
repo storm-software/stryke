@@ -1,3 +1,18 @@
+![Storm Software](https://public.storm-cdn.com/brand-banner.png)
+
+# Changelog for Stryke - Path
+
+## [0.4.5](https://github.com/storm-software/stryke/releases/tag/path%400.4.5) (2025-03-23)
+
+### Miscellaneous
+
+- **monorepo:** Update base storm software packages
+  ([8942201](https://github.com/storm-software/stryke/commit/8942201))
+
+### Updated Dependencies
+
+- Updated types to 0.7.1
+
 ## 0.4.4 (2025-03-14)
 
 ### Bug Fixes

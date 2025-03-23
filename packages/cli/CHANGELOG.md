@@ -1,3 +1,14 @@
+![Storm Software](https://public.storm-cdn.com/brand-banner.png)
+
+# Changelog for Stryke - Cli
+
+## [0.3.2](https://github.com/storm-software/stryke/releases/tag/cli%400.3.2) (2025-03-23)
+
+### Miscellaneous
+
+- **monorepo:** Update base storm software packages
+  ([8942201](https://github.com/storm-software/stryke/commit/8942201))
+
 ## 0.3.1 (2025-03-13)
 
 ### Miscellaneous
