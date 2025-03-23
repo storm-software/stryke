@@ -21,7 +21,8 @@ import type { Nullable } from "@stryke/types/utilities";
 /**
  * Convert `Arrayable<T>` to `Array<T>`
  *
- * @category Array
+ * @param array - The `Arrayable<T>` to convert
+ * @returns An `Array<T>` containing the elements of the input
  */
 export function toArray<T>(array?: Nullable<Arrayable<T>>): Array<T> {
   array = array ?? [];

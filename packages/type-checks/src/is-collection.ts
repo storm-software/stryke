@@ -1,4 +1,4 @@
-/*-------------------------------------------------------------------
+/* -------------------------------------------------------------------
 
                        ⚡ Storm Software - Stryke
 
@@ -13,9 +13,9 @@
  Contact:         https://stormsoftware.com/contact
  License:         https://stormsoftware.com/projects/stryke/license
 
- -------------------------------------------------------------------*/
+ ------------------------------------------------------------------- */
 
-import { Collection } from "@stryke/types/base";
+import type { Collection } from "@stryke/types/base";
 import { typeDetect } from "./type-detect";
 
 const COLLECTION_TYPE_SET = new Set([

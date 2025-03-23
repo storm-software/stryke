@@ -16,6 +16,7 @@
  ------------------------------------------------------------------- */
 
 import { isNumber } from "@stryke/type-checks/is-number";
+import { isString } from "@stryke/type-checks/is-string";
 import type { JsonPointerPath } from "@stryke/types/json";
 
 const TILDA_ONE = /~1/g;
@@ -69,6 +70,7 @@ export function parseJsonPointer(pointer: string): JsonPointerPath {
  * like "/foo/bar".
  */
 export function formatJsonPointer(path: JsonPointerPath): string {
+  // eslint-disable-next-line ts/no-use-before-define
   if (isRoot(path)) {
     return "";
   }
@@ -79,7 +81,12 @@ export function formatJsonPointer(path: JsonPointerPath): string {
 /**
  * Returns true if JSON Pointer points to root value, false otherwise.
  */
-export const isRoot = (path: string | number): boolean => path.length === 0;
+export const isRoot = (path: string | number | JsonPointerPath): boolean =>
+  isString(path)
+    ? path === ""
+    : isNumber(path)
+      ? path === 0
+      : Array.isArray(path) && path.length === 0;
 
 /**
  * Returns parent path, e.g. for ['foo', 'bar', 'baz'] returns ['foo', 'bar'].

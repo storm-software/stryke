@@ -60,7 +60,7 @@ export function useBattery() {
       });
     };
 
-    getBattery().then(b => {
+    void getBattery().then(b => {
       battery = b;
       handleChange();
 

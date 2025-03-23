@@ -22,7 +22,7 @@ import { getWorkspaceRoot } from "@stryke/path/get-workspace-root";
 import type { PackageResolvingOptions } from "@stryke/path/resolve";
 import { resolvePackage } from "@stryke/path/resolve";
 import type { PackageJson } from "@stryke/types/package-json";
-import {
+import type {
   PackageManagerLockFiles,
   PackageManagers
 } from "@stryke/types/package-manager";

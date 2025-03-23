@@ -16,7 +16,6 @@
  ------------------------------------------------------------------- */
 
 import { findWorkspaceRootSafe } from "@storm-software/config-tools";
-import { PackageManagerLockFiles } from "@stryke/types/package-manager";
 import { getParentPath } from "./get-parent-path";
 import { isSystemRoot } from "./is-root-dir";
 
@@ -39,10 +38,10 @@ export const getWorkspaceRoot = (dir = process.cwd()) => {
 
   let result = getParentPath(
     [
-      PackageManagerLockFiles.NPM,
-      PackageManagerLockFiles.YARN,
-      PackageManagerLockFiles.PNPM,
-      PackageManagerLockFiles.BUN,
+      "package-lock.json",
+      "yarn.lock",
+      "pnpm-lock.yaml",
+      "bun.lock",
       "nx.json",
       "knip.json",
       "pnpm-workspace.yaml",

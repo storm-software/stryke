@@ -1,4 +1,4 @@
-/*-------------------------------------------------------------------
+/* -------------------------------------------------------------------
 
                        ⚡ Storm Software - Stryke
 
@@ -13,9 +13,9 @@
  Contact:         https://stormsoftware.com/contact
  License:         https://stormsoftware.com/projects/stryke/license
 
- -------------------------------------------------------------------*/
+ ------------------------------------------------------------------- */
 
-import { FileResult, FileStatus } from "@stryke/types/file";
+import type { FileResult, FileStatus } from "@stryke/types/file";
 import { isSetObject } from "./is-set-object";
 import { isSetString } from "./is-set-string";
 
@@ -29,7 +29,9 @@ export const isFileResult = (value: any): value is FileResult => {
   return (
     isSetObject(value) &&
     "status" in value &&
-    Object.values(FileStatus).includes(value.status as FileStatus) &&
+    ["initialized", "validated", "uploaded", "failed"].includes(
+      value.status as FileStatus
+    ) &&
     (isSetString((value as FileResult)?.uri) ||
       isSetObject((value as FileResult)?.file))
   );
