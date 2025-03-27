@@ -18,7 +18,7 @@
 
 import { $, chalk, echo, usePwsh } from "zx";
 
-usePwsh();
+// usePwsh();
 
 try {
   await echo`${chalk.whiteBright("📋  Linting the monorepo...")}`;

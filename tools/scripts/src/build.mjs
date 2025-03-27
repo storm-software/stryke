@@ -18,7 +18,7 @@
 
 import { $, argv, chalk, echo, usePwsh } from "zx";
 
-usePwsh();
+// usePwsh();
 
 try {
   let configuration = argv.configuration;

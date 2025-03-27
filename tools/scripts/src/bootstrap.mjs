@@ -19,7 +19,7 @@
 import { build } from "esbuild";
 import { chalk, echo, usePwsh } from "zx";
 
-usePwsh();
+// usePwsh();
 
 try {
   await echo`${chalk.whiteBright("⚙️  Bootstrapping the monorepo...")}`;
