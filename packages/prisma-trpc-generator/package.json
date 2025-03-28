@@ -8,18 +8,109 @@
     "url": "https://github.com/storm-software/stryke.git",
     "directory": "packages/prisma-trpc-generator"
   },
+  "homepage": "https://stormsoftware.com",
+  "bugs": {
+    "url": "https://stormsoftware.com/support",
+    "email": "support@stormsoftware.com"
+  },
+  "author": {
+    "name": "Storm Software",
+    "email": "contact@stormsoftware.com",
+    "url": "https://stormsoftware.com"
+  },
+  "maintainers": [
+    {
+      "name": "Storm Software",
+      "email": "contact@stormsoftware.com",
+      "url": "https://stormsoftware.com"
+    }
+  ],
+  "contributors": [
+    {
+      "name": "Storm Software",
+      "email": "contact@stormsoftware.com",
+      "url": "https://stormsoftware.com"
+    }
+  ],
+  "funding": {
+    "type": "github",
+    "url": "https://github.com/sponsors/storm-software"
+  },
+  "license": "Apache-2.0",
   "private": false,
   "bin": {
-    "stryke-prisma-trpc-generator": "dist/generator.mjs",
+    "stryke-prisma-trpc-generator": "dist/generator.js",
     "stryke-prisma-trpc-generator-cjs": "dist/generator.cjs",
-    "stryke-prisma-trpc-generator-mjs": "dist/generator.mjs"
+    "stryke-prisma-trpc-generator-mjs": "dist/generator.js"
   },
+  "main": "./dist/index.cjs",
+  "module": "./dist/index.js",
+  "exports": {
+    "./project": {
+      "import": "./dist/project.js",
+      "require": "./dist/project.cjs",
+      "default": "./dist/project.js"
+    },
+    "./prisma-generator": {
+      "import": "./dist/prisma-generator.js",
+      "require": "./dist/prisma-generator.cjs",
+      "default": "./dist/prisma-generator.js"
+    },
+    "./index": {
+      "import": "./dist/index.js",
+      "require": "./dist/index.cjs",
+      "default": "./dist/index.js"
+    },
+    "./helpers": {
+      "import": "./dist/helpers.js",
+      "require": "./dist/helpers.cjs",
+      "default": "./dist/helpers.js"
+    },
+    "./generator": {
+      "import": "./dist/generator.js",
+      "require": "./dist/generator.cjs",
+      "default": "./dist/generator.js"
+    },
+    "./config": {
+      "import": "./dist/config.js",
+      "require": "./dist/config.cjs",
+      "default": "./dist/config.js"
+    },
+    ".": {
+      "import": "./dist/index.js",
+      "require": "./dist/index.cjs",
+      "default": "./dist/index.js"
+    },
+    "./package.json": "./package.json"
+  },
+  "files": [
+    "dist/**/*"
+  ],
+  "keywords": [
+    "stryke",
+    "typescript",
+    "utilities",
+    "storm-software",
+    "storm",
+    "storm-ops",
+    "cyclone-ui",
+    "sullivanpj",
+    "monorepo"
+  ],
   "dependencies": {
     "@prisma/generator-helper": "catalog:",
     "@prisma/internals": "catalog:",
     "pluralize": "catalog:",
     "prisma-trpc-shield-generator": "catalog:",
+    "prisma-zod-generator": "catalog:",
     "ts-morph": "catalog:",
     "zod": "catalog:"
-  }
+  },
+  "devDependencies": {
+    "tsup": "catalog:"
+  },
+  "publishConfig": {
+    "access": "public"
+  },
+  "sideEffects": false
 }
