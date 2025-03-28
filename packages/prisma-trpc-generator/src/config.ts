@@ -15,8 +15,29 @@
 
  ------------------------------------------------------------------- */
 
-import { DMMF } from "@prisma/generator-helper";
 import { z } from "zod";
+
+enum ModelAction {
+  findUnique = "findUnique",
+  findUniqueOrThrow = "findUniqueOrThrow",
+  findFirst = "findFirst",
+  findFirstOrThrow = "findFirstOrThrow",
+  findMany = "findMany",
+  create = "create",
+  createMany = "createMany",
+  createManyAndReturn = "createManyAndReturn",
+  update = "update",
+  updateMany = "updateMany",
+  updateManyAndReturn = "updateManyAndReturn",
+  upsert = "upsert",
+  delete = "delete",
+  deleteMany = "deleteMany",
+  groupBy = "groupBy",
+  count = "count", // TODO: count does not actually exist, why?
+  aggregate = "aggregate",
+  findRaw = "findRaw",
+  aggregateRaw = "aggregateRaw"
+}
 
 const configBoolean = z
   .enum(["true", "false"])
@@ -32,7 +53,7 @@ const configShield = z.union([
   z.string().default("../../../../src/shield")
 ]);
 
-const modelActionEnum = z.nativeEnum(DMMF.ModelAction);
+const modelActionEnum = z.nativeEnum(ModelAction);
 
 export const configSchema = z.object({
   withMiddleware: configMiddleware.default("true"),
@@ -43,7 +64,7 @@ export const configSchema = z.object({
   showModelNameInProcedure: configBoolean.default("true"),
   generateModelActions: z
     .string()
-    .default(Object.values(DMMF.ModelAction).join(","))
+    .default(Object.values(ModelAction).join(","))
     .transform(arg => {
       return arg.split(",").map(action => modelActionEnum.parse(action.trim()));
     })
