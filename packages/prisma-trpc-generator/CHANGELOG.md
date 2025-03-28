@@ -2,6 +2,13 @@
 
 # Changelog for Stryke - Prisma Trpc Generator
 
+## [0.2.1](https://github.com/storm-software/stryke/releases/tag/prisma-trpc-generator%400.2.1) (2025-03-28)
+
+### Miscellaneous
+
+- **prisma-trpc-generator:** Update package to build with `tsup` script
+  ([e592eed](https://github.com/storm-software/stryke/commit/e592eed))
+
 ## [0.2.0](https://github.com/storm-software/stryke/releases/tag/prisma-trpc-generator%400.2.0) (2025-03-28)
 
 ### Features
