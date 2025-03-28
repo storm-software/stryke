@@ -15,23 +15,22 @@
 
  ------------------------------------------------------------------- */
 
-/**
- * The prisma-trpc-generator library used by Storm Software for building NodeJS applications.
- *
- * @remarks
- * A fork of the prisma-trpc-generator code to work in ESM
- *
- * @packageDocumentation
- */
+import type { DMMF, EnvValue } from "@prisma/generator-helper";
+import type { GetDMMFOptions } from "@prisma/internals";
+import { getEnvPaths } from "@stryke/env";
+import { getWorkspaceRoot, joinPaths } from "@stryke/path";
+import { createJiti } from "jiti";
 
-import generatorHelper from "@prisma/generator-helper";
-import { generate } from "./prisma-generator";
+export async function getPrismaInternals() {
+  const envPaths = getEnvPaths();
 
-generatorHelper.generatorHandler({
-  onManifest: () => ({
-    defaultOutput: "./generated",
-    prettyName: "Storm Software - Prisma tRPC Generator",
-    requiresGenerators: ["prisma-client-js"]
-  }),
-  onGenerate: generate
-});
+  const jiti = createJiti(getWorkspaceRoot(), {
+    fsCache: joinPaths(envPaths.cache, "jiti"),
+    interopDefault: true
+  });
+
+  return jiti.import<{
+    parseEnvValue: (p: EnvValue) => string;
+    getDMMF: (options: GetDMMFOptions) => Promise<DMMF.Document>;
+  }>(jiti.esmResolve("@prisma/internals"));
+}

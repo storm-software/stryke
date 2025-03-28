@@ -22,10 +22,9 @@ import type {
   EnvValue,
   GeneratorOptions
 } from "@prisma/generator-helper";
-import { getWorkspaceRoot, joinPaths } from "@stryke/path";
-import { createJiti } from "jiti";
 import type { SourceFile } from "ts-morph";
 import type { Config } from "./config";
+import { getPrismaInternals } from "./utils/getPrismaInternals";
 import getRelativePath from "./utils/getRelativePath";
 import { uncapitalizeFirstLetter } from "./utils/uncapitalizeFirstLetter";
 
@@ -68,14 +67,7 @@ export const generateShieldImport = async (
   options: GeneratorOptions,
   value: string | boolean
 ) => {
-  const jiti = createJiti(getWorkspaceRoot(), {
-    fsCache: joinPaths(getWorkspaceRoot(), "node_modules/.cache/storm", "jiti"),
-    interopDefault: true
-  });
-
-  const internals = await jiti.import<{
-    parseEnvValue: (p: EnvValue) => string;
-  }>(jiti.esmResolve("@prisma/internals"));
+  const internals = await getPrismaInternals();
 
   const outputDir = internals.parseEnvValue(
     options.generator.output as EnvValue
@@ -97,14 +89,7 @@ export const generateMiddlewareImport = async (
   sourceFile: SourceFile,
   options: GeneratorOptions
 ) => {
-  const jiti = createJiti(getWorkspaceRoot(), {
-    fsCache: joinPaths(getWorkspaceRoot(), "node_modules/.cache/storm", "jiti"),
-    interopDefault: true
-  });
-
-  const internals = await jiti.import<{
-    parseEnvValue: (p: EnvValue) => string;
-  }>(jiti.esmResolve("@prisma/internals"));
+  const internals = await getPrismaInternals();
 
   const outputDir = internals.parseEnvValue(
     options.generator.output as EnvValue
@@ -131,14 +116,7 @@ export async function generateBaseRouter(
   config: Config,
   options: GeneratorOptions
 ) {
-  const jiti = createJiti(getWorkspaceRoot(), {
-    fsCache: joinPaths(getWorkspaceRoot(), "node_modules/.cache/storm", "jiti"),
-    interopDefault: true
-  });
-
-  const internals = await jiti.import<{
-    parseEnvValue: (p: EnvValue) => string;
-  }>(jiti.esmResolve("@prisma/internals"));
+  const internals = await getPrismaInternals();
 
   const outputDir = internals.parseEnvValue(
     options.generator.output as EnvValue
@@ -513,14 +491,7 @@ export const constructShield = async (
   if (rootItems.length === 0) return "";
   let shieldText = getImports("trpc-shield");
 
-  const jiti = createJiti(getWorkspaceRoot(), {
-    fsCache: joinPaths(getWorkspaceRoot(), "node_modules/.cache/storm", "jiti"),
-    interopDefault: true
-  });
-
-  const internals = await jiti.import<{
-    parseEnvValue: (p: EnvValue) => string;
-  }>(jiti.esmResolve("@prisma/internals"));
+  const internals = await getPrismaInternals();
 
   const outputDir = internals.parseEnvValue(
     options.generator.output as EnvValue

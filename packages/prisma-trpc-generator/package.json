@@ -110,12 +110,12 @@
     "@prisma/internals": "catalog:",
     "@prisma/prisma-schema-wasm": "catalog:",
     "esbuild": "catalog:",
+    "jiti": "catalog:",
     "ts-morph": "catalog:"
   },
   "devDependencies": {
     "@stryke/path": "workspace:*",
     "@types/pluralize": "catalog:",
-    "jiti": "catalog:",
     "pluralize": "catalog:",
     "prisma-zod-generator": "catalog:",
     "tsup": "catalog:",

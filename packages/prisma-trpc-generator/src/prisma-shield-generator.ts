@@ -15,33 +15,18 @@
 
  ------------------------------------------------------------------- */
 
-import type {
-  DMMF,
-  EnvValue,
-  GeneratorOptions
-} from "@prisma/generator-helper";
-import type { GetDMMFOptions } from "@prisma/internals";
-import { getWorkspaceRoot } from "@stryke/path/get-workspace-root";
-import { joinPaths } from "@stryke/path/join-paths";
-import { createJiti } from "jiti";
+import type { EnvValue, GeneratorOptions } from "@prisma/generator-helper";
 import { promises as fs } from "node:fs";
 import path from "node:path";
 import { configSchema } from "./config";
 import { constructShield } from "./helpers";
 import type { RootType } from "./types";
+import { getPrismaInternals } from "./utils/getPrismaInternals";
 import removeDir from "./utils/removeDir";
 import { writeFileSafely } from "./utils/writeFileSafely";
 
 export async function generateShield(options: GeneratorOptions) {
-  const jiti = createJiti(getWorkspaceRoot(), {
-    fsCache: joinPaths(getWorkspaceRoot(), "node_modules/.cache/storm", "jiti"),
-    interopDefault: true
-  });
-
-  const internals = await jiti.import<{
-    parseEnvValue: (p: EnvValue) => string;
-    getDMMF: (options: GetDMMFOptions) => Promise<DMMF.Document>;
-  }>(jiti.esmResolve("@prisma/internals"));
+  const internals = await getPrismaInternals();
 
   const outputDir = internals.parseEnvValue(
     options.generator.output as EnvValue
