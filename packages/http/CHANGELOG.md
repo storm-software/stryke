@@ -2,6 +2,13 @@
 
 # Changelog for Stryke - Http
 
+## [0.6.0](https://github.com/storm-software/stryke/releases/tag/http%400.6.0) (2025-03-28)
+
+### Features
+
+- **trpc-next:** Initial check-in of the package
+  ([3be43e0](https://github.com/storm-software/stryke/commit/3be43e0))
+
 ## [0.5.3](https://github.com/storm-software/stryke/releases/tag/http%400.5.3) (2025-03-28)
 
 ### Miscellaneous
