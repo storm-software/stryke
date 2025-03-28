@@ -26,12 +26,14 @@ export default defineConfig([
     outDir: "dist",
     clean: true,
     dts: true,
+    cjsInterop: true,
     sourcemap: false,
     tsconfig: "./tsconfig.json",
     shims: true,
     bundle: true,
     splitting: false,
     skipNodeModulesBundle: false,
-    external: ["esbuild", "typescript"]
+    external: ["esbuild", "typescript"],
+    inject: ["./shims/require_shim.js"]
   }
 ]);

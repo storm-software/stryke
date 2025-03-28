@@ -15,19 +15,6 @@
 
  ------------------------------------------------------------------- */
 
-import type { CompilerOptions } from "ts-morph";
-import { ModuleKind, Project, ScriptTarget } from "ts-morph";
+import { createRequire } from "node:module";
 
-const compilerOptions: CompilerOptions = {
-  target: ScriptTarget.ESNext,
-  module: ModuleKind.ESNext,
-  emitDecoratorMetadata: true,
-  experimentalDecorators: true,
-  esModuleInterop: true
-};
-
-export const project = new Project({
-  compilerOptions: {
-    ...compilerOptions
-  }
-});
+const require = createRequire(import.meta.url);
