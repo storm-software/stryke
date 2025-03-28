@@ -33,7 +33,6 @@ export default defineConfig([
     bundle: true,
     splitting: false,
     skipNodeModulesBundle: false,
-    external: ["esbuild", "typescript"],
-    inject: ["./shims/require_shim.js"]
+    external: ["esbuild", "typescript"]
   }
 ]);

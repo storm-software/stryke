@@ -27,13 +27,20 @@
 import { generate } from "./prisma-generator";
 import { getPrismaGeneratorHelper } from "./utils/getPrismaInternals";
 
-const helpers = await getPrismaGeneratorHelper();
-
-helpers.generatorHandler({
-  onManifest: () => ({
-    defaultOutput: "./generated",
-    prettyName: "Storm Software - Prisma tRPC Generator",
-    requiresGenerators: ["prisma-client-js"]
-  }),
-  onGenerate: generate
-});
+getPrismaGeneratorHelper()
+  .then(helpers => {
+    helpers.generatorHandler({
+      onManifest: () => ({
+        defaultOutput: "./generated",
+        prettyName: "Storm Software - Prisma tRPC Generator",
+        requiresGenerators: ["prisma-client-js"]
+      }),
+      onGenerate: generate
+    });
+  })
+  .catch(reason => {
+    // eslint-disable-next-line no-console
+    console.error(
+      `An error occured while generating prisma tRPC source code: ${reason}`
+    );
+  });
