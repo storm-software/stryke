@@ -2,6 +2,20 @@
 
 # Changelog for Stryke - Prisma Trpc Generator
 
+## [0.2.12](https://github.com/storm-software/stryke/releases/tag/prisma-trpc-generator%400.2.12) (2025-03-28)
+
+### Bug Fixes
+
+- **prisma-trpc-generator:** Resolve build issue with top-level await
+  ([1e4eb92](https://github.com/storm-software/stryke/commit/1e4eb92))
+- **prisma-trpc-generator:** Ensure the jiti export is external
+  ([c5b724d](https://github.com/storm-software/stryke/commit/c5b724d))
+
+### Miscellaneous
+
+- **prisma-trpc-generator:** Import generator helpers with jiti
+  ([5595f0a](https://github.com/storm-software/stryke/commit/5595f0a))
+
 ## [0.2.11](https://github.com/storm-software/stryke/releases/tag/prisma-trpc-generator%400.2.11) (2025-03-28)
 
 ### Bug Fixes
