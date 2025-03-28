@@ -2,6 +2,13 @@
 
 # Changelog for Stryke - Env
 
+## [0.6.0](https://github.com/storm-software/stryke/releases/tag/env%400.6.0) (2025-03-28)
+
+### Features
+
+- **trpc-next:** Initial check-in of the package
+  ([3be43e0](https://github.com/storm-software/stryke/commit/3be43e0))
+
 ## [0.5.4](https://github.com/storm-software/stryke/releases/tag/env%400.5.4) (2025-03-28)
 
 ### Miscellaneous
