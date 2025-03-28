@@ -15,8 +15,15 @@
 
  ------------------------------------------------------------------- */
 
-import type { EnvValue, GeneratorOptions } from "@prisma/generator-helper";
-import { getDMMF, parseEnvValue } from "@prisma/internals";
+import type {
+  DMMF,
+  EnvValue,
+  GeneratorOptions
+} from "@prisma/generator-helper";
+import type { GetDMMFOptions } from "@prisma/internals";
+import { getWorkspaceRoot } from "@stryke/path/get-workspace-root";
+import { joinPaths } from "@stryke/path/join-paths";
+import { createJiti } from "jiti";
 import { promises as fs } from "node:fs";
 import path from "node:path";
 import { configSchema } from "./config";
@@ -26,7 +33,19 @@ import removeDir from "./utils/removeDir";
 import { writeFileSafely } from "./utils/writeFileSafely";
 
 export async function generateShield(options: GeneratorOptions) {
-  const outputDir = parseEnvValue(options.generator.output as EnvValue);
+  const jiti = createJiti(getWorkspaceRoot(), {
+    fsCache: joinPaths(getWorkspaceRoot(), "node_modules/.cache/storm", "jiti"),
+    interopDefault: true
+  });
+
+  const internals = await jiti.import<{
+    parseEnvValue: (p: EnvValue) => string;
+    getDMMF: (options: GetDMMFOptions) => Promise<DMMF.Document>;
+  }>(jiti.esmResolve("@prisma/internals"));
+
+  const outputDir = internals.parseEnvValue(
+    options.generator.output as EnvValue
+  );
   const results = configSchema.safeParse(options.generator.config);
   if (!results.success) throw new Error("Invalid options passed");
   const config = results.data;
@@ -35,10 +54,10 @@ export async function generateShield(options: GeneratorOptions) {
   await removeDir(outputDir, true);
 
   const prismaClientProvider = options.otherGenerators.find(
-    it => parseEnvValue(it.provider) === "prisma-client-js"
+    it => internals.parseEnvValue(it.provider) === "prisma-client-js"
   );
 
-  const prismaClientDmmf = await getDMMF({
+  const prismaClientDmmf = await internals.getDMMF({
     datamodel: options.datamodel,
     previewFeatures: prismaClientProvider?.previewFeatures
   });
@@ -48,7 +67,7 @@ export async function generateShield(options: GeneratorOptions) {
   const subscriptions: RootType = [];
 
   prismaClientDmmf.mappings.modelOperations.forEach(modelOperation => {
-    const { model, plural, ...operations } = modelOperation;
+    const { model: _model, plural: _plural, ...operations } = modelOperation;
     for (const [opType, opNameWithModel] of Object.entries(operations)) {
       if (
         [
