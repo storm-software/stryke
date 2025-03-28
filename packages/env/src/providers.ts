@@ -1,4 +1,4 @@
-/*-------------------------------------------------------------------
+/* -------------------------------------------------------------------
 
                        ⚡ Storm Software - Stryke
 
@@ -13,7 +13,7 @@
  Contact:         https://stormsoftware.com/contact
  License:         https://stormsoftware.com/projects/stryke/license
 
- -------------------------------------------------------------------*/
+ ------------------------------------------------------------------- */
 
 // Reference: https://github.com/watson/ci-info/blob/v3.2.0/vendors.json
 
@@ -128,11 +128,11 @@ const providers: InternalProvider[] = [
   ["FIREBASE_APP_HOSTING", "FIREBASE_APP_HOSTING", { ci: true }]
 ];
 
-export type ProviderInfo = {
+export interface ProviderInfo {
   name: ProviderName;
   ci?: boolean;
   [meta: string]: any;
-};
+}
 
 function detectProvider(): ProviderInfo {
   // Based on env

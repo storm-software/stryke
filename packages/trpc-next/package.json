@@ -1,0 +1,48 @@
+{
+  "name": "@stryke/trpc-next",
+  "version": "0.0.1",
+  "type": "module",
+  "description": "A package to help in using tRPC in modern NextJs applications.",
+  "repository": {
+    "type": "github",
+    "url": "https://github.com/storm-software/stryke.git",
+    "directory": "packages/trpc-next"
+  },
+  "private": false,
+  "peerDependencies": {
+    "react": "catalog:",
+    "react-dom": "catalog:",
+    "react-native": "catalog:"
+  },
+  "peerDependenciesMeta": {
+    "react": {
+      "optional": false
+    },
+    "react-dom": {
+      "optional": true
+    },
+    "react-native": {
+      "optional": true
+    }
+  },
+  "dependencies": {
+    "@js-temporal/polyfill": "catalog:",
+    "@tanstack/react-query": "catalog:",
+    "@tanstack/react-query-devtools": "catalog:",
+    "@trpc/client": "catalog:",
+    "@trpc/next": "catalog:",
+    "@trpc/server": "catalog:",
+    "@trpc/tanstack-react-query": "catalog:",
+    "defu": "catalog:",
+    "server-only": "catalog:",
+    "superjson": "catalog:"
+  },
+  "devDependencies": {
+    "@types/react": "catalog:",
+    "@types/react-dom": "catalog:",
+    "@types/react-native": "catalog:"
+  },
+  "publishConfig": {
+    "access": "public"
+  }
+}

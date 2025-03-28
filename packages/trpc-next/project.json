@@ -1,0 +1,12 @@
+{
+  "name": "trpc-next",
+  "$schema": "../../node_modules/nx/schemas/project-schema.json",
+  "projectType": "library",
+  "sourceRoot": "packages/trpc-next/src",
+  "tags": ["platform:neutral"],
+  "targets": {
+    "nx-release-publish": {
+      "executor": "@storm-software/workspace-tools:npm-publish"
+    }
+  }
+}

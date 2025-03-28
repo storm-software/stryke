@@ -162,9 +162,9 @@ export class StormURLBuilder {
   }
 
   /**
-   * Set the pathname of the URL
+   * Set the host of the URL
    *
-   * @param pathname - The pathname to set
+   * @param host - The host to set
    * @returns The URL builder
    */
   public withHost(host: string | ParsedHost): StormURLBuilder {

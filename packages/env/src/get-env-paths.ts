@@ -194,29 +194,29 @@ export function getEnvPaths(options: GetEnvPathsOptions = {}): EnvPaths {
     result.config ??= joinPaths(options.workspaceRoot, ".config", orgId);
   }
 
-  return Object.keys(result).reduce(
-    (ret, key) => {
-      if (result[key as keyof EnvPaths]) {
-        const filePath = result[key as keyof EnvPaths];
+  return Object.keys(result).reduce((ret, key) => {
+    if (result[key as keyof EnvPaths]) {
+      const filePath = result[key as keyof EnvPaths];
 
-        ret[key] =
-          options.appId &&
-          options.appId !== options.orgId &&
-          options.appId !== options.nestedDir
-            ? joinPaths(filePath, options.appId)
-            : filePath;
+      ret[key as keyof EnvPaths] =
+        options.appId &&
+        options.appId !== options.orgId &&
+        options.appId !== options.nestedDir
+          ? joinPaths(filePath, options.appId)
+          : filePath;
 
-        if (
-          options.nestedDir &&
-          options.nestedDir !== options.orgId &&
-          options.nestedDir !== options.appId
-        ) {
-          ret[key] = joinPaths(ret[key], options.nestedDir);
-        }
+      if (
+        options.nestedDir &&
+        options.nestedDir !== options.orgId &&
+        options.nestedDir !== options.appId
+      ) {
+        ret[key as keyof EnvPaths] = joinPaths(
+          ret[key as keyof EnvPaths],
+          options.nestedDir
+        );
       }
+    }
 
-      return ret;
-    },
-    {} as Record<string, string>
-  ) as EnvPaths;
+    return ret;
+  }, {} as EnvPaths);
 }

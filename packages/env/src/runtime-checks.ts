@@ -1,4 +1,4 @@
-/*-------------------------------------------------------------------
+/* -------------------------------------------------------------------
 
                        ⚡ Storm Software - Stryke
 
@@ -13,7 +13,7 @@
  Contact:         https://stormsoftware.com/contact
  License:         https://stormsoftware.com/projects/stryke/license
 
- -------------------------------------------------------------------*/
+ ------------------------------------------------------------------- */
 
 // https://runtime-keys.proposal.wintercg.org/
 export type RuntimeName =
@@ -26,7 +26,9 @@ export type RuntimeName =
   | "fastly"
   | "";
 
-export type RuntimeInfo = { name: RuntimeName };
+export interface RuntimeInfo {
+  name: RuntimeName;
+}
 
 /**
  * Indicates if running in Node.js or a Node.js compatible runtime.

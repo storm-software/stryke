@@ -1,4 +1,4 @@
-/*-------------------------------------------------------------------
+/* -------------------------------------------------------------------
 
                        ⚡ Storm Software - Stryke
 
@@ -13,7 +13,7 @@
  Contact:         https://stormsoftware.com/contact
  License:         https://stormsoftware.com/projects/stryke/license
 
- -------------------------------------------------------------------*/
+ ------------------------------------------------------------------- */
 
 import { isCI } from "./ci-checks";
 
@@ -29,7 +29,11 @@ export const hasTTY = Boolean(
 export const isDebug = Boolean(process.env.DEBUG);
 
 /** Detect if `NODE_ENV` environment variable is `test` */
-const nodeEnv = process.env.STORM_MODE || process.env.NODE_ENV || "production";
+const nodeEnv =
+  process.env.STORM_MODE ||
+  process.env.NEXT_PUBLIC_VERCEL_ENV ||
+  process.env.NODE_ENV ||
+  "production";
 
 /** Detect if `NODE_ENV` environment variable is `production` */
 export const isProduction = ["prd", "prod", "production"].includes(
@@ -74,5 +78,7 @@ export const isColorSupported =
 
 /** Node.js versions */
 export const nodeVersion =
+  // eslint-disable-next-line ts/no-unsafe-call
   (globalThis.process?.versions?.node || "").replace(/^v/, "") || null;
+// eslint-disable-next-line ts/no-unsafe-call
 export const nodeMajorVersion = Number(nodeVersion?.split(".")[0]) || null;

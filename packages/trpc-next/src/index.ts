@@ -16,17 +16,16 @@
  ------------------------------------------------------------------- */
 
 /**
- * The env library used by Storm Software for building NodeJS applications.
+ * The trpc-next library used by Storm Software for building TypeScript applications.
  *
  * @remarks
- * A package containing utility functions to handle environment specific processes
+ * A package to help in using tRPC in modern NextJs applications
  *
  * @packageDocumentation
  */
 
-export * from "./ci-checks";
-export * from "./get-env-paths";
-export * from "./load-env";
-export * from "./providers";
-export * from "./runtime-checks";
-export * from "./types";
+export * from "./client";
+export * from "./server";
+export * from "./shared";
+export * from "./tanstack-query/client";
+export * from "./tanstack-query/server";
