@@ -20,7 +20,7 @@ import type {
   EnvValue,
   GeneratorOptions
 } from "@prisma/generator-helper";
-import { getDMMF, parseEnvValue } from "@prisma/internals";
+import internals from "@prisma/internals";
 import { promises as fs } from "node:fs";
 import path from "node:path";
 import pluralize from "pluralize";
@@ -42,7 +42,9 @@ import { project } from "./project";
 import removeDir from "./utils/removeDir";
 
 export async function generate(options: GeneratorOptions) {
-  const outputDir = parseEnvValue(options.generator.output as EnvValue);
+  const outputDir = internals.parseEnvValue(
+    options.generator.output as EnvValue
+  );
   const results = configSchema.safeParse(options.generator.config);
   if (!results.success) throw new Error("Invalid options passed");
   const config = results.data;
@@ -73,10 +75,10 @@ export async function generate(options: GeneratorOptions) {
   }
 
   const prismaClientProvider = options.otherGenerators.find(
-    it => parseEnvValue(it.provider) === "prisma-client-js"
+    it => internals.parseEnvValue(it.provider) === "prisma-client-js"
   );
 
-  const prismaClientDmmf = await getDMMF({
+  const prismaClientDmmf = await internals.getDMMF({
     datamodel: options.datamodel,
     previewFeatures: prismaClientProvider?.previewFeatures
   });

@@ -22,7 +22,7 @@ import type {
   EnvValue,
   GeneratorOptions
 } from "@prisma/generator-helper";
-import { parseEnvValue } from "@prisma/internals";
+import internals from "@prisma/internals";
 import type { SourceFile } from "ts-morph";
 import type { Config } from "./config";
 import getRelativePath from "./utils/getRelativePath";
@@ -67,7 +67,9 @@ export const generateShieldImport = (
   options: GeneratorOptions,
   value: string | boolean
 ) => {
-  const outputDir = parseEnvValue(options.generator.output as EnvValue);
+  const outputDir = internals.parseEnvValue(
+    options.generator.output as EnvValue
+  );
 
   let shieldPath = getRelativePath(outputDir, "shield/shield");
 
@@ -85,7 +87,9 @@ export const generateMiddlewareImport = (
   sourceFile: SourceFile,
   options: GeneratorOptions
 ) => {
-  const outputDir = parseEnvValue(options.generator.output as EnvValue);
+  const outputDir = internals.parseEnvValue(
+    options.generator.output as EnvValue
+  );
   sourceFile.addImportDeclaration({
     moduleSpecifier: getRelativePath(outputDir, "middleware"),
     namedImports: ["permissions"]
@@ -108,7 +112,9 @@ export function generateBaseRouter(
   config: Config,
   options: GeneratorOptions
 ) {
-  const outputDir = parseEnvValue(options.generator.output as EnvValue);
+  const outputDir = internals.parseEnvValue(
+    options.generator.output as EnvValue
+  );
   sourceFile.addStatements(/* ts */ `
   import type { Context } from '${getRelativePath(
     outputDir,
