@@ -51,7 +51,7 @@ export async function generate(options: GeneratorOptions) {
   await removeDir(outputDir, true);
 
   if (config.withZod) {
-    await PrismaZodGenerator(options);
+    await PrismaZodGenerator(options as any);
   }
 
   if (config.withShield === true) {
@@ -69,7 +69,7 @@ export async function generate(options: GeneratorOptions) {
           contextPath: config.contextPath
         }
       }
-    });
+    } as any);
   }
 
   const prismaClientProvider = options.otherGenerators.find(
@@ -78,13 +78,13 @@ export async function generate(options: GeneratorOptions) {
 
   const prismaClientDmmf = await getDMMF({
     datamodel: options.datamodel,
-    previewFeatures: prismaClientProvider.previewFeatures
+    previewFeatures: prismaClientProvider?.previewFeatures
   });
 
   const modelOperations = prismaClientDmmf.mappings.modelOperations;
   const models = prismaClientDmmf.datamodel.models;
   const hiddenModels: string[] = [];
-  resolveModelsComments(models, hiddenModels);
+  resolveModelsComments(models as DMMF.Model[], hiddenModels);
   const createRouter = project.createSourceFile(
     path.resolve(outputDir, "routers", "helpers", "createRouter.ts"),
     undefined,
@@ -153,8 +153,8 @@ export async function generate(options: GeneratorOptions) {
 
       generateProcedure(
         modelRouter,
-        opNameWithModel,
-        getInputTypeByOpName(baseOpType, model),
+        opNameWithModel!,
+        getInputTypeByOpName(baseOpType, model)!,
         model,
         opType,
         baseOpType,
@@ -171,7 +171,7 @@ export async function generate(options: GeneratorOptions) {
   }
 
   appRouter.addStatements(/* ts */ `
-    export const appRouter = t.router({${routerStatements}})
+    export const appRouter = t.router({${routerStatements.join()}})
     `);
 
   appRouter.formatText({ indentSize: 2 });

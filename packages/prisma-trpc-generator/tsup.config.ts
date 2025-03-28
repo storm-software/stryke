@@ -20,17 +20,18 @@ import { defineConfig } from "tsup";
 export default defineConfig([
   {
     name: "prisma-trpc-generator",
-    entryPoints: ["src/*.ts"],
+    entryPoints: ["src/index.ts", "src/generator.ts"],
     format: ["cjs", "esm"],
     platform: "node",
     outDir: "dist",
     clean: true,
-    dts: false,
+    dts: true,
     sourcemap: false,
     tsconfig: "./tsconfig.json",
     shims: true,
     bundle: true,
-    skipNodeModulesBundle: false,
-    external: ["esbuild", "typescript", "@prisma/engines-version"]
+    splitting: false,
+    skipNodeModulesBundle: true,
+    external: ["esbuild", "typescript"]
   }
 ]);
