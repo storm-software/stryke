@@ -24,7 +24,6 @@ import internals from "@prisma/internals";
 import { promises as fs } from "node:fs";
 import path from "node:path";
 import pluralize from "pluralize";
-import { generate as PrismaTrpcShieldGenerator } from "prisma-trpc-shield-generator/lib/prisma-generator";
 import { generate as PrismaZodGenerator } from "prisma-zod-generator/lib/prisma-generator";
 import { configSchema } from "./config";
 import {
@@ -38,6 +37,7 @@ import {
   getInputTypeByOpName,
   resolveModelsComments
 } from "./helpers";
+import { generateShield } from "./prisma-shield-generator";
 import { project } from "./project";
 import removeDir from "./utils/removeDir";
 
@@ -52,13 +52,13 @@ export async function generate(options: GeneratorOptions) {
   await fs.mkdir(outputDir, { recursive: true });
   await removeDir(outputDir, true);
 
-  if (config.withZod) {
+  if (config.withZod !== false) {
     await PrismaZodGenerator(options as any);
   }
 
-  if (config.withShield === true) {
+  if (config.withShield !== false) {
     const shieldOutputPath = path.join(outputDir, "./shield");
-    await PrismaTrpcShieldGenerator({
+    await generateShield({
       ...options,
       generator: {
         ...options.generator,

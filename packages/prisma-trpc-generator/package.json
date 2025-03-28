@@ -2,7 +2,7 @@
   "name": "@stryke/prisma-trpc-generator",
   "version": "0.2.7",
   "type": "module",
-  "description": "A fork of the prisma-trpc-generator code to work in ESM.",
+  "description": "A fork of the prisma-trpc-generator code to work in ESM with Prisma v6.",
   "repository": {
     "type": "github",
     "url": "https://github.com/storm-software/stryke.git",
@@ -39,9 +39,9 @@
   "license": "Apache-2.0",
   "private": false,
   "bin": {
-    "stryke-prisma-trpc-generator": "dist/generator.js",
-    "stryke-prisma-trpc-generator-cjs": "dist/generator.cjs",
-    "stryke-prisma-trpc-generator-mjs": "dist/generator.js"
+    "prisma-trpc-generator": "dist/generator.js",
+    "prisma-trpc-generator-cjs": "dist/generator.cjs",
+    "prisma-trpc-generator-mjs": "dist/generator.js"
   },
   "main": "./dist/index.cjs",
   "module": "./dist/index.js",
@@ -117,7 +117,6 @@
     "@types/pluralize": "catalog:",
     "jiti": "catalog:",
     "pluralize": "catalog:",
-    "prisma-trpc-shield-generator": "catalog:",
     "prisma-zod-generator": "catalog:",
     "tsup": "catalog:",
     "zod": "catalog:"

@@ -174,6 +174,9 @@ catalogs:
     jest-environment-node:
       specifier: ^29.7.0
       version: 29.7.0
+    jiti:
+      specifier: ^2.4.2
+      version: 2.4.2
     js-xxhash:
       specifier: ^4.0.0
       version: 4.0.0
@@ -213,9 +216,6 @@ catalogs:
     prettier:
       specifier: ^3.5.2
       version: 3.5.3
-    prisma-trpc-shield-generator:
-      specifier: ^0.1.0
-      version: 0.1.0
     prisma-zod-generator:
       specifier: ^0.8.13
       version: 0.8.13
@@ -598,15 +598,18 @@ importers:
         specifier: 'catalog:'
         version: 25.0.1
     devDependencies:
+      '@stryke/path':
+        specifier: workspace:*
+        version: link:../path
       '@types/pluralize':
         specifier: 'catalog:'
         version: 0.0.33
+      jiti:
+        specifier: 'catalog:'
+        version: 2.4.2
       pluralize:
         specifier: 'catalog:'
         version: 8.0.0
-      prisma-trpc-shield-generator:
-        specifier: 'catalog:'
-        version: 0.1.0
       prisma-zod-generator:
         specifier: 'catalog:'
         version: 0.8.13
@@ -8341,10 +8344,6 @@ packages:
   pretty-ms@9.2.0:
     resolution: {integrity: sha512-4yf0QO/sllf/1zbZWYnvWw3NxCQwLXKzIj0G849LSufP15BXKM0rbD2Z3wVnkMfjdn/CB0Dpp444gYAACdsplg==}
     engines: {node: '>=18'}
-
-  prisma-trpc-shield-generator@0.1.0:
-    resolution: {integrity: sha512-gxcYcnZ8B7zkxNYdc3V+zyyEnEL5RAMqYE96+Y23WLwD9Gy2G2rPDEa/hZS3OkGYAv0JraJkO/RN/XseX03IPQ==}
-    hasBin: true
 
   prisma-zod-generator@0.8.13:
     resolution: {integrity: sha512-X455pyEO2LgEetEiKC5vzasB1+ga58y8ODKbCBJJ5ZK03Gjm5oQedXVa//fu2joXiovHC9YutbT+qLXf0UsLEw==}
@@ -19812,18 +19811,6 @@ snapshots:
   pretty-ms@9.2.0:
     dependencies:
       parse-ms: 4.0.0
-
-  prisma-trpc-shield-generator@0.1.0:
-    dependencies:
-      '@prisma/client': 4.16.2
-      '@prisma/generator-helper': 4.16.2
-      '@prisma/internals': 4.16.2
-      prettier: 2.8.8
-      zod: 3.24.2
-    transitivePeerDependencies:
-      - encoding
-      - prisma
-      - supports-color
 
   prisma-zod-generator@0.8.13:
     dependencies:
