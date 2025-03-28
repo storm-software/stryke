@@ -114,6 +114,9 @@ catalogs:
     '@types/picomatch':
       specifier: ^3.0.2
       version: 3.0.2
+    '@types/pluralize':
+      specifier: ^0.0.33
+      version: 0.0.33
     '@types/react':
       specifier: ^19.0.8
       version: 19.0.10
@@ -576,12 +579,22 @@ importers:
 
   packages/prisma-trpc-generator:
     dependencies:
+      esbuild:
+        specifier: 'catalog:'
+        version: 0.25.1
+      ts-morph:
+        specifier: 'catalog:'
+        version: 25.0.1
+    devDependencies:
       '@prisma/generator-helper':
         specifier: 'catalog:'
         version: 6.5.0
       '@prisma/internals':
         specifier: 'catalog:'
         version: 6.5.0(typescript@5.8.2)
+      '@types/pluralize':
+        specifier: 'catalog:'
+        version: 0.0.33
       pluralize:
         specifier: 'catalog:'
         version: 8.0.0
@@ -591,16 +604,12 @@ importers:
       prisma-zod-generator:
         specifier: 'catalog:'
         version: 0.8.13
-      ts-morph:
-        specifier: 'catalog:'
-        version: 25.0.1
-      zod:
-        specifier: 'catalog:'
-        version: 3.24.2
-    devDependencies:
       tsup:
         specifier: 'catalog:'
         version: 8.4.0(@microsoft/api-extractor@7.52.1(@types/node@22.13.10))(@swc/core@1.11.9(@swc/helpers@0.5.15))(jiti@2.4.2)(postcss@8.5.3)(typescript@5.8.2)(yaml@2.7.0)
+      zod:
+        specifier: 'catalog:'
+        version: 3.24.2
 
   packages/string-format: {}
 
@@ -3603,6 +3612,9 @@ packages:
 
   '@types/picomatch@3.0.2':
     resolution: {integrity: sha512-n0i8TD3UDB7paoMMxA3Y65vUncFJXjcUf7lQY7YyKGl6031FNjfsLs6pdLFCy2GNFxItPJG8GvvpbZc2skH7WA==}
+
+  '@types/pluralize@0.0.33':
+    resolution: {integrity: sha512-JOqsl+ZoCpP4e8TDke9W79FDcSgPAR0l6pixx2JHkhnRjvShyYiAYw2LVsnA7K08Y6DeOnaU6ujmENO4os/cYg==}
 
   '@types/react-dom@19.0.4':
     resolution: {integrity: sha512-4fSQ8vWFkg+TGhePfUzVmat3eC14TXYSsiiDSLI0dVLsrm9gZFABjPy/Qu6TKgl1tq1Bu1yDsuQgY3A3DOjCcg==}
@@ -13658,6 +13670,8 @@ snapshots:
   '@types/parse-json@4.0.2': {}
 
   '@types/picomatch@3.0.2': {}
+
+  '@types/pluralize@0.0.33': {}
 
   '@types/react-dom@19.0.4(@types/react@19.0.10)':
     dependencies:

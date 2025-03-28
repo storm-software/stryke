@@ -98,19 +98,20 @@
     "monorepo"
   ],
   "dependencies": {
+    "esbuild": "catalog:",
+    "ts-morph": "catalog:"
+  },
+  "devDependencies": {
     "@prisma/generator-helper": "catalog:",
     "@prisma/internals": "catalog:",
+    "@types/pluralize": "catalog:",
     "pluralize": "catalog:",
     "prisma-trpc-shield-generator": "catalog:",
     "prisma-zod-generator": "catalog:",
-    "ts-morph": "catalog:",
+    "tsup": "catalog:",
     "zod": "catalog:"
-  },
-  "devDependencies": {
-    "tsup": "catalog:"
   },
   "publishConfig": {
     "access": "public"
-  },
-  "sideEffects": false
+  }
 }

@@ -22,6 +22,7 @@ export default defineConfig([
     name: "prisma-trpc-generator",
     entryPoints: ["src/*.ts"],
     format: ["cjs", "esm"],
+    platform: "node",
     outDir: "dist",
     clean: true,
     dts: false,
@@ -29,6 +30,7 @@ export default defineConfig([
     tsconfig: "./tsconfig.json",
     shims: true,
     bundle: true,
-    noExternal: ["eslint-plugin-pnpm"]
+    skipNodeModulesBundle: false,
+    external: ["esbuild", "typescript", "@prisma/engines-version"]
   }
 ]);
