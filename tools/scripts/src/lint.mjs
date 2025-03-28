@@ -16,7 +16,7 @@
 
  ------------------------------------------------------------------- */
 
-import { $, chalk, echo, usePwsh } from "zx";
+import { $, chalk, echo } from "zx";
 
 // usePwsh();
 
