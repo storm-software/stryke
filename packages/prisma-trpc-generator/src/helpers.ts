@@ -15,6 +15,8 @@
 
  ------------------------------------------------------------------- */
 
+/* eslint-disable ts/no-use-before-define */
+
 import type {
   DMMF,
   EnvValue,
@@ -302,6 +304,7 @@ export const getInputTypeByOpName = (opName: string, modelName: string) => {
       inputType = `${modelName}GroupBySchema`;
       break;
     default:
+      // eslint-disable-next-line no-console
       console.log("getInputTypeByOpName: ", { opName, modelName });
   }
   return inputType;
@@ -329,6 +332,7 @@ export const getProcedureTypeByOpName = (opName: string) => {
       procType = "mutation";
       break;
     default:
+      // eslint-disable-next-line no-console
       console.log("getProcedureTypeByOpName: ", { opName });
   }
   return procType;
@@ -338,9 +342,10 @@ export function resolveModelsComments(
   models: DMMF.Model[],
   hiddenModels: string[]
 ) {
-  const modelAttributeRegex = /(@@Gen\.)+([A-z])+(\()+(.+)+(\))/;
-  const attributeNameRegex = /\.+([A-Z])+\(+/i;
-  const attributeArgsRegex = /\(+([A-Z])+:+(.+)+\)/i;
+  // eslint-disable-next-line regexp/no-obscure-range
+  const modelAttributeRegex = /(?:@@Gen\.)+[A-z]+\(.+\)/;
+  const attributeNameRegex = /\.+[A-Z]+\(+/i;
+  const attributeArgsRegex = /\(+[A-Z]+:.+\)/i;
 
   for (const model of models) {
     if (model.documentation) {
@@ -365,7 +370,7 @@ export function resolveModelsComments(
         for (let i = 0; i < rawAttributeArgsParts.length; i += 2) {
           const key = rawAttributeArgsParts[i];
           const value = rawAttributeArgsParts[i + 1];
-          parsedAttributeArgs[key] = JSON.parse(value);
+          parsedAttributeArgs[key!] = JSON.parse(value!);
         }
       }
       if (parsedAttributeArgs.hide) {

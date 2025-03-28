@@ -9,6 +9,11 @@
     "directory": "packages/prisma-trpc-generator"
   },
   "private": false,
+  "bin": {
+    "stryke-prisma-trpc-generator": "dist/generator.mjs",
+    "stryke-prisma-trpc-generator-cjs": "dist/generator.cjs",
+    "stryke-prisma-trpc-generator-mjs": "dist/generator.mjs"
+  },
   "dependencies": {
     "@prisma/generator-helper": "catalog:",
     "@prisma/internals": "catalog:",
