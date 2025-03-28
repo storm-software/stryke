@@ -111,9 +111,11 @@
     "@prisma/prisma-schema-wasm": "catalog:",
     "esbuild": "catalog:",
     "jiti": "catalog:",
+    "prettier": "catalog:",
     "ts-morph": "catalog:"
   },
   "devDependencies": {
+    "@stryke/env": "workspace:*",
     "@stryke/path": "workspace:*",
     "@types/pluralize": "catalog:",
     "pluralize": "catalog:",

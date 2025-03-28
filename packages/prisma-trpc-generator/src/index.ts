@@ -24,10 +24,12 @@
  * @packageDocumentation
  */
 
-import generatorHelper from "@prisma/generator-helper";
 import { generate } from "./prisma-generator";
+import { getPrismaGeneratorHelper } from "./utils/getPrismaInternals";
 
-generatorHelper.generatorHandler({
+const helpers = await getPrismaGeneratorHelper();
+
+helpers.generatorHandler({
   onManifest: () => ({
     defaultOutput: "./generated",
     prettyName: "Storm Software - Prisma tRPC Generator",
