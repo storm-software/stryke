@@ -95,10 +95,10 @@ export async function generate(options: GeneratorOptions) {
 
   generateRPCImport(createRouter);
   if (config.withShield) {
-    generateShieldImport(createRouter, options, config.withShield);
+    await generateShieldImport(createRouter, options, config.withShield);
   }
 
-  generateBaseRouter(createRouter, config, options);
+  await generateBaseRouter(createRouter, config, options);
 
   createRouter.formatText({
     indentSize: 2

@@ -113,7 +113,9 @@
     "ts-morph": "catalog:"
   },
   "devDependencies": {
+    "@stryke/path": "workspace:*",
     "@types/pluralize": "catalog:",
+    "jiti": "catalog:",
     "pluralize": "catalog:",
     "prisma-trpc-shield-generator": "catalog:",
     "prisma-zod-generator": "catalog:",

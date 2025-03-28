@@ -9,6 +9,8 @@ packages:
   - "packages/*"
 
 catalog:
+  " ": ^0.0.0
+  "@": ^0.0.0
   "@antfu/install-pkg": ^1.0.0
   "@antfu/ni": ^23.3.1
   "@dotenvx/dotenvx": 1.35.0
@@ -17,6 +19,17 @@ catalog:
   "@prisma/generator-helper": ^6.5.0
   "@prisma/internals": ^6.5.0
   "@prisma/prisma-schema-wasm": ^6.6.0-41.9061db3b0058e3d3731c6fe68a1b77061bed4861
+  "@s": ^0.0.0
+  "@st": ^0.0.0
+  "@str": ^0.0.0
+  "@stry": ^0.0.0
+  "@stryk": ^0.0.0
+  "@stryke": ^0.0.0
+  "@stryke/": ^0.0.0
+  "@stryke/p": ^0.0.0
+  "@stryke/pa": ^0.0.0
+  "@stryke/pat": ^0.0.0
+  "@stryke/path": ^0.0.0
   "@taplo/cli": ^0.7.0
   "@types/figlet": ^1.7.0
   "@types/jest": ^29.5.14
@@ -192,3 +205,21 @@ catalogs:
     tsup: catalo
   conflicts_tsup_catalog:
     tsup: catalog
+  conflicts_jiti_:
+    jiti: ""
+  "conflicts_@stryke/path_w:":
+    "@stryke/path": "w:"
+  "conflicts_@stryke/path_wo:":
+    "@stryke/path": "wo:"
+  "conflicts_@stryke/path_wor:":
+    "@stryke/path": "wor:"
+  "conflicts_@stryke/path_work:":
+    "@stryke/path": "work:"
+  "conflicts_@stryke/path_works:":
+    "@stryke/path": "works:"
+  "conflicts_@stryke/path_worksp:":
+    "@stryke/path": "worksp:"
+  "conflicts_@stryke/path_workspa:":
+    "@stryke/path": "workspa:"
+  "conflicts_@stryke/path_workspac:":
+    "@stryke/path": "workspac:"
