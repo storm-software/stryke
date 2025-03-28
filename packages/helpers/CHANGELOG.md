@@ -2,6 +2,13 @@
 
 # Changelog for Stryke - Helpers
 
+## [0.4.5](https://github.com/storm-software/stryke/releases/tag/helpers%400.4.5) (2025-03-28)
+
+### Miscellaneous
+
+- **monorepo:** Reformat the source files in repository
+  ([bb8df2c](https://github.com/storm-software/stryke/commit/bb8df2c))
+
 ## [0.4.4](https://github.com/storm-software/stryke/releases/tag/helpers%400.4.4) (2025-03-23)
 
 ### Bug Fixes

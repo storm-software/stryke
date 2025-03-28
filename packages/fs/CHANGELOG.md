@@ -2,6 +2,13 @@
 
 # Changelog for Stryke - Fs
 
+## [0.10.5](https://github.com/storm-software/stryke/releases/tag/fs%400.10.5) (2025-03-28)
+
+### Miscellaneous
+
+- **monorepo:** Reformat the source files in repository
+  ([bb8df2c](https://github.com/storm-software/stryke/commit/bb8df2c))
+
 ## [0.10.4](https://github.com/storm-software/stryke/releases/tag/fs%400.10.4) (2025-03-23)
 
 ### Bug Fixes

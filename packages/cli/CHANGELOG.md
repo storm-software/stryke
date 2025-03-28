@@ -2,6 +2,13 @@
 
 # Changelog for Stryke - Cli
 
+## [0.3.4](https://github.com/storm-software/stryke/releases/tag/cli%400.3.4) (2025-03-28)
+
+### Miscellaneous
+
+- **monorepo:** Reformat the source files in repository
+  ([bb8df2c](https://github.com/storm-software/stryke/commit/bb8df2c))
+
 ## [0.3.3](https://github.com/storm-software/stryke/releases/tag/cli%400.3.3) (2025-03-23)
 
 ### Bug Fixes

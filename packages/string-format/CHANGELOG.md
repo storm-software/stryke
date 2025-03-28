@@ -2,6 +2,13 @@
 
 # Changelog for Stryke - String Format
 
+## [0.2.5](https://github.com/storm-software/stryke/releases/tag/string-format%400.2.5) (2025-03-28)
+
+### Miscellaneous
+
+- **monorepo:** Reformat the source files in repository
+  ([bb8df2c](https://github.com/storm-software/stryke/commit/bb8df2c))
+
 ## [0.2.4](https://github.com/storm-software/stryke/releases/tag/string-format%400.2.4) (2025-03-23)
 
 ### Bug Fixes

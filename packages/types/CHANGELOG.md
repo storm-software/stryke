@@ -2,6 +2,13 @@
 
 # Changelog for Stryke - Types
 
+## [0.7.3](https://github.com/storm-software/stryke/releases/tag/types%400.7.3) (2025-03-28)
+
+### Miscellaneous
+
+- **monorepo:** Reformat the source files in repository
+  ([bb8df2c](https://github.com/storm-software/stryke/commit/bb8df2c))
+
 ## [0.7.2](https://github.com/storm-software/stryke/releases/tag/types%400.7.2) (2025-03-23)
 
 ### Bug Fixes
