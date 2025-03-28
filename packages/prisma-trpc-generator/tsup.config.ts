@@ -31,7 +31,7 @@ export default defineConfig([
     shims: true,
     bundle: true,
     splitting: false,
-    skipNodeModulesBundle: true,
+    skipNodeModulesBundle: false,
     external: ["esbuild", "typescript"]
   }
 ]);
