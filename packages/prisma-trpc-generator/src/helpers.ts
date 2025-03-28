@@ -24,9 +24,9 @@ import type {
 } from "@prisma/generator-helper";
 import type { SourceFile } from "ts-morph";
 import type { Config } from "./config";
-import { getPrismaInternals } from "./utils/getPrismaInternals";
-import getRelativePath from "./utils/getRelativePath";
-import { uncapitalizeFirstLetter } from "./utils/uncapitalizeFirstLetter";
+import { getPrismaInternals } from "./utils/get-prisma-internals";
+import getRelativePath from "./utils/get-relative-path";
+import { uncapitalizeFirstLetter } from "./utils/uncapitalize-first-letter";
 
 const getProcedureName = (config: Config) => {
   return config.withShield

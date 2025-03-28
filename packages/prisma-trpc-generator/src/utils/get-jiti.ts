@@ -15,25 +15,22 @@
 
  ------------------------------------------------------------------- */
 
-import { defineConfig } from "tsup";
+import { getEnvPaths } from "@stryke/env";
+import { getWorkspaceRoot, joinPaths } from "@stryke/path";
+import type { Jiti } from "jiti";
+import { createJiti } from "jiti";
 
-export default defineConfig([
-  {
-    name: "prisma-trpc-generator",
-    entryPoints: ["src/index.ts", "src/generator.ts"],
-    format: ["cjs", "esm"],
-    platform: "node",
-    outDir: "dist",
-    clean: true,
-    dts: true,
-    cjsInterop: true,
-    sourcemap: false,
-    tsconfig: "./tsconfig.json",
-    shims: true,
-    bundle: true,
-    splitting: false,
-    skipNodeModulesBundle: false,
-    removeNodeProtocol: false,
-    external: ["esbuild", "typescript"]
+let jiti!: Jiti;
+
+export function getJiti() {
+  if (!jiti) {
+    const envPaths = getEnvPaths();
+
+    jiti = createJiti(getWorkspaceRoot(), {
+      fsCache: joinPaths(envPaths.cache, "jiti"),
+      interopDefault: true
+    });
   }
-]);
+
+  return jiti;
+}

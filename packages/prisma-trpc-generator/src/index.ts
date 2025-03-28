@@ -25,7 +25,7 @@
  */
 
 import { generate } from "./prisma-generator";
-import { getPrismaGeneratorHelper } from "./utils/getPrismaInternals";
+import { getPrismaGeneratorHelper } from "./utils/get-prisma-internals";
 
 getPrismaGeneratorHelper()
   .then(helpers => {

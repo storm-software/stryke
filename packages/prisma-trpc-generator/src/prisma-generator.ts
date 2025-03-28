@@ -23,7 +23,6 @@ import type {
 import { promises as fs } from "node:fs";
 import path from "node:path";
 import pluralize from "pluralize";
-import { generate as PrismaZodGenerator } from "prisma-zod-generator/lib/prisma-generator";
 import { configSchema } from "./config";
 import {
   generateBaseRouter,
@@ -38,8 +37,9 @@ import {
 } from "./helpers";
 import { generateShield } from "./prisma-shield-generator";
 import { project } from "./project";
-import { getPrismaInternals } from "./utils/getPrismaInternals";
-import removeDir from "./utils/removeDir";
+import { getJiti } from "./utils/get-jiti";
+import { getPrismaInternals } from "./utils/get-prisma-internals";
+import removeDir from "./utils/remove-dir";
 
 export async function generate(options: GeneratorOptions) {
   const internals = await getPrismaInternals();
@@ -55,7 +55,11 @@ export async function generate(options: GeneratorOptions) {
   await removeDir(outputDir, true);
 
   if (config.withZod !== false) {
-    await PrismaZodGenerator(options as any);
+    const prismaZodGenerator = await getJiti().import<{
+      generate: (options: GeneratorOptions) => Promise<void>;
+    }>(getJiti().esmResolve("prisma-zod-generator/lib/prisma-generator"));
+
+    await prismaZodGenerator.generate(options);
   }
 
   if (config.withShield !== false) {
@@ -65,6 +69,7 @@ export async function generate(options: GeneratorOptions) {
       generator: {
         ...options.generator,
         output: {
+          fromEnvVar: null,
           ...options.generator.output,
           value: shieldOutputPath
         },
@@ -73,7 +78,7 @@ export async function generate(options: GeneratorOptions) {
           contextPath: config.contextPath
         }
       }
-    } as any);
+    });
   }
 
   const prismaClientProvider = options.otherGenerators.find(

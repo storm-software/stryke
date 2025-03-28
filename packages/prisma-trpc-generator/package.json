@@ -106,12 +106,14 @@
     "monorepo"
   ],
   "dependencies": {
+    "@prisma/client": "catalog:",
     "@prisma/generator-helper": "catalog:",
     "@prisma/internals": "catalog:",
     "@prisma/prisma-schema-wasm": "catalog:",
     "esbuild": "catalog:",
     "jiti": "catalog:",
     "prettier": "catalog:",
+    "prisma-zod-generator": "catalog:",
     "ts-morph": "catalog:"
   },
   "devDependencies": {
@@ -119,7 +121,6 @@
     "@stryke/path": "workspace:*",
     "@types/pluralize": "catalog:",
     "pluralize": "catalog:",
-    "prisma-zod-generator": "catalog:",
     "tsup": "catalog:",
     "zod": "catalog:"
   },

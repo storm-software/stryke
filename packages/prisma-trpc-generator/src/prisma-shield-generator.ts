@@ -21,9 +21,9 @@ import path from "node:path";
 import { configSchema } from "./config";
 import { constructShield } from "./helpers";
 import type { RootType } from "./types";
-import { getPrismaInternals } from "./utils/getPrismaInternals";
-import removeDir from "./utils/removeDir";
-import { writeFileSafely } from "./utils/writeFileSafely";
+import { getPrismaInternals } from "./utils/get-prisma-internals";
+import removeDir from "./utils/remove-dir";
+import { writeFileSafely } from "./utils/write-file-safely";
 
 export async function generateShield(options: GeneratorOptions) {
   const internals = await getPrismaInternals();

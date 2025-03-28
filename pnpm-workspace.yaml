@@ -17,6 +17,7 @@ catalog:
   "@js-temporal/polyfill": ^0.5.0
   "@ls-lint/ls-lint": ^2.2.3
   "@microsoft/api-extractor": ^7.49.2
+  "@prisma/client": ^6.5.0
   "@prisma/generator-helper": ^6.5.0
   "@prisma/internals": ^6.5.0
   "@prisma/prisma-schema-wasm": ^6.6.0-41.9061db3b0058e3d3731c6fe68a1b77061bed4861

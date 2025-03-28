@@ -17,7 +17,7 @@
 
 import fs from "node:fs";
 import path from "node:path";
-import { formatFile } from "./formatFile";
+import { formatFile } from "./format-file";
 
 export const writeFileSafely = async (writeLocation: string, content: any) => {
   fs.mkdirSync(path.dirname(writeLocation), {
