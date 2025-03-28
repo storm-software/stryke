@@ -7,7 +7,6 @@ onlyBuiltDependencies:
 packages:
   - "tools/*"
   - "packages/*"
-  - "docs/*"
 
 catalog:
   "@antfu/install-pkg": ^1.0.0
