@@ -1,0 +1,20 @@
+{
+  "name": "@stryke/prisma-trpc-generator",
+  "version": "0.0.1",
+  "type": "module",
+  "description": "A fork of the prisma-trpc-generator code to work in ESM.",
+  "repository": {
+    "type": "github",
+    "url": "https://github.com/storm-software/stryke.git",
+    "directory": "packages/prisma-trpc-generator"
+  },
+  "private": false,
+  "dependencies": {
+    "@prisma/generator-helper": "catalog:",
+    "@prisma/internals": "catalog:",
+    "pluralize": "catalog:",
+    "prisma-trpc-shield-generator": "catalog:",
+    "ts-morph": "catalog:",
+    "zod": "catalog:"
+  }
+}

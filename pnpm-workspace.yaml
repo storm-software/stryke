@@ -15,6 +15,8 @@ catalog:
   "@dotenvx/dotenvx": 1.35.0
   "@ls-lint/ls-lint": ^2.2.3
   "@microsoft/api-extractor": ^7.49.2
+  "@prisma/generator-helper": ^6.5.0
+  "@prisma/internals": ^6.5.0
   "@taplo/cli": ^0.7.0
   "@types/figlet": ^1.7.0
   "@types/jest": ^29.5.14
@@ -73,13 +75,16 @@ catalog:
   jest-environment-jsdom: ^29.7.0
   jest-environment-node: ^29.7.0
   picomatch: ^4.0.2
+  pluralize: ^8.0.0
   prettier: ^3.5.2
+  prisma-trpc-shield-generator: ^0.1.0
   semver: 7.7.1
   sherif: 1.3.0
   superjson: 2.2.2
   terminal-link: ^3.0.0
   tinyexec: ^0.3.2
   ts-jest: 29.2.5
+  ts-morph: ^25.0.1
   ts-node: 10.9.2
   tsup: ^8.3.5
   tsdown: ^0.5.8
@@ -96,6 +101,7 @@ catalog:
   defu: ^6.1.4
   jiti: ^2.4.2
   verdaccio: 5.33.0
+  zod: ^3.24.2
   zx: ^8.3.2
 
 overrides:
@@ -109,6 +115,7 @@ overrides:
   "@stryke/http": workspace:*
   "@stryke/json": workspace:*
   "@stryke/path": workspace:*
+  "@stryke/prisma-trpc-generator": workspace:*
   "@stryke/string-format": workspace:*
   "@stryke/type-checks": workspace:*
   "@stryke/types": workspace:*
@@ -130,3 +137,34 @@ overrides:
   postcss: ">=8.5.1"
   shell-quote: ">=1.8.2"
   simple-git: ">=3.27.0"
+catalogs:
+  conflicts_@nx/js_20_5_0:
+    "@nx/js": 20.5.0
+  conflicts_@swc-node/register_t1_9_1:
+    "@swc-node/register": ~1.9.1
+  conflicts_@swc/core_t1_5_7:
+    "@swc/core": ~1.5.7
+  conflicts_@swc/helpers_t0_5_11:
+    "@swc/helpers": ~0.5.11
+  conflicts_@types/node_20_9_0:
+    "@types/node": 20.9.0
+  conflicts_prettier_h2_6_2:
+    prettier: ^2.6.2
+  conflicts_verdaccio_h6_0_5:
+    verdaccio: ^6.0.5
+  conflicts_conflicts_@swc-node/register_t1_9_1_catalog:
+    "@swc-node/register": catalog
+  conflicts_conflicts_verdaccio_h6_0_5_c:
+    verdaccio: c
+  conflicts_conflicts_verdaccio_h6_0_5_ca:
+    verdaccio: ca
+  conflicts_conflicts_verdaccio_h6_0_5_cat:
+    verdaccio: cat
+  conflicts_conflicts_verdaccio_h6_0_5_cata:
+    verdaccio: cata
+  conflicts_conflicts_verdaccio_h6_0_5_catal:
+    verdaccio: catal
+  conflicts_conflicts_verdaccio_h6_0_5_catalo:
+    verdaccio: catalo
+  conflicts_conflicts_verdaccio_h6_0_5_catalog:
+    verdaccio: catalog

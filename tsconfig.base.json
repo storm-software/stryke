@@ -26,6 +26,12 @@
       "@stryke/json/*": ["packages/json/src/*"],
       "@stryke/path": ["packages/path/src/index.ts"],
       "@stryke/path/*": ["packages/path/src/*"],
+      "@stryke/prisma-trpc-generator": [
+        "packages/prisma-trpc-generator/src/index.ts"
+      ],
+      "@stryke/prisma-trpc-generator/*": [
+        "packages/prisma-trpc-generator/src/*"
+      ],
       "@stryke/string-format": ["packages/string-format/src/index.ts"],
       "@stryke/string-format/*": ["packages/string-format/src/*"],
       "@stryke/type-checks": ["packages/type-checks/src/index.ts"],
