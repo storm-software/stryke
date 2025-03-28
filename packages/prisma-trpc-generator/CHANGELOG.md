@@ -2,6 +2,13 @@
 
 # Changelog for Stryke - Prisma Trpc Generator
 
+## [0.2.4](https://github.com/storm-software/stryke/releases/tag/prisma-trpc-generator%400.2.4) (2025-03-28)
+
+### Miscellaneous
+
+- **prisma-trpc-generator:** Set `skipNodeModulesBundle` to false
+  ([9b54ee9](https://github.com/storm-software/stryke/commit/9b54ee9))
+
 ## [0.2.3](https://github.com/storm-software/stryke/releases/tag/prisma-trpc-generator%400.2.3) (2025-03-28)
 
 ### Miscellaneous
