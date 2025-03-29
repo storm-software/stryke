@@ -56,6 +56,7 @@ const configShield = z.union([
 const modelActionEnum = z.nativeEnum(ModelAction);
 
 export const configSchema = z.object({
+  debug: configBoolean.default("false"),
   withMiddleware: configMiddleware.default("true"),
   withShield: configShield.default("true"),
   withZod: configBoolean.default("true"),

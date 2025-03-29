@@ -42,7 +42,16 @@ import { getPrismaInternals } from "./utils/get-prisma-internals";
 import removeDir from "./utils/remove-dir";
 
 export async function generate(options: GeneratorOptions) {
+  // eslint-disable-next-line no-console
+  console.log(
+    "[STORM]: Running the Storm Software - Prisma tRPC generator with options: \n",
+    JSON.stringify(options, null, 2)
+  );
+
   const internals = await getPrismaInternals();
+
+  // eslint-disable-next-line no-console
+  console.log(`[STORM]: Validating configuration options`);
 
   const outputDir = internals.parseEnvValue(
     options.generator.output as EnvValue
@@ -54,18 +63,33 @@ export async function generate(options: GeneratorOptions) {
 
   const config = results.data;
 
+  const consoleLog = (message: string) => {
+    if (config.debug) {
+      // eslint-disable-next-line no-console
+      console.log(`[STORM]: ${message}`);
+    }
+  };
+
+  consoleLog(`Preparing output directory: ${outputDir}`);
+
   await fs.mkdir(outputDir, { recursive: true });
   await removeDir(outputDir, true);
 
   if (config.withZod !== false) {
+    consoleLog("Generating Zod schemas");
+
     const prismaZodGenerator = await getJiti().import<{
       generate: (options: GeneratorOptions) => Promise<void>;
     }>(getJiti().esmResolve("prisma-zod-generator/lib/prisma-generator"));
 
     await prismaZodGenerator.generate(options);
+  } else {
+    consoleLog("Skipping Zod schemas generation");
   }
 
   if (config.withShield !== false) {
+    consoleLog("Generating tRPC Shield");
+
     const shieldOutputPath = path.join(outputDir, "./shield");
     await generateShield({
       ...options,
@@ -82,6 +106,8 @@ export async function generate(options: GeneratorOptions) {
         }
       }
     });
+  } else {
+    consoleLog("Skipping tRPC Shield generation");
   }
 
   const prismaClientProvider = options.otherGenerators.find(

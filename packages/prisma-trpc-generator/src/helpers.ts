@@ -22,11 +22,11 @@ import type {
   EnvValue,
   GeneratorOptions
 } from "@prisma/generator-helper";
+import { lowerCaseFirst } from "@stryke/string-format/lower-case-first";
 import type { SourceFile } from "ts-morph";
 import type { Config } from "./config";
 import { getPrismaInternals } from "./utils/get-prisma-internals";
 import getRelativePath from "./utils/get-relative-path";
-import { uncapitalizeFirstLetter } from "./utils/uncapitalize-first-letter";
 
 const getProcedureName = (config: Config) => {
   return config.withShield
@@ -233,7 +233,7 @@ export function generateProcedure(
   ${config.withZod ? `.input(${typeName})` : ""}.${getProcedureTypeByOpName(
     baseOpType
   )}(async ({ ctx, input }) => {
-    const ${name} = await ctx.prisma.${uncapitalizeFirstLetter(
+    const ${name} = await ctx.prisma.${lowerCaseFirst(
       modelName
     )}.${opType.replace("One", "")}(${input});
     return ${name};
