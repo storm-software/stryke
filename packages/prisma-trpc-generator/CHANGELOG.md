@@ -2,6 +2,13 @@
 
 # Changelog for Stryke - Prisma Trpc Generator
 
+## [0.2.17](https://github.com/storm-software/stryke/releases/tag/prisma-trpc-generator%400.2.17) (2025-03-29)
+
+### Bug Fixes
+
+- **prisma-trpc-generator:** Check for undefined strings in model names
+  ([9d039ae](https://github.com/storm-software/stryke/commit/9d039ae))
+
 ## [0.2.16](https://github.com/storm-software/stryke/releases/tag/prisma-trpc-generator%400.2.16) (2025-03-29)
 
 ### Miscellaneous
