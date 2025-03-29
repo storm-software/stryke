@@ -42,18 +42,12 @@ catalogs:
     '@nx/workspace':
       specifier: ^20.5.0
       version: 20.5.0
-    '@prisma/client':
-      specifier: ^6.5.0
-      version: 6.5.0
     '@prisma/generator-helper':
       specifier: ^6.5.0
       version: 6.5.0
     '@prisma/internals':
       specifier: ^6.5.0
       version: 6.5.0
-    '@prisma/prisma-schema-wasm':
-      specifier: ^6.6.0-41.9061db3b0058e3d3731c6fe68a1b77061bed4861
-      version: 6.6.0-41.9061db3b0058e3d3731c6fe68a1b77061bed4861
     '@storm-software/build-tools':
       specifier: latest
       version: 0.143.23
@@ -609,18 +603,18 @@ importers:
 
   packages/prisma-trpc-generator:
     dependencies:
-      '@prisma/client':
-        specifier: 'catalog:'
-        version: 6.5.0(typescript@5.8.2)
       '@prisma/generator-helper':
         specifier: 'catalog:'
         version: 6.5.0
       '@prisma/internals':
         specifier: 'catalog:'
         version: 6.5.0(typescript@5.8.2)
-      '@prisma/prisma-schema-wasm':
-        specifier: 'catalog:'
-        version: 6.6.0-41.9061db3b0058e3d3731c6fe68a1b77061bed4861
+      '@stryke/env':
+        specifier: workspace:*
+        version: link:../env
+      '@stryke/path':
+        specifier: workspace:*
+        version: link:../path
       esbuild:
         specifier: 'catalog:'
         version: 0.25.1
@@ -637,12 +631,6 @@ importers:
         specifier: 'catalog:'
         version: 25.0.1
     devDependencies:
-      '@stryke/env':
-        specifier: workspace:*
-        version: link:../env
-      '@stryke/path':
-        specifier: workspace:*
-        version: link:../path
       '@types/pluralize':
         specifier: 'catalog:'
         version: 0.0.33
@@ -3066,18 +3054,6 @@ packages:
       prisma:
         optional: true
 
-  '@prisma/client@6.5.0':
-    resolution: {integrity: sha512-M6w1Ql/BeiGoZmhMdAZUXHu5sz5HubyVcKukbLs3l0ELcQb8hTUJxtGEChhv4SVJ0QJlwtLnwOLgIRQhpsm9dw==}
-    engines: {node: '>=18.18'}
-    peerDependencies:
-      prisma: '*'
-      typescript: '>=5.1.0'
-    peerDependenciesMeta:
-      prisma:
-        optional: true
-      typescript:
-        optional: true
-
   '@prisma/config@6.5.0':
     resolution: {integrity: sha512-sOH/2Go9Zer67DNFLZk6pYOHj+rumSb0VILgltkoxOjYnlLqUpHPAN826vnx8HigqnOCxj9LRhT6U7uLiIIWgw==}
 
@@ -3136,9 +3112,6 @@ packages:
 
   '@prisma/prisma-schema-wasm@6.5.0-73.173f8d54f8d52e692c7e27e72a88314ec7aeff60':
     resolution: {integrity: sha512-8zmXO5Luw5sCOgTw9nyN4/x7MgmIUUt/9zQZPPStiMUhZsXH72oqFwYJlibdS77gDuH2+DXgSRv6aPleDdTMsQ==}
-
-  '@prisma/prisma-schema-wasm@6.6.0-41.9061db3b0058e3d3731c6fe68a1b77061bed4861':
-    resolution: {integrity: sha512-Kugd2BMfFHXQg9qN3seYl60CWHtuvuLihoeWZvGS8jYC0kCW8vdUJYGQbz6LrGak5sJXrcaQvrFOFeSwJ/iiXA==}
 
   '@prisma/schema-files-loader@6.5.0':
     resolution: {integrity: sha512-BE+YPIcqXx+9MkPsA/mACz3rGhKUfh5rsoGe1Male/0c9my9CaHKzJFxNAV4f70d6GTMMITQgFpwfrudGFOwpw==}
@@ -13103,10 +13076,6 @@ snapshots:
     dependencies:
       '@prisma/engines-version': 4.16.1-1.4bc8b6e1b66cb932731fb1bdbbc550d1e010de81
 
-  '@prisma/client@6.5.0(typescript@5.8.2)':
-    optionalDependencies:
-      typescript: 5.8.2
-
   '@prisma/config@6.5.0':
     dependencies:
       esbuild: 0.25.1
@@ -13269,8 +13238,6 @@ snapshots:
   '@prisma/prisma-schema-wasm@4.17.0-26.6b0aef69b7cdfc787f822ecd7cdc76d5f1991584': {}
 
   '@prisma/prisma-schema-wasm@6.5.0-73.173f8d54f8d52e692c7e27e72a88314ec7aeff60': {}
-
-  '@prisma/prisma-schema-wasm@6.6.0-41.9061db3b0058e3d3731c6fe68a1b77061bed4861': {}
 
   '@prisma/schema-files-loader@6.5.0':
     dependencies:
