@@ -15,8 +15,9 @@
 
  ------------------------------------------------------------------- */
 
-import { getEnvPaths } from "@stryke/env";
-import { getWorkspaceRoot, joinPaths } from "@stryke/path";
+import { getEnvPaths } from "@stryke/env/get-env-paths";
+import { getWorkspaceRoot } from "@stryke/path/get-workspace-root";
+import { joinPaths } from "@stryke/path/join-paths";
 import type { Jiti } from "jiti";
 import { createJiti } from "jiti";
 
