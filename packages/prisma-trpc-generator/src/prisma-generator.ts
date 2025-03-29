@@ -48,7 +48,10 @@ export async function generate(options: GeneratorOptions) {
     options.generator.output as EnvValue
   );
   const results = configSchema.safeParse(options.generator.config);
-  if (!results.success) throw new Error("Invalid options passed");
+  if (!results.success) {
+    throw new Error("Invalid options passed");
+  }
+
   const config = results.data;
 
   await fs.mkdir(outputDir, { recursive: true });
