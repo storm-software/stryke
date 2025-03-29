@@ -106,10 +106,10 @@
     "monorepo"
   ],
   "dependencies": {
-    "@prisma/client": "catalog:",
     "@prisma/generator-helper": "catalog:",
     "@prisma/internals": "catalog:",
-    "@prisma/prisma-schema-wasm": "catalog:",
+    "@stryke/env": "workspace:*",
+    "@stryke/path": "workspace:*",
     "esbuild": "catalog:",
     "jiti": "catalog:",
     "prettier": "catalog:",
@@ -117,8 +117,6 @@
     "ts-morph": "catalog:"
   },
   "devDependencies": {
-    "@stryke/env": "workspace:*",
-    "@stryke/path": "workspace:*",
     "@types/pluralize": "catalog:",
     "pluralize": "catalog:",
     "tsup": "catalog:",
