@@ -110,9 +110,18 @@ export async function generate(options: GeneratorOptions) {
     consoleLog("Skipping tRPC Shield generation");
   }
 
+  consoleLog("Finding Prisma Client generator");
+
   const prismaClientProvider = options.otherGenerators.find(
     it => internals.parseEnvValue(it.provider) === "prisma-client-js"
   );
+  if (!prismaClientProvider) {
+    throw new Error(
+      "No Prisma Client generator found. Please add `prisma-client-js` to your generator list."
+    );
+  }
+
+  consoleLog("Generating Prisma Client DMMF");
 
   const prismaClientDmmf = await internals.getDMMF({
     datamodel: options.datamodel,
@@ -122,6 +131,9 @@ export async function generate(options: GeneratorOptions) {
   const modelOperations = prismaClientDmmf.mappings.modelOperations;
   const models = prismaClientDmmf.datamodel.models;
   const hiddenModels: string[] = [];
+
+  consoleLog(`Generating tRPC source code for ${models.length} models`);
+
   resolveModelsComments(models as DMMF.Model[], hiddenModels);
   const createRouter = project.createSourceFile(
     path.resolve(outputDir, "routers", "helpers", "createRouter.ts"),
@@ -129,10 +141,14 @@ export async function generate(options: GeneratorOptions) {
     { overwrite: true }
   );
 
+  consoleLog("Generating tRPC imports");
+
   generateRPCImport(createRouter);
   if (config.withShield) {
     await generateShieldImport(createRouter, options, config.withShield);
   }
+
+  consoleLog("Generating tRPC base router");
 
   await generateBaseRouter(createRouter, config, options);
 
@@ -146,6 +162,8 @@ export async function generate(options: GeneratorOptions) {
     { overwrite: true }
   );
 
+  consoleLog("Generating tRPC router imports");
+
   generateCreateRouterImport({
     sourceFile: appRouter
   });
@@ -154,7 +172,10 @@ export async function generate(options: GeneratorOptions) {
 
   for (const modelOperation of modelOperations) {
     const { model, ...operations } = modelOperation;
-    if (hiddenModels.includes(model)) continue;
+    if (hiddenModels.includes(model)) {
+      consoleLog(`Skipping model ${model} as it is hidden`);
+      continue;
+    }
 
     const modelActions = Object.keys(operations).filter<DMMF.ModelAction>(
       (opType): opType is DMMF.ModelAction =>
@@ -162,9 +183,14 @@ export async function generate(options: GeneratorOptions) {
           opType.replace("One", "") as DMMF.ModelAction
         )
     );
-    if (!modelActions.length) continue;
+    if (!modelActions.length) {
+      consoleLog(`Skipping model ${model} as it has no actions to generate`);
+      continue;
+    }
 
     const plural = pluralize(model.toLowerCase());
+
+    consoleLog(`Generating tRPC router for model ${model}`);
 
     generateRouterImport(appRouter, plural, model);
     const modelRouter = project.createSourceFile(
@@ -179,6 +205,7 @@ export async function generate(options: GeneratorOptions) {
     });
 
     if (config.withZod) {
+      consoleLog("Generating Zod schemas imports");
       generateRouterSchemaImports(modelRouter, model, modelActions);
     }
 
@@ -206,12 +233,23 @@ export async function generate(options: GeneratorOptions) {
     modelRouter.formatText({ indentSize: 2 });
     routerStatements.push(/* ts */ `
       ${model.toLowerCase()}: ${plural}Router`);
+
+    consoleLog(
+      `Generated tRPC router for model ${model} with ${modelActions.length} actions`
+    );
   }
+
+  consoleLog("Generating tRPC app router");
 
   appRouter.addStatements(/* ts */ `
     export const appRouter = t.router({${routerStatements.join()}})
     `);
 
   appRouter.formatText({ indentSize: 2 });
+
+  consoleLog("Saving tRPC router source files to disk");
+
   await project.save();
+
+  consoleLog("Storm Software - Prisma tRPC generator completed successfully");
 }
