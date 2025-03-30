@@ -38,11 +38,23 @@ import {
   resolveModelsComments
 } from "./helpers";
 import { project } from "./project";
-import type { RootType } from "./types";
-import { getJiti } from "./utils/get-jiti";
+import type { RootType, Writeable } from "./types";
 import { getPrismaInternals } from "./utils/get-prisma-internals";
 import removeDir from "./utils/remove-dir";
 import { writeFileSafely } from "./utils/write-file-safely";
+import { resolveZodAggregateOperationSupport } from "./zod-helpers/aggregate-helpers";
+import {
+  hideZodInputObjectTypesAndRelatedFields,
+  resolveZodModelsComments
+} from "./zod-helpers/comments-helpers";
+import {
+  generateZodEnumSchemas,
+  generateZodIndex,
+  generateZodModelSchemas,
+  generateZodObjectSchemas
+} from "./zod-helpers/generator-helpers";
+import { addMissingZodInputObjectTypes } from "./zod-helpers/helpers";
+import Transformer from "./zod-helpers/transformer";
 
 export async function generate(options: GeneratorOptions) {
   // eslint-disable-next-line no-console
@@ -75,18 +87,6 @@ export async function generate(options: GeneratorOptions) {
   await createDirectory(outputDir);
   await removeDir(outputDir, true);
 
-  if (config.withZod !== false) {
-    consoleLog("Generating Zod schemas");
-
-    const prismaZodGenerator = await getJiti().import<{
-      generate: (options: GeneratorOptions) => Promise<void>;
-    }>(getJiti().esmResolve("prisma-zod-generator/lib/prisma-generator"));
-
-    await prismaZodGenerator.generate(options);
-  } else {
-    consoleLog("Skipping Zod schemas generation");
-  }
-
   consoleLog("Finding Prisma Client generator");
 
   const prismaClientProvider = options.otherGenerators.find(
@@ -100,14 +100,89 @@ export async function generate(options: GeneratorOptions) {
 
   consoleLog("Generating Prisma Client DMMF");
 
-  const prismaClientDmmf = await internals.getDMMF({
+  const prismaClientDmmf = (await internals.getDMMF({
     datamodel: options.datamodel,
     previewFeatures: prismaClientProvider?.previewFeatures
-  });
+  })) as Writeable<DMMF.Document>;
 
-  const modelOperations = prismaClientDmmf.mappings.modelOperations;
-  const models = prismaClientDmmf.datamodel.models;
+  const modelOperations = prismaClientDmmf.mappings
+    .modelOperations as DMMF.ModelMapping[];
+  const inputObjectTypes = prismaClientDmmf.schema.inputObjectTypes
+    .prisma as DMMF.InputType[];
+  const outputObjectTypes = prismaClientDmmf.schema.outputObjectTypes
+    .prisma as DMMF.OutputType[];
+  const enumTypes = prismaClientDmmf.schema.enumTypes;
+  const models = prismaClientDmmf.datamodel.models as Writeable<DMMF.Model[]>;
   const hiddenModels: string[] = [];
+  const hiddenFields: string[] = [];
+
+  if (config.withZod !== false) {
+    consoleLog("Generating Zod schemas");
+
+    const zodOutputPath = internals.parseEnvValue(options.generator.output!);
+
+    await createDirectory(zodOutputPath);
+    Transformer.setOutputPath(zodOutputPath);
+
+    if (prismaClientProvider?.isCustomOutput) {
+      Transformer.setPrismaClientOutputPath(
+        prismaClientProvider.output?.value as string
+      );
+    }
+
+    resolveZodModelsComments(
+      models,
+      modelOperations,
+      enumTypes,
+      hiddenModels,
+      hiddenFields
+    );
+
+    await generateZodEnumSchemas(enumTypes.prisma, enumTypes.model!);
+
+    const dataSource = options.datasources?.[0];
+    if (!dataSource) {
+      throw new Error("No datasource found");
+    }
+
+    const previewFeatures = prismaClientProvider?.previewFeatures;
+    Transformer.provider = dataSource.provider;
+    Transformer.previewFeatures = previewFeatures;
+
+    addMissingZodInputObjectTypes(
+      inputObjectTypes,
+      outputObjectTypes,
+      models,
+      modelOperations,
+      dataSource.provider,
+      {
+        isGenerateSelect: true,
+        isGenerateInclude: true
+      }
+    );
+
+    const aggregateOperationSupport =
+      resolveZodAggregateOperationSupport(inputObjectTypes);
+
+    hideZodInputObjectTypesAndRelatedFields(
+      inputObjectTypes,
+      hiddenModels,
+      hiddenFields
+    );
+
+    await generateZodObjectSchemas(
+      inputObjectTypes as Writeable<DMMF.InputType[]>
+    );
+
+    await generateZodModelSchemas(
+      models,
+      modelOperations,
+      aggregateOperationSupport
+    );
+    await generateZodIndex();
+  } else {
+    consoleLog("Skipping Zod schemas generation");
+  }
 
   if (config.withShield !== false) {
     consoleLog("Generating tRPC Shield");
@@ -188,7 +263,7 @@ export async function generate(options: GeneratorOptions) {
 
   consoleLog(`Generating tRPC source code for ${models.length} models`);
 
-  resolveModelsComments(models as DMMF.Model[], hiddenModels);
+  resolveModelsComments(models, hiddenModels);
   const createRouter = project.createSourceFile(
     path.resolve(outputDir, "routers", "helpers", "createRouter.ts"),
     undefined,

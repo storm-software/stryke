@@ -111,7 +111,6 @@
     "esbuild": "catalog:",
     "jiti": "catalog:",
     "prettier": "catalog:",
-    "prisma-zod-generator": "catalog:",
     "ts-morph": "catalog:"
   },
   "devDependencies": {
