@@ -42,14 +42,14 @@ enum ModelAction {
 const modelActionEnum = z.nativeEnum(ModelAction);
 
 export const configSchema = z.object({
-  debug: z.boolean().or(z.string()).default(false),
-  withMiddleware: z.boolean().or(z.string()).default(false),
-  withShield: z.boolean().or(z.string()).default(true),
-  withZod: z.boolean().default(true),
-  withNext: z.boolean().default(true),
+  debug: z.coerce.boolean().or(z.string()).default(false),
+  withMiddleware: z.coerce.boolean().or(z.string()).default(false),
+  withShield: z.coerce.boolean().or(z.string()).default(true),
+  withZod: z.coerce.boolean().or(z.string()).default(true),
+  withNext: z.coerce.boolean().or(z.string()).default(true),
   contextPath: z.string().default("../src/trpc/context"),
-  trpcOptions: z.boolean().or(z.string()).default(true),
-  showModelNameInProcedure: z.boolean().default(true),
+  trpcOptions: z.coerce.boolean().or(z.string()).optional(),
+  showModelNameInProcedure: z.coerce.boolean().or(z.string()).default(true),
   generateModelActions: z
     .string()
     .default(Object.values(ModelAction).join(","))
