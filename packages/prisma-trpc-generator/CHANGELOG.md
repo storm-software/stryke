@@ -2,6 +2,13 @@
 
 # Changelog for Stryke - Prisma Trpc Generator
 
+## [0.4.8](https://github.com/storm-software/stryke/releases/tag/prisma-trpc-generator%400.4.8) (2025-03-30)
+
+### Miscellaneous
+
+- **prisma-trpc-generator:** Added additional operations to helpers
+  ([506d338](https://github.com/storm-software/stryke/commit/506d338))
+
 ## [0.4.7](https://github.com/storm-software/stryke/releases/tag/prisma-trpc-generator%400.4.7) (2025-03-30)
 
 ### Bug Fixes
