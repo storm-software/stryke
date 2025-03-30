@@ -63,12 +63,14 @@ export async function generate(options: GeneratorOptions) {
   const internals = await getPrismaInternals();
 
   // eslint-disable-next-line no-console
-  console.log(`[STORM]: Validating configuration options \n`);
+  console.log(
+    `[STORM]: Validating configuration options \n${JSON.stringify(options.generator.config)}`
+  );
 
   const outputDir = internals.parseEnvValue(
     options.generator.output as EnvValue
   );
-  const results = configSchema.safeParse(options.generator.config);
+  const results = await configSchema.safeParseAsync(options.generator.config);
   if (!results.success) {
     throw new Error("Invalid options passed");
   }
