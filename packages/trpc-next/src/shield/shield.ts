@@ -46,7 +46,7 @@ function normalizeOptions<TContext extends Record<string, any>>(
       allow as ShieldRule<TContext>
     )(options.fallbackRule),
     fallbackError: withDefault<IFallbackErrorType<TContext>>(
-      new Error("Not Authorised!")
+      new Error("Authorization error")
     )(options.fallbackError)
   };
 }
@@ -56,25 +56,19 @@ function normalizeOptions<TContext extends Record<string, any>>(
  */
 export function shield<
   TContext extends Record<string, any>,
-  TMeta extends object = object,
-  TContextOverridesIn = TContext,
-  $ContextOverridesOut = TContext,
-  TInputOut = unknown
+  TMeta extends object = object
 >(
   ruleTree: IRules<TContext>,
   options: IOptionsConstructor<TContext> = {}
-): MiddlewareFunction<
-  TContext,
-  TMeta,
-  TContextOverridesIn,
-  $ContextOverridesOut,
-  TInputOut
-> {
-  const normalizedOptions = normalizeOptions(options);
-  const ruleTreeValidity = validateRuleTree(ruleTree);
+): MiddlewareFunction<TContext, TMeta, TContext, TContext, unknown> {
+  const normalizedOptions = normalizeOptions<TContext>(options);
+  const ruleTreeValidity = validateRuleTree<TContext>(ruleTree);
 
   if (ruleTreeValidity.status === "ok") {
-    return generateMiddlewareFromRuleTree(ruleTree, normalizedOptions) as any;
+    return generateMiddlewareFromRuleTree<TContext>(
+      ruleTree,
+      normalizedOptions
+    ) as any;
   } else {
     throw new ValidationError(ruleTreeValidity.message);
   }
