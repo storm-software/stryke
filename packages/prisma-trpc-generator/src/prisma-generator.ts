@@ -402,7 +402,7 @@ export default {${config.withNext ? "\n transformer," : ""}
 
     modelRouter.formatText({ indentSize: 2 });
     routerStatements.push(/* ts */ `
-      ${model.toLowerCase()}: ${plural}Router`);
+      ${lowerCaseFirst(model)}: ${plural}Router`);
 
     consoleLog(
       `Generated tRPC router for model ${model} with ${modelActions.length} actions`

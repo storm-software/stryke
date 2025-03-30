@@ -52,7 +52,7 @@ export const generateCreateRouterImport = ({
   }
 
   sourceFile.addImportDeclaration({
-    moduleSpecifier: "./helpers/createRouter",
+    moduleSpecifier: "../trpc",
     namedImports: imports
   });
 };
@@ -75,7 +75,7 @@ export const generateShieldImport = async (
     options.generator.output as EnvValue
   );
 
-  let shieldPath = getRelativePath(outputDir, "shield/shield");
+  let shieldPath = getRelativePath(outputDir, "shield");
 
   if (typeof value === "string") {
     shieldPath = getRelativePath(outputDir, value, true, options.schemaPath);
