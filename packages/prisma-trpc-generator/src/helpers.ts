@@ -523,7 +523,6 @@ export const constructShield = async (
   }
 
   let shieldText = getImports("trpc-shield");
-
   shieldText += getImports(
     "context",
     getRelativePath(outputDir, config.contextPath, true, options.schemaPath)

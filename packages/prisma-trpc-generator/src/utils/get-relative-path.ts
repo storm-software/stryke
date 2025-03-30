@@ -15,8 +15,8 @@
 
  ------------------------------------------------------------------- */
 
-import { relativePath } from "@stryke/path/file-path-fns";
-import path from "node:path";
+import { findFilePath, relativePath } from "@stryke/path/file-path-fns";
+import { joinPaths } from "@stryke/path/join-paths";
 
 export default function getRelativePath(
   outputPath: string,
@@ -25,20 +25,16 @@ export default function getRelativePath(
   schemaPath?: string,
   fromPath?: string
 ) {
-  const _fromPath = fromPath || outputPath;
-  let toPath = path.join(outputPath, filePath);
-
-  if (isOutsideOutputPath) {
-    const schemaPathSplit = schemaPath?.split(path.sep);
-    const schemaPathWithoutFileAndExtension = schemaPathSplit!
-      .slice(0, schemaPathSplit!.length - 1)
-      .join(path.posix.sep);
-    toPath = path.join(schemaPathWithoutFileAndExtension, filePath);
+  let toPath = joinPaths(
+    outputPath,
+    filePath.endsWith(".ts") ? findFilePath(filePath) : filePath
+  );
+  if (isOutsideOutputPath && schemaPath) {
+    toPath = joinPaths(
+      schemaPath.endsWith(".prisma") ? findFilePath(schemaPath) : schemaPath,
+      filePath
+    );
   }
 
-  const newPath = relativePath(_fromPath, toPath)
-    .split(path.sep)
-    .join(path.posix.sep);
-
-  return newPath;
+  return relativePath(fromPath || outputPath, toPath);
 }
