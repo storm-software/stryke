@@ -38,6 +38,7 @@ export function addMissingInputObjectTypesForInclude(
     inputObjectTypes.push(includeInputObjectType);
   }
 }
+
 function generateModelIncludeInputObjectTypes(
   models: DMMF.Model[],
   isGenerateSelect: boolean
@@ -72,8 +73,7 @@ function generateModelIncludeInputObjectTypes(
     }
 
     /**
-     * include is not generated for models that do not have a relation with any other models
-     * -> continue onto the next model
+     * include is not generated for models that do not have a relation with any other models continue onto the next model
      */
     const hasRelationToAnotherModel = checkModelHasModelRelation(model);
     if (!hasRelationToAnotherModel) {
