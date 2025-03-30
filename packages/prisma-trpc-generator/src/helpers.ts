@@ -186,7 +186,8 @@ export async function generateBaseRouter(
 
   if (config.withShield) {
     sourceFile.addStatements(/* ts */ `
-    export const permissionsMiddleware = t.middleware(permissions); `);
+    export const permissionsMiddleware = t.middleware(permissions);
+    `);
 
     middlewares.push({
       type: "shield",
@@ -205,12 +206,6 @@ export const createCallerFactory = t.createCallerFactory;`);
   sourceFile.addStatements(/* ts */ `
     export const publicProcedure = t.procedure; `);
 
-  if (config.withNext) {
-    sourceFile.addStatements(/* ts */ `
-  export const createAction = createTRPCServerActionHandler(t, createContext);
-  `);
-  }
-
   if (middlewares.length > 0) {
     const procName = getProcedureName(config);
 
@@ -228,6 +223,13 @@ export const createCallerFactory = t.createCallerFactory;`);
         })`
       );
     });
+  }
+
+  if (config.withNext) {
+    sourceFile.addStatements(/* ts */ `
+  export const createAction: ReturnType<typeof createTRPCServerActionHandler> =
+    createTRPCServerActionHandler(t, createContext);
+  `);
   }
 }
 
@@ -468,7 +470,7 @@ export const wrapWithExport = ({
 }: {
   shieldObjectText: string;
 }) => {
-  return `export const permissions = ${shieldObjectText};`;
+  return `export const permissions: ReturnType<typeof shield<Context>> = ${shieldObjectText};`;
 };
 
 export const constructShield = async (

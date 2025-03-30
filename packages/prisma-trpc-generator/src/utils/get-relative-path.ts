@@ -15,6 +15,7 @@
 
  ------------------------------------------------------------------- */
 
+import { relativePath } from "@stryke/path/file-path-fns";
 import path from "node:path";
 
 export default function getRelativePath(
@@ -35,8 +36,7 @@ export default function getRelativePath(
     toPath = path.join(schemaPathWithoutFileAndExtension, filePath);
   }
 
-  const newPath = path
-    .relative(_fromPath, toPath)
+  const newPath = relativePath(_fromPath, toPath)
     .split(path.sep)
     .join(path.posix.sep);
 
