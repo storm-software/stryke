@@ -2,6 +2,13 @@
 
 # Changelog for Stryke - Prisma Trpc Generator
 
+## [0.7.0](https://github.com/storm-software/stryke/releases/tag/prisma-trpc-generator%400.7.0) (2025-03-30)
+
+### Features
+
+- **prisma-trpc-generator:** Attach `experimental_nextAppDirCaller` for NextJs
+  apps ([1703dd4](https://github.com/storm-software/stryke/commit/1703dd4))
+
 ## [0.6.1](https://github.com/storm-software/stryke/releases/tag/prisma-trpc-generator%400.6.1) (2025-03-30)
 
 ### Bug Fixes
