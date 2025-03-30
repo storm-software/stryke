@@ -2,6 +2,13 @@
 
 # Changelog for Stryke - Prisma Trpc Generator
 
+## [0.9.4](https://github.com/storm-software/stryke/releases/tag/prisma-trpc-generator%400.9.4) (2025-03-30)
+
+### Miscellaneous
+
+- **monorepo:** Upgrade `trpc` package to use next release label
+  ([5d3d3c0](https://github.com/storm-software/stryke/commit/5d3d3c0))
+
 ## [0.9.3](https://github.com/storm-software/stryke/releases/tag/prisma-trpc-generator%400.9.3) (2025-03-30)
 
 ### Bug Fixes
