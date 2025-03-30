@@ -2,6 +2,13 @@
 
 # Changelog for Stryke - Prisma Trpc Generator
 
+## [0.4.3](https://github.com/storm-software/stryke/releases/tag/prisma-trpc-generator%400.4.3) (2025-03-30)
+
+### Miscellaneous
+
+- **prisma-trpc-generator:** Ensure the output directory is deleted prior to
+  adding ([19ff60d](https://github.com/storm-software/stryke/commit/19ff60d))
+
 ## [0.4.2](https://github.com/storm-software/stryke/releases/tag/prisma-trpc-generator%400.4.2) (2025-03-30)
 
 ### Bug Fixes
