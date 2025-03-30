@@ -252,35 +252,39 @@ export default class Transformer {
   }
 
   generatePrismaStringLine(field: PrismaDMMF.SchemaArg, inputsLength: number) {
-    return field.inputTypes
-      .map(inputType => {
-        const isEnum = inputType.location === "enumTypes";
+    if (field.inputTypes.length === 0 || !field.inputTypes[0]) {
+      return "";
+    }
 
-        const inputTypeString = inputType.type;
-        const { isModelQueryType, modelName, queryName } =
-          this.checkIsModelQueryType(inputTypeString);
+    const inputType = field.inputTypes[0];
 
-        const objectSchemaLine = isModelQueryType
-          ? this.resolveModelQuerySchemaName(modelName!, queryName!)
-          : `${inputTypeString}ObjectSchema`;
-        const enumSchemaLine = `${inputTypeString}Schema`;
+    const isEnum = inputType.location === "enumTypes";
 
-        const schema =
-          inputType.type === this.name
-            ? objectSchemaLine
-            : isEnum
-              ? enumSchemaLine
-              : objectSchemaLine;
+    const inputTypeString = inputType.type;
+    const { isModelQueryType, modelName, queryName } =
+      this.checkIsModelQueryType(inputTypeString);
 
-        const arr = inputType.isList ? ".array()" : "";
+    const objectSchemaLine = isModelQueryType
+      ? this.resolveModelQuerySchemaName(modelName!, queryName!)
+      : `${inputTypeString}ObjectSchema`;
+    const enumSchemaLine = `${inputTypeString}Schema`;
 
-        const opt = !field.isRequired ? ".optional()" : "";
+    const schema =
+      inputType.type === this.name
+        ? objectSchemaLine
+        : isEnum
+          ? enumSchemaLine
+          : objectSchemaLine;
+    const arr = inputType.isList ? ".array()" : "";
+    const opt = !field.isRequired ? ".optional()" : "";
+    const nullable =
+      field.inputTypes.length > 1 && field.inputTypes[1]?.type === "Null"
+        ? ".nullable()"
+        : "";
 
-        return inputsLength === 1
-          ? `  ${field.name}: z.lazy(() => ${schema})${arr}${opt}`
-          : `z.lazy(() => ${schema})${arr}${opt}`;
-      })
-      .join(",\r\n");
+    return inputsLength === 1
+      ? `  ${field.name}: z.lazy(() => ${schema})${arr}${opt}`
+      : `z.lazy(() => ${schema})${arr}${opt}${nullable}`;
   }
 
   generateFieldValidators(
