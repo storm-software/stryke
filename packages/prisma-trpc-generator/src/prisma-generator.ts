@@ -202,8 +202,13 @@ export async function generate(options: GeneratorOptions) {
         if (
           [
             "findUnique",
+            "findUniqueOrThrow",
             "findFirst",
+            "findFirstOrThrow",
+            "findRaw",
             "findMany",
+            "aggregateRaw",
+            "count",
             "aggregate",
             "groupBy"
           ].includes(opType)
@@ -214,10 +219,13 @@ export async function generate(options: GeneratorOptions) {
         if (
           [
             "createOne",
+            "createMany",
+            "createManyAndReturn",
             "deleteOne",
-            "updateOne",
             "deleteMany",
+            "updateOne",
             "updateMany",
+            "updateManyAndReturn",
             "upsertOne"
           ].includes(opType)
         ) {
