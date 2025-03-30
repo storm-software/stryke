@@ -283,7 +283,7 @@ export default class Transformer {
         : "";
 
     return inputsLength === 1
-      ? `  ${field.name}: z.lazy(() => ${schema})${arr}${opt}`
+      ? `  ${field.name}: z.lazy(() => ${schema})${arr}${opt}${nullable}`
       : `z.lazy(() => ${schema})${arr}${opt}${nullable}`;
   }
 
