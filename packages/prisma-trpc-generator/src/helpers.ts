@@ -75,9 +75,8 @@ export const generateShieldImport = async (
   );
 
   let shieldPath = joinPaths(outputDir, "shield");
-
   if (typeof value === "string") {
-    shieldPath = joinPaths(relativePath(outputDir, options.schemaPath), value);
+    shieldPath = getRelativePath(outputDir, value, true, options.schemaPath);
   }
 
   sourceFile.addImportDeclaration({
@@ -123,14 +122,13 @@ export async function generateBaseRouter(
     options.generator.output as EnvValue
   );
 
-  const relativeContextPath = joinPaths(
-    relativePath(outputDir, options.schemaPath),
-    config.contextPath
-  );
-
   sourceFile.addStatements(/* ts */ `
-  import type { Context } from '${relativeContextPath}';
-  `);
+  import type { Context } from '${getRelativePath(
+    outputDir,
+    config.contextPath,
+    true,
+    options.schemaPath
+  )}';`);
 
   if (config.trpcOptions) {
     sourceFile.addStatements(/* ts */ `
@@ -141,24 +139,24 @@ export async function generateBaseRouter(
         : config.trpcOptions,
       true,
       options.schemaPath
-    )}';
-    `);
+    )}';`);
   }
 
   if (config.withNext) {
-    sourceFile.addStatements(/* ts */ `
-    import { createContext } from '${relativeContextPath}';
-    import { initTRPC, TRPCError } from '@trpc/server';
-    import { experimental_nextAppDirCaller } from '@trpc/server/adapters/next-app-dir';
-    import { createTRPCServerActionHandler } from '@stryke/trpc-next/action-handler';
-  `);
+    sourceFile.addStatements(/* ts */ `import { createContext } from '${getRelativePath(
+      outputDir,
+      config.contextPath,
+      true,
+      options.schemaPath
+    )}';
+    import { initTRPC } from '@trpc/server';
+    import { createTRPCServerActionHandler } from '@stryke/trpc-next/action-handler';`);
   }
 
   sourceFile.addStatements(/* ts */ `
   export const t = initTRPC.context<Context>().create(${
     config.trpcOptions ? "trpcOptions" : ""
-  });
-  `);
+  });`);
 
   const middlewares = [];
 
@@ -227,21 +225,13 @@ export const createCallerFactory = t.createCallerFactory;`);
     export const ${procName} = t.procedure`);
       }
 
-      sourceFile.addStatements(/* ts */ `
-      .use(${
-        middleware.type === "shield"
-          ? "permissionsMiddleware"
-          : "globalMiddleware"
-      })${
-        config.withNext
-          ? `.experimental_caller(
-    experimental_nextAppDirCaller({
-      normalizeFormData: true,
-    }),
-  )`
-          : ""
-      }
-      `);
+      sourceFile.addStatements(
+        /* ts */ `.use(${
+          middleware.type === "shield"
+            ? "permissionsMiddleware"
+            : "globalMiddleware"
+        })`
+      );
     });
   }
 }

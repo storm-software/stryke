@@ -253,21 +253,7 @@ export async function generate(options: GeneratorOptions) {
       const shieldText = await constructShield(
         { queries, mutations, subscriptions },
         config,
-        {
-          ...options,
-          generator: {
-            ...options.generator,
-            output: {
-              fromEnvVar: null,
-              ...options.generator.output,
-              value: outputDir
-            },
-            config: {
-              ...options.generator.config,
-              contextPath: config.contextPath
-            }
-          }
-        },
+        options,
         shieldOutputDir
       );
 
