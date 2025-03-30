@@ -159,7 +159,7 @@ export async function generate(options: GeneratorOptions) {
 
     consoleLog("Constructing tRPC Shield source file");
 
-    const shieldText = constructShield(
+    const shieldText = await constructShield(
       { queries, mutations, subscriptions },
       config,
       {

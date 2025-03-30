@@ -15,14 +15,15 @@
 
  ------------------------------------------------------------------- */
 
-import fs from "node:fs";
-import path from "node:path";
+import { createDirectory } from "@stryke/fs/helpers";
+import { writeFile } from "@stryke/fs/write-file";
+import { findFilePath } from "@stryke/path/file-path-fns";
 import { formatFile } from "./format-file";
 
 export const writeFileSafely = async (writeLocation: string, content: any) => {
-  fs.mkdirSync(path.dirname(writeLocation), {
-    recursive: true
-  });
-
-  fs.writeFileSync(writeLocation, await formatFile(content));
+  const [fileContent] = await Promise.all([
+    formatFile(content),
+    createDirectory(findFilePath(writeLocation))
+  ]);
+  await writeFile(writeLocation, fileContent);
 };
