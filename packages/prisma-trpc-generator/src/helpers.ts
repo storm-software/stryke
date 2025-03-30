@@ -31,7 +31,7 @@ import { getPrismaInternals } from "./utils/get-prisma-internals";
 import getRelativePath from "./utils/get-relative-path";
 
 const getProcedureName = (config: Config) => {
-  return config.withShield
+  return config.withShields
     ? "shieldedProcedure"
     : config.withMiddleware
       ? "protectedProcedure"
@@ -152,6 +152,7 @@ export async function generateBaseRouter(
     sourceFile.addStatements(/* ts */ `
     import { createContext } from '${relativeContextPath}';
     import { initTRPC, TRPCError } from '@trpc/server';
+    import { experimental_nextAppDirCaller } from '@trpc/server/adapters/next-app-dir';
     import { createTRPCServerActionHandler } from '@stryke/trpc-next/action-handler';
   `);
   }
@@ -193,9 +194,10 @@ export async function generateBaseRouter(
     });
   }
 
-  if (config.withShield) {
+  if (config.withShields) {
     sourceFile.addStatements(/* ts */ `
     export const permissionsMiddleware = t.middleware(permissions); `);
+
     middlewares.push({
       type: "shield",
       value: /* ts */ `
@@ -215,20 +217,6 @@ export const createCallerFactory = t.createCallerFactory;`);
 
   if (config.withNext) {
     sourceFile.addStatements(/* ts */ `
-export const protectedProcedure = publicProcedure.use((opts) => {
-  const { session } = opts.ctx;
-
-  if (!session?.user) {
-    throw new TRPCError({
-      code: 'UNAUTHORIZED',
-    });
-  }
-
-  return opts.next({ ctx: { session } });
-});
-`);
-
-    sourceFile.addStatements(/* ts */ `
   export const createAction = createTRPCServerActionHandler(t, createContext);
   `);
   }
@@ -239,8 +227,7 @@ export const protectedProcedure = publicProcedure.use((opts) => {
     middlewares.forEach((middleware, i) => {
       if (i === 0) {
         sourceFile.addStatements(/* ts */ `
-    export const ${procName} = t.procedure
-      `);
+    export const ${procName} = t.procedure`);
       }
 
       sourceFile.addStatements(/* ts */ `
@@ -248,7 +235,15 @@ export const protectedProcedure = publicProcedure.use((opts) => {
         middleware.type === "shield"
           ? "permissionsMiddleware"
           : "globalMiddleware"
-      })
+      })${
+        config.withNext
+          ? `.experimental_caller(
+    experimental_nextAppDirCaller({
+      normalizeFormData: true,
+    }),
+  )`
+          : ""
+      }
       `);
     });
   }

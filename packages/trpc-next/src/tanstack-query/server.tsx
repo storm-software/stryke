@@ -71,7 +71,7 @@ export function createTRPCTanstackQueryServer<
 
   return {
     trpc,
-    HydrateClient(props: { children: React.ReactNode }) {
+    HydrateClient: (props: { children: React.ReactNode }) => {
       const dehydratedState = dehydrate(getQueryClient());
 
       return (
@@ -80,7 +80,9 @@ export function createTRPCTanstackQueryServer<
         </HydrationBoundary>
       );
     },
-    prefetch<T extends ReturnType<TRPCQueryOptions<any>>>(queryOptions: T) {
+    prefetch: <T extends ReturnType<TRPCQueryOptions<any>>>(
+      queryOptions: T
+    ) => {
       const queryClient = getQueryClient();
       if (queryOptions.queryKey[1]?.type === "infinite") {
         void queryClient.prefetchInfiniteQuery(queryOptions as any);

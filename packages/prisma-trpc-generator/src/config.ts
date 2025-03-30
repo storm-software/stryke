@@ -50,15 +50,15 @@ const configMiddleware = z.union([
 
 const configShield = z.union([
   configBoolean,
-  z.string().default("../src/trpc/shield")
+  z.string().default("../src/trpc/shields")
 ]);
 
 const modelActionEnum = z.nativeEnum(ModelAction);
 
 export const configSchema = z.object({
   debug: configBoolean.default("false"),
-  withMiddleware: configMiddleware.default("true"),
-  withShield: configShield.default("true"),
+  withMiddleware: configMiddleware.default("false"),
+  withShields: configShield.default("true"),
   withZod: configBoolean.default("true"),
   withNext: configBoolean.default("true"),
   contextPath: z.string().default("../src/trpc/context"),

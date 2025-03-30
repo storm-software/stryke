@@ -46,7 +46,7 @@ export function createTRPCTanstackQueryClient<TRouter extends AnyTRPCRouter>(
 
   return {
     useTRPCTanstackQuery: useTRPC,
-    TRPCTanstackQueryProvider(props: { children: React.ReactNode }) {
+    TRPCTanstackQueryProvider: (props: { children: React.ReactNode }) => {
       const { children } = props;
 
       const [trpcClient] = useState(() =>

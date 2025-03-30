@@ -229,7 +229,7 @@ export async function generate(options: GeneratorOptions) {
   mutations.sort();
   subscriptions.sort();
 
-  if (config.withShield !== false) {
+  if (config.withShields !== false) {
     consoleLog("Generating tRPC Shield");
 
     const shieldOutputDir = outputDir;
@@ -306,8 +306,8 @@ export default {${config.withNext ? "\n transformer," : ""}
 
   consoleLog("Generating tRPC imports");
 
-  if (config.withShield) {
-    await generateShieldImport(createRouter, options, config.withShield);
+  if (config.withShields) {
+    await generateShieldImport(createRouter, options, config.withShields);
   }
 
   consoleLog("Generating tRPC base router");
