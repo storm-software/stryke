@@ -2,6 +2,13 @@
 
 # Changelog for Stryke - Prisma Trpc Generator
 
+## [0.9.2](https://github.com/storm-software/stryke/releases/tag/prisma-trpc-generator%400.9.2) (2025-03-30)
+
+### Miscellaneous
+
+- **prisma-trpc-generator:** Added extra configuration logging
+  ([0b3db78](https://github.com/storm-software/stryke/commit/0b3db78))
+
 ## [0.9.1](https://github.com/storm-software/stryke/releases/tag/prisma-trpc-generator%400.9.1) (2025-03-30)
 
 ### Bug Fixes
