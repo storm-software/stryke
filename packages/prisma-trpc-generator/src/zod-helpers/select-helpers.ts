@@ -87,6 +87,7 @@ function generateModelCountOutputTypeSelectInputObjectTypes(
       modelCountOutputTypeSelectInputObjectType
     );
   }
+
   return modelCountOutputTypeSelectInputObjectTypes;
 }
 
@@ -122,6 +123,7 @@ function generateModelCountOutputTypeArgsInputObjectTypes(
       modelCountOutputTypeArgsInputObjectType
     );
   }
+
   return modelCountOutputTypeArgsInputObjectTypes;
 }
 
@@ -189,5 +191,6 @@ function generateModelSelectInputObjectTypes(models: DMMF.Model[]) {
     };
     modelSelectInputObjectTypes.push(modelSelectInputObjectType);
   }
+
   return modelSelectInputObjectTypes;
 }

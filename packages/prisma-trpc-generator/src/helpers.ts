@@ -22,6 +22,7 @@ import type {
   EnvValue,
   GeneratorOptions
 } from "@prisma/generator-helper";
+import { relativePath } from "@stryke/path/file-path-fns";
 import { joinPaths } from "@stryke/path/join-paths";
 import { lowerCaseFirst } from "@stryke/string-format/lower-case-first";
 import type { SourceFile } from "ts-morph";
@@ -156,7 +157,7 @@ export async function generateBaseRouter(
   }
 
   sourceFile.addStatements(/* ts */ `
-  export const t = trpc.initTRPC.context<Context>().create(${
+  export const t = initTRPC.context<Context>().create(${
     config.trpcOptions ? "trpcOptions" : ""
   });
   `);
@@ -550,7 +551,7 @@ export const constructShield = async (
 
   shieldText += getImports(
     "context",
-    getRelativePath(outputDir, config.contextPath, true, options.schemaPath)
+    relativePath(outputDir, joinPaths(options.schemaPath, config.contextPath))
   );
   shieldText += "\n\n";
   shieldText += wrapWithExport({

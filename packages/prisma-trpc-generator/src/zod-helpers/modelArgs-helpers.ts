@@ -90,5 +90,6 @@ function generateModelArgsInputObjectTypes(
     };
     modelArgsInputObjectTypes.push(modelArgsInputObjectType);
   }
+
   return modelArgsInputObjectTypes;
 }
