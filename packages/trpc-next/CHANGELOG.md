@@ -2,6 +2,13 @@
 
 # Changelog for Stryke - Trpc Next
 
+## [0.4.1](https://github.com/storm-software/stryke/releases/tag/trpc-next%400.4.1) (2025-03-30)
+
+### Bug Fixes
+
+- **prisma-trpc-generator:** Resolved issue with erased shield configuration
+  ([090a657](https://github.com/storm-software/stryke/commit/090a657))
+
 ## [0.4.0](https://github.com/storm-software/stryke/releases/tag/trpc-next%400.4.0) (2025-03-30)
 
 ### Features

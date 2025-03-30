@@ -2,6 +2,13 @@
 
 # Changelog for Stryke - Prisma Trpc Generator
 
+## [0.7.1](https://github.com/storm-software/stryke/releases/tag/prisma-trpc-generator%400.7.1) (2025-03-30)
+
+### Bug Fixes
+
+- **prisma-trpc-generator:** Resolved issue with erased shield configuration
+  ([090a657](https://github.com/storm-software/stryke/commit/090a657))
+
 ## [0.7.0](https://github.com/storm-software/stryke/releases/tag/prisma-trpc-generator%400.7.0) (2025-03-30)
 
 ### Features
