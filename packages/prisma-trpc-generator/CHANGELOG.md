@@ -2,6 +2,13 @@
 
 # Changelog for Stryke - Prisma Trpc Generator
 
+## [0.6.0](https://github.com/storm-software/stryke/releases/tag/prisma-trpc-generator%400.6.0) (2025-03-30)
+
+### Features
+
+- **prisma-trpc-generator:** Renamed the `useTRPCNext` option to `withNext`
+  ([7315320](https://github.com/storm-software/stryke/commit/7315320))
+
 ## [0.5.2](https://github.com/storm-software/stryke/releases/tag/prisma-trpc-generator%400.5.2) (2025-03-30)
 
 ### Bug Fixes
