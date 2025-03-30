@@ -349,17 +349,19 @@ export async function generate(options: GeneratorOptions) {
 
     for (const opType of modelActions) {
       const opNameWithModel = operations[opType];
-      const baseOpType = opType.replace("OrThrow", "");
+      if (opNameWithModel) {
+        const baseOpType = opType.replace("OrThrow", "");
 
-      generateProcedure(
-        modelRouter,
-        opNameWithModel!,
-        getInputTypeByOpName(baseOpType, model)!,
-        model,
-        opType,
-        baseOpType,
-        config
-      );
+        generateProcedure(
+          modelRouter,
+          opNameWithModel,
+          getInputTypeByOpName(baseOpType, model)!,
+          model,
+          opType,
+          baseOpType,
+          config
+        );
+      }
     }
 
     modelRouter.addStatements(/* ts */ `

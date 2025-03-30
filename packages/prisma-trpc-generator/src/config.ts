@@ -25,10 +25,8 @@ enum ModelAction {
   findMany = "findMany",
   create = "create",
   createMany = "createMany",
-  createManyAndReturn = "createManyAndReturn",
   update = "update",
   updateMany = "updateMany",
-  updateManyAndReturn = "updateManyAndReturn",
   upsert = "upsert",
   delete = "delete",
   deleteMany = "deleteMany",
@@ -45,12 +43,12 @@ const configBoolean = z
 
 const configMiddleware = z.union([
   configBoolean,
-  z.string().default("../../../../src/middleware")
+  z.string().default("../../../src/middleware")
 ]);
 
 const configShield = z.union([
   configBoolean,
-  z.string().default("../../../../src/shield")
+  z.string().default("../../../src/shield")
 ]);
 
 const modelActionEnum = z.nativeEnum(ModelAction);
@@ -60,7 +58,7 @@ export const configSchema = z.object({
   withMiddleware: configMiddleware.default("true"),
   withShield: configShield.default("true"),
   withZod: configBoolean.default("true"),
-  contextPath: z.string().default("../../../../src/context"),
+  contextPath: z.string().default("../../../src/context"),
   trpcOptionsPath: z.string().optional(),
   showModelNameInProcedure: configBoolean.default("true"),
   generateModelActions: z
