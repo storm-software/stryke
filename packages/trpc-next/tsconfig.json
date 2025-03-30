@@ -3,10 +3,7 @@
   "compilerOptions": {
     "jsx": "preserve",
     "lib": ["ESNext", "DOM", "DOM.Iterable"],
-    "types": [
-      "@trpc/next/dist/app-dir/types",
-      "@trpc/next/dist/app-dir/create-action-hook"
-    ],
+    "types": ["@trpc/next"],
     "outDir": "../../dist/out-tsc"
   },
   "include": ["src/**/*.ts", "src/**/*.json"],

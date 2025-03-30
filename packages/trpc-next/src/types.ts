@@ -15,19 +15,23 @@
 
  ------------------------------------------------------------------- */
 
-/**
- * The trpc-next library used by Storm Software for building TypeScript applications.
- *
- * @remarks
- * A package to help in using tRPC in modern NextJs applications
- *
- * @packageDocumentation
- */
+export interface BaseContext<
+  TPrisma = any | undefined,
+  TSession = { user?: any } | undefined,
+  THeaders extends Record<string, string> = Record<string, string>
+> {
+  /**
+   * The Prisma Client instance.
+   */
+  prisma: TPrisma;
 
-export * from "./action-handler";
-export * from "./client";
-export * from "./server";
-export * from "./shared";
-export * from "./tanstack-query/client";
-export * from "./tanstack-query/server";
-export * from "./types";
+  /**
+   * The session object.
+   */
+  session: TSession;
+
+  /**
+   * The request headers.
+   */
+  headers: THeaders;
+}
