@@ -314,8 +314,10 @@ export async function generate(options: GeneratorOptions) {
 
     const modelActions = Object.keys(operations).filter<DMMF.ModelAction>(
       (opType): opType is DMMF.ModelAction =>
-        config.generateModelActions.includes(
-          opType.replace("One", "") as DMMF.ModelAction
+        // eslint-disable-next-line unicorn/prefer-includes
+        config.generateModelActions.some(
+          generateModelAction =>
+            generateModelAction === opType.replace("One", "")
         )
     );
     if (!modelActions.length) {

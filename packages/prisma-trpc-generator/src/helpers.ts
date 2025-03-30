@@ -291,6 +291,9 @@ export const getInputTypeByOpName = (opName: string, modelName: string) => {
     case "createMany":
       inputType = `${modelName}CreateManySchema`;
       break;
+    case "createManyAndReturn":
+      inputType = `${modelName}CreateManyAndReturnSchema`;
+      break;
     case "deleteOne":
       inputType = `${modelName}DeleteOneSchema`;
       break;
@@ -302,6 +305,9 @@ export const getInputTypeByOpName = (opName: string, modelName: string) => {
       break;
     case "updateMany":
       inputType = `${modelName}UpdateManySchema`;
+      break;
+    case "updateManyAndReturn":
+      inputType = `${modelName}UpdateManyAndReturnSchema`;
       break;
     case "upsertOne":
       inputType = `${modelName}UpsertSchema`;
@@ -336,10 +342,12 @@ export const getProcedureTypeByOpName = (opName: string) => {
       break;
     case "createOne":
     case "createMany":
+    case "createManyAndReturn":
     case "deleteOne":
     case "updateOne":
     case "deleteMany":
     case "updateMany":
+    case "updateManyAndReturn":
     case "upsertOne":
       procType = "mutation";
       break;
