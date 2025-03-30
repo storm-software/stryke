@@ -22,7 +22,6 @@ import type {
   EnvValue,
   GeneratorOptions
 } from "@prisma/generator-helper";
-import { relativePath } from "@stryke/path/file-path-fns";
 import { joinPaths } from "@stryke/path/join-paths";
 import { lowerCaseFirst } from "@stryke/string-format/lower-case-first";
 import type { SourceFile } from "ts-morph";
@@ -488,7 +487,7 @@ export const constructShield = async (
   },
   config: Config,
   options: GeneratorOptions,
-  shieldOutputDir: string
+  outputDir: string
 ) => {
   if (
     queries.length === 0 &&
@@ -529,10 +528,7 @@ export const constructShield = async (
 
   shieldText += getImports(
     "context",
-    relativePath(
-      shieldOutputDir,
-      joinPaths(options.schemaPath, config.contextPath)
-    )
+    getRelativePath(outputDir, config.contextPath, true, options.schemaPath)
   );
   shieldText += "\n\n";
   shieldText += wrapWithExport({

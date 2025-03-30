@@ -246,7 +246,7 @@ export async function generate(options: GeneratorOptions) {
       consoleLog("Constructing tRPC Shield source file");
 
       const shieldOutputDir =
-        typeof config.withShield === "string"
+        typeof config.withShield === "string" && config.withShield !== "true"
           ? findFilePath(config.withShield)
           : outputDir;
 

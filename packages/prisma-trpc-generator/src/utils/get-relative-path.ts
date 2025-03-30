@@ -21,9 +21,10 @@ export default function getRelativePath(
   outputPath: string,
   filePath: string,
   isOutsideOutputPath?: boolean,
-  schemaPath?: string
+  schemaPath?: string,
+  fromPath?: string
 ) {
-  const fromPath = path.join(outputPath, "routers", "helpers");
+  const _fromPath = fromPath || outputPath;
   let toPath = path.join(outputPath, filePath);
 
   if (isOutsideOutputPath) {
@@ -35,7 +36,7 @@ export default function getRelativePath(
   }
 
   const newPath = path
-    .relative(fromPath, toPath)
+    .relative(_fromPath, toPath)
     .split(path.sep)
     .join(path.posix.sep);
 
