@@ -31,7 +31,7 @@ import { getPrismaInternals } from "./utils/get-prisma-internals";
 import getRelativePath from "./utils/get-relative-path";
 
 const getProcedureName = (config: Config) => {
-  return config.withShields
+  return config.withShield
     ? "shieldedProcedure"
     : config.withMiddleware
       ? "protectedProcedure"
@@ -70,15 +70,14 @@ export const generateShieldImport = async (
   value: string | boolean
 ) => {
   const internals = await getPrismaInternals();
-
   const outputDir = internals.parseEnvValue(
     options.generator.output as EnvValue
   );
 
-  let shieldPath = getRelativePath(outputDir, "shield");
+  let shieldPath = joinPaths(outputDir, "shield");
 
   if (typeof value === "string") {
-    shieldPath = getRelativePath(outputDir, value, true, options.schemaPath);
+    shieldPath = joinPaths(relativePath(outputDir, options.schemaPath), value);
   }
 
   sourceFile.addImportDeclaration({
@@ -124,11 +123,9 @@ export async function generateBaseRouter(
     options.generator.output as EnvValue
   );
 
-  const relativeContextPath = getRelativePath(
-    outputDir,
-    config.contextPath,
-    true,
-    options.schemaPath
+  const relativeContextPath = joinPaths(
+    relativePath(outputDir, options.schemaPath),
+    config.contextPath
   );
 
   sourceFile.addStatements(/* ts */ `
@@ -194,7 +191,7 @@ export async function generateBaseRouter(
     });
   }
 
-  if (config.withShields) {
+  if (config.withShield) {
     sourceFile.addStatements(/* ts */ `
     export const permissionsMiddleware = t.middleware(permissions); `);
 

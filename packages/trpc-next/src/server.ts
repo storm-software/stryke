@@ -138,3 +138,8 @@ export function createTRPCServer<
     TRouter["_def"]["record"]
   >;
 }
+
+export {
+  experimental_notFound as notFound,
+  experimental_redirect as redirect
+} from "@trpc/server/adapters/next-app-dir";

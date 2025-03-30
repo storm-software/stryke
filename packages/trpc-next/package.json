@@ -28,7 +28,6 @@
   "dependencies": {
     "@js-temporal/polyfill": "catalog:",
     "@tanstack/react-query": "catalog:",
-    "@tanstack/react-query-devtools": "catalog:",
     "@trpc/client": "catalog:",
     "@trpc/next": "catalog:",
     "@trpc/server": "catalog:",

@@ -21,6 +21,8 @@ import type {
   GeneratorOptions
 } from "@prisma/generator-helper";
 import { createDirectory, removeDirectory } from "@stryke/fs/helpers";
+import { existsSync } from "@stryke/path/exists";
+import { findFilePath } from "@stryke/path/file-path-fns";
 import { joinPaths } from "@stryke/path/join-paths";
 import { lowerCaseFirst } from "@stryke/string-format/lower-case-first";
 import path from "node:path";
@@ -229,41 +231,53 @@ export async function generate(options: GeneratorOptions) {
   mutations.sort();
   subscriptions.sort();
 
-  if (config.withShields !== false) {
+  if (config.withShield !== false) {
     consoleLog("Generating tRPC Shield");
 
-    const shieldOutputDir = outputDir;
+    if (
+      typeof config.withShield === "string" &&
+      (existsSync(config.withShield) ||
+        existsSync(joinPaths(config.withShield, "shield.ts")))
+    ) {
+      consoleLog(
+        "Skipping  tRPC Shield generation as path provided already exists"
+      );
+    } else {
+      consoleLog("Constructing tRPC Shield source file");
 
-    // consoleLog("Checking tRPC Shield output directory");
+      const shieldOutputDir =
+        typeof config.withShield === "string"
+          ? findFilePath(config.withShield)
+          : outputDir;
 
-    // await createDirectory(shieldOutputDir);
-
-    consoleLog("Constructing tRPC Shield source file");
-
-    const shieldText = await constructShield(
-      { queries, mutations, subscriptions },
-      config,
-      {
-        ...options,
-        generator: {
-          ...options.generator,
-          output: {
-            fromEnvVar: null,
-            ...options.generator.output,
-            value: shieldOutputDir
-          },
-          config: {
-            ...options.generator.config,
-            contextPath: config.contextPath
+      const shieldText = await constructShield(
+        { queries, mutations, subscriptions },
+        config,
+        {
+          ...options,
+          generator: {
+            ...options.generator,
+            output: {
+              fromEnvVar: null,
+              ...options.generator.output,
+              value: outputDir
+            },
+            config: {
+              ...options.generator.config,
+              contextPath: config.contextPath
+            }
           }
-        }
-      },
-      shieldOutputDir
-    );
+        },
+        shieldOutputDir
+      );
 
-    consoleLog("Saving tRPC Shield source file to disk");
+      consoleLog("Saving tRPC Shield source file to disk");
 
-    await writeFileSafely(joinPaths(shieldOutputDir, "shield.ts"), shieldText);
+      await writeFileSafely(
+        joinPaths(shieldOutputDir, "shield.ts"),
+        shieldText
+      );
+    }
   } else {
     consoleLog("Skipping tRPC Shield generation");
   }
@@ -306,8 +320,8 @@ export default {${config.withNext ? "\n transformer," : ""}
 
   consoleLog("Generating tRPC imports");
 
-  if (config.withShields) {
-    await generateShieldImport(createRouter, options, config.withShields);
+  if (config.withShield) {
+    await generateShieldImport(createRouter, options, config.withShield);
   }
 
   consoleLog("Generating tRPC base router");
