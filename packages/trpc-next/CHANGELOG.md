@@ -2,6 +2,13 @@
 
 # Changelog for Stryke - Trpc Next
 
+## [0.2.0](https://github.com/storm-software/stryke/releases/tag/trpc-next%400.2.0) (2025-03-30)
+
+### Features
+
+- **trpc-next:** Added `createTRPCServerActionHandler` helper function
+  ([e5ad11e](https://github.com/storm-software/stryke/commit/e5ad11e))
+
 ## [0.1.1](https://github.com/storm-software/stryke/releases/tag/trpc-next%400.1.1) (2025-03-30)
 
 ### Miscellaneous
