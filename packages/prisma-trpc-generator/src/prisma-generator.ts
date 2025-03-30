@@ -58,12 +58,12 @@ import Transformer from "./zod-helpers/transformer";
 
 export async function generate(options: GeneratorOptions) {
   // eslint-disable-next-line no-console
-  console.log("[STORM]: Running the Storm Software - Prisma tRPC generator");
+  console.log("[STORM]: Running the Storm Software - Prisma tRPC generator \n");
 
   const internals = await getPrismaInternals();
 
   // eslint-disable-next-line no-console
-  console.log(`[STORM]: Validating configuration options`);
+  console.log(`[STORM]: Validating configuration options \n`);
 
   const outputDir = internals.parseEnvValue(
     options.generator.output as EnvValue
@@ -74,13 +74,14 @@ export async function generate(options: GeneratorOptions) {
   }
 
   const config = results.data;
-
   const consoleLog = (message: string) => {
     if (config.debug) {
       // eslint-disable-next-line no-console
       console.log(`[STORM]: ${message} \n`);
     }
   };
+
+  consoleLog(`Using configuration parameters: \n${JSON.stringify(config)}`);
 
   consoleLog(`Preparing output directory: ${outputDir}`);
 
@@ -231,15 +232,17 @@ export async function generate(options: GeneratorOptions) {
   subscriptions.sort();
 
   if (
-    config.withShield !== false &&
-    (typeof config.withShield !== "string" ||
-      (!existsSync(joinPaths(outputDir, config.withShield)) &&
-        !existsSync(joinPaths(outputDir, `${config.withShield}.ts`)) &&
-        !existsSync(joinPaths(outputDir, config.withShield, "shield.ts"))))
+    config.withShield &&
+    !(
+      typeof config.withShield === "string" &&
+      (existsSync(joinPaths(outputDir, config.withShield)) ||
+        existsSync(joinPaths(outputDir, `./${config.withShield}.ts`)) ||
+        existsSync(joinPaths(outputDir, config.withShield, "./shield.ts")))
+    )
   ) {
     consoleLog(`Generating tRPC Shield source file to ${outputDir}`);
     await writeFileSafely(
-      joinPaths(outputDir, "shield.ts"),
+      joinPaths(outputDir, "./shield.ts"),
       await constructShield(
         { queries, mutations, subscriptions },
         config,
@@ -257,7 +260,7 @@ export async function generate(options: GeneratorOptions) {
     consoleLog(`Generating tRPC options source file to ${outputDir}`);
 
     await writeFileSafely(
-      joinPaths(outputDir, "options.ts"),
+      joinPaths(outputDir, "./options.ts"),
       constructDefaultOptions(config, options, outputDir)
     );
   }

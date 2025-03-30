@@ -115,21 +115,25 @@ export async function generateTRPCExports(
     });
   }
 
-  sourceFile.addStatements(/* ts */ `
-  import type { Context } from '${relativePath(
-    outputDir,
-    joinPaths(outputDir, config.contextPath)
-  )}';`);
+  sourceFile.addStatements(
+    /* ts */ `import type { Context } from '${relativePath(
+      outputDir,
+      joinPaths(outputDir, config.contextPath)
+    )}';`
+  );
 
   if (config.trpcOptions) {
-    sourceFile.addStatements(/* ts */ `
-    import trpcOptions from '${relativePath(
-      outputDir,
-      joinPaths(
+    sourceFile.addStatements(
+      /* ts */ `import trpcOptions from '${relativePath(
         outputDir,
-        typeof config.trpcOptions === "string" ? config.trpcOptions : "options"
-      )
-    )}';`);
+        joinPaths(
+          outputDir,
+          typeof config.trpcOptions === "string"
+            ? config.trpcOptions
+            : "./options"
+        )
+      )}';`
+    );
   }
 
   if (config.withNext) {
