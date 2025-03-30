@@ -22,6 +22,7 @@ import type {
   EnvValue,
   GeneratorOptions
 } from "@prisma/generator-helper";
+import { joinPaths } from "@stryke/path/join-paths";
 import { lowerCaseFirst } from "@stryke/string-format/lower-case-first";
 import type { SourceFile } from "ts-morph";
 import type { Config } from "./config";
@@ -121,29 +122,42 @@ export async function generateBaseRouter(
   const outputDir = internals.parseEnvValue(
     options.generator.output as EnvValue
   );
-  sourceFile.addStatements(/* ts */ `
-  import type { Context } from '${getRelativePath(
+
+  const relativeContextPath = getRelativePath(
     outputDir,
     config.contextPath,
     true,
     options.schemaPath
-  )}';
+  );
+
+  sourceFile.addStatements(/* ts */ `
+  import type { Context } from '${relativeContextPath}';
   `);
 
-  if (config.trpcOptionsPath) {
+  if (config.trpcOptions) {
     sourceFile.addStatements(/* ts */ `
     import trpcOptions from '${getRelativePath(
       outputDir,
-      config.trpcOptionsPath,
+      typeof config.trpcOptions === "boolean"
+        ? joinPaths(outputDir, "options")
+        : config.trpcOptions,
       true,
       options.schemaPath
     )}';
     `);
   }
 
+  if (config.useTRPCNext) {
+    sourceFile.addStatements(/* ts */ `
+    import { createContext } from '${relativeContextPath}';
+    import { initTRPC, TRPCError } from '@trpc/server';
+    import { createTRPCServerActionHandler } from '@stryke/trpc-next/action-handler';
+  `);
+  }
+
   sourceFile.addStatements(/* ts */ `
   export const t = trpc.initTRPC.context<Context>().create(${
-    config.trpcOptionsPath ? "trpcOptions" : ""
+    config.trpcOptions ? "trpcOptions" : ""
   });
   `);
 
@@ -189,7 +203,34 @@ export async function generateBaseRouter(
   }
 
   sourceFile.addStatements(/* ts */ `
+/**
+ * Create a server-side caller
+ * @see https://trpc.io/docs/server/server-side-calls
+ */
+export const createCallerFactory = t.createCallerFactory;`);
+
+  sourceFile.addStatements(/* ts */ `
     export const publicProcedure = t.procedure; `);
+
+  if (config.useTRPCNext) {
+    sourceFile.addStatements(/* ts */ `
+export const protectedProcedure = publicProcedure.use((opts) => {
+  const { session } = opts.ctx;
+
+  if (!session?.user) {
+    throw new TRPCError({
+      code: 'UNAUTHORIZED',
+    });
+  }
+
+  return opts.next({ ctx: { session } });
+});
+`);
+
+    sourceFile.addStatements(/* ts */ `
+  export const createAction = createTRPCServerActionHandler(t, createContext);
+  `);
+  }
 
   if (middlewares.length > 0) {
     const procName = getProcedureName(config);
@@ -496,11 +537,13 @@ export const constructShield = async (
     rootItems += subscriptionLinesWrapped;
   }
 
-  if (rootItems.length === 0) return "";
+  if (rootItems.length === 0) {
+    return "";
+  }
+
   let shieldText = getImports("trpc-shield");
 
   const internals = await getPrismaInternals();
-
   const outputDir = internals.parseEnvValue(
     options.generator.output as EnvValue
   );

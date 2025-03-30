@@ -61,8 +61,9 @@ export const configSchema = z.object({
   withShield: configShield.default("true"),
   withZod: configBoolean.default("true"),
   contextPath: z.string().default("../src/trpc/context"),
-  trpcOptionsPath: z.string().optional(),
+  trpcOptions: z.boolean().or(z.string()).optional(),
   showModelNameInProcedure: configBoolean.default("true"),
+  useTRPCNext: configBoolean.default("false"),
   generateModelActions: z
     .string()
     .default(Object.values(ModelAction).join(","))

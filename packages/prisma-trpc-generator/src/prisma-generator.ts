@@ -22,6 +22,7 @@ import type {
 } from "@prisma/generator-helper";
 import { createDirectory, removeDirectory } from "@stryke/fs/helpers";
 import { joinPaths } from "@stryke/path/join-paths";
+import { lowerCaseFirst } from "@stryke/string-format/lower-case-first";
 import path from "node:path";
 import pluralize from "pluralize";
 import { configSchema } from "./config";
@@ -269,6 +270,33 @@ export async function generate(options: GeneratorOptions) {
 
   consoleLog(`Generating tRPC source code for ${models.length} models`);
 
+  if (config.trpcOptions && typeof config.trpcOptions === "boolean") {
+    const trpcOptionsOutputPath = joinPaths(outputDir, "options.ts");
+
+    consoleLog("Generating tRPC options source file");
+
+    await writeFileSafely(
+      trpcOptionsOutputPath,
+      `import { ZodError } from 'zod';${config.useTRPCNext ? '\nimport { transformer } from "@stryke/trpc-next/shared";' : ""}
+
+export default {${config.useTRPCNext ? "\n transformer," : ""}
+  errorFormatter({ shape, error }) {
+    return {
+      ...shape,
+      data: {
+        ...shape.data,
+        zodError:
+          error.code === 'BAD_REQUEST' && error.cause instanceof ZodError
+            ? error.cause.flatten()
+            : null,
+      },
+    };
+  },
+};
+`
+    );
+  }
+
   resolveModelsComments(models, hiddenModels);
   const createRouter = project.createSourceFile(
     path.resolve(outputDir, "routers", "helpers", "createRouter.ts"),
@@ -311,6 +339,10 @@ export async function generate(options: GeneratorOptions) {
       consoleLog(`Skipping model ${model} as it is hidden`);
       continue;
     }
+    if (!model) {
+      consoleLog(`Skipping model ${model} as it is not defined`);
+      continue;
+    }
 
     const modelActions = Object.keys(operations).filter<DMMF.ModelAction>(
       (opType): opType is DMMF.ModelAction =>
@@ -325,7 +357,7 @@ export async function generate(options: GeneratorOptions) {
       continue;
     }
 
-    const plural = pluralize(model.toLowerCase());
+    const plural = pluralize(lowerCaseFirst(model)!);
 
     consoleLog(`Generating tRPC router for model ${model}`);
 
