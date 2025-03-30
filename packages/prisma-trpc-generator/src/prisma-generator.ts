@@ -20,11 +20,13 @@ import type {
   EnvValue,
   GeneratorOptions
 } from "@prisma/generator-helper";
-import { promises as fs } from "node:fs";
+import { createDirectory } from "@stryke/fs/helpers";
+import { joinPaths } from "@stryke/path/join-paths";
 import path from "node:path";
 import pluralize from "pluralize";
 import { configSchema } from "./config";
 import {
+  constructShield,
   generateBaseRouter,
   generateCreateRouterImport,
   generateProcedure,
@@ -35,18 +37,16 @@ import {
   getInputTypeByOpName,
   resolveModelsComments
 } from "./helpers";
-import { generateShield } from "./prisma-shield-generator";
 import { project } from "./project";
+import type { RootType } from "./types";
 import { getJiti } from "./utils/get-jiti";
 import { getPrismaInternals } from "./utils/get-prisma-internals";
 import removeDir from "./utils/remove-dir";
+import { writeFileSafely } from "./utils/write-file-safely";
 
 export async function generate(options: GeneratorOptions) {
   // eslint-disable-next-line no-console
-  console.log(
-    "[STORM]: Running the Storm Software - Prisma tRPC generator with options: \n",
-    JSON.stringify(options, null, 2)
-  );
+  console.log("[STORM]: Running the Storm Software - Prisma tRPC generator");
 
   const internals = await getPrismaInternals();
 
@@ -66,13 +66,13 @@ export async function generate(options: GeneratorOptions) {
   const consoleLog = (message: string) => {
     if (config.debug) {
       // eslint-disable-next-line no-console
-      console.log(`[STORM]: ${message}`);
+      console.log(`[STORM]: ${message} \n`);
     }
   };
 
   consoleLog(`Preparing output directory: ${outputDir}`);
 
-  await fs.mkdir(outputDir, { recursive: true });
+  await createDirectory(outputDir);
   await removeDir(outputDir, true);
 
   if (config.withZod !== false) {
@@ -85,29 +85,6 @@ export async function generate(options: GeneratorOptions) {
     await prismaZodGenerator.generate(options);
   } else {
     consoleLog("Skipping Zod schemas generation");
-  }
-
-  if (config.withShield !== false) {
-    consoleLog("Generating tRPC Shield");
-
-    const shieldOutputPath = path.join(outputDir, "./shield");
-    await generateShield({
-      ...options,
-      generator: {
-        ...options.generator,
-        output: {
-          fromEnvVar: null,
-          ...options.generator.output,
-          value: shieldOutputPath
-        },
-        config: {
-          ...options.generator.config,
-          contextPath: config.contextPath
-        }
-      }
-    });
-  } else {
-    consoleLog("Skipping tRPC Shield generation");
   }
 
   consoleLog("Finding Prisma Client generator");
@@ -131,6 +108,83 @@ export async function generate(options: GeneratorOptions) {
   const modelOperations = prismaClientDmmf.mappings.modelOperations;
   const models = prismaClientDmmf.datamodel.models;
   const hiddenModels: string[] = [];
+
+  if (config.withShield !== false) {
+    consoleLog("Generating tRPC Shield");
+
+    const shieldOutputDir = joinPaths(outputDir, "shield");
+
+    consoleLog("Preparing tRPC Shield output directory");
+
+    await createDirectory(shieldOutputDir);
+    await removeDir(shieldOutputDir, true);
+
+    const queries: RootType = [];
+    const mutations: RootType = [];
+    const subscriptions: RootType = [];
+
+    prismaClientDmmf.mappings.modelOperations.forEach(modelOperation => {
+      const { model: _model, plural: _plural, ...operations } = modelOperation;
+      for (const [opType, opNameWithModel] of Object.entries(operations)) {
+        if (
+          [
+            "findUnique",
+            "findFirst",
+            "findMany",
+            "aggregate",
+            "groupBy"
+          ].includes(opType)
+        ) {
+          queries.push(opNameWithModel as string);
+        }
+
+        if (
+          [
+            "createOne",
+            "deleteOne",
+            "updateOne",
+            "deleteMany",
+            "updateMany",
+            "upsertOne"
+          ].includes(opType)
+        ) {
+          mutations.push(opNameWithModel as string);
+        }
+      }
+    });
+
+    queries.sort();
+    mutations.sort();
+    subscriptions.sort();
+
+    consoleLog("Constructing tRPC Shield source file");
+
+    const shieldText = constructShield(
+      { queries, mutations, subscriptions },
+      config,
+      {
+        ...options,
+        generator: {
+          ...options.generator,
+          output: {
+            fromEnvVar: null,
+            ...options.generator.output,
+            value: shieldOutputDir
+          },
+          config: {
+            ...options.generator.config,
+            contextPath: config.contextPath
+          }
+        }
+      }
+    );
+
+    consoleLog("Saving tRPC Shield source file to disk");
+
+    await writeFileSafely(joinPaths(shieldOutputDir, "shield.ts"), shieldText);
+  } else {
+    consoleLog("Skipping tRPC Shield generation");
+  }
 
   consoleLog(`Generating tRPC source code for ${models.length} models`);
 
