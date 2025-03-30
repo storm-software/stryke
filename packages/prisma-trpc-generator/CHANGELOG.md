@@ -2,6 +2,13 @@
 
 # Changelog for Stryke - Prisma Trpc Generator
 
+## [0.4.5](https://github.com/storm-software/stryke/releases/tag/prisma-trpc-generator%400.4.5) (2025-03-30)
+
+### Miscellaneous
+
+- **prisma-trpc-generator:** Ensure all types are listed in queries and
+  mutations ([e13613f](https://github.com/storm-software/stryke/commit/e13613f))
+
 ## [0.4.4](https://github.com/storm-software/stryke/releases/tag/prisma-trpc-generator%400.4.4) (2025-03-30)
 
 ### Bug Fixes
