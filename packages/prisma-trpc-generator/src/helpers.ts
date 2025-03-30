@@ -304,7 +304,7 @@ export const getRouterSchemaImportByOpName = (
   opName: string,
   modelName: string
 ) => {
-  const opType = opName.replace("OrThrow", "");
+  const opType = opName.replace("OrThrow", "").replace("ManyAndReturn", "");
   const inputType = getInputTypeByOpName(opType, modelName);
 
   return inputType
@@ -334,22 +334,22 @@ export const getInputTypeByOpName = (opName: string, modelName: string) => {
       inputType = `${modelName}CreateManySchema`;
       break;
     case "createManyAndReturn":
-      inputType = `${modelName}CreateManyAndReturnSchema`;
+      inputType = `${modelName}CreateManySchema`;
       break;
     case "deleteOne":
       inputType = `${modelName}DeleteOneSchema`;
       break;
-    case "updateOne":
-      inputType = `${modelName}UpdateOneSchema`;
-      break;
     case "deleteMany":
       inputType = `${modelName}DeleteManySchema`;
+      break;
+    case "updateOne":
+      inputType = `${modelName}UpdateOneSchema`;
       break;
     case "updateMany":
       inputType = `${modelName}UpdateManySchema`;
       break;
     case "updateManyAndReturn":
-      inputType = `${modelName}UpdateManyAndReturnSchema`;
+      inputType = `${modelName}UpdateManySchema`;
       break;
     case "upsertOne":
       inputType = `${modelName}UpsertSchema`;
@@ -452,7 +452,7 @@ export const getImports = (
   } else if (type === "trpc-shield") {
     statement = "import { shield, allow } from 'trpc-shield';\n";
   } else if (type === "context") {
-    statement = `import { Context } from '${newPath}';\n`;
+    statement = `import type { Context } from '${newPath}';\n`;
   }
 
   return statement;
@@ -505,7 +505,8 @@ export const constructShield = async (
     subscriptions: Array<string>;
   },
   config: Config,
-  options: GeneratorOptions
+  options: GeneratorOptions,
+  shieldOutputDir: string
 ) => {
   if (
     queries.length === 0 &&
@@ -544,14 +545,12 @@ export const constructShield = async (
 
   let shieldText = getImports("trpc-shield");
 
-  const internals = await getPrismaInternals();
-  const outputDir = internals.parseEnvValue(
-    options.generator.output as EnvValue
-  );
-
   shieldText += getImports(
     "context",
-    relativePath(outputDir, joinPaths(options.schemaPath, config.contextPath))
+    relativePath(
+      shieldOutputDir,
+      joinPaths(options.schemaPath, config.contextPath)
+    )
   );
   shieldText += "\n\n";
   shieldText += wrapWithExport({

@@ -33,7 +33,6 @@ import {
   generateProcedure,
   generateRouterImport,
   generateRouterSchemaImports,
-  generateRPCImport,
   generateShieldImport,
   getInputTypeByOpName,
   resolveModelsComments
@@ -258,7 +257,8 @@ export async function generate(options: GeneratorOptions) {
             contextPath: config.contextPath
           }
         }
-      }
+      },
+      shieldOutputDir
     );
 
     consoleLog("Saving tRPC Shield source file to disk");
@@ -306,7 +306,6 @@ export default {${config.useTRPCNext ? "\n transformer," : ""}
 
   consoleLog("Generating tRPC imports");
 
-  generateRPCImport(createRouter);
   if (config.withShield) {
     await generateShieldImport(createRouter, options, config.withShield);
   }
