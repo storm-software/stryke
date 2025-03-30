@@ -2,6 +2,13 @@
 
 # Changelog for Stryke - Prisma Trpc Generator
 
+## [0.9.3](https://github.com/storm-software/stryke/releases/tag/prisma-trpc-generator%400.9.3) (2025-03-30)
+
+### Bug Fixes
+
+- **prisma-trpc-generator:** Resolve issues with configuration schema booleans
+  ([286dffb](https://github.com/storm-software/stryke/commit/286dffb))
+
 ## [0.9.2](https://github.com/storm-software/stryke/releases/tag/prisma-trpc-generator%400.9.2) (2025-03-30)
 
 ### Miscellaneous
