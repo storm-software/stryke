@@ -2,6 +2,13 @@
 
 # Changelog for Stryke - Prisma Trpc Generator
 
+## [0.7.3](https://github.com/storm-software/stryke/releases/tag/prisma-trpc-generator%400.7.3) (2025-03-30)
+
+### Bug Fixes
+
+- **prisma-trpc-generator:** Resolve issue with relative path calculation
+  ([1d79649](https://github.com/storm-software/stryke/commit/1d79649))
+
 ## [0.7.2](https://github.com/storm-software/stryke/releases/tag/prisma-trpc-generator%400.7.2) (2025-03-30)
 
 ### Bug Fixes
