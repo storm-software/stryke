@@ -2,6 +2,13 @@
 
 # Changelog for Stryke - Prisma Trpc Generator
 
+## [0.8.2](https://github.com/storm-software/stryke/releases/tag/prisma-trpc-generator%400.8.2) (2025-03-30)
+
+### Miscellaneous
+
+- **prisma-trpc-generator:** Clean up the tRPC export file generation
+  ([129ce7e](https://github.com/storm-software/stryke/commit/129ce7e))
+
 ## [0.8.1](https://github.com/storm-software/stryke/releases/tag/prisma-trpc-generator%400.8.1) (2025-03-30)
 
 ### Bug Fixes
