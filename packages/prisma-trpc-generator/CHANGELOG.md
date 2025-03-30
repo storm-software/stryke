@@ -2,6 +2,13 @@
 
 # Changelog for Stryke - Prisma Trpc Generator
 
+## [0.4.6](https://github.com/storm-software/stryke/releases/tag/prisma-trpc-generator%400.4.6) (2025-03-30)
+
+### Miscellaneous
+
+- **prisma-trpc-generator:** Ensure no undefined router paths are added
+  ([f52d63a](https://github.com/storm-software/stryke/commit/f52d63a))
+
 ## [0.4.5](https://github.com/storm-software/stryke/releases/tag/prisma-trpc-generator%400.4.5) (2025-03-30)
 
 ### Miscellaneous
