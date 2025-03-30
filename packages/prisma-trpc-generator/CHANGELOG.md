@@ -2,6 +2,13 @@
 
 # Changelog for Stryke - Prisma Trpc Generator
 
+## [0.5.2](https://github.com/storm-software/stryke/releases/tag/prisma-trpc-generator%400.5.2) (2025-03-30)
+
+### Bug Fixes
+
+- **prisma-trpc-generator:** Resolve issue specifying router schema imports
+  ([38001e9](https://github.com/storm-software/stryke/commit/38001e9))
+
 ## [0.5.1](https://github.com/storm-software/stryke/releases/tag/prisma-trpc-generator%400.5.1) (2025-03-30)
 
 ### Bug Fixes
