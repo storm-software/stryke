@@ -148,7 +148,7 @@ export async function generateBaseRouter(
     `);
   }
 
-  if (config.useTRPCNext) {
+  if (config.withNext) {
     sourceFile.addStatements(/* ts */ `
     import { createContext } from '${relativeContextPath}';
     import { initTRPC, TRPCError } from '@trpc/server';
@@ -213,7 +213,7 @@ export const createCallerFactory = t.createCallerFactory;`);
   sourceFile.addStatements(/* ts */ `
     export const publicProcedure = t.procedure; `);
 
-  if (config.useTRPCNext) {
+  if (config.withNext) {
     sourceFile.addStatements(/* ts */ `
 export const protectedProcedure = publicProcedure.use((opts) => {
   const { session } = opts.ctx;

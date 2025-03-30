@@ -183,60 +183,60 @@ export async function generate(options: GeneratorOptions) {
     consoleLog("Skipping Zod schemas generation");
   }
 
+  const queries: RootType = [];
+  const mutations: RootType = [];
+  const subscriptions: RootType = [];
+
+  prismaClientDmmf.mappings.modelOperations.forEach(modelOperation => {
+    const { model: _model, plural: _plural, ...operations } = modelOperation;
+    for (const [opType, opNameWithModel] of Object.entries(operations)) {
+      if (
+        [
+          "findUnique",
+          "findUniqueOrThrow",
+          "findFirst",
+          "findFirstOrThrow",
+          "findRaw",
+          "findMany",
+          "aggregateRaw",
+          "count",
+          "aggregate",
+          "groupBy"
+        ].includes(opType)
+      ) {
+        queries.push(opNameWithModel as string);
+      }
+
+      if (
+        [
+          "createOne",
+          "createMany",
+          "createManyAndReturn",
+          "deleteOne",
+          "deleteMany",
+          "updateOne",
+          "updateMany",
+          "updateManyAndReturn",
+          "upsertOne"
+        ].includes(opType)
+      ) {
+        mutations.push(opNameWithModel as string);
+      }
+    }
+  });
+
+  queries.sort();
+  mutations.sort();
+  subscriptions.sort();
+
   if (config.withShield !== false) {
     consoleLog("Generating tRPC Shield");
 
-    const shieldOutputDir = joinPaths(outputDir, "shield");
+    const shieldOutputDir = outputDir;
 
-    consoleLog("Preparing tRPC Shield output directory");
+    // consoleLog("Checking tRPC Shield output directory");
 
-    await createDirectory(shieldOutputDir);
-
-    const queries: RootType = [];
-    const mutations: RootType = [];
-    const subscriptions: RootType = [];
-
-    prismaClientDmmf.mappings.modelOperations.forEach(modelOperation => {
-      const { model: _model, plural: _plural, ...operations } = modelOperation;
-      for (const [opType, opNameWithModel] of Object.entries(operations)) {
-        if (
-          [
-            "findUnique",
-            "findUniqueOrThrow",
-            "findFirst",
-            "findFirstOrThrow",
-            "findRaw",
-            "findMany",
-            "aggregateRaw",
-            "count",
-            "aggregate",
-            "groupBy"
-          ].includes(opType)
-        ) {
-          queries.push(opNameWithModel as string);
-        }
-
-        if (
-          [
-            "createOne",
-            "createMany",
-            "createManyAndReturn",
-            "deleteOne",
-            "deleteMany",
-            "updateOne",
-            "updateMany",
-            "updateManyAndReturn",
-            "upsertOne"
-          ].includes(opType)
-        ) {
-          mutations.push(opNameWithModel as string);
-        }
-      }
-    });
-
-    queries.sort();
-    mutations.sort();
-    subscriptions.sort();
+    // await createDirectory(shieldOutputDir);
 
     consoleLog("Constructing tRPC Shield source file");
 
@@ -277,9 +277,9 @@ export async function generate(options: GeneratorOptions) {
 
     await writeFileSafely(
       trpcOptionsOutputPath,
-      `import { ZodError } from 'zod';${config.useTRPCNext ? '\nimport { transformer } from "@stryke/trpc-next/shared";' : ""}
+      `import { ZodError } from 'zod';${config.withNext ? '\nimport { transformer } from "@stryke/trpc-next/shared";' : ""}
 
-export default {${config.useTRPCNext ? "\n transformer," : ""}
+export default {${config.withNext ? "\n transformer," : ""}
   errorFormatter({ shape, error }) {
     return {
       ...shape,
@@ -299,7 +299,7 @@ export default {${config.useTRPCNext ? "\n transformer," : ""}
 
   resolveModelsComments(models, hiddenModels);
   const createRouter = project.createSourceFile(
-    path.resolve(outputDir, "routers", "helpers", "createRouter.ts"),
+    path.resolve(outputDir, "trpc.ts"),
     undefined,
     { overwrite: true }
   );

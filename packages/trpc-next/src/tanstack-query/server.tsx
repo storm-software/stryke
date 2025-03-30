@@ -71,7 +71,6 @@ export function createTRPCTanstackQueryServer<
 
   return {
     trpc,
-    getQueryClient,
     HydrateClient(props: { children: React.ReactNode }) {
       const dehydratedState = dehydrate(getQueryClient());
 
