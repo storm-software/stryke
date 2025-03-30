@@ -473,12 +473,14 @@ export default class Transformer {
         // @ts-ignore
         createOne,
         createMany,
+        createManyAndReturn,
         // @ts-ignore
         deleteOne,
         // @ts-ignore
         updateOne,
         deleteMany,
         updateMany,
+        updateManyAndReturn,
         // @ts-ignore
         upsertOne,
         aggregate,
@@ -594,6 +596,29 @@ export default class Transformer {
         );
       }
 
+      if (createManyAndReturn) {
+        const imports = [
+          `import { ${modelName}CreateManyAndReturnInputObjectSchema } from './objects/${modelName}CreateManyAndReturnInput.schema'`
+        ];
+        await writeFileSafely(
+          path.join(
+            Transformer.outputPath,
+            `schemas/${createManyAndReturn}.schema.ts`
+          ),
+          `${this.generateImportStatements(
+            imports
+          )}${this.generateExportSchemaStatement(
+            `${modelName}CreateManyAndReturn`,
+            `z.object({ data: z.union([ ${modelName}CreateManyAndReturnInputObjectSchema, z.array(${modelName}CreateManyAndReturnInputObjectSchema) ]), ${
+              Transformer.provider === "mongodb" ||
+              Transformer.provider === "sqlserver"
+                ? ""
+                : "skipDuplicates: z.boolean().optional()"
+            } })`
+          )}`
+        );
+      }
+
       if (deleteOne) {
         const imports = [
           selectImport,
@@ -657,6 +682,29 @@ export default class Transformer {
           )}${this.generateExportSchemaStatement(
             `${modelName}UpdateMany`,
             `z.object({ data: ${modelName}UpdateManyMutationInputObjectSchema, where: ${modelName}WhereInputObjectSchema.optional()  })`
+          )}`
+        );
+      }
+
+      if (updateManyAndReturn) {
+        const imports = [
+          `import { ${modelName}UpdateManyAndReturnInputObjectSchema } from './objects/${modelName}UpdateManyAndReturnInput.schema'`
+        ];
+        await writeFileSafely(
+          path.join(
+            Transformer.outputPath,
+            `schemas/${updateManyAndReturn}.schema.ts`
+          ),
+          `${this.generateImportStatements(
+            imports
+          )}${this.generateExportSchemaStatement(
+            `${modelName}UpdateManyAndReturn`,
+            `z.object({ data: z.union([ ${modelName}UpdateManyAndReturnInputObjectSchema, z.array(${modelName}UpdateManyAndReturnInputObjectSchema) ]), ${
+              Transformer.provider === "mongodb" ||
+              Transformer.provider === "sqlserver"
+                ? ""
+                : "skipDuplicates: z.boolean().optional()"
+            } })`
           )}`
         );
       }
