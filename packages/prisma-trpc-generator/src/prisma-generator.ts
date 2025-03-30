@@ -230,40 +230,23 @@ export async function generate(options: GeneratorOptions) {
   mutations.sort();
   subscriptions.sort();
 
-  if (config.withShield !== false) {
-    consoleLog("Generating tRPC Shield");
-
-    if (
-      typeof config.withShield === "string" &&
-      (existsSync(config.withShield) ||
-        existsSync(`${config.withShield}.ts`) ||
-        existsSync(joinPaths(config.withShield, "shield.ts")))
-    ) {
-      consoleLog(
-        "Skipping  tRPC Shield generation as path provided already exists"
-      );
-    } else {
-      const shieldOutputDir =
-        typeof config.withShield === "string" ? config.withShield : outputDir;
-
-      consoleLog(`Constructing tRPC Shield source file in ${shieldOutputDir}`);
-
-      const shieldText = await constructShield(
+  if (
+    config.withShield !== false &&
+    (typeof config.withShield !== "string" ||
+      (!existsSync(joinPaths(outputDir, config.withShield)) &&
+        !existsSync(joinPaths(outputDir, `${config.withShield}.ts`)) &&
+        !existsSync(joinPaths(outputDir, config.withShield, "shield.ts"))))
+  ) {
+    consoleLog(`Generating tRPC Shield source file to ${outputDir}`);
+    await writeFileSafely(
+      joinPaths(outputDir, "shield.ts"),
+      await constructShield(
         { queries, mutations, subscriptions },
         config,
         options,
-        shieldOutputDir
-      );
-
-      consoleLog("Saving tRPC Shield source file to disk");
-
-      await writeFileSafely(
-        shieldOutputDir.endsWith(".ts")
-          ? shieldOutputDir
-          : joinPaths(shieldOutputDir, "shield.ts"),
-        shieldText
-      );
-    }
+        outputDir
+      )
+    );
   } else {
     consoleLog("Skipping tRPC Shield generation");
   }
@@ -271,13 +254,11 @@ export async function generate(options: GeneratorOptions) {
   consoleLog(`Generating tRPC source code for ${models.length} models`);
 
   if (config.trpcOptions && typeof config.trpcOptions === "boolean") {
-    const trpcOptionsOutputPath = joinPaths(outputDir, "options.ts");
-
-    consoleLog("Generating tRPC options source file");
+    consoleLog(`Generating tRPC options source file to ${outputDir}`);
 
     await writeFileSafely(
-      trpcOptionsOutputPath,
-      constructDefaultOptions(config, options, trpcOptionsOutputPath)
+      joinPaths(outputDir, "options.ts"),
+      constructDefaultOptions(config, options, outputDir)
     );
   }
 

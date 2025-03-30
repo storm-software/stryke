@@ -22,12 +22,12 @@ import type {
   EnvValue,
   GeneratorOptions
 } from "@prisma/generator-helper";
+import { relativePath } from "@stryke/path/file-path-fns";
 import { joinPaths } from "@stryke/path/join-paths";
 import { lowerCaseFirst } from "@stryke/string-format/lower-case-first";
 import type { SourceFile } from "ts-morph";
 import type { Config } from "./config";
 import { getPrismaInternals } from "./utils/get-prisma-internals";
-import getRelativePath from "./utils/get-relative-path";
 
 const getProcedureName = (config: Config) => {
   return config.withShield
@@ -73,7 +73,10 @@ export const generateMiddlewareImport = async (
     options.generator.output as EnvValue
   );
   sourceFile.addImportDeclaration({
-    moduleSpecifier: getRelativePath(outputDir, "middleware"),
+    moduleSpecifier: relativePath(
+      outputDir,
+      joinPaths(outputDir, "middleware")
+    ),
     namedImports: ["permissions"]
   });
 };
@@ -96,18 +99,14 @@ export async function generateTRPCExports(
   outputDir: string
 ) {
   if (config.withShield) {
-    let shieldPath = joinPaths(outputDir, "shield");
-    if (typeof config.withShield === "string") {
-      shieldPath = getRelativePath(
-        outputDir,
-        config.withShield,
-        true,
-        options.schemaPath
-      );
-    }
-
     sourceFile.addImportDeclaration({
-      moduleSpecifier: shieldPath,
+      moduleSpecifier: relativePath(
+        outputDir,
+        joinPaths(
+          outputDir,
+          typeof config.withShield === "string" ? config.withShield : "shield"
+        )
+      ),
       namedImports: ["permissions"]
     });
 
@@ -117,31 +116,26 @@ export async function generateTRPCExports(
   }
 
   sourceFile.addStatements(/* ts */ `
-  import type { Context } from '${getRelativePath(
+  import type { Context } from '${relativePath(
     outputDir,
-    config.contextPath,
-    true,
-    options.schemaPath
+    joinPaths(outputDir, config.contextPath)
   )}';`);
 
   if (config.trpcOptions) {
     sourceFile.addStatements(/* ts */ `
-    import trpcOptions from '${getRelativePath(
+    import trpcOptions from '${relativePath(
       outputDir,
-      typeof config.trpcOptions === "boolean"
-        ? joinPaths(outputDir, "options")
-        : config.trpcOptions,
-      true,
-      options.schemaPath
+      joinPaths(
+        outputDir,
+        typeof config.trpcOptions === "string" ? config.trpcOptions : "options"
+      )
     )}';`);
   }
 
   if (config.withNext) {
-    sourceFile.addStatements(/* ts */ `import { createContext } from '${getRelativePath(
+    sourceFile.addStatements(/* ts */ `import { createContext } from '${relativePath(
       outputDir,
-      config.contextPath,
-      true,
-      options.schemaPath
+      joinPaths(outputDir, config.contextPath)
     )}';
     import { initTRPC } from '@trpc/server';
     import { createTRPCServerActionHandler } from '@stryke/trpc-next/action-handler';`);
@@ -168,11 +162,14 @@ export async function generateTRPCExports(
 
   if (config.withMiddleware && typeof config.withMiddleware === "string") {
     sourceFile.addStatements(/* ts */ `
-  import defaultMiddleware from '${getRelativePath(
+  import defaultMiddleware from '${relativePath(
     outputDir,
-    config.withMiddleware,
-    true,
-    options.schemaPath
+    joinPaths(
+      outputDir,
+      typeof config.withMiddleware === "string"
+        ? config.withMiddleware
+        : "middleware"
+    )
   )}';
   `);
     sourceFile.addStatements(/* ts */ `
@@ -525,7 +522,7 @@ export const constructShield = async (
   let shieldText = getImports("trpc-shield");
   shieldText += getImports(
     "context",
-    getRelativePath(outputDir, config.contextPath, true, options.schemaPath)
+    relativePath(outputDir, joinPaths(outputDir, config.contextPath))
   );
   shieldText += "\n\n";
   shieldText += wrapWithExport({
@@ -543,53 +540,48 @@ export const constructDefaultOptions = (
   outputDir: string
 ) => {
   return `import { ZodError } from 'zod';${config.withNext ? '\nimport { transformer } from "@stryke/trpc-next/shared";' : ""}
-  import type {
-    DataTransformerOptions,
-    RootConfig
-  } from "@trpc/server/unstable-core-do-not-import";
-  import type { Context } from "${getRelativePath(
-    outputDir,
-    config.contextPath,
-    true,
-    options.schemaPath
-  )}";
+import type {
+  DataTransformerOptions,
+  RootConfig
+} from "@trpc/server/unstable-core-do-not-import";
+import type { Context } from "${relativePath(outputDir, joinPaths(outputDir, config.contextPath))}";
 
-  interface RuntimeConfigOptions<
-    TContext extends object,
-    TMeta extends object = object
-  > extends Partial<
-      Omit<
-        RootConfig<{
-          ctx: TContext;
-          meta: TMeta;
-          errorShape: any;
-          transformer: any;
-        }>,
-        "$types" | "transformer"
-      >
-    > {
-    /**
-     * Use a data transformer
-     * @see https://trpc.io/docs/v11/data-transformers
-     */
-    transformer?: DataTransformerOptions;
+interface RuntimeConfigOptions<
+  TContext extends object,
+  TMeta extends object = object
+> extends Partial<
+    Omit<
+      RootConfig<{
+        ctx: TContext;
+        meta: TMeta;
+        errorShape: any;
+        transformer: any;
+      }>,
+      "$types" | "transformer"
+    >
+  > {
+  /**
+   * Use a data transformer
+   * @see https://trpc.io/docs/v11/data-transformers
+   */
+  transformer?: DataTransformerOptions;
+}
+
+const options: RuntimeConfigOptions<Context> = {${config.withNext ? "\n transformer," : ""}
+  errorFormatter({ shape, error }) {
+    return {
+      ...shape,
+      data: {
+        ...shape.data,
+        zodError:
+          error.code === "BAD_REQUEST" && error.cause instanceof ZodError
+            ? error.cause.flatten()
+            : null
+      }
+    };
   }
+};
 
-  const options: RuntimeConfigOptions<Context> = {${config.withNext ? "\n transformer," : ""}
-    errorFormatter({ shape, error }) {
-      return {
-        ...shape,
-        data: {
-          ...shape.data,
-          zodError:
-            error.code === "BAD_REQUEST" && error.cause instanceof ZodError
-              ? error.cause.flatten()
-              : null
-        }
-      };
-    }
-  };
-
-  export default options;
-  `;
+export default options;
+`;
 };

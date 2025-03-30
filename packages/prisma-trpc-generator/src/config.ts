@@ -47,7 +47,7 @@ export const configSchema = z.object({
   withShield: z.coerce.boolean().or(z.string()).default(true),
   withZod: z.coerce.boolean().or(z.string()).default(true),
   withNext: z.coerce.boolean().or(z.string()).default(true),
-  contextPath: z.string().default("../src/trpc/context"),
+  contextPath: z.string().default("../context"),
   trpcOptions: z.coerce.boolean().or(z.string()).default(true),
   showModelNameInProcedure: z.coerce.boolean().or(z.string()).default(true),
   generateModelActions: z
