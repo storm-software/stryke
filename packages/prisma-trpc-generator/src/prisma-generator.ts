@@ -22,7 +22,6 @@ import type {
 } from "@prisma/generator-helper";
 import { createDirectory, removeDirectory } from "@stryke/fs/helpers";
 import { existsSync } from "@stryke/path/exists";
-import { findFilePath } from "@stryke/path/file-path-fns";
 import { joinPaths } from "@stryke/path/join-paths";
 import { lowerCaseFirst } from "@stryke/string-format/lower-case-first";
 import path from "node:path";
@@ -31,12 +30,11 @@ import { configSchema } from "./config";
 import {
   constructDefaultOptions,
   constructShield,
-  generateBaseRouter,
   generateCreateRouterImport,
   generateProcedure,
   generateRouterImport,
   generateRouterSchemaImports,
-  generateShieldImport,
+  generateTRPCExports,
   getInputTypeByOpName,
   resolveModelsComments
 } from "./helpers";
@@ -237,25 +235,18 @@ export async function generate(options: GeneratorOptions) {
 
     if (
       typeof config.withShield === "string" &&
-      (existsSync(
-        joinPaths(findFilePath(options.schemaPath), config.withShield)
-      ) ||
-        existsSync(
-          joinPaths(
-            findFilePath(options.schemaPath),
-            config.withShield,
-            "shield.ts"
-          )
-        ))
+      (existsSync(config.withShield) ||
+        existsSync(`${config.withShield}.ts`) ||
+        existsSync(joinPaths(config.withShield, "shield.ts")))
     ) {
       consoleLog(
         "Skipping  tRPC Shield generation as path provided already exists"
       );
     } else {
-      consoleLog("Constructing tRPC Shield source file");
-
       const shieldOutputDir =
         typeof config.withShield === "string" ? config.withShield : outputDir;
+
+      consoleLog(`Constructing tRPC Shield source file in ${shieldOutputDir}`);
 
       const shieldText = await constructShield(
         { queries, mutations, subscriptions },
@@ -291,31 +282,17 @@ export async function generate(options: GeneratorOptions) {
   }
 
   resolveModelsComments(models, hiddenModels);
+
+  consoleLog("Generating tRPC export file");
   const trpcExports = project.createSourceFile(
     path.resolve(outputDir, "trpc.ts"),
     undefined,
     { overwrite: true }
   );
 
-  consoleLog("Generating tRPC imports");
+  await generateTRPCExports(trpcExports, config, options, outputDir);
 
-  if (config.withShield) {
-    await generateShieldImport(
-      trpcExports,
-      options,
-      outputDir,
-      config.withShield
-    );
-  }
-
-  consoleLog("Generating tRPC base router");
-
-  await generateBaseRouter(trpcExports, config, options);
-
-  trpcExports.formatText({
-    indentSize: 2
-  });
-
+  consoleLog("Generating tRPC app router");
   const appRouter = project.createSourceFile(
     path.resolve(outputDir, "routers", `index.ts`),
     undefined,

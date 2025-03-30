@@ -63,23 +63,6 @@ export const generateRPCImport = (sourceFile: SourceFile) => {
   });
 };
 
-export const generateShieldImport = async (
-  sourceFile: SourceFile,
-  options: GeneratorOptions,
-  outputDir: string,
-  value: string | boolean
-) => {
-  let shieldPath = joinPaths(outputDir, "shield");
-  if (typeof value === "string") {
-    shieldPath = getRelativePath(outputDir, value, true, options.schemaPath);
-  }
-
-  sourceFile.addImportDeclaration({
-    moduleSpecifier: shieldPath,
-    namedImports: ["permissions"]
-  });
-};
-
 export const generateMiddlewareImport = async (
   sourceFile: SourceFile,
   options: GeneratorOptions
@@ -106,16 +89,32 @@ export const generateRouterImport = (
   });
 };
 
-export async function generateBaseRouter(
+export async function generateTRPCExports(
   sourceFile: SourceFile,
   config: Config,
-  options: GeneratorOptions
+  options: GeneratorOptions,
+  outputDir: string
 ) {
-  const internals = await getPrismaInternals();
+  if (config.withShield) {
+    let shieldPath = joinPaths(outputDir, "shield");
+    if (typeof config.withShield === "string") {
+      shieldPath = getRelativePath(
+        outputDir,
+        config.withShield,
+        true,
+        options.schemaPath
+      );
+    }
 
-  const outputDir = internals.parseEnvValue(
-    options.generator.output as EnvValue
-  );
+    sourceFile.addImportDeclaration({
+      moduleSpecifier: shieldPath,
+      namedImports: ["permissions"]
+    });
+
+    sourceFile.formatText({
+      indentSize: 2
+    });
+  }
 
   sourceFile.addStatements(/* ts */ `
   import type { Context } from '${getRelativePath(
@@ -414,6 +413,7 @@ export function resolveModelsComments(
           parsedAttributeArgs[key!] = JSON.parse(value!);
         }
       }
+
       if (parsedAttributeArgs.hide) {
         hiddenModels.push(model.name);
       }
