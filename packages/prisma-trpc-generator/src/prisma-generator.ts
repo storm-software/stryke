@@ -280,21 +280,49 @@ export async function generate(options: GeneratorOptions) {
     await writeFileSafely(
       trpcOptionsOutputPath,
       `import { ZodError } from 'zod';${config.withNext ? '\nimport { transformer } from "@stryke/trpc-next/shared";' : ""}
+import type {
+  DataTransformerOptions,
+  RootConfig
+} from "@trpc/server/unstable-core-do-not-import";
+import type { Context } from "../context";
 
-export default {${config.withNext ? "\n transformer," : ""}
+interface RuntimeConfigOptions<
+  TContext extends object,
+  TMeta extends object = object
+> extends Partial<
+    Omit<
+      RootConfig<{
+        ctx: TContext;
+        meta: TMeta;
+        errorShape: any;
+        transformer: any;
+      }>,
+      "$types" | "transformer"
+    >
+  > {
+  /**
+   * Use a data transformer
+   * @see https://trpc.io/docs/v11/data-transformers
+   */
+  transformer?: DataTransformerOptions;
+}
+
+const options: RuntimeConfigOptions<Context> = {${config.withNext ? "\n transformer," : ""}
   errorFormatter({ shape, error }) {
     return {
       ...shape,
       data: {
         ...shape.data,
         zodError:
-          error.code === 'BAD_REQUEST' && error.cause instanceof ZodError
+          error.code === "BAD_REQUEST" && error.cause instanceof ZodError
             ? error.cause.flatten()
-            : null,
-      },
+            : null
+      }
     };
-  },
+  }
 };
+
+export default options;
 `
     );
   }

@@ -429,7 +429,7 @@ export const getImports = (
   if (type === "trpc") {
     statement = "import * as trpc from '@trpc/server';\n";
   } else if (type === "trpc-shield") {
-    statement = "import { shield, allow } from 'trpc-shield';\n";
+    statement = "import { shield, allow } from '@stryke/trpc-next/shield';\n";
   } else if (type === "context") {
     statement = `import type { Context } from '${newPath}';\n`;
   }
@@ -536,4 +536,61 @@ export const constructShield = async (
   });
 
   return shieldText;
+};
+
+export const constructDefaultOptions = (
+  config: Config,
+  options: GeneratorOptions,
+  outputDir: string
+) => {
+  return `import { ZodError } from 'zod';${config.withNext ? '\nimport { transformer } from "@stryke/trpc-next/shared";' : ""}
+  import type {
+    DataTransformerOptions,
+    RootConfig
+  } from "@trpc/server/unstable-core-do-not-import";
+  import type { Context } from "${getRelativePath(
+    outputDir,
+    config.contextPath,
+    true,
+    options.schemaPath
+  )}";
+
+  interface RuntimeConfigOptions<
+    TContext extends object,
+    TMeta extends object = object
+  > extends Partial<
+      Omit<
+        RootConfig<{
+          ctx: TContext;
+          meta: TMeta;
+          errorShape: any;
+          transformer: any;
+        }>,
+        "$types" | "transformer"
+      >
+    > {
+    /**
+     * Use a data transformer
+     * @see https://trpc.io/docs/v11/data-transformers
+     */
+    transformer?: DataTransformerOptions;
+  }
+
+  const options: RuntimeConfigOptions<Context> = {${config.withNext ? "\n transformer," : ""}
+    errorFormatter({ shape, error }) {
+      return {
+        ...shape,
+        data: {
+          ...shape.data,
+          zodError:
+            error.code === "BAD_REQUEST" && error.cause instanceof ZodError
+              ? error.cause.flatten()
+              : null
+        }
+      };
+    }
+  };
+
+  export default options;
+  `;
 };
