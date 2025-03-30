@@ -2,6 +2,14 @@
 
 # Changelog for Stryke - Prisma Trpc Generator
 
+## [0.9.0](https://github.com/storm-software/stryke/releases/tag/prisma-trpc-generator%400.9.0) (2025-03-30)
+
+### Features
+
+- **prisma-trpc-generator:** Change paths in configuration to be relative to
+  output directory
+  ([e213270](https://github.com/storm-software/stryke/commit/e213270))
+
 ## [0.8.2](https://github.com/storm-software/stryke/releases/tag/prisma-trpc-generator%400.8.2) (2025-03-30)
 
 ### Miscellaneous
