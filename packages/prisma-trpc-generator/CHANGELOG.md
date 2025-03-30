@@ -2,6 +2,13 @@
 
 # Changelog for Stryke - Prisma Trpc Generator
 
+## [0.4.2](https://github.com/storm-software/stryke/releases/tag/prisma-trpc-generator%400.4.2) (2025-03-30)
+
+### Bug Fixes
+
+- **prisma-trpc-generator:** Resolve issue with applying nullable to all schema
+  inputs ([0cb4fc1](https://github.com/storm-software/stryke/commit/0cb4fc1))
+
 ## [0.4.1](https://github.com/storm-software/stryke/releases/tag/prisma-trpc-generator%400.4.1) (2025-03-30)
 
 ### Bug Fixes
