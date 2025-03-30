@@ -20,7 +20,7 @@ import type {
   EnvValue,
   GeneratorOptions
 } from "@prisma/generator-helper";
-import { createDirectory } from "@stryke/fs/helpers";
+import { createDirectory, removeDirectory } from "@stryke/fs/helpers";
 import { joinPaths } from "@stryke/path/join-paths";
 import path from "node:path";
 import pluralize from "pluralize";
@@ -40,7 +40,6 @@ import {
 import { project } from "./project";
 import type { RootType, Writeable } from "./types";
 import { getPrismaInternals } from "./utils/get-prisma-internals";
-import removeDir from "./utils/remove-dir";
 import { writeFileSafely } from "./utils/write-file-safely";
 import { resolveZodAggregateOperationSupport } from "./zod-helpers/aggregate-helpers";
 import {
@@ -84,8 +83,8 @@ export async function generate(options: GeneratorOptions) {
 
   consoleLog(`Preparing output directory: ${outputDir}`);
 
+  await removeDirectory(outputDir);
   await createDirectory(outputDir);
-  await removeDir(outputDir, true);
 
   consoleLog("Finding Prisma Client generator");
 
@@ -192,7 +191,6 @@ export async function generate(options: GeneratorOptions) {
     consoleLog("Preparing tRPC Shield output directory");
 
     await createDirectory(shieldOutputDir);
-    await removeDir(shieldOutputDir, true);
 
     const queries: RootType = [];
     const mutations: RootType = [];
