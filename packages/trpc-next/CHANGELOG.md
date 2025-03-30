@@ -2,6 +2,13 @@
 
 # Changelog for Stryke - Trpc Next
 
+## [0.5.0](https://github.com/storm-software/stryke/releases/tag/trpc-next%400.5.0) (2025-03-30)
+
+### Features
+
+- **trpc-next:** Forked and made shield code compatible with Prisma v6
+  ([3851e03](https://github.com/storm-software/stryke/commit/3851e03))
+
 ## [0.4.1](https://github.com/storm-software/stryke/releases/tag/trpc-next%400.4.1) (2025-03-30)
 
 ### Bug Fixes
