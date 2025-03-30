@@ -2,6 +2,13 @@
 
 # Changelog for Stryke - Trpc Next
 
+## [0.2.1](https://github.com/storm-software/stryke/releases/tag/trpc-next%400.2.1) (2025-03-30)
+
+### Bug Fixes
+
+- **trpc-next:** Resolve issue with `BaseContext` typing
+  ([2431d01](https://github.com/storm-software/stryke/commit/2431d01))
+
 ## [0.2.0](https://github.com/storm-software/stryke/releases/tag/trpc-next%400.2.0) (2025-03-30)
 
 ### Features
