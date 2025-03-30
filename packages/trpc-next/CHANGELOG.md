@@ -2,6 +2,13 @@
 
 # Changelog for Stryke - Trpc Next
 
+## [0.5.1](https://github.com/storm-software/stryke/releases/tag/trpc-next%400.5.1) (2025-03-30)
+
+### Miscellaneous
+
+- **trpc-next:** Clean up the typing formats
+  ([10160be](https://github.com/storm-software/stryke/commit/10160be))
+
 ## [0.5.0](https://github.com/storm-software/stryke/releases/tag/trpc-next%400.5.0) (2025-03-30)
 
 ### Features
