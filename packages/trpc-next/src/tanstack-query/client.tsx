@@ -32,6 +32,11 @@ import { createTRPCContext } from "@trpc/tanstack-react-query";
 import { useState } from "react";
 import { getTRPCServerUrl, transformer } from "../shared";
 
+/**
+ * Create a TRPC Tanstack Query client.
+ *
+ * @returns The TRPC Tanstack Query client
+ */
 export function createTRPCTanstackQueryClient<TRouter extends AnyTRPCRouter>() {
   const { TRPCProvider, useTRPC } = createTRPCContext<TRouter>();
 

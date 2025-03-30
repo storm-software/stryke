@@ -27,18 +27,24 @@ import React, { cache } from "react";
 import "server-only";
 import { createQueryClient } from "../shared";
 
+/**
+ * Create a TRPC Tanstack Query server.
+ *
+ * @param router - The TRPC router
+ * @param createContext - The context creator function
+ * @param config - The query client config
+ * @returns The TRPC Tanstack Query server
+ */
 export function createTRPCTanstackQueryServer<
   TRouter extends AnyTRPCRouter,
   TContext extends inferRouterContext<TRouter>
 >(
   router: TRouter,
-  createContext?: () => MaybePromise<TContext>,
+  createContext: () => MaybePromise<TContext> = () => ({}) as TContext,
   config?: Partial<QueryClientConfig>
 ) {
   const _createContext = cache(async (): Promise<TContext> => {
-    const context = (
-      createContext ? await Promise.resolve(createContext()) : {}
-    ) as TContext;
+    const context = await Promise.resolve(createContext());
 
     const _headers = new Headers(await headers());
     _headers.set("x-trpc-source", "rsc");

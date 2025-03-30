@@ -61,6 +61,12 @@ superjson.registerCustom(
 
 export const transformer = superjson as DataTransformer;
 
+/**
+ * Create a TRPC Tanstack Query client.
+ *
+ * @param config - The query client config
+ * @returns The TRPC Tanstack Query client
+ */
 export const createQueryClient = (config?: Partial<QueryClientConfig>) =>
   new QueryClient(
     defu(config, {

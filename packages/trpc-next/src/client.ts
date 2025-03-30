@@ -34,6 +34,12 @@ import type {
 import type { AnyTRPCRouter } from "@trpc/server";
 import { getTRPCServerUrl, transformer } from "./shared";
 
+/**
+ * Creates a tRPC client for the Next.js app directory.
+ *
+ * @param baseUrl - The base URL for the tRPC server. This is typically the URL of the Next.js app.
+ * @returns A tRPC client that can be used to make requests to the server.
+ */
 export function createTRPCClient<TRouter extends AnyTRPCRouter>(
   baseUrl: string
 ) {
@@ -60,6 +66,11 @@ export function createTRPCClient<TRouter extends AnyTRPCRouter>(
   });
 }
 
+/**
+ * Creates a tRPC action hook for the Next.js app directory.
+ *
+ * @returns A function that can be used to create a tRPC action hook.
+ */
 export function createUseAction<TRouter extends AnyTRPCRouter>() {
   return experimental_createActionHook<TRouter>({
     links: [

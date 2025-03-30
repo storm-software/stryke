@@ -104,7 +104,10 @@ export type NextAppDirDecorateRouterRecord<
 export function createTRPCServer<
   TRouter extends AnyTRPCRouter,
   TContext extends inferRouterContext<TRouter>
->(router: TRouter, createContext?: () => MaybePromise<TContext>) {
+>(
+  router: TRouter,
+  createContext: () => MaybePromise<TContext> = () => ({}) as TContext
+) {
   return experimental_createTRPCNextAppDirServer<TRouter>({
     config() {
       return {
@@ -118,9 +121,7 @@ export function createTRPCServer<
             router,
             transformer,
             createContext: async () => {
-              const context = (
-                createContext ? await Promise.resolve(createContext()) : {}
-              ) as TContext;
+              const context = await Promise.resolve(createContext());
 
               context.headers ??= {};
               context.headers["x-trpc-source"] = "rsc-invoke";
