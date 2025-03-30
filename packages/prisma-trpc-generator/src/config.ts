@@ -41,15 +41,33 @@ enum ModelAction {
 
 const modelActionEnum = z.nativeEnum(ModelAction);
 
+const configBoolean = z
+  .string()
+  .trim()
+  .transform(value =>
+    !value ||
+    value.toLowerCase() === "false" ||
+    value.toLowerCase() === "n" ||
+    value.toLowerCase() === "no" ||
+    value === "0"
+      ? false
+      : value.toLowerCase() === "true" ||
+          value.toLowerCase() === "y" ||
+          value.toLowerCase() === "yes" ||
+          value === "1"
+        ? true
+        : value
+  );
+
 export const configSchema = z.object({
-  debug: z.coerce.boolean().or(z.string()).default(false),
-  withMiddleware: z.coerce.boolean().or(z.string()).default(false),
-  withShield: z.coerce.boolean().or(z.string()).default(true),
-  withZod: z.coerce.boolean().or(z.string()).default(true),
-  withNext: z.coerce.boolean().or(z.string()).default(true),
-  contextPath: z.string().default("../context"),
-  trpcOptions: z.coerce.boolean().or(z.string()).default(true),
-  showModelNameInProcedure: z.coerce.boolean().or(z.string()).default(true),
+  debug: configBoolean.default("false"),
+  withMiddleware: configBoolean.default("false"),
+  withShield: configBoolean.default("true"),
+  withZod: configBoolean.default("true"),
+  withNext: configBoolean.default("true"),
+  contextPath: z.string().trim().default("../context"),
+  trpcOptions: configBoolean.default("true"),
+  showModelNameInProcedure: configBoolean.default("true"),
   generateModelActions: z
     .string()
     .default(Object.values(ModelAction).join(","))

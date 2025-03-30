@@ -63,9 +63,7 @@ export async function generate(options: GeneratorOptions) {
   const internals = await getPrismaInternals();
 
   // eslint-disable-next-line no-console
-  console.log(
-    `[STORM]: Validating configuration options \n${JSON.stringify(options.generator.config)}`
-  );
+  console.log(`[STORM]: Validating configuration options \n`);
 
   const outputDir = internals.parseEnvValue(
     options.generator.output as EnvValue
