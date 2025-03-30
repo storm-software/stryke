@@ -22,7 +22,7 @@ import type {
 } from "@prisma/generator-helper";
 import { createDirectory, removeDirectory } from "@stryke/fs/helpers";
 import { existsSync } from "@stryke/path/exists";
-import { findFilePath } from "@stryke/path/file-path-fns";
+import { findFileExtension, findFilePath } from "@stryke/path/file-path-fns";
 import { joinPaths } from "@stryke/path/join-paths";
 import { lowerCaseFirst } from "@stryke/string-format/lower-case-first";
 import path from "node:path";
@@ -246,8 +246,10 @@ export async function generate(options: GeneratorOptions) {
       consoleLog("Constructing tRPC Shield source file");
 
       const shieldOutputDir =
-        typeof config.withShield === "string" && config.withShield !== "true"
-          ? findFilePath(config.withShield)
+        typeof config.withShield === "string"
+          ? findFileExtension(config.withShield)
+            ? findFilePath(config.withShield)
+            : config.withShield
           : outputDir;
 
       const shieldText = await constructShield(
@@ -298,7 +300,7 @@ export default {${config.withNext ? "\n transformer," : ""}
   }
 
   resolveModelsComments(models, hiddenModels);
-  const createRouter = project.createSourceFile(
+  const trpcExports = project.createSourceFile(
     path.resolve(outputDir, "trpc.ts"),
     undefined,
     { overwrite: true }
@@ -307,14 +309,19 @@ export default {${config.withNext ? "\n transformer," : ""}
   consoleLog("Generating tRPC imports");
 
   if (config.withShield) {
-    await generateShieldImport(createRouter, options, config.withShield);
+    await generateShieldImport(
+      trpcExports,
+      options,
+      outputDir,
+      config.withShield
+    );
   }
 
   consoleLog("Generating tRPC base router");
 
-  await generateBaseRouter(createRouter, config, options);
+  await generateBaseRouter(trpcExports, config, options);
 
-  createRouter.formatText({
+  trpcExports.formatText({
     indentSize: 2
   });
 

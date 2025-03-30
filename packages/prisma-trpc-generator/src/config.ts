@@ -39,26 +39,17 @@ enum ModelAction {
   aggregateRaw = "aggregateRaw"
 }
 
-const configBoolean = z
-  .enum(["true", "false"])
-  .transform(arg => JSON.parse(arg));
-
-const configMiddleware = z.union([
-  configBoolean,
-  z.string().default("../src/trpc/middleware")
-]);
-
 const modelActionEnum = z.nativeEnum(ModelAction);
 
 export const configSchema = z.object({
-  debug: configBoolean.default("false"),
-  withMiddleware: configMiddleware.default("false"),
-  withShield: z.boolean().or(z.string()).default("true"),
-  withZod: configBoolean.default("true"),
-  withNext: configBoolean.default("true"),
+  debug: z.boolean().or(z.string()).default(false),
+  withMiddleware: z.boolean().or(z.string()).default(false),
+  withShield: z.boolean().or(z.string()).default(true),
+  withZod: z.boolean().default(true),
+  withNext: z.boolean().default(true),
   contextPath: z.string().default("../src/trpc/context"),
-  trpcOptions: z.boolean().or(z.string()).optional(),
-  showModelNameInProcedure: configBoolean.default("true"),
+  trpcOptions: z.boolean().or(z.string()).default(true),
+  showModelNameInProcedure: z.boolean().default(true),
   generateModelActions: z
     .string()
     .default(Object.values(ModelAction).join(","))

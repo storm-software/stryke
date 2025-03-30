@@ -66,13 +66,9 @@ export const generateRPCImport = (sourceFile: SourceFile) => {
 export const generateShieldImport = async (
   sourceFile: SourceFile,
   options: GeneratorOptions,
+  outputDir: string,
   value: string | boolean
 ) => {
-  const internals = await getPrismaInternals();
-  const outputDir = internals.parseEnvValue(
-    options.generator.output as EnvValue
-  );
-
   let shieldPath = joinPaths(outputDir, "shield");
   if (typeof value === "string") {
     shieldPath = getRelativePath(outputDir, value, true, options.schemaPath);
