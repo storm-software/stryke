@@ -124,15 +124,11 @@ export async function generateTRPCExports(
 
   if (config.trpcOptions) {
     sourceFile.addStatements(
-      /* ts */ `import trpcOptions from '${relativePath(
-        outputDir,
-        joinPaths(
-          outputDir,
-          typeof config.trpcOptions === "string"
-            ? config.trpcOptions
-            : "./options"
-        )
-      )}';`
+      /* ts */ `import trpcOptions from '${
+        typeof config.trpcOptions === "string"
+          ? relativePath(outputDir, joinPaths(outputDir, config.trpcOptions))
+          : "./options"
+      }';`
     );
   }
 

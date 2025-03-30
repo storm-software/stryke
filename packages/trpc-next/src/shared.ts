@@ -64,12 +64,14 @@ export const transformer = superjson as DataTransformer;
 /**
  * Create a TRPC Tanstack Query client.
  *
- * @param config - The query client config
+ * @param queryClientConfig - The query client config
  * @returns The TRPC Tanstack Query client
  */
-export const createQueryClient = (config?: Partial<QueryClientConfig>) =>
+export const createQueryClient = (
+  queryClientConfig: Partial<QueryClientConfig> = {}
+) =>
   new QueryClient(
-    defu(config, {
+    defu(queryClientConfig, {
       defaultOptions: {
         queries: {
           // Since queries are prefetched on the server, we set a stale time so that

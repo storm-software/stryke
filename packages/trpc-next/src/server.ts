@@ -103,7 +103,7 @@ export type NextAppDirDecorateRouterRecord<
  */
 export function createTRPCServer<
   TRouter extends AnyTRPCRouter,
-  TContext extends inferRouterContext<TRouter>
+  TContext extends inferRouterContext<TRouter> = inferRouterContext<TRouter>
 >(
   router: TRouter,
   createContext: () => MaybePromise<TContext> = () => ({}) as TContext

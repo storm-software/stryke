@@ -32,16 +32,16 @@ import { createQueryClient } from "../shared";
  *
  * @param router - The TRPC router
  * @param createContext - The context creator function
- * @param config - The query client config
+ * @param queryClientConfig - The query client config
  * @returns The TRPC Tanstack Query server
  */
 export function createTRPCTanstackQueryServer<
   TRouter extends AnyTRPCRouter,
-  TContext extends inferRouterContext<TRouter>
+  TContext extends inferRouterContext<TRouter> = inferRouterContext<TRouter>
 >(
   router: TRouter,
   createContext: () => MaybePromise<TContext> = () => ({}) as TContext,
-  config?: Partial<QueryClientConfig>
+  queryClientConfig: Partial<QueryClientConfig> = {}
 ) {
   const _createContext = cache(async (): Promise<TContext> => {
     const context = await Promise.resolve(createContext());
@@ -61,7 +61,7 @@ export function createTRPCTanstackQueryServer<
    * Create a stable getter for the query client that
    * will return the same client during the same request.
    */
-  const getQueryClient = cache(() => createQueryClient(config));
+  const getQueryClient = cache(() => createQueryClient(queryClientConfig));
 
   const trpc = createTRPCOptionsProxy({
     router,

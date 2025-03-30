@@ -9,8 +9,6 @@ packages:
   - "packages/*"
 
 catalog:
-  " ": ^0.0.0
-  "@": ^0.0.0
   "@antfu/install-pkg": ^1.0.0
   "@antfu/ni": ^23.3.1
   "@dotenvx/dotenvx": 1.35.0
@@ -21,24 +19,13 @@ catalog:
   "@prisma/generator-helper": ^6.5.0
   "@prisma/internals": ^6.5.0
   "@prisma/prisma-schema-wasm": ^6.6.0-41.9061db3b0058e3d3731c6fe68a1b77061bed4861
-  "@s": ^0.0.0
-  "@st": ^0.0.0
-  "@str": ^0.0.0
-  "@stry": ^0.0.0
-  "@stryk": ^0.0.0
-  "@stryke": ^0.0.0
-  "@stryke/": ^0.0.0
-  "@stryke/p": ^0.0.0
-  "@stryke/pa": ^0.0.0
-  "@stryke/pat": ^0.0.0
-  "@stryke/path": ^0.0.0
   "@tanstack/react-query": ^5.70.0
   "@tanstack/react-query-devtools": ^5.70.0
   "@taplo/cli": ^0.7.0
-  "@trpc/client": ^11.0.1
-  "@trpc/next": ^11.0.1
-  "@trpc/server": ^11.0.1
-  "@trpc/tanstack-react-query": ^11.0.1
+  "@trpc/client": next
+  "@trpc/next": next
+  "@trpc/server": next
+  "@trpc/tanstack-react-query": next
   "@types/figlet": ^1.7.0
   "@types/jest": ^29.5.14
   "@types/node": ^22.13.1
@@ -79,12 +66,6 @@ catalog:
   buffer: 6.0.3
   chalk: ^5.4.1
   commander: ^13.1.0
-  e: ^0.0.0
-  es: ^0.0.0
-  esb: ^0.0.0
-  esbu: ^0.0.0
-  esbui: ^0.0.0
-  esbuil: ^0.0.0
   eslint: ^9.20.0
   eslint-flat-config-utils: ^2.0.1
   execa: ^9.5.2
@@ -167,68 +148,3 @@ overrides:
   postcss: ">=8.5.1"
   shell-quote: ">=1.8.2"
   simple-git: ">=3.27.0"
-catalogs:
-  conflicts_@nx/js_20_5_0:
-    "@nx/js": 20.5.0
-  conflicts_@swc-node/register_t1_9_1:
-    "@swc-node/register": ~1.9.1
-  conflicts_@swc/core_t1_5_7:
-    "@swc/core": ~1.5.7
-  conflicts_@swc/helpers_t0_5_11:
-    "@swc/helpers": ~0.5.11
-  conflicts_@types/node_20_9_0:
-    "@types/node": 20.9.0
-  conflicts_prettier_h2_6_2:
-    prettier: ^2.6.2
-  conflicts_verdaccio_h6_0_5:
-    verdaccio: ^6.0.5
-  conflicts_conflicts_@swc-node/register_t1_9_1_catalog:
-    "@swc-node/register": catalog
-  conflicts_conflicts_verdaccio_h6_0_5_c:
-    verdaccio: c
-  conflicts_conflicts_verdaccio_h6_0_5_ca:
-    verdaccio: ca
-  conflicts_conflicts_verdaccio_h6_0_5_cat:
-    verdaccio: cat
-  conflicts_conflicts_verdaccio_h6_0_5_cata:
-    verdaccio: cata
-  conflicts_conflicts_verdaccio_h6_0_5_catal:
-    verdaccio: catal
-  conflicts_conflicts_verdaccio_h6_0_5_catalo:
-    verdaccio: catalo
-  conflicts_conflicts_verdaccio_h6_0_5_catalog:
-    verdaccio: catalog
-  conflicts_tsup_:
-    tsup: ""
-  conflicts_tsup_c:
-    tsup: c
-  conflicts_tsup_ca:
-    tsup: ca
-  conflicts_tsup_cat:
-    tsup: cat
-  conflicts_tsup_cata:
-    tsup: cata
-  conflicts_tsup_catal:
-    tsup: catal
-  conflicts_tsup_catalo:
-    tsup: catalo
-  conflicts_tsup_catalog:
-    tsup: catalog
-  conflicts_jiti_:
-    jiti: ""
-  "conflicts_@stryke/path_w:":
-    "@stryke/path": "w:"
-  "conflicts_@stryke/path_wo:":
-    "@stryke/path": "wo:"
-  "conflicts_@stryke/path_wor:":
-    "@stryke/path": "wor:"
-  "conflicts_@stryke/path_work:":
-    "@stryke/path": "work:"
-  "conflicts_@stryke/path_works:":
-    "@stryke/path": "works:"
-  "conflicts_@stryke/path_worksp:":
-    "@stryke/path": "worksp:"
-  "conflicts_@stryke/path_workspa:":
-    "@stryke/path": "workspa:"
-  "conflicts_@stryke/path_workspac:":
-    "@stryke/path": "workspac:"
