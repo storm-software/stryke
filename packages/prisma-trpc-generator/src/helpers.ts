@@ -109,10 +109,6 @@ export async function generateTRPCExports(
       ),
       namedImports: ["permissions"]
     });
-
-    sourceFile.formatText({
-      indentSize: 2
-    });
   }
 
   sourceFile.addStatements(
@@ -227,6 +223,10 @@ export const createCallerFactory = t.createCallerFactory;`);
     createTRPCServerActionHandler(t, createContext);
   `);
   }
+
+  sourceFile.formatText({
+    indentSize: 2
+  });
 }
 
 export function generateProcedure(

@@ -1,0 +1,43 @@
+{
+  "name": "prisma-better-auth-generator",
+  "$schema": "../../node_modules/nx/schemas/project-schema.json",
+  "projectType": "library",
+  "sourceRoot": "packages/prisma-better-auth-generator/src",
+  "targets": {
+    "build": {
+      "executor": "@storm-software/workspace-tools:unbuild",
+      "outputs": ["{options.outputPath}"],
+      "options": {
+        "entry": ["packages/prisma-better-auth-generator/src/index.ts"],
+        "outputPath": "dist/packages/prisma-better-auth-generator",
+        "tsconfig": "packages/prisma-better-auth-generator/tsconfig.json",
+        "project": "packages/prisma-better-auth-generator/package.json",
+        "defaultConfiguration": "production",
+        "platform": "node",
+        "assets": [
+          {
+            "input": "packages/prisma-better-auth-generator",
+            "glob": "*.md",
+            "output": "/"
+          },
+          {
+            "input": "",
+            "glob": "LICENSE",
+            "output": "/"
+          }
+        ]
+      },
+      "configurations": {
+        "production": {
+          "debug": false,
+          "verbose": false
+        },
+        "development": {
+          "debug": true,
+          "verbose": true
+        }
+      }
+    }
+  },
+  "tags": ["platform:node"]
+}

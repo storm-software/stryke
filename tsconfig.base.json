@@ -26,6 +26,12 @@
       "@stryke/json/*": ["packages/json/src/*"],
       "@stryke/path": ["packages/path/src/index.ts"],
       "@stryke/path/*": ["packages/path/src/*"],
+      "@stryke/prisma-better-auth-generator": [
+        "packages/prisma-better-auth-generator/src/index.ts"
+      ],
+      "@stryke/prisma-better-auth-generator/*": [
+        "packages/prisma-better-auth-generator/src/*"
+      ],
       "@stryke/prisma-trpc-generator": [
         "packages/prisma-trpc-generator/src/index.ts"
       ],

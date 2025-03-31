@@ -42,19 +42,19 @@ import { project } from "./project";
 import type { RootType, Writeable } from "./types";
 import { getPrismaInternals } from "./utils/get-prisma-internals";
 import { writeFileSafely } from "./utils/write-file-safely";
-import { resolveZodAggregateOperationSupport } from "./zod-helpers/aggregate-helpers";
+import { resolveZodAggregateOperationSupport } from "./zod/aggregate-helpers";
 import {
   hideZodInputObjectTypesAndRelatedFields,
   resolveZodModelsComments
-} from "./zod-helpers/comments-helpers";
+} from "./zod/comments-helpers";
 import {
   generateZodEnumSchemas,
   generateZodIndex,
   generateZodModelSchemas,
   generateZodObjectSchemas
-} from "./zod-helpers/generator-helpers";
-import { addMissingZodInputObjectTypes } from "./zod-helpers/helpers";
-import Transformer from "./zod-helpers/transformer";
+} from "./zod/generator-helpers";
+import { addMissingZodInputObjectTypes } from "./zod/helpers";
+import Transformer from "./zod/transformer";
 
 export async function generate(options: GeneratorOptions) {
   // eslint-disable-next-line no-console

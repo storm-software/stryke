@@ -1,0 +1,125 @@
+{
+  "name": "@stryke/prisma-better-auth-generator",
+  "version": "0.9.3",
+  "type": "module",
+  "description": "A package containing a Prisma v6 generator for Better-Auth authentication.",
+  "repository": {
+    "type": "github",
+    "url": "https://github.com/storm-software/stryke.git",
+    "directory": "packages/prisma-better-auth-generator"
+  },
+  "homepage": "https://stormsoftware.com",
+  "bugs": {
+    "url": "https://stormsoftware.com/support",
+    "email": "support@stormsoftware.com"
+  },
+  "author": {
+    "name": "Storm Software",
+    "email": "contact@stormsoftware.com",
+    "url": "https://stormsoftware.com"
+  },
+  "maintainers": [
+    {
+      "name": "Storm Software",
+      "email": "contact@stormsoftware.com",
+      "url": "https://stormsoftware.com"
+    }
+  ],
+  "contributors": [
+    {
+      "name": "Storm Software",
+      "email": "contact@stormsoftware.com",
+      "url": "https://stormsoftware.com"
+    }
+  ],
+  "funding": {
+    "type": "github",
+    "url": "https://github.com/sponsors/storm-software"
+  },
+  "license": "Apache-2.0",
+  "private": false,
+  "bin": {
+    "prisma-better-auth-generator": "dist/generator.js",
+    "prisma-better-auth-generator-cjs": "dist/generator.cjs",
+    "prisma-better-auth-generator-mjs": "dist/generator.js"
+  },
+  "main": "./dist/index.cjs",
+  "module": "./dist/index.js",
+  "exports": {
+    ".": {
+      "import": {
+        "types": "./dist/index.d.ts",
+        "default": "./dist/index.js"
+      },
+      "require": {
+        "types": "./dist/index.d.cts",
+        "default": "./dist/index.cjs"
+      },
+      "default": {
+        "types": "./dist/index.d.ts",
+        "default": "./dist/index.js"
+      }
+    },
+    "./index": {
+      "import": {
+        "types": "./dist/index.d.ts",
+        "default": "./dist/index.js"
+      },
+      "require": {
+        "types": "./dist/index.d.cts",
+        "default": "./dist/index.cjs"
+      },
+      "default": {
+        "types": "./dist/index.d.ts",
+        "default": "./dist/index.js"
+      }
+    },
+    "./generator": {
+      "import": {
+        "types": "./dist/generator.d.ts",
+        "default": "./dist/generator.js"
+      },
+      "require": {
+        "types": "./dist/generator.d.cts",
+        "default": "./dist/generator.cjs"
+      },
+      "default": {
+        "types": "./dist/generator.d.ts",
+        "default": "./dist/generator.js"
+      }
+    },
+    "./package.json": "./package.json"
+  },
+  "types": "./dist/index.d.ts",
+  "files": [
+    "dist/**/*"
+  ],
+  "keywords": [
+    "stryke",
+    "typescript",
+    "utilities",
+    "storm-software",
+    "storm",
+    "storm-ops",
+    "cyclone-ui",
+    "sullivanpj",
+    "monorepo"
+  ],
+  "dependencies": {
+    "@prisma/generator-helper": "catalog:",
+    "@prisma/internals": "catalog:",
+    "esbuild": "catalog:",
+    "jiti": "catalog:",
+    "prettier": "catalog:",
+    "ts-morph": "catalog:"
+  },
+  "devDependencies": {
+    "@types/pluralize": "catalog:",
+    "pluralize": "catalog:",
+    "tsup": "catalog:",
+    "zod": "catalog:"
+  },
+  "publishConfig": {
+    "access": "public"
+  }
+}
