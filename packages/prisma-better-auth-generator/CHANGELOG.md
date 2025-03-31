@@ -2,6 +2,13 @@
 
 # Changelog for Stryke - Prisma Better Auth Generator
 
+## [0.10.3](https://github.com/storm-software/stryke/releases/tag/prisma-better-auth-generator%400.10.3) (2025-03-31)
+
+### Miscellaneous
+
+- **prisma-better-auth-generator:** Sort operation names in access control
+  ([f311a64](https://github.com/storm-software/stryke/commit/f311a64))
+
 ## [0.10.2](https://github.com/storm-software/stryke/releases/tag/prisma-better-auth-generator%400.10.2) (2025-03-31)
 
 ### Bug Fixes
