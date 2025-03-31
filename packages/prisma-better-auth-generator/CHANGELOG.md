@@ -2,6 +2,13 @@
 
 # Changelog for Stryke - Prisma Better Auth Generator
 
+## [0.10.1](https://github.com/storm-software/stryke/releases/tag/prisma-better-auth-generator%400.10.1) (2025-03-31)
+
+### Bug Fixes
+
+- **prisma-better-auth-generator:** Resolve issue with formatting operation
+  names ([3e3e06c](https://github.com/storm-software/stryke/commit/3e3e06c))
+
 ## [0.10.0](https://github.com/storm-software/stryke/releases/tag/prisma-better-auth-generator%400.10.0) (2025-03-31)
 
 ### Features
