@@ -2,6 +2,13 @@
 
 # Changelog for Stryke - Prisma Trpc Generator
 
+## [0.10.3](https://github.com/storm-software/stryke/releases/tag/prisma-trpc-generator%400.10.3) (2025-03-31)
+
+### Miscellaneous
+
+- **prisma-trpc-generator:** Set `showModelNameInProcedure` to false by default
+  ([029136a](https://github.com/storm-software/stryke/commit/029136a))
+
 ## [0.10.2](https://github.com/storm-software/stryke/releases/tag/prisma-trpc-generator%400.10.2) (2025-03-31)
 
 ### Miscellaneous
