@@ -2,6 +2,13 @@
 
 # Changelog for Stryke - Prisma Trpc Generator
 
+## [0.10.2](https://github.com/storm-software/stryke/releases/tag/prisma-trpc-generator%400.10.2) (2025-03-31)
+
+### Miscellaneous
+
+- **prisma-trpc-generator:** Export `AppRouter` type from generated router
+  ([f2da119](https://github.com/storm-software/stryke/commit/f2da119))
+
 ## [0.10.1](https://github.com/storm-software/stryke/releases/tag/prisma-trpc-generator%400.10.1) (2025-03-31)
 
 ### Bug Fixes
