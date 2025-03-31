@@ -21,7 +21,7 @@ import type { SourceFile } from "ts-morph";
 import type { Config } from "./config";
 
 // Omit these resources from the generated access control as they are managed by BetterAuth
-export const OMITTED_RESOURCES: string[] = [
+export const USER_RESOURCES: string[] = [
   "user",
   "session",
   "account",
@@ -47,9 +47,10 @@ import {
 export const statements = {
   ...defaultStatements,
 ${modelOperations
-  .filter(
-    modelOperation =>
-      !OMITTED_RESOURCES.includes(lowerCaseFirst(modelOperation.model)!)
+  .filter(modelOperation =>
+    config.omitUserResources
+      ? !USER_RESOURCES.includes(lowerCaseFirst(modelOperation.model)!)
+      : true
   )
   .map(modelOperation => {
     const { model, plural: _, ...operations } = modelOperation;

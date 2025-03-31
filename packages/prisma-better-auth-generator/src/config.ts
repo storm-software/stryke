@@ -37,7 +37,8 @@ const configBoolean = z
 
 export const configSchema = z.object({
   debug: configBoolean.default("false"),
-  withSoftDelete: configBoolean.default("false")
+  withSoftDelete: configBoolean.default("false"),
+  omitUserResources: configBoolean.default("false")
 });
 
 export type Config = z.infer<typeof configSchema>;
