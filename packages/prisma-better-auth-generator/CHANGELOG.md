@@ -2,6 +2,14 @@
 
 # Changelog for Stryke - Prisma Better Auth Generator
 
+## [0.11.1](https://github.com/storm-software/stryke/releases/tag/prisma-better-auth-generator%400.11.1) (2025-03-31)
+
+### Bug Fixes
+
+- **prisma-better-auth-generator:** Resolve issue iterating operations during
+  generation
+  ([1d2f5fc](https://github.com/storm-software/stryke/commit/1d2f5fc))
+
 ## [0.11.0](https://github.com/storm-software/stryke/releases/tag/prisma-better-auth-generator%400.11.0) (2025-03-31)
 
 ### Features
