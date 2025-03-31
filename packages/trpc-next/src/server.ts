@@ -98,6 +98,7 @@ export type NextAppDirDecorateRouterRecord<
 /**
  * This client invokes procedures directly on the server without fetching over HTTP.
  *
+ * @param cookies - A function that returns the cookies
  * @param router - The router created by the user
  * @param createContext - An optional function to generate a context
  */
