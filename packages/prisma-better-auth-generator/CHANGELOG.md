@@ -2,6 +2,13 @@
 
 # Changelog for Stryke - Prisma Better Auth Generator
 
+## [0.12.0](https://github.com/storm-software/stryke/releases/tag/prisma-better-auth-generator%400.12.0) (2025-03-31)
+
+### Features
+
+- **prisma-better-auth-generator:** Added the `omitUserResources` configuration
+  parameter ([9bbcba0](https://github.com/storm-software/stryke/commit/9bbcba0))
+
 ## [0.11.1](https://github.com/storm-software/stryke/releases/tag/prisma-better-auth-generator%400.11.1) (2025-03-31)
 
 ### Bug Fixes
