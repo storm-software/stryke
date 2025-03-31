@@ -28,7 +28,7 @@ export const OMITTED_RESOURCES: string[] = [
   "verification"
 ] as const;
 
-export const ADDITIONAL_OPERATIONS: string[] = [
+export const SOFT_DELETE_OPERATIONS: string[] = [
   "softDelete",
   "softDeleteMany"
 ] as const;
@@ -61,12 +61,10 @@ ${modelOperations
       )
       .map(operation => `"${operation.replace("One", "")}"`);
     if (config.withSoftDelete) {
-      operationsList.push(...ADDITIONAL_OPERATIONS);
+      operationsList.push(...SOFT_DELETE_OPERATIONS);
     }
 
-    return `${lowerCaseFirst(model)}: [${Object.keys(operationsList)
-      .sort()
-      .join(", ")}]`;
+    return `${lowerCaseFirst(model)}: [${operationsList.sort().join(", ")}]`;
   })
   .join(",\n")}
 }`);
