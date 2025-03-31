@@ -2,6 +2,14 @@
 
 # Changelog for Stryke - Prisma Better Auth Generator
 
+## [0.10.4](https://github.com/storm-software/stryke/releases/tag/prisma-better-auth-generator%400.10.4) (2025-03-31)
+
+### Bug Fixes
+
+- **prisma-better-auth-generator:** Ensure the resources managed by BetterAuth
+  are exlcuded in access control
+  ([2d0b545](https://github.com/storm-software/stryke/commit/2d0b545))
+
 ## [0.10.3](https://github.com/storm-software/stryke/releases/tag/prisma-better-auth-generator%400.10.3) (2025-03-31)
 
 ### Miscellaneous
