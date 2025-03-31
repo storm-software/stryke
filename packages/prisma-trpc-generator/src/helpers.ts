@@ -87,7 +87,7 @@ export const generateRouterImport = (
   modelNameCamelCase: string
 ) => {
   sourceFile.addImportDeclaration({
-    moduleSpecifier: `./${modelNameCamelCase}.router`,
+    moduleSpecifier: `./${lowerCaseFirst(modelNameCamelCase)}.router`,
     namedImports: [`${modelNamePlural}Router`]
   });
 };
@@ -284,7 +284,7 @@ export const getRouterSchemaImportByOpName = (
   const inputType = getInputTypeByOpName(opType, modelName);
 
   return inputType
-    ? `import { ${inputType} } from "../schemas/${opType}${modelName}.schema"; `
+    ? `import { ${lowerCaseFirst(inputType)} } from "../schemas/${lowerCaseFirst(opType)}${modelName}.schema"; `
     : "";
 };
 

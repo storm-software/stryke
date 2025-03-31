@@ -19,6 +19,7 @@ import type {
   ConnectorType,
   DMMF as PrismaDMMF
 } from "@prisma/generator-helper";
+import { lowerCaseFirst } from "@stryke/string-format/lower-case-first";
 import { upperCaseFirst } from "@stryke/string-format/upper-case-first";
 import path from "node:path";
 import type {
@@ -62,9 +63,9 @@ export default class Transformer {
 
   private static isCustomPrismaClientOutputPath: boolean = false;
 
-  private static isGenerateSelect: boolean = false;
+  private static isGenerateSelect: boolean = true;
 
-  private static isGenerateInclude: boolean = false;
+  private static isGenerateInclude: boolean = true;
 
   constructor(params: Writeable<TransformerParams>) {
     this.name = params.name ?? "";
@@ -107,9 +108,12 @@ export default class Transformer {
       const { name, values } = enumType;
 
       await writeFileSafely(
-        path.join(Transformer.outputPath, `schemas/enums/${name}.schema.ts`),
+        path.join(
+          Transformer.outputPath,
+          `schemas/enums/${lowerCaseFirst(name)}.schema.ts`
+        ),
         `${this.generateImportZodStatement()}\n${this.generateExportSchemaStatement(
-          `${name}`,
+          `${lowerCaseFirst(name)}`,
           `z.enum(${JSON.stringify(values)})`
         )}`
       );
@@ -121,7 +125,7 @@ export default class Transformer {
   }
 
   generateExportSchemaStatement(name: string, schema: string) {
-    return `export const ${name}Schema = ${schema}`;
+    return `export const ${lowerCaseFirst(name)}Schema = ${schema}`;
   }
 
   async generateObjectSchema() {
@@ -132,7 +136,7 @@ export default class Transformer {
     await writeFileSafely(
       path.join(
         Transformer.outputPath,
-        `schemas/objects/${objectSchemaName}.schema.ts`
+        `schemas/objects/${lowerCaseFirst(objectSchemaName)}.schema.ts`
       ),
       objectSchema
     );
@@ -340,7 +344,7 @@ export default class Transformer {
     if (isAggregateInputType(name)) {
       name = `${name}Type`;
     }
-    const end = `export const ${exportName}ObjectSchema = Schema`;
+    const end = `export const ${lowerCaseFirst(exportName)}ObjectSchema = Schema`;
 
     return `const Schema: z.ZodType<Prisma.${name}> = ${schema};\n\n ${end}`;
   }
@@ -407,9 +411,9 @@ export default class Transformer {
             queryName!
           )} } from '../${queryName}${modelName}.schema'`;
         } else if (Transformer.enumNames.includes(name)) {
-          return `import { ${name}Schema } from '../enums/${name}.schema'`;
+          return `import { ${lowerCaseFirst(name)}Schema } from '../enums/${lowerCaseFirst(name)}.schema'`;
         } else {
-          return `import { ${name}ObjectSchema } from './${name}.schema'`;
+          return `import { ${lowerCaseFirst(name)}ObjectSchema } from './${lowerCaseFirst(name)}.schema'`;
         }
       })
       .join(";\r\n");
@@ -434,10 +438,10 @@ export default class Transformer {
   }
 
   resolveModelQuerySchemaName(modelName: string, queryName: string) {
-    const modelNameCapitalized = upperCaseFirst(modelName);
+    const modelNameUncapitalized = lowerCaseFirst(modelName);
     const queryNameCapitalized = upperCaseFirst(queryName);
 
-    return `${modelNameCapitalized}${queryNameCapitalized}Schema`;
+    return `${modelNameUncapitalized}${queryNameCapitalized}Schema`;
   }
 
   wrapWithZodUnion(zodStringFields: string[]) {
@@ -469,13 +473,13 @@ export default class Transformer {
       name = Transformer.rawOpsMap[name]!;
       exportName = name.replace("Args", "");
     }
-    return exportName;
+
+    return lowerCaseFirst(exportName);
   }
 
   async generateModelSchemas() {
     for (const modelOperation of this.modelOperations) {
       const {
-        model: modelName,
         findUnique,
         findFirst,
         findMany,
@@ -496,7 +500,8 @@ export default class Transformer {
         groupBy
       } = modelOperation;
 
-      const model = findModelByName(this.models, modelName)!;
+      const model = findModelByName(this.models, modelOperation.model)!;
+      const modelName = lowerCaseFirst(modelOperation.model)!;
 
       const {
         selectImport,
@@ -836,12 +841,12 @@ export default class Transformer {
     const hasRelationToAnotherModel = checkModelHasModelRelation(model);
 
     const selectImport = Transformer.isGenerateSelect
-      ? `import { ${modelName}SelectObjectSchema } from './objects/${modelName}Select.schema'`
+      ? `import { ${lowerCaseFirst(modelName)}SelectObjectSchema } from './objects/${lowerCaseFirst(modelName)}Select.schema'`
       : "";
 
     const includeImport =
       Transformer.isGenerateInclude && hasRelationToAnotherModel
-        ? `import { ${modelName}IncludeObjectSchema } from './objects/${modelName}Include.schema'`
+        ? `import { ${lowerCaseFirst(modelName)}IncludeObjectSchema } from './objects/${lowerCaseFirst(modelName)}Include.schema'`
         : "";
 
     let selectZodSchemaLine = "";
@@ -850,13 +855,13 @@ export default class Transformer {
     let includeZodSchemaLineLazy = "";
 
     if (Transformer.isGenerateSelect) {
-      const zodSelectObjectSchema = `${modelName}SelectObjectSchema.optional()`;
+      const zodSelectObjectSchema = `${lowerCaseFirst(modelName)}SelectObjectSchema.optional()`;
       selectZodSchemaLine = `select: ${zodSelectObjectSchema},`;
       selectZodSchemaLineLazy = `select: z.lazy(() => ${zodSelectObjectSchema}),`;
     }
 
     if (Transformer.isGenerateInclude && hasRelationToAnotherModel) {
-      const zodIncludeObjectSchema = `${modelName}IncludeObjectSchema.optional()`;
+      const zodIncludeObjectSchema = `${lowerCaseFirst(modelName)}IncludeObjectSchema.optional()`;
       includeZodSchemaLine = `include: ${zodIncludeObjectSchema},`;
       includeZodSchemaLineLazy = `include: z.lazy(() => ${zodIncludeObjectSchema}),`;
     }
@@ -879,9 +884,9 @@ export default class Transformer {
       ["postgresql", "mysql"].includes(Transformer.provider) &&
       Transformer.previewFeatures?.includes("fullTextSearch")
     ) {
-      modelOrderBy = `${modelName}OrderByWithRelationAndSearchRelevanceInput`;
+      modelOrderBy = `${lowerCaseFirst(modelName)}OrderByWithRelationAndSearchRelevanceInput`;
     } else {
-      modelOrderBy = `${modelName}OrderByWithRelationInput`;
+      modelOrderBy = `${lowerCaseFirst(modelName)}OrderByWithRelationInput`;
     }
 
     const orderByImport = `import { ${modelOrderBy}ObjectSchema } from './objects/${modelOrderBy}.schema'`;

@@ -321,7 +321,7 @@ export async function generate(options: GeneratorOptions) {
 
     generateRouterImport(appRouter, plural, model);
     const modelRouter = project.createSourceFile(
-      path.resolve(outputDir, "routers", `${model}.router.ts`),
+      path.resolve(outputDir, "routers", `${lowerCaseFirst(model)}.router.ts`),
       undefined,
       { overwrite: true }
     );
