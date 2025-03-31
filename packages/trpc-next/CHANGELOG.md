@@ -2,6 +2,16 @@
 
 # Changelog for Stryke - Trpc Next
 
+## [0.5.3](https://github.com/storm-software/stryke/releases/tag/trpc-next%400.5.3) (2025-03-31)
+
+### Bug Fixes
+
+- **prisma-trpc-generator:** Update generated NextJs code to invoke
+  `next/headers`
+  ([8fb8353](https://github.com/storm-software/stryke/commit/8fb8353))
+- **trpc-next:** Remove the `next/navigation` references from package
+  ([67a617d](https://github.com/storm-software/stryke/commit/67a617d))
+
 ## [0.5.2](https://github.com/storm-software/stryke/releases/tag/trpc-next%400.5.2) (2025-03-30)
 
 ### Miscellaneous

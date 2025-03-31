@@ -2,6 +2,14 @@
 
 # Changelog for Stryke - Prisma Trpc Generator
 
+## [0.10.4](https://github.com/storm-software/stryke/releases/tag/prisma-trpc-generator%400.10.4) (2025-03-31)
+
+### Bug Fixes
+
+- **prisma-trpc-generator:** Update generated NextJs code to invoke
+  `next/headers`
+  ([8fb8353](https://github.com/storm-software/stryke/commit/8fb8353))
+
 ## [0.10.3](https://github.com/storm-software/stryke/releases/tag/prisma-trpc-generator%400.10.3) (2025-03-31)
 
 ### Miscellaneous
