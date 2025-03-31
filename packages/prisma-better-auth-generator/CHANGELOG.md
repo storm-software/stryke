@@ -2,6 +2,14 @@
 
 # Changelog for Stryke - Prisma Better Auth Generator
 
+## [0.12.1](https://github.com/storm-software/stryke/releases/tag/prisma-better-auth-generator%400.12.1) (2025-03-31)
+
+### Miscellaneous
+
+- **prisma-better-auth-generator:** Split out statements and access-control
+  generated files
+  ([f27c5aa](https://github.com/storm-software/stryke/commit/f27c5aa))
+
 ## [0.12.0](https://github.com/storm-software/stryke/releases/tag/prisma-better-auth-generator%400.12.0) (2025-03-31)
 
 ### Features
