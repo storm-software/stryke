@@ -36,7 +36,10 @@ ${modelOperations
     const { model, plural: _, ...operations } = modelOperation;
 
     return `${lowerCaseFirst(model)}: [${Object.keys(operations)
-      .filter(operation => !operation.endsWith("ManyAndReturn"))
+      .filter(
+        operation =>
+          !operation.endsWith("ManyAndReturn") && !operation.endsWith("OrThrow")
+      )
       .map(operation => `"${operation.replace("One", "")}"`)
       .join(", ")}]`;
   })
