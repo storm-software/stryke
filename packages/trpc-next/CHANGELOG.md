@@ -2,6 +2,13 @@
 
 # Changelog for Stryke - Trpc Next
 
+## [0.5.2](https://github.com/storm-software/stryke/releases/tag/trpc-next%400.5.2) (2025-03-30)
+
+### Miscellaneous
+
+- **monorepo:** Upgrade `trpc` package to use next release label
+  ([5d3d3c0](https://github.com/storm-software/stryke/commit/5d3d3c0))
+
 ## [0.5.1](https://github.com/storm-software/stryke/releases/tag/trpc-next%400.5.1) (2025-03-30)
 
 ### Miscellaneous
