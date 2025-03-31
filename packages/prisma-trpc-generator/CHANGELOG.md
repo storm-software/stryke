@@ -2,6 +2,14 @@
 
 # Changelog for Stryke - Prisma Trpc Generator
 
+## [0.10.5](https://github.com/storm-software/stryke/releases/tag/prisma-trpc-generator%400.10.5) (2025-03-31)
+
+### Miscellaneous
+
+- **prisma-trpc-generator:** Update all generated schemas to match naming
+  convention
+  ([7aa74e8](https://github.com/storm-software/stryke/commit/7aa74e8))
+
 ## [0.10.4](https://github.com/storm-software/stryke/releases/tag/prisma-trpc-generator%400.10.4) (2025-03-31)
 
 ### Bug Fixes
