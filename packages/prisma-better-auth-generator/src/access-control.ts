@@ -36,6 +36,7 @@ ${modelOperations
     const { model, plural: _, ...operations } = modelOperation;
 
     return `${lowerCaseFirst(model)}: [${Object.keys(operations)
+      .sort()
       .filter(
         operation =>
           !operation.endsWith("ManyAndReturn") && !operation.endsWith("OrThrow")
