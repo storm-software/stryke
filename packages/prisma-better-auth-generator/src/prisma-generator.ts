@@ -92,8 +92,7 @@ export async function generate(options: GeneratorOptions) {
     undefined,
     { overwrite: true }
   );
-
-  await generateAccessControl(accessControl, modelOperations);
+  await generateAccessControl(accessControl, config, modelOperations);
 
   consoleLog("Saving Better-Auth router source files to disk");
 

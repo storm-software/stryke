@@ -18,6 +18,7 @@
 import type { DMMF } from "@prisma/generator-helper";
 import { lowerCaseFirst } from "@stryke/string-format/lower-case-first";
 import type { SourceFile } from "ts-morph";
+import type { Config } from "./config";
 
 // Omit these resources from the generated access control as they are managed by BetterAuth
 export const OMITTED_RESOURCES: string[] = [
@@ -27,8 +28,14 @@ export const OMITTED_RESOURCES: string[] = [
   "verification"
 ] as const;
 
+export const ADDITIONAL_OPERATIONS: string[] = [
+  "softDelete",
+  "softDeleteMany"
+] as const;
+
 export async function generateAccessControl(
   sourceFile: SourceFile,
+  config: Config,
   modelOperations: DMMF.ModelMapping[]
 ) {
   sourceFile.addStatements(/* ts */ `import { createAccessControl } from "better-auth/plugins/access";
@@ -47,13 +54,18 @@ ${modelOperations
   .map(modelOperation => {
     const { model, plural: _, ...operations } = modelOperation;
 
-    return `${lowerCaseFirst(model)}: [${Object.keys(operations)
-      .sort()
+    const operationsList = Object.keys(operations)
       .filter(
         operation =>
           !operation.endsWith("ManyAndReturn") && !operation.endsWith("OrThrow")
       )
-      .map(operation => `"${operation.replace("One", "")}"`)
+      .map(operation => `"${operation.replace("One", "")}"`);
+    if (config.withSoftDelete) {
+      operationsList.push(...ADDITIONAL_OPERATIONS);
+    }
+
+    return `${lowerCaseFirst(model)}: [${Object.keys(operationsList)
+      .sort()
       .join(", ")}]`;
   })
   .join(",\n")}

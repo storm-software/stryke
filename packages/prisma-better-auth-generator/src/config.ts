@@ -37,7 +37,7 @@ const configBoolean = z
 
 export const configSchema = z.object({
   debug: configBoolean.default("false"),
-  withTRPC: configBoolean.default("true")
+  withSoftDelete: configBoolean.default("false")
 });
 
 export type Config = z.infer<typeof configSchema>;
