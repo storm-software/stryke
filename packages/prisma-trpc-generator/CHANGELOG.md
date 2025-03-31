@@ -2,6 +2,14 @@
 
 # Changelog for Stryke - Prisma Trpc Generator
 
+## [0.10.6](https://github.com/storm-software/stryke/releases/tag/prisma-trpc-generator%400.10.6) (2025-03-31)
+
+### Bug Fixes
+
+- **prisma-trpc-generator:** Resolve issue with model type schema
+  case-sensitivity
+  ([0b6215a](https://github.com/storm-software/stryke/commit/0b6215a))
+
 ## [0.10.5](https://github.com/storm-software/stryke/releases/tag/prisma-trpc-generator%400.10.5) (2025-03-31)
 
 ### Miscellaneous
