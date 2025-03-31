@@ -25,9 +25,7 @@ export async function generateAccessControl(
 ) {
   sourceFile.addStatements(/* ts */ `import { createAccessControl } from "better-auth/plugins/access";
 import {
-  adminAc,
   defaultStatements,
-  userAc
 } from "better-auth/plugins/admin/access";`);
 
   sourceFile.addStatements(/* ts */ `
@@ -37,10 +35,12 @@ ${modelOperations
   .map(modelOperation => {
     const { model, plural: _, ...operations } = modelOperation;
 
-    return `${lowerCaseFirst(model)}: [${Object.keys(operations).join(", ")}]`;
+    return `${lowerCaseFirst(model)}: [${Object.keys(operations)
+      .filter(operation => !operation.endsWith("ManyAndReturn"))
+      .map(operation => `"${operation.replace("One", "")}"`)
+      .join(", ")}]`;
   })
   .join(",\n")}
-})}
 }`);
 
   sourceFile.addStatements(/* ts */ `
