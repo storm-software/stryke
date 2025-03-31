@@ -67,7 +67,7 @@ export const configSchema = z.object({
   withShield: configBoolean.default("false"),
   contextPath: z.string().trim().default("../context"),
   trpcOptions: configBoolean.default("true"),
-  showModelNameInProcedure: configBoolean.default("true"),
+  showModelNameInProcedure: configBoolean.default("false"),
   generateModelActions: z
     .string()
     .default(Object.values(ModelAction).join(","))

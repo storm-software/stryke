@@ -133,12 +133,12 @@ export async function generateTRPCExports(
       outputDir,
       joinPaths(outputDir, config.contextPath)
     )}';
-    import { initTRPC } from '@trpc/server';
-    import { createTRPCServerActionHandler } from '@stryke/trpc-next/action-handler';`);
+import { initTRPC } from '@trpc/server';
+import { createTRPCServerActionHandler } from '@stryke/trpc-next/action-handler';`);
   }
 
   sourceFile.addStatements(/* ts */ `
-  export const t = initTRPC.context<Context>().create(${
+export const t = initTRPC.context<Context>().create(${
     config.trpcOptions ? "trpcOptions" : ""
   });`);
 
@@ -146,10 +146,10 @@ export async function generateTRPCExports(
 
   if (config.withMiddleware && typeof config.withMiddleware === "boolean") {
     sourceFile.addStatements(/* ts */ `
-    export const globalMiddleware = t.middleware(async ({ ctx, next }) => {
-      console.log('inside middleware!')
-      return next()
-    });`);
+export const globalMiddleware = t.middleware(async ({ ctx, next }) => {
+  console.log('inside middleware!')
+  return next()
+});`);
     middlewares.push({
       type: "global",
       value: /* ts */ `.use(globalMiddleware)`
@@ -158,18 +158,18 @@ export async function generateTRPCExports(
 
   if (config.withMiddleware && typeof config.withMiddleware === "string") {
     sourceFile.addStatements(/* ts */ `
-  import middleware from '${relativePath(
-    outputDir,
-    joinPaths(
+import middleware from '${relativePath(
       outputDir,
-      typeof config.withMiddleware === "string"
-        ? config.withMiddleware
-        : "middleware"
-    )
-  )}';
+      joinPaths(
+        outputDir,
+        typeof config.withMiddleware === "string"
+          ? config.withMiddleware
+          : "middleware"
+      )
+    )}';
   `);
     sourceFile.addStatements(/* ts */ `
-    export const globalMiddleware = t.middleware(middleware);`);
+export const globalMiddleware = t.middleware(middleware);`);
     middlewares.push({
       type: "global",
       value: /* ts */ `.use(globalMiddleware)`
@@ -178,7 +178,7 @@ export async function generateTRPCExports(
 
   if (config.withShield) {
     sourceFile.addStatements(/* ts */ `
-    export const permissionsMiddleware = t.middleware(permissions);
+export const permissionsMiddleware = t.middleware(permissions);
     `);
 
     middlewares.push({
@@ -196,7 +196,7 @@ export async function generateTRPCExports(
 export const createCallerFactory = t.createCallerFactory;`);
 
   sourceFile.addStatements(/* ts */ `
-    export const publicProcedure = t.procedure; `);
+export const publicProcedure = t.procedure; `);
 
   if (middlewares.length > 0) {
     const procName = getProcedureName(config);
@@ -204,7 +204,7 @@ export const createCallerFactory = t.createCallerFactory;`);
     middlewares.forEach((middleware, i) => {
       if (i === 0) {
         sourceFile.addStatements(/* ts */ `
-    export const ${procName} = t.procedure`);
+export const ${procName} = t.procedure`);
       }
 
       sourceFile.addStatements(
@@ -219,9 +219,9 @@ export const createCallerFactory = t.createCallerFactory;`);
 
   if (config.withNext) {
     sourceFile.addStatements(/* ts */ `
-  export const createAction: ReturnType<typeof createTRPCServerActionHandler> =
-    createTRPCServerActionHandler(t, createContext);
-  `);
+export const createAction: ReturnType<typeof createTRPCServerActionHandler> =
+  createTRPCServerActionHandler(t, createContext);
+`);
   }
 
   sourceFile.formatText({
