@@ -298,8 +298,8 @@ export default class Transformer {
         : "";
 
     return inputsLength === 1
-      ? `  ${field.name}: z.lazy(() => ${schema})${arr}${opt}${nullable}`
-      : `z.lazy(() => ${schema})${arr}${opt}${nullable}`;
+      ? `  ${field.name}: z.lazy(() => ${lowerCaseFirst(schema)})${arr}${opt}${nullable}`
+      : `z.lazy(() => ${lowerCaseFirst(schema)})${arr}${opt}${nullable}`;
   }
 
   generateFieldValidators(
@@ -344,9 +344,9 @@ export default class Transformer {
     if (isAggregateInputType(name)) {
       name = `${name}Type`;
     }
-    const end = `export const ${lowerCaseFirst(exportName)}ObjectSchema = Schema`;
+    const end = `export const ${lowerCaseFirst(exportName)}ObjectSchema = schema`;
 
-    return `const Schema: z.ZodType<Prisma.${name}> = ${schema};\n\n ${end}`;
+    return `const schema: z.ZodType<Prisma.${name}> = ${schema};\n\n ${end}`;
   }
 
   addFinalWrappers({ zodStringFields }: { zodStringFields: string[] }) {
