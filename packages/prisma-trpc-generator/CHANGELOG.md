@@ -2,6 +2,14 @@
 
 # Changelog for Stryke - Prisma Trpc Generator
 
+## [0.10.0](https://github.com/storm-software/stryke/releases/tag/prisma-trpc-generator%400.10.0) (2025-03-31)
+
+### Features
+
+- **prisma-better-auth-generator:** Initial check-in of the Prisma Better-Auth
+  Generator package
+  ([2231ecb](https://github.com/storm-software/stryke/commit/2231ecb))
+
 ## [0.9.4](https://github.com/storm-software/stryke/releases/tag/prisma-trpc-generator%400.9.4) (2025-03-30)
 
 ### Miscellaneous
