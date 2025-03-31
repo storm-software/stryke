@@ -2,6 +2,13 @@
 
 # Changelog for Stryke - Prisma Better Auth Generator
 
+## [0.11.0](https://github.com/storm-software/stryke/releases/tag/prisma-better-auth-generator%400.11.0) (2025-03-31)
+
+### Features
+
+- **prisma-better-auth-generator:** Added the `withSoftDelete` configuration
+  property ([6f654dc](https://github.com/storm-software/stryke/commit/6f654dc))
+
 ## [0.10.4](https://github.com/storm-software/stryke/releases/tag/prisma-better-auth-generator%400.10.4) (2025-03-31)
 
 ### Bug Fixes
