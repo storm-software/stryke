@@ -24,6 +24,7 @@ import type {
   RootConfig
 } from "@trpc/server/unstable-core-do-not-import";
 import defu from "defu";
+import type { ReadonlyRequestCookies } from "next/dist/server/web/spec-extension/adapters/request-cookies";
 import type { BaseContext } from "./types";
 
 /**
@@ -38,7 +39,7 @@ export function createTRPCServerActionHandler<
   },
   TContext extends BaseContext = BaseContext
 >(
-  headers: () => Promise<Headers>,
+  cookies: () => Promise<ReadonlyRequestCookies>,
   t: TInstance,
   createContext: () => MaybePromise<TContext> = async () => ({}) as TContext
 ) {
@@ -49,7 +50,7 @@ export function createTRPCServerActionHandler<
       return defu(context, {
         headers: {
           // Pass the cookie header to the API
-          cookies: (await headers()).get("cookie") ?? ""
+          cookies: (await cookies()).toString() ?? ""
         }
       });
     }

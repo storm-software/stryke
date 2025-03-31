@@ -134,7 +134,8 @@ export async function generateTRPCExports(
       joinPaths(outputDir, config.contextPath)
     )}';
 import { initTRPC } from '@trpc/server';
-import { createTRPCServerActionHandler } from '@stryke/trpc-next/action-handler';`);
+import { createTRPCServerActionHandler } from '@stryke/trpc-next/action-handler';
+import { cookies } from "next/headers";`);
   }
 
   sourceFile.addStatements(/* ts */ `
@@ -220,7 +221,7 @@ export const ${procName} = t.procedure`);
   if (config.withNext) {
     sourceFile.addStatements(/* ts */ `
 export const createAction: ReturnType<typeof createTRPCServerActionHandler> =
-  createTRPCServerActionHandler(t, createContext);
+  createTRPCServerActionHandler(cookies, t, createContext);
 `);
   }
 
