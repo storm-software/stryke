@@ -19,6 +19,7 @@ import type {
   ConnectorType,
   DMMF as PrismaDMMF
 } from "@prisma/generator-helper";
+import { upperCaseFirst } from "@stryke/string-format/upper-case-first";
 import path from "node:path";
 import type {
   AggregateOperationSupport,
@@ -163,46 +164,52 @@ export default class Transformer {
       return [];
     }
 
-    let alternatives = lines.reduce<string[]>((result, inputType) => {
-      if (inputType.type === "String") {
-        result.push(this.wrapWithZodValidators("z.string()", field));
-      } else if (
-        inputType.type === "Int" ||
-        inputType.type === "Float" ||
-        inputType.type === "Decimal"
-      ) {
-        result.push(this.wrapWithZodValidators("z.number()", field));
-      } else if (inputType.type === "BigInt") {
-        result.push(this.wrapWithZodValidators("z.bigint()", field));
-      } else if (inputType.type === "Boolean") {
-        result.push(this.wrapWithZodValidators("z.boolean()", field));
-      } else if (inputType.type === "DateTime") {
-        result.push(this.wrapWithZodValidators("z.coerce.date()", field));
-      } else if (inputType.type === "Json") {
-        this.hasJson = true;
+    let alternatives = lines
+      .slice(0, 1)
+      .reduce<string[]>((result, inputType) => {
+        if (inputType.type === "String") {
+          result.push(this.wrapWithZodValidators("z.string()", field));
+        } else if (
+          inputType.type === "Int" ||
+          inputType.type === "Float" ||
+          inputType.type === "Decimal"
+        ) {
+          result.push(this.wrapWithZodValidators("z.number()", field));
+        } else if (inputType.type === "BigInt") {
+          result.push(this.wrapWithZodValidators("z.bigint()", field));
+        } else if (inputType.type === "Boolean") {
+          result.push(this.wrapWithZodValidators("z.boolean()", field));
+        } else if (inputType.type === "DateTime") {
+          result.push(this.wrapWithZodValidators("z.coerce.date()", field));
+        } else if (inputType.type === "Json") {
+          this.hasJson = true;
 
-        result.push(this.wrapWithZodValidators("jsonSchema", field));
-      } else if (inputType.type === "True") {
-        result.push(this.wrapWithZodValidators("z.literal(true)", field));
-      } else if (inputType.type === "Bytes") {
-        result.push(this.wrapWithZodValidators("z.instanceof(Buffer)", field));
-      } else {
-        const isEnum = inputType.location === "enumTypes";
+          result.push(this.wrapWithZodValidators("jsonSchema", field));
+        } else if (inputType.type === "True") {
+          result.push(this.wrapWithZodValidators("z.literal(true)", field));
+        } else if (inputType.type === "Bytes") {
+          result.push(
+            this.wrapWithZodValidators("z.instanceof(Buffer)", field)
+          );
+        } else {
+          const isEnum = inputType.location === "enumTypes";
 
-        if (inputType.namespace === "prisma" || isEnum) {
-          if (
-            inputType.type !== this.name &&
-            typeof inputType.type === "string"
-          ) {
-            this.addSchemaImport(inputType.type);
+          if (inputType.namespace === "prisma" || isEnum) {
+            if (
+              inputType.type !== this.name &&
+              typeof inputType.type === "string"
+            ) {
+              this.addSchemaImport(inputType.type);
+            }
+
+            result.push(
+              this.generatePrismaStringLine(field, inputType, lines.length)
+            );
           }
-
-          result.push(this.generatePrismaStringLine(field, lines.length));
         }
-      }
 
-      return result;
-    }, []);
+        return result;
+      }, []);
 
     if (alternatives.length === 0) {
       return [];
@@ -251,12 +258,16 @@ export default class Transformer {
     this.schemaImports.add(name);
   }
 
-  generatePrismaStringLine(field: PrismaDMMF.SchemaArg, inputsLength: number) {
-    if (field.inputTypes.length === 0 || !field.inputTypes[0]) {
-      return "";
-    }
+  generatePrismaStringLine(
+    field: PrismaDMMF.SchemaArg,
+    inputType: PrismaDMMF.InputTypeRef,
+    inputsLength: number
+  ) {
+    // if (field.inputTypes.length === 0 || !field.inputTypes[0]) {
+    //   return "";
+    // }
 
-    const inputType = field.inputTypes[0];
+    // const inputType = field.inputTypes[0];
 
     const isEnum = inputType.location === "enumTypes";
 
@@ -423,10 +434,8 @@ export default class Transformer {
   }
 
   resolveModelQuerySchemaName(modelName: string, queryName: string) {
-    const modelNameCapitalized =
-      modelName.charAt(0).toUpperCase() + modelName.slice(1);
-    const queryNameCapitalized =
-      queryName.charAt(0).toUpperCase() + queryName.slice(1);
+    const modelNameCapitalized = upperCaseFirst(modelName);
+    const queryNameCapitalized = upperCaseFirst(queryName);
 
     return `${modelNameCapitalized}${queryNameCapitalized}Schema`;
   }
