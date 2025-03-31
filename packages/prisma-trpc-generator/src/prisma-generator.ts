@@ -371,8 +371,9 @@ export async function generate(options: GeneratorOptions) {
   consoleLog("Generating tRPC app router");
 
   appRouter.addStatements(/* ts */ `
-    export const appRouter = t.router({${routerStatements.join()}})
-    `);
+export const appRouter = t.router({${routerStatements.join()}});
+
+export type AppRouter = typeof appRouter;`);
 
   appRouter.formatText({ indentSize: 2 });
 

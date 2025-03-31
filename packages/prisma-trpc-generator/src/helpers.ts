@@ -158,7 +158,7 @@ export async function generateTRPCExports(
 
   if (config.withMiddleware && typeof config.withMiddleware === "string") {
     sourceFile.addStatements(/* ts */ `
-  import defaultMiddleware from '${relativePath(
+  import middleware from '${relativePath(
     outputDir,
     joinPaths(
       outputDir,
@@ -169,7 +169,7 @@ export async function generateTRPCExports(
   )}';
   `);
     sourceFile.addStatements(/* ts */ `
-    export const globalMiddleware = t.middleware(defaultMiddleware);`);
+    export const globalMiddleware = t.middleware(middleware);`);
     middlewares.push({
       type: "global",
       value: /* ts */ `.use(globalMiddleware)`
