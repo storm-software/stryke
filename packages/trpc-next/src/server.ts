@@ -49,7 +49,7 @@ import type {
   RouterRecord
 } from "@trpc/server/unstable-core-do-not-import";
 import type { ResolverDef } from "@trpc/tanstack-react-query";
-import { cookies } from "next/headers";
+import type { ReadonlyRequestCookies } from "next/dist/server/web/spec-extension/adapters/request-cookies";
 import { transformer } from "./shared";
 
 export type DecorateProcedureServer<
@@ -105,6 +105,7 @@ export function createTRPCServer<
   TRouter extends AnyTRPCRouter,
   TContext extends inferRouterContext<TRouter> = inferRouterContext<TRouter>
 >(
+  cookies: () => Promise<ReadonlyRequestCookies>,
   router: TRouter,
   createContext: () => MaybePromise<TContext> = () => ({}) as TContext
 ) {

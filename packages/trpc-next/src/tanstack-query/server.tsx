@@ -22,7 +22,6 @@ import type { AnyTRPCRouter, inferRouterContext } from "@trpc/server";
 import type { TRPCQueryOptions } from "@trpc/tanstack-react-query";
 import { createTRPCOptionsProxy } from "@trpc/tanstack-react-query";
 import defu from "defu";
-import { headers } from "next/headers";
 import React, { cache } from "react";
 import "server-only";
 import { createQueryClient } from "../shared";
@@ -39,6 +38,7 @@ export function createTRPCTanstackQueryServer<
   TRouter extends AnyTRPCRouter,
   TContext extends inferRouterContext<TRouter> = inferRouterContext<TRouter>
 >(
+  headers: () => Promise<Headers>,
   router: TRouter,
   createContext: () => MaybePromise<TContext> = () => ({}) as TContext,
   queryClientConfig: Partial<QueryClientConfig> = {}

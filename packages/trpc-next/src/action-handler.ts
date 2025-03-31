@@ -24,7 +24,6 @@ import type {
   RootConfig
 } from "@trpc/server/unstable-core-do-not-import";
 import defu from "defu";
-import { headers } from "next/headers";
 import type { BaseContext } from "./types";
 
 /**
@@ -39,6 +38,7 @@ export function createTRPCServerActionHandler<
   },
   TContext extends BaseContext = BaseContext
 >(
+  headers: () => Promise<Headers>,
   t: TInstance,
   createContext: () => MaybePromise<TContext> = async () => ({}) as TContext
 ) {
