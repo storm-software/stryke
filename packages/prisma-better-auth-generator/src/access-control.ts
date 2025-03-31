@@ -19,6 +19,14 @@ import type { DMMF } from "@prisma/generator-helper";
 import { lowerCaseFirst } from "@stryke/string-format/lower-case-first";
 import type { SourceFile } from "ts-morph";
 
+// Omit these resources from the generated access control as they are managed by BetterAuth
+export const OMITTED_RESOURCES: string[] = [
+  "user",
+  "session",
+  "account",
+  "verification"
+] as const;
+
 export async function generateAccessControl(
   sourceFile: SourceFile,
   modelOperations: DMMF.ModelMapping[]
@@ -32,6 +40,10 @@ import {
 export const statements = {
   ...defaultStatements,
 ${modelOperations
+  .filter(
+    modelOperation =>
+      !OMITTED_RESOURCES.includes(lowerCaseFirst(modelOperation.model)!)
+  )
   .map(modelOperation => {
     const { model, plural: _, ...operations } = modelOperation;
 
