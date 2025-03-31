@@ -22,7 +22,7 @@ import type {
 } from "@prisma/generator-helper";
 import { createDirectory, removeDirectory } from "@stryke/fs/helpers";
 import { joinPaths } from "@stryke/path/join-paths";
-import { generateAccessControl } from "./access-control";
+import { generateAccessControl, generateStatements } from "./access-control";
 import { configSchema } from "./config";
 import { project } from "./project";
 import type { Writeable } from "./types";
@@ -83,16 +83,23 @@ export async function generate(options: GeneratorOptions) {
   const modelOperations = prismaClientDmmf.mappings
     .modelOperations as DMMF.ModelMapping[];
 
-  consoleLog(
-    `Generating Better-Auth access control source file to ${outputDir}`
+  consoleLog(`Generating Better-Auth statements source file`);
+
+  const statements = project.createSourceFile(
+    joinPaths(outputDir, "./statements.ts"),
+    undefined,
+    { overwrite: true }
   );
+  await generateStatements(statements, config, modelOperations);
+
+  consoleLog(`Generating Better-Auth access control source file`);
 
   const accessControl = project.createSourceFile(
     joinPaths(outputDir, "./access-control.ts"),
     undefined,
     { overwrite: true }
   );
-  await generateAccessControl(accessControl, config, modelOperations);
+  await generateAccessControl(accessControl);
 
   consoleLog("Saving Better-Auth router source files to disk");
 

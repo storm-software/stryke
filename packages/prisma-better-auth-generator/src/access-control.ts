@@ -33,13 +33,12 @@ export const SOFT_DELETE_OPERATIONS: string[] = [
   "softDeleteMany"
 ] as const;
 
-export async function generateAccessControl(
+export async function generateStatements(
   sourceFile: SourceFile,
   config: Config,
   modelOperations: DMMF.ModelMapping[]
 ) {
-  sourceFile.addStatements(/* ts */ `import { createAccessControl } from "better-auth/plugins/access";
-import {
+  sourceFile.addStatements(/* ts */ `import {
   defaultStatements,
 } from "better-auth/plugins/admin/access";`);
 
@@ -55,20 +54,30 @@ ${modelOperations
   .map(modelOperation => {
     const { model, plural: _, ...operations } = modelOperation;
 
-    const operationsList = Object.keys(operations)
-      .filter(
-        operation =>
-          !operation.endsWith("ManyAndReturn") && !operation.endsWith("OrThrow")
-      )
-      .map(operation => `"${operation.replace("One", "")}"`);
+    const operationsList = Object.keys(operations).filter(
+      operation =>
+        !operation.endsWith("ManyAndReturn") && !operation.endsWith("OrThrow")
+    );
     if (config.withSoftDelete) {
       operationsList.push(...SOFT_DELETE_OPERATIONS);
     }
 
-    return `${lowerCaseFirst(model)}: [${operationsList.sort().join(", ")}]`;
+    return `${lowerCaseFirst(model)}: [${operationsList
+      .map(operation => `"${operation.replace("One", "")}"`)
+      .sort()
+      .join(", ")}]`;
   })
   .join(",\n")}
 }`);
+
+  sourceFile.formatText({
+    indentSize: 2
+  });
+}
+
+export async function generateAccessControl(sourceFile: SourceFile) {
+  sourceFile.addStatements(/* ts */ `import { createAccessControl } from "better-auth/plugins/access";
+import { statements } from "./statements";`);
 
   sourceFile.addStatements(/* ts */ `
 export const ac = createAccessControl(statements);`);
