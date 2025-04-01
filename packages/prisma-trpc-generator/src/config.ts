@@ -77,9 +77,9 @@ export const configSchema = z.object({
   // Zod configuration
   withZod: configBoolean.default("true"),
   relationModel: configBoolean.default("true").or(z.literal("default")),
-  modelSuffix: z.string().default("Model"),
-  modelCase: z.enum(["PascalCase", "camelCase"]).default("PascalCase"),
-  useDecimalJs: configBoolean.default("false"),
+  modelSuffix: z.string().default("Schema"),
+  modelCase: z.enum(["PascalCase", "camelCase"]).default("camelCase"),
+  useDecimalJs: configBoolean.default("true"),
   imports: z.string().optional(),
   prismaJsonNullability: configBoolean.default("true")
 });
