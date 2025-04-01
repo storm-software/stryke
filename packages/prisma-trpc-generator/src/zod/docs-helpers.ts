@@ -16,7 +16,7 @@
  ------------------------------------------------------------------- */
 
 import type { ArrayTree } from "parenthesis";
-import { parse, stringify } from "parenthesis";
+import parenthesis from "parenthesis";
 import { chunk } from "./model-helpers";
 
 export const getJSDocs = (docString?: string) => {
@@ -44,13 +44,13 @@ export const getZodDocElements = (docString: string) =>
     .map(line => line.trimStart().slice(4))
     .flatMap(line =>
       // Array.from(line.matchAll(/\.([^().]+\(.*?\))/g), (m) => m.slice(1)).flat()
-      chunk(parse(line), 2)
+      chunk(parenthesis.parse(line), 2)
         .slice(0, -1)
         .map(
           ([each, contents]) =>
             `${(each as string).replace(
               /\)?\./,
               ""
-            )}${stringify(contents as ArrayTree)})`
+            )}${parenthesis.stringify(contents as ArrayTree)})`
         )
     );
