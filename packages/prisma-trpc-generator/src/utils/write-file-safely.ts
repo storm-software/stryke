@@ -52,8 +52,10 @@ export const writeIndexFile = async (indexPath: string) => {
     }
     const normalized = correctPath(relativePath);
 
-    return `export * from './${normalized}'`;
+    return `export * from './${normalized}';`;
   });
+
+  rows.push("export * from './models';");
 
   await writeFileSafely(indexPath, rows.join("\n"), false);
 };

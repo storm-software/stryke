@@ -30,6 +30,7 @@ import { configSchema } from "./config";
 import {
   constructDefaultOptions,
   constructShield,
+  constructZodModels,
   generateCreateRouterImport,
   generateProcedure,
   generateRouterImport,
@@ -130,6 +131,13 @@ export async function generate(options: GeneratorOptions) {
         prismaClientProvider.output?.value as string
       );
     }
+
+    await constructZodModels(
+      models,
+      joinPaths(zodOutputPath, "models"),
+      config,
+      options
+    );
 
     resolveZodModelsComments(
       models,

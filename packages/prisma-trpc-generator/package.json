@@ -110,6 +110,7 @@
     "@prisma/internals": "catalog:",
     "esbuild": "catalog:",
     "jiti": "catalog:",
+    "parenthesis": "catalog:",
     "prettier": "catalog:",
     "ts-morph": "catalog:"
   },

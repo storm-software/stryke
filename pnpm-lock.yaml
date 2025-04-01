@@ -222,6 +222,9 @@ catalogs:
     nx:
       specifier: ^20.5.0
       version: 20.5.0
+    parenthesis:
+      specifier: ^3.1.8
+      version: 3.1.8
     picomatch:
       specifier: ^4.0.2
       version: 4.0.2
@@ -643,6 +646,9 @@ importers:
       jiti:
         specifier: 'catalog:'
         version: 2.4.2
+      parenthesis:
+        specifier: 'catalog:'
+        version: 3.1.8
       prettier:
         specifier: 'catalog:'
         version: 3.5.3
@@ -8009,6 +8015,9 @@ packages:
   parent-module@2.0.0:
     resolution: {integrity: sha512-uo0Z9JJeWzv8BG+tRcapBKNJ0dro9cLyczGzulS6EfeyAdeC9sbojtW6XwvYxJkEne9En+J2XEl4zyglVeIwFg==}
     engines: {node: '>=8'}
+
+  parenthesis@3.1.8:
+    resolution: {integrity: sha512-KF/U8tk54BgQewkJPvB4s/US3VQY68BRDpH638+7O/n58TpnwiwnOtGIOsT2/i+M78s61BBpeC83STB88d8sqw==}
 
   parse-entities@2.0.0:
     resolution: {integrity: sha512-kkywGpCcRYhqQIchaWqZ875wzpS/bMKhz5HnN3p7wveJTkTtyAB/AlnS0f8DFSqYW1T82t6yEAkEcB+A1I3MbQ==}
@@ -19283,6 +19292,8 @@ snapshots:
   parent-module@2.0.0:
     dependencies:
       callsites: 3.1.0
+
+  parenthesis@3.1.8: {}
 
   parse-entities@2.0.0:
     dependencies:

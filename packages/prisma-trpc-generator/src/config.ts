@@ -61,7 +61,6 @@ const configBoolean = z
 
 export const configSchema = z.object({
   debug: configBoolean.default("false"),
-  withZod: configBoolean.default("true"),
   withNext: configBoolean.default("true"),
   withMiddleware: configBoolean.default("false"),
   withShield: configBoolean.default("false"),
@@ -73,7 +72,16 @@ export const configSchema = z.object({
     .default(Object.values(ModelAction).join(","))
     .transform(arg => {
       return arg.split(",").map(action => modelActionEnum.parse(action.trim()));
-    })
+    }),
+
+  // Zod configuration
+  withZod: configBoolean.default("true"),
+  relationModel: configBoolean.default("true").or(z.literal("default")),
+  modelSuffix: z.string().default("Model"),
+  modelCase: z.enum(["PascalCase", "camelCase"]).default("PascalCase"),
+  useDecimalJs: configBoolean.default("false"),
+  imports: z.string().optional(),
+  prismaJsonNullability: configBoolean.default("true")
 });
 
 export type Config = z.infer<typeof configSchema>;

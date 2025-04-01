@@ -27,7 +27,10 @@ import { joinPaths } from "@stryke/path/join-paths";
 import { lowerCaseFirst } from "@stryke/string-format/lower-case-first";
 import type { SourceFile } from "ts-morph";
 import type { Config } from "./config";
+import { project } from "./project";
+import type { Writeable } from "./types";
 import { getPrismaInternals } from "./utils/get-prisma-internals";
+import { generateBarrelFile, populateModelFile } from "./zod/model-helpers";
 
 const getProcedureName = (config: Config) => {
   return config.withShield
@@ -585,4 +588,39 @@ const options: RuntimeConfigOptions<Context> = {${config.withNext ? "\n transfor
 
 export default options;
 `;
+};
+
+export const constructZodModels = async (
+  models: Writeable<DMMF.Model[]>,
+  outputPath: string,
+  config: Config,
+  options: GeneratorOptions
+) => {
+  const indexFile = project.createSourceFile(
+    `${outputPath}/index.ts`,
+    {},
+    { overwrite: true }
+  );
+
+  generateBarrelFile(models, indexFile);
+
+  indexFile.formatText({
+    indentSize: 2
+  });
+
+  await Promise.all(
+    models.map(async model => {
+      const sourceFile = project.createSourceFile(
+        `${outputPath}/${lowerCaseFirst(model.name)}.schema.ts`,
+        {},
+        { overwrite: true }
+      );
+
+      await populateModelFile(model, sourceFile, config, options);
+
+      sourceFile.formatText({
+        indentSize: 2
+      });
+    })
+  );
 };
