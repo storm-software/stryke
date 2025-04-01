@@ -2,6 +2,13 @@
 
 # Changelog for Stryke - Prisma Trpc Generator
 
+## [0.11.2](https://github.com/storm-software/stryke/releases/tag/prisma-trpc-generator%400.11.2) (2025-04-01)
+
+### Bug Fixes
+
+- **prisma-trpc-generator:** Resolved issue with `parenthesis` default import
+  ([fab5032](https://github.com/storm-software/stryke/commit/fab5032))
+
 ## [0.11.1](https://github.com/storm-software/stryke/releases/tag/prisma-trpc-generator%400.11.1) (2025-04-01)
 
 ### Miscellaneous
