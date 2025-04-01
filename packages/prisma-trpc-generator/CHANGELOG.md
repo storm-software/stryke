@@ -2,6 +2,13 @@
 
 # Changelog for Stryke - Prisma Trpc Generator
 
+## [0.11.0](https://github.com/storm-software/stryke/releases/tag/prisma-trpc-generator%400.11.0) (2025-04-01)
+
+### Features
+
+- **prisma-trpc-generator:** Added Zod schema generation for models
+  ([fe59a9e](https://github.com/storm-software/stryke/commit/fe59a9e))
+
 ## [0.10.6](https://github.com/storm-software/stryke/releases/tag/prisma-trpc-generator%400.10.6) (2025-03-31)
 
 ### Bug Fixes

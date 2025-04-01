@@ -2,6 +2,13 @@
 
 # Changelog for Stryke - String Format
 
+## [0.3.0](https://github.com/storm-software/stryke/releases/tag/string-format%400.3.0) (2025-04-01)
+
+### Features
+
+- **prisma-trpc-generator:** Added Zod schema generation for models
+  ([fe59a9e](https://github.com/storm-software/stryke/commit/fe59a9e))
+
 ## [0.2.5](https://github.com/storm-software/stryke/releases/tag/string-format%400.2.5) (2025-03-28)
 
 ### Miscellaneous
