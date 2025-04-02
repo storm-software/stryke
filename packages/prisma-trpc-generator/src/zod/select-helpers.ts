@@ -98,7 +98,7 @@ function generateModelCountOutputTypeArgsInputObjectTypes(
   for (const modelCountOutputType of modelCountOutputTypes) {
     const { name: modelCountOutputTypeName } = modelCountOutputType;
     const modelCountOutputTypeArgsInputObjectType: DMMF.InputType = {
-      name: `${modelCountOutputTypeName}CountArgs`,
+      name: `${modelCountOutputTypeName}DefaultArgs`,
       constraints: {
         maxNumFields: null,
         minNumFields: null
