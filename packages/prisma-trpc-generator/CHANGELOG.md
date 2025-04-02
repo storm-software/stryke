@@ -2,6 +2,13 @@
 
 # Changelog for Stryke - Prisma Trpc Generator
 
+## [0.11.6](https://github.com/storm-software/stryke/releases/tag/prisma-trpc-generator%400.11.6) (2025-04-02)
+
+### Bug Fixes
+
+- **prisma-trpc-generator:** Resolve issue applying union types in Zod schemas
+  ([f81121a](https://github.com/storm-software/stryke/commit/f81121a))
+
 ## [0.11.5](https://github.com/storm-software/stryke/releases/tag/prisma-trpc-generator%400.11.5) (2025-04-02)
 
 ### Bug Fixes
