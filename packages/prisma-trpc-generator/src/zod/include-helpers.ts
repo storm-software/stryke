@@ -90,7 +90,7 @@ function generateModelIncludeInputObjectTypes(
       if (isGenerateSelect) {
         inputTypes.push({
           isList: false,
-          type: `${modelName}CountOutputTypeArgs`,
+          type: `${modelName}CountOutputTypeDefaultArgs`,
           location: "inputObjectTypes",
           namespace: "prisma"
         });
