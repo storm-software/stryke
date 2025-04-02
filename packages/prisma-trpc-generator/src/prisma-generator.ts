@@ -134,7 +134,7 @@ export async function generate(options: GeneratorOptions) {
 
     await constructZodModels(
       models,
-      joinPaths(zodOutputPath, "models"),
+      joinPaths(zodOutputPath, "schemas", "models"),
       config,
       options
     );
