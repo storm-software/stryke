@@ -288,10 +288,11 @@ export default class Transformer {
           : objectSchemaLine;
     const arr = inputType.isList ? ".array()" : "";
     const opt = !field.isRequired ? ".optional()" : "";
-    const nullable =
-      field.inputTypes.length > 1 && field.inputTypes[1]?.type === "Null"
-        ? ".nullable()"
-        : "";
+    const nullable = field.inputTypes.some(
+      inputType => inputType?.type === "Null"
+    )
+      ? ".nullable()"
+      : "";
 
     return inputsLength === 1
       ? `  ${field.name}: z.lazy(() => ${lowerCaseFirst(schema)})${arr}${opt}${nullable}`

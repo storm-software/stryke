@@ -62,7 +62,7 @@ function generateModelIncludeInputObjectTypes(
             { isList: false, type: "Boolean", location: "scalar" },
             {
               isList: false,
-              type: isList ? `${type}FindManyArgs` : `${type}Args`,
+              type: isList ? `${type}FindManyArgs` : `${type}DefaultArgs`,
               location: "inputObjectTypes",
               namespace: "prisma"
             }

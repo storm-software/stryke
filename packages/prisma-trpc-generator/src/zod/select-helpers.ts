@@ -98,7 +98,7 @@ function generateModelCountOutputTypeArgsInputObjectTypes(
   for (const modelCountOutputType of modelCountOutputTypes) {
     const { name: modelCountOutputTypeName } = modelCountOutputType;
     const modelCountOutputTypeArgsInputObjectType: DMMF.InputType = {
-      name: `${modelCountOutputTypeName}Args`,
+      name: `${modelCountOutputTypeName}CountArgs`,
       constraints: {
         maxNumFields: null,
         minNumFields: null
@@ -150,7 +150,7 @@ function generateModelSelectInputObjectTypes(models: DMMF.Model[]) {
       if (isRelationField) {
         const schemaArgInputType: ArrayValues<SchemaArgInputTypes> = {
           isList: false,
-          type: isList ? `${type}FindManyArgs` : `${type}Args`,
+          type: isList ? `${type}FindManyArgs` : `${type}DefaultArgs`,
           location: "inputObjectTypes",
           namespace: "prisma"
         };
@@ -172,7 +172,7 @@ function generateModelSelectInputObjectTypes(models: DMMF.Model[]) {
           { isList: false, type: "Boolean", location: "scalar" },
           {
             isList: false,
-            type: `${modelName}CountOutputTypeArgs`,
+            type: `${modelName}CountOutputTypeDefaultArgs`,
             location: "inputObjectTypes",
             namespace: "prisma"
           }
