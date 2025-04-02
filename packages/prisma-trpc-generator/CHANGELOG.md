@@ -2,6 +2,13 @@
 
 # Changelog for Stryke - Prisma Trpc Generator
 
+## [0.11.10](https://github.com/storm-software/stryke/releases/tag/prisma-trpc-generator%400.11.10) (2025-04-02)
+
+### Bug Fixes
+
+- **prisma-trpc-generator:** Resolve issue with missing field name update
+  ([769c5c4](https://github.com/storm-software/stryke/commit/769c5c4))
+
 ## [0.11.9](https://github.com/storm-software/stryke/releases/tag/prisma-trpc-generator%400.11.9) (2025-04-02)
 
 ### Bug Fixes
