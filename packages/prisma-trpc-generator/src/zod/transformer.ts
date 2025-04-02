@@ -168,52 +168,48 @@ export default class Transformer {
       return [];
     }
 
-    let alternatives = lines
-      .slice(0, 1)
-      .reduce<string[]>((result, inputType) => {
-        if (inputType.type === "String") {
-          result.push(this.wrapWithZodValidators("z.string()", field));
-        } else if (
-          inputType.type === "Int" ||
-          inputType.type === "Float" ||
-          inputType.type === "Decimal"
-        ) {
-          result.push(this.wrapWithZodValidators("z.number()", field));
-        } else if (inputType.type === "BigInt") {
-          result.push(this.wrapWithZodValidators("z.bigint()", field));
-        } else if (inputType.type === "Boolean") {
-          result.push(this.wrapWithZodValidators("z.boolean()", field));
-        } else if (inputType.type === "DateTime") {
-          result.push(this.wrapWithZodValidators("z.coerce.date()", field));
-        } else if (inputType.type === "Json") {
-          this.hasJson = true;
+    let alternatives = lines.reduce<string[]>((result, inputType) => {
+      if (inputType.type === "String") {
+        result.push(this.wrapWithZodValidators("z.string()", field));
+      } else if (
+        inputType.type === "Int" ||
+        inputType.type === "Float" ||
+        inputType.type === "Decimal"
+      ) {
+        result.push(this.wrapWithZodValidators("z.number()", field));
+      } else if (inputType.type === "BigInt") {
+        result.push(this.wrapWithZodValidators("z.bigint()", field));
+      } else if (inputType.type === "Boolean") {
+        result.push(this.wrapWithZodValidators("z.boolean()", field));
+      } else if (inputType.type === "DateTime") {
+        result.push(this.wrapWithZodValidators("z.coerce.date()", field));
+      } else if (inputType.type === "Json") {
+        this.hasJson = true;
 
-          result.push(this.wrapWithZodValidators("jsonSchema", field));
-        } else if (inputType.type === "True") {
-          result.push(this.wrapWithZodValidators("z.literal(true)", field));
-        } else if (inputType.type === "Bytes") {
-          result.push(
-            this.wrapWithZodValidators("z.instanceof(Buffer)", field)
-          );
-        } else {
-          const isEnum = inputType.location === "enumTypes";
+        result.push(this.wrapWithZodValidators("jsonSchema", field));
+      } else if (inputType.type === "True") {
+        result.push(this.wrapWithZodValidators("z.literal(true)", field));
+      } else if (inputType.type === "Bytes") {
+        result.push(this.wrapWithZodValidators("z.instanceof(Buffer)", field));
+      } else {
+        const isEnum = inputType.location === "enumTypes";
 
-          if (inputType.namespace === "prisma" || isEnum) {
-            if (
-              inputType.type !== this.name &&
-              typeof inputType.type === "string"
-            ) {
-              this.addSchemaImport(inputType.type);
-            }
-
-            result.push(
-              this.generatePrismaStringLine(field, inputType, lines.length)
-            );
+        if (inputType.namespace === "prisma" || isEnum) {
+          if (
+            inputType.type !== this.name &&
+            typeof inputType.type === "string"
+          ) {
+            this.addSchemaImport(inputType.type);
           }
-        }
 
-        return result;
-      }, []);
+          result.push(
+            this.generatePrismaStringLine(field, inputType, lines.length)
+          );
+        }
+      }
+
+      return result;
+    }, []);
 
     if (alternatives.length === 0) {
       return [];
