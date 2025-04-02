@@ -2,6 +2,13 @@
 
 # Changelog for Stryke - Prisma Trpc Generator
 
+## [0.11.5](https://github.com/storm-software/stryke/releases/tag/prisma-trpc-generator%400.11.5) (2025-04-02)
+
+### Bug Fixes
+
+- **prisma-trpc-generator:** Resolve issue with casing in schema name
+  ([8cc8663](https://github.com/storm-software/stryke/commit/8cc8663))
+
 ## [0.11.4](https://github.com/storm-software/stryke/releases/tag/prisma-trpc-generator%400.11.4) (2025-04-02)
 
 ### Bug Fixes
