@@ -2,6 +2,13 @@
 
 # Changelog for Stryke - Prisma Trpc Generator
 
+## [0.11.9](https://github.com/storm-software/stryke/releases/tag/prisma-trpc-generator%400.11.9) (2025-04-02)
+
+### Bug Fixes
+
+- **prisma-trpc-generator:** Resolve issue with invalid name for output type
+  args ([9a10ce6](https://github.com/storm-software/stryke/commit/9a10ce6))
+
 ## [0.11.8](https://github.com/storm-software/stryke/releases/tag/prisma-trpc-generator%400.11.8) (2025-04-02)
 
 ### Bug Fixes
