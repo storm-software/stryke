@@ -10,7 +10,8 @@
   },
   "private": false,
   "dependencies": {
-    "js-xxhash": "catalog:"
+    "js-xxhash": "catalog:",
+    "ohash": "^2.0.11"
   },
   "publishConfig": {
     "access": "public"

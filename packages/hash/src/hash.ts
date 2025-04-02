@@ -15,12 +15,9 @@
 
  ------------------------------------------------------------------- */
 
-import { isString } from "@stryke/type-checks/is-string";
-import type { HashObjectOptions } from "./hash-object";
-import { hashObject } from "./hash-object";
-import { sha256base64 } from "./sha-256";
+import { hash as ohash } from "ohash";
 
-export interface HashOptions extends HashObjectOptions {
+export interface HashOptions {
   /**
    * The maximum length of the hash
    *
@@ -37,9 +34,7 @@ export interface HashOptions extends HashObjectOptions {
  * @returns A hashed string value
  */
 export function hash(object: any, options?: HashOptions): string {
-  const result = sha256base64(
-    isString(object) ? object : hashObject(object, options)
-  );
+  const result = ohash(object);
   const maxLength = options?.maxLength ?? 32;
 
   return result.length > maxLength ? result.slice(0, maxLength) : result;
