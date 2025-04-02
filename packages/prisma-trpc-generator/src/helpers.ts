@@ -251,7 +251,7 @@ export function generateProcedure(
   sourceFile.addStatements(/* ts */ `${
     config.showModelNameInProcedure ? name : nameWithoutModel
   }: ${getProcedureName(config)}
-  ${config.withZod ? `.input(${typeName})` : ""}.${getProcedureTypeByOpName(
+  ${config.withZod ? `.input(${lowerCaseFirst(typeName)})` : ""}.${getProcedureTypeByOpName(
     baseOpType
   )}(async ({ ctx, input }) => {
     const ${name} = await ctx.prisma.${lowerCaseFirst(
