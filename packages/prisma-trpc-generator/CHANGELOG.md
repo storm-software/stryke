@@ -2,6 +2,13 @@
 
 # Changelog for Stryke - Prisma Trpc Generator
 
+## [0.11.8](https://github.com/storm-software/stryke/releases/tag/prisma-trpc-generator%400.11.8) (2025-04-02)
+
+### Bug Fixes
+
+- **prisma-trpc-generator:** Exclude FieldRefInput schemas from generated source
+  code ([ea163e8](https://github.com/storm-software/stryke/commit/ea163e8))
+
 ## [0.11.7](https://github.com/storm-software/stryke/releases/tag/prisma-trpc-generator%400.11.7) (2025-04-02)
 
 ### Bug Fixes
