@@ -2,6 +2,13 @@
 
 # Changelog for Stryke - Prisma Trpc Generator
 
+## [0.11.4](https://github.com/storm-software/stryke/releases/tag/prisma-trpc-generator%400.11.4) (2025-04-02)
+
+### Bug Fixes
+
+- **prisma-trpc-generator:** Resolve issue with invalid schema paths
+  ([64eaed9](https://github.com/storm-software/stryke/commit/64eaed9))
+
 ## [0.11.3](https://github.com/storm-software/stryke/releases/tag/prisma-trpc-generator%400.11.3) (2025-04-02)
 
 ### Bug Fixes
