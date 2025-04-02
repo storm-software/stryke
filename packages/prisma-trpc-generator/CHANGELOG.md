@@ -2,6 +2,13 @@
 
 # Changelog for Stryke - Prisma Trpc Generator
 
+## [0.11.3](https://github.com/storm-software/stryke/releases/tag/prisma-trpc-generator%400.11.3) (2025-04-02)
+
+### Bug Fixes
+
+- **prisma-trpc-generator:** Resolve issue with models folder output path
+  ([d42cc16](https://github.com/storm-software/stryke/commit/d42cc16))
+
 ## [0.11.2](https://github.com/storm-software/stryke/releases/tag/prisma-trpc-generator%400.11.2) (2025-04-01)
 
 ### Bug Fixes
