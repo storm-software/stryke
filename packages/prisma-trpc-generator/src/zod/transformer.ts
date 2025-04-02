@@ -191,7 +191,7 @@ export default class Transformer {
         result.push(this.wrapWithZodValidators("z.literal(true)", field));
       } else if (inputType.type === "Bytes") {
         result.push(this.wrapWithZodValidators("z.instanceof(Buffer)", field));
-      } else {
+      } else if (!inputType.type.endsWith("FieldRefInput")) {
         const isEnum = inputType.location === "enumTypes";
 
         if (inputType.namespace === "prisma" || isEnum) {
@@ -288,15 +288,10 @@ export default class Transformer {
           : objectSchemaLine;
     const arr = inputType.isList ? ".array()" : "";
     const opt = !field.isRequired ? ".optional()" : "";
-    const nullable = field.inputTypes.some(
-      inputType => inputType?.type === "Null"
-    )
-      ? ".nullable()"
-      : "";
 
     return inputsLength === 1
-      ? `  ${field.name}: z.lazy(() => ${lowerCaseFirst(schema)})${arr}${opt}${nullable}`
-      : `z.lazy(() => ${lowerCaseFirst(schema)})${arr}${opt}${nullable}`;
+      ? `  ${field.name}: z.lazy(() => ${lowerCaseFirst(schema)})${arr}${opt}`
+      : `z.lazy(() => ${lowerCaseFirst(schema)})${arr}${opt}`;
   }
 
   generateFieldValidators(
