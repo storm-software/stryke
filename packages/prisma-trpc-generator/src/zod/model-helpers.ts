@@ -439,7 +439,7 @@ export const generateBarrelFile = (
 ) => {
   models.forEach(model =>
     indexFile.addExportDeclaration({
-      moduleSpecifier: `./${lowerCaseFirst(model.name)}`
+      moduleSpecifier: `./${lowerCaseFirst(model.name)}.schema`
     })
   );
 };
