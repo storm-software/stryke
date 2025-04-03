@@ -2,6 +2,13 @@
 
 # Changelog for Stryke - Hash
 
+## [0.9.0](https://github.com/storm-software/stryke/releases/tag/hash%400.9.0) (2025-04-02)
+
+### Features
+
+- **hash:** Update hash function to use `ohash` package
+  ([1e4efa0](https://github.com/storm-software/stryke/commit/1e4efa0))
+
 ## [0.8.4](https://github.com/storm-software/stryke/releases/tag/hash%400.8.4) (2025-03-28)
 
 ### Miscellaneous
