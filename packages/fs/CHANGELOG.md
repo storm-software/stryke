@@ -2,6 +2,13 @@
 
 # Changelog for Stryke - Fs
 
+## [0.10.6](https://github.com/storm-software/stryke/releases/tag/fs%400.10.6) (2025-04-04)
+
+### Miscellaneous
+
+- **monorepo:** Upgrade base Storm-Ops versions
+  ([6c234ae](https://github.com/storm-software/stryke/commit/6c234ae))
+
 ## [0.10.5](https://github.com/storm-software/stryke/releases/tag/fs%400.10.5) (2025-03-28)
 
 ### Miscellaneous
