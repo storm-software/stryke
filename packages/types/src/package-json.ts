@@ -18,7 +18,7 @@
 /**
  * The `package.json` file is the only required file in a package. It must be located at the root of a package, and can contain the following fields.
  */
-export interface PackageJson {
+export interface PackageJson extends Record<string, any> {
   /**
    * The name is what your thing is called.
    * Some rules:
@@ -276,6 +276,7 @@ export interface PackageJson {
    * Should be of the format: `<name>@<version>[#hash]`
    */
   packageManager?: string;
+
   [key: string]: any;
 }
 

@@ -50,7 +50,7 @@ export interface WriteFileOptions {
 export const writeFileSync = (
   filePath: string,
   content?: any,
-  options?: WriteFileOptions & FSWriteFileOptions
+  options: WriteFileOptions & FSWriteFileOptions = {}
 ): void => {
   if (!filePath) {
     throw new Error("No file path provided to write data");
@@ -58,7 +58,7 @@ export const writeFileSync = (
 
   const directory = findFilePath(correctPath(filePath));
   if (!existsSync(directory)) {
-    if (options?.createDirectory !== false) {
+    if (options.createDirectory !== false) {
       createDirectorySync(directory);
     } else {
       throw new Error(`Directory ${directory} does not exist`);
@@ -78,7 +78,7 @@ export const writeFileSync = (
 export const writeFile = async (
   filePath: string,
   content?: any,
-  options?: WriteFileOptions &
+  options: WriteFileOptions &
     (
       | (ObjectEncodingOptions & {
           mode?: Mode | undefined;
@@ -86,7 +86,7 @@ export const writeFile = async (
           flush?: boolean | undefined;
         } & Abortable)
       | Encoding
-    )
+    ) = {}
 ): Promise<void> => {
   if (!filePath) {
     throw new Error("No file path provided to read data");
@@ -94,7 +94,7 @@ export const writeFile = async (
 
   const directory = findFilePath(correctPath(filePath));
   if (!existsSync(directory)) {
-    if (options?.createDirectory !== false) {
+    if (options.createDirectory !== false) {
       await createDirectory(directory);
     } else {
       throw new Error(`Directory ${directory} does not exist`);
