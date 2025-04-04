@@ -22,10 +22,7 @@ import { getWorkspaceRoot } from "@stryke/path/get-workspace-root";
 import type { PackageResolvingOptions } from "@stryke/path/resolve";
 import { resolvePackage } from "@stryke/path/resolve";
 import type { PackageJson } from "@stryke/types/package-json";
-import type {
-  PackageManagerLockFiles,
-  PackageManagers
-} from "@stryke/types/package-manager";
+import type { PackageManager } from "@stryke/types/package-manager";
 import { readFile } from "./read-file";
 
 /**
@@ -33,34 +30,29 @@ import { readFile } from "./read-file";
  * @param dir - The path to the project
  * @returns The package manager used in the project
  */
-export function getPackageManager(dir = getWorkspaceRoot()): PackageManagers {
+export function getPackageManager(dir = getWorkspaceRoot()): PackageManager {
   const lockFile = getParentPath(
-    [
-      PackageManagerLockFiles.NPM,
-      PackageManagerLockFiles.YARN,
-      PackageManagerLockFiles.PNPM,
-      PackageManagerLockFiles.BUN
-    ],
+    ["package-lock.json", "yarn.lock", "pnpm-lock.yaml", "bun.lock"],
     dir
   );
 
   if (!lockFile) {
     // default use pnpm
-    return PackageManagers.PNPM;
+    return "pnpm";
   }
 
   switch (findFileName(lockFile)) {
-    case PackageManagerLockFiles.YARN: {
-      return PackageManagers.YARN;
+    case "yarn.lock": {
+      return "yarn";
     }
-    case PackageManagerLockFiles.PNPM: {
-      return PackageManagers.PNPM;
+    case "pnpm-lock.yaml": {
+      return "pnpm";
     }
-    case PackageManagerLockFiles.BUN: {
-      return PackageManagers.BUN;
+    case "bun.lock": {
+      return "bun";
     }
     default: {
-      return PackageManagers.NPM;
+      return "npm";
     }
   }
 }
