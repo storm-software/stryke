@@ -2,6 +2,13 @@
 
 # Changelog for Stryke - Types
 
+## [0.7.4](https://github.com/storm-software/stryke/releases/tag/types%400.7.4) (2025-04-04)
+
+### Miscellaneous
+
+- **monorepo:** Upgrade base Storm-Ops versions
+  ([6c234ae](https://github.com/storm-software/stryke/commit/6c234ae))
+
 ## [0.7.3](https://github.com/storm-software/stryke/releases/tag/types%400.7.3) (2025-03-28)
 
 ### Miscellaneous
