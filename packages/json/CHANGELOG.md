@@ -2,6 +2,13 @@
 
 # Changelog for Stryke - Json
 
+## [0.5.7](https://github.com/storm-software/stryke/releases/tag/json%400.5.7) (2025-04-07)
+
+### Bug Fixes
+
+- **json:** Resolve issue with nested string value
+  ([f7a1043](https://github.com/storm-software/stryke/commit/f7a1043))
+
 ## [0.5.6](https://github.com/storm-software/stryke/releases/tag/json%400.5.6) (2025-04-07)
 
 ### Bug Fixes
