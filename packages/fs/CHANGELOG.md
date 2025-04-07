@@ -2,6 +2,13 @@
 
 # Changelog for Stryke - Fs
 
+## [0.10.7](https://github.com/storm-software/stryke/releases/tag/fs%400.10.7) (2025-04-04)
+
+### Bug Fixes
+
+- **fs:** Resolve issue with enum type definiions
+  ([bd475d7](https://github.com/storm-software/stryke/commit/bd475d7))
+
 ## [0.10.6](https://github.com/storm-software/stryke/releases/tag/fs%400.10.6) (2025-04-04)
 
 ### Miscellaneous
