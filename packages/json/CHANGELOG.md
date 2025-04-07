@@ -2,6 +2,13 @@
 
 # Changelog for Stryke - Json
 
+## [0.6.0](https://github.com/storm-software/stryke/releases/tag/json%400.6.0) (2025-04-07)
+
+### Features
+
+- **json:** Added custom parsing logic
+  ([fd5a86a](https://github.com/storm-software/stryke/commit/fd5a86a))
+
 ## [0.5.8](https://github.com/storm-software/stryke/releases/tag/json%400.5.8) (2025-04-07)
 
 ### Bug Fixes
