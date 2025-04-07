@@ -30,6 +30,7 @@ import { Buffer } from "buffer/";
 import { parse } from "jsonc-parser";
 import SuperJSON from "superjson";
 import { formatParseError } from "./utils/parse-error";
+import { stringify } from "./utils/stringify";
 
 /**
  * A static JSON parser class used by Storm Software to serialize and deserialize JSON data
@@ -96,21 +97,7 @@ export class StormJSON extends SuperJSON {
       result = customTransformer.serialize(result) as T;
     }
 
-    return this.stringifyBase(result);
-  }
-
-  /**
-   * Stringify the given value with superjson
-   *
-   * @param obj - The object to stringify
-   * @returns The stringified object
-   */
-  public static stringifyBase(obj: any): string {
-    const result = StormJSON.instance.stringify(obj);
-
-    return result.startsWith('{"json":')
-      ? result.substring('{"json":'.length, result.length - 1)
-      : result;
+    return stringify(result);
   }
 
   /**
