@@ -15,7 +15,7 @@
 
  ------------------------------------------------------------------- */
 
-export interface StormURLBuilderOptions {
+export interface StormURLOptions {
   /**
    * Should the URL be decoded
    *

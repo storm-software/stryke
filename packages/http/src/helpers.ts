@@ -15,8 +15,22 @@
 
  ------------------------------------------------------------------- */
 
-export * from "./cookie";
-export * from "./format-data-uri";
-export * from "./helpers";
-export * from "./types";
-export * from "./url";
+export function formatLocalePath(locale: string) {
+  let result = locale;
+  if (result.includes("_")) {
+    result = result.replace(/_/g, "-");
+  }
+
+  if (result.includes("-")) {
+    const parts = result.split("-");
+    if (parts.length > 1) {
+      const lang = parts[0];
+      const region = parts[1];
+      if (lang && region) {
+        result = `${lang}-${region}`;
+      }
+    }
+  }
+
+  return result.toLowerCase();
+}

@@ -18,6 +18,7 @@
 import { StormJSON } from "@stryke/json/storm-json";
 import { joinPaths } from "@stryke/path/join-paths";
 import { isInteger } from "@stryke/type-checks/is-integer";
+import { isSetString } from "@stryke/type-checks/is-set-string";
 import { isUndefined } from "@stryke/type-checks/is-undefined";
 import type { ParsedURL } from "ufo";
 import {
@@ -37,7 +38,8 @@ import {
   stringifyParsedURL,
   stringifyQuery
 } from "ufo";
-import type { IStormURL, StormURLBuilderOptions } from "./types";
+import { formatLocalePath } from "./helpers";
+import type { IStormURL, StormURLOptions } from "./types";
 
 /**
  * A class used to build URLs
@@ -48,7 +50,7 @@ import type { IStormURL, StormURLBuilderOptions } from "./types";
  * The [UFO](https://github.com/unjs/ufo) library is used under the hood to parse and stringify URLs.
  */
 export class StormURL implements IStormURL, Partial<URL> {
-  #options: StormURLBuilderOptions;
+  #options: StormURLOptions;
 
   /**
    * A string containing the username specified before the domain name.
@@ -90,10 +92,7 @@ export class StormURL implements IStormURL, Partial<URL> {
    */
   #params: Record<string, any>;
 
-  constructor(
-    initialURL: string,
-    options: StormURLBuilderOptions = { decode: true }
-  ) {
+  constructor(initialURL: string, options: StormURLOptions = { decode: true }) {
     this.#options = options;
 
     const parsedURL = parseURL(
@@ -115,6 +114,15 @@ export class StormURL implements IStormURL, Partial<URL> {
     this.#paths = parsedURL.pathname
       ? parsedURL.pathname.split("/").filter(Boolean)
       : [];
+    if (options.locale) {
+      this.#paths.unshift(
+        formatLocalePath(
+          (isSetString(options.locale)
+            ? options.locale
+            : process.env.DEFAULT_LOCALE) || "en-us"
+        )
+      );
+    }
   }
 
   public set params(value: Record<string, any>) {
