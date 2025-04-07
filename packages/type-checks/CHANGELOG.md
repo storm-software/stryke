@@ -2,6 +2,13 @@
 
 # Changelog for Stryke - Type Checks
 
+## [0.2.0](https://github.com/storm-software/stryke/releases/tag/type-checks%400.2.0) (2025-04-07)
+
+### Features
+
+- **http:** Added the `StormURL` helper class
+  ([03643b0](https://github.com/storm-software/stryke/commit/03643b0))
+
 ## [0.1.4](https://github.com/storm-software/stryke/releases/tag/type-checks%400.1.4) (2025-03-28)
 
 ### Miscellaneous

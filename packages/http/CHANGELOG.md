@@ -2,6 +2,13 @@
 
 # Changelog for Stryke - Http
 
+## [0.7.0](https://github.com/storm-software/stryke/releases/tag/http%400.7.0) (2025-04-07)
+
+### Features
+
+- **http:** Added the `StormURL` helper class
+  ([03643b0](https://github.com/storm-software/stryke/commit/03643b0))
+
 ## [0.6.0](https://github.com/storm-software/stryke/releases/tag/http%400.6.0) (2025-03-28)
 
 ### Features

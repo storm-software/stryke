@@ -2,6 +2,13 @@
 
 # Changelog for Stryke - Json
 
+## [0.7.0](https://github.com/storm-software/stryke/releases/tag/json%400.7.0) (2025-04-07)
+
+### Features
+
+- **http:** Added the `StormURL` helper class
+  ([03643b0](https://github.com/storm-software/stryke/commit/03643b0))
+
 ## [0.6.1](https://github.com/storm-software/stryke/releases/tag/json%400.6.1) (2025-04-07)
 
 ### Miscellaneous
