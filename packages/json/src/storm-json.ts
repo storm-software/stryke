@@ -109,7 +109,7 @@ export class StormJSON extends SuperJSON {
     const result = StormJSON.instance.stringify(obj);
 
     return result.startsWith('{"json":')
-      ? result.substring('{"json":'.length, -1)
+      ? result.substring('{"json":'.length, result.length - 1)
       : result;
   }
 
