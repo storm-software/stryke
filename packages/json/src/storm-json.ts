@@ -16,7 +16,6 @@
  ------------------------------------------------------------------- */
 
 import type { ParseError } from "jsonc-parser";
-import type { SuperJSONResult } from "superjson";
 import type {
   Class,
   JsonParseOptions,
@@ -31,7 +30,6 @@ import { Buffer } from "buffer/";
 import { parse } from "jsonc-parser";
 import SuperJSON from "superjson";
 import { formatParseError } from "./utils/parse-error";
-import { stringify } from "./utils/stringify";
 
 /**
  * A static JSON parser class used by Storm Software to serialize and deserialize JSON data
@@ -83,12 +81,12 @@ export class StormJSON extends SuperJSON {
    * By default the JSON string is formatted with a 2 space indentation to be easy readable.
    *
    * @param value - Object which should be serialized to JSON
-   * @param options - JSON serialize options
+   * @param _options - JSON serialize options
    * @returns the formatted JSON representation of the object
    */
   public static override stringify<T>(
     value: T,
-    options?: JsonSerializeOptions
+    _options?: JsonSerializeOptions
   ): string {
     const customTransformer =
       StormJSON.instance.customTransformerRegistry.findApplicable(value);
@@ -98,12 +96,7 @@ export class StormJSON extends SuperJSON {
       result = customTransformer.serialize(result) as T;
     }
 
-    return stringify(
-      (result as SuperJSONResult)?.json
-        ? (result as SuperJSONResult)?.json
-        : result,
-      options?.spaces
-    );
+    return this.stringifyBase(result);
   }
 
   /**

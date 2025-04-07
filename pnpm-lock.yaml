@@ -68,7 +68,7 @@ catalogs:
       version: 0.145.9
     '@storm-software/git-tools':
       specifier: latest
-      version: 2.104.5
+      version: 2.104.6
     '@storm-software/linting-tools':
       specifier: latest
       version: 1.119.20
@@ -340,7 +340,7 @@ importers:
         version: 0.145.9(d0ed0da181ea63707b7a13efa83bdc77)
       '@storm-software/git-tools':
         specifier: 'catalog:'
-        version: 2.104.5(@swc-node/register@1.10.9(@swc/core@1.11.9(@swc/helpers@0.5.15))(@swc/types@0.1.19)(typescript@5.7.3))(@swc/core@1.11.9(@swc/helpers@0.5.15))(chokidar@4.0.3)
+        version: 2.104.6(@swc-node/register@1.10.9(@swc/core@1.11.9(@swc/helpers@0.5.15))(@swc/types@0.1.19)(typescript@5.7.3))(@swc/core@1.11.9(@swc/helpers@0.5.15))(chokidar@4.0.3)
       '@storm-software/linting-tools':
         specifier: 'catalog:'
         version: 1.119.20(chokidar@4.0.3)
@@ -3466,8 +3466,8 @@ packages:
       graphql: ^14.0.0 || ^15.0.0 || ^16.0.0
       prettier-plugin-astro: ^0.14.0
 
-  '@storm-software/git-tools@2.104.5':
-    resolution: {integrity: sha512-zzrRjIcqhvSVHK71zdq8lVDlQsuCLSfI6s9Y3T3MOI2y1C+pR0kOtggcJWnK9z/Q05ewNOofNefquZQGwQxZQw==}
+  '@storm-software/git-tools@2.104.6':
+    resolution: {integrity: sha512-UBstNGMO+arSWEy0Gs1hBMEK9YWwDZUcBn8lL8p4mJaYx4kMZjFx23OWYg3Hog49aj0Vtzjk7bLIwQI6d1KotA==}
     engines: {node: '>=22.4.0', pnpm: '>=10.3.0'}
     hasBin: true
 
@@ -13303,7 +13303,7 @@ snapshots:
       - verdaccio
       - vitest
 
-  '@storm-software/git-tools@2.104.5(@swc-node/register@1.10.9(@swc/core@1.11.9(@swc/helpers@0.5.15))(@swc/types@0.1.19)(typescript@5.7.3))(@swc/core@1.11.9(@swc/helpers@0.5.15))(chokidar@4.0.3)':
+  '@storm-software/git-tools@2.104.6(@swc-node/register@1.10.9(@swc/core@1.11.9(@swc/helpers@0.5.15))(@swc/types@0.1.19)(typescript@5.7.3))(@swc/core@1.11.9(@swc/helpers@0.5.15))(chokidar@4.0.3)':
     dependencies:
       '@angular-devkit/architect': 0.1900.6(chokidar@4.0.3)
       nx: 20.6.0(@swc-node/register@1.10.9(@swc/core@1.11.9(@swc/helpers@0.5.15))(@swc/types@0.1.19)(typescript@5.7.3))(@swc/core@1.11.9(@swc/helpers@0.5.15))
