@@ -2,6 +2,13 @@
 
 # Changelog for Stryke - Json
 
+## [0.5.5](https://github.com/storm-software/stryke/releases/tag/json%400.5.5) (2025-04-07)
+
+### Bug Fixes
+
+- **json:** Resovle issue with `stringify` function handler
+  ([72fbdb9](https://github.com/storm-software/stryke/commit/72fbdb9))
+
 ## [0.5.4](https://github.com/storm-software/stryke/releases/tag/json%400.5.4) (2025-03-28)
 
 ### Miscellaneous
