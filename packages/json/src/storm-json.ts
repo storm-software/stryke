@@ -106,7 +106,12 @@ export class StormJSON extends SuperJSON {
    * @returns The stringified object
    */
   public static stringifyBase(obj: any): string {
-    return StormJSON.instance.stringify(obj);
+    const result = StormJSON.instance.stringify(obj);
+
+    return result.substring(
+      result.indexOf('{"json":'),
+      result.lastIndexOf("}")
+    );
   }
 
   /**
