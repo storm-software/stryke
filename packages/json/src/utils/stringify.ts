@@ -35,13 +35,19 @@ export const stringify = (
       return "null";
     }
     case undefined: {
-      return "undefined";
+      return '"undefined"';
     }
     case true: {
       return "true";
     }
     case false: {
       return "false";
+    }
+    case Number.POSITIVE_INFINITY: {
+      return "infinity";
+    }
+    case Number.NEGATIVE_INFINITY: {
+      return "-infinity";
     }
   }
 

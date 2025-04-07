@@ -29,8 +29,9 @@ import { isString } from "@stryke/type-checks/is-string";
 import { Buffer } from "buffer/";
 import { parse } from "jsonc-parser";
 import SuperJSON from "superjson";
+import { parse as parseValue } from "./utils/parse";
 import { formatParseError } from "./utils/parse-error";
-import { stringify } from "./utils/stringify";
+import { stringify as stringifyValue } from "./utils/stringify";
 
 /**
  * A static JSON parser class used by Storm Software to serialize and deserialize JSON data
@@ -74,7 +75,7 @@ export class StormJSON extends SuperJSON {
    * @returns The parsed data
    */
   public static override parse<TData = unknown>(value: string): TData {
-    return StormJSON.instance.parse(value);
+    return parseValue(value);
   }
 
   /**
@@ -93,11 +94,11 @@ export class StormJSON extends SuperJSON {
       StormJSON.instance.customTransformerRegistry.findApplicable(value);
 
     let result = value;
-    if (customTransformer) {
+    if (customTransformer && customTransformer.isApplicable(value)) {
       result = customTransformer.serialize(result) as T;
     }
 
-    return stringify(result);
+    return stringifyValue(result);
   }
 
   /**
