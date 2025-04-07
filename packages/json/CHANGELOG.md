@@ -2,6 +2,13 @@
 
 # Changelog for Stryke - Json
 
+## [0.5.6](https://github.com/storm-software/stryke/releases/tag/json%400.5.6) (2025-04-07)
+
+### Bug Fixes
+
+- **json:** Resolve issue with `json` prefix in string result
+  ([23ca1c5](https://github.com/storm-software/stryke/commit/23ca1c5))
+
 ## [0.5.5](https://github.com/storm-software/stryke/releases/tag/json%400.5.5) (2025-04-07)
 
 ### Bug Fixes
