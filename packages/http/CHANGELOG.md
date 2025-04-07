@@ -2,6 +2,13 @@
 
 # Changelog for Stryke - Http
 
+## [0.7.1](https://github.com/storm-software/stryke/releases/tag/http%400.7.1) (2025-04-07)
+
+### Bug Fixes
+
+- **http:** Added the `formatLocalePath` helper and logic to `StormURL`
+  ([b5670ef](https://github.com/storm-software/stryke/commit/b5670ef))
+
 ## [0.7.0](https://github.com/storm-software/stryke/releases/tag/http%400.7.0) (2025-04-07)
 
 ### Features
