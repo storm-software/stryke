@@ -36,7 +36,7 @@ export function parseCookie(
   options?: CookieParseOptions
 ): Record<string, string> {
   if (!isString(strCookie)) {
-    throw new TypeError("argument str must be a string");
+    throw new Error("argument str must be a string");
   }
 
   const obj = {};
@@ -187,8 +187,6 @@ const fieldContentRegExp = /^[\t\u0020-\u007E\u0080-\u00FF]+$/;
  * @param value - value to set the cookie to
  * @param options - object containing serialization options
  * @returns a `Set-Cookie` header string
- *
- * @throws TypeError when `maxAge` options is invalid
  */
 export function serializeCookie(
   name: string,
@@ -199,17 +197,17 @@ export function serializeCookie(
   const enc = opt.encode ?? encodeURIComponent;
 
   if (!isFunction(enc)) {
-    throw new TypeError("option encode is invalid");
+    throw new Error("option encode is invalid");
   }
 
   if (!fieldContentRegExp.test(name)) {
-    throw new TypeError("argument name is invalid");
+    throw new Error("argument name is invalid");
   }
 
   const encodedValue = enc(value);
 
   if (encodedValue && !fieldContentRegExp.test(encodedValue)) {
-    throw new TypeError("argument val is invalid");
+    throw new Error("argument val is invalid");
   }
 
   let str = `${name}=${encodedValue}`;
@@ -226,7 +224,7 @@ export function serializeCookie(
 
   if (opt.domain) {
     if (!fieldContentRegExp.test(opt.domain)) {
-      throw new TypeError("option domain is invalid");
+      throw new Error("option domain is invalid");
     }
 
     str += `; Domain=${opt.domain}`;
@@ -234,7 +232,7 @@ export function serializeCookie(
 
   if (opt.path) {
     if (!fieldContentRegExp.test(opt.path)) {
-      throw new TypeError("option path is invalid");
+      throw new Error("option path is invalid");
     }
 
     str += `; Path=${opt.path}`;
@@ -242,7 +240,7 @@ export function serializeCookie(
 
   if (opt.expires) {
     if (!isDate(opt.expires) || Number.isNaN(opt.expires.valueOf())) {
-      throw new TypeError("option expires is invalid");
+      throw new Error("option expires is invalid");
     }
 
     str += `; Expires=${opt.expires.toUTCString()}`;
@@ -275,7 +273,7 @@ export function serializeCookie(
         break;
       }
       default: {
-        throw new TypeError("option priority is invalid");
+        throw new Error("option priority is invalid");
       }
     }
   }
@@ -303,7 +301,7 @@ export function serializeCookie(
         break;
       }
       default: {
-        throw new TypeError("option sameSite is invalid");
+        throw new Error("option sameSite is invalid");
       }
     }
   }

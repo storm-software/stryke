@@ -61,8 +61,6 @@ export class StormJSON extends SuperJSON {
 
   /**
    * Serialize the given value with superjson
-   *
-   *
    */
   public static override serialize(object: JsonValue): JsonParserResult {
     return StormJSON.instance.serialize(object);

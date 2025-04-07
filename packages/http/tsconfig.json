@@ -2,7 +2,7 @@
   "extends": "../../tsconfig.base.json",
   "compilerOptions": {
     "lib": ["ESNext"],
-    "types": ["node"],
+    "types": ["node", "ufo"],
     "outDir": "../../dist/out-tsc"
   },
   "include": ["src/**/*.ts", "src/**/*.json"],
