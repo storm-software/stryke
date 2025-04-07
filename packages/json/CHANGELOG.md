@@ -2,6 +2,13 @@
 
 # Changelog for Stryke - Json
 
+## [0.5.8](https://github.com/storm-software/stryke/releases/tag/json%400.5.8) (2025-04-07)
+
+### Bug Fixes
+
+- **json:** Resolve issue with invalid json parsing
+  ([5e57aaa](https://github.com/storm-software/stryke/commit/5e57aaa))
+
 ## [0.5.7](https://github.com/storm-software/stryke/releases/tag/json%400.5.7) (2025-04-07)
 
 ### Bug Fixes
