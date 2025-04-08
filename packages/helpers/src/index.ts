@@ -18,7 +18,6 @@
 export * from "./arg-identity";
 export * from "./debounce";
 export * from "./deep-clone";
-export * from "./deep-copy";
 export * from "./deep-merge";
 export * from "./delay";
 export * from "./filter-empty";

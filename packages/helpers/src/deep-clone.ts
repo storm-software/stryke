@@ -190,6 +190,7 @@ export function deepClone<T>(obj: T): Resolved<T> {
   }
 
   if (isTypedArray(obj)) {
+    // eslint-disable-next-line ts/no-unsafe-call
     const result = new (Object.getPrototypeOf(obj).constructor)(obj.length);
     for (const [i, element_] of obj.entries()) {
       result[i] = deepClone(element_);
