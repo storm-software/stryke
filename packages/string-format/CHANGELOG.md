@@ -2,6 +2,13 @@
 
 # Changelog for Stryke - String Format
 
+## [0.4.0](https://github.com/storm-software/stryke/releases/tag/string-format%400.4.0) (2025-04-08)
+
+### Features
+
+- **string-format:** Adjust format functions to use return type inference
+  ([4fe57fe](https://github.com/storm-software/stryke/commit/4fe57fe))
+
 ## [0.3.0](https://github.com/storm-software/stryke/releases/tag/string-format%400.3.0) (2025-04-01)
 
 ### Features

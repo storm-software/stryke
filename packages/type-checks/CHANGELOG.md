@@ -2,6 +2,13 @@
 
 # Changelog for Stryke - Type Checks
 
+## [0.3.0](https://github.com/storm-software/stryke/releases/tag/type-checks%400.3.0) (2025-04-08)
+
+### Features
+
+- **cli:** Added CLI helper functions to create applications
+  ([61cab20](https://github.com/storm-software/stryke/commit/61cab20))
+
 ## [0.2.0](https://github.com/storm-software/stryke/releases/tag/type-checks%400.2.0) (2025-04-07)
 
 ### Features

@@ -14,7 +14,7 @@
     "mlly": "catalog:"
   },
   "devDependencies": {
-    "@stryke/types": "0.7.4",
+    "@stryke/types": "0.8.0",
     "@types/node": "catalog:"
   },
   "publishConfig": {

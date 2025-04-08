@@ -2,6 +2,13 @@
 
 # Changelog for Stryke - Cli
 
+## [0.4.0](https://github.com/storm-software/stryke/releases/tag/cli%400.4.0) (2025-04-08)
+
+### Features
+
+- **cli:** Added CLI helper functions to create applications
+  ([61cab20](https://github.com/storm-software/stryke/commit/61cab20))
+
 ## [0.3.4](https://github.com/storm-software/stryke/releases/tag/cli%400.3.4) (2025-03-28)
 
 ### Miscellaneous

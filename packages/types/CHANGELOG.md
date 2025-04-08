@@ -2,6 +2,13 @@
 
 # Changelog for Stryke - Types
 
+## [0.8.0](https://github.com/storm-software/stryke/releases/tag/types%400.8.0) (2025-04-08)
+
+### Features
+
+- **types:** Added `TypedIndexable`, `Dictionary`, and `Resolvable` types
+  ([28a8b83](https://github.com/storm-software/stryke/commit/28a8b83))
+
 ## [0.7.4](https://github.com/storm-software/stryke/releases/tag/types%400.7.4) (2025-04-04)
 
 ### Miscellaneous
