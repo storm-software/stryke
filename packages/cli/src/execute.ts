@@ -15,33 +15,42 @@
 
  ------------------------------------------------------------------- */
 
-import { detect, getCommand as getCommandBase } from "@antfu/ni";
-import type { ResolvedCommand } from "../types";
-import { CLICommandType } from "../types";
+import { execaCommand } from "execa";
+import { getCommand } from "./get-command";
 
 /**
- * Get the details of a CLI command for execution
+ * Execute a CLI command
  *
  * @remarks
- * This function is a wrapper around the \@antfu/ni command to run CLI commands
+ * This function is a wrapper around the execa command to run CLI commands
  *
  * @param command - The command to execute
+ * @param cwd - The current working directory to use when executing the command
+ * @returns The result of the command or an exception
+ */
+export const execute = async (command: string, cwd: string = process.cwd()) => {
+  return execaCommand(command, {
+    preferLocal: true,
+    shell: true,
+    stdio: "inherit",
+    cwd
+  });
+};
+
+/**
+ * Execute a package command
+ *
+ * @param packageName - The name of the package to execute
  * @param args - The arguments to pass to the command
  * @param cwd - The current working directory to use when executing the command
  * @returns The result of the command or an exception
  */
-export const getCommand = async (
-  command: CLICommandType = CLICommandType.EXECUTE,
+export const executePackage = async (
+  packageName: string,
   args: string[] = [],
   cwd?: string
-): Promise<ResolvedCommand> => {
-  return getCommandBase(
-    (await detect({
-      autoInstall: true,
-      cwd,
-      programmatic: true
-    })) ?? "npm",
-    command,
-    args
-  );
+) => {
+  const result = await getCommand("execute", [packageName, ...args], cwd);
+
+  return execute(`${result.command} ${result.args.join(" ")}`, cwd);
 };

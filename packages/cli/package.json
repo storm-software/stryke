@@ -11,8 +11,7 @@
   "private": false,
   "dependencies": {
     "@antfu/ni": "catalog:",
-    "chalk": "catalog:",
-    "commander": "catalog:",
+    "consola": "catalog:",
     "execa": "catalog:",
     "figlet": "catalog:",
     "terminal-link": "catalog:"

@@ -156,9 +156,9 @@ catalogs:
     chalk:
       specifier: ^5.4.1
       version: 5.4.1
-    commander:
-      specifier: ^13.1.0
-      version: 13.1.0
+    consola:
+      specifier: ^3.4.2
+      version: 3.4.2
     copyfiles:
       specifier: ^2.4.1
       version: 2.4.1
@@ -452,12 +452,9 @@ importers:
       '@antfu/ni':
         specifier: 'catalog:'
         version: 23.3.1
-      chalk:
+      consola:
         specifier: 'catalog:'
-        version: 5.4.1
-      commander:
-        specifier: 'catalog:'
-        version: 13.1.0
+        version: 3.4.2
       execa:
         specifier: 'catalog:'
         version: 9.5.2
@@ -2665,7 +2662,6 @@ packages:
 
   '@ls-lint/ls-lint@2.2.3':
     resolution: {integrity: sha512-ekM12jNm/7O2I/hsRv9HvYkRdfrHpiV1epVuI2NP+eTIcEgdIdKkKCs9KgQydu/8R5YXTov9aHdOgplmCHLupw==}
-    cpu: [x64, arm64, s390x]
     os: [darwin, linux, win32]
     hasBin: true
 
@@ -4839,6 +4835,10 @@ packages:
 
   consola@3.4.0:
     resolution: {integrity: sha512-EiPU8G6dQG0GFHNR8ljnZFki/8a+cQwEQ+7wpxdChl02Q8HXlwEZWD5lqAF8vC2sEC3Tehr8hy7vErz88LHyUA==}
+    engines: {node: ^14.18.0 || >=16.10.0}
+
+  consola@3.4.2:
+    resolution: {integrity: sha512-5IKcdX0nnYavi6G7TtOhwkYzyjfJlatbjMjuLSfE2kYT5pMDOilZ4OvMhi637CcDICTmz3wARPoyhqyX1Y+XvA==}
     engines: {node: ^14.18.0 || >=16.10.0}
 
   content-disposition@0.5.4:
@@ -14878,6 +14878,8 @@ snapshots:
       - supports-color
 
   consola@3.4.0: {}
+
+  consola@3.4.2: {}
 
   content-disposition@0.5.4:
     dependencies:

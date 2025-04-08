@@ -15,17 +15,21 @@
 
  ------------------------------------------------------------------- */
 
-import chalk from "chalk";
-import terminalLink from "terminal-link";
-
-/**
- * Create a link to a URL in the terminal.
- *
- * @param url - The URL to link to.
- * @returns A terminal link
- */
-export function link(url: string): string {
-  return terminalLink(url, url, {
-    fallback: url => chalk.underline(url)
-  });
+export function formatColumns(lines: string[][], linePrefix = "") {
+  const maxLength: number[] = [];
+  for (const line of lines) {
+    for (const [i, element] of line.entries()) {
+      maxLength[i] = Math.max(maxLength[i] ?? 0, element.length);
+    }
+  }
+  return lines
+    .map(l =>
+      l
+        .map(
+          (c, i) =>
+            linePrefix + c[i === 0 ? "padStart" : "padEnd"](maxLength[i]!)
+        )
+        .join("  ")
+    )
+    .join("\n");
 }

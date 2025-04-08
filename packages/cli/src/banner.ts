@@ -16,42 +16,48 @@
  ------------------------------------------------------------------- */
 
 import { titleCase } from "@stryke/string-format/title-case";
-import chalk from "chalk";
+import { consola } from "consola";
+import { colors } from "consola/utils";
 import { text } from "figlet";
-import type { CLITitle } from "../types";
+import type { CommandMetaTitle } from "./types";
 
-export const writeBanner = (
-  bannerOpts: CLITitle,
-  byOpts: CLITitle,
-  color?: string
-) => {
-  if (bannerOpts?.hide !== true) {
+export function writeBanner(banner: CommandMetaTitle, by?: CommandMetaTitle) {
+  const lines = [] as string[];
+  if (banner.hidden !== true) {
     text(
-      titleCase(bannerOpts?.name ?? "Storm CLI"),
-      bannerOpts?.options ?? {
-        font: bannerOpts?.font ?? "Larry 3D"
+      titleCase(banner.name ?? "Storm CLI"),
+      banner.options ?? {
+        font: banner.font ?? "Larry 3D"
       },
       (err, data) => {
         if (err) {
           return;
         }
 
-        console.log(chalk.hex(color || "#FFF")(data));
+        if (data) {
+          lines.push(colors.whiteBright(data));
+        }
       }
     );
 
-    if (byOpts?.hide !== true) {
+    if (by && by?.hidden !== true) {
       text(
-        `by ${titleCase(byOpts?.name ?? "Storm")}`,
-        byOpts?.options ?? { font: byOpts?.font ?? "Doom" },
+        `by ${titleCase(by.name ?? "Storm")}`,
+        by?.options ?? { font: by.font ?? "Doom" },
         (err, data) => {
           if (err) {
             return;
           }
 
-          console.log(chalk.hex(color || "#adbac7")(data));
+          if (data) {
+            lines.push(colors.white(data));
+          }
         }
       );
     }
+
+    if (lines.length > 0) {
+      consola.box(lines.join("\n"));
+    }
   }
-};
+}

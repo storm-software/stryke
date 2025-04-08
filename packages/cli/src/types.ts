@@ -15,8 +15,8 @@
 
  ------------------------------------------------------------------- */
 
+import type { Resolvable } from "@stryke/types/async";
 import type { MaybePromise } from "@stryke/types/base";
-import type { Command } from "commander";
 import type { Fonts, Options } from "figlet";
 
 /**
@@ -33,53 +33,138 @@ export interface ResolvedCommand {
   args: string[];
 }
 
-export interface CLIConfig {
-  name: string;
-  banner?: CLITitle;
-  by?: CLITitle;
-  description: string;
-  homepageUrl?: string;
-  documentationUrl?: string;
-  repositoryUrl?: string;
-  license?: string;
-  licenseUrl?: string;
-  commands: CLICommand[];
-  preAction: (command: Command) => MaybePromise<void>;
-  postAction: (command: Command) => MaybePromise<void>;
+export type ArgType =
+  | "boolean"
+  | "string"
+  | "number"
+  | "enum"
+  | "positional"
+  | undefined;
+
+export interface _ArgDef<
+  T extends ArgType,
+  VT extends boolean | number | string
+> {
+  type?: T;
+  description?: string;
+  valueHint?: string;
+  alias?: string | string[];
+  default?: VT;
+  required?: boolean;
+  options?: (string | number)[];
 }
 
-export interface CLITitle {
+export type BooleanArgDef = Omit<_ArgDef<"boolean", boolean>, "options"> & {
+  negativeDescription?: string;
+};
+export type StringArgDef = Omit<_ArgDef<"string", string>, "options">;
+export type NumberArgDef = Omit<_ArgDef<"number", number>, "options">;
+export type EnumArgDef = _ArgDef<"enum", string>;
+export type PositionalArgDef = Omit<
+  _ArgDef<"positional", string>,
+  "alias" | "options"
+>;
+
+export type ArgDef =
+  | BooleanArgDef
+  | StringArgDef
+  | NumberArgDef
+  | PositionalArgDef
+  | EnumArgDef;
+
+export type ArgsDef = Record<string, ArgDef>;
+
+export type Arg = ArgDef & { name: string; alias: string[] };
+
+type ResolveParsedArgType<T extends ArgDef, VT> = T extends {
+  default?: any;
+  required?: boolean;
+}
+  ? T["default"] extends NonNullable<VT>
+    ? VT
+    : T["required"] extends true
+      ? VT
+      : VT | undefined
+  : VT | undefined;
+
+type ParsedPositionalArg<T extends ArgDef> = T extends { type: "positional" }
+  ? ResolveParsedArgType<T, string>
+  : never;
+
+type ParsedStringArg<T extends ArgDef> = T extends { type: "string" }
+  ? ResolveParsedArgType<T, string>
+  : never;
+
+type ParsedNumberArg<T extends ArgDef> = T extends { type: "number" }
+  ? ResolveParsedArgType<T, number>
+  : never;
+
+type ParsedBooleanArg<T extends ArgDef> = T extends { type: "boolean" }
+  ? ResolveParsedArgType<T, boolean>
+  : never;
+
+type ParsedEnumArg<T extends ArgDef> = T extends {
+  type: "enum";
+  options: infer U;
+}
+  ? U extends Array<any>
+    ? ResolveParsedArgType<T, U[number]>
+    : never
+  : never;
+
+interface RawArgs {
+  _: string[];
+}
+
+// prettier-ignore
+type ParsedArg<T extends ArgDef> =
+  T["type"] extends "positional" ? ParsedPositionalArg<T> :
+  T["type"] extends "boolean" ? ParsedBooleanArg<T> :
+  T["type"] extends "string" ? ParsedStringArg<T> :
+  T["type"] extends "number" ? ParsedNumberArg<T> :
+  T["type"] extends "enum" ? ParsedEnumArg<T> :
+  never;
+
+// prettier-ignore
+export type ParsedArgs<T extends ArgsDef = ArgsDef> = RawArgs &
+  { [K in keyof T]: ParsedArg<T[K]>; } &
+  { [K in keyof T as T[K] extends { alias: string } ? T[K]["alias"] : never]: ParsedArg<T[K]> } &
+  { [K in keyof T as T[K] extends { alias: string[] } ? T[K]["alias"][number] : never]: ParsedArg<T[K]> } &
+  Record<string, string | number | boolean | string[]>;
+
+export interface CommandMetaTitle {
   name?: string;
   font?: Fonts;
   options?: Options;
-  hide?: boolean;
+  hidden?: boolean;
 }
 
-export interface CLICommand {
+export interface CommandMeta {
   name: string;
   description: string;
-  commands?: CLICommand[];
-  options?: CLIOption[];
-  argument?: CLIArgument[];
-  action: (...args: any[]) => MaybePromise<void>;
+  version?: string;
+  hidden?: boolean;
+  banner?: CommandMetaTitle;
+  by?: CommandMetaTitle;
 }
 
-export interface CLIArgument {
-  flags: string;
-  description?: string;
-  default?: unknown | undefined;
+export type SubCommandsDef = Record<string, Resolvable<CommandDef<any>>>;
+
+export interface CommandDef<T extends ArgsDef = ArgsDef> {
+  meta?: Resolvable<CommandMeta>;
+  args?: Resolvable<T>;
+  subCommands?: Resolvable<SubCommandsDef>;
+  setup?: (context: CommandContext<T>) => MaybePromise<any>;
+  cleanup?: (context: CommandContext<T>) => MaybePromise<any>;
+  run?: (context: CommandContext<T>) => MaybePromise<any>;
 }
 
-export interface CLIOption {
-  flags: string;
-  description: string | undefined;
-  choices?: string[];
-  default?: CLIOptionDefault;
-}
-
-export interface CLIOptionDefault {
-  value: unknown;
-  description?: string | undefined;
+export interface CommandContext<T extends ArgsDef = ArgsDef> {
+  rawArgs: string[];
+  args: ParsedArgs<T>;
+  cmd: CommandDef<T>;
+  subCommand?: CommandDef<T>;
+  data?: any;
 }
 
 export type CLICommandType =
@@ -94,17 +179,3 @@ export type CLICommandType =
   | "execute"
   | "uninstall"
   | "global_uninstall";
-
-export const CLICommandType = {
-  AGENT: "agent" as CLICommandType,
-  RUN: "run" as CLICommandType,
-  INSTALL: "install" as CLICommandType,
-  FROZEN: "frozen" as CLICommandType,
-  GLOBAL: "global" as CLICommandType,
-  ADD: "add" as CLICommandType,
-  UPGRADE: "upgrade" as CLICommandType,
-  UPGRADE_INTERACTIVE: "upgrade-interactive" as CLICommandType,
-  EXECUTE: "execute" as CLICommandType,
-  UNINSTALL: "uninstall" as CLICommandType,
-  GLOBAL_UNINSTALL: "global_uninstall" as CLICommandType
-};
