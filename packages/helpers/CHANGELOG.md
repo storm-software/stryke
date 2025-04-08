@@ -2,6 +2,13 @@
 
 # Changelog for Stryke - Helpers
 
+## [0.5.0](https://github.com/storm-software/stryke/releases/tag/helpers%400.5.0) (2025-04-08)
+
+### Features
+
+- **helpers:** Added the `semaphore` and `mutex` modules
+  ([24142d3](https://github.com/storm-software/stryke/commit/24142d3))
+
 ## [0.4.6](https://github.com/storm-software/stryke/releases/tag/helpers%400.4.6) (2025-04-08)
 
 ### Miscellaneous
