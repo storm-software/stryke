@@ -23,7 +23,13 @@ const emptyTarget = (val: any) => {
   return Array.isArray(val) ? [] : {};
 };
 
-const cloneUnlessOtherwiseSpecified = (value: any, options?: any) => {
+const cloneUnlessOtherwiseSpecified = (
+  value: any,
+  options: {
+    clone?: boolean;
+    isMergeableObject: (value: any) => boolean;
+  }
+) => {
   return options.clone !== false && options.isMergeableObject(value)
     ? deepMerge(emptyTarget(value), value, options)
     : value;
@@ -35,7 +41,12 @@ const defaultArrayMerge = (target: any[], source: any[], options?: any) => {
   });
 };
 
-const getMergeFunction = (key: string, options?: any) => {
+const getMergeFunction = (
+  key: string,
+  options: {
+    customMerge?: (key: string) => any;
+  }
+) => {
   if (!options.customMerge) {
     return deepMerge;
   }
@@ -58,7 +69,18 @@ const getKeys = (target: Record<string, any>) => {
 const mergeObject = (
   target: Record<string, any>,
   source: Record<string, any>,
-  options?: any
+  options: {
+    clone?: boolean;
+    customMerge?: (key: string) => any;
+    isMergeableObject: (value: any) => boolean;
+    cloneUnlessOtherwiseSpecified?: (
+      value: any,
+      options: {
+        clone: boolean;
+        isMergeableObject: (value: any) => boolean;
+      }
+    ) => any;
+  }
 ) => {
   const destination: Record<string, any> = {};
   if (options.isMergeableObject(target)) {
@@ -75,6 +97,20 @@ const mergeObject = (
   return destination;
 };
 
+export interface DeepMergeOptions {
+  clone?: boolean;
+  customMerge?: (key: string) => any;
+  isMergeableObject: (value: any) => boolean;
+  cloneUnlessOtherwiseSpecified: (
+    value: any,
+    options: {
+      clone?: boolean;
+      isMergeableObject: (value: any) => boolean;
+    }
+  ) => any;
+  arrayMerge: (target: any[], source: any[], options: any) => any;
+}
+
 /**
  * Deep merge two objects
  *
@@ -83,34 +119,34 @@ const mergeObject = (
  * @param options - The options object
  * @returns The merged object
  */
-export const deepMerge = <X = any, Y = any, Z = X & Y>(
+export function deepMerge<X = any | any[], Y = any | any[], Z = X & Y>(
   target: X,
   source: Y,
-  options: any = {}
-): Z => {
+  options?: Partial<DeepMergeOptions>
+): Z {
   if (!target || !source) {
     return (target || source) as Z;
   }
 
-  const _options = options || {};
-  _options.arrayMerge = options.arrayMerge || defaultArrayMerge;
-  _options.isMergeableObject = _options.isMergeableObject || isMergeableObject;
+  const opts = (options ?? {}) as DeepMergeOptions;
+  opts.arrayMerge ??= defaultArrayMerge;
+  opts.isMergeableObject ??= isMergeableObject;
   // cloneUnlessOtherwiseSpecified is added to `options` so that custom arrayMerge()
   // implementations can use it. The caller may not replace it.
-  _options.cloneUnlessOtherwiseSpecified = cloneUnlessOtherwiseSpecified;
+  opts.cloneUnlessOtherwiseSpecified ??= cloneUnlessOtherwiseSpecified;
 
   const sourceIsArray = Array.isArray(source);
   const targetIsArray = Array.isArray(target);
   const sourceAndTargetTypesMatch = sourceIsArray === targetIsArray;
 
   if (!sourceAndTargetTypesMatch) {
-    return cloneUnlessOtherwiseSpecified(source, _options);
+    return cloneUnlessOtherwiseSpecified(source, opts);
   }
   if (sourceIsArray) {
-    return _options.arrayMerge(target, source, _options);
+    return opts.arrayMerge(target as any[], source, opts);
   }
-  return mergeObject(target, source, _options) as Z;
-};
+  return mergeObject(target, source, opts) as Z;
+}
 
 deepMerge.all = function deepMergeAll(array: any[], options?: any) {
   if (!Array.isArray(array)) {
