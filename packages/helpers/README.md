@@ -54,20 +54,22 @@ other Stryke projects.
 <!-- DON'T EDIT THIS SECTION, INSTEAD RE-RUN doctoc TO UPDATE -->
 ## Table of Contents
 
-- [Quick Features](#quick-features)
-- [Installing](#installing)
-- [Reduced Package Size](#reduced-package-size)
-- [Development](#development)
-  - [Building](#building)
-  - [Running unit tests](#running-unit-tests)
-  - [Linting](#linting)
-- [Storm Workspaces](#storm-workspaces)
-- [Roadmap](#roadmap)
-- [Support](#support)
-- [License](#license)
-- [Changelog](#changelog)
-- [Contributing](#contributing)
-- [Contributors](#contributors)
+- [Stryke - Helper Functions](#stryke---helper-functions)
+  - [Table of Contents](#table-of-contents)
+  - [Quick Features](#quick-features)
+  - [Installing](#installing)
+  - [Reduced Package Size](#reduced-package-size)
+  - [Development](#development)
+    - [Building](#building)
+    - [Running unit tests](#running-unit-tests)
+    - [Linting](#linting)
+  - [Storm Workspaces](#storm-workspaces)
+  - [Roadmap](#roadmap)
+  - [Support](#support)
+  - [License](#license)
+  - [Changelog](#changelog)
+  - [Contributing](#contributing)
+  - [Contributors](#contributors)
 
 <!-- END doctoc -->
 
@@ -101,6 +103,8 @@ The following modules are available in this package:
 - **throttle**: Provides a function to throttle another function, limiting its
   execution rate.
 - **timeout**: Provides a function to execute another function with a timeout.
+- **semaphore**: Create a semaphore instance.
+- **mutex**: Create a mutex instance.
 - **to-deep-key**: Provides a function to convert a path to a deep key.
 - **to-path**: Provides a function to convert a deep key to a path.
 - **unflatten-object**: Provides a function to unflatten a single level object

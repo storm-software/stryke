@@ -64,6 +64,7 @@ export async function delay(
     };
 
     const abortHandler = () => {
+      // eslint-disable-next-line ts/no-use-before-define
       clearTimeout(timeoutId);
       abortError();
     };
