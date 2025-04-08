@@ -15,22 +15,16 @@
 
  ------------------------------------------------------------------- */
 
-/**
- * The cli library used by Storm Software for building NodeJS applications.
- *
- * @remarks
- * A package containing various CLI helper functions
- *
- * @packageDocumentation
- */
+import type { ArgsDef, CommandDef } from "./types";
 
-export * from "./banner";
-export * from "./create-options";
-export * from "./define-command";
-export * from "./execute";
-export * from "./format-columns";
-export * from "./get-command";
-export * from "./link";
-export * from "./parse";
-export * from "./types";
-export * from "./usage";
+/**
+ * Define a command with the given definition.
+ *
+ * @param def - The command definition to use.
+ * @returns The command definition.
+ */
+export function defineCommand<const T extends ArgsDef = ArgsDef>(
+  def: CommandDef<T>
+): CommandDef<T> {
+  return def;
+}

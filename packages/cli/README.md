@@ -44,7 +44,7 @@ This package is part of Storm Software's **🌩️ Stryke** monorepo. Stryke pac
 
 <!-- END header -->
 
-# cli
+# Stryke - Command Line Interface
 
 A package containing various CLI helper functions
 
@@ -53,19 +53,22 @@ A package containing various CLI helper functions
 
 ## Table of Contents
 
-- [Installing](#installing)
-- [Reduced Package Size](#reduced-package-size)
-- [Development](#development)
-  - [Building](#building)
-  - [Running unit tests](#running-unit-tests)
-  - [Linting](#linting)
-- [Storm Workspaces](#storm-workspaces)
-- [Roadmap](#roadmap)
-- [Support](#support)
-- [License](#license)
-- [Changelog](#changelog)
-- [Contributing](#contributing)
-- [Contributors](#contributors)
+- [Stryke - Command Line Interface](#stryke---command-line-interface)
+  - [Table of Contents](#table-of-contents)
+  - [Installing](#installing)
+  - [Reduced Package Size](#reduced-package-size)
+  - [Development](#development)
+    - [Building](#building)
+    - [Running unit tests](#running-unit-tests)
+    - [Linting](#linting)
+  - [Acknowledgements](#acknowledgements)
+  - [Storm Workspaces](#storm-workspaces)
+  - [Roadmap](#roadmap)
+  - [Support](#support)
+  - [License](#license)
+  - [Changelog](#changelog)
+  - [Contributing](#contributing)
+  - [Contributors](#contributors)
 
 <!-- END doctoc -->
 
@@ -74,14 +77,14 @@ A package containing various CLI helper functions
 Using [pnpm](http://pnpm.io):
 
 ```bash
-pnpm add -D stryke/cli
+pnpm add -D @stryke/cli
 ```
 
 <details>
   <summary>Using npm</summary>
 
 ```bash
-npm install -D stryke/cli
+npm install -D @stryke/cli
 ```
 
 </details>
@@ -90,7 +93,7 @@ npm install -D stryke/cli
   <summary>Using yarn</summary>
 
 ```bash
-yarn add -D stryke/cli
+yarn add -D @stryke/cli
 ```
 
 </details>
@@ -118,6 +121,13 @@ Run `nx test cli` to execute the unit tests via [Jest](https://jestjs.io).
 ### Linting
 
 Run `nx lint cli` to run [ESLint](https://eslint.org/) on the package.
+
+## Acknowledgements
+
+Huge thanks to the [Unjs team](https://unjs.dev) for all their work on the [ciity](https://github.com/unjs/citty) project. The ciity API has been largely adopted here and much of the base code for this package codes from their repository. 
+
+<div align="right">[ <a href="#table-of-contents">Back to top ▲</a> ]</div>
+<br />
 
 <!-- START footer -->
 <!-- prettier-ignore-start -->
