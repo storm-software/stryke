@@ -33,11 +33,15 @@ import { getWords } from "./get-words";
  * const result4 = startCase('hello_world');  // result will be 'Hello World'
  * ```
  *
- * @param str - The string to convert.
+ * @param input - The string to convert.
  * @returns The converted string.
  */
-export function startCase(str: string): string {
-  const words = getWords(str.trim());
+export function startCase<T extends string | undefined>(input?: T): T {
+  if (!input) {
+    return input as T;
+  }
+
+  const words = getWords(input.trim());
 
   let result = "";
   for (const word of words) {
@@ -52,5 +56,5 @@ export function startCase(str: string): string {
     }
   }
 
-  return result;
+  return result as T;
 }

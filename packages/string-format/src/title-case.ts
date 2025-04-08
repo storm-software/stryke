@@ -27,9 +27,9 @@ import { upperCaseFirst } from "./upper-case-first";
  * @param input - The input string.
  * @returns The title cased string.
  */
-export const titleCase = (input?: string): string | undefined => {
+export function titleCase<T extends string | undefined>(input?: T): T {
   if (!input) {
-    return "";
+    return input as T;
   }
 
   return input
@@ -39,5 +39,5 @@ export const titleCase = (input?: string): string | undefined => {
     .map(s =>
       ACRONYMS.includes(s) ? s.toUpperCase() : upperCaseFirst(s.toLowerCase())
     )
-    .join(" ");
-};
+    .join(" ") as T;
+}

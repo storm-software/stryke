@@ -24,6 +24,6 @@
  * @param input - The input string.
  * @returns The capitalized string.
  */
-export const upperCaseFirst = (input?: string): string | undefined => {
-  return input ? input.charAt(0).toUpperCase() + input.slice(1) : input;
-};
+export function upperCaseFirst<T extends string | undefined>(input?: T): T {
+  return (input ? input.charAt(0).toUpperCase() + input.slice(1) : input) as T;
+}

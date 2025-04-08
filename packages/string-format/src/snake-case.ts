@@ -32,8 +32,13 @@ export interface SnakeCaseOptions {
  * @param options - Options to control the behavior of the function.
  * @returns The snake-cased string.
  */
-export const snakeCase = (input?: string, options?: SnakeCaseOptions) => {
-  if (!input) return "";
+export function snakeCase<T extends string | undefined>(
+  input: T,
+  options?: SnakeCaseOptions
+): T {
+  if (!input) {
+    return input;
+  }
 
   const parts =
     input
@@ -43,13 +48,19 @@ export const snakeCase = (input?: string, options?: SnakeCaseOptions) => {
       )
       .split(/(?=[A-Z])|[\s._-]/)
       .map((x: string) => x.toLowerCase()) ?? [];
-  if (parts.length === 0) return "";
-  if (parts.length === 1) return parts[0];
+  if (parts.length === 0) {
+    return "" as T;
+  }
+  if (parts.length === 1) {
+    return parts[0] as T;
+  }
   const result = parts.reduce((ret: string, part: string) => {
     return `${ret}_${part.toLowerCase()}`;
   });
 
-  return options?.splitOnNumber === false
-    ? result
-    : result.replace(/[A-Z]\d/i, (val: string) => `${val[0]}_${val[1]}`);
-};
+  return (
+    options?.splitOnNumber === false
+      ? result
+      : result.replace(/[A-Z]\d/i, (val: string) => `${val[0]}_${val[1]}`)
+  ) as T;
+}

@@ -24,6 +24,6 @@
  * @param input - The input string.
  * @returns The lower-cased string.
  */
-export const lowerCaseFirst = (input?: string): string | undefined => {
-  return input ? input.charAt(0).toLowerCase() + input.slice(1) : input;
-};
+export function lowerCaseFirst<T extends string | undefined>(input?: T): T {
+  return (input ? input.charAt(0).toLowerCase() + input.slice(1) : input) as T;
+}

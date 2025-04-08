@@ -26,6 +26,6 @@ import { snakeCase } from "./snake-case";
  * @param input - The input string.
  * @returns The constant-cased string.
  */
-export const constantCase = (input?: string): string | undefined => {
-  return snakeCase(input)?.toUpperCase();
-};
+export function constantCase<T extends string | undefined>(input: T): T {
+  return snakeCase<T>(input)?.toUpperCase() as T;
+}

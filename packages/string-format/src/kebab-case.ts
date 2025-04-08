@@ -27,7 +27,7 @@ import { upperCaseFirst } from "./upper-case-first";
  * @param input - The input string.
  * @returns The kebab-cased string.
  */
-export function kebabCase(input?: string): string | undefined {
+export function kebabCase<T extends string | undefined>(input: T): T {
   const parts =
     input
       ?.replace(
@@ -36,10 +36,10 @@ export function kebabCase(input?: string): string | undefined {
       )
       ?.split(/(?=[A-Z])|[\s._-]/)
       .map(x => x.toLowerCase()) ?? [];
-  if (parts.length === 0) return "";
-  if (parts.length === 1) return parts[0];
+  if (parts.length === 0) return "" as T;
+  if (parts.length === 1) return parts[0] as T;
 
   return parts.reduce((ret: string, part: string) => {
     return `${ret}-${part.toLowerCase()}`.toLowerCase();
-  });
+  }) as T;
 }

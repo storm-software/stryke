@@ -27,6 +27,6 @@ import { pascalCase } from "./pascal-case";
  * @param input - The input string.
  * @returns The camel-cased string.
  */
-export const camelCase = (input?: string): string | undefined => {
+export function camelCase<T extends string | undefined>(input: T): T {
   return input ? lowerCaseFirst(pascalCase(input)) : input;
-};
+}
