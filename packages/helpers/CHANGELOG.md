@@ -2,6 +2,13 @@
 
 # Changelog for Stryke - Helpers
 
+## [0.4.6](https://github.com/storm-software/stryke/releases/tag/helpers%400.4.6) (2025-04-08)
+
+### Miscellaneous
+
+- **helpers:** Cleaned up some linting errors
+  ([a1757fd](https://github.com/storm-software/stryke/commit/a1757fd))
+
 ## [0.4.5](https://github.com/storm-software/stryke/releases/tag/helpers%400.4.5) (2025-03-28)
 
 ### Miscellaneous
