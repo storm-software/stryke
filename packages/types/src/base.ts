@@ -121,9 +121,31 @@ export type Any =
 export type IndexType = string | number | symbol;
 
 /**
- * The declaration of a ***dictionary-type*** object
+ * The declaration of a ***dictionary-type*** object with a specific type
+ *
+ * @see {@link Indexable}
+ * @see {@link IndexType}
+ * @see {@link Dictionary}
  */
-export type Indexable = Record<IndexType, any>;
+export type TypedIndexable<T> = Record<IndexType, T>;
+
+/**
+ * The declaration of a ***dictionary-type*** object
+ *
+ * @see {@link TypedIndexable}
+ * @see {@link IndexType}
+ * @see {@link Dictionary}
+ */
+export type Indexable = TypedIndexable<any>;
+
+/**
+ * The declaration of a ***dictionary-type*** object with a specific type
+ *
+ * @see {@link Indexable}
+ * @see {@link IndexType}
+ * @see {@link TypedIndexable}
+ */
+export type Dictionary<T> = Record<string, T>;
 
 export const EMPTY_STRING = "";
 export const NEWLINE_STRING = "\r\n";

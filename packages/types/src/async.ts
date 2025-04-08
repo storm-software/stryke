@@ -30,6 +30,19 @@ import type { FunctionLike, IsUnknown } from "./base";
 export type Awaitable<T> = T | PromiseLike<T>;
 
 /**
+ * A type that can be either a value or a function that returns a value.
+ *
+ * @example
+ * ```
+ * import type {Resolvable} from 'type-fest';
+ *
+ * const foo: Resolvable<string> = 'bar';
+ * const bar: Resolvable<string> = () => 'baz';
+ * ```
+ */
+export type Resolvable<T> = Awaitable<T> | (() => Awaitable<T>);
+
+/**
  * Create a function type with a return type of your choice and the same parameters as the given function type.
  *
  * Use-case: You want to define a wrapped function that returns something different while receiving the same parameters. For example, you might want to wrap a function that can throw an error into one that will return `undefined` instead.
