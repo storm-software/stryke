@@ -2,6 +2,13 @@
 
 # Changelog for Stryke - Cli
 
+## [0.4.1](https://github.com/storm-software/stryke/releases/tag/cli%400.4.1) (2025-04-08)
+
+### Miscellaneous
+
+- **cli:** Cleaned up the README and added `defineCommand` function
+  ([6f3aec9](https://github.com/storm-software/stryke/commit/6f3aec9))
+
 ## [0.4.0](https://github.com/storm-software/stryke/releases/tag/cli%400.4.0) (2025-04-08)
 
 ### Features
