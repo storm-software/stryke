@@ -2,6 +2,13 @@
 
 # Changelog for Stryke - Helpers
 
+## [0.5.1](https://github.com/storm-software/stryke/releases/tag/helpers%400.5.1) (2025-04-08)
+
+### Miscellaneous
+
+- **helpers:** Clean up the helper function modules
+  ([9170b32](https://github.com/storm-software/stryke/commit/9170b32))
+
 ## [0.5.0](https://github.com/storm-software/stryke/releases/tag/helpers%400.5.0) (2025-04-08)
 
 ### Features
