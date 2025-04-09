@@ -138,8 +138,10 @@ export function readYamlFileSync<T extends object = any>(
   options?: YamlReadOptions
 ): T {
   const content = readFileSync(path);
+  // eslint-disable-next-line ts/no-require-imports
   const { load } = require("@zkochan/js-yaml");
 
+  // eslint-disable-next-line ts/no-unsafe-call
   return load(content, {
     ...options,
     filename: path
@@ -157,8 +159,10 @@ export async function readYamlFile<T extends object = any>(
   options?: YamlReadOptions
 ): Promise<T> {
   const content = await readFile(path);
+  // eslint-disable-next-line ts/no-require-imports
   const { load } = require("@zkochan/js-yaml");
 
+  // eslint-disable-next-line ts/no-unsafe-call
   return load(content, {
     ...options,
     filename: path

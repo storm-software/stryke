@@ -46,8 +46,8 @@ export const packageExists = async (
 ) => {
   const resolvePath = await resolve(options?.cwd || process.cwd());
   try {
-    resolve(name, { paths: [resolvePath] });
+    await resolve(name, { paths: [resolvePath] });
   } catch {
-    install(name, options);
+    await install(name, options);
   }
 };

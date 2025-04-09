@@ -18,16 +18,10 @@
 import { isDirectory } from "@stryke/path/is-file";
 import { joinPaths } from "@stryke/path/join-paths";
 import { readdir } from "node:fs/promises";
+import type { PicomatchOptions } from "picomatch";
 import isMatch from "picomatch";
 
-export interface ListFilesOptions {
-  /**
-   * A list of directories/files to ignore
-   *
-   * @defaultValue []
-   */
-  ignored?: string[];
-}
+export type ListFilesOptions = PicomatchOptions;
 
 /**
  * The file listing library used by Storm Software for building TypeScript applications.
@@ -39,16 +33,14 @@ export async function listFiles(
   directoryPath: string,
   options: ListFilesOptions = {}
 ): Promise<string[]> {
-  const { ignored = [] } = options;
-
   const files = [] as string[];
   const innerListFiles = async (dirPath: string) => {
-    if (!isMatch(dirPath, ignored)) {
+    if (!isMatch(dirPath, options)) {
       const fileNames = await readdir(dirPath);
       await Promise.all(
         fileNames.map(async fileName => {
           const filePath = joinPaths(dirPath, fileName);
-          if (!isMatch(filePath, ignored)) {
+          if (!isMatch(filePath, options)) {
             if (isDirectory(filePath)) {
               await innerListFiles(filePath);
             } else {
