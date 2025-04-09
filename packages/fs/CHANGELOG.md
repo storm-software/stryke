@@ -2,6 +2,13 @@
 
 # Changelog for Stryke - Fs
 
+## [0.11.0](https://github.com/storm-software/stryke/releases/tag/fs%400.11.0) (2025-04-09)
+
+### Features
+
+- **fs:** Added full set of picomatch options to `listFiles` parameter
+  ([4e04211](https://github.com/storm-software/stryke/commit/4e04211))
+
 ## [0.10.7](https://github.com/storm-software/stryke/releases/tag/fs%400.10.7) (2025-04-04)
 
 ### Bug Fixes
