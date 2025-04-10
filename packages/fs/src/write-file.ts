@@ -49,7 +49,7 @@ export interface WriteFileOptions {
  */
 export const writeFileSync = (
   filePath: string,
-  content?: any,
+  content = "",
   options: WriteFileOptions & FSWriteFileOptions = {}
 ): void => {
   if (!filePath) {
@@ -77,7 +77,7 @@ export const writeFileSync = (
  */
 export const writeFile = async (
   filePath: string,
-  content?: any,
+  content = "",
   options: WriteFileOptions &
     (
       | (ObjectEncodingOptions & {
