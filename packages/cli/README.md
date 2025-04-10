@@ -124,7 +124,10 @@ Run `nx lint cli` to run [ESLint](https://eslint.org/) on the package.
 
 ## Acknowledgements
 
-Huge thanks to the [Unjs team](https://unjs.dev) for all their work on the [ciity](https://github.com/unjs/citty) project. The ciity API has been largely adopted here and much of the base code for this package codes from their repository. 
+Huge thanks to the [Unjs team](https://unjs.dev) for all their work on the
+[ciity](https://github.com/unjs/citty) project. The ciity API has been largely
+adopted here and much of the base code for this package codes from their
+repository.
 
 <div align="right">[ <a href="#table-of-contents">Back to top ▲</a> ]</div>
 <br />

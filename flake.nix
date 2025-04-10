@@ -27,6 +27,12 @@
       devShells = eachSystem (pkgs: {
         default = pkgs.mkShell {
           packages = [
+           pkgs.direnv
+
+            pkgs.git
+            pkgs.gh
+            pkgs.zizmor
+
             pkgs.node2nix
             pkgs.nodejs
             pkgs.corepack
@@ -34,16 +40,7 @@
             pkgs.nodePackages.typescript
             pkgs.nodePackages.typescript-language-server
             pkgs.nodePackages.prettier
-            pkgs.git
             pkgs.typos
-
-            # pkgs.vscode
-            # pkgs.vscode-extensions.prisma.prisma
-            # pkgs.vscode-extensions.github.copilot
-            # pkgs.vscode-extensions.esbenp.prettier-vscode
-            # pkgs.vscode-extensions.dbaeumer.vscode-eslint
-
-            # pkgs.python3
           ];
         };
       });
