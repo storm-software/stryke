@@ -2,6 +2,13 @@
 
 # Changelog for Stryke - Fs
 
+## [0.12.0](https://github.com/storm-software/stryke/releases/tag/fs%400.12.0) (2025-04-10)
+
+### Features
+
+- **fs:** Added the `list` and `listDirectories` functions
+  ([a3bb14e](https://github.com/storm-software/stryke/commit/a3bb14e))
+
 ## [0.11.3](https://github.com/storm-software/stryke/releases/tag/fs%400.11.3) (2025-04-10)
 
 ### Bug Fixes

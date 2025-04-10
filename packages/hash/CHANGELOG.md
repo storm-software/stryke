@@ -2,6 +2,13 @@
 
 # Changelog for Stryke - Hash
 
+## [0.9.2](https://github.com/storm-software/stryke/releases/tag/hash%400.9.2) (2025-04-10)
+
+### Bug Fixes
+
+- **hash:** Resolved issue with invalid option names in `hashDirectory`
+  ([0181506](https://github.com/storm-software/stryke/commit/0181506))
+
 ## [0.9.1](https://github.com/storm-software/stryke/releases/tag/hash%400.9.1) (2025-04-10)
 
 ### Miscellaneous
