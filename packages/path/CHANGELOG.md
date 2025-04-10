@@ -2,6 +2,13 @@
 
 # Changelog for Stryke - Path
 
+## [0.4.9](https://github.com/storm-software/stryke/releases/tag/path%400.4.9) (2025-04-10)
+
+### Bug Fixes
+
+- **path:** Resolve issue with relative path helper
+  ([8281469](https://github.com/storm-software/stryke/commit/8281469))
+
 ## [0.4.8](https://github.com/storm-software/stryke/releases/tag/path%400.4.8) (2025-04-10)
 
 ### Miscellaneous

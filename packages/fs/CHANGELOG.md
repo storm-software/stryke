@@ -2,6 +2,13 @@
 
 # Changelog for Stryke - Fs
 
+## [0.12.1](https://github.com/storm-software/stryke/releases/tag/fs%400.12.1) (2025-04-10)
+
+### Bug Fixes
+
+- **path:** Resolve issue with relative path helper
+  ([8281469](https://github.com/storm-software/stryke/commit/8281469))
+
 ## [0.12.0](https://github.com/storm-software/stryke/releases/tag/fs%400.12.0) (2025-04-10)
 
 ### Features
