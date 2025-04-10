@@ -2,6 +2,13 @@
 
 # Changelog for Stryke - Fs
 
+## [0.11.1](https://github.com/storm-software/stryke/releases/tag/fs%400.11.1) (2025-04-10)
+
+### Bug Fixes
+
+- **fs:** Resolve issue applying defaults to file content
+  ([9a50c5b](https://github.com/storm-software/stryke/commit/9a50c5b))
+
 ## [0.11.0](https://github.com/storm-software/stryke/releases/tag/fs%400.11.0) (2025-04-09)
 
 ### Features
