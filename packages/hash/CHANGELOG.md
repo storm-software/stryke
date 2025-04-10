@@ -2,6 +2,13 @@
 
 # Changelog for Stryke - Hash
 
+## [0.9.1](https://github.com/storm-software/stryke/releases/tag/hash%400.9.1) (2025-04-10)
+
+### Miscellaneous
+
+- **monorepo:** Format the repository's files
+  ([1384f3e](https://github.com/storm-software/stryke/commit/1384f3e))
+
 ## [0.9.0](https://github.com/storm-software/stryke/releases/tag/hash%400.9.0) (2025-04-02)
 
 ### Features

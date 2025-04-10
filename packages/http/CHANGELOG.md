@@ -2,6 +2,13 @@
 
 # Changelog for Stryke - Http
 
+## [0.7.2](https://github.com/storm-software/stryke/releases/tag/http%400.7.2) (2025-04-10)
+
+### Miscellaneous
+
+- **monorepo:** Format the repository's files
+  ([1384f3e](https://github.com/storm-software/stryke/commit/1384f3e))
+
 ## [0.7.1](https://github.com/storm-software/stryke/releases/tag/http%400.7.1) (2025-04-07)
 
 ### Bug Fixes

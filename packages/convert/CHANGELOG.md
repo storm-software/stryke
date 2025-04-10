@@ -2,6 +2,13 @@
 
 # Changelog for Stryke - Convert
 
+## [0.1.5](https://github.com/storm-software/stryke/releases/tag/convert%400.1.5) (2025-04-10)
+
+### Miscellaneous
+
+- **monorepo:** Format the repository's files
+  ([1384f3e](https://github.com/storm-software/stryke/commit/1384f3e))
+
 ## [0.1.4](https://github.com/storm-software/stryke/releases/tag/convert%400.1.4) (2025-03-28)
 
 ### Miscellaneous

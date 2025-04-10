@@ -2,6 +2,13 @@
 
 # Changelog for Stryke - Trpc Next
 
+## [0.5.5](https://github.com/storm-software/stryke/releases/tag/trpc-next%400.5.5) (2025-04-10)
+
+### Miscellaneous
+
+- **monorepo:** Format the repository's files
+  ([1384f3e](https://github.com/storm-software/stryke/commit/1384f3e))
+
 ## [0.5.4](https://github.com/storm-software/stryke/releases/tag/trpc-next%400.5.4) (2025-03-31)
 
 ### Miscellaneous

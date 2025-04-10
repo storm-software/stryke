@@ -2,6 +2,13 @@
 
 # Changelog for Stryke - Json
 
+## [0.7.1](https://github.com/storm-software/stryke/releases/tag/json%400.7.1) (2025-04-10)
+
+### Miscellaneous
+
+- **monorepo:** Format the repository's files
+  ([1384f3e](https://github.com/storm-software/stryke/commit/1384f3e))
+
 ## [0.7.0](https://github.com/storm-software/stryke/releases/tag/json%400.7.0) (2025-04-07)
 
 ### Features

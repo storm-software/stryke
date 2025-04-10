@@ -2,6 +2,13 @@
 
 # Changelog for Stryke - Hooks
 
+## [0.4.5](https://github.com/storm-software/stryke/releases/tag/hooks%400.4.5) (2025-04-10)
+
+### Miscellaneous
+
+- **monorepo:** Format the repository's files
+  ([1384f3e](https://github.com/storm-software/stryke/commit/1384f3e))
+
 ## [0.4.4](https://github.com/storm-software/stryke/releases/tag/hooks%400.4.4) (2025-03-28)
 
 ### Miscellaneous
