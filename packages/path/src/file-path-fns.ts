@@ -16,6 +16,7 @@
  ------------------------------------------------------------------- */
 
 import { EMPTY_STRING } from "@stryke/types/base";
+import { relative } from "node:path";
 import { normalizeString, normalizeWindowsPath } from "./correct-path";
 import { getWorkspaceRoot } from "./get-workspace-root";
 import { isAbsolutePath } from "./is-file";
@@ -219,29 +220,14 @@ export function resolvePaths(...paths: string[]) {
   );
 }
 
+/**
+ * Get the relative path from one file to another.
+ *
+ * @remarks
+ * This function wraps the `path.relative` function in Node's path module.
+ */
 export function relativePath(from: string, to: string) {
-  // we cast these because `split` will always be at least one string
-  const _from = resolvePath(from.replace(/\/$/, ""))
-    .replace(/^\/([A-Z]:)?$/i, "$1")
-    .split("/") as [string, ...string[]];
-  const _to = resolvePath(to.replace(/\/$/, ""))
-    .replace(/^\/([A-Z]:)?$/i, "$1")
-    .split("/") as [string, ...string[]];
-
-  // Different windows drive letters
-  if (_to[0][1] === ":" && _from[0][1] === ":" && _from[0] !== _to[0]) {
-    return _to.join("/");
-  }
-
-  const _fromCopy = [..._from];
-  for (const segment of _fromCopy) {
-    if (_to[0] !== segment) {
-      break;
-    }
-    _from.shift();
-    _to.shift();
-  }
-  return [..._from.map(() => ".."), ..._to].join("/");
+  return relative(from.replace(/\/$/, ""), to.replace(/\/$/, ""));
 }
 
 /**
