@@ -19,7 +19,7 @@ import { isDirectory } from "@stryke/path/is-file";
 import { joinPaths } from "@stryke/path/join-paths";
 import { readdir } from "node:fs/promises";
 import type { PicomatchOptions } from "picomatch";
-import isMatch from "picomatch";
+import picomatch from "picomatch";
 
 export type ListFilesOptions = PicomatchOptions;
 
@@ -31,16 +31,21 @@ export type ListFilesOptions = PicomatchOptions;
  */
 export async function listFiles(
   directoryPath: string,
-  options: ListFilesOptions = {}
+  options?: ListFilesOptions
 ): Promise<string[]> {
   const files = [] as string[];
+  const isMatch = picomatch(directoryPath, {
+    dot: true,
+    ...options
+  });
+
   const innerListFiles = async (dirPath: string) => {
-    if (!isMatch(dirPath, options)) {
+    if (!isMatch(dirPath)) {
       const fileNames = await readdir(dirPath);
       await Promise.all(
         fileNames.map(async fileName => {
           const filePath = joinPaths(dirPath, fileName);
-          if (!isMatch(filePath, options)) {
+          if (!isMatch(filePath)) {
             if (isDirectory(filePath)) {
               await innerListFiles(filePath);
             } else {
