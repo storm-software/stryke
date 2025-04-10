@@ -2,6 +2,13 @@
 
 # Changelog for Stryke - Fs
 
+## [0.11.3](https://github.com/storm-software/stryke/releases/tag/fs%400.11.3) (2025-04-10)
+
+### Bug Fixes
+
+- **fs:** Resolve issue with listing files
+  ([f999603](https://github.com/storm-software/stryke/commit/f999603))
+
 ## [0.11.2](https://github.com/storm-software/stryke/releases/tag/fs%400.11.2) (2025-04-10)
 
 ### Miscellaneous
