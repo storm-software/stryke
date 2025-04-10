@@ -15,48 +15,81 @@
 
  ------------------------------------------------------------------- */
 
-import { isDirectory } from "@stryke/path/is-file";
-import { joinPaths } from "@stryke/path/join-paths";
-import { readdir } from "node:fs/promises";
-import type { PicomatchOptions } from "picomatch";
-import picomatch from "picomatch";
+import defu from "defu";
+import type { GlobOptions, GlobOptionsWithFileTypesTrue, Path } from "glob";
+import { glob } from "glob";
 
-export type ListFilesOptions = PicomatchOptions;
+export type ListOptions = GlobOptions;
+export type InferListReturnType<TOptions extends GlobOptions> =
+  TOptions["withFileTypes"] extends true ? Path[] : string[];
+
+const DEFAULT_OPTIONS: ListOptions = {
+  dot: true
+};
 
 /**
- * The file listing library used by Storm Software for building TypeScript applications.
+ * A files and directories listing helper function
  *
- * @param directoryPath - The directory path to list files from
+ * @param filesGlob - A glob pattern to match files
  * @returns A list of file paths
  */
-export async function listFiles(
-  directoryPath: string,
-  options?: ListFilesOptions
-): Promise<string[]> {
-  const files = [] as string[];
-  const isMatch = picomatch(directoryPath, {
-    dot: true,
-    ...options
-  });
+export async function list<TOptions extends ListOptions>(
+  filesGlob: string,
+  options?: TOptions
+): Promise<InferListReturnType<TOptions>> {
+  return glob(filesGlob, defu(options ?? {}, DEFAULT_OPTIONS)) as Promise<
+    InferListReturnType<TOptions>
+  >;
+}
 
-  const innerListFiles = async (dirPath: string) => {
-    if (!isMatch(dirPath)) {
-      const fileNames = await readdir(dirPath);
-      await Promise.all(
-        fileNames.map(async fileName => {
-          const filePath = joinPaths(dirPath, fileName);
-          if (!isMatch(filePath)) {
-            if (isDirectory(filePath)) {
-              await innerListFiles(filePath);
-            } else {
-              files.push(filePath);
-            }
-          }
-        })
-      );
-    }
-  };
-  await innerListFiles(directoryPath);
+/**
+ * A file listing helper function
+ *
+ * @param filesGlob - A glob pattern to match files
+ * @returns A list of file paths
+ */
+export async function listFiles<TOptions extends ListOptions>(
+  filesGlob: string,
+  options?: TOptions
+) {
+  const result = (
+    await list(
+      filesGlob,
+      defu(
+        { withFileTypes: true },
+        options ?? {}
+      ) as GlobOptionsWithFileTypesTrue
+    )
+  ).filter(ret => ret.isFile());
+  if (!options?.withFileTypes) {
+    return result.map(file => file.fullpath()) as InferListReturnType<TOptions>;
+  }
 
-  return files;
+  return result as InferListReturnType<TOptions>;
+}
+
+/**
+ * A directories listing helper function
+ *
+ * @param filesGlob - A glob pattern to match files
+ * @returns A list of file paths
+ */
+export async function listDirectories<TOptions extends ListOptions>(
+  filesGlob: string,
+  options?: TOptions
+) {
+  const result = (
+    await list(
+      filesGlob,
+      defu(
+        { withFileTypes: true },
+        options ?? {}
+      ) as GlobOptionsWithFileTypesTrue
+    )
+  ).filter(ret => ret.isDirectory());
+  if (!options?.withFileTypes) {
+    return result.map(file => file.fullpath()) as InferListReturnType<TOptions>;
+  }
+
+  return result as InferListReturnType<TOptions>;
 }

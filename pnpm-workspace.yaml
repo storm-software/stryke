@@ -29,7 +29,6 @@ catalog:
   "@types/figlet": ^1.7.0
   "@types/jest": ^29.5.14
   "@types/node": ^22.13.1
-  "@types/picomatch": ^3.0.2
   "@types/pluralize": ^0.0.33
   "@types/react": ^19.0.12
   "@types/react-dom": ^19.0.4
@@ -70,6 +69,7 @@ catalog:
   eslint-flat-config-utils: ^2.0.1
   execa: ^9.5.2
   figlet: ^1.8.0
+  glob: ^11.0.1
   js-xxhash: ^4.0.0
   jsonc-parser: 3.3.1
   knip: 5.43.6
@@ -84,7 +84,6 @@ catalog:
   jest-environment-jsdom: ^29.7.0
   jest-environment-node: ^29.7.0
   parenthesis: ^3.1.8
-  picomatch: ^4.0.2
   pluralize: ^8.0.0
   prettier: ^3.5.2
   semver: 7.7.1
@@ -149,18 +148,3 @@ overrides:
   postcss: ">=8.5.1"
   shell-quote: ">=1.8.2"
   simple-git: ">=3.27.0"
-catalogs:
-  conflicts_@nx/js_20_5_0:
-    "@nx/js": 20.5.0
-  conflicts_@swc-node/register_t1_9_1:
-    "@swc-node/register": ~1.9.1
-  conflicts_@swc/core_t1_5_7:
-    "@swc/core": ~1.5.7
-  conflicts_@swc/helpers_t0_5_11:
-    "@swc/helpers": ~0.5.11
-  conflicts_@types/node_20_9_0:
-    "@types/node": 20.9.0
-  conflicts_prettier_h2_6_2:
-    prettier: ^2.6.2
-  conflicts_verdaccio_h6_0_5:
-    verdaccio: ^6.0.5

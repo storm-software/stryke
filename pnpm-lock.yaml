@@ -129,9 +129,6 @@ catalogs:
     '@types/node':
       specifier: ^22.13.1
       version: 22.13.10
-    '@types/picomatch':
-      specifier: ^3.0.2
-      version: 3.0.2
     '@types/pluralize':
       specifier: ^0.0.33
       version: 0.0.33
@@ -180,6 +177,9 @@ catalogs:
     figlet:
       specifier: ^1.8.0
       version: 1.8.0
+    glob:
+      specifier: ^11.0.1
+      version: 11.0.1
     jest:
       specifier: ^29.7.0
       version: 29.7.0
@@ -225,9 +225,6 @@ catalogs:
     parenthesis:
       specifier: ^3.1.8
       version: 3.1.8
-    picomatch:
-      specifier: ^4.0.2
-      version: 4.0.2
     pluralize:
       specifier: ^8.0.0
       version: 8.0.0
@@ -498,12 +495,15 @@ importers:
       chalk:
         specifier: 'catalog:'
         version: 5.4.1
+      defu:
+        specifier: 'catalog:'
+        version: 6.1.4
+      glob:
+        specifier: 'catalog:'
+        version: 11.0.1
       nanotar:
         specifier: 'catalog:'
         version: 0.2.0
-      picomatch:
-        specifier: 'catalog:'
-        version: 4.0.2
       semver:
         specifier: 'catalog:'
         version: 7.7.1
@@ -511,9 +511,6 @@ importers:
       '@types/node':
         specifier: 'catalog:'
         version: 22.13.10
-      '@types/picomatch':
-        specifier: 'catalog:'
-        version: 3.0.2
       '@types/semver':
         specifier: 'catalog:'
         version: 7.5.8
@@ -2662,7 +2659,6 @@ packages:
 
   '@ls-lint/ls-lint@2.2.3':
     resolution: {integrity: sha512-ekM12jNm/7O2I/hsRv9HvYkRdfrHpiV1epVuI2NP+eTIcEgdIdKkKCs9KgQydu/8R5YXTov9aHdOgplmCHLupw==}
-    cpu: [x64, arm64, s390x]
     os: [darwin, linux, win32]
     hasBin: true
 
@@ -3887,9 +3883,6 @@ packages:
 
   '@types/parse-json@4.0.2':
     resolution: {integrity: sha512-dISoDXWWQwUquiKsyZ4Ng+HX2KsPL7LyHKHQwgGFEA3IaKac4Obd+h2a/a6waisAoepJlBcx9paWqjA8/HVjCw==}
-
-  '@types/picomatch@3.0.2':
-    resolution: {integrity: sha512-n0i8TD3UDB7paoMMxA3Y65vUncFJXjcUf7lQY7YyKGl6031FNjfsLs6pdLFCy2GNFxItPJG8GvvpbZc2skH7WA==}
 
   '@types/pluralize@0.0.33':
     resolution: {integrity: sha512-JOqsl+ZoCpP4e8TDke9W79FDcSgPAR0l6pixx2JHkhnRjvShyYiAYw2LVsnA7K08Y6DeOnaU6ujmENO4os/cYg==}
@@ -13772,8 +13765,6 @@ snapshots:
   '@types/normalize-package-data@2.4.4': {}
 
   '@types/parse-json@4.0.2': {}
-
-  '@types/picomatch@3.0.2': {}
 
   '@types/pluralize@0.0.33': {}
 

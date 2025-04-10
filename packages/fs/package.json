@@ -21,13 +21,13 @@
     "@antfu/install-pkg": "catalog:",
     "@zkochan/js-yaml": "catalog:",
     "chalk": "catalog:",
+    "defu": "catalog:",
+    "glob": "catalog:",
     "nanotar": "catalog:",
-    "picomatch": "catalog:",
     "semver": "catalog:"
   },
   "devDependencies": {
     "@types/node": "catalog:",
-    "@types/picomatch": "catalog:",
     "@types/semver": "catalog:",
     "nx": "catalog:",
     "tinyexec": "catalog:"
