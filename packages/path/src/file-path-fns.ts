@@ -221,10 +221,10 @@ export function resolvePaths(...paths: string[]) {
 
 export function relativePath(from: string, to: string) {
   // we cast these because `split` will always be at least one string
-  const _from = resolvePath(from)
+  const _from = resolvePath(from.replace(/\/$/, ""))
     .replace(/^\/([A-Z]:)?$/i, "$1")
     .split("/") as [string, ...string[]];
-  const _to = resolvePath(to)
+  const _to = resolvePath(to.replace(/\/$/, ""))
     .replace(/^\/([A-Z]:)?$/i, "$1")
     .split("/") as [string, ...string[]];
 

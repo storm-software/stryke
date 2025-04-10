@@ -156,8 +156,7 @@ export async function getPackageInfoSync(
 /**
  * Get the package info from the package.json file
  *
- * @param name - The name of the package
- * @param options - The options to use when resolving the package
+ * @param cwd - The current working directory
  * @returns The package info
  */
 export async function loadPackageJSON(
