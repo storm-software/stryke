@@ -2,6 +2,13 @@
 
 # Changelog for Stryke - Env
 
+## [0.6.2](https://github.com/storm-software/stryke/releases/tag/env%400.6.2) (2025-04-16)
+
+### Miscellaneous
+
+- **env:** Improve the temp directory lookup on linux systems
+  ([8ce2af9](https://github.com/storm-software/stryke/commit/8ce2af9))
+
 ## [0.6.1](https://github.com/storm-software/stryke/releases/tag/env%400.6.1) (2025-04-10)
 
 ### Miscellaneous
