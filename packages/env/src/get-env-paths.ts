@@ -149,7 +149,7 @@ const linux = (orgId: string): EnvPaths => {
  * On Windows, directories are generally created in `%AppData%/<name>`.
  * On Linux, directories are generally created in `~/.config/<name>` - this is determined via the [XDG Base Directory spec](https://specifications.freedesktop.org/basedir-spec/latest/).
  *
- * If the `STORM_DATA_DIRECTORY`, `STORM_CONFIG_DIRECTORY`, `STORM_CACHE_DIRECTORY`, `STORM_LOG_DIRECTORY`, or `STORM_TEMP_DIRECTORY` environment variables are set, they will be used instead of the default paths.
+ * If the `STORM_DATA_DIR`, `STORM_CONFIG_DIR`, `STORM_CACHE_DIR`, `STORM_LOG_DIR`, or `STORM_TEMP_DIR` environment variables are set, they will be used instead of the default paths.
  *
  * @param options - Parameters used to determine the specific paths for the current project/runtime environment
  * @returns An object containing the various paths for the runtime environment
@@ -177,16 +177,16 @@ export function getEnvPaths(options: GetEnvPathsOptions = {}): EnvPaths {
     result = linux(orgId);
   }
 
-  if (process.env.STORM_DATA_DIRECTORY) {
-    result.data = process.env.STORM_DATA_DIRECTORY;
-  } else if (process.env.STORM_CONFIG_DIRECTORY) {
-    result.config = process.env.STORM_CONFIG_DIRECTORY;
-  } else if (process.env.STORM_CACHE_DIRECTORY) {
-    result.cache = process.env.STORM_CACHE_DIRECTORY;
-  } else if (process.env.STORM_LOG_DIRECTORY) {
-    result.log = process.env.STORM_LOG_DIRECTORY;
-  } else if (process.env.STORM_TEMP_DIRECTORY) {
-    result.temp = process.env.STORM_TEMP_DIRECTORY;
+  if (process.env.STORM_DATA_DIR) {
+    result.data = process.env.STORM_DATA_DIR;
+  } else if (process.env.STORM_CONFIG_DIR) {
+    result.config = process.env.STORM_CONFIG_DIR;
+  } else if (process.env.STORM_CACHE_DIR) {
+    result.cache = process.env.STORM_CACHE_DIR;
+  } else if (process.env.STORM_LOG_DIR) {
+    result.log = process.env.STORM_LOG_DIR;
+  } else if (process.env.STORM_TEMP_DIR) {
+    result.temp = process.env.STORM_TEMP_DIR;
   }
 
   if (options.workspaceRoot) {
