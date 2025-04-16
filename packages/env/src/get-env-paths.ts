@@ -131,11 +131,13 @@ const linux = (orgId: string): EnvPaths => {
       orgId
     ),
     // https://devenv.sh/files-and-variables/#devenv_root
-    temp: joinPaths(
-      process.env.DEVENV_RUNTIME || process.env.XDG_RUNTIME_DIR || tmpdir,
-      username,
-      orgId
-    )
+    temp:
+      process.env.DEVENV_RUNTIME || process.env.XDG_RUNTIME_DIR
+        ? joinPaths(
+            (process.env.DEVENV_RUNTIME || process.env.XDG_RUNTIME_DIR)!,
+            orgId
+          )
+        : joinPaths(tmpdir, username, orgId)
   };
 };
 
