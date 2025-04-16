@@ -96,7 +96,7 @@ const windows = (orgId: string): EnvPaths => {
   const localAppData =
     process.env.LOCALAPPDATA || joinPaths(homedir, "AppData", "Local");
 
-  const windowsFormattedOrgId = titleCase(orgId)!.trim().replace(/\s+/g, "");
+  const windowsFormattedOrgId = titleCase(orgId).trim().replace(/\s+/g, "");
 
   return {
     // Data/config/cache/log are invented by me as Windows isn't opinionated about this
@@ -130,7 +130,12 @@ const linux = (orgId: string): EnvPaths => {
       process.env.XDG_STATE_HOME || joinPaths(homedir, ".local", "state"),
       orgId
     ),
-    temp: joinPaths(tmpdir, username, orgId)
+    // https://devenv.sh/files-and-variables/#devenv_root
+    temp: joinPaths(
+      process.env.DEVENV_RUNTIME || process.env.XDG_RUNTIME_DIR || tmpdir,
+      username,
+      orgId
+    )
   };
 };
 
