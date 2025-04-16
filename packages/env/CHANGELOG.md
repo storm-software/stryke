@@ -2,6 +2,13 @@
 
 # Changelog for Stryke - Env
 
+## [0.6.3](https://github.com/storm-software/stryke/releases/tag/env%400.6.3) (2025-04-16)
+
+### Miscellaneous
+
+- **env:** Adjust temp directory subpaths
+  ([374d640](https://github.com/storm-software/stryke/commit/374d640))
+
 ## [0.6.2](https://github.com/storm-software/stryke/releases/tag/env%400.6.2) (2025-04-16)
 
 ### Miscellaneous
