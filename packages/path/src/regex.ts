@@ -15,25 +15,10 @@
 
  ------------------------------------------------------------------- */
 
-/**
- * The path library used by Storm Software for building NodeJS applications.
- *
- * @remarks
- * A package containing various utilities that expand the functionality of NodeJs's `path` module
- *
- * @packageDocumentation
- */
+export const DRIVE_LETTER_START_REGEX = /^[A-Z]:\//i;
+export const DRIVE_LETTER_REGEX = /^[A-Z]:$/i;
 
-export * from "./asset-extensions";
-export * from "./correct-path";
-export * from "./delimiter";
-export * from "./exists";
-export * from "./file-path-fns";
-export * from "./get-parent-path";
-export * from "./get-workspace-root";
-export * from "./is-file";
-export * from "./is-root-dir";
-export * from "./join-paths";
-export * from "./regex";
-export * from "./resolve";
-export * from "./slash";
+export const UNC_REGEX = /^[/\\]{2}/;
+
+export const ABSOLUTE_PATH_REGEX =
+  /^[/\\](?![/\\])|^[/\\]{2}(?!\.)|^~[/\\]|^[A-Z]:[/\\]/i;

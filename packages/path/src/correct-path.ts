@@ -16,31 +16,21 @@
  ------------------------------------------------------------------- */
 
 import { isAbsolutePath } from "./is-file";
-
-/**
- * Replace backslash to slash
- *
- * @param str - The string to replace
- * @returns The string with replaced backslashes
- */
-export function slash(str: string) {
-  return str.replace(/\\/g, "/");
-}
-
-const _DRIVE_LETTER_START_RE = /^[A-Z]:\//i;
+import {
+  DRIVE_LETTER_REGEX,
+  DRIVE_LETTER_START_REGEX,
+  UNC_REGEX
+} from "./regex";
+import { slash } from "./slash";
 
 // Util to normalize windows paths to posix
 export function normalizeWindowsPath(input = "") {
   if (!input) {
     return input;
   }
-  return input
-    .replace(/\\/g, "/")
-    .replace(_DRIVE_LETTER_START_RE, r => r.toUpperCase());
-}
 
-const _UNC_REGEX = /^[/\\]{2}/;
-const _DRIVE_LETTER_RE = /^[A-Z]:$/i;
+  return slash(input).replace(DRIVE_LETTER_START_REGEX, r => r.toUpperCase());
+}
 
 /**
  * Corrects/normalized a file path.
@@ -56,9 +46,9 @@ export function correctPath(path?: string) {
   // Normalize windows argument
   path = normalizeWindowsPath(path);
 
-  const isUNCPath = path.match(_UNC_REGEX);
+  const isUNCPath = path.match(UNC_REGEX);
   const isPathAbsolute = isAbsolutePath(path);
-  const trailingSeparator = path[path.length - 1] === "/";
+  const trailingSeparator = path.endsWith("/");
 
   // Normalize the path
   path = normalizeString(path, !isPathAbsolute);
@@ -69,10 +59,11 @@ export function correctPath(path?: string) {
     }
     return trailingSeparator ? "./" : ".";
   }
+
   if (trailingSeparator) {
     path += "/";
   }
-  if (_DRIVE_LETTER_RE.test(path)) {
+  if (DRIVE_LETTER_REGEX.test(path)) {
     path += "/";
   }
 
@@ -83,7 +74,11 @@ export function correctPath(path?: string) {
     return `//${path}`;
   }
 
-  return isPathAbsolute && !isAbsolutePath(path) ? `/${path}` : path;
+  return !path.startsWith("/") &&
+    isPathAbsolute &&
+    !DRIVE_LETTER_REGEX.test(path)
+    ? `/${path}`
+    : path;
 }
 
 /**

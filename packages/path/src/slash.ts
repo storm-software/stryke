@@ -16,24 +16,11 @@
  ------------------------------------------------------------------- */
 
 /**
- * The path library used by Storm Software for building NodeJS applications.
+ * Replace backslash to slash
  *
- * @remarks
- * A package containing various utilities that expand the functionality of NodeJs's `path` module
- *
- * @packageDocumentation
+ * @param str - The string to replace
+ * @returns The string with replaced backslashes
  */
-
-export * from "./asset-extensions";
-export * from "./correct-path";
-export * from "./delimiter";
-export * from "./exists";
-export * from "./file-path-fns";
-export * from "./get-parent-path";
-export * from "./get-workspace-root";
-export * from "./is-file";
-export * from "./is-root-dir";
-export * from "./join-paths";
-export * from "./regex";
-export * from "./resolve";
-export * from "./slash";
+export function slash(str: string) {
+  return str.replace(/\\/g, "/");
+}

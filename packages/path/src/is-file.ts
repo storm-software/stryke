@@ -17,6 +17,8 @@
 
 import { lstatSync, statSync } from "node:fs";
 import { joinPaths } from "./join-paths";
+import { ABSOLUTE_PATH_REGEX } from "./regex";
+import { slash } from "./slash";
 
 /**
  * Check if the given path is a file.
@@ -85,26 +87,21 @@ export const isDirectorySymlink = (
 };
 
 /**
- * Check if the path is a relative path.
- *
- * @param path - The path to check
- * @returns An indicator specifying if the path is a relative path
- */
-export function isRelativePath(path: string): boolean {
-  return (
-    path === "." ||
-    path === ".." ||
-    path.startsWith("./") ||
-    path.startsWith("../")
-  );
-}
-
-/**
  * Check if the path is an absolute path.
  *
  * @param path - The path to check
  * @returns An indicator specifying if the path is an absolute path
  */
 export function isAbsolutePath(path: string): boolean {
-  return !/^[/\\](?![/\\])|^[/\\]{2}(?!\.)|^[A-Z]:[/\\]/i.test(path);
+  return ABSOLUTE_PATH_REGEX.test(slash(path));
+}
+
+/**
+ * Check if the path is a relative path.
+ *
+ * @param path - The path to check
+ * @returns An indicator specifying if the path is a relative path
+ */
+export function isRelativePath(path: string): boolean {
+  return !isAbsolutePath(path);
 }
