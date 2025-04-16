@@ -2,6 +2,13 @@
 
 # Changelog for Stryke - Path
 
+## [0.4.11](https://github.com/storm-software/stryke/releases/tag/path%400.4.11) (2025-04-16)
+
+### Miscellaneous
+
+- **path:** Clean up unix path resolution
+  ([cf96d1c](https://github.com/storm-software/stryke/commit/cf96d1c))
+
 ## [0.4.10](https://github.com/storm-software/stryke/releases/tag/path%400.4.10) (2025-04-10)
 
 ### Bug Fixes

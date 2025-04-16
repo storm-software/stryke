@@ -2,6 +2,13 @@
 
 # Changelog for Stryke - Env
 
+## [0.6.4](https://github.com/storm-software/stryke/releases/tag/env%400.6.4) (2025-04-16)
+
+### Bug Fixes
+
+- **env:** Resolve invalid .env name in path resolution helpers
+  ([9e285ff](https://github.com/storm-software/stryke/commit/9e285ff))
+
 ## [0.6.3](https://github.com/storm-software/stryke/releases/tag/env%400.6.3) (2025-04-16)
 
 ### Miscellaneous
