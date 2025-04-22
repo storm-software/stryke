@@ -16,6 +16,7 @@
  ------------------------------------------------------------------- */
 
 import { isNumber } from "@stryke/type-checks/is-number";
+import { isUndefined } from "@stryke/type-checks/is-undefined";
 
 /**
  * Stringify a value to a JSON-like string.
@@ -67,7 +68,9 @@ export const stringify = (
       return JSON.stringify(value);
     }
     case "object": {
-      const keys = Object.keys(value as object);
+      const keys = Object.keys(value as object).filter(
+        key => !isUndefined((value as any)[key])
+      );
 
       return `{${space}${keys
         .map(k => `${k}: ${space}${stringify((value as any)[k], space)}`)
