@@ -18,21 +18,21 @@
 type EnvObject = Record<string, string | undefined>;
 
 declare global {
-  var EdgeRuntime: undefined | unknown;
-  var Netlify: undefined | unknown;
-  var fastly: undefined | unknown;
-  var Bun: undefined | unknown;
+  let EdgeRuntime: undefined | unknown;
+  let Netlify: undefined | unknown;
+  let fastly: undefined | unknown;
+  let Bun: undefined | unknown;
 
-  var process: Record<string, any> & {
+  let process: Record<string, any> & {
     env: EnvObject;
   };
-  var navigator: undefined | { userAgent: string };
+  let navigator: undefined | { userAgent: string };
 
-  var __env__: undefined | EnvObject;
+  let __env__: undefined | EnvObject;
 
-  var Deno:
+  let Deno:
     | undefined
-    | { env: { toObject(): EnvObject; [key: string]: unknown } };
+    | { env: { toObject: () => EnvObject; [key: string]: unknown } };
 
   interface ImportMeta {
     env: EnvObject;

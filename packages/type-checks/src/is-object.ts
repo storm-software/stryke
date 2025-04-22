@@ -1,4 +1,4 @@
-/*-------------------------------------------------------------------
+/* -------------------------------------------------------------------
 
                        ⚡ Storm Software - Stryke
 
@@ -13,7 +13,10 @@
  Contact:         https://stormsoftware.com/contact
  License:         https://stormsoftware.com/projects/stryke/license
 
- -------------------------------------------------------------------*/
+ ------------------------------------------------------------------- */
+
+/* eslint-disable ts/no-unsafe-function-type */
+/* eslint-disable ts/no-unsafe-call */
 
 import type { NativeClass } from "@stryke/types/base";
 import { isPlainObject } from "./is-plain-object";
