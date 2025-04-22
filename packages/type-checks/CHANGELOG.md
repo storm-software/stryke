@@ -2,6 +2,13 @@
 
 # Changelog for Stryke - Type Checks
 
+## [0.3.2](https://github.com/storm-software/stryke/releases/tag/type-checks%400.3.2) (2025-04-22)
+
+### Miscellaneous
+
+- **monorepo:** Added `mcp.json` and resolved linting issues
+  ([e33e033](https://github.com/storm-software/stryke/commit/e33e033))
+
 ## [0.3.1](https://github.com/storm-software/stryke/releases/tag/type-checks%400.3.1) (2025-04-10)
 
 ### Miscellaneous

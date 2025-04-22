@@ -2,6 +2,13 @@
 
 # Changelog for Stryke - Json
 
+## [0.7.2](https://github.com/storm-software/stryke/releases/tag/json%400.7.2) (2025-04-22)
+
+### Bug Fixes
+
+- **json:** Resolve issue with serializing `undefined` values in JSONs
+  ([0f6acec](https://github.com/storm-software/stryke/commit/0f6acec))
+
 ## [0.7.1](https://github.com/storm-software/stryke/releases/tag/json%400.7.1) (2025-04-10)
 
 ### Miscellaneous

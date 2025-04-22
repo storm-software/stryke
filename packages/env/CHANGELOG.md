@@ -2,6 +2,13 @@
 
 # Changelog for Stryke - Env
 
+## [0.6.5](https://github.com/storm-software/stryke/releases/tag/env%400.6.5) (2025-04-22)
+
+### Miscellaneous
+
+- **monorepo:** Added `mcp.json` and resolved linting issues
+  ([e33e033](https://github.com/storm-software/stryke/commit/e33e033))
+
 ## [0.6.4](https://github.com/storm-software/stryke/releases/tag/env%400.6.4) (2025-04-16)
 
 ### Bug Fixes
