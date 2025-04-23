@@ -131,6 +131,7 @@ overrides:
   "@stryke/type-checks": workspace:*
   "@stryke/types": workspace:*
   "@stryke/unique-id": workspace:*
+  "@stryke/url": workspace:*
   cookie: ">=0.7.0"
   debug: ">=4.4.0"
   follow-redirects: ">=1.15.9"

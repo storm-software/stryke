@@ -15,6 +15,5 @@
 
  ------------------------------------------------------------------- */
 
-export * from "./cookie";
-export * from "./format-data-uri";
+export * from "./storm-url";
 export * from "./types";

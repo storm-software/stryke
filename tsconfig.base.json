@@ -47,7 +47,9 @@
       "@stryke/types": ["packages/types/src/index.ts"],
       "@stryke/types/*": ["packages/types/src/*"],
       "@stryke/unique-id": ["packages/unique-id/src/index.ts"],
-      "@stryke/unique-id/*": ["packages/unique-id/src/*"]
+      "@stryke/unique-id/*": ["packages/unique-id/src/*"],
+      "@stryke/url": ["packages/url/src/index.ts"],
+      "@stryke/url/*": ["packages/url/src/*"]
     }
   }
 }

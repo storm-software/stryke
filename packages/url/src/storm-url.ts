@@ -49,7 +49,7 @@ import type { IStormURL, StormURLOptions } from "./types";
  *
  * The [UFO](https://github.com/unjs/ufo) library is used under the hood to parse and stringify URLs.
  */
-export class StormURL implements IStormURL, Partial<URL> {
+export class StormURL implements IStormURL, URL {
   #options: StormURLOptions;
 
   /**
@@ -163,13 +163,28 @@ export class StormURL implements IStormURL, Partial<URL> {
     return this.#hash;
   }
 
-  public set port(value: string | number | undefined) {
-    this.#port =
-      !isUndefined(value) && isInteger(value) ? `${value}` : undefined;
+  public set port(value: string | number) {
+    this.#port = !isUndefined(value) && isInteger(value) ? `${value}` : "";
   }
 
-  public get port(): string | undefined {
-    return this.#port;
+  public get port(): string {
+    return this.#port || "";
+  }
+
+  public set username(value: string) {
+    this.auth = `${value}:${this.#password}`;
+  }
+
+  public get username(): string {
+    return this.#username || "";
+  }
+
+  public set password(value: string) {
+    this.auth = `${this.#username}:${value}`;
+  }
+
+  public get password(): string {
+    return this.#password || "";
   }
 
   public set auth(value: string | undefined) {
@@ -322,6 +337,10 @@ export class StormURL implements IStormURL, Partial<URL> {
 
   public toEncoded(): string {
     return normalizeURL(this.toString());
+  }
+
+  public toJSON(): string {
+    return StormJSON.stringify(this.toParsed());
   }
 }
 

@@ -1,14 +1,17 @@
 {
-  "name": "@stryke/http",
-  "version": "0.7.2",
+  "name": "@stryke/url",
+  "version": "0.0.1",
   "type": "module",
-  "description": "A package containing HTTP communication utilities used by Storm Software.",
+  "description": "A package containing the `StormURL` class, which is used to parse and manipulate URLs.",
   "repository": {
     "type": "github",
     "url": "https://github.com/storm-software/stryke.git",
-    "directory": "packages/http"
+    "directory": "packages/url"
   },
   "private": false,
+  "dependencies": {
+    "ufo": "catalog:"
+  },
   "devDependencies": {
     "@types/node": "catalog:"
   },
