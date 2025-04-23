@@ -2,6 +2,13 @@
 
 # Changelog for Stryke - Json
 
+## [0.7.3](https://github.com/storm-software/stryke/releases/tag/json%400.7.3) (2025-04-23)
+
+### Miscellaneous
+
+- **json:** Only export `StormJSON` and types from index
+  ([d96dd89](https://github.com/storm-software/stryke/commit/d96dd89))
+
 ## [0.7.2](https://github.com/storm-software/stryke/releases/tag/json%400.7.2) (2025-04-22)
 
 ### Bug Fixes
