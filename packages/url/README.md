@@ -1,9 +1,10 @@
 <!-- START header -->
 <!-- END header -->
 
-# url
+# Stryke - URL Helpers
 
-A package containing the StormURL class
+A package containing the `StormURL` wrapper class and various URL helper
+utilities.
 
 <!-- START doctoc -->
 <!-- END doctoc -->
@@ -13,14 +14,14 @@ A package containing the StormURL class
 Using [pnpm](http://pnpm.io):
 
 ```bash
-pnpm add -D stryke/url
+pnpm add -D @stryke/url
 ```
 
 <details>
   <summary>Using npm</summary>
 
 ```bash
-npm install -D stryke/url
+npm install -D @stryke/url
 ```
 
 </details>
@@ -29,7 +30,7 @@ npm install -D stryke/url
   <summary>Using yarn</summary>
 
 ```bash
-yarn add -D stryke/url
+yarn add -D @stryke/url
 ```
 
 </details>
