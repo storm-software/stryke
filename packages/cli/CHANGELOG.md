@@ -2,6 +2,13 @@
 
 # Changelog for Stryke - Cli
 
+## [0.7.4](https://github.com/storm-software/stryke/releases/tag/cli%400.7.4) (2025-04-24)
+
+### Bug Fixes
+
+- **cli:** Resolve issue with required `handle` function for main command
+  ([99ac0e7](https://github.com/storm-software/stryke/commit/99ac0e7))
+
 ## [0.7.3](https://github.com/storm-software/stryke/releases/tag/cli%400.7.3) (2025-04-24)
 
 ### Miscellaneous
