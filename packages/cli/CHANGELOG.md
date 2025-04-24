@@ -2,6 +2,13 @@
 
 # Changelog for Stryke - Cli
 
+## [0.7.3](https://github.com/storm-software/stryke/releases/tag/cli%400.7.3) (2025-04-24)
+
+### Miscellaneous
+
+- **cli:** Update shutdown parameter to be consistent
+  ([6c96b7b](https://github.com/storm-software/stryke/commit/6c96b7b))
+
 ## [0.7.2](https://github.com/storm-software/stryke/releases/tag/cli%400.7.2) (2025-04-24)
 
 ### Miscellaneous
