@@ -2,6 +2,13 @@
 
 # Changelog for Stryke - Cli
 
+## [0.7.1](https://github.com/storm-software/stryke/releases/tag/cli%400.7.1) (2025-04-24)
+
+### Bug Fixes
+
+- **cli:** Clean up the command argument types
+  ([b1b162b](https://github.com/storm-software/stryke/commit/b1b162b))
+
 ## [0.7.0](https://github.com/storm-software/stryke/releases/tag/cli%400.7.0) (2025-04-24)
 
 ### Features
