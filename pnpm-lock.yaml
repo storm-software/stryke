@@ -452,6 +452,9 @@ importers:
       consola:
         specifier: 'catalog:'
         version: 3.4.2
+      defu:
+        specifier: 'catalog:'
+        version: 6.1.4
       execa:
         specifier: 'catalog:'
         version: 9.5.2

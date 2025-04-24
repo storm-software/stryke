@@ -12,6 +12,7 @@
   "dependencies": {
     "@antfu/ni": "catalog:",
     "consola": "catalog:",
+    "defu": "catalog:",
     "execa": "catalog:",
     "figlet": "catalog:",
     "terminal-link": "catalog:"

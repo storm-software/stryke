@@ -25,29 +25,29 @@ export interface RunCommandOptions {
   showUsage?: boolean;
 }
 
-export async function runCommand<T extends ArgsDef = ArgsDef>(
-  cmd: CommandDef<T>,
+export async function runCommand<TArgs extends ArgsDef = ArgsDef>(
+  command: CommandDef<TArgs>,
   opts: RunCommandOptions
 ): Promise<{ result: unknown }> {
-  const cmdArgs = await resolveValue(cmd.args ?? {});
-  const parsedArgs = parseArgs<T>(opts.rawArgs, cmdArgs);
+  const cmdArgs = await resolveValue(command.args ?? {});
+  const parsedArgs = parseArgs<TArgs>(opts.rawArgs, cmdArgs);
 
-  const context: CommandContext<T> = {
+  const context: CommandContext<TArgs> = {
     rawArgs: opts.rawArgs,
     args: parsedArgs,
     data: opts.data,
-    cmd
+    command
   };
 
   // Setup hook
-  if (isFunction(cmd.setup)) {
-    await cmd.setup(context);
+  if (isFunction(command.setup)) {
+    await Promise.resolve(command.setup(context));
   }
 
   // Handle sub command
   let result: unknown;
   try {
-    const subCommands = await resolveValue(cmd.subCommands);
+    const subCommands = await resolveValue(command.subCommands);
     if (subCommands && Object.keys(subCommands).length > 0) {
       const subCommandArgIndex = opts.rawArgs.findIndex(
         arg => !arg.startsWith("-")
@@ -63,18 +63,21 @@ export async function runCommand<T extends ArgsDef = ArgsDef>(
             rawArgs: opts.rawArgs.slice(subCommandArgIndex + 1)
           });
         }
-      } else if (!cmd.run) {
-        throw new Error(`No command specified.`);
+      } else if (!command.handle) {
+        const meta = await resolveValue(command.meta);
+        throw new Error(
+          `No command handler specified${meta?.name || meta?.displayName ? ` for \`${meta.name || meta?.displayName}\`` : ""}.`
+        );
       }
     }
 
     // Handle main command
-    if (isFunction(cmd.run)) {
-      result = await cmd.run(context);
+    if (isFunction(command.handle)) {
+      result = await Promise.resolve(command.handle(context));
     }
   } finally {
-    if (isFunction(cmd.cleanup)) {
-      await cmd.cleanup(context);
+    if (isFunction(command.cleanup)) {
+      await Promise.resolve(command.cleanup(context));
     }
   }
 

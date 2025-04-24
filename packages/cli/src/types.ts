@@ -158,20 +158,20 @@ export interface CommandMeta {
 
 export type SubCommandsDef = Record<string, Resolvable<CommandDef<any>>>;
 
-export interface CommandDef<T extends ArgsDef = ArgsDef> {
+export interface CommandDef<TArgs extends ArgsDef = ArgsDef> {
   meta?: Resolvable<CommandMeta>;
-  args?: Resolvable<T>;
+  args?: Resolvable<TArgs>;
   subCommands?: Resolvable<SubCommandsDef>;
-  setup?: (context: CommandContext<T>) => MaybePromise<any>;
-  cleanup?: (context: CommandContext<T>) => MaybePromise<any>;
-  run?: (context: CommandContext<T>) => MaybePromise<any>;
+  handle: (context: CommandContext<TArgs>) => MaybePromise<any>;
+  setup?: (context: CommandContext<TArgs>) => MaybePromise<any>;
+  cleanup?: (context: CommandContext<TArgs>) => MaybePromise<any>;
 }
 
-export interface CommandContext<T extends ArgsDef = ArgsDef> {
+export interface CommandContext<TArgs extends ArgsDef = ArgsDef> {
   rawArgs: string[];
-  args: ParsedArgs<T>;
-  cmd: CommandDef<T>;
-  subCommand?: CommandDef<T>;
+  args: ParsedArgs<TArgs>;
+  command: CommandDef<TArgs>;
+  subCommand?: CommandDef<TArgs>;
   data?: any;
 }
 

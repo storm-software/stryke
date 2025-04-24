@@ -26,7 +26,14 @@ import { isFunction } from "@stryke/type-checks/is-function";
 import type { Arrayable } from "@stryke/types/array";
 import type { Resolvable } from "@stryke/types/async";
 import type { Dictionary, MaybePromise } from "@stryke/types/base";
-import type { Arg, ArgsDef, CommandDef, ParsedArgs } from "./types";
+import defu from "defu";
+import type {
+  Arg,
+  ArgsDef,
+  CommandDef,
+  CommandMeta,
+  ParsedArgs
+} from "./types";
 
 export interface Options {
   boolean?: Arrayable<string>;
@@ -338,28 +345,39 @@ export function resolveArgs(argsDef: ArgsDef): Arg[] {
 /**
  * Resolves the subcommand from the command definition and the raw arguments. It will recursively resolve the subcommands until it finds the final command.
  *
- * @param cmd - The command definition
+ * @param command - The command definition
  * @param rawArgs - The raw arguments passed to the command
  * @param parent - The parent command definition (if any)
- * @returns A tuple containing the resolved command and the parent command (if any)
+ * @returns The resolved command definition
  */
-export async function resolveSubCommand<T extends ArgsDef = ArgsDef>(
-  cmd: CommandDef<T>,
+export async function resolveCommand<T extends ArgsDef = ArgsDef>(
+  command: CommandDef<T>,
   rawArgs: string[],
   parent?: CommandDef<T>
-): Promise<[CommandDef<T>, CommandDef<T>?]> {
-  const subCommands = await resolveValue(cmd.subCommands);
+): Promise<CommandDef<T>> {
+  let meta = {} as Partial<CommandMeta>;
+  if (parent?.meta) {
+    meta = isFunction(parent?.meta) ? await parent.meta() : await parent.meta;
+  }
+
+  command.meta = defu(
+    isFunction(command?.meta) ? await command.meta() : await command.meta,
+    meta
+  );
+
+  const subCommands = await resolveValue(command.subCommands);
   if (subCommands && Object.keys(subCommands).length > 0) {
     const subCommandArgIndex = rawArgs.findIndex(arg => !arg.startsWith("-"));
     const subCommandName = rawArgs[subCommandArgIndex];
     const subCommand = await resolveValue(subCommands[subCommandName!]);
     if (subCommand) {
-      return resolveSubCommand(
+      return resolveCommand(
         subCommand,
         rawArgs.slice(subCommandArgIndex + 1),
-        cmd
+        command
       );
     }
   }
-  return [cmd, parent];
+
+  return command;
 }
