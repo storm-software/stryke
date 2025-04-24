@@ -16,10 +16,10 @@
  ------------------------------------------------------------------- */
 
 import { titleCase } from "@stryke/string-format/title-case";
-import { consola } from "consola";
 import { colors } from "consola/utils";
 import { text } from "figlet";
-import type { CommandMetaTitle } from "./types";
+import { link } from "./link";
+import type { CommandMeta, CommandMetaTitle } from "./types";
 
 /**
  * Write a banner to the console.
@@ -67,9 +67,99 @@ export function writeBanner(
         }
       );
     }
+  }
 
-    if (lines.length > 0) {
-      consola.box(lines.join("\n"));
+  return lines.join("\n");
+}
+
+/**
+ * Get the license information for a command.
+ *
+ * @param meta - The command metadata.
+ * @returns The license information display string
+ */
+export function writeLicense(
+  meta: Pick<
+    CommandMeta,
+    "license" | "licenseUrl" | "homepageUrl" | "documentationUrl"
+  >
+): string {
+  const lines = [] as string[];
+
+  if (meta.license) {
+    lines.push(" ");
+    lines.push(
+      `This software is distributed under the ${meta.license} license.`
+    );
+    if (meta.licenseUrl || meta.homepageUrl || meta.documentationUrl) {
+      lines.push(
+        `For more information, please visit ${link((meta.licenseUrl || meta.homepageUrl || meta.documentationUrl)!)}`
+      );
     }
   }
+
+  return lines.join("\n");
+}
+
+/**
+ * Write URLs to the console.
+ *
+ * @param meta - The metadata to write.
+ * @returns The URLs as a display string
+ */
+export function writeUrls(
+  meta: Pick<
+    CommandMeta,
+    "homepageUrl" | "repositoryUrl" | "documentationUrl" | "contactUrl"
+  >
+): string {
+  const lines = [] as string[];
+
+  if (meta.homepageUrl) {
+    lines.push(`${colors.bold("Website:")}         ${link(meta.homepageUrl)}`);
+  }
+  if (meta.repositoryUrl) {
+    lines.push(
+      `${colors.bold("Repository:")}      ${link(meta.repositoryUrl)}`
+    );
+  }
+  if (meta.documentationUrl) {
+    lines.push(
+      `${colors.bold("Documentation:")}   ${link(meta.documentationUrl)}`
+    );
+  }
+  if (meta.contactUrl) {
+    lines.push(`${colors.bold("Contact:")}         ${link(meta.contactUrl)}`);
+  }
+
+  return lines.join("\n");
+}
+
+/**
+ * Write metadata to the console.
+ *
+ * @param meta - The metadata to write.
+ * @returns The metadata as a display string
+ */
+export function writeMeta(
+  meta: Pick<
+    CommandMeta,
+    | "license"
+    | "licenseUrl"
+    | "homepageUrl"
+    | "repositoryUrl"
+    | "documentationUrl"
+    | "contactUrl"
+  >
+): string {
+  let display = writeUrls(meta);
+  if (meta.license) {
+    if (display.trim()) {
+      display += "\n";
+    }
+
+    display += writeLicense(meta);
+  }
+
+  return display;
 }

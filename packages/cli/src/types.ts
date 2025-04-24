@@ -148,11 +148,12 @@ export interface CommandMeta {
   hidden?: boolean;
   banner?: CommandMetaTitle;
   author?: CommandMetaTitle;
-  website?: string;
+  homepageUrl?: string;
   license?: string;
-  docs?: string;
-  repository?: string;
-  contact?: string;
+  licenseUrl?: string;
+  documentationUrl?: string;
+  repositoryUrl?: string;
+  contactUrl?: string;
 }
 
 export type SubCommandsDef = Record<string, Resolvable<CommandDef<any>>>;

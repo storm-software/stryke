@@ -23,65 +23,48 @@ const signalTraps = ["SIGTERM", "SIGINT", "SIGUSR2"];
 
 export async function registerShutdown(onShutdown?: () => MaybePromise<any>) {
   let exited = false;
-  async function shutdown() {
-    if (exited) {
-      return;
-    }
-    consola.info("Shutting down...");
-    exited = true;
+  const shutdown = async (code: number | string | null | undefined = 0) => {
+    try {
+      if (exited) {
+        return;
+      }
 
-    if (onShutdown) {
-      await Promise.resolve(onShutdown());
+      consola.start("Terminating the application...");
+      exited = true;
+
+      if (onShutdown) {
+        await Promise.resolve(onShutdown());
+      }
+
+      consola.success("Successfully terminated the application");
+      process.exit(code);
+    } catch (error) {
+      consola.fail("Shutdown process failed to complete");
+      consola.error(error);
+
+      process.exit(1);
     }
-  }
+  };
 
   for (const type of errorTypes) {
     process.on(type, e => {
-      consola.info(`process.on ${type}`);
+      consola.info(`Received ${type} error event`);
       consola.error(e);
 
-      void shutdown()
-        .then(() => {
-          consola.info("Shutdown process complete, exiting with code 0");
-          process.exit(0);
-        })
-        .catch(error => {
-          consola.warn("Shutdown process failed, exiting with code 1");
-          consola.error(error);
-          process.exit(1);
-        });
+      void shutdown(1);
     });
   }
 
   for (const type of signalTraps) {
     process.once(type, () => {
-      consola.info(`process.on ${type}`);
+      consola.info(`Received ${type} signal`);
 
-      void shutdown()
-        .then(() => {
-          consola.info("Shutdown process complete, exiting with code 0");
-          process.exit(0);
-        })
-        .catch(error => {
-          consola.warn("Shutdown process failed, exiting with code 1");
-          consola.error(error);
-          process.exit(1);
-        });
+      void shutdown();
     });
   }
 
   return async (reason: string | number) => {
     consola.info(`Manual shutdown ${reason ? `(${reason})` : ""}`);
-
-    await shutdown()
-      .then(() => {
-        consola.info("Shutdown process complete, exiting with code 0");
-        process.exit(0);
-      })
-      .catch(error => {
-        consola.warn("Shutdown process failed, exiting with code 1");
-        consola.error(error);
-        process.exit(1);
-      });
+    await shutdown();
   };
 }
