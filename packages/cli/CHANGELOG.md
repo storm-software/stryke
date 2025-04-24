@@ -2,6 +2,13 @@
 
 # Changelog for Stryke - Cli
 
+## [0.7.0](https://github.com/storm-software/stryke/releases/tag/cli%400.7.0) (2025-04-24)
+
+### Features
+
+- **cli:** Added `isColored` parameter to `link` utility
+  ([7c8a6a4](https://github.com/storm-software/stryke/commit/7c8a6a4))
+
 ## [0.6.0](https://github.com/storm-software/stryke/releases/tag/cli%400.6.0) (2025-04-24)
 
 ### Features
