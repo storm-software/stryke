@@ -2,6 +2,13 @@
 
 # Changelog for Stryke - Cli
 
+## [0.6.0](https://github.com/storm-software/stryke/releases/tag/cli%400.6.0) (2025-04-24)
+
+### Features
+
+- **cli:** Added helper functions to display metadata
+  ([bdf88ec](https://github.com/storm-software/stryke/commit/bdf88ec))
+
 ## [0.5.0](https://github.com/storm-software/stryke/releases/tag/cli%400.5.0) (2025-04-24)
 
 ### Features
