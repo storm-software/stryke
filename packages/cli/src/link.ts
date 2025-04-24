@@ -22,10 +22,11 @@ import terminalLink from "terminal-link";
  * Create a link to a URL in the terminal.
  *
  * @param url - The URL to link to.
+ * @param isColored - Whether to use cyan text for the link.
  * @returns A terminal link
  */
-export function link(url: string): string {
+export function link(url: string, isColored = true): string {
   return terminalLink(url, url, {
-    fallback: url => colors.underline(url)
+    fallback: url => colors.underline(isColored ? colors.cyan(url) : url)
   });
 }
