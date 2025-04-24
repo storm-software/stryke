@@ -24,13 +24,13 @@
  * @packageDocumentation
  */
 
-export * from "./banner";
 export * from "./create-options";
 export * from "./define-command";
 export * from "./execute";
 export * from "./format-columns";
 export * from "./get-command";
 export * from "./link";
+export * from "./meta";
 export * from "./parse";
 export * from "./shutdown";
 export * from "./types";

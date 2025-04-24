@@ -27,7 +27,7 @@ import type { CommandMeta, CommandMetaTitle } from "./types";
  * @param banner - The banner to write.
  * @param author - The author of the banner.
  */
-export function writeBanner(
+export function renderBanner(
   banner: CommandMetaTitle,
   author?: CommandMetaTitle
 ) {
@@ -78,7 +78,7 @@ export function writeBanner(
  * @param meta - The command metadata.
  * @returns The license information display string
  */
-export function writeLicense(
+export function renderLicense(
   meta: Pick<
     CommandMeta,
     "license" | "licenseUrl" | "homepageUrl" | "documentationUrl"
@@ -107,7 +107,7 @@ export function writeLicense(
  * @param meta - The metadata to write.
  * @returns The URLs as a display string
  */
-export function writeUrls(
+export function renderUrls(
   meta: Pick<
     CommandMeta,
     "homepageUrl" | "repositoryUrl" | "documentationUrl" | "contactUrl"
@@ -141,7 +141,7 @@ export function writeUrls(
  * @param meta - The metadata to write.
  * @returns The metadata as a display string
  */
-export function writeMeta(
+export function renderMeta(
   meta: Pick<
     CommandMeta,
     | "license"
@@ -152,13 +152,13 @@ export function writeMeta(
     | "contactUrl"
   >
 ): string {
-  let display = writeUrls(meta);
+  let display = renderUrls(meta);
   if (meta.license) {
     if (display.trim()) {
       display += "\n";
     }
 
-    display += writeLicense(meta);
+    display += renderLicense(meta);
   }
 
   return display;
