@@ -370,6 +370,16 @@ export async function resolveCommand<T extends ArgsDef = ArgsDef>(
     const subCommandArgIndex = rawArgs.findIndex(arg => !arg.startsWith("-"));
     const subCommandName = rawArgs[subCommandArgIndex];
     const subCommand = await resolveValue(subCommands[subCommandName!]);
+    if (
+      !subCommand?.handle &&
+      (!subCommand?.subCommands ||
+        Object.keys(subCommand.subCommands).length === 0)
+    ) {
+      throw new Error(
+        `Invalid subcommand ${subCommandName}: Must have a handle or subcommands`
+      );
+    }
+
     if (subCommand) {
       return resolveCommand(
         subCommand,
