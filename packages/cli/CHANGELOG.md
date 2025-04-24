@@ -2,6 +2,13 @@
 
 # Changelog for Stryke - Cli
 
+## [0.7.2](https://github.com/storm-software/stryke/releases/tag/cli%400.7.2) (2025-04-24)
+
+### Miscellaneous
+
+- **cli:** Rename the `write` utilities to `render`
+  ([401dd08](https://github.com/storm-software/stryke/commit/401dd08))
+
 ## [0.7.1](https://github.com/storm-software/stryke/releases/tag/cli%400.7.1) (2025-04-24)
 
 ### Bug Fixes
