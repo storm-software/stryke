@@ -21,9 +21,21 @@ import { colors } from "consola/utils";
 import { text } from "figlet";
 import type { CommandMetaTitle } from "./types";
 
-export function writeBanner(banner: CommandMetaTitle, by?: CommandMetaTitle) {
+/**
+ * Write a banner to the console.
+ *
+ * @param banner - The banner to write.
+ * @param author - The author of the banner.
+ */
+export function writeBanner(
+  banner: CommandMetaTitle,
+  author?: CommandMetaTitle
+) {
   const lines = [] as string[];
-  if (banner.hidden !== true) {
+  if (
+    banner.hidden !== true &&
+    Boolean(process.env.STORM_SKIP_BANNER) !== true
+  ) {
     text(
       titleCase(banner.name ?? "Storm CLI"),
       banner.options ?? {
@@ -40,10 +52,10 @@ export function writeBanner(banner: CommandMetaTitle, by?: CommandMetaTitle) {
       }
     );
 
-    if (by && by?.hidden !== true) {
+    if (author && author?.hidden !== true) {
       text(
-        `by ${titleCase(by.name ?? "Storm")}`,
-        by?.options ?? { font: by.font ?? "Doom" },
+        `author ${titleCase(author.name ?? "Storm")}`,
+        author?.options ?? { font: author.font ?? "Doom" },
         (err, data) => {
           if (err) {
             return;

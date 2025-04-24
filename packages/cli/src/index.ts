@@ -32,5 +32,6 @@ export * from "./format-columns";
 export * from "./get-command";
 export * from "./link";
 export * from "./parse";
+export * from "./shutdown";
 export * from "./types";
 export * from "./usage";

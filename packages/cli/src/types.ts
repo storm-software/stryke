@@ -45,6 +45,7 @@ export interface _ArgDef<
   T extends ArgType,
   VT extends boolean | number | string
 > {
+  displayName?: string;
   type?: T;
   description?: string;
   valueHint?: string;
@@ -141,11 +142,17 @@ export interface CommandMetaTitle {
 
 export interface CommandMeta {
   name: string;
+  displayName?: string;
   description: string;
   version?: string;
   hidden?: boolean;
   banner?: CommandMetaTitle;
-  by?: CommandMetaTitle;
+  author?: CommandMetaTitle;
+  website?: string;
+  license?: string;
+  docs?: string;
+  repository?: string;
+  contact?: string;
 }
 
 export type SubCommandsDef = Record<string, Resolvable<CommandDef<any>>>;
