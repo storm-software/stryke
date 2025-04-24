@@ -63,8 +63,9 @@ export async function registerShutdown(onShutdown?: () => MaybePromise<any>) {
     });
   }
 
-  return async (reason: string | number) => {
-    consola.info(`Manual shutdown ${reason ? `(${reason})` : ""}`);
-    await shutdown();
+  return async (code: number | string | null | undefined = 0) => {
+    consola.info(`Manual shutdown ${code ? `(${code})` : ""}`);
+
+    await shutdown(code);
   };
 }
