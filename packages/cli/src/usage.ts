@@ -39,7 +39,7 @@ export async function renderUsage<T extends ArgsDef = ArgsDef>(
   cmd: CommandDef<T>,
   parent?: CommandDef<T>
 ) {
-  const cmdMeta = (await resolveValue(cmd.meta ?? {})) as CommandMeta;
+  const cmdMeta = await resolveValue(cmd.meta ?? {});
   const cmdArgs = resolveArgs(await resolveValue(cmd.args ?? {}));
   const parentMeta = (await resolveValue(parent?.meta ?? {})) as CommandMeta;
 
