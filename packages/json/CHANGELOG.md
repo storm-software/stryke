@@ -2,6 +2,13 @@
 
 # Changelog for Stryke - Json
 
+## [0.8.1](https://github.com/storm-software/stryke/releases/tag/json%400.8.1) (2025-04-25)
+
+### Bug Fixes
+
+- **json:** Added missing characters to invalid key list
+  ([3b83500](https://github.com/storm-software/stryke/commit/3b83500))
+
 ## [0.8.0](https://github.com/storm-software/stryke/releases/tag/json%400.8.0) (2025-04-25)
 
 ### Features
