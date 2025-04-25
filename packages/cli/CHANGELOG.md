@@ -2,6 +2,13 @@
 
 # Changelog for Stryke - Cli
 
+## [0.8.0](https://github.com/storm-software/stryke/releases/tag/cli%400.8.0) (2025-04-25)
+
+### Features
+
+- **cli:** Added the `alignText` utilities
+  ([6f4d562](https://github.com/storm-software/stryke/commit/6f4d562))
+
 ## [0.7.5](https://github.com/storm-software/stryke/releases/tag/cli%400.7.5) (2025-04-25)
 
 ### Miscellaneous
