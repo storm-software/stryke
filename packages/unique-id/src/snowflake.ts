@@ -1,4 +1,4 @@
-/*-------------------------------------------------------------------
+/* -------------------------------------------------------------------
 
                        ⚡ Storm Software - Stryke
 
@@ -13,7 +13,7 @@
  Contact:         https://stormsoftware.com/contact
  License:         https://stormsoftware.com/projects/stryke/license
 
- -------------------------------------------------------------------*/
+ ------------------------------------------------------------------- */
 
 /**
  * Options passed to the `generate` function to create a snowflake identifier.
@@ -46,9 +46,9 @@ export interface ISnowflakeGeneratorOptions {
 
 /**
  * Resolvable value types for a valid Snowflake:
- * * string
- * * number
- * * bigint
+ * string
+ * number
+ * bigint
  */
 export type SnowflakeResolvable = string;
 
