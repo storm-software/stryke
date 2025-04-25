@@ -2,6 +2,13 @@
 
 # Changelog for Stryke - String Format
 
+## [0.4.2](https://github.com/storm-software/stryke/releases/tag/string-format%400.4.2) (2025-04-25)
+
+### Miscellaneous
+
+- **string-format:** Added many new acronyms to the list of strings
+  ([07a34cb](https://github.com/storm-software/stryke/commit/07a34cb))
+
 ## [0.4.1](https://github.com/storm-software/stryke/releases/tag/string-format%400.4.1) (2025-04-10)
 
 ### Miscellaneous
