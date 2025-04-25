@@ -2,6 +2,13 @@
 
 # Changelog for Stryke - Cli
 
+## [0.7.5](https://github.com/storm-software/stryke/releases/tag/cli%400.7.5) (2025-04-25)
+
+### Miscellaneous
+
+- **cli:** Cleaned up the meta console rendering
+  ([4f3b961](https://github.com/storm-software/stryke/commit/4f3b961))
+
 ## [0.7.4](https://github.com/storm-software/stryke/releases/tag/cli%400.7.4) (2025-04-24)
 
 ### Bug Fixes
