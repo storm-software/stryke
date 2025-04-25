@@ -17,24 +17,29 @@
 
 import { isFunction } from "@stryke/type-checks/is-function";
 import { parseArgs, resolveValue } from "./parse";
-import type { ArgsDef, CommandContext, CommandDef } from "./types";
+import type { ArgsDef, CommandContext, CommandDef, ParsedArgs } from "./types";
 
-export interface RunCommandOptions {
+export interface RunCommandOptions<TArgs extends ArgsDef = ArgsDef> {
   rawArgs: string[];
+  args?: ParsedArgs<TArgs>;
   data?: any;
   showUsage?: boolean;
 }
 
 export async function runCommand<TArgs extends ArgsDef = ArgsDef>(
   command: CommandDef<TArgs>,
-  opts: RunCommandOptions
+  opts: RunCommandOptions<TArgs>
 ): Promise<{ result: unknown }> {
   const cmdArgs = await resolveValue(command.args ?? {});
-  const parsedArgs = parseArgs<TArgs>(opts.rawArgs, cmdArgs);
+
+  let args = opts.args;
+  if (!args) {
+    args = parseArgs<TArgs>(opts.rawArgs, cmdArgs);
+  }
 
   const context: CommandContext<TArgs> = {
     rawArgs: opts.rawArgs,
-    args: parsedArgs,
+    args,
     data: opts.data,
     command
   };

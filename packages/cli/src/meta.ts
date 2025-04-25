@@ -81,7 +81,7 @@ export function renderBanner(
 export function renderLicense(
   meta: Pick<
     CommandMeta,
-    "license" | "licenseUrl" | "homepageUrl" | "documentationUrl"
+    "author" | "license" | "licensing" | "homepage" | "docs" | "contact"
   >
 ): string {
   const lines = [] as string[];
@@ -89,11 +89,11 @@ export function renderLicense(
   if (meta.license) {
     lines.push(" ");
     lines.push(
-      `This software is distributed under the ${meta.license} license.`
+      `This software is distributed${meta.author?.name ? ` by ${meta.author.name}` : ""} under the ${meta.license} license.`
     );
-    if (meta.licenseUrl || meta.homepageUrl || meta.documentationUrl) {
+    if (meta.licensing || meta.homepage || meta.docs) {
       lines.push(
-        `For more information, please visit ${link((meta.licenseUrl || meta.homepageUrl || meta.documentationUrl)!)}`
+        `For more information, please visit ${link((meta.licensing || meta.homepage || meta.docs)!)}${meta.contact ? ` or contact us at ${link(meta.contact)} with any inquiries` : ""}.`
       );
     }
   }
@@ -108,28 +108,21 @@ export function renderLicense(
  * @returns The URLs as a display string
  */
 export function renderUrls(
-  meta: Pick<
-    CommandMeta,
-    "homepageUrl" | "repositoryUrl" | "documentationUrl" | "contactUrl"
-  >
+  meta: Pick<CommandMeta, "homepage" | "repository" | "docs" | "contact">
 ): string {
   const lines = [] as string[];
 
-  if (meta.homepageUrl) {
-    lines.push(`${colors.bold("Website:")}         ${link(meta.homepageUrl)}`);
+  if (meta.homepage) {
+    lines.push(`${colors.bold("Website:")}         ${link(meta.homepage)}`);
   }
-  if (meta.repositoryUrl) {
-    lines.push(
-      `${colors.bold("Repository:")}      ${link(meta.repositoryUrl)}`
-    );
+  if (meta.repository) {
+    lines.push(`${colors.bold("Repository:")}      ${link(meta.repository)}`);
   }
-  if (meta.documentationUrl) {
-    lines.push(
-      `${colors.bold("Documentation:")}   ${link(meta.documentationUrl)}`
-    );
+  if (meta.docs) {
+    lines.push(`${colors.bold("Documentation:")}   ${link(meta.docs)}`);
   }
-  if (meta.contactUrl) {
-    lines.push(`${colors.bold("Contact:")}         ${link(meta.contactUrl)}`);
+  if (meta.contact) {
+    lines.push(`${colors.bold("Contact:")}         ${link(meta.contact)}`);
   }
 
   return lines.join("\n");
@@ -144,12 +137,13 @@ export function renderUrls(
 export function renderMeta(
   meta: Pick<
     CommandMeta,
+    | "author"
     | "license"
-    | "licenseUrl"
-    | "homepageUrl"
-    | "repositoryUrl"
-    | "documentationUrl"
-    | "contactUrl"
+    | "licensing"
+    | "homepage"
+    | "repository"
+    | "docs"
+    | "contact"
   >
 ): string {
   let display = renderUrls(meta);

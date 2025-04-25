@@ -146,37 +146,24 @@ export interface CommandMeta {
   description: string;
   version?: string;
   hidden?: boolean;
-  banner?: CommandMetaTitle;
   author?: CommandMetaTitle;
-  homepageUrl?: string;
+  homepage?: string;
   license?: string;
-  licenseUrl?: string;
-  documentationUrl?: string;
-  repositoryUrl?: string;
-  contactUrl?: string;
+  licensing?: string;
+  docs?: string;
+  repository?: string;
+  contact?: string;
 }
 
 export type SubCommandsDef = Record<string, Resolvable<CommandDef<any>>>;
 
-export interface CommandDef<
-  TArgs extends ArgsDef = ArgsDef,
-  TSubCommands extends Resolvable<SubCommandsDef> | undefined =
-    | Resolvable<SubCommandsDef>
-    | undefined,
-  THandle extends TSubCommands extends undefined
-    ? (context: CommandContext<TArgs>) => MaybePromise<any>
-    :
-        | ((context: CommandContext<TArgs>) => MaybePromise<any>)
-        | undefined = TSubCommands extends undefined
-    ? (context: CommandContext<TArgs>) => MaybePromise<any>
-    : ((context: CommandContext<TArgs>) => MaybePromise<any>) | undefined
-> {
-  meta?: Resolvable<CommandMeta>;
+export interface CommandDef<TArgs extends ArgsDef = ArgsDef> {
+  meta: Resolvable<CommandMeta>;
   args?: Resolvable<TArgs>;
   setup?: (context: CommandContext<TArgs>) => MaybePromise<any>;
   cleanup?: (context: CommandContext<TArgs>) => MaybePromise<any>;
-  subCommands: TSubCommands;
-  handle: THandle;
+  subCommands?: Resolvable<SubCommandsDef>;
+  handle?: (context: CommandContext<TArgs>) => MaybePromise<any>;
 }
 
 export interface CommandContext<TArgs extends ArgsDef = ArgsDef> {
