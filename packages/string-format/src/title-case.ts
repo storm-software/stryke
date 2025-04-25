@@ -36,8 +36,10 @@ export function titleCase<T extends string | undefined>(input?: T): T {
     .split(/(?=[A-Z])|[\s._-]/)
     .map(s => s.trim())
     .filter(Boolean)
-    .map(s =>
-      ACRONYMS.includes(s) ? s.toUpperCase() : upperCaseFirst(s.toLowerCase())
+    .map(
+      s =>
+        ACRONYMS.find(a => a.toUpperCase() === s.toUpperCase()) ||
+        upperCaseFirst(s.toLowerCase())
     )
     .join(" ") as T;
 }
