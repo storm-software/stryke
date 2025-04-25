@@ -2,6 +2,13 @@
 
 # Changelog for Stryke - Json
 
+## [0.8.0](https://github.com/storm-software/stryke/releases/tag/json%400.8.0) (2025-04-25)
+
+### Features
+
+- **json:** Update `stringify` to handle invalid characters
+  ([2163417](https://github.com/storm-software/stryke/commit/2163417))
+
 ## [0.7.3](https://github.com/storm-software/stryke/releases/tag/json%400.7.3) (2025-04-23)
 
 ### Miscellaneous

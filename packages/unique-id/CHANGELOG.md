@@ -2,6 +2,13 @@
 
 # Changelog for Stryke - Unique Id
 
+## [0.2.6](https://github.com/storm-software/stryke/releases/tag/unique-id%400.2.6) (2025-04-25)
+
+### Miscellaneous
+
+- **unique-id:** Format source files
+  ([6c1d0d4](https://github.com/storm-software/stryke/commit/6c1d0d4))
+
 ## [0.2.5](https://github.com/storm-software/stryke/releases/tag/unique-id%400.2.5) (2025-03-28)
 
 ### Miscellaneous
