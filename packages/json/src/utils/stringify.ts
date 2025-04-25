@@ -18,6 +18,25 @@
 import { isNumber } from "@stryke/type-checks/is-number";
 import { isUndefined } from "@stryke/type-checks/is-undefined";
 
+export const invalidKeyChars = [
+  "@",
+  "/",
+  "#",
+  "$",
+  " ",
+  '"',
+  "'",
+  "`",
+  "{",
+  "}",
+  "[",
+  "]",
+  "(",
+  ")",
+  "<",
+  ">"
+] as const;
+
 /**
  * Stringify a value to a JSON-like string.
  *
@@ -73,7 +92,10 @@ export const stringify = (
       );
 
       return `{${space}${keys
-        .map(k => `${k}: ${space}${stringify((value as any)[k], space)}`)
+        .map(
+          key =>
+            `${invalidKeyChars.some(invalidKeyChar => key.includes(invalidKeyChar)) ? `"${key}"` : key}: ${space}${stringify((value as any)[key], space)}`
+        )
         .join(`,${space}`)}${space}}`;
     }
     default:
