@@ -20,6 +20,7 @@
 
 import { toArray } from "@stryke/convert/to-array";
 import { camelCase } from "@stryke/string-format/camel-case";
+import { constantCase } from "@stryke/string-format/constant-case";
 import { kebabCase } from "@stryke/string-format/kebab-case";
 import { isBoolean } from "@stryke/type-checks/is-boolean";
 import { isFunction } from "@stryke/type-checks/is-function";
@@ -267,7 +268,12 @@ export function parseArgs<T extends ArgsDef = ArgsDef>(
 
   const parsedArgsProxy = new Proxy(parsed, {
     get(target: ParsedArgs<any>, prop: string) {
-      return target[prop] ?? target[camelCase(prop)] ?? target[kebabCase(prop)];
+      return (
+        target[prop] ??
+        target[camelCase(prop)] ??
+        target[kebabCase(prop)] ??
+        process.env[constantCase(prop)]
+      );
     }
   });
 
