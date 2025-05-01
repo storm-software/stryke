@@ -2,6 +2,13 @@
 
 # Changelog for Stryke - Cli
 
+## [0.9.0](https://github.com/storm-software/stryke/releases/tag/cli%400.9.0) (2025-05-01)
+
+### Features
+
+- **cli:** Added .env defaulting for CLI arguments
+  ([e033adc](https://github.com/storm-software/stryke/commit/e033adc))
+
 ## [0.8.0](https://github.com/storm-software/stryke/releases/tag/cli%400.8.0) (2025-04-25)
 
 ### Features
