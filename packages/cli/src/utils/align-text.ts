@@ -3,15 +3,16 @@
                        ⚡ Storm Software - Stryke
 
  This code was released as part of the Stryke project. Stryke
- is maintained by Storm Software under the Apache-2.0 License, and is
+ is maintained by Storm Software under the Apache-2.0 license, and is
  free for commercial and private use. For more information, please visit
- our licensing page.
+ our licensing page at https://stormsoftware.com/projects/stryke/license.
 
- Website:         https://stormsoftware.com
- Repository:      https://github.com/storm-software/stryke
- Documentation:   https://stormsoftware.com/projects/stryke/docs
- Contact:         https://stormsoftware.com/contact
- License:         https://stormsoftware.com/projects/stryke/license
+ Website:                  https://stormsoftware.com
+ Repository:               https://github.com/storm-software/stryke
+ Documentation:            https://stormsoftware.com/projects/stryke/docs
+ Contact:                  https://stormsoftware.com/contact
+
+ SPDX-License-Identifier:  Apache-2.0
 
  ------------------------------------------------------------------- */
 
@@ -68,4 +69,36 @@ export function alignTextJustify(
   const character = " ";
 
   return { indent, character, prefix: "" };
+}
+
+/**
+ * Aligns the text to the specified direction.
+ *
+ * @param val - The text to align.
+ * @param direction - The direction to align the text.
+ * @returns The aligned text.
+ */
+export function align(
+  val: string,
+  direction: "left" | "right" | "center" | "justify"
+) {
+  let alignFn: AlignTextFn;
+  switch (direction) {
+    case "left":
+      alignFn = alignTextLeft;
+      break;
+    case "right":
+      alignFn = alignTextRight;
+      break;
+    case "center":
+      alignFn = alignTextCenter;
+      break;
+    case "justify":
+      alignFn = alignTextJustify;
+      break;
+    default:
+      throw new Error(`Invalid alignment direction: ${direction as string}`);
+  }
+
+  return alignText(val, alignFn);
 }

@@ -3,20 +3,21 @@
                        ⚡ Storm Software - Stryke
 
  This code was released as part of the Stryke project. Stryke
- is maintained by Storm Software under the Apache-2.0 License, and is
+ is maintained by Storm Software under the Apache-2.0 license, and is
  free for commercial and private use. For more information, please visit
- our licensing page.
+ our licensing page at https://stormsoftware.com/projects/stryke/license.
 
- Website:         https://stormsoftware.com
- Repository:      https://github.com/storm-software/stryke
- Documentation:   https://stormsoftware.com/projects/stryke/docs
- Contact:         https://stormsoftware.com/contact
- License:         https://stormsoftware.com/projects/stryke/license
+ Website:                  https://stormsoftware.com
+ Repository:               https://github.com/storm-software/stryke
+ Documentation:            https://stormsoftware.com/projects/stryke/docs
+ Contact:                  https://stormsoftware.com/contact
+
+ SPDX-License-Identifier:  Apache-2.0
 
  ------------------------------------------------------------------- */
 
 import type { MaybePromise } from "@stryke/types";
-import consola from "consola";
+import { format } from "./utils/format";
 
 const errorTypes = ["unhandledRejection", "uncaughtException"];
 const signalTraps = ["SIGTERM", "SIGINT", "SIGUSR2"];
@@ -29,18 +30,33 @@ export async function registerShutdown(onShutdown?: () => MaybePromise<any>) {
         return;
       }
 
-      consola.start("Terminating the application...");
+      console.log(
+        format({
+          message: "Terminating the application...",
+          type: "start"
+        })
+      );
       exited = true;
 
       if (onShutdown) {
         await Promise.resolve(onShutdown());
       }
 
-      consola.success("Successfully terminated the application");
+      console.log(
+        format({
+          message: "Successfully terminated the application",
+          type: "success"
+        })
+      );
       process.exit(code);
     } catch (error) {
-      consola.fail("Shutdown process failed to complete");
-      consola.error(error);
+      console.log(
+        format({
+          message: "Shutdown process failed to complete",
+          type: "fail"
+        })
+      );
+      console.error(error);
 
       process.exit(1);
     }
@@ -48,8 +64,13 @@ export async function registerShutdown(onShutdown?: () => MaybePromise<any>) {
 
   for (const type of errorTypes) {
     process.on(type, e => {
-      consola.info(`Received ${type} error event`);
-      consola.error(e);
+      console.info(
+        format({
+          message: `Received ${type} error event`,
+          type: "info"
+        })
+      );
+      console.error(e);
 
       void shutdown(1);
     });
@@ -57,14 +78,24 @@ export async function registerShutdown(onShutdown?: () => MaybePromise<any>) {
 
   for (const type of signalTraps) {
     process.once(type, () => {
-      consola.info(`Received ${type} signal`);
+      console.info(
+        format({
+          message: `Received ${type} signal`,
+          type: "info"
+        })
+      );
 
       void shutdown();
     });
   }
 
   return async (code: number | string | null | undefined = 0) => {
-    consola.info(`Manual shutdown ${code ? `(${code})` : ""}`);
+    console.info(
+      format({
+        message: `Manual shutdown ${code ? `(${code})` : ""}`,
+        type: "info"
+      })
+    );
 
     await shutdown(code);
   };

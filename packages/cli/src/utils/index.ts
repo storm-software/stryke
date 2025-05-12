@@ -16,16 +16,9 @@
 
  ------------------------------------------------------------------- */
 
-import type { ArgsDef, CommandDef } from "./types";
-
-/**
- * Define a command with the given definition.
- *
- * @param def - The command definition to use.
- * @returns The command definition.
- */
-export function defineCommand<const T extends ArgsDef = ArgsDef>(
-  def: CommandDef<T>
-): CommandDef<T> {
-  return def;
-}
+export * from "./align-text";
+export * from "./box";
+export * from "./color";
+export * from "./format";
+export * from "./link";
+export * from "./strip-ansi";

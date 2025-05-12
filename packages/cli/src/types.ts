@@ -3,15 +3,16 @@
                        ⚡ Storm Software - Stryke
 
  This code was released as part of the Stryke project. Stryke
- is maintained by Storm Software under the Apache-2.0 License, and is
+ is maintained by Storm Software under the Apache-2.0 license, and is
  free for commercial and private use. For more information, please visit
- our licensing page.
+ our licensing page at https://stormsoftware.com/projects/stryke/license.
 
- Website:         https://stormsoftware.com
- Repository:      https://github.com/storm-software/stryke
- Documentation:   https://stormsoftware.com/projects/stryke/docs
- Contact:         https://stormsoftware.com/contact
- License:         https://stormsoftware.com/projects/stryke/license
+ Website:                  https://stormsoftware.com
+ Repository:               https://github.com/storm-software/stryke
+ Documentation:            https://stormsoftware.com/projects/stryke/docs
+ Contact:                  https://stormsoftware.com/contact
+
+ SPDX-License-Identifier:  Apache-2.0
 
  ------------------------------------------------------------------- */
 
@@ -186,3 +187,135 @@ export type CLICommandType =
   | "execute"
   | "uninstall"
   | "global_uninstall";
+
+/**
+ * Defines the level of logs as specific numbers or special number types.
+ *
+ * LogLevel - Represents the log level.
+ *
+ * @defaultValue 0 - Represents the default log level.
+ */
+export type LogLevel = 0 | 1 | 2 | 3 | 4 | 5 | (number & {});
+
+export interface InputLogObject {
+  /**
+   * The logging level of the message. See {@link LogLevel}.
+   */
+  level?: LogLevel;
+
+  /**
+   * A string tag to categorize or identify the log message.
+   */
+  tag?: string;
+
+  /**
+   * The type of log message, which affects how it's processed and displayed. See {@link LogType}.
+   */
+  type?: LogType;
+
+  /**
+   * The main log message text.
+   */
+  message?: string;
+
+  /**
+   * Additional text or texts to be logged with the message.
+   */
+  additional?: string | string[];
+
+  /**
+   * Additional arguments to be logged with the message.
+   */
+  args?: any[];
+
+  /**
+   * The date and time when the log message was created.
+   */
+  date?: Date;
+}
+
+export interface LogObject extends InputLogObject {
+  /**
+   * The logging level of the message, overridden if required. See {@link LogLevel}.
+   */
+  level?: LogLevel;
+
+  /**
+   * The type of log message, overridden if required. See {@link LogType}.
+   */
+  type?: LogType;
+
+  /**
+   * A string tag to categorize or identify the log message, overridden if necessary.
+   */
+  tag?: string;
+
+  /**
+   * Additional arguments to be logged with the message, overridden if necessary.
+   */
+  args?: any[];
+
+  /**
+   * Allows additional custom formatting options.
+   */
+  [key: string]: unknown;
+}
+
+/**
+ * @see https://nodejs.org/api/util.html#util_util_inspect_object_showhidden_depth_colors
+ */
+export interface FormatOptions {
+  /**
+   * The maximum number of columns to output, affects formatting.
+   */
+  columns?: number;
+
+  /**
+   * Whether to include timestamp information in log messages.
+   */
+  date?: boolean;
+
+  /**
+   * Whether to use colors in the output.
+   */
+  colors?: boolean;
+
+  /**
+   * Specifies whether or not the output should be compact. Accepts a boolean or numeric level of compactness.
+   */
+  compact?: boolean | number;
+
+  /**
+   * Error cause level.
+   */
+  errorLevel?: number;
+
+  /**
+   * Allows additional custom formatting options.
+   */
+  [key: string]: unknown;
+}
+
+/**
+ * Lists the types of log messages supported by the system.
+ */
+export type LogType =
+  // 0
+  | "silent"
+  | "fatal"
+  | "error"
+  // 1
+  | "warn"
+  // 2
+  | "log"
+  // 3
+  | "info"
+  | "success"
+  | "fail"
+  | "ready"
+  | "start"
+  | "box"
+  // Verbose
+  | "debug"
+  | "trace"
+  | "verbose";

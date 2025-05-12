@@ -11,10 +11,11 @@
   "private": false,
   "dependencies": {
     "@antfu/ni": "catalog:",
-    "consola": "catalog:",
     "defu": "catalog:",
     "execa": "catalog:",
     "figlet": "catalog:",
+    "is-unicode-supported": "catalog:",
+    "string-width": "catalog:",
     "terminal-link": "catalog:"
   },
   "devDependencies": {
