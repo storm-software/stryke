@@ -2,6 +2,12 @@
 
 # Changelog for Stryke - Json
 
+## [0.8.2](https://github.com/storm-software/stryke/releases/tag/json%400.8.2) (2025-05-12)
+
+### Miscellaneous
+
+- **monorepo:** Reformat monorepo source code
+
 ## [0.8.1](https://github.com/storm-software/stryke/releases/tag/json%400.8.1) (2025-04-25)
 
 ### Bug Fixes

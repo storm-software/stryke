@@ -2,6 +2,16 @@
 
 # Changelog for Stryke - Cli
 
+## [0.10.0](https://github.com/storm-software/stryke/releases/tag/cli%400.10.0) (2025-05-12)
+
+### Features
+
+- **cli:** Added the `utils` module to handle console formatting
+
+### Miscellaneous
+
+- **monorepo:** Reformat monorepo source code
+
 ## [0.9.0](https://github.com/storm-software/stryke/releases/tag/cli%400.9.0) (2025-05-01)
 
 ### Features

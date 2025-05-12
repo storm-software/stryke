@@ -2,6 +2,12 @@
 
 # Changelog for Stryke - Trpc Next
 
+## [0.5.6](https://github.com/storm-software/stryke/releases/tag/trpc-next%400.5.6) (2025-05-12)
+
+### Miscellaneous
+
+- **monorepo:** Reformat monorepo source code
+
 ## [0.5.5](https://github.com/storm-software/stryke/releases/tag/trpc-next%400.5.5) (2025-04-10)
 
 ### Miscellaneous

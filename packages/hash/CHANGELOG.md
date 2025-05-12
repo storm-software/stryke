@@ -2,6 +2,12 @@
 
 # Changelog for Stryke - Hash
 
+## [0.9.3](https://github.com/storm-software/stryke/releases/tag/hash%400.9.3) (2025-05-12)
+
+### Miscellaneous
+
+- **monorepo:** Reformat monorepo source code
+
 ## [0.9.2](https://github.com/storm-software/stryke/releases/tag/hash%400.9.2) (2025-04-10)
 
 ### Bug Fixes

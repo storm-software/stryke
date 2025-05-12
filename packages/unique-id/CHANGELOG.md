@@ -2,6 +2,12 @@
 
 # Changelog for Stryke - Unique Id
 
+## [0.2.7](https://github.com/storm-software/stryke/releases/tag/unique-id%400.2.7) (2025-05-12)
+
+### Miscellaneous
+
+- **monorepo:** Reformat monorepo source code
+
 ## [0.2.6](https://github.com/storm-software/stryke/releases/tag/unique-id%400.2.6) (2025-04-25)
 
 ### Miscellaneous

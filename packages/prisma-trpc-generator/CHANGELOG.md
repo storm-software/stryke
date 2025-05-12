@@ -2,6 +2,12 @@
 
 # Changelog for Stryke - Prisma Trpc Generator
 
+## [0.11.12](https://github.com/storm-software/stryke/releases/tag/prisma-trpc-generator%400.11.12) (2025-05-12)
+
+### Miscellaneous
+
+- **monorepo:** Reformat monorepo source code
+
 ## [0.11.11](https://github.com/storm-software/stryke/releases/tag/prisma-trpc-generator%400.11.11) (2025-04-10)
 
 ### Miscellaneous

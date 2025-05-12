@@ -2,6 +2,12 @@
 
 # Changelog for Stryke - String Format
 
+## [0.4.3](https://github.com/storm-software/stryke/releases/tag/string-format%400.4.3) (2025-05-12)
+
+### Miscellaneous
+
+- **monorepo:** Reformat monorepo source code
+
 ## [0.4.2](https://github.com/storm-software/stryke/releases/tag/string-format%400.4.2) (2025-04-25)
 
 ### Miscellaneous

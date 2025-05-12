@@ -2,6 +2,12 @@
 
 # Changelog for Stryke - Http
 
+## [0.8.1](https://github.com/storm-software/stryke/releases/tag/http%400.8.1) (2025-05-12)
+
+### Miscellaneous
+
+- **monorepo:** Reformat monorepo source code
+
 ## [0.8.0](https://github.com/storm-software/stryke/releases/tag/http%400.8.0) (2025-04-23)
 
 ### Features

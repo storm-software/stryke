@@ -2,6 +2,12 @@
 
 # Changelog for Stryke - Convert
 
+## [0.1.6](https://github.com/storm-software/stryke/releases/tag/convert%400.1.6) (2025-05-12)
+
+### Miscellaneous
+
+- **monorepo:** Reformat monorepo source code
+
 ## [0.1.5](https://github.com/storm-software/stryke/releases/tag/convert%400.1.5) (2025-04-10)
 
 ### Miscellaneous

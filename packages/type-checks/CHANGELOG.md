@@ -2,6 +2,12 @@
 
 # Changelog for Stryke - Type Checks
 
+## [0.3.3](https://github.com/storm-software/stryke/releases/tag/type-checks%400.3.3) (2025-05-12)
+
+### Miscellaneous
+
+- **monorepo:** Reformat monorepo source code
+
 ## [0.3.2](https://github.com/storm-software/stryke/releases/tag/type-checks%400.3.2) (2025-04-22)
 
 ### Miscellaneous

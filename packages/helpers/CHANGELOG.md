@@ -2,6 +2,12 @@
 
 # Changelog for Stryke - Helpers
 
+## [0.5.3](https://github.com/storm-software/stryke/releases/tag/helpers%400.5.3) (2025-05-12)
+
+### Miscellaneous
+
+- **monorepo:** Reformat monorepo source code
+
 ## [0.5.2](https://github.com/storm-software/stryke/releases/tag/helpers%400.5.2) (2025-04-10)
 
 ### Miscellaneous
