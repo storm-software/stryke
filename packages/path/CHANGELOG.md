@@ -2,6 +2,12 @@
 
 # Changelog for Stryke - Path
 
+## [0.4.13](https://github.com/storm-software/stryke/releases/tag/path%400.4.13) (2025-05-13)
+
+### Miscellaneous
+
+- **monorepo:** Resolve issue with monorepo versions
+
 ## [0.4.12](https://github.com/storm-software/stryke/releases/tag/path%400.4.12) (2025-05-12)
 
 ### Miscellaneous
