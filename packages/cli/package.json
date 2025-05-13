@@ -1,6 +1,6 @@
 {
   "name": "@stryke/cli",
-  "version": "0.10.1",
+  "version": "0.10.2",
   "type": "module",
   "description": "A package containing various CLI helper functions",
   "repository": {
