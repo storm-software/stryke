@@ -2,6 +2,12 @@
 
 # Changelog for Stryke - Path
 
+## [0.4.14](https://github.com/storm-software/stryke/releases/tag/path%400.4.14) (2025-05-13)
+
+### Bug Fixes
+
+- **monorepo:** Resolve issues with pnpm configurations
+
 ## [0.4.13](https://github.com/storm-software/stryke/releases/tag/path%400.4.13) (2025-05-13)
 
 ### Miscellaneous
