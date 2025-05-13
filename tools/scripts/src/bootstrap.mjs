@@ -18,9 +18,7 @@
  ------------------------------------------------------------------- */
 
 import { build } from "esbuild";
-import { chalk, echo } from "zx";
-
-// usePwsh();
+import { $, chalk, echo } from "zx";
 
 try {
   await echo`${chalk.whiteBright("⚙️  Bootstrapping the monorepo...")}`;
@@ -40,16 +38,16 @@ try {
     preserveSymlinks: true
   });
 
-  // const proc = $`pnpm nx reset`.timeout(`${5 * 60}s`);
-  // proc.stdout.on("data", data => {
-  //   echo`${data}`;
-  // });
-  // const result = await proc;
-  // if (!result.ok) {
-  //   throw new Error(
-  //     `An error occured while resetting the Nx deamon process: \n\n${result.message}\n`
-  //   );
-  // }
+  const proc = $`pnpm nx reset --onlyDaemon`.timeout(`${2 * 60}s`);
+  proc.stdout.on("data", data => {
+    echo`${data}`;
+  });
+  const result = await proc;
+  if (!result.ok) {
+    throw new Error(
+      `An error occurred while resetting the Nx daemon process: \n\n${result.message}\n`
+    );
+  }
 
   echo`${chalk.green("Completed monorepo bootstrapping successfully!")}`;
 } catch (error) {

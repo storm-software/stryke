@@ -1,9 +1,13 @@
+linkWorkspacePackages: true
+preferWorkspacePackages: true
+
 onlyBuiltDependencies:
   - "@swc/core"
   - core-js
   - esbuild
   - lefthook
   - nx
+
 packages:
   - "tools/*"
   - "packages/*"

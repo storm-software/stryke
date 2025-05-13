@@ -19,8 +19,6 @@
 
 import { $, argv, chalk, echo } from "zx";
 
-// usePwsh();
-
 try {
   await echo`${chalk.whiteBright("🎨  Formatting the monorepo...")}`;
 
