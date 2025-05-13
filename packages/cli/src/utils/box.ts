@@ -215,8 +215,9 @@ export interface BoxStyle {
 export interface BoxOpts {
   /**
    * Title that will be displayed on top of the box
+   *
    * @example 'Hello World'
-   * @example 'Hello {name}'
+   * @example 'Hello \{name\}'
    */
   title?: string;
 
