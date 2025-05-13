@@ -2,6 +2,12 @@
 
 # Changelog for Stryke - Cli
 
+## [0.10.2](https://github.com/storm-software/stryke/releases/tag/cli%400.10.2) (2025-05-13)
+
+### Miscellaneous
+
+- **string-format:** Updated README markdown
+
 ## [0.10.1](https://github.com/storm-software/stryke/releases/tag/cli%400.10.1) (2025-05-13)
 
 ### Bug Fixes
