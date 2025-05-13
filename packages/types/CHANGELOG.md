@@ -2,6 +2,12 @@
 
 # Changelog for Stryke - Types
 
+## [0.8.3](https://github.com/storm-software/stryke/releases/tag/types%400.8.3) (2025-05-13)
+
+### Bug Fixes
+
+- **monorepo:** Resolve issue with workspace Nx plugin
+
 ## [0.8.2](https://github.com/storm-software/stryke/releases/tag/types%400.8.2) (2025-05-12)
 
 ### Miscellaneous

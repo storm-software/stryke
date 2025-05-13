@@ -594,7 +594,7 @@ importers:
         version: 1.7.4
     devDependencies:
       '@stryke/types':
-        specifier: workspace:*
+        specifier: 0.8.3
         version: link:../types
       '@types/node':
         specifier: 'catalog:'
