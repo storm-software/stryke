@@ -5635,8 +5635,8 @@ packages:
   eslint-plugin-paths@1.1.0:
     resolution: {integrity: sha512-Ye633sqwSy/GE5dLUI4zpxXoekIyQOD8FyYi2H0YkBws3Q4xjX/ycIzpDWt7BDAlKhbXYGk2BgP9qmNFnEX03w==}
 
-  eslint-plugin-perfectionist@4.12.3:
-    resolution: {integrity: sha512-V0dmpq6fBbn0BYofHsiRuuY9wgkKMDkdruM0mIRBIJ8XZ8vEaTAZqFsywm40RuWNVnduWBt5HO1ZZ+flE2yqjg==}
+  eslint-plugin-perfectionist@4.13.0:
+    resolution: {integrity: sha512-dsPwXwV7IrG26PJ+h1crQ1f5kxay/gQAU0NJnbVTQc91l5Mz9kPjyIZ7fXgie+QSgi8a+0TwGbfaJx+GIhzuoQ==}
     engines: {node: ^18.0.0 || >=20.0.0}
     peerDependencies:
       eslint: '>=8.45.0'
@@ -13478,7 +13478,7 @@ snapshots:
       eslint-plugin-no-only-tests: 3.3.0
       eslint-plugin-no-secrets: 2.2.1(eslint@9.22.0(jiti@2.4.2))
       eslint-plugin-paths: 1.1.0
-      eslint-plugin-perfectionist: 4.12.3(eslint@9.22.0(jiti@2.4.2))(typescript@5.8.3)
+      eslint-plugin-perfectionist: 4.13.0(eslint@9.22.0(jiti@2.4.2))(typescript@5.8.3)
       eslint-plugin-pnpm: 0.3.0(eslint@9.22.0(jiti@2.4.2))
       eslint-plugin-prettier: 5.4.0(eslint-config-prettier@10.1.5(eslint@9.22.0(jiti@2.4.2)))(eslint@9.22.0(jiti@2.4.2))(prettier@3.5.3)
       eslint-plugin-react-compiler: 19.0.0-beta-21e868a-20250216(eslint@9.22.0(jiti@2.4.2))
@@ -16280,7 +16280,7 @@ snapshots:
     dependencies:
       comment-json: 4.2.5
 
-  eslint-plugin-perfectionist@4.12.3(eslint@9.22.0(jiti@2.4.2))(typescript@5.8.3):
+  eslint-plugin-perfectionist@4.13.0(eslint@9.22.0(jiti@2.4.2))(typescript@5.8.3):
     dependencies:
       '@typescript-eslint/types': 8.32.1
       '@typescript-eslint/utils': 8.32.1(eslint@9.22.0(jiti@2.4.2))(typescript@5.8.3)
@@ -19047,7 +19047,7 @@ snapshots:
   micromark-util-character@2.1.1:
     dependencies:
       micromark-util-symbol: 2.0.1
-      micromark-util-types: 2.0.1
+      micromark-util-types: 2.0.2
 
   micromark-util-chunked@2.0.1:
     dependencies:
@@ -19062,7 +19062,7 @@ snapshots:
   micromark-util-combine-extensions@2.0.1:
     dependencies:
       micromark-util-chunked: 2.0.1
-      micromark-util-types: 2.0.1
+      micromark-util-types: 2.0.2
 
   micromark-util-decode-numeric-character-reference@2.0.2:
     dependencies:
