@@ -175,30 +175,35 @@ export interface BoxStyle {
 
   /**
    * The vertical alignment of the text
+   *
    * @defaultValue 'center'
    */
   valign: "top" | "center" | "bottom";
 
   /**
    * The padding of the box
+   *
    * @defaultValue 2
    */
   padding: number;
 
   /**
    * The left margin of the box
+   *
    * @defaultValue 1
    */
   marginLeft: number;
 
   /**
    * The top margin of the box
+   *
    * @defaultValue 1
    */
   marginTop: number;
 
   /**
-   * The top margin of the box
+   * The bottom margin of the box
+   *
    * @defaultValue 1
    */
   marginBottom: number;
