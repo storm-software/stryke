@@ -2,6 +2,12 @@
 
 # Changelog for Stryke - Cli
 
+## [0.10.1](https://github.com/storm-software/stryke/releases/tag/cli%400.10.1) (2025-05-13)
+
+### Bug Fixes
+
+- **string-format:** Resolve issue with extra `-` characters in string
+
 ## [0.10.0](https://github.com/storm-software/stryke/releases/tag/cli%400.10.0) (2025-05-12)
 
 ### Features

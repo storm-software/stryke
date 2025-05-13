@@ -2,6 +2,12 @@
 
 # Changelog for Stryke - String Format
 
+## [0.4.4](https://github.com/storm-software/stryke/releases/tag/string-format%400.4.4) (2025-05-13)
+
+### Bug Fixes
+
+- **string-format:** Resolve issue with extra `-` characters in string
+
 ## [0.4.3](https://github.com/storm-software/stryke/releases/tag/string-format%400.4.3) (2025-05-12)
 
 ### Miscellaneous
