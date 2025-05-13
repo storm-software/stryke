@@ -30,13 +30,14 @@ export function pascalCase<T extends string | undefined>(input?: T): T {
     input
       ? input
           .split(" ")
+          .map(i => i.split("-"))
+          .flat()
           .map(i =>
             i.length > 0
               ? i.trim().charAt(0).toUpperCase() + i.trim().slice(1)
               : ""
           )
           .join("")
-          .replaceAll("-", "")
       : input
   ) as T;
 }
