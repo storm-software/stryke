@@ -82,22 +82,12 @@ jobs:
           persist-credentials: false
 
       - name: Setup workspace
-        uses: storm-software/action-setup@main
+        uses: storm-software/action-devenv-setup@main
         with:
           gpg-sign-key: ${{ secrets.STORM_BOT_GPG_SIGN_KEY }}
           gpg-private-key: ${{ secrets.STORM_BOT_GPG_PRIVATE_KEY }}
           gpg-passphrase: ${{ secrets.STORM_BOT_GPG_PASSPHRASE }}
-          package-manager: pnpm
-          package-manager-version: 10.3.0
           storm-bot-github-token: ${{ secrets.STORM_BOT_GITHUB_TOKEN }}
-
-      - name: Configure git
-        run: |
-          git config user.name "Stormie-Bot"
-          git config user.email "bot@stormsoftware.com"
-          git config lfs.allowincompletepush true
-          npm config set //registry.npmjs.org/:_authToken=$NPM_TOKEN
-        shell: bash
 
       - name: Get appropriate base and head commits for `nx affected` commands
         uses: nrwl/nx-set-shas@v4
@@ -110,25 +100,20 @@ jobs:
           echo "HEAD: ${{ env.NX_HEAD }}"
         shell: bash
 
-      - name: Run workspace build
-        run: pnpm build
-        shell: bash
-
       - name: Release repository updates
-        if: ${{ success() }}
-        run: pnpm release --base=${{ env.NX_BASE }} --head=${{ env.NX_HEAD }}
+        run: devenv shell release ${{ env.NX_BASE }} ${{ env.NX_HEAD }}
         env:
+          NX_BASE: ${{ env.NX_BASE }}
+          NX_HEAD: ${{ env.NX_HEAD }}
           GITHUB_ACTOR: ${{ github.actor }}
           GITHUB_TOKEN: ${{ github.token }}
           GH_TOKEN: ${{ github.token }}
           NPM_TOKEN: ${{ secrets.STORM_BOT_NPM_TOKEN }}
           CARGO_REGISTRY_TOKEN: ${{ secrets.STORM_BOT_CARGO_TOKEN }}
           CLOUDFLARE_API_TOKEN: ${{ secrets.STORM_BOT_CLOUDFLARE_TOKEN }}
-          STORM_BOT: Stormie-Bot
+          STORM_BOT: stormie-bot
           STORM_WORKSPACE_ROOT: ${{ github.workspace }}
           STORM_REPOSITORY: ${{ github.repositoryUrl }}
-          CYCLONE_REGISTRY_ACCESS_KEY: ${{ secrets.CYCLONE_REGISTRY_ACCESS_KEY }}
-          CYCLONE_REGISTRY_SECRET_KEY: ${{ secrets.CYCLONE_REGISTRY_SECRET_KEY }}
           TAG: ${{ inputs.tag }}
 
   success:
