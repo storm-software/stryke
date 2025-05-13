@@ -47,7 +47,23 @@ This package is part of Storm Software's **🌩️ Stryke** monorepo. Stryke pac
 # Stryke - String Formatting Functions
 
 A collection of helper functions used to manipulate string values. The functions
-in this package are responsible for transforming strings into various formats.
+in this package are responsible for transforming strings into various formats including:
+
+- Camel Case
+- Kebab Case
+- Pascal Case
+- Snake Case
+- Title Case
+- Start Case
+- Constant Case
+- Escaped
+- Unescaped
+- Upper Case
+- Lower Case
+- Upper First
+- Lower First
+- Deburr
+- Pretty Bytes
 
 <!-- START doctoc -->
 <!-- DON'T EDIT THIS SECTION, INSTEAD RE-RUN doctoc TO UPDATE -->
