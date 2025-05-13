@@ -11,16 +11,16 @@ min_version: 1.5.0
 pre-install:
   commands:
     validate:
-      glob: "**/*"
+      glob: "**/*.*"
       run: pnpm exec storm-pre-install
 
 prepare:
   commands:
     validate:
-      glob: "**/*"
+      glob: "**/*.*"
       run: pnpm exec storm-prepare
     plugins:
-      glob: "**/*"
+      glob: "**/*.*"
       run: pnpm exec zx tools/scripts/src/bootstrap.mjs
 
 pre-commit:
@@ -34,8 +34,12 @@ pre-commit:
       glob: "**/{lefthook.yml,biome.json}"
       run: pnpm exec storm-prepare
     validate:
+      glob: '**/*'
+      run: 'pnpm exec storm-pre-commit {staged_files}'
+      stage_fixed: true
+    pnpm-workspace:
       glob: "**/*"
-      run: "pnpm exec storm-pre-commit {staged_files}"
+      run: "pnpm update --recursive --workspace"
       stage_fixed: true
     lint:
       glob:
@@ -64,20 +68,8 @@ pre-commit:
         - "*.gql"
         - "*.xml"
         - "*.svg"
-        - "*.txt"
-        - "*.log"
         - "*.env"
-        - "*.env.example"
-        - "*.env.local"
-        - "*.env.development"
-        - "*.env.test"
-        - "*.env.production"
-        - "*.env.staging"
-        - "*.env.local.example"
-        - "*.env.development.example"
-        - "*.env.test.example"
-        - "*.env.production.example"
-        - "*.env.staging.example"
+        - ".env.{local,development,test,production,staging}"
       run: pnpm exec storm-lint all --skip-cspell --skip-circular-deps
       stage_fixed: true
 
@@ -91,23 +83,23 @@ pre-push:
   commands:
     build:
       glob: "**/*"
-      run: pnpm build-dev
+      run: pnpm build
       stage_fixed: true
     validate:
       glob: "**/*"
       run: "pnpm exec storm-pre-push {staged_files}"
       stage_fixed: true
-    lint-filename:
-      glob: "**/*"
-      run:
-        'pnpm exec ls-lint
-        --config="./node_modules/@storm-software/linting-tools/ls-lint/config.yml"'
+    # lint-filename:
+    #   glob: "**/*"
+    #   run: 'pnpm exec ls-lint
+    #     --config="./node_modules/@storm-software/linting-tools/ls-lint/config.yml"'
     lint-codeowners:
       glob: "**/CODEOWNERS"
       run: pnpm exec storm-lint codeowners
     lint-github-actions:
       glob: ".github/workflows/*.*"
-      run: zizmor --offline .github/workflows/
+      run:
+        zizmor --offline --config="./tools/config/zizmor.yml" .github/workflows/
     sherif:
       glob:
         - "*.js"
@@ -126,7 +118,7 @@ pre-push:
       glob: "**/*"
       run:
         'pnpm exec storm-git readme --templates="tools/readme-templates"
-        --project="@stryke/monorepo" '
+        --project="@storm-stack/monorepo" '
       stage_fixed: true
     format:
       glob: "**/*"
@@ -136,18 +128,18 @@ pre-push:
 post-merge:
   commands:
     validate:
-      glob: "**/*"
+      glob: "**/*.*"
       run: "pnpm exec storm-post-merge {staged_files}"
       stage_fixed: true
 
 post-checkout:
   commands:
     validate:
-      glob: "**/*"
+      glob: "**/*.*"
       run: "pnpm exec storm-post-checkout {staged_files}"
 
 post-commit:
   commands:
     validate:
-      glob: "**/*"
+      glob: "**/*.*"
       run: "pnpm exec storm-post-commit {staged_files}"
