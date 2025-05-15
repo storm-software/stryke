@@ -2,6 +2,12 @@
 
 # Changelog for Stryke - String Format
 
+## [0.4.8](https://github.com/storm-software/stryke/releases/tag/string-format%400.4.8) (2025-05-15)
+
+### Bug Fixes
+
+- **string-format:** Resolve issue with applying acronyms to `titleCase` result
+
 ## [0.4.7](https://github.com/storm-software/stryke/releases/tag/string-format%400.4.7) (2025-05-13)
 
 ### Bug Fixes
