@@ -2,6 +2,13 @@
 
 # Changelog for Stryke - String Format
 
+## [0.4.9](https://github.com/storm-software/stryke/releases/tag/string-format%400.4.9) (2025-05-15)
+
+### Bug Fixes
+
+- **string-format:** Improve the `titleCase` formatter to handle hyphens
+  separated by spaces
+
 ## [0.4.8](https://github.com/storm-software/stryke/releases/tag/string-format%400.4.8) (2025-05-15)
 
 ### Bug Fixes
