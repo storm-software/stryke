@@ -34,13 +34,15 @@ export function titleCase<T extends string | undefined>(input?: T): T {
   }
 
   return input
-    .split(/(?=[A-Z])|[\s._-]/)
-    .map(s => s.trim())
+    .toLowerCase()
+    .split(" ")
     .filter(Boolean)
-    .map(
-      s =>
-        ACRONYMS.find(a => a.toUpperCase() === s.toUpperCase()) ||
-        upperCaseFirst(s.toLowerCase())
-    )
+    .map(word => {
+      if (ACRONYMS.includes(word.toUpperCase())) {
+        return word.toUpperCase();
+      }
+
+      return `${upperCaseFirst(word.toLowerCase())}`;
+    })
     .join(" ") as T;
 }
