@@ -33,16 +33,22 @@ export function titleCase<T extends string | undefined>(input?: T): T {
     return input as T;
   }
 
-  return input
-    .toLowerCase()
-    .split(" ")
-    .filter(Boolean)
-    .map(word => {
-      if (ACRONYMS.includes(word.toUpperCase())) {
-        return word.toUpperCase();
-      }
+  const formatSegment = (segment: string) =>
+    segment
+      .toLowerCase()
+      .split(/[\s\-_]+/)
+      .filter(Boolean)
+      .map(word => {
+        if (ACRONYMS.includes(word.toUpperCase())) {
+          return word.toUpperCase();
+        }
 
-      return `${upperCaseFirst(word.toLowerCase())}`;
-    })
-    .join(" ") as T;
+        return `${upperCaseFirst(word.toLowerCase())}`;
+      })
+      .join(" ");
+
+  return input
+    .split(/\s+-\s+/)
+    .map(part => formatSegment(part))
+    .join(" - ") as T;
 }
