@@ -41,7 +41,7 @@ catalog:
   "@trpc/tanstack-react-query": next
   "@types/figlet": ^1.7.0
   "@types/jest": ^29.5.14
-  "@types/node": ^22.13.1
+  "@types/node": ^22.14.0
   "@types/pluralize": ^0.0.33
   "@types/react": ^19.0.12
   "@types/react-dom": ^19.0.4
