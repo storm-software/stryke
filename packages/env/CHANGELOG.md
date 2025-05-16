@@ -2,6 +2,12 @@
 
 # Changelog for Stryke - Env
 
+## [0.7.0](https://github.com/storm-software/stryke/releases/tag/env%400.7.0) (2025-05-16)
+
+### Features
+
+- **env:** Added the `isHyperlinkSupported` helper function
+
 ## [0.6.6](https://github.com/storm-software/stryke/releases/tag/env%400.6.6) (2025-05-12)
 
 ### Miscellaneous
