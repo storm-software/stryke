@@ -3,18 +3,20 @@
                        ⚡ Storm Software - Stryke
 
  This code was released as part of the Stryke project. Stryke
- is maintained by Storm Software under the Apache-2.0 License, and is
+ is maintained by Storm Software under the Apache-2.0 license, and is
  free for commercial and private use. For more information, please visit
- our licensing page.
+ our licensing page at https://stormsoftware.com/projects/stryke/license.
 
- Website:         https://stormsoftware.com
- Repository:      https://github.com/storm-software/stryke
- Documentation:   https://stormsoftware.com/projects/stryke/docs
- Contact:         https://stormsoftware.com/contact
- License:         https://stormsoftware.com/projects/stryke/license
+ Website:                  https://stormsoftware.com
+ Repository:               https://github.com/storm-software/stryke
+ Documentation:            https://stormsoftware.com/projects/stryke/docs
+ Contact:                  https://stormsoftware.com/contact
+
+ SPDX-License-Identifier:  Apache-2.0
 
  ------------------------------------------------------------------- */
 
+import { parse as parseToml } from "@ltd/j-toml";
 import { StormJSON } from "@stryke/json/storm-json";
 import type { JsonParseOptions } from "@stryke/json/types";
 import { isError } from "@stryke/type-checks/is-error";
@@ -131,7 +133,8 @@ interface YamlReadOptions {
  * Reads a YAML file and returns the object the YAML content represents.
  *
  * @param path - A path to a file.
- * @returns
+ * @param options - YAML parse options
+ * @returns Object the YAML content of the file represents
  */
 export function readYamlFileSync<T extends object = any>(
   path: string,
@@ -152,7 +155,8 @@ export function readYamlFileSync<T extends object = any>(
  * Reads a YAML file and returns the object the YAML content represents.
  *
  * @param path - A path to a file.
- * @returns
+ * @param options - YAML parse options
+ * @returns Object the YAML content of the file represents
  */
 export async function readYamlFile<T extends object = any>(
   path: string,
@@ -167,6 +171,92 @@ export async function readYamlFile<T extends object = any>(
     ...options,
     filename: path
   }) as T;
+}
+
+type XOptions = null | {
+  readonly keys?: null | RegExp;
+  readonly order?: boolean;
+  readonly exact?: boolean;
+  readonly multi?: boolean;
+  readonly longer?: boolean;
+  readonly string?: boolean;
+  readonly comment?: boolean;
+  readonly literal?: boolean;
+  readonly null?: boolean;
+  readonly tag?:
+    | null
+    | (<
+        Table extends object & { [key: string | symbol]: any },
+        Key extends string | symbol,
+        Array extends any[],
+        Index extends number,
+        Tag extends string
+      >(
+        this: void,
+        each:
+          | { table: Table; key: Key; tag: Tag }
+          | { array: Array; index: Index; tag: Tag }
+          | { table: Table; key: Key; array: Array; index: Index; tag: Tag }
+      ) => void);
+};
+
+interface TomlReadOptions {
+  specificationVersion?: 1.0 | 0.5 | 0.4 | 0.3 | 0.2 | 0.1;
+  multilineStringJoiner?: string;
+  useBigInt?: boolean | number;
+  xOptions?: XOptions;
+}
+
+/**
+ * Reads a TOML file and returns the object the TOML content represents.
+ *
+ * @param path - A path to a file.
+ * @param options - TOML parse options
+ * @returns Object the TOML content of the file represents
+ */
+export function readTomlFileSync<T extends object = any>(
+  path: string,
+  options?: TomlReadOptions
+): T {
+  const content = readFileSync(path);
+
+  return (
+    options?.specificationVersion
+      ? parseToml(
+          content,
+          options.specificationVersion,
+          options?.multilineStringJoiner,
+          options?.useBigInt,
+          options?.xOptions
+        )
+      : parseToml(content)
+  ) as T;
+}
+
+/**
+ * Reads a TOML file and returns the object the TOML content represents.
+ *
+ * @param path - A path to a file.
+ * @param options - TOML parse options
+ * @returns Object the TOML content of the file represents
+ */
+export async function readTomlFile<T extends object = any>(
+  path: string,
+  options?: TomlReadOptions
+): Promise<T> {
+  const content = await readFile(path);
+
+  return (
+    options?.specificationVersion
+      ? parseToml(
+          content,
+          options.specificationVersion,
+          options?.multilineStringJoiner,
+          options?.useBigInt,
+          options?.xOptions
+        )
+      : parseToml(content)
+  ) as T;
 }
 
 /**

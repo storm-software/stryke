@@ -16,11 +16,13 @@
 
  ------------------------------------------------------------------- */
 
+import { stringify as stringifyToml } from "@ltd/j-toml";
 import { StormJSON } from "@stryke/json/storm-json";
 import type { JsonSerializeOptions } from "@stryke/json/types";
 import { correctPath } from "@stryke/path/correct-path";
 import { existsSync } from "@stryke/path/exists";
 import { findFilePath } from "@stryke/path/file-path-fns";
+import defu from "defu";
 import type { Abortable } from "node:events";
 import type {
   WriteFileOptions as FSWriteFileOptions,
@@ -151,5 +153,69 @@ export async function writeJsonFile<T extends object = object>(
   return writeFile(
     path,
     options?.appendNewLine ? `${serializedJson}\n` : serializedJson
+  );
+}
+
+export interface TomlWriteOptions {
+  integer?: number;
+  newline?: "\n" | "\r\n";
+  newlineAround?: "document" | "section" | "header" | "pairs" | "pair";
+  indent?: string | number;
+  T?: "T" | "t" | " ";
+  Z?: "Z" | "z";
+  xNull?: boolean;
+  xBeforeNewlineInMultilineTable?: "," | "";
+  forceInlineArraySpacing?: 0 | 1 | 2 | 3;
+}
+
+/**
+ * Reads a TOML file and returns the object the TOML content represents.
+ *
+ * @param path - A path to a file.
+ * @param data - data which should be serialized/formatted to TOML and written to the file
+ * @param options - TOML parse options
+ */
+export function writeTomlFileSync<T extends object = any>(
+  path: string,
+  data: T,
+  options?: TomlWriteOptions
+): void {
+  return writeFileSync(
+    path,
+    stringifyToml(
+      data as any,
+      defu(options ?? {}, {
+        newline: "\n",
+        newlineAround: "pairs",
+        indent: 4,
+        forceInlineArraySpacing: 1
+      }) as TomlWriteOptions
+    )
+  );
+}
+
+/**
+ * Reads a TOML file and returns the object the TOML content represents.
+ *
+ * @param path - A path to a file.
+ * @param data - data which should be serialized/formatted to TOML and written to the file
+ * @param options - TOML parse options
+ */
+export async function writeTomlFile<T extends object = any>(
+  path: string,
+  data: T,
+  options?: TomlWriteOptions
+): Promise<void> {
+  return writeFile(
+    path,
+    stringifyToml(
+      data as any,
+      defu(options ?? {}, {
+        newline: "\n",
+        newlineAround: "pairs",
+        indent: 4,
+        forceInlineArraySpacing: 1
+      }) as TomlWriteOptions
+    )
   );
 }
