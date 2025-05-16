@@ -1,6 +1,6 @@
 {
   "name": "@stryke/fs",
-  "version": "0.12.2",
+  "version": "0.13.0",
   "type": "module",
   "description": "A package containing various file system utilities that expand the functionality of NodeJs's built-in `fs` module.",
   "repository": {
@@ -20,7 +20,7 @@
   "dependencies": {
     "@antfu/install-pkg": "catalog:",
     "@ltd/j-toml": "catalog:",
-    "@stryke/convert": "workspace:*",
+    "@stryke/convert": "0.2.0",
     "@stryke/path": "workspace:*",
     "@zkochan/js-yaml": "catalog:",
     "chalk": "catalog:",

@@ -2,6 +2,16 @@
 
 # Changelog for Stryke - Convert
 
+## [0.2.0](https://github.com/storm-software/stryke/releases/tag/convert%400.2.0) (2025-05-16)
+
+### Features
+
+- **convert:** Added node typings to convert helpers
+
+### Bug Fixes
+
+- **monorepo:** Resolve issue with workspace pnpm version
+
 ## [0.1.6](https://github.com/storm-software/stryke/releases/tag/convert%400.1.6) (2025-05-12)
 
 ### Miscellaneous

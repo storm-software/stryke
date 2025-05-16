@@ -2,6 +2,12 @@
 
 # Changelog for Stryke - Url
 
+## [0.2.0](https://github.com/storm-software/stryke/releases/tag/url%400.2.0) (2025-05-16)
+
+### Features
+
+- **convert:** Added node typings to convert helpers
+
 ## [0.1.1](https://github.com/storm-software/stryke/releases/tag/url%400.1.1) (2025-05-12)
 
 ### Miscellaneous

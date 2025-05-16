@@ -2,6 +2,18 @@
 
 # Changelog for Stryke - Fs
 
+## [0.13.0](https://github.com/storm-software/stryke/releases/tag/fs%400.13.0) (2025-05-16)
+
+### Features
+
+- **fs:** Added the `readTomlFile` and `writeTomlFile` utilities
+- **fs:** Added the `compressDirectory` helper function
+- **convert:** Added node typings to convert helpers
+
+### Updated Dependencies
+
+- Updated convert to 0.2.0
+
 ## [0.12.2](https://github.com/storm-software/stryke/releases/tag/fs%400.12.2) (2025-05-12)
 
 ### Miscellaneous
