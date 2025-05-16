@@ -3,15 +3,16 @@
                        ⚡ Storm Software - Stryke
 
  This code was released as part of the Stryke project. Stryke
- is maintained by Storm Software under the Apache-2.0 License, and is
+ is maintained by Storm Software under the Apache-2.0 license, and is
  free for commercial and private use. For more information, please visit
- our licensing page.
+ our licensing page at https://stormsoftware.com/projects/stryke/license.
 
- Website:         https://stormsoftware.com
- Repository:      https://github.com/storm-software/stryke
- Documentation:   https://stormsoftware.com/projects/stryke/docs
- Contact:         https://stormsoftware.com/contact
- License:         https://stormsoftware.com/projects/stryke/license
+ Website:                  https://stormsoftware.com
+ Repository:               https://github.com/storm-software/stryke
+ Documentation:            https://stormsoftware.com/projects/stryke/docs
+ Contact:                  https://stormsoftware.com/contact
+
+ SPDX-License-Identifier:  Apache-2.0
 
  ------------------------------------------------------------------- */
 
@@ -136,10 +137,10 @@ export interface ProviderInfo {
 
 function detectProvider(): ProviderInfo {
   // Based on env
-  if (globalThis.process?.env) {
+  if (process?.env) {
     for (const provider of providers) {
       const envName = provider[1] || provider[0];
-      if (globalThis.process?.env[envName]) {
+      if (process?.env[envName]) {
         return {
           name: provider[0].toLowerCase(),
           ...(provider[2] as any)
@@ -149,10 +150,7 @@ function detectProvider(): ProviderInfo {
   }
 
   // Stackblitz / Webcontainer
-  if (
-    globalThis.process?.env?.SHELL === "/bin/jsh" &&
-    globalThis.process?.versions?.webcontainer
-  ) {
+  if (process?.env?.SHELL === "/bin/jsh" && process?.versions?.webcontainer) {
     return {
       name: "stackblitz",
       ci: false
