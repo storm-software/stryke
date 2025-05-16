@@ -9,6 +9,9 @@
     "directory": "packages/convert"
   },
   "private": false,
+  "devDependencies": {
+    "@types/node": "catalog:"
+  },
   "publishConfig": {
     "access": "public"
   }
