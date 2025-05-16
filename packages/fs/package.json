@@ -19,6 +19,8 @@
   },
   "dependencies": {
     "@antfu/install-pkg": "catalog:",
+    "@stryke/convert": "workspace:*",
+    "@stryke/path": "workspace:*",
     "@zkochan/js-yaml": "catalog:",
     "chalk": "catalog:",
     "defu": "catalog:",
