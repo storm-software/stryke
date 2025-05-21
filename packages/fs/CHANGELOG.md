@@ -2,6 +2,12 @@
 
 # Changelog for Stryke - Fs
 
+## [0.13.1](https://github.com/storm-software/stryke/releases/tag/fs%400.13.1) (2025-05-21)
+
+### Bug Fixes
+
+- **fs:** Resolve package detection issue when versions are provided
+
 ## [0.13.0](https://github.com/storm-software/stryke/releases/tag/fs%400.13.0) (2025-05-16)
 
 ### Features
