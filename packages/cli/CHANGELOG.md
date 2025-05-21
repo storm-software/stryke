@@ -2,6 +2,12 @@
 
 # Changelog for Stryke - Cli
 
+## [0.11.0](https://github.com/storm-software/stryke/releases/tag/cli%400.11.0) (2025-05-16)
+
+### Features
+
+- **env:** Added the `isHyperlinkSupported` helper function
+
 ## [0.10.2](https://github.com/storm-software/stryke/releases/tag/cli%400.10.2) (2025-05-13)
 
 ### Miscellaneous
