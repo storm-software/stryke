@@ -88,8 +88,8 @@ export async function loadEnvFile(
  * - `.env.production`
  * - `.env.production.local`
  *
- * @param mode - The mode to load the environment variables for.
  * @param envDir - The directory/directories to load the environment variables from.
+ * @param mode - The mode to load the environment variables for.
  * @param prefix - The prefix or prefixes to use for the environment variables.
  * @returns The environment variables.
  */
@@ -175,8 +175,8 @@ export async function loadEnv(
  * - `.env.production`
  * - `.env.production.local`
  *
- * @param mode - The mode to load the environment variables for.
  * @param envDir - The directory/directories to load the environment variables from.
+ * @param mode - The mode to load the environment variables for.
  * @param prefix - The prefix or prefixes to use for the environment variables.
  * @returns The environment variables.
  */
@@ -198,8 +198,8 @@ export async function loadClientEnv(
  * - `.env.production`
  * - `.env.production.local`
  *
- * @param mode - The mode to load the environment variables for.
  * @param envDir - The directory/directories to load the environment variables from.
+ * @param mode - The mode to load the environment variables for.
  * @returns The environment variables.
  */
 export async function loadServerEnv(

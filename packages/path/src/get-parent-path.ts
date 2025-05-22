@@ -24,10 +24,15 @@ import { joinPaths } from "./join-paths";
  * Resolve the parent path of the provided path.
  *
  * @param path - The path to resolve.
+ * @param count - The number of parent directories to traverse.
  * @returns The parent path of the provided path.
  */
-export const resolveParentPath = (path: string): string => {
-  return resolvePaths(path, "..");
+export const resolveParentPath = (path: string, count: number = 1): string => {
+  let parentPath = path;
+  for (let i = 0; i < count; i++) {
+    parentPath = resolvePaths(parentPath, "..");
+  }
+  return parentPath;
 };
 
 /**
