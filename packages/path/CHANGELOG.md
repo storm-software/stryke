@@ -2,6 +2,12 @@
 
 # Changelog for Stryke - Path
 
+## [0.5.0](https://github.com/storm-software/stryke/releases/tag/path%400.5.0) (2025-05-22)
+
+### Features
+
+- **path:** Added the `count` parameter to the `resolveParentPath` function
+
 ## [0.4.14](https://github.com/storm-software/stryke/releases/tag/path%400.4.14) (2025-05-13)
 
 ### Bug Fixes

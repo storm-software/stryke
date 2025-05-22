@@ -2,6 +2,12 @@
 
 # Changelog for Stryke - Env
 
+## [0.8.0](https://github.com/storm-software/stryke/releases/tag/env%400.8.0) (2025-05-22)
+
+### Features
+
+- **path:** Added the `count` parameter to the `resolveParentPath` function
+
 ## [0.7.0](https://github.com/storm-software/stryke/releases/tag/env%400.7.0) (2025-05-16)
 
 ### Features
