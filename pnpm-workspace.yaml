@@ -24,14 +24,6 @@ catalog:
   "@prisma/generator-helper": ^6.5.0
   "@prisma/internals": ^6.5.0
   "@prisma/prisma-schema-wasm": ^6.6.0-41.9061db3b0058e3d3731c6fe68a1b77061bed4861
-  "@sl": ^0.0.0
-  "@stl": ^0.0.0
-  "@strl": ^0.0.0
-  "@stryke": ^0.0.0
-  "@stryke/": ^0.0.0
-  "@strykel": ^0.0.0
-  "@strykl": ^0.0.0
-  "@stryl": ^0.0.0
   "@tanstack/react-query": ^5.70.0
   "@tanstack/react-query-devtools": ^5.70.0
   "@taplo/cli": ^0.7.0

@@ -18,7 +18,6 @@
 
 import { joinPaths } from "@stryke/path/join-paths";
 import { titleCase } from "@stryke/string-format/title-case";
-import { isString } from "@stryke/type-checks/is-string";
 import os from "node:os";
 import path from "node:path";
 
@@ -165,7 +164,7 @@ export function getEnvPaths(options: GetEnvPathsOptions = {}): EnvPaths {
 
   if (options.suffix) {
     // Add suffix to prevent possible conflict with native apps
-    orgId += `-${isString(options.suffix) ? options.suffix : "nodejs"}`;
+    orgId += `-${typeof options.suffix === "string" ? options.suffix : "nodejs"}`;
   }
 
   let result = {} as EnvPaths;

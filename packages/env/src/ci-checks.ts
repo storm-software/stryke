@@ -16,8 +16,6 @@
 
  ------------------------------------------------------------------- */
 
-import { providerInfo } from "./providers";
-
 /**
  *  Returns true if the current environment is a CI environment.
  *
@@ -92,7 +90,6 @@ export const isCI = (
       env.APPCENTER_BUILD_ID ||
       env.CI_XCODE_PROJECT ||
       env.XCS ||
-      providerInfo.ci !== false ||
       false
   );
 };

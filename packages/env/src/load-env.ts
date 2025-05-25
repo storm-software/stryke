@@ -19,8 +19,8 @@
 import type { DotenvPopulateInput } from "@dotenvx/dotenvx";
 import { parse } from "@dotenvx/dotenvx";
 import { readFile } from "@stryke/fs/read-file";
-import { StormJSON } from "@stryke/json";
-import { existsSync, joinPaths } from "@stryke/path";
+import { existsSync } from "@stryke/path/exists";
+import { joinPaths } from "@stryke/path/join-paths";
 import defu from "defu";
 import type { DotenvParseOutput } from "./types";
 import { ENV_PREFIXES } from "./types";
@@ -131,14 +131,14 @@ export async function loadEnv(
 
   // test NODE_ENV override before expand as otherwise process.env.NODE_ENV would override this
   if (envParsed.NODE_ENV && process.env.VITE_USER_NODE_ENV === undefined) {
-    process.env.VITE_USER_NODE_ENV = StormJSON.stringify(envParsed.NODE_ENV);
+    process.env.VITE_USER_NODE_ENV = JSON.stringify(envParsed.NODE_ENV);
   }
   // support BROWSER and BROWSER_ARGS env variables
   if (envParsed.BROWSER && process.env.BROWSER === undefined) {
-    process.env.BROWSER = StormJSON.stringify(envParsed.BROWSER);
+    process.env.BROWSER = JSON.stringify(envParsed.BROWSER);
   }
   if (envParsed.BROWSER_ARGS && process.env.BROWSER_ARGS === undefined) {
-    process.env.BROWSER_ARGS = StormJSON.stringify(envParsed.BROWSER_ARGS);
+    process.env.BROWSER_ARGS = JSON.stringify(envParsed.BROWSER_ARGS);
   }
 
   // let environment variables use each other. make a copy of `process.env` so that we do not mutate the global `process.env`.

@@ -27,8 +27,8 @@ export const hasTTY = Boolean(process?.stdout && process?.stdout.isTTY);
 /** Detect if `DEBUG` environment variable is set */
 export const isDebug = Boolean(process.env.DEBUG);
 
-/** Detect if `NODE_ENV` environment variable is `test` */
-const nodeEnv =
+/** Detect the `NODE_ENV` environment variable */
+const mode =
   process.env.STORM_MODE ||
   process.env.NEXT_PUBLIC_VERCEL_ENV ||
   process.env.NODE_ENV ||
@@ -36,22 +36,22 @@ const nodeEnv =
 
 /** Detect if `NODE_ENV` environment variable is `production` */
 export const isProduction = ["prd", "prod", "production"].includes(
-  nodeEnv?.toLowerCase()
+  mode?.toLowerCase()
 );
 
 /** Detect if `NODE_ENV` environment variable is `production` */
 export const isStaging = ["stg", "stage", "staging"].includes(
-  nodeEnv?.toLowerCase()
+  mode?.toLowerCase()
 );
 
 /** Detect if `NODE_ENV` environment variable is `dev` or `development` */
 export const isDevelopment = ["dev", "development"].includes(
-  nodeEnv?.toLowerCase()
+  mode?.toLowerCase()
 );
 
 /** Detect if `NODE_ENV` environment variable is `test` */
 export const isTest =
-  ["tst", "test", "testing"].includes(nodeEnv?.toLowerCase()) ||
+  ["tst", "test", "testing"].includes(mode?.toLowerCase()) ||
   isStaging ||
   Boolean(process.env.TEST);
 
