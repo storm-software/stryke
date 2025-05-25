@@ -2,6 +2,16 @@
 
 # Changelog for Stryke - Env
 
+## [0.9.0](https://github.com/storm-software/stryke/releases/tag/env%400.9.0) (2025-05-25)
+
+### Features
+
+- **env:** Added workspace dependencies and mode environment parameter
+
+### Updated Dependencies
+
+- Updated fs to 0.14.0
+
 ## [0.8.0](https://github.com/storm-software/stryke/releases/tag/env%400.8.0) (2025-05-22)
 
 ### Features

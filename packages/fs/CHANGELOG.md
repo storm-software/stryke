@@ -2,6 +2,12 @@
 
 # Changelog for Stryke - Fs
 
+## [0.14.0](https://github.com/storm-software/stryke/releases/tag/fs%400.14.0) (2025-05-25)
+
+### Features
+
+- **env:** Added workspace dependencies and mode environment parameter
+
 ## [0.13.1](https://github.com/storm-software/stryke/releases/tag/fs%400.13.1) (2025-05-21)
 
 ### Bug Fixes
