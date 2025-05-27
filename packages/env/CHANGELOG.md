@@ -2,6 +2,17 @@
 
 # Changelog for Stryke - Env
 
+## [0.9.1](https://github.com/storm-software/stryke/releases/tag/env%400.9.1) (2025-05-27)
+
+### Bug Fixes
+
+- **path:** Resolved issue with `resolvePackage` utility returning
+  `package.json` file in path
+
+### Updated Dependencies
+
+- Updated path to 0.5.1
+
 ## [0.9.0](https://github.com/storm-software/stryke/releases/tag/env%400.9.0) (2025-05-25)
 
 ### Features

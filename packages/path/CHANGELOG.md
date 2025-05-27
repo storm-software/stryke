@@ -2,6 +2,13 @@
 
 # Changelog for Stryke - Path
 
+## [0.5.1](https://github.com/storm-software/stryke/releases/tag/path%400.5.1) (2025-05-27)
+
+### Bug Fixes
+
+- **path:** Resolved issue with `resolvePackage` utility returning
+  `package.json` file in path
+
 ## [0.5.0](https://github.com/storm-software/stryke/releases/tag/path%400.5.0) (2025-05-22)
 
 ### Features
