@@ -49,13 +49,14 @@ export interface FindFileNameOptions {
  * ```
  *
  * @param filePath - The file path to process
- * @param options - The options to use when processing the file name
+ * @param options - Options to control the file name extraction
  * @returns The file name
  */
 export function findFileName(
   filePath: string,
-  { requireExtension, withExtension }: FindFileNameOptions = {}
+  options: FindFileNameOptions = {}
 ): string {
+  const { requireExtension = false, withExtension = true } = options;
   const result =
     normalizeWindowsPath(filePath)
       ?.split(filePath?.includes("\\") ? "\\" : "/")

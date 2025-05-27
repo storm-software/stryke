@@ -19,6 +19,7 @@
 import type { Platform } from "@stryke/types/system";
 import { interopDefault, resolvePath, resolvePathSync } from "mlly";
 import { correctPath } from "./correct-path";
+import { findFilePath } from "./file-path-fns";
 import { getWorkspaceRoot } from "./get-workspace-root";
 import { joinPaths } from "./join-paths";
 
@@ -37,7 +38,7 @@ export interface PackageResolvingOptions {
 /**
  * Resolve the path to a specified module
  *
- * @param name - The name of the module
+ * @param path - The path to the module
  * @param options - The options to use when resolving the module
  * @returns A promise for the path to the module
  */
@@ -65,7 +66,7 @@ export async function resolve(
 /**
  * Resolve the path to a specified module
  *
- * @param name - The name of the module
+ * @param path - The path to the module
  * @param options - The options to use when resolving the module
  * @returns The path to the module or undefined
  */
@@ -143,10 +144,13 @@ export async function importModule<T = any>(path: string): Promise<T> {
 }
 
 /**
- * Import a module from a specified path with error handling
+ * Resolve the path to a specified package asynchronously
  *
- * @param path - The path to the module
- * @returns The module or undefined
+ * @remarks
+ * This path points to the root of the package, which is usually the directory containing the `package.json` file. Please note: this path does not include the `package.json` file itself.
+ *
+ * @param name - The name of the module
+ * @returns A promise for the module or undefined
  */
 export async function resolvePackage(
   name: string,
@@ -160,13 +164,17 @@ export async function resolvePackage(
     }
   }
 
-  return result;
+  return result ? findFilePath(result) : undefined;
 }
 
 /**
- * Import a module from a specified path with error handling
+ * Resolve the path to a specified package synchronously
  *
- * @param path - The path to the module
+ * @remarks
+ * This path points to the root of the package, which is usually the directory containing the `package.json` file. Please note: this path does not include the `package.json` file itself.
+ *
+ * @param name - The name of the module
+ * @param options - The options to use when resolving the module
  * @returns The module or undefined
  */
 export async function resolvePackageSync(
@@ -181,5 +189,5 @@ export async function resolvePackageSync(
     }
   }
 
-  return result;
+  return result ? findFilePath(result) : undefined;
 }
