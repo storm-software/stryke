@@ -2,6 +2,12 @@
 
 # Changelog for Stryke - Json
 
+## [0.8.3](https://github.com/storm-software/stryke/releases/tag/json%400.8.3) (2025-05-27)
+
+### Bug Fixes
+
+- **json:** Remove the invalid `Buffer` import path
+
 ## [0.8.2](https://github.com/storm-software/stryke/releases/tag/json%400.8.2) (2025-05-12)
 
 ### Miscellaneous
