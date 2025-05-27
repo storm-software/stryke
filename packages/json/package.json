@@ -15,6 +15,9 @@
     "lines-and-columns": "catalog:",
     "superjson": "catalog:"
   },
+  "devDependencies": {
+    "@types/node": "catalog:"
+  },
   "publishConfig": {
     "access": "public"
   }

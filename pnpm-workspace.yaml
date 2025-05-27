@@ -110,6 +110,7 @@ catalog:
   react: ^19.1.0
   react-dom: ^19.1.0
   react-native: ^0.77.0
+  types/node: ^0.0.0
   typescript: ~5.7.3
   esbuild: ^0.25.0
   ufo: 1.5.4
