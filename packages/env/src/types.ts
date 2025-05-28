@@ -1,15 +1,15 @@
 /* -------------------------------------------------------------------
 
-                       ⚡ Storm Software - Stryke
+                             ⚡ Storm Software 
 
- This code was released as part of the Stryke project. Stryke
+ This code was released as part of a Storm Software project. The project
  is maintained by Storm Software under the Apache-2.0 license, and is
  free for commercial and private use. For more information, please visit
- our licensing page at https://stormsoftware.com/projects/stryke/license.
+ our licensing page at https://stormsoftware.com/license.
 
  Website:                  https://stormsoftware.com
- Repository:               https://github.com/storm-software/stryke
- Documentation:            https://stormsoftware.com/projects/stryke/docs
+ Repository:               https://github.com/storm-software
+ Documentation:            https://stormsoftware.com/docs
  Contact:                  https://stormsoftware.com/contact
 
  SPDX-License-Identifier:  Apache-2.0

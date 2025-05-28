@@ -1,72 +1,61 @@
-linkWorkspacePackages: true
-preferWorkspacePackages: true
-
-onlyBuiltDependencies:
-  - "@swc/core"
-  - core-js
-  - esbuild
-  - lefthook
-  - nx
-
 packages:
-  - "tools/*"
-  - "packages/*"
-
+  - tools/*
+  - packages/*
 catalog:
-  "@antfu/install-pkg": ^1.0.0
-  "@antfu/ni": ^23.3.1
-  "@dotenvx/dotenvx": 1.35.0
-  "@js-temporal/polyfill": ^0.5.0
-  "@ls-lint/ls-lint": ^2.2.3
-  "@ltd/j-toml": ^1.38.0
-  "@microsoft/api-extractor": ^7.49.2
-  "@prisma/client": ^6.5.0
-  "@prisma/generator-helper": ^6.5.0
-  "@prisma/internals": ^6.5.0
-  "@prisma/prisma-schema-wasm": ^6.6.0-41.9061db3b0058e3d3731c6fe68a1b77061bed4861
-  "@tanstack/react-query": ^5.70.0
-  "@tanstack/react-query-devtools": ^5.70.0
-  "@taplo/cli": ^0.7.0
-  "@trpc/client": next
-  "@trpc/next": next
-  "@trpc/server": next
-  "@trpc/tanstack-react-query": next
-  "@types/figlet": ^1.7.0
-  "@types/jest": ^29.5.14
-  "@types/node": ^22.14.0
-  "@types/pluralize": ^0.0.33
-  "@types/react": ^19.0.12
-  "@types/react-dom": ^19.0.4
-  "@nx/devkit": ^21.0.3
-  "@nx/eslint-plugin": ^21.0.3
-  "@nx/eslint": ^21.0.3
-  "@nx/jest": ^21.0.3
-  "@nx/js": ^21.0.3
-  "@nx/plugin": ^21.0.3
-  "@nx/react": ^21.0.3
-  "@nx/workspace": ^21.0.3
-  "@storm-software/build-tools": latest
-  "@storm-software/config": latest
-  "@storm-software/config-tools": latest
-  "@storm-software/cspell": latest
-  "@storm-software/git-tools": latest
-  "@storm-software/linting-tools": latest
-  "@storm-software/eslint": latest
-  "@storm-software/esbuild": latest
-  "@storm-software/prettier": latest
-  "@storm-software/unbuild": latest
-  "@storm-software/untyped": latest
-  "@storm-software/testing-tools": latest
-  "@storm-software/tsconfig": latest
-  "@storm-software/workspace-tools": latest
-  "@storm-software/markdownlint": latest
-  "@swc-node/register": ^1.10.9
-  "@swc/core": ^1.10.14
-  "@swc/wasm": ^1.10.14
-  "@swc/helpers": ^0.5.15
-  "@types/react-native": 0.72.8
-  "@types/semver": ^7.5.8
-  "@zkochan/js-yaml": ^0.0.7
+  '@antfu/install-pkg': ^1.0.0
+  '@antfu/ni': ^23.3.1
+  '@dotenvx/dotenvx': 1.35.0
+  '@js-temporal/polyfill': ^0.5.0
+  '@ls-lint/ls-lint': ^2.2.3
+  '@ltd/j-toml': ^1.38.0
+  '@microsoft/api-extractor': ^7.49.2
+  '@prisma/client': ^6.5.0
+  '@prisma/generator-helper': ^6.5.0
+  '@prisma/internals': ^6.5.0
+  '@prisma/prisma-schema-wasm': ^6.6.0-41.9061db3b0058e3d3731c6fe68a1b77061bed4861
+  '@tanstack/react-query': ^5.70.0
+  '@tanstack/react-query-devtools': ^5.70.0
+  '@taplo/cli': ^0.7.0
+  '@trpc/client': next
+  '@trpc/next': next
+  '@trpc/server': next
+  '@trpc/tanstack-react-query': next
+  '@types/figlet': ^1.7.0
+  '@types/jest': ^29.5.14
+  '@types/node': ^22.14.0
+  '@types/pluralize': ^0.0.33
+  '@types/react': ^19.0.12
+  '@types/react-dom': ^19.0.4
+  '@nx/devkit': ^21.0.3
+  '@nx/eslint-plugin': ^21.0.3
+  '@nx/eslint': ^21.0.3
+  '@nx/jest': ^21.0.3
+  '@nx/js': ^21.0.3
+  '@nx/plugin': ^21.0.3
+  '@nx/react': ^21.0.3
+  '@nx/workspace': ^21.0.3
+  '@storm-software/build-tools': latest
+  '@storm-software/config': latest
+  '@storm-software/config-tools': latest
+  '@storm-software/cspell': latest
+  '@storm-software/git-tools': latest
+  '@storm-software/linting-tools': latest
+  '@storm-software/eslint': latest
+  '@storm-software/esbuild': latest
+  '@storm-software/prettier': latest
+  '@storm-software/unbuild': latest
+  '@storm-software/untyped': latest
+  '@storm-software/testing-tools': latest
+  '@storm-software/tsconfig': latest
+  '@storm-software/workspace-tools': latest
+  '@storm-software/markdownlint': latest
+  '@swc-node/register': ^1.10.9
+  '@swc/core': ^1.10.14
+  '@swc/wasm': ^1.10.14
+  '@swc/helpers': ^0.5.15
+  '@types/react-native': 0.72.8
+  '@types/semver': ^7.5.8
+  '@zkochan/js-yaml': ^0.0.7
   buffer: 6.0.3
   chalk: ^5.4.1
   consola: ^3.4.2
@@ -120,40 +109,48 @@ catalog:
   verdaccio: 5.33.0
   zod: ^3.24.2
   zx: ^8.3.2
-
+linkWorkspacePackages: true
+onlyBuiltDependencies:
+  - '@swc/core'
+  - core-js
+  - esbuild
+  - lefthook
+  - nx
+  - unrs-resolver
 overrides:
-  "@stryke/cli": workspace:*
-  "@stryke/convert": workspace:*
-  "@stryke/env": workspace:*
-  "@stryke/fs": workspace:*
-  "@stryke/hash": workspace:*
-  "@stryke/helpers": workspace:*
-  "@stryke/hooks": workspace:*
-  "@stryke/http": workspace:*
-  "@stryke/json": workspace:*
-  "@stryke/path": workspace:*
-  "@stryke/prisma-better-auth-generator": workspace:*
-  "@stryke/prisma-trpc-generator": workspace:*
-  "@stryke/string-format": workspace:*
-  "@stryke/trpc-next": workspace:*
-  "@stryke/type-checks": workspace:*
-  "@stryke/types": workspace:*
-  "@stryke/unique-id": workspace:*
-  "@stryke/url": workspace:*
-  cookie: ">=0.7.0"
-  debug: ">=4.4.0"
-  follow-redirects: ">=1.15.9"
-  got: ">=14.4.5"
-  ip: ">=2.0.1"
-  loader-utils: ">=3.3.1"
-  markdown-it: ">=14.1.0"
-  micromatch: ">=4.0.8"
-  next: ">=13.4.20-canary.13"
-  node-fetch: ">=3.3.2"
-  nth-check: ">=2.1.1"
-  parse-path: ">=7.0.0"
-  parse-url: ">=9.2.0"
-  path-to-regexp: ">=0.1.12"
-  postcss: ">=8.5.1"
-  shell-quote: ">=1.8.2"
-  simple-git: ">=3.27.0"
+  '@stryke/cli': workspace:*
+  '@stryke/convert': workspace:*
+  '@stryke/env': workspace:*
+  '@stryke/fs': workspace:*
+  '@stryke/hash': workspace:*
+  '@stryke/helpers': workspace:*
+  '@stryke/hooks': workspace:*
+  '@stryke/http': workspace:*
+  '@stryke/json': workspace:*
+  '@stryke/path': workspace:*
+  '@stryke/prisma-better-auth-generator': workspace:*
+  '@stryke/prisma-trpc-generator': workspace:*
+  '@stryke/string-format': workspace:*
+  '@stryke/trpc-next': workspace:*
+  '@stryke/type-checks': workspace:*
+  '@stryke/types': workspace:*
+  '@stryke/unique-id': workspace:*
+  '@stryke/url': workspace:*
+  cookie: '>=0.7.0'
+  debug: '>=4.4.0'
+  follow-redirects: '>=1.15.9'
+  got: '>=14.4.5'
+  ip: '>=2.0.1'
+  loader-utils: '>=3.3.1'
+  markdown-it: '>=14.1.0'
+  micromatch: '>=4.0.8'
+  next: '>=13.4.20-canary.13'
+  node-fetch: '>=3.3.2'
+  nth-check: '>=2.1.1'
+  parse-path: '>=7.0.0'
+  parse-url: '>=9.2.0'
+  path-to-regexp: '>=0.1.12'
+  postcss: '>=8.5.1'
+  shell-quote: '>=1.8.2'
+  simple-git: '>=3.27.0'
+preferWorkspacePackages: true
