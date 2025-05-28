@@ -2,6 +2,12 @@
 
 # Changelog for Stryke - Helpers
 
+## [0.6.0](https://github.com/storm-software/stryke/releases/tag/helpers%400.6.0) (2025-05-28)
+
+### Features
+
+- **helpers:** Added the `omit` and `pick` helper methods
+
 ## [0.5.3](https://github.com/storm-software/stryke/releases/tag/helpers%400.5.3) (2025-05-12)
 
 ### Miscellaneous

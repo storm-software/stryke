@@ -2,6 +2,16 @@
 
 # Changelog for Stryke - Env
 
+## [0.10.0](https://github.com/storm-software/stryke/releases/tag/env%400.10.0) (2025-05-28)
+
+### Features
+
+- **helpers:** Added the `omit` and `pick` helper methods
+
+### Updated Dependencies
+
+- Updated fs to 0.15.0
+
 ## [0.9.1](https://github.com/storm-software/stryke/releases/tag/env%400.9.1) (2025-05-27)
 
 ### Bug Fixes

@@ -2,6 +2,12 @@
 
 # Changelog for Stryke - Fs
 
+## [0.15.0](https://github.com/storm-software/stryke/releases/tag/fs%400.15.0) (2025-05-28)
+
+### Features
+
+- **helpers:** Added the `omit` and `pick` helper methods
+
 ## [0.14.0](https://github.com/storm-software/stryke/releases/tag/fs%400.14.0) (2025-05-25)
 
 ### Features
