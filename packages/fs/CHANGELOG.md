@@ -2,6 +2,12 @@
 
 # Changelog for Stryke - Fs
 
+## [0.16.0](https://github.com/storm-software/stryke/releases/tag/fs%400.16.0) (2025-05-29)
+
+### Features
+
+- **fs:** Added the command exists helper modules
+
 ## [0.15.0](https://github.com/storm-software/stryke/releases/tag/fs%400.15.0) (2025-05-28)
 
 ### Features
