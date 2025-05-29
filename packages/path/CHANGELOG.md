@@ -2,6 +2,12 @@
 
 # Changelog for Stryke - Path
 
+## [0.6.1](https://github.com/storm-software/stryke/releases/tag/path%400.6.1) (2025-05-29)
+
+### Miscellaneous
+
+- **path:** Included a check for extended length paths in `slash` function
+
 ## [0.6.0](https://github.com/storm-software/stryke/releases/tag/path%400.6.0) (2025-05-29)
 
 ### Features

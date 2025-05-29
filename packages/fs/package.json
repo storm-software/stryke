@@ -21,7 +21,7 @@
     "@antfu/install-pkg": "catalog:",
     "@ltd/j-toml": "catalog:",
     "@stryke/convert": "workspace:*",
-    "@stryke/path": "0.6.0",
+    "@stryke/path": "0.6.1",
     "@zkochan/js-yaml": "catalog:",
     "chalk": "catalog:",
     "defu": "catalog:",
