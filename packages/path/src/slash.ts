@@ -19,9 +19,13 @@
 /**
  * Replace backslash to slash
  *
- * @param str - The string to replace
+ * @param path - The string to replace
  * @returns The string with replaced backslashes
  */
-export function slash(str: string) {
-  return str.replace(/\\/g, "/");
+export function slash(path: string) {
+  if (path.startsWith("\\\\?\\")) {
+    return path;
+  }
+
+  return path.replace(/\\/g, "/");
 }
