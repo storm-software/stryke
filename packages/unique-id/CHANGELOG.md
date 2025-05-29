@@ -2,6 +2,12 @@
 
 # Changelog for Stryke - Unique Id
 
+## [0.3.0](https://github.com/storm-software/stryke/releases/tag/unique-id%400.3.0) (2025-05-29)
+
+### Features
+
+- **fs:** Added the command exists helper modules
+
 ## [0.2.7](https://github.com/storm-software/stryke/releases/tag/unique-id%400.2.7) (2025-05-12)
 
 ### Miscellaneous

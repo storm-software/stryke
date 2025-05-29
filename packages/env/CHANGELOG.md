@@ -2,6 +2,16 @@
 
 # Changelog for Stryke - Env
 
+## [0.11.0](https://github.com/storm-software/stryke/releases/tag/env%400.11.0) (2025-05-29)
+
+### Features
+
+- **fs:** Added the command exists helper modules
+
+### Updated Dependencies
+
+- Updated fs to 0.16.0
+
 ## [0.10.0](https://github.com/storm-software/stryke/releases/tag/env%400.10.0) (2025-05-28)
 
 ### Features
