@@ -2,6 +2,12 @@
 
 # Changelog for Stryke - Path
 
+## [0.6.0](https://github.com/storm-software/stryke/releases/tag/path%400.6.0) (2025-05-29)
+
+### Features
+
+- **path:** Added the `toRelativePath` and `toAbsolutePath` helper functions
+
 ## [0.5.1](https://github.com/storm-software/stryke/releases/tag/path%400.5.1) (2025-05-27)
 
 ### Bug Fixes
