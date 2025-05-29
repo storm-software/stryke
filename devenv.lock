@@ -110,7 +110,23 @@
         "nixpkgs-unstable": "nixpkgs-unstable",
         "pre-commit-hooks": [
           "git-hooks"
-        ]
+        ],
+        "storm-ops": "storm-ops"
+      }
+    },
+    "storm-ops": {
+      "flake": false,
+      "locked": {
+        "lastModified": 1748492420,
+        "owner": "storm-software",
+        "repo": "storm-ops",
+        "rev": "d4072436af1573523d35db058f0023446042f725",
+        "type": "github"
+      },
+      "original": {
+        "owner": "storm-software",
+        "repo": "storm-ops",
+        "type": "github"
       }
     }
   },
