@@ -1,0 +1,122 @@
+/* -------------------------------------------------------------------
+
+                       ⚡ Storm Software - Stryke
+
+ This code was released as part of the Stryke project. Stryke
+ is maintained by Storm Software under the Apache-2.0 license, and is
+ free for commercial and private use. For more information, please visit
+ our licensing page at https://stormsoftware.com/projects/stryke/license.
+
+ Website:                  https://stormsoftware.com
+ Repository:               https://github.com/storm-software/stryke
+ Documentation:            https://stormsoftware.com/projects/stryke/docs
+ Contact:                  https://stormsoftware.com/contact
+
+ SPDX-License-Identifier:  Apache-2.0
+
+ ------------------------------------------------------------------- */
+
+/* eslint-disable no-console */
+
+import { createDirectory } from "@stryke/fs/helpers";
+import { writeFile } from "@stryke/fs/write-file";
+import { findFilePath } from "@stryke/path/file-path-fns";
+import { joinPaths } from "@stryke/path/join-paths";
+import { compileAll } from "capnp-es/compiler";
+import { Buffer } from "node:buffer";
+import { exec } from "node:child_process";
+import { existsSync } from "node:fs";
+import type { CapnpcOptions, CapnpcResult } from "./types";
+
+async function readStdin() {
+  if (process.stdin.isTTY) {
+    return Buffer.alloc(0);
+  }
+  const chunks: Buffer[] = [];
+  process.stdin.on("data", (chunk: Buffer) => {
+    chunks.push(chunk);
+  });
+  await new Promise(resolve => {
+    process.stdin.on("end", resolve);
+  });
+  const reqBuffer = Buffer.alloc(
+    chunks.reduce((l, chunk) => l + chunk.byteLength, 0)
+  );
+  let i = 0;
+  for (const chunk of chunks) {
+    chunk.copy(reqBuffer, i);
+    i += chunk.byteLength;
+  }
+  return reqBuffer;
+}
+
+export async function capnpc(options: CapnpcOptions): Promise<CapnpcResult> {
+  try {
+    const { ts = true, js = false, dts = false, outDir, tsconfig } = options;
+
+    let dataBuf: Buffer = await readStdin(); // feed from stdin from capnpc
+    if (dataBuf.byteLength === 0) {
+      const opts: string[] = [];
+
+      if (outDir) {
+        opts.push(`-o-:${outDir}`);
+      } else {
+        opts.push("-o-");
+      }
+
+      dataBuf = await new Promise<Buffer>(resolve => {
+        exec(
+          `capnpc ${opts.join(" ")} ${opts.join(" ")}`,
+          { encoding: "buffer" },
+          (error, stdout, stderr) => {
+            if (stderr.length > 0) {
+              process.stderr.write(stderr);
+            }
+            if (error) {
+              throw error;
+            }
+            resolve(stdout);
+          }
+        );
+      });
+    }
+
+    const result = await compileAll(dataBuf, {
+      ts,
+      js,
+      dts,
+      tsconfig
+    });
+
+    for (const [fileName, content] of result.files) {
+      let filePath = fileName;
+      if (!existsSync(findFilePath(filePath))) {
+        const fullPath = `/${filePath}`;
+        if (existsSync(findFilePath(fullPath))) {
+          filePath = fullPath;
+        }
+      }
+      if (outDir) {
+        filePath = joinPaths(outDir, fileName);
+      }
+      await createDirectory(findFilePath(filePath));
+      await writeFile(
+        filePath,
+        // https://github.com/microsoft/TypeScript/issues/54632
+        content.replace(/^\s+/gm, match => " ".repeat(match.length / 2))
+      );
+    }
+
+    return result as CapnpcResult;
+  } catch (error) {
+    if (error instanceof Error) {
+      console.error(`Error: ${error.message}`);
+      if (error.stack) {
+        console.error(error.stack);
+      }
+    } else {
+      console.error("An unknown error occurred:", error);
+    }
+    throw error;
+  }
+}

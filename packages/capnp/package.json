@@ -1,0 +1,40 @@
+{
+  "name": "@stryke/capnp",
+  "version": "0.0.1",
+  "type": "module",
+  "description": "A package to assist in running the Cap'n Proto compiler and creating Cap'n Proto serialization protocol schemas.",
+  "repository": {
+    "type": "github",
+    "url": "https://github.com/storm-software/stryke",
+    "directory": "packages/capnp"
+  },
+  "private": false,
+  "keywords": [
+    "capnp",
+    "capnproto",
+    "serialization",
+    "protocol",
+    "compiler",
+    "storm-software",
+    "stryke"
+  ],
+  "peerDependencies": {
+    "typescript": ">=4.0.0"
+  },
+  "peerDependenciesMeta": {
+    "typescript": {
+      "optional": false
+    }
+  },
+  "dependencies": {
+    "@stryke/fs": "workspace:*",
+    "@stryke/path": "workspace:*",
+    "capnp-es": "catalog:"
+  },
+  "devDependencies": {
+    "@types/node": "catalog:"
+  },
+  "publishConfig": {
+    "access": "public"
+  }
+}

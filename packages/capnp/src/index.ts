@@ -16,12 +16,14 @@
 
  ------------------------------------------------------------------- */
 
-import { getStormConfig } from "@storm-software/eslint";
+/**
+ * The capnp library used by Storm Software for building NodeJS applications.
+ *
+ * @remarks
+ * A package for running the Cap&#39;n Proto compiler in a TypeScript application
+ *
+ * @packageDocumentation
+ */
 
-Error.stackTraceLimit = Number.POSITIVE_INFINITY;
-
-const config = getStormConfig({
-  name: "stryke"
-});
-
-export default config;
+export * from "./compile";
+export * from "./types";

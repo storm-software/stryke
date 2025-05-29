@@ -57,6 +57,7 @@ catalog:
   '@types/semver': ^7.5.8
   '@zkochan/js-yaml': ^0.0.7
   buffer: 6.0.3
+  capnp-es: '^0.0.9'
   chalk: ^5.4.1
   consola: ^3.4.2
   eslint: ^9.20.0
@@ -99,14 +100,13 @@ catalog:
   react: ^19.1.0
   react-dom: ^19.1.0
   react-native: ^0.77.0
-  types/node: ^0.0.0
   typescript: ~5.7.3
   esbuild: ^0.25.0
   ufo: 1.5.4
   unbuild: ^3.3.1
   defu: ^6.1.4
   jiti: ^2.4.2
-  verdaccio: 5.33.0
+  verdaccio: ^6.0.5
   zod: ^3.24.2
   zx: ^8.3.2
 linkWorkspacePackages: true
@@ -118,6 +118,7 @@ onlyBuiltDependencies:
   - nx
   - unrs-resolver
 overrides:
+  '@stryke/capnp': workspace:*
   '@stryke/cli': workspace:*
   '@stryke/convert': workspace:*
   '@stryke/env': workspace:*

@@ -6,6 +6,8 @@
     "baseUrl": ".",
     "rootDir": ".",
     "paths": {
+      "@stryke/capnp": ["packages/capnp/src/index.ts"],
+      "@stryke/capnp/*": ["packages/capnp/src/*"],
       "@stryke/cli": ["packages/cli/src/index.ts"],
       "@stryke/cli/*": ["packages/cli/src/*"],
       "@stryke/convert": ["packages/convert/src/index.ts"],
