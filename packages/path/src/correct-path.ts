@@ -17,6 +17,7 @@
  ------------------------------------------------------------------- */
 
 import { isAbsolutePath } from "./is-file";
+import { joinPaths } from "./join-paths";
 import {
   DRIVE_LETTER_REGEX,
   DRIVE_LETTER_START_REGEX,
@@ -155,4 +156,44 @@ export function normalizeString(path: string, allowAboveRoot: boolean) {
     }
   }
   return res;
+}
+
+/**
+ * Converts a given path to an absolute path based on the current working directory.
+ *
+ * @param path - The path to convert to an absolute path.
+ * @param cwd - The current working directory to use as the base path if the path is not absolute.
+ * @returns The absolute path.
+ */
+export function toAbsolutePath(path: string, cwd?: string): string {
+  if (isAbsolutePath(path)) {
+    return path;
+  }
+
+  return slash(normalizeString(joinPaths(cwd || process.cwd(), path), true));
+}
+
+/**
+ * Converts a given path to a relative path based on the current working directory.
+ *
+ * @param path - The path to convert to a relative path.
+ * @param cwd - The current working directory to use as the base path if the path is not absolute.
+ * @returns The relative path.
+ */
+export function toRelativePath(path: string, cwd?: string): string {
+  if (!path || path.length === 0) {
+    return ".";
+  }
+
+  if (isAbsolutePath(path)) {
+    path = slash(normalizeString(path, true));
+  } else {
+    path = slash(normalizeString(joinPaths(cwd || process.cwd(), path), true));
+  }
+
+  if (path.startsWith("./")) {
+    return path.slice(2);
+  }
+
+  return path;
 }
