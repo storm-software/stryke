@@ -26,6 +26,7 @@
  */
 
 export * from "./chmod-x";
+export * from "./command-exists";
 export * from "./compress";
 export * from "./constants";
 export * from "./copy-file";
