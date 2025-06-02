@@ -16,12 +16,14 @@
 
  ------------------------------------------------------------------- */
 
+import { getParentPath, isAbsolutePath, slash } from "@stryke/path";
 import { existsSync } from "@stryke/path/exists";
 import { findFileName, findFilePath } from "@stryke/path/file-path-fns";
 import { joinPaths } from "@stryke/path/join-paths";
 import { EMPTY_STRING } from "@stryke/types/base";
+import type { TsConfigJson } from "@stryke/types/tsconfig";
+import defu from "defu";
 import { createRequire } from "node:module";
-import path from "node:path";
 import { readFileSync } from "./read-file";
 
 const singleComment = Symbol("singleComment");
@@ -151,120 +153,114 @@ const jsoncParse = (data: string) => {
 };
 
 const req = createRequire(import.meta.url);
-const findUp = (
-  name: string,
-  startDir: string,
-  stopDir = path.parse(startDir).root
-) => {
-  let dir = startDir;
-  while (dir !== stopDir) {
-    const file = joinPaths(dir, name);
-    if (existsSync(file)) return file;
-    if (!file.endsWith(".json")) {
-      const fileWithExt = `${file}.json`;
-      if (existsSync(fileWithExt)) return fileWithExt;
-    }
-    dir = path.dirname(dir);
+function resolveTsConfigFromFile(cwd: string, fileName: string) {
+  if (isAbsolutePath(fileName)) {
+    return existsSync(fileName) ? fileName : null;
   }
-  return null;
-};
 
-const resolveTsConfigFromFile = (cwd: string, filename: string) => {
-  if (path.isAbsolute(filename)) {
-    return existsSync(filename) ? filename : null;
+  const name = fileName.endsWith(".json") ? fileName : `${fileName}.json`;
+  if (existsSync(joinPaths(cwd, name))) {
+    return joinPaths(cwd, name);
   }
-  return findUp(filename, cwd);
-};
 
-const resolveTsConfigFromExtends = (cwd: string, name: string) => {
-  if (path.isAbsolute(name)) return existsSync(name) ? name : null;
-  if (name.startsWith(".")) return findUp(name, cwd);
-  const id = req.resolve(name, { paths: [cwd] });
+  return getParentPath(name, cwd, {
+    ignoreCase: true,
+    skipCwd: true,
+    targetType: "file"
+  });
+}
 
-  return id;
-};
+function resolveTsConfigFromExtends(cwd: string, extendsName: string) {
+  if (isAbsolutePath(extendsName)) {
+    return existsSync(extendsName) ? extendsName : null;
+  }
 
-const loadTsConfigInternal = (
-  _dir = process.cwd(),
-  name = "tsconfig.json",
+  const name = extendsName.endsWith(".json")
+    ? extendsName
+    : `${extendsName}.json`;
+  if (existsSync(joinPaths(cwd, name))) {
+    return joinPaths(cwd, name);
+  }
+
+  if (name.startsWith(".")) {
+    return getParentPath(findFileName(name), cwd, {
+      ignoreCase: true,
+      skipCwd: false,
+      targetType: "file"
+    });
+  }
+
+  return req.resolve(extendsName, { paths: [cwd] });
+}
+
+export interface LoadTsConfigResult {
+  path: string;
+  data: TsConfigJson;
+  files: string[];
+}
+
+function loadTsConfigInternal(
+  filePath: string,
+  fileName: string,
   isExtends = false
-) => {
-  let _a: any;
-  let _b: any;
-
-  const dir = path.resolve(_dir);
+): LoadTsConfigResult | null {
   const id = isExtends
-    ? resolveTsConfigFromExtends(dir, name)
-    : resolveTsConfigFromFile(dir, name);
-
+    ? resolveTsConfigFromExtends(slash(filePath), fileName)
+    : resolveTsConfigFromFile(slash(filePath), fileName);
   if (!id) {
     return null;
   }
 
-  const data = jsoncParse(readFileSync(id));
-  const configDir = path.dirname(id);
+  let data = jsoncParse(readFileSync(id));
+  const configFilePath = findFilePath(id);
 
-  if ((_a = data.compilerOptions) === null ? void 0 : _a.baseUrl) {
+  if (data?.compilerOptions?.baseUrl) {
     data.compilerOptions.baseUrl = joinPaths(
-      configDir,
+      configFilePath,
       data.compilerOptions.baseUrl
     );
   }
-  const extendsFiles = [];
+
+  const extendsFiles = [] as string[];
   if (data.extends) {
     const extendsList = Array.isArray(data.extends)
       ? data.extends
       : [data.extends];
-    const extendsData: any = {};
-    for (const name2 of extendsList) {
-      const parentConfig: any = loadTsConfigInternal(configDir, name2, true);
-      if (parentConfig) {
-        Object.assign(extendsData, {
-          ...(parentConfig === null ? void 0 : parentConfig.data),
-          compilerOptions: {
-            ...extendsData.compilerOptions,
 
-            ...((_b = parentConfig === null ? void 0 : parentConfig.data) ===
-            null
-              ? void 0
-              : _b.compilerOptions)
-          }
-        });
+    for (const extendsName of extendsList) {
+      const parentConfig = loadTsConfigInternal(
+        configFilePath,
+        extendsName,
+        true
+      );
+      if (parentConfig) {
+        data = defu(data, parentConfig.data ?? {});
         extendsFiles.push(...parentConfig.files);
       }
     }
-    Object.assign(data, {
-      ...extendsData,
-      ...data,
-      compilerOptions: {
-        ...extendsData.compilerOptions,
-        ...data.compilerOptions
-      }
-    });
   }
+
   data.extends = undefined;
   return {
     path: id,
     data,
     files: [...extendsFiles, id]
   };
-};
+}
 
 /**
  * Loads a tsconfig.json file and returns the parsed JSON object.
  *
- * @param dir - The directory to start searching for the tsconfig.json file.
- * @param name - The name of the tsconfig.json file.
+ * @param filePath - The directory to start searching for the tsconfig.json file.
+ * @param fileName - The name of the tsconfig.json file.
  * @returns The parsed JSON object.
  */
-export const loadTsConfig = (dir: string, name = "tsconfig.json") =>
-  loadTsConfigInternal(dir, name);
-
-/**
- * Loads a tsconfig.json file and returns the parsed JSON object.
- *
- * @param name - The name/path of the tsconfig.json file.
- * @returns The parsed JSON object.
- */
-export const loadTsConfigFile = (file: string) =>
-  loadTsConfig(findFilePath(file), findFileName(file));
+export function loadTsConfig(
+  filePath: string,
+  fileName?: string
+): LoadTsConfigResult | null {
+  return loadTsConfigInternal(
+    findFilePath(filePath) ? findFilePath(filePath) : process.cwd(),
+    fileName ? findFileName(fileName) : "tsconfig.json"
+  );
+}
