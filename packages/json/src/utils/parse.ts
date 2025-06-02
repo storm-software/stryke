@@ -3,17 +3,20 @@
                        ⚡ Storm Software - Stryke
 
  This code was released as part of the Stryke project. Stryke
- is maintained by Storm Software under the Apache-2.0 License, and is
+ is maintained by Storm Software under the Apache-2.0 license, and is
  free for commercial and private use. For more information, please visit
- our licensing page.
+ our licensing page at https://stormsoftware.com/projects/stryke/license.
 
- Website:         https://stormsoftware.com
- Repository:      https://github.com/storm-software/stryke
- Documentation:   https://stormsoftware.com/projects/stryke/docs
- Contact:         https://stormsoftware.com/contact
- License:         https://stormsoftware.com/projects/stryke/license
+ Website:                  https://stormsoftware.com
+ Repository:               https://github.com/storm-software/stryke
+ Documentation:            https://stormsoftware.com/projects/stryke/docs
+ Contact:                  https://stormsoftware.com/contact
+
+ SPDX-License-Identifier:  Apache-2.0
 
  ------------------------------------------------------------------- */
+
+import { stripComments } from "./strip-comments";
 
 // https://github.com/fastify/secure-json-parse
 // https://github.com/hapijs/bourne
@@ -47,18 +50,21 @@ export function parse<T = unknown>(value: any, options: Options = {}): T {
   if (typeof value !== "string") {
     return value;
   }
+
+  let stripped = stripComments(value);
+
   if (
-    value[0] === '"' &&
-    value[value.length - 1] === '"' &&
-    !value.includes("\\")
+    stripped[0] === '"' &&
+    stripped[stripped.length - 1] === '"' &&
+    !stripped.includes("\\")
   ) {
-    return value.slice(1, -1) as T;
+    return stripped.slice(1, -1) as T;
   }
 
-  const _value = value.trim();
+  stripped = stripped.trim();
 
-  if (_value.length <= 9) {
-    switch (_value.toLowerCase()) {
+  if (stripped.length <= 9) {
+    switch (stripped.toLowerCase()) {
       case "true": {
         return true as T;
       }
@@ -83,21 +89,22 @@ export function parse<T = unknown>(value: any, options: Options = {}): T {
     }
   }
 
-  if (!JsonSigRx.test(value)) {
+  if (!JsonSigRx.test(stripped)) {
     if (options.strict) {
       throw new Error("Invalid JSON");
     }
-    return value as T;
+    return stripped as T;
   }
 
   try {
-    if (suspectProtoRx.test(value) || suspectConstructorRx.test(value)) {
+    if (suspectProtoRx.test(stripped) || suspectConstructorRx.test(stripped)) {
       if (options.strict) {
         throw new Error("Possible prototype pollution");
       }
-      return JSON.parse(value, jsonParseTransform);
+      return JSON.parse(stripped, jsonParseTransform);
     }
-    return JSON.parse(value);
+
+    return JSON.parse(stripped);
   } catch (error) {
     if (options.strict) {
       throw error;
