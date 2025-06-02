@@ -2,6 +2,16 @@
 
 # Changelog for Stryke - Capnp
 
+## [0.2.2](https://github.com/storm-software/stryke/releases/tag/capnp%400.2.2) (2025-06-02)
+
+### Bug Fixes
+
+- **fs:** Use the `mlly` package to resolve packages
+
+### Updated Dependencies
+
+- Updated fs to 0.20.2
+
 ## [0.2.1](https://github.com/storm-software/stryke/releases/tag/capnp%400.2.1) (2025-06-02)
 
 ### Miscellaneous

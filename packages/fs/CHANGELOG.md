@@ -2,6 +2,12 @@
 
 # Changelog for Stryke - Fs
 
+## [0.20.2](https://github.com/storm-software/stryke/releases/tag/fs%400.20.2) (2025-06-02)
+
+### Bug Fixes
+
+- **fs:** Use the `mlly` package to resolve packages
+
 ## [0.20.1](https://github.com/storm-software/stryke/releases/tag/fs%400.20.1) (2025-06-02)
 
 ### Bug Fixes
