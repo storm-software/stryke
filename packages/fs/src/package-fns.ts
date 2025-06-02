@@ -16,7 +16,6 @@
 
  ------------------------------------------------------------------- */
 
-import { StormJSON } from "@stryke/json/storm-json";
 import { exists, findFileName, findFilePath, joinPaths } from "@stryke/path";
 import { getParentPath } from "@stryke/path/get-parent-path";
 import { getWorkspaceRoot } from "@stryke/path/get-workspace-root";
@@ -24,7 +23,8 @@ import type { PackageResolvingOptions } from "@stryke/path/resolve";
 import { resolvePackage } from "@stryke/path/resolve";
 import type { PackageJson } from "@stryke/types/package-json";
 import type { PackageManager } from "@stryke/types/package-manager";
-import { readFile } from "./read-file";
+import { existsSync } from "node:fs";
+import { readJsonFile } from "./read-file";
 
 /**
  * Get the package manager used in the project
@@ -60,7 +60,7 @@ export function getPackageManager(dir = getWorkspaceRoot()): PackageManager {
 
 // Much of the below code comes from https://github.com/antfu-collective/local-pkg with some modifications
 
-async function searchPackageJSON(dir: string) {
+async function searchPackageJson(dir: string) {
   let packageJsonPath;
 
   while (true) {
@@ -93,7 +93,7 @@ async function getPackageJsonPath(
     return;
   }
 
-  return searchPackageJSON(entry);
+  return searchPackageJson(entry);
 }
 
 /**
@@ -108,42 +108,11 @@ export async function getPackageInfo(
   options: PackageResolvingOptions = {}
 ) {
   const packageJsonPath = await getPackageJsonPath(name, options);
-
   if (!packageJsonPath) {
     return;
   }
 
-  const packageJson = StormJSON.parse<PackageJson>(
-    await readFile(packageJsonPath)
-  );
-
-  return {
-    name,
-    version: packageJson.version,
-    rootPath: findFilePath(packageJsonPath),
-    packageJsonPath,
-    packageJson
-  };
-}
-
-/**
- * Get package info synchronously
- *
- * @param name - The name of the package
- * @param options - The options to use when resolving the package
- * @returns The package info
- */
-export async function getPackageInfoSync(
-  name: string,
-  options: PackageResolvingOptions = {}
-) {
-  const packageJsonPath = await getPackageJsonPath(name, options);
-
-  if (!packageJsonPath) return;
-
-  const packageJson = StormJSON.parse<PackageJson>(
-    await readFile(packageJsonPath)
-  );
+  const packageJson = await readJsonFile<PackageJson>(packageJsonPath);
 
   return {
     name,
@@ -160,16 +129,15 @@ export async function getPackageInfoSync(
  * @param cwd - The current working directory
  * @returns The package info
  */
-export async function loadPackageJSON(
+export async function loadPackageJson(
   cwd = getWorkspaceRoot()
 ): Promise<PackageJson | null> {
   const path = getParentPath("package.json", cwd, { skipCwd: false });
-
-  if (!path || !(await exists(path))) {
+  if (!path || !existsSync(path)) {
     return null;
   }
 
-  return StormJSON.parse<PackageJson>(await readFile(path));
+  return readJsonFile<PackageJson>(path);
 }
 
 /**
@@ -187,7 +155,7 @@ export async function isPackageListed(name: string, cwd?: string) {
         ? packageName.slice(0, packageName.lastIndexOf("@"))
         : packageName;
   }
-  const pkg = (await loadPackageJSON(cwd)) ?? {};
+  const pkg = (await loadPackageJson(cwd)) ?? {};
 
   return (
     packageName in (pkg.dependencies ?? {}) ||

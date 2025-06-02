@@ -26,6 +26,7 @@
     "chalk": "catalog:",
     "defu": "catalog:",
     "glob": "catalog:",
+    "jiti": "catalog:",
     "nanotar": "catalog:",
     "semver": "catalog:"
   },

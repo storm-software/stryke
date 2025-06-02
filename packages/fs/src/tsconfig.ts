@@ -16,13 +16,15 @@
 
  ------------------------------------------------------------------- */
 
-import { isFile } from "@stryke/path";
 import { existsSync } from "@stryke/path/exists";
 import { findFilePath } from "@stryke/path/file-path-fns";
 import { joinPaths } from "@stryke/path/join-paths";
 import type { TsConfigJson } from "@stryke/types/tsconfig";
 import defu from "defu";
+import { createJiti } from "jiti";
 import { readJsonFile } from "./read-file";
+
+const jiti = createJiti(import.meta.url);
 
 /**
  * Loads a tsconfig.json file and returns the parsed JSON object.
@@ -33,13 +35,16 @@ import { readJsonFile } from "./read-file";
 export async function loadTsConfig(
   filePath: string = process.cwd()
 ): Promise<TsConfigJson> {
-  const tsconfigFilePath = isFile(filePath)
+  let tsconfigFilePath = filePath.endsWith(".json")
     ? filePath
     : joinPaths(filePath, "tsconfig.json");
   if (!existsSync(tsconfigFilePath)) {
-    throw new Error(
-      `tsconfig.json not found at ${tsconfigFilePath}. Please ensure the file exists.`
-    );
+    tsconfigFilePath = jiti.esmResolve(filePath);
+    if (!existsSync(tsconfigFilePath)) {
+      throw new Error(
+        `tsconfig.json not found at ${tsconfigFilePath}. Please ensure the file exists.`
+      );
+    }
   }
 
   let config = await readJsonFile<TsConfigJson>(tsconfigFilePath);
