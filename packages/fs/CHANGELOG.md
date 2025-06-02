@@ -2,6 +2,20 @@
 
 # Changelog for Stryke - Fs
 
+## [0.17.0](https://github.com/storm-software/stryke/releases/tag/fs%400.17.0) (2025-06-02)
+
+### Features
+
+- **path:** Added the `replacePath` utility function
+
+### Miscellaneous
+
+- **monorepo:** Update the workspace package links
+
+### Updated Dependencies
+
+- Updated path to 0.7.0
+
 ## [0.16.0](https://github.com/storm-software/stryke/releases/tag/fs%400.16.0) (2025-05-29)
 
 ### Features

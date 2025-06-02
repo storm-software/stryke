@@ -2,6 +2,12 @@
 
 # Changelog for Stryke - Path
 
+## [0.7.0](https://github.com/storm-software/stryke/releases/tag/path%400.7.0) (2025-06-02)
+
+### Features
+
+- **path:** Added the `replacePath` utility function
+
 ## [0.6.1](https://github.com/storm-software/stryke/releases/tag/path%400.6.1) (2025-05-29)
 
 ### Miscellaneous
