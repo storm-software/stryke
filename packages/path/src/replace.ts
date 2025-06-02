@@ -16,26 +16,24 @@
 
  ------------------------------------------------------------------- */
 
-/**
- * The path library used by Storm Software for building NodeJS applications.
- *
- * @remarks
- * A package containing various utilities that expand the functionality of NodeJs's `path` module
- *
- * @packageDocumentation
- */
+import { slash } from "./slash";
 
-export * from "./asset-extensions";
-export * from "./correct-path";
-export * from "./delimiter";
-export * from "./exists";
-export * from "./file-path-fns";
-export * from "./get-parent-path";
-export * from "./get-workspace-root";
-export * from "./is-file";
-export * from "./is-root-dir";
-export * from "./join-paths";
-export * from "./regex";
-export * from "./replace";
-export * from "./resolve";
-export * from "./slash";
+/**
+ * Replace the base path from the beginning of the given path.
+ *
+ * @example
+ * ```ts
+ * replacePath("/home/user/project/src/index.ts", "/home/user/project");
+ * // returns "src/index.ts"
+ * ```
+ *
+ * @param path - The path string to replace a substring from
+ * @param base - The base path to remove from the beginning of the {@link path}
+ * @returns The {@link path} with the {@link base} path removed
+ */
+export function replacePath(
+  path: string,
+  base: string = process.cwd()
+): string {
+  return slash(path).replace(slash(base), "").replace(/^\//, "");
+}

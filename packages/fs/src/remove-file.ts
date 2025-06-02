@@ -37,7 +37,6 @@ export const removeFileSync = (filePath: string): void => {
  * Remove the given content to the given file path
  *
  * @param filePath - The file path to read to
- * @param content - The content to remove to the file
  * @returns The content of the file
  */
 export const removeFile = async (filePath: string): Promise<void> => {
