@@ -24,7 +24,7 @@ import { EMPTY_STRING } from "@stryke/types/base";
 import type { TsConfigJson } from "@stryke/types/tsconfig";
 import defu from "defu";
 import { createRequire } from "node:module";
-import { readFileSync } from "./read-file";
+import { readFile, readFileSync } from "./read-file";
 
 const singleComment = Symbol("singleComment");
 const multiComment = Symbol("multiComment");
@@ -199,7 +199,56 @@ export interface LoadTsConfigResult {
   files: string[];
 }
 
-function loadTsConfigInternal(
+async function loadTsConfigInternal(
+  filePath: string,
+  fileName: string,
+  isExtends = false
+): Promise<LoadTsConfigResult | null> {
+  const id = isExtends
+    ? resolveTsConfigFromExtends(slash(filePath), fileName)
+    : resolveTsConfigFromFile(slash(filePath), fileName);
+  if (!id) {
+    return null;
+  }
+
+  let data = jsoncParse(await readFile(id));
+  const configFilePath = findFilePath(id);
+
+  if (data?.compilerOptions?.baseUrl) {
+    data.compilerOptions.baseUrl = joinPaths(
+      configFilePath,
+      data.compilerOptions.baseUrl
+    );
+  }
+
+  const extendsFiles = [] as string[];
+  if (data.extends) {
+    const extendsList = Array.isArray(data.extends)
+      ? data.extends
+      : [data.extends];
+
+    for (const extendsName of extendsList) {
+      const parentConfig = await loadTsConfigInternal(
+        configFilePath,
+        extendsName,
+        true
+      );
+      if (parentConfig) {
+        data = defu(data, parentConfig.data ?? {});
+        extendsFiles.push(...parentConfig.files);
+      }
+    }
+  }
+
+  data.extends = undefined;
+  return {
+    path: id,
+    data,
+    files: [...extendsFiles, id]
+  };
+}
+
+function loadTsConfigInternalSync(
   filePath: string,
   fileName: string,
   isExtends = false
@@ -228,7 +277,7 @@ function loadTsConfigInternal(
       : [data.extends];
 
     for (const extendsName of extendsList) {
-      const parentConfig = loadTsConfigInternal(
+      const parentConfig = loadTsConfigInternalSync(
         configFilePath,
         extendsName,
         true
@@ -253,13 +302,30 @@ function loadTsConfigInternal(
  *
  * @param filePath - The directory to start searching for the tsconfig.json file.
  * @param fileName - The name of the tsconfig.json file.
- * @returns The parsed JSON object.
+ * @returns The parsed tsconfig.json object or null if not found.
  */
-export function loadTsConfig(
+export async function loadTsConfig(
+  filePath: string,
+  fileName?: string
+): Promise<LoadTsConfigResult | null> {
+  return loadTsConfigInternal(
+    findFilePath(filePath) ? findFilePath(filePath) : process.cwd(),
+    fileName ? findFileName(fileName) : "tsconfig.json"
+  );
+}
+
+/**
+ * Synchronously loads a tsconfig.json file and returns the parsed JSON object.
+ *
+ * @param filePath - The directory to start searching for the tsconfig.json file.
+ * @param fileName - The name of the tsconfig.json file.
+ * @returns The parsed tsconfig.json object or null if not found.
+ */
+export function loadTsConfigSync(
   filePath: string,
   fileName?: string
 ): LoadTsConfigResult | null {
-  return loadTsConfigInternal(
+  return loadTsConfigInternalSync(
     findFilePath(filePath) ? findFilePath(filePath) : process.cwd(),
     fileName ? findFileName(fileName) : "tsconfig.json"
   );
