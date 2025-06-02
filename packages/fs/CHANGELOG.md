@@ -2,6 +2,12 @@
 
 # Changelog for Stryke - Fs
 
+## [0.20.1](https://github.com/storm-software/stryke/releases/tag/fs%400.20.1) (2025-06-02)
+
+### Bug Fixes
+
+- **fs:** Resolve issue with node_modules package imports
+
 ## [0.20.0](https://github.com/storm-software/stryke/releases/tag/fs%400.20.0) (2025-06-02)
 
 ### Features
