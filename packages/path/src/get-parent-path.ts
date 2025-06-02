@@ -28,7 +28,7 @@ import { joinPaths } from "./join-paths";
  * @returns The parent path of the provided path.
  */
 export const resolveParentPath = (path: string, count: number = 1): string => {
-  let parentPath = path;
+  let parentPath = path.replaceAll(/\/+$/g, "");
   for (let i = 0; i < count; i++) {
     parentPath = resolvePaths(parentPath, "..");
   }
