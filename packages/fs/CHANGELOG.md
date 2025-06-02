@@ -2,6 +2,16 @@
 
 # Changelog for Stryke - Fs
 
+## [0.18.0](https://github.com/storm-software/stryke/releases/tag/fs%400.18.0) (2025-06-02)
+
+### Features
+
+- **fs:** Updated the `loadTsConfig` helper function
+
+### Miscellaneous
+
+- **monorepo:** Update workspace package links
+
 ## [0.17.0](https://github.com/storm-software/stryke/releases/tag/fs%400.17.0) (2025-06-02)
 
 ### Features
