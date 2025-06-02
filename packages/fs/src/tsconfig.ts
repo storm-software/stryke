@@ -21,10 +21,8 @@ import { findFilePath } from "@stryke/path/file-path-fns";
 import { joinPaths } from "@stryke/path/join-paths";
 import type { TsConfigJson } from "@stryke/types/tsconfig";
 import defu from "defu";
-import { createJiti } from "jiti";
+import { resolvePath } from "mlly";
 import { readJsonFile } from "./read-file";
-
-const jiti = createJiti(import.meta.url);
 
 /**
  * Loads a tsconfig.json file and returns the parsed JSON object.
@@ -39,7 +37,7 @@ export async function loadTsConfig(
     ? filePath
     : joinPaths(filePath, "tsconfig.json");
   if (!existsSync(tsconfigFilePath)) {
-    tsconfigFilePath = jiti.esmResolve(filePath);
+    tsconfigFilePath = await resolvePath(filePath, { url: import.meta.url });
     if (!existsSync(tsconfigFilePath)) {
       throw new Error(
         `tsconfig.json not found at ${tsconfigFilePath}. Please ensure the file exists.`
