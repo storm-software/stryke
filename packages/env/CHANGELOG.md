@@ -2,6 +2,16 @@
 
 # Changelog for Stryke - Env
 
+## [0.12.0](https://github.com/storm-software/stryke/releases/tag/env%400.12.0) (2025-06-02)
+
+### Features
+
+- **fs:** Added the `loadTsConfigSync` helper utility
+
+### Updated Dependencies
+
+- Updated fs to 0.19.0
+
 ## [0.11.3](https://github.com/storm-software/stryke/releases/tag/env%400.11.3) (2025-06-02)
 
 ### Miscellaneous

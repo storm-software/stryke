@@ -2,6 +2,16 @@
 
 # Changelog for Stryke - Capnp
 
+## [0.2.0](https://github.com/storm-software/stryke/releases/tag/capnp%400.2.0) (2025-06-02)
+
+### Features
+
+- **fs:** Added the `loadTsConfigSync` helper utility
+
+### Updated Dependencies
+
+- Updated fs to 0.19.0
+
 ## [0.1.3](https://github.com/storm-software/stryke/releases/tag/capnp%400.1.3) (2025-06-02)
 
 ### Miscellaneous
