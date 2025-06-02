@@ -2,6 +2,12 @@
 
 # Changelog for Stryke - Json
 
+## [0.9.0](https://github.com/storm-software/stryke/releases/tag/json%400.9.0) (2025-06-02)
+
+### Features
+
+- **fs:** Improve the `loadTsConfig` handler function
+
 ## [0.8.3](https://github.com/storm-software/stryke/releases/tag/json%400.8.3) (2025-05-27)
 
 ### Bug Fixes

@@ -2,6 +2,12 @@
 
 # Changelog for Stryke - Fs
 
+## [0.20.0](https://github.com/storm-software/stryke/releases/tag/fs%400.20.0) (2025-06-02)
+
+### Features
+
+- **fs:** Improve the `loadTsConfig` handler function
+
 ## [0.19.0](https://github.com/storm-software/stryke/releases/tag/fs%400.19.0) (2025-06-02)
 
 ### Features
