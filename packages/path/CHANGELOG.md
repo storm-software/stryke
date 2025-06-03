@@ -2,6 +2,12 @@
 
 # Changelog for Stryke - Path
 
+## [0.7.1](https://github.com/storm-software/stryke/releases/tag/path%400.7.1) (2025-06-03)
+
+### Bug Fixes
+
+- **path:** Resolve issue with slash suffix in path
+
 ## [0.7.0](https://github.com/storm-software/stryke/releases/tag/path%400.7.0) (2025-06-02)
 
 ### Features
