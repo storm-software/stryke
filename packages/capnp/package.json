@@ -27,8 +27,8 @@
     }
   },
   "dependencies": {
-    "@stryke/fs": "0.20.3",
-    "@stryke/path": "0.7.3",
+    "@stryke/fs": "workspace:*",
+    "@stryke/path": "0.7.4",
     "capnp-es": "catalog:"
   },
   "devDependencies": {

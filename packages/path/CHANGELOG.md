@@ -2,6 +2,12 @@
 
 # Changelog for Stryke - Path
 
+## [0.7.4](https://github.com/storm-software/stryke/releases/tag/path%400.7.4) (2025-06-03)
+
+### Bug Fixes
+
+- **path:** Added the `withEndSlash` parameter to `relativePath` helper
+
 ## [0.7.3](https://github.com/storm-software/stryke/releases/tag/path%400.7.3) (2025-06-03)
 
 ### Bug Fixes
