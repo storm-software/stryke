@@ -88,10 +88,12 @@ export function findFileName(
 export function findFilePath(filePath: string): string {
   const normalizedPath = normalizeWindowsPath(filePath);
 
-  return normalizedPath.replace(
+  const result = normalizedPath.replace(
     findFileName(normalizedPath, { requireExtension: true }),
     ""
   );
+
+  return result === "/" ? result : result.replace(/\/$/, "");
 }
 
 /**
