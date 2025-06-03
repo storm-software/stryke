@@ -12,7 +12,7 @@
   "dependencies": {
     "@dotenvx/dotenvx": "catalog:",
     "@stryke/fs": "workspace:*",
-    "@stryke/path": "0.7.1",
+    "@stryke/path": "0.7.2",
     "@stryke/string-format": "workspace:*",
     "defu": "catalog:"
   },
