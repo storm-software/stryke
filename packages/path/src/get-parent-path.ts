@@ -16,7 +16,6 @@
 
  ------------------------------------------------------------------- */
 
-import { resolvePaths } from "./file-path-fns";
 import { isDirectory, isFile } from "./is-file";
 import { joinPaths } from "./join-paths";
 
@@ -30,7 +29,7 @@ import { joinPaths } from "./join-paths";
 export const resolveParentPath = (path: string, count: number = 1): string => {
   let parentPath = path.replaceAll(/\/+$/g, "");
   for (let i = 0; i < count; i++) {
-    parentPath = resolvePaths(parentPath, "..");
+    parentPath = joinPaths(parentPath, "..");
   }
   return parentPath;
 };
