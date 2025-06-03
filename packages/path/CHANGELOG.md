@@ -2,6 +2,12 @@
 
 # Changelog for Stryke - Path
 
+## [0.7.3](https://github.com/storm-software/stryke/releases/tag/path%400.7.3) (2025-06-03)
+
+### Bug Fixes
+
+- **path:** Resolve issue with `resolveParentPath` calculation
+
 ## [0.7.2](https://github.com/storm-software/stryke/releases/tag/path%400.7.2) (2025-06-03)
 
 ### Bug Fixes
