@@ -229,9 +229,17 @@ export function resolvePaths(...paths: string[]) {
  *
  * @remarks
  * This function wraps the `path.relative` function in Node's path module.
+ *
+ * @param from - The base path to start from
+ * @param to - The target path to resolve relative to the base path
+ * @param withEndSlash - Whether to include a trailing slash at the end of the path
+ * @returns The relative path from the base path to the target path
  */
-export function relativePath(from: string, to: string) {
-  return relative(from.replace(/\/$/, ""), to.replace(/\/$/, ""));
+export function relativePath(from: string, to: string, withEndSlash = false) {
+  return relative(
+    withEndSlash !== true ? from.replace(/\/$/, "") : from,
+    withEndSlash !== true ? to.replace(/\/$/, "") : to
+  );
 }
 
 /**
