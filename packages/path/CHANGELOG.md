@@ -2,6 +2,12 @@
 
 # Changelog for Stryke - Path
 
+## [0.7.5](https://github.com/storm-software/stryke/releases/tag/path%400.7.5) (2025-06-04)
+
+### Bug Fixes
+
+- **path:** Resolve issue with excluding the extension in `findFileName`
+
 ## [0.7.4](https://github.com/storm-software/stryke/releases/tag/path%400.7.4) (2025-06-03)
 
 ### Bug Fixes
