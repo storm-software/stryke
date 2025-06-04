@@ -67,7 +67,7 @@ export function findFileName(
   }
 
   if (withExtension === false && result.includes(".")) {
-    return result.split(".").slice(-1).join(".") || EMPTY_STRING;
+    return result.substring(0, result.lastIndexOf(".")) || EMPTY_STRING;
   }
 
   return result;
