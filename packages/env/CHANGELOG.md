@@ -2,6 +2,20 @@
 
 # Changelog for Stryke - Env
 
+## [0.12.6](https://github.com/storm-software/stryke/releases/tag/env%400.12.6) (2025-06-06)
+
+### Bug Fixes
+
+- **fs:** No longer throw errors in `removeFile` when path does not exist
+
+### Miscellaneous
+
+- **monorepo:** Update workspace package links
+
+### Updated Dependencies
+
+- Updated fs to 0.20.5
+
 ## [0.12.5](https://github.com/storm-software/stryke/releases/tag/env%400.12.5) (2025-06-04)
 
 ### Miscellaneous

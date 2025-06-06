@@ -2,6 +2,16 @@
 
 # Changelog for Stryke - Fs
 
+## [0.20.5](https://github.com/storm-software/stryke/releases/tag/fs%400.20.5) (2025-06-06)
+
+### Bug Fixes
+
+- **fs:** No longer throw errors in `removeFile` when path does not exist
+
+### Miscellaneous
+
+- **monorepo:** Update workspace package links
+
 ## [0.20.4](https://github.com/storm-software/stryke/releases/tag/fs%400.20.4) (2025-06-04)
 
 ### Miscellaneous
