@@ -26,8 +26,6 @@ import { rm } from "node:fs/promises";
  */
 export const removeFileSync = (filePath: string): void => {
   if (!filePath || !existsSync(filePath)) {
-    // eslint-disable-next-line no-console
-    console.warn("Skipping - Invalid file path provided to `removeFileSync`");
     return;
   }
 
@@ -41,8 +39,6 @@ export const removeFileSync = (filePath: string): void => {
  */
 export const removeFile = async (filePath: string): Promise<void> => {
   if (!filePath || !existsSync(filePath)) {
-    // eslint-disable-next-line no-console
-    console.warn("Skipping - Invalid file path provided to `removeFile`");
     return;
   }
 

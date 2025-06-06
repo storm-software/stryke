@@ -21,11 +21,8 @@ import { Buffer } from "node:buffer";
 /**
  * Convert a utf8 array to string
  *
- * @remarks
- * This method is part of the {@linkcode Convert} namespace.
- *
- * @credits https://stackoverflow.com/a/41798356/1465919
- * @credits https://stackoverflow.com/a/36949791/1465919
+ * @see https://stackoverflow.com/a/41798356/1465919
+ * @see https://stackoverflow.com/a/36949791/1465919
  *
  * @param arr - Utf-8 Array
  * @returns The converted string
