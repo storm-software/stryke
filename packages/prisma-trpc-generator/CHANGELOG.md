@@ -2,6 +2,12 @@
 
 # Changelog for Stryke - Prisma Trpc Generator
 
+## [0.12.0](https://github.com/storm-software/stryke/releases/tag/prisma-trpc-generator%400.12.0) (2025-06-07)
+
+### Features
+
+- **capnp:** Added a CLI application to invoke `capnpc` process
+
 ## [0.11.12](https://github.com/storm-software/stryke/releases/tag/prisma-trpc-generator%400.11.12) (2025-05-12)
 
 ### Miscellaneous

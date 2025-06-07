@@ -2,6 +2,12 @@
 
 # Changelog for Stryke - Prisma Better Auth Generator
 
+## [0.13.0](https://github.com/storm-software/stryke/releases/tag/prisma-better-auth-generator%400.13.0) (2025-06-07)
+
+### Features
+
+- **capnp:** Added a CLI application to invoke `capnpc` process
+
 ## [0.12.3](https://github.com/storm-software/stryke/releases/tag/prisma-better-auth-generator%400.12.3) (2025-05-12)
 
 ### Miscellaneous

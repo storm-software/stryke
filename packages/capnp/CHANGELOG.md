@@ -2,6 +2,12 @@
 
 # Changelog for Stryke - Capnp
 
+## [0.3.0](https://github.com/storm-software/stryke/releases/tag/capnp%400.3.0) (2025-06-07)
+
+### Features
+
+- **capnp:** Added a CLI application to invoke `capnpc` process
+
 ## [0.2.6](https://github.com/storm-software/stryke/releases/tag/capnp%400.2.6) (2025-06-06)
 
 ### Miscellaneous

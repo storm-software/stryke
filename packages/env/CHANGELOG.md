@@ -2,6 +2,12 @@
 
 # Changelog for Stryke - Env
 
+## [0.13.0](https://github.com/storm-software/stryke/releases/tag/env%400.13.0) (2025-06-07)
+
+### Features
+
+- **capnp:** Added a CLI application to invoke `capnpc` process
+
 ## [0.12.6](https://github.com/storm-software/stryke/releases/tag/env%400.12.6) (2025-06-06)
 
 ### Bug Fixes
