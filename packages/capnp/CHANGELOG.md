@@ -2,6 +2,12 @@
 
 # Changelog for Stryke - Capnp
 
+## [0.4.0](https://github.com/storm-software/stryke/releases/tag/capnp%400.4.0) (2025-06-07)
+
+### Features
+
+- **capnp:** Added the `CapnpRPC` shared base class
+
 ## [0.3.0](https://github.com/storm-software/stryke/releases/tag/capnp%400.3.0) (2025-06-07)
 
 ### Features
