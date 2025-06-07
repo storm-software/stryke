@@ -2,6 +2,16 @@
 
 # Changelog for Stryke - Fs
 
+## [0.20.6](https://github.com/storm-software/stryke/releases/tag/fs%400.20.6) (2025-06-06)
+
+### Miscellaneous
+
+- **monorepo:** Run workspace formatting in package
+
+### Updated Dependencies
+
+- Updated convert to 0.2.1
+
 ## [0.20.5](https://github.com/storm-software/stryke/releases/tag/fs%400.20.5) (2025-06-06)
 
 ### Bug Fixes

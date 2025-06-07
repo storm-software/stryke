@@ -2,6 +2,12 @@
 
 # Changelog for Stryke - Convert
 
+## [0.2.1](https://github.com/storm-software/stryke/releases/tag/convert%400.2.1) (2025-06-06)
+
+### Miscellaneous
+
+- **monorepo:** Run workspace formatting in package
+
 ## [0.2.0](https://github.com/storm-software/stryke/releases/tag/convert%400.2.0) (2025-05-16)
 
 ### Features

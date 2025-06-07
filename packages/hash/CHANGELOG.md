@@ -2,6 +2,12 @@
 
 # Changelog for Stryke - Hash
 
+## [0.9.4](https://github.com/storm-software/stryke/releases/tag/hash%400.9.4) (2025-06-06)
+
+### Miscellaneous
+
+- **monorepo:** Run workspace formatting in package
+
 ## [0.9.3](https://github.com/storm-software/stryke/releases/tag/hash%400.9.3) (2025-05-12)
 
 ### Miscellaneous
