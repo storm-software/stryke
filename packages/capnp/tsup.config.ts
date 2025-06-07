@@ -20,11 +20,11 @@ import { defineConfig } from "tsup";
 
 export default defineConfig([
   {
-    name: "capnp",
-    entryPoints: ["src/*.ts", "bin/capnpc.ts"],
+    name: "capnp-lib",
+    entryPoints: ["src/*.ts"],
     format: ["cjs", "esm"],
     platform: "node",
-    outDir: "dist",
+    outDir: "dist/src",
     clean: true,
     dts: true,
     cjsInterop: true,
@@ -33,5 +33,20 @@ export default defineConfig([
     shims: true,
     bundle: true,
     splitting: true
+  },
+  {
+    name: "capnp-bin",
+    entryPoints: ["bin/capnpc.ts"],
+    format: ["cjs", "esm"],
+    platform: "node",
+    outDir: "dist/bin",
+    clean: true,
+    dts: true,
+    cjsInterop: true,
+    sourcemap: false,
+    tsconfig: "./tsconfig.json",
+    shims: true,
+    bundle: true,
+    splitting: false
   }
 ]);

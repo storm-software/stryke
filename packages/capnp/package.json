@@ -39,7 +39,9 @@
   "license": "Apache-2.0",
   "private": false,
   "bin": {
-    "storm-capnpc": "dist/capnpc.js"
+    "storm-capnpc": "bin/capnpc.js",
+    "storm-capnpc-cjs": "bin/capnpc.cjs",
+    "storm-capnpc-esm": "bin/capnpc.js"
   },
   "main": "./dist/index.cjs",
   "module": "./dist/index.js",
@@ -84,6 +86,34 @@
       "default": {
         "types": "./dist/compile.d.ts",
         "default": "./dist/compile.js"
+      }
+    },
+    "./rpc": {
+      "import": {
+        "types": "./dist/rpc.d.ts",
+        "default": "./dist/rpc.js"
+      },
+      "require": {
+        "types": "./dist/rpc.d.cts",
+        "default": "./dist/rpc.cjs"
+      },
+      "default": {
+        "types": "./dist/rpc.d.ts",
+        "default": "./dist/rpc.js"
+      }
+    },
+    "./types": {
+      "import": {
+        "types": "./dist/types.d.ts",
+        "default": "./dist/types.js"
+      },
+      "require": {
+        "types": "./dist/types.d.cts",
+        "default": "./dist/types.cjs"
+      },
+      "default": {
+        "types": "./dist/types.d.ts",
+        "default": "./dist/types.js"
       }
     },
     "./package.json": "./package.json"
