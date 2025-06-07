@@ -52,21 +52,21 @@ async function readStdin() {
 
 export async function capnpc(options: CapnpcOptions): Promise<CapnpcResult> {
   try {
-    const { ts = true, js = false, dts = false, outDir, tsconfig } = options;
+    const { outputPath, tsconfig, sourcePath = [] } = options;
 
     let dataBuf: Buffer = await readStdin(); // feed from stdin from capnpc
     if (dataBuf.byteLength === 0) {
       const opts: string[] = [];
 
-      if (outDir) {
-        opts.push(`-o-:${outDir}`);
+      if (outputPath) {
+        opts.push(`-o-:${outputPath}`);
       } else {
         opts.push("-o-");
       }
 
       dataBuf = await new Promise<Buffer>(resolve => {
         exec(
-          `capnpc ${opts.join(" ")} ${opts.join(" ")}`,
+          `capnpc ${opts.join(" ")} ${sourcePath.join(" ")}`,
           { encoding: "buffer" },
           (error, stdout, stderr) => {
             if (stderr.length > 0) {
@@ -82,10 +82,10 @@ export async function capnpc(options: CapnpcOptions): Promise<CapnpcResult> {
     }
 
     const result = await compileAll(dataBuf, {
-      ts,
-      js,
-      dts,
-      tsconfig
+      ts: options.ts ?? true,
+      js: options.js ?? false,
+      dts: options.dts ?? true,
+      tsconfig: tsconfig?.options
     });
 
     for (const [fileName, content] of result.files) {
@@ -96,10 +96,15 @@ export async function capnpc(options: CapnpcOptions): Promise<CapnpcResult> {
           filePath = fullPath;
         }
       }
-      if (outDir) {
-        filePath = joinPaths(outDir, fileName);
+
+      if (outputPath) {
+        filePath = joinPaths(outputPath, fileName);
       }
-      await createDirectory(findFilePath(filePath));
+
+      if (!existsSync(findFilePath(filePath))) {
+        await createDirectory(findFilePath(filePath));
+      }
+
       await writeFile(
         filePath,
         // https://github.com/microsoft/TypeScript/issues/54632
@@ -107,7 +112,7 @@ export async function capnpc(options: CapnpcOptions): Promise<CapnpcResult> {
       );
     }
 
-    return result as CapnpcResult;
+    return result as unknown as CapnpcResult;
   } catch (error) {
     if (error instanceof Error) {
       console.error(`Error: ${error.message}`);

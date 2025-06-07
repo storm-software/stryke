@@ -57,8 +57,9 @@ catalog:
   '@types/semver': ^7.5.8
   '@zkochan/js-yaml': ^0.0.7
   buffer: 6.0.3
-  capnp-es: '^0.0.9'
+  capnp-es: '^0.0.11'
   chalk: ^5.4.1
+  commander: ^14.0.0
   consola: ^3.4.2
   eslint: ^9.20.0
   eslint-flat-config-utils: ^2.0.1

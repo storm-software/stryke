@@ -28,27 +28,19 @@ import type {
 import type ts from "typescript";
 
 export interface CodeGeneratorFileContext {
+  // inputs
+  readonly nodes: Node[];
+  readonly imports: CodeGeneratorRequest_RequestedFile_Import[];
+
+  // outputs
   concreteLists: Array<[string, Field]>;
-
-  file: CodeGeneratorRequest_RequestedFile;
-
-  generatedNodeIds: string[];
-
+  generatedNodeIds: Set<string>;
   generatedResultsPromiseIds: Set<bigint>;
-
-  imports: CodeGeneratorRequest_RequestedFile_Import[];
-
-  nodes: Node[];
-
-  req: CodeGeneratorRequest;
-
-  statements: ts.Statement[];
-
   tsPath: string;
+  codeParts?: string[];
 
   constructor: (
     req: CodeGeneratorRequest,
-
     file: CodeGeneratorRequest_RequestedFile
   ) => any;
 
@@ -59,14 +51,21 @@ export interface CodeGeneratorContext {
   files: CodeGeneratorFileContext[];
 }
 
-export interface CapnpcOptions {
-  ts?: boolean;
-  js?: boolean;
-  dts?: boolean;
-  tsconfig?: ts.CompilerOptions;
-  outDir: string;
-  sources?: string[];
+export interface CapnpcCLIOptions {
+  ts: boolean;
+  js: boolean;
+  dts: boolean;
+  sourcePath: string[];
+  outputPath: string;
+  importPath: string[];
+  tsconfigPath: string;
+  generateId: boolean;
+  standardImport: boolean;
 }
+
+export type CapnpcOptions = Omit<CapnpcCLIOptions, "tsconfigPath"> & {
+  tsconfig?: ts.ParsedCommandLine;
+};
 
 export interface CapnpcResult {
   ctx: CodeGeneratorContext;

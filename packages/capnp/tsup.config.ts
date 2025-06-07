@@ -20,8 +20,8 @@ import { defineConfig } from "tsup";
 
 export default defineConfig([
   {
-    name: "prisma-better-auth-generator",
-    entryPoints: ["src/index.ts", "src/generator.ts"],
+    name: "capnp",
+    entryPoints: ["src/*.ts", "bin/capnpc.ts"],
     format: ["cjs", "esm"],
     platform: "node",
     outDir: "dist",
@@ -32,9 +32,6 @@ export default defineConfig([
     tsconfig: "./tsconfig.json",
     shims: true,
     bundle: true,
-    splitting: false,
-    skipNodeModulesBundle: false,
-    removeNodeProtocol: false,
-    external: ["esbuild", "typescript"]
+    splitting: true
   }
 ]);
