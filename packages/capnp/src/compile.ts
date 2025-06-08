@@ -52,21 +52,21 @@ async function readStdin() {
 
 export async function capnpc(options: CapnpcOptions): Promise<CapnpcResult> {
   try {
-    const { outputPath, tsconfig, sourcePath = [] } = options;
+    const { output, tsconfig, schema = [] } = options;
 
     let dataBuf: Buffer = await readStdin(); // feed from stdin from capnpc
     if (dataBuf.byteLength === 0) {
       const opts: string[] = [];
 
-      if (outputPath) {
-        opts.push(`-o-:${outputPath}`);
+      if (output) {
+        opts.push(`-o-:${output}`);
       } else {
         opts.push("-o-");
       }
 
       dataBuf = await new Promise<Buffer>(resolve => {
         exec(
-          `capnpc ${opts.join(" ")} ${sourcePath.join(" ")}`,
+          `capnpc ${opts.join(" ")} ${schema.join(" ")}`,
           { encoding: "buffer" },
           (error, stdout, stderr) => {
             if (stderr.length > 0) {
@@ -97,8 +97,8 @@ export async function capnpc(options: CapnpcOptions): Promise<CapnpcResult> {
         }
       }
 
-      if (outputPath) {
-        filePath = joinPaths(outputPath, fileName);
+      if (output) {
+        filePath = joinPaths(output, fileName);
       }
 
       if (!existsSync(findFilePath(filePath))) {

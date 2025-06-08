@@ -30,6 +30,7 @@ import {
 } from "@storm-software/config-tools/utilities";
 import { listFiles } from "@stryke/fs/list-files";
 import { readJsonFile } from "@stryke/fs/read-file";
+import { existsSync } from "@stryke/path/exists";
 import { findFilePath } from "@stryke/path/file-path-fns";
 import { joinPaths } from "@stryke/path/join-paths";
 import type { TsConfigJson } from "@stryke/types/tsconfig";
@@ -88,35 +89,40 @@ export function createProgram() {
     "Add default import paths; use only those specified by -I"
   ).default(true);
 
-  const outputPathOption = new Option(
-    "-o --output-path <path>",
-    "The directory to output the generated files to"
-  ).default(process.cwd());
-
-  const sourceOption = new Option(
-    "--source-path <path...>",
+  const schemaOption = new Option(
+    "-s --schema <path...>",
     "The directories containing the Cap'n Proto schema files to compile (default: current working directory)"
   )
     .default([joinPaths(process.cwd(), "**/*.capnp")])
     .argParser((val: string) => {
-      if (val.startsWith("--source") || val.startsWith("-s")) {
-        return val.split(",").map(dir => dir.trim());
+      let result: string[] = [];
+      if (val.startsWith("--schema") || val.startsWith("-s")) {
+        result = val.split(",").map(dir => dir.trim());
       }
-      return [val.trim()];
+      result = [val.trim()];
+
+      return result.map(dir =>
+        dir.endsWith(".capnp") ? dir : joinPaths(dir, "**/*.capnp")
+      );
     });
 
-  const tsconfigPathOption = new Option(
-    "--tsconfig-path <path>",
+  const outputOption = new Option(
+    "-o --output <path>",
+    "The directory to output the generated files to"
+  );
+
+  const tsconfigOption = new Option(
+    "-p --tsconfig <path>",
     "The path to the TypeScript configuration file to use for compilation"
   ).default(joinPaths(process.cwd(), "tsconfig.json"));
 
   program
     .command("compile", { isDefault: true })
     .description("Run the Storm Cap'n Proto compiler")
-    .addOption(sourceOption)
-    .addOption(outputPathOption)
+    .addOption(schemaOption)
+    .addOption(outputOption)
     .addOption(importPathOption)
-    .addOption(tsconfigPathOption)
+    .addOption(tsconfigOption)
     .addOption(generateId)
     .addOption(standardImportOption)
     .addOption(tsOption)
@@ -139,37 +145,46 @@ async function compileAction(options: CapnpcCLIOptions) {
           ? ", TypeScript declarations"
           : "TypeScript declarations"
         : ""
-    } files to ${options.outputPath}...`,
+    } files ${options.output ? `to ${options.output}...` : ""}`,
     {
       logLevel: "all"
     }
   );
 
-  const resolvedTsconfig = await readJsonFile<TsConfigJson>(
-    options.tsconfigPath
-  );
+  if (!existsSync(options.tsconfig)) {
+    writeFatal(
+      options.tsconfig
+        ? `✖ The specified TypeScript configuration file "${options.tsconfig}" does not exist. Please provide a valid path.`
+        : "✖ The specified TypeScript configuration file does not exist. Please provide a valid path.",
+      { logLevel: "all" }
+    );
+    return;
+  }
+
+  const resolvedTsconfig = await readJsonFile<TsConfigJson>(options.tsconfig);
   const tsconfig = ts.parseJsonConfigFileContent(
     resolvedTsconfig,
     ts.sys,
-    findFilePath(options.tsconfigPath)
+    findFilePath(options.tsconfig)
   );
+  tsconfig.options.configFilePath = options.tsconfig;
 
-  const sourcefiles = [] as string[];
-  for (const sourcePath of options.sourcePath) {
-    if (!sourcePath) {
+  const schema = [] as string[];
+  for (const schemaPath of options.schema) {
+    if (!schemaPath || (!schemaPath.includes("*") && !existsSync(schemaPath))) {
       writeFatal(
-        `❌ The source path "${sourcePath}" is invalid. Please provide a valid path.`,
+        `❌ The schema path "${schemaPath}" is invalid. Please provide a valid path.`,
         { logLevel: "all" }
       );
       return;
     }
 
-    sourcefiles.push(...(await listFiles(sourcePath)));
+    schema.push(...(await listFiles(schemaPath)));
   }
 
-  if (sourcefiles.length === 0) {
+  if (schema.length === 0) {
     writeFatal(
-      `❌ No Cap'n Proto schema files found in the specified source paths: ${options.sourcePath.join(
+      `❌ No Cap'n Proto schema files found in the specified source paths: ${options.schema.join(
         ", "
       )}. Please ensure that the paths are correct and contain .capnp files.`,
       { logLevel: "all" }
@@ -180,7 +195,12 @@ async function compileAction(options: CapnpcCLIOptions) {
   const result = await capnpc({
     ...options,
     tsconfig,
-    sourcePath: sourcefiles
+    schema,
+    output: options.output
+      ? options.output
+      : schema.length > 0 && schema[0]
+        ? findFilePath(schema[0])
+        : process.cwd()
   });
   if (result.files.size === 0) {
     writeInfo("⚠️ No files were generated. Please check your schema files.", {

@@ -52,19 +52,19 @@ export interface CodeGeneratorContext {
 }
 
 export interface CapnpcCLIOptions {
-  ts: boolean;
-  js: boolean;
-  dts: boolean;
-  sourcePath: string[];
-  outputPath: string;
-  importPath: string[];
-  tsconfigPath: string;
-  generateId: boolean;
-  standardImport: boolean;
+  ts?: boolean;
+  js?: boolean;
+  dts?: boolean;
+  schema: string[];
+  output?: string;
+  importPath?: string[];
+  tsconfig: string;
+  generateId?: boolean;
+  standardImport?: boolean;
 }
 
-export type CapnpcOptions = Omit<CapnpcCLIOptions, "tsconfigPath"> & {
-  tsconfig?: ts.ParsedCommandLine;
+export type CapnpcOptions = Omit<CapnpcCLIOptions, "tsconfig"> & {
+  tsconfig: ts.ParsedCommandLine;
 };
 
 export interface CapnpcResult {
