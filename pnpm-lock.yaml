@@ -339,6 +339,11 @@ overrides:
   shell-quote: '>=1.8.2'
   simple-git: '>=3.27.0'
 
+patchedDependencies:
+  capnp-es@0.0.11:
+    hash: 53996ae63a1465953815fff49405f2224c85d26eeeff469d2b1f87e1c2af451d
+    path: patches/capnp-es@0.0.11.patch
+
 importers:
 
   .:
@@ -504,7 +509,7 @@ importers:
         version: link:../path
       capnp-es:
         specifier: 'catalog:'
-        version: 0.0.11(typescript@5.8.3)
+        version: 0.0.11(patch_hash=53996ae63a1465953815fff49405f2224c85d26eeeff469d2b1f87e1c2af451d)(typescript@5.8.3)
       typescript:
         specifier: '>=4.0.0'
         version: 5.8.3
@@ -2837,7 +2842,6 @@ packages:
 
   '@ls-lint/ls-lint@2.2.3':
     resolution: {integrity: sha512-ekM12jNm/7O2I/hsRv9HvYkRdfrHpiV1epVuI2NP+eTIcEgdIdKkKCs9KgQydu/8R5YXTov9aHdOgplmCHLupw==}
-    cpu: [x64, arm64, s390x]
     os: [darwin, linux, win32]
     hasBin: true
 
@@ -15098,7 +15102,7 @@ snapshots:
 
   caniuse-lite@1.0.30001721: {}
 
-  capnp-es@0.0.11(typescript@5.8.3):
+  capnp-es@0.0.11(patch_hash=53996ae63a1465953815fff49405f2224c85d26eeeff469d2b1f87e1c2af451d)(typescript@5.8.3):
     optionalDependencies:
       typescript: 5.8.3
 

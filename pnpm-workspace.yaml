@@ -57,7 +57,7 @@ catalog:
   '@types/semver': ^7.5.8
   '@zkochan/js-yaml': ^0.0.7
   buffer: 6.0.3
-  capnp-es: '^0.0.11'
+  capnp-es: ^0.0.11
   chalk: ^5.4.1
   commander: ^14.0.0
   consola: ^3.4.2
@@ -156,4 +156,6 @@ overrides:
   postcss: '>=8.5.1'
   shell-quote: '>=1.8.2'
   simple-git: '>=3.27.0'
+patchedDependencies:
+  capnp-es@0.0.11: patches/capnp-es@0.0.11.patch
 preferWorkspacePackages: true

@@ -174,7 +174,7 @@ async function compileAction(options: CapnpcCLIOptions) {
   for (const schemaPath of options.schema) {
     if (!schemaPath || (!schemaPath.includes("*") && !existsSync(schemaPath))) {
       writeFatal(
-        `❌ The schema path "${schemaPath}" is invalid. Please provide a valid path.`,
+        `✖ The schema path "${schemaPath}" is invalid. Please provide a valid path.`,
         { logLevel: "all" }
       );
       return;
@@ -185,7 +185,7 @@ async function compileAction(options: CapnpcCLIOptions) {
 
   if (schema.length === 0) {
     writeFatal(
-      `❌ No Cap'n Proto schema files found in the specified source paths: ${options.schema.join(
+      `✖ No Cap'n Proto schema files found in the specified source paths: ${options.schema.join(
         ", "
       )}. Please ensure that the paths are correct and contain .capnp files.`,
       { logLevel: "all" }
@@ -196,12 +196,7 @@ async function compileAction(options: CapnpcCLIOptions) {
   const result = await capnpc({
     ...options,
     tsconfig,
-    schema,
-    output: options.output
-      ? options.output
-      : schema.length > 0 && schema[0]
-        ? findFilePath(schema[0])
-        : process.cwd()
+    schema
   });
   if (result.files.size === 0) {
     writeInfo("⚠️ No files were generated. Please check your schema files.", {
@@ -225,10 +220,11 @@ void (async () => {
     exitWithSuccess();
   } catch (error) {
     writeFatal(
-      `A fatal error occurred while running the Storm Cap'n Proto compiler tool:
-${(error as Error)?.message ? (error as Error).message : JSON.stringify(error)}${
+      `✖ A fatal error occurred while running the Storm Cap'n Proto compiler tool:
+${(error as Error)?.message ? ((error as Error)?.name ? `[${(error as Error).name}]: ${(error as Error).message}` : (error as Error).message) : JSON.stringify(error)}${
         (error as Error)?.stack
           ? `
+
 Stack Trace: ${(error as Error).stack}`
           : ""
       }`,
@@ -236,6 +232,5 @@ Stack Trace: ${(error as Error).stack}`
     );
 
     exitWithError();
-    process.exit(1);
   }
 })();
