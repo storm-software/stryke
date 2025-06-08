@@ -2,6 +2,12 @@
 
 # Changelog for Stryke - Capnp
 
+## [0.4.4](https://github.com/storm-software/stryke/releases/tag/capnp%400.4.4) (2025-06-08)
+
+### Bug Fixes
+
+- **capnp:** Patch `capnp-es` to apply overrides correctly
+
 ## [0.4.3](https://github.com/storm-software/stryke/releases/tag/capnp%400.4.3) (2025-06-08)
 
 ### Bug Fixes
