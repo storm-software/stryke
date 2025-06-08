@@ -2,6 +2,12 @@
 
 # Changelog for Stryke - Capnp
 
+## [0.4.2](https://github.com/storm-software/stryke/releases/tag/capnp%400.4.2) (2025-06-08)
+
+### Bug Fixes
+
+- **capnp:** Resolve issue with formatting in compiler function
+
 ## [0.4.1](https://github.com/storm-software/stryke/releases/tag/capnp%400.4.1) (2025-06-08)
 
 ### Bug Fixes
