@@ -168,6 +168,7 @@ async function compileAction(options: CapnpcCLIOptions) {
     findFilePath(options.tsconfig)
   );
   tsconfig.options.configFilePath = options.tsconfig;
+  tsconfig.options.noImplicitOverride = false;
 
   const schema = [] as string[];
   for (const schemaPath of options.schema) {
