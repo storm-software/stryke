@@ -28,33 +28,40 @@ import { exec } from "node:child_process";
 import { existsSync } from "node:fs";
 import type { CapnpcOptions, CapnpcResult } from "./types";
 
-async function readStdin() {
-  if (process.stdin.isTTY) {
-    return Buffer.alloc(0);
-  }
-  const chunks: Buffer[] = [];
-  process.stdin.on("data", (chunk: Buffer) => {
-    chunks.push(chunk);
-  });
-  await new Promise(resolve => {
-    process.stdin.on("end", resolve);
-  });
-  const reqBuffer = Buffer.alloc(
-    chunks.reduce((l, chunk) => l + chunk.byteLength, 0)
-  );
-  let i = 0;
-  for (const chunk of chunks) {
-    chunk.copy(reqBuffer, i);
-    i += chunk.byteLength;
-  }
-  return reqBuffer;
-}
-
+/**
+ * Compiles Cap'n Proto schemas into TypeScript files.
+ *
+ * @param options - The options for the compilation process.
+ * @returns A promise that resolves to the compilation result.
+ */
 export async function capnpc(options: CapnpcOptions): Promise<CapnpcResult> {
   try {
     const { output, tsconfig, schema = [] } = options;
 
-    let dataBuf: Buffer = await readStdin(); // feed from stdin from capnpc
+    let dataBuf: Buffer = Buffer.alloc(0);
+    if (!process.stdin.isTTY) {
+      const chunks: Buffer[] = [];
+      process.stdin.on("data", (chunk: Buffer) => {
+        chunks.push(chunk);
+      });
+
+      await new Promise(resolve => {
+        process.stdin.on("end", resolve);
+      });
+
+      const reqBuffer = Buffer.alloc(
+        chunks.reduce((l, chunk) => l + chunk.byteLength, 0)
+      );
+
+      let i = 0;
+      for (const chunk of chunks) {
+        chunk.copy(reqBuffer, i);
+        i += chunk.byteLength;
+      }
+
+      dataBuf = reqBuffer;
+    }
+
     if (dataBuf.byteLength === 0) {
       const opts: string[] = [];
 
