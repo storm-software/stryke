@@ -2,6 +2,12 @@
 
 # Changelog for Stryke - Capnp
 
+## [0.4.1](https://github.com/storm-software/stryke/releases/tag/capnp%400.4.1) (2025-06-08)
+
+### Bug Fixes
+
+- **capnp:** Resolve issue with defaulting capnpc CLI options
+
 ## [0.4.0](https://github.com/storm-software/stryke/releases/tag/capnp%400.4.0) (2025-06-07)
 
 ### Features
