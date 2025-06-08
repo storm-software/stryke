@@ -32,7 +32,8 @@ export default defineConfig([
     tsconfig: "./tsconfig.json",
     shims: true,
     bundle: true,
-    splitting: true
+    splitting: true,
+    noExternal: ["capnp-es"]
   },
   {
     name: "capnp-bin",
@@ -47,6 +48,7 @@ export default defineConfig([
     tsconfig: "./tsconfig.json",
     shims: true,
     bundle: true,
-    splitting: false
+    splitting: false,
+    noExternal: ["capnp-es"]
   }
 ]);

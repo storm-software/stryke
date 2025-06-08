@@ -141,13 +141,13 @@
   },
   "dependencies": {
     "@stryke/fs": "workspace:*",
-    "@stryke/path": "workspace:*",
-    "capnp-es": "catalog:"
+    "@stryke/path": "workspace:*"
   },
   "devDependencies": {
     "@storm-software/config": "catalog:",
     "@storm-software/config-tools": "catalog:",
     "@types/node": "catalog:",
+    "capnp-es": "catalog:",
     "chalk": "catalog:",
     "commander": "catalog:"
   },
