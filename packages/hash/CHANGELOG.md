@@ -2,6 +2,12 @@
 
 # Changelog for Stryke - Hash
 
+## [0.9.5](https://github.com/storm-software/stryke/releases/tag/hash%400.9.5) (2025-06-10)
+
+### Miscellaneous
+
+- **hash:** Update package formatting
+
 ## [0.9.4](https://github.com/storm-software/stryke/releases/tag/hash%400.9.4) (2025-06-06)
 
 ### Miscellaneous

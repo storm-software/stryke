@@ -2,6 +2,12 @@
 
 # Changelog for Stryke - Capnp
 
+## [0.6.0](https://github.com/storm-software/stryke/releases/tag/capnp%400.6.0) (2025-06-10)
+
+### Features
+
+- **capnp:** Added separate `capnp` exports module
+
 ## [0.5.0](https://github.com/storm-software/stryke/releases/tag/capnp%400.5.0) (2025-06-10)
 
 ### Features
