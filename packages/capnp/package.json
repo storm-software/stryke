@@ -163,7 +163,8 @@
     "@types/node": "catalog:",
     "capnp-es": "catalog:",
     "chalk": "catalog:",
-    "commander": "catalog:"
+    "commander": "catalog:",
+    "tsup": "catalog:"
   },
   "publishConfig": {
     "access": "public"
