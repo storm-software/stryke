@@ -38,8 +38,8 @@ pre-commit:
       run: 'pnpm exec storm-pre-commit {staged_files}'
       stage_fixed: true
     pnpm-workspace:
-      glob: "**/*"
-      run: "pnpm update --recursive --workspace"
+      glob: "**/{package.json,pnpm-workspace.yaml}"
+      run: "pnpm update-storm"
       stage_fixed: true
     lint:
       glob:
