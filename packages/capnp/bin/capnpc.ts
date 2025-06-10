@@ -31,7 +31,7 @@ import {
 import { listFiles } from "@stryke/fs/list-files";
 import { readJsonFile } from "@stryke/fs/read-file";
 import { existsSync } from "@stryke/path/exists";
-import { findFilePath } from "@stryke/path/file-path-fns";
+import { findFilePath, relativePath } from "@stryke/path/file-path-fns";
 import { joinPaths } from "@stryke/path/join-paths";
 import type { TsConfigJson } from "@stryke/types/tsconfig";
 import { Command, Option } from "commander";
@@ -116,6 +116,11 @@ export function createProgram() {
     "The path to the TypeScript configuration file to use for compilation"
   ).default(joinPaths(process.cwd(), "tsconfig.json"));
 
+  const workspaceRootOption = new Option(
+    "-w --workspace-root <path>",
+    "The path to the workspace root directory"
+  ).default(root);
+
   program
     .command("compile", { isDefault: true })
     .description("Run the Storm Cap'n Proto compiler")
@@ -128,6 +133,7 @@ export function createProgram() {
     .addOption(tsOption)
     .addOption(jsOption)
     .addOption(dtsOption)
+    .addOption(workspaceRootOption)
     .action(compileAction)
     .showSuggestionAfterError(true)
     .showHelpAfterError(true);
@@ -169,6 +175,17 @@ async function compileAction(options: CapnpcCLIOptions) {
   );
   tsconfig.options.configFilePath = options.tsconfig;
   tsconfig.options.noImplicitOverride = false;
+  tsconfig.options.outDir = relativePath(
+    findFilePath(joinPaths(options.workspaceRoot, options.tsconfig)),
+    joinPaths(
+      options.workspaceRoot,
+      options.schema.length > 0 && options.schema[0]
+        ? options.schema[0].endsWith(".capnp")
+          ? findFilePath(options.schema[0])
+          : options.schema[0]
+        : ""
+    )
+  );
 
   const schema = [] as string[];
   for (const schemaPath of options.schema) {

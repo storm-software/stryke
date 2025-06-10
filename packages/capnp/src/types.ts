@@ -61,6 +61,7 @@ export interface CapnpcCLIOptions {
   tsconfig: string;
   generateId?: boolean;
   standardImport?: boolean;
+  workspaceRoot: string;
 }
 
 export type CapnpcOptions = Omit<CapnpcCLIOptions, "tsconfig"> & {
