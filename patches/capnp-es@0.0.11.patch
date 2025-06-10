@@ -1,5 +1,5 @@
 diff --git a/dist/shared/capnp-es.CbTQkT9D.mjs b/dist/shared/capnp-es.CbTQkT9D.mjs
-index 2affa204b705e4ed28a4fda16118b7f95badafa6..02eb1563f6d5fdef2552dbdb896bbd8f3bcb431a 100644
+index 2affa204b705e4ed28a4fda16118b7f95badafa6..6d6c538d85da69b23c97d6332df8485cb6618efc 100644
 --- a/dist/shared/capnp-es.CbTQkT9D.mjs
 +++ b/dist/shared/capnp-es.CbTQkT9D.mjs
 @@ -115,7 +115,13 @@ const Primitives = {
@@ -59,3 +59,19 @@ index 2affa204b705e4ed28a4fda16118b7f95badafa6..02eb1563f6d5fdef2552dbdb896bbd8f
    );
    const docComment = extractJSDocs(lookupNodeSourceInfo(ctx, node));
    const classCode = `
+@@ -1233,6 +1239,7 @@ function tsCompile(files, dts, js, tsconfig) {
+   const compileOptions = {
+     moduleResolution: ts.ModuleResolutionKind.Bundler,
+     target: ts.ScriptTarget.ESNext,
++    ...tsconfig,
+     noEmitOnError: false,
+     noFallthroughCasesInSwitch: true,
+     preserveConstEnums: true,
+@@ -1243,7 +1250,6 @@ function tsCompile(files, dts, js, tsconfig) {
+     skipLibCheck: true,
+     sourceMap: false,
+     strict: true,
+-    ...tsconfig,
+     emitDeclarationOnly: dts && !js,
+     declaration: dts
+   };

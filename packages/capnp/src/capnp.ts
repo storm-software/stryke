@@ -17,4 +17,4 @@
  ------------------------------------------------------------------- */
 
 // Export all types and functions from capnp-es
-export * from "capnp-es";
+export * as capnp from "capnp-es";
