@@ -20,7 +20,8 @@
 import {
   writeFatal,
   writeInfo,
-  writeSuccess
+  writeSuccess,
+  writeWarning
 } from "@storm-software/config-tools/logger/console";
 import {
   exitWithError,
@@ -62,6 +63,11 @@ export function createProgram() {
     "An indicator to generate TypeScript files"
   ).default(true);
 
+  const noTsOption = new Option(
+    "--no-ts",
+    "An indicator to disable generation of TypeScript files"
+  );
+
   const jsOption = new Option(
     "--js",
     "An indicator to generate JavaScript files"
@@ -70,7 +76,12 @@ export function createProgram() {
   const dtsOption = new Option(
     "--dts",
     "An indicator to generate TypeScript declaration files"
-  ).default(true);
+  );
+
+  const noDtsOption = new Option(
+    "--no-dts",
+    "An indicator to disable generation of TypeScript declaration files"
+  );
 
   const importPathOption = new Option(
     "-I --import-path <dir...>",
@@ -125,8 +136,10 @@ export function createProgram() {
     .addOption(generateId)
     .addOption(standardImportOption)
     .addOption(tsOption)
+    .addOption(noTsOption)
     .addOption(jsOption)
     .addOption(dtsOption)
+    .addOption(noDtsOption)
     .addOption(workspaceRootOption)
     .action(compileAction)
     .showSuggestionAfterError(true)
@@ -160,13 +173,12 @@ async function compileAction(options: CapnpcCLIOptions) {
   );
 
   if (!existsSync(tsconfigPath)) {
-    writeFatal(
-      options.tsconfig
-        ? `✖ The specified TypeScript configuration file "${tsconfigPath}" does not exist. Please provide a valid path.`
-        : "✖ The specified TypeScript configuration file does not exist. Please provide a valid path.",
-      { logLevel: "all" }
-    );
-    return;
+    const errorMessage = options.tsconfig
+      ? `✖ The specified TypeScript configuration file "${tsconfigPath}" does not exist. Please provide a valid path.`
+      : "✖ The specified TypeScript configuration file does not exist. Please provide a valid path.";
+    writeFatal(errorMessage, { logLevel: "all" });
+
+    throw new Error(errorMessage);
   }
 
   const resolvedTsconfig = await readJsonFile<TsConfigJson>(tsconfigPath);
@@ -187,11 +199,10 @@ async function compileAction(options: CapnpcCLIOptions) {
 
   const schemas = [] as string[];
   if (!schema || (!schema.includes("*") && !existsSync(schema))) {
-    writeFatal(
-      `✖ The schema path "${schema}" is invalid. Please provide a valid path.`,
-      { logLevel: "all" }
-    );
-    return;
+    const errorMessage = `✖ The schema path "${schema}" is invalid. Please provide a valid path.`;
+    writeFatal(errorMessage, { logLevel: "all" });
+
+    throw new Error(errorMessage);
   }
 
   schemas.push(
@@ -220,9 +231,12 @@ async function compileAction(options: CapnpcCLIOptions) {
     schemas
   });
   if (result.files.size === 0) {
-    writeInfo("⚠️ No files were generated. Please check your schema files.", {
-      logLevel: "all"
-    });
+    writeWarning(
+      "⚠️ No files were generated. Please check your schema files.",
+      {
+        logLevel: "all"
+      }
+    );
     return;
   }
 

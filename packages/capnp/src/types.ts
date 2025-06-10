@@ -53,8 +53,10 @@ export interface CodeGeneratorContext {
 
 export interface CapnpcCLIOptions {
   ts?: boolean;
+  noTs?: boolean;
   js?: boolean;
   dts?: boolean;
+  noDts?: boolean;
   schema: string;
   output?: string;
   importPath?: string[];
@@ -65,7 +67,10 @@ export interface CapnpcCLIOptions {
   workspaceRoot: string;
 }
 
-export type CapnpcOptions = Omit<CapnpcCLIOptions, "tsconfig" | "schema"> & {
+export type CapnpcOptions = Omit<
+  CapnpcCLIOptions,
+  "noTs" | "noDts" | "tsconfig" | "schema"
+> & {
   tsconfig: ts.ParsedCommandLine;
   schemas: string[];
 };
