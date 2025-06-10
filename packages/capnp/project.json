@@ -5,7 +5,8 @@
   "sourceRoot": "packages/capnp/src",
   "targets": {
     "build-base": {
-      "cache": false,
+      "cache": true,
+      "outputs": ["{projectRoot}/dist/bin/**/*", "{projectRoot}/dist/src/**/*"],
       "executor": "nx:run-commands",
       "dependsOn": ["clean", "^build"],
       "options": {
@@ -14,7 +15,9 @@
       }
     },
     "build-schema": {
-      "cache": false,
+      "cache": true,
+      "inputs": ["{projectRoot}/src/vendor/**/*.capnp"],
+      "outputs": ["{projectRoot}/src/vendor/**/*.ts"],
       "executor": "nx:run-commands",
       "dependsOn": ["build-base"],
       "options": {
@@ -22,7 +25,9 @@
       }
     },
     "build-vendor": {
-      "cache": false,
+      "cache": true,
+      "inputs": ["{projectRoot}/src/vendor/**/*.ts"],
+      "outputs": ["{projectRoot}/dist/vendor/**/*"],
       "executor": "nx:run-commands",
       "dependsOn": ["build-schema"],
       "options": {
@@ -31,7 +36,7 @@
       }
     },
     "build": {
-      "cache": false,
+      "cache": true,
       "executor": "nx:run-commands",
       "dependsOn": ["build-vendor"],
       "options": {
@@ -41,7 +46,8 @@
           "pnpm copyfiles --up=4 \"./packages/capnp/dist/src/**/*\" dist/packages/capnp/dist",
           "pnpm copyfiles --up=4 \"./packages/capnp/dist/bin/**/*\" dist/packages/capnp/bin",
           "pnpm copyfiles --up=4 \"./packages/capnp/dist/vendor/**/*\" dist/packages/capnp/vendor"
-        ]
+        ],
+        "parallel": true
       }
     },
     "nx-release-publish": {
