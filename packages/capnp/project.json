@@ -21,19 +21,19 @@
         "command": "node ./{projectRoot}/dist/bin/capnpc.js --project-root packages/capnp --schema ./src/vendor/_capnp"
       }
     },
-    "build-capnp": {
+    "build-vendor": {
       "cache": false,
       "executor": "nx:run-commands",
       "dependsOn": ["build-schema"],
       "options": {
-        "command": "tsup-node ./src/vendor/_capnp/*.ts --outDir ./dist/vendor --tsconfig ./tsconfig.capnp.json --treeshake",
+        "command": "tsup-node  --config=tsup.vendor.config.ts",
         "cwd": "{projectRoot}"
       }
     },
     "build": {
       "cache": false,
       "executor": "nx:run-commands",
-      "dependsOn": ["build-capnp"],
+      "dependsOn": ["build-vendor"],
       "options": {
         "commands": [
           "pnpm copyfiles LICENSE dist/packages/capnp",
