@@ -18,7 +18,7 @@
       "executor": "nx:run-commands",
       "dependsOn": ["build-base"],
       "options": {
-        "command": "node ./{projectRoot}/dist/bin/capnpc.js --project-root packages/capnp --schema ./{projectRoot}/src/vendor/_capnp"
+        "command": "node ./{projectRoot}/dist/bin/capnpc.js --project-root packages/capnp --schema ./{projectRoot}/src/vendor/_capnp --no-dts"
       }
     },
     "build-vendor": {

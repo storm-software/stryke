@@ -157,21 +157,6 @@ async function compileAction(options: CapnpcCLIOptions) {
     ? options.schema.replace("{projectRoot}", options.projectRoot)
     : options.projectRoot;
 
-  writeInfo(
-    `📦 Storm Cap'n Proto Compiler will output ${options.ts ? "TypeScript code" : ""}${
-      options.js ? (options.ts ? ", JavaScript code" : "JavaScript code") : ""
-    }${
-      options.dts
-        ? options.ts || options.js
-          ? ", TypeScript declarations"
-          : "TypeScript declarations"
-        : ""
-    } files from schemas at ${schema}${options.output ? ` to ${options.output}...` : ""}`,
-    {
-      logLevel: "all"
-    }
-  );
-
   if (!existsSync(tsconfigPath)) {
     const errorMessage = options.tsconfig
       ? `✖ The specified TypeScript configuration file "${tsconfigPath}" does not exist. Please provide a valid path.`
@@ -189,12 +174,30 @@ async function compileAction(options: CapnpcCLIOptions) {
   );
   tsconfig.options.configFilePath = tsconfigPath;
   tsconfig.options.noImplicitOverride = false;
-  tsconfig.options.outDir = relativePath(
-    findFilePath(tsconfigPath),
-    joinPaths(
-      options.workspaceRoot,
-      schema.endsWith(".capnp") ? findFilePath(schema) : schema
+  tsconfig.options.outDir = joinPaths(
+    options.projectRoot,
+    relativePath(
+      findFilePath(tsconfigPath),
+      joinPaths(
+        options.workspaceRoot,
+        schema.endsWith(".capnp") ? findFilePath(schema) : schema
+      )
     )
+  );
+
+  writeInfo(
+    `📦 Storm Cap'n Proto Compiler will output ${options.ts ? "TypeScript code" : ""}${
+      options.js ? (options.ts ? ", JavaScript code" : "JavaScript code") : ""
+    }${
+      options.dts
+        ? options.ts || options.js
+          ? ", TypeScript declarations"
+          : "TypeScript declarations"
+        : ""
+    } files from schemas at ${schema} to ${tsconfig.options.outDir}...`,
+    {
+      logLevel: "all"
+    }
   );
 
   const schemas = [] as string[];
@@ -228,7 +231,9 @@ async function compileAction(options: CapnpcCLIOptions) {
   const result = await capnpc({
     ...options,
     tsconfig,
-    schemas
+    schemas,
+    ts: options.ts ?? (options.noTs !== undefined ? !options.noTs : true),
+    dts: options.dts ?? (options.noDts !== undefined ? !options.noDts : true)
   });
   if (result.files.size === 0) {
     writeWarning(

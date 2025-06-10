@@ -116,6 +116,20 @@
         "default": "./vendor/*.js"
       }
     },
+    "./vendor/capnp/*": {
+      "import": {
+        "types": "./vendor/_capnp/*.d.ts",
+        "default": "./vendor/_capnp/*.js"
+      },
+      "require": {
+        "types": "./vendor/_capnp/*.d.cts",
+        "default": "./vendor/_capnp/*.cjs"
+      },
+      "default": {
+        "types": "./vendor/_capnp/*.d.ts",
+        "default": "./vendor/_capnp/*.js"
+      }
+    },
     "./types": {
       "import": {
         "types": "./dist/types.d.ts",

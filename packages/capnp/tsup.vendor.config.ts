@@ -20,7 +20,7 @@ import { defineConfig } from "tsup";
 
 export default defineConfig({
   name: "capnp-vendor",
-  entryPoints: ["src/vendor/_capnp/*.ts"],
+  entryPoints: ["src/vendor/**/*.ts"],
   format: ["cjs", "esm"],
   platform: "node",
   outDir: "dist/vendor",
