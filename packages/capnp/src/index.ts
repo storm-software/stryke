@@ -25,8 +25,6 @@
  * @packageDocumentation
  */
 
+export * as capnp from "./capnp";
 export * from "./compile";
 export * from "./types";
-
-// Export all types and functions from capnp-es
-export * from "capnp-es";

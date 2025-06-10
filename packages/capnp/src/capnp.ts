@@ -16,39 +16,5 @@
 
  ------------------------------------------------------------------- */
 
-import { defineConfig } from "tsup";
-
-export default defineConfig([
-  {
-    name: "capnp-lib",
-    entryPoints: ["src/*.ts"],
-    format: ["cjs", "esm"],
-    platform: "node",
-    outDir: "dist/src",
-    clean: true,
-    dts: true,
-    cjsInterop: true,
-    sourcemap: false,
-    tsconfig: "./tsconfig.json",
-    shims: true,
-    bundle: true,
-    splitting: true,
-    noExternal: ["capnp-es"]
-  },
-  {
-    name: "capnp-bin",
-    entryPoints: ["bin/capnpc.ts"],
-    format: ["cjs", "esm"],
-    platform: "node",
-    outDir: "dist/bin",
-    clean: true,
-    dts: true,
-    cjsInterop: true,
-    sourcemap: false,
-    tsconfig: "./tsconfig.json",
-    shims: true,
-    bundle: true,
-    splitting: false,
-    noExternal: ["capnp-es"]
-  }
-]);
+// Export all types and functions from capnp-es
+export * from "capnp-es";
