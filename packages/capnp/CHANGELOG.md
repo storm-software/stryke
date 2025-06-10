@@ -2,6 +2,12 @@
 
 # Changelog for Stryke - Capnp
 
+## [0.6.2](https://github.com/storm-software/stryke/releases/tag/capnp%400.6.2) (2025-06-10)
+
+### Bug Fixes
+
+- **capnp:** Resolve issue applying tsconfig during compiler
+
 ## [0.6.1](https://github.com/storm-software/stryke/releases/tag/capnp%400.6.1) (2025-06-10)
 
 ### Bug Fixes
