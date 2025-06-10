@@ -55,17 +55,19 @@ export interface CapnpcCLIOptions {
   ts?: boolean;
   js?: boolean;
   dts?: boolean;
-  schema: string[];
+  schema: string;
   output?: string;
   importPath?: string[];
   tsconfig: string;
   generateId?: boolean;
   standardImport?: boolean;
+  projectRoot: string;
   workspaceRoot: string;
 }
 
-export type CapnpcOptions = Omit<CapnpcCLIOptions, "tsconfig"> & {
+export type CapnpcOptions = Omit<CapnpcCLIOptions, "tsconfig" | "schema"> & {
   tsconfig: ts.ParsedCommandLine;
+  schemas: string[];
 };
 
 export interface CapnpcResult {

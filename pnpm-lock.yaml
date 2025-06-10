@@ -341,7 +341,7 @@ overrides:
 
 patchedDependencies:
   capnp-es@0.0.11:
-    hash: 8f737a83e1b5be10396ff9b257b56b8b8e7a3dbd2754765e9b1e2019839e9c31
+    hash: 886c62ee24f0d09971e13ba8c472d8df3adb124accba18baa2f2c0889828a492
     path: patches/capnp-es@0.0.11.patch
 
 importers:
@@ -522,7 +522,7 @@ importers:
         version: 22.15.23
       capnp-es:
         specifier: 'catalog:'
-        version: 0.0.11(patch_hash=8f737a83e1b5be10396ff9b257b56b8b8e7a3dbd2754765e9b1e2019839e9c31)(typescript@5.8.3)
+        version: 0.0.11(patch_hash=886c62ee24f0d09971e13ba8c472d8df3adb124accba18baa2f2c0889828a492)(typescript@5.8.3)
       chalk:
         specifier: 'catalog:'
         version: 5.4.1
@@ -4238,8 +4238,8 @@ packages:
     resolution: {integrity: sha512-efg/bunOUMVXV+MlljJCrpuT+OQRrQS4wJyGL92B3epUGlgZ8DXs+nxN5v59v1a6AocAdSKwHgZS0g9txmBhOg==}
     engines: {node: '>=18'}
 
-  '@vitest/eslint-plugin@1.2.1':
-    resolution: {integrity: sha512-JQr1jdVcrsoS7Sdzn83h9sq4DvREf9Q/onTZbJCqTVlv/76qb+TZrLv/9VhjnjSMHweQH5FdpMDeCR6aDe2fgw==}
+  '@vitest/eslint-plugin@1.2.2':
+    resolution: {integrity: sha512-R8NwW+VxyKqVGcMfYsUbdThQyMbtNcoeg+jJeTgMHqWdFdcS0nrODAQXhkplvWzgd7jIJ+GQeydGqFLibsxMxg==}
     peerDependencies:
       eslint: '>= 8.57.0'
       typescript: '>= 5.0.0'
@@ -13525,7 +13525,7 @@ snapshots:
       '@typescript-eslint/parser': 8.34.0(eslint@9.22.0(jiti@2.4.2))(typescript@5.8.3)
       '@typescript-eslint/utils': 8.34.0(eslint@9.22.0(jiti@2.4.2))(typescript@5.8.3)
       '@unocss/eslint-plugin': 66.0.0(eslint@9.22.0(jiti@2.4.2))(typescript@5.8.3)
-      '@vitest/eslint-plugin': 1.2.1(eslint@9.22.0(jiti@2.4.2))(typescript@5.8.3)
+      '@vitest/eslint-plugin': 1.2.2(eslint@9.22.0(jiti@2.4.2))(typescript@5.8.3)
       astro-eslint-parser: 1.2.1
       chalk: 4.1.2
       defu: 6.1.4
@@ -14519,7 +14519,7 @@ snapshots:
       minimatch: 7.4.6
       semver: 7.7.1
 
-  '@vitest/eslint-plugin@1.2.1(eslint@9.22.0(jiti@2.4.2))(typescript@5.8.3)':
+  '@vitest/eslint-plugin@1.2.2(eslint@9.22.0(jiti@2.4.2))(typescript@5.8.3)':
     dependencies:
       '@typescript-eslint/utils': 8.34.0(eslint@9.22.0(jiti@2.4.2))(typescript@5.8.3)
       eslint: 9.22.0(jiti@2.4.2)
@@ -15106,7 +15106,7 @@ snapshots:
 
   caniuse-lite@1.0.30001721: {}
 
-  capnp-es@0.0.11(patch_hash=8f737a83e1b5be10396ff9b257b56b8b8e7a3dbd2754765e9b1e2019839e9c31)(typescript@5.8.3):
+  capnp-es@0.0.11(patch_hash=886c62ee24f0d09971e13ba8c472d8df3adb124accba18baa2f2c0889828a492)(typescript@5.8.3):
     optionalDependencies:
       typescript: 5.8.3
 

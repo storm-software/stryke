@@ -10,6 +10,9 @@ tmp
 out
 .nx
 
+# capnproto
+packages/capnp/src/vendor/_capnp/*.ts
+
 # build
 
 # dependencies

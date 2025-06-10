@@ -1,5 +1,5 @@
 diff --git a/dist/shared/capnp-es.CbTQkT9D.mjs b/dist/shared/capnp-es.CbTQkT9D.mjs
-index 2affa204b705e4ed28a4fda16118b7f95badafa6..ccf14fe58cdc3fe173aaab87afbf8d4c891b448c 100644
+index 2affa204b705e4ed28a4fda16118b7f95badafa6..de2e4a80efd4bb7b41e00ab0d7d12cd7419526e9 100644
 --- a/dist/shared/capnp-es.CbTQkT9D.mjs
 +++ b/dist/shared/capnp-es.CbTQkT9D.mjs
 @@ -115,7 +115,13 @@ const Primitives = {
@@ -64,7 +64,7 @@ index 2affa204b705e4ed28a4fda16118b7f95badafa6..ccf14fe58cdc3fe173aaab87afbf8d4c
    );
    const importAnnotation = tsImportPathAnnotation && fileNode.annotations.find((a) => a.id === tsImportPathAnnotation.id);
 -  const importPath = importAnnotation === undefined ? "capnp-es" : importAnnotation.value.text;
-+  const importPath = importAnnotation === undefined ? "storm-capnp" : importAnnotation.value.text;
++  const importPath = importAnnotation === undefined ? "@stryke/capnp" : importAnnotation.value.text;
    ctx.codeParts.push(`import * as $ from '${importPath}';`);
  }
  function generateNestedImports(ctx) {
@@ -73,7 +73,7 @@ index 2affa204b705e4ed28a4fda16118b7f95badafa6..ccf14fe58cdc3fe173aaab87afbf8d4c
      let importPath;
      if (name.startsWith("/capnp/")) {
 -      importPath = `capnp-es/capnp/${name.slice(7).replace(/\.capnp$/, "")}`;
-+      importPath = `storm-capnp/capnp/${name.slice(7).replace(/\.capnp$/, "")}`;
++      importPath = `@stryke/capnp/capnp/${name.slice(7).replace(/\.capnp$/, "")}`;
      } else {
        importPath = name.replace(/\.capnp$/, ".js");
        if (importPath[0] !== ".") {

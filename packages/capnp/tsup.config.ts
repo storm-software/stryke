@@ -16,6 +16,8 @@
 
  ------------------------------------------------------------------- */
 
+import type { BuildOptions } from "esbuild";
+import { fileURLToPath } from "node:url";
 import { defineConfig } from "tsup";
 
 export default defineConfig([
@@ -33,7 +35,13 @@ export default defineConfig([
     shims: true,
     bundle: true,
     splitting: true,
-    noExternal: ["capnp-es"]
+    noExternal: ["capnp-es"],
+    esbuildOptions: (options: BuildOptions) => {
+      options.alias = {
+        ...options.alias,
+        "@stryke/capnp": fileURLToPath(new URL("src/index.ts", import.meta.url))
+      };
+    }
   },
   {
     name: "capnp-bin",

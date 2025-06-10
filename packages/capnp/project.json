@@ -5,7 +5,7 @@
   "sourceRoot": "packages/capnp/src",
   "targets": {
     "build-base": {
-      "cache": true,
+      "cache": false,
       "executor": "nx:run-commands",
       "dependsOn": ["clean", "^build"],
       "options": {
@@ -13,16 +13,34 @@
         "cwd": "{projectRoot}"
       }
     },
-    "build": {
-      "cache": true,
+    "build-schema": {
+      "cache": false,
       "executor": "nx:run-commands",
       "dependsOn": ["build-base"],
+      "options": {
+        "command": "node ./{projectRoot}/dist/bin/capnpc.js --project-root packages/capnp --schema ./src/vendor/_capnp"
+      }
+    },
+    "build-capnp": {
+      "cache": false,
+      "executor": "nx:run-commands",
+      "dependsOn": ["build-schema"],
+      "options": {
+        "command": "tsup-node ./src/vendor/_capnp/*.ts --outDir ./dist/vendor --tsconfig ./tsconfig.capnp.json --treeshake",
+        "cwd": "{projectRoot}"
+      }
+    },
+    "build": {
+      "cache": false,
+      "executor": "nx:run-commands",
+      "dependsOn": ["build-capnp"],
       "options": {
         "commands": [
           "pnpm copyfiles LICENSE dist/packages/capnp",
           "pnpm copyfiles --up=2 ./packages/capnp/*.md ./packages/capnp/package.json dist/packages/capnp",
           "pnpm copyfiles --up=4 \"./packages/capnp/dist/src/**/*\" dist/packages/capnp/dist",
-          "pnpm copyfiles --up=3 \"./packages/capnp/dist/bin/**/*\" dist/packages/capnp"
+          "pnpm copyfiles --up=4 \"./packages/capnp/dist/bin/**/*\" dist/packages/capnp/bin",
+          "pnpm copyfiles --up=4 \"./packages/capnp/dist/vendor/**/*\" dist/packages/capnp/vendor"
         ]
       }
     },

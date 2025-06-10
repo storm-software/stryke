@@ -102,18 +102,18 @@
         "default": "./dist/rpc.js"
       }
     },
-    "./capnp": {
+    "./vendor/*": {
       "import": {
-        "types": "./dist/capnp.d.ts",
-        "default": "./dist/capnp.js"
+        "types": "./vendor/*.d.ts",
+        "default": "./vendor/*.js"
       },
       "require": {
-        "types": "./dist/capnp.d.cts",
-        "default": "./dist/capnp.cjs"
+        "types": "./vendor/*.d.cts",
+        "default": "./vendor/*.cjs"
       },
       "default": {
-        "types": "./dist/capnp.d.ts",
-        "default": "./dist/capnp.js"
+        "types": "./vendor/*.d.ts",
+        "default": "./vendor/*.js"
       }
     },
     "./types": {

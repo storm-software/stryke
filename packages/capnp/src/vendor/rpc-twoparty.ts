@@ -16,17 +16,4 @@
 
  ------------------------------------------------------------------- */
 
-/**
- * The capnp library used by Storm Software for building NodeJS applications.
- *
- * @remarks
- * A package for running the Cap&#39;n Proto compiler in a TypeScript application
- *
- * @packageDocumentation
- */
-
-export * from "./compile";
-export * from "./types";
-
-// Export all types and functions from capnp-es
-export * from "capnp-es";
+export * from "capnp-es/capnp/rpc-twoparty";

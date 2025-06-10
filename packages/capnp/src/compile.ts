@@ -36,7 +36,7 @@ import type { CapnpcOptions, CapnpcResult } from "./types";
  */
 export async function capnpc(options: CapnpcOptions): Promise<CapnpcResult> {
   try {
-    const { output, tsconfig, schema = [] } = options;
+    const { output, tsconfig, schemas = [] } = options;
 
     let dataBuf: Buffer = Buffer.alloc(0);
     if (!process.stdin.isTTY) {
@@ -73,7 +73,7 @@ export async function capnpc(options: CapnpcOptions): Promise<CapnpcResult> {
 
       dataBuf = await new Promise<Buffer>(resolve => {
         exec(
-          `capnpc ${opts.join(" ")} ${schema.join(" ")}`,
+          `capnpc ${opts.join(" ")} ${schemas.join(" ")}`,
           { encoding: "buffer" },
           (error, stdout, stderr) => {
             if (stderr.length > 0) {
