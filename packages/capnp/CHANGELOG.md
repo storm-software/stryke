@@ -2,6 +2,12 @@
 
 # Changelog for Stryke - Capnp
 
+## [0.6.3](https://github.com/storm-software/stryke/releases/tag/capnp%400.6.3) (2025-06-10)
+
+### Bug Fixes
+
+- **capnp:** Ensure the correct `outDir` value is applied in tsconfg
+
 ## [0.6.2](https://github.com/storm-software/stryke/releases/tag/capnp%400.6.2) (2025-06-10)
 
 ### Bug Fixes
