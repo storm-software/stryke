@@ -40,7 +40,7 @@ try {
   result = await proc;
   if (!result.ok) {
     throw new Error(
-      `An error occurred while updating "cyclone-ui" packages: \n\n${result.message}\n`
+      `An error occurred while updating "storm-stack" packages: \n\n${result.message}\n`
     );
   }
 
