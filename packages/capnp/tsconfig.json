@@ -3,13 +3,21 @@
   "compilerOptions": {
     "rootDir": "../..",
     "types": ["node"],
-    "outDir": "../../dist/out-tsc"
+    "noFallthroughCasesInSwitch": true,
+    "noImplicitReturns": true,
+    "noUnusedLocals": false,
+    "noUnusedParameters": false,
+    "noEmitOnError": false,
+    "outDir": "../../dist/out-tsc",
+    "preserveConstEnums": true,
+    "removeComments": false,
+    "skipLibCheck": true
   },
   "include": [
     "src/**/*.ts",
     "bin/**/*.ts",
     "tsup.config.ts",
-    "tsup.vendor.config.ts"
+    "tsup.bin.config.ts"
   ],
   "exclude": ["jest.config.ts", "src/**/*.spec.ts", "src/**/*.test.ts"]
 }

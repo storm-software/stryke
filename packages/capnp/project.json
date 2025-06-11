@@ -4,32 +4,32 @@
   "projectType": "library",
   "sourceRoot": "packages/capnp/src",
   "targets": {
-    "build-base": {
+    "build-bin": {
       "executor": "nx:run-commands",
-      "dependsOn": ["^build"],
+      "dependsOn": ["clean", "^build"],
       "options": {
-        "command": "tsup-node --config=tsup.config.ts",
+        "command": "tsup-node  --config=tsup.bin.config.ts",
         "cwd": "{projectRoot}"
       }
     },
     "build-schema": {
       "executor": "nx:run-commands",
-      "dependsOn": ["build-base"],
+      "dependsOn": ["build-bin"],
       "options": {
         "command": "node ./{projectRoot}/dist/bin/capnpc.js --project-root packages/capnp --schema ./{projectRoot}/src/vendor/_capnp --no-dts"
       }
     },
-    "build-vendor": {
+    "build-base": {
       "executor": "nx:run-commands",
-      "dependsOn": ["build-schema"],
+      "dependsOn": ["build-schema", "build-bin"],
       "options": {
-        "command": "tsup-node  --config=tsup.vendor.config.ts",
+        "command": "tsup-node --config=tsup.config.ts",
         "cwd": "{projectRoot}"
       }
     },
     "build": {
       "executor": "nx:run-commands",
-      "dependsOn": ["build-vendor"],
+      "dependsOn": ["build-base", "build-schema", "build-bin"],
       "options": {
         "commands": [
           "pnpm copyfiles LICENSE dist/packages/capnp",

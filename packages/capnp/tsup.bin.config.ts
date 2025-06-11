@@ -19,18 +19,18 @@
 import { defineConfig } from "tsup";
 
 export default defineConfig({
-  name: "capnp-vendor",
-  entryPoints: ["src/vendor/**/*.ts"],
+  name: "capnp-bin",
+  entryPoints: ["bin/capnpc.ts"],
   format: ["cjs", "esm"],
   platform: "node",
-  outDir: "dist/vendor",
-  clean: true,
+  outDir: "dist/bin",
+  clean: false,
   dts: true,
   cjsInterop: true,
   sourcemap: false,
-  tsconfig: "./tsconfig.vendor.json",
+  tsconfig: "./tsconfig.json",
   shims: true,
   bundle: true,
-  splitting: true,
+  splitting: false,
   noExternal: ["capnp-es"]
 });

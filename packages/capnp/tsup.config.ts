@@ -27,7 +27,7 @@ export default defineConfig([
     format: ["cjs", "esm"],
     platform: "node",
     outDir: "dist/src",
-    clean: true,
+    clean: false,
     dts: true,
     cjsInterop: true,
     sourcemap: false,
@@ -44,19 +44,25 @@ export default defineConfig([
     }
   },
   {
-    name: "capnp-bin",
-    entryPoints: ["bin/capnpc.ts"],
+    name: "capnp-vendor",
+    entryPoints: ["src/vendor/**/*.ts"],
     format: ["cjs", "esm"],
     platform: "node",
-    outDir: "dist/bin",
-    clean: true,
+    outDir: "dist/vendor",
+    clean: false,
     dts: true,
     cjsInterop: true,
     sourcemap: false,
     tsconfig: "./tsconfig.json",
     shims: true,
     bundle: true,
-    splitting: false,
-    noExternal: ["capnp-es"]
+    splitting: true,
+    noExternal: ["capnp-es"],
+    esbuildOptions: (options: BuildOptions) => {
+      options.alias = {
+        ...options.alias,
+        "@stryke/capnp": fileURLToPath(new URL("src/index.ts", import.meta.url))
+      };
+    }
   }
 ]);
