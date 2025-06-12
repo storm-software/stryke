@@ -9,7 +9,7 @@
 
  Website:                  https://stormsoftware.com
  Repository:               https://github.com/storm-software/stryke
- Documentation:            https://stormsoftware.com/projects/stryke/docs
+ Documentation:            https://docs.stormsoftware.com/projects/stryke
  Contact:                  https://stormsoftware.com/contact
 
  SPDX-License-Identifier:  Apache-2.0
@@ -24,7 +24,7 @@ import { resolvePackage } from "@stryke/path/resolve";
 import type { PackageJson } from "@stryke/types/package-json";
 import type { PackageManager } from "@stryke/types/package-manager";
 import { existsSync } from "node:fs";
-import { readJsonFile } from "./read-file";
+import { readJsonFile } from "./json";
 
 /**
  * Get the package manager used in the project
