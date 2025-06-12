@@ -2,6 +2,12 @@
 
 # Changelog for Stryke - Env
 
+## [0.14.2](https://github.com/storm-software/stryke/releases/tag/env%400.14.2) (2025-06-12)
+
+### Bug Fixes
+
+- **capnp:** Remove unused console lines from patched package
+
 ## [0.14.1](https://github.com/storm-software/stryke/releases/tag/env%400.14.1) (2025-06-12)
 
 ### Bug Fixes

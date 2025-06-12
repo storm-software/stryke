@@ -2,6 +2,12 @@
 
 # Changelog for Stryke - Capnp
 
+## [0.8.2](https://github.com/storm-software/stryke/releases/tag/capnp%400.8.2) (2025-06-12)
+
+### Bug Fixes
+
+- **capnp:** Remove unused console lines from patched package
+
 ## [0.8.1](https://github.com/storm-software/stryke/releases/tag/capnp%400.8.1) (2025-06-12)
 
 ### Bug Fixes
