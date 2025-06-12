@@ -11,7 +11,7 @@
   "private": false,
   "dependencies": {
     "@dotenvx/dotenvx": "catalog:",
-    "@stryke/fs": "0.21.1",
+    "@stryke/fs": "workspace:*",
     "@stryke/path": "workspace:*",
     "@stryke/string-format": "workspace:*",
     "defu": "catalog:"

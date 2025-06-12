@@ -347,7 +347,7 @@ overrides:
 
 patchedDependencies:
   capnp-es@0.0.11:
-    hash: f53660f66d5bee0d534f52c8353ad821257e1fcf32d2c09b3ce40c642807de44
+    hash: 7463167e804b0de68590abc75ecd140ea81bfe80a4326b8f6dd9fdd8bec7ed2d
     path: patches/capnp-es@0.0.11.patch
 
 importers:
@@ -531,7 +531,7 @@ importers:
         version: 22.15.23
       capnp-es:
         specifier: 'catalog:'
-        version: 0.0.11(patch_hash=f53660f66d5bee0d534f52c8353ad821257e1fcf32d2c09b3ce40c642807de44)(typescript@5.8.3)
+        version: 0.0.11(patch_hash=7463167e804b0de68590abc75ecd140ea81bfe80a4326b8f6dd9fdd8bec7ed2d)(typescript@5.8.3)
       chalk:
         specifier: 'catalog:'
         version: 5.4.1
@@ -15167,7 +15167,7 @@ snapshots:
 
   caniuse-lite@1.0.30001722: {}
 
-  capnp-es@0.0.11(patch_hash=f53660f66d5bee0d534f52c8353ad821257e1fcf32d2c09b3ce40c642807de44)(typescript@5.8.3):
+  capnp-es@0.0.11(patch_hash=7463167e804b0de68590abc75ecd140ea81bfe80a4326b8f6dd9fdd8bec7ed2d)(typescript@5.8.3):
     optionalDependencies:
       typescript: 5.8.3
 
@@ -19161,7 +19161,7 @@ snapshots:
   micromark-util-character@2.1.1:
     dependencies:
       micromark-util-symbol: 2.0.1
-      micromark-util-types: 2.0.2
+      micromark-util-types: 2.0.1
 
   micromark-util-chunked@2.0.1:
     dependencies:
@@ -19176,7 +19176,7 @@ snapshots:
   micromark-util-combine-extensions@2.0.1:
     dependencies:
       micromark-util-chunked: 2.0.1
-      micromark-util-types: 2.0.2
+      micromark-util-types: 2.0.1
 
   micromark-util-decode-numeric-character-reference@2.0.2:
     dependencies:

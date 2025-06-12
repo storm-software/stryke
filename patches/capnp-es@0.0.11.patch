@@ -1,5 +1,5 @@
 diff --git a/dist/shared/capnp-es.CbTQkT9D.mjs b/dist/shared/capnp-es.CbTQkT9D.mjs
-index 2affa204b705e4ed28a4fda16118b7f95badafa6..5438ee9c201de6f9b52ad284bcfddc7bd21520c8 100644
+index 2affa204b705e4ed28a4fda16118b7f95badafa6..626fc608c243db802a100a56edfcc95bd9c428a6 100644
 --- a/dist/shared/capnp-es.CbTQkT9D.mjs
 +++ b/dist/shared/capnp-es.CbTQkT9D.mjs
 @@ -115,7 +115,14 @@ const Primitives = {
@@ -81,24 +81,16 @@ index 2affa204b705e4ed28a4fda16118b7f95badafa6..5438ee9c201de6f9b52ad284bcfddc7b
        if (importPath[0] !== ".") {
          importPath = `./${importPath}`;
        }
-@@ -1186,12 +1193,35 @@ async function compileAll(codeGenRequest, opts) {
+@@ -1186,12 +1193,24 @@ async function compileAll(codeGenRequest, opts) {
    const req = new Message(codeGenRequest, false).getRoot(
      CodeGeneratorRequest
    );
-+
-+  console.log(
-+    `\nRunning capnpc for ${req.requestedFiles.length} capnp schema files \n`
-+  );
 +
    const ctx = new CodeGeneratorContext();
    ctx.files = req.requestedFiles.map((file) => loadRequestedFile(req, file));
 +  if (ctx.files.length === 0) {
 +    throw new Error(GEN_NO_FILES);
 +  } 
-+
-+  console.log(
-+    `\nCompiling ${ctx.files.length} files: ${ctx.files.map(f => f.tsPath).join(", ")}\n`
-+  );
 +
    const files = new Map(
      ctx.files.map((file) => [file.tsPath, compileFile(file)])
@@ -109,16 +101,13 @@ index 2affa204b705e4ed28a4fda16118b7f95badafa6..5438ee9c201de6f9b52ad284bcfddc7b
 +  } 
 +
 +  if (opts?.dts === true || opts?.js === true) {
-+    console.log(
-+      `\nTypeScript Compiling ${files.size} files: ${[...files.keys()].join(", ")}\n`
-+    );
 +    tsCompile(files, opts?.dts === true, opts?.js === true, opts?.tsconfig);
 +  }
 +
    if (!opts?.ts) {
      for (const [fileName] of files) {
        if (fileName.endsWith(".ts") && !fileName.endsWith(".d.ts")) {
-@@ -1199,11 +1229,13 @@ async function compileAll(codeGenRequest, opts) {
+@@ -1199,11 +1218,13 @@ async function compileAll(codeGenRequest, opts) {
        }
      }
    }
@@ -132,7 +121,7 @@ index 2affa204b705e4ed28a4fda16118b7f95badafa6..5438ee9c201de6f9b52ad284bcfddc7b
  function compileFile(ctx) {
    generateCapnpImport(ctx);
    generateNestedImports(ctx);
-@@ -1226,6 +1258,7 @@ function compileFile(ctx) {
+@@ -1226,6 +1247,7 @@ function compileFile(ctx) {
    );
    return SOURCE_COMMENT + ts.createPrinter().printFile(sourceFile);
  }
@@ -140,7 +129,7 @@ index 2affa204b705e4ed28a4fda16118b7f95badafa6..5438ee9c201de6f9b52ad284bcfddc7b
  function tsCompile(files, dts, js, tsconfig) {
    if (!dts && !js) {
      return;
-@@ -1233,6 +1266,8 @@ function tsCompile(files, dts, js, tsconfig) {
+@@ -1233,6 +1255,8 @@ function tsCompile(files, dts, js, tsconfig) {
    const compileOptions = {
      moduleResolution: ts.ModuleResolutionKind.Bundler,
      target: ts.ScriptTarget.ESNext,
@@ -149,7 +138,7 @@ index 2affa204b705e4ed28a4fda16118b7f95badafa6..5438ee9c201de6f9b52ad284bcfddc7b
      noEmitOnError: false,
      noFallthroughCasesInSwitch: true,
      preserveConstEnums: true,
-@@ -1242,8 +1277,6 @@ function tsCompile(files, dts, js, tsconfig) {
+@@ -1242,8 +1266,6 @@ function tsCompile(files, dts, js, tsconfig) {
      removeComments: false,
      skipLibCheck: true,
      sourceMap: false,
