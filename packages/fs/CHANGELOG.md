@@ -2,6 +2,12 @@
 
 # Changelog for Stryke - Fs
 
+## [0.21.2](https://github.com/storm-software/stryke/releases/tag/fs%400.21.2) (2025-06-12)
+
+### Bug Fixes
+
+- **fs:** Resolve issue with invalid import path
+
 ## [0.21.1](https://github.com/storm-software/stryke/releases/tag/fs%400.21.1) (2025-06-12)
 
 ### Bug Fixes

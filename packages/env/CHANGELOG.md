@@ -2,6 +2,16 @@
 
 # Changelog for Stryke - Env
 
+## [0.14.3](https://github.com/storm-software/stryke/releases/tag/env%400.14.3) (2025-06-12)
+
+### Bug Fixes
+
+- **fs:** Resolve issue with invalid import path
+
+### Updated Dependencies
+
+- Updated fs to 0.21.2
+
 ## [0.14.2](https://github.com/storm-software/stryke/releases/tag/env%400.14.2) (2025-06-12)
 
 ### Bug Fixes
