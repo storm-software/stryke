@@ -9,7 +9,7 @@
 
  Website:                  https://stormsoftware.com
  Repository:               https://github.com/storm-software/stryke
- Documentation:            https://stormsoftware.com/projects/stryke/docs
+ Documentation:            https://docs.stormsoftware.com/projects/stryke
  Contact:                  https://stormsoftware.com/contact
 
  SPDX-License-Identifier:  Apache-2.0
@@ -22,7 +22,7 @@ import { joinPaths } from "@stryke/path/join-paths";
 import type { TsConfigJson } from "@stryke/types/tsconfig";
 import defu from "defu";
 import { resolvePath } from "mlly";
-import { readJsonFile } from "./read-file";
+import { readJsonFile } from "./json";
 
 /**
  * Loads a tsconfig.json file and returns the parsed JSON object.
