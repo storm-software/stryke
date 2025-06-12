@@ -22,7 +22,7 @@ Error.stackTraceLimit = Number.POSITIVE_INFINITY;
 
 const config = getStormConfig({
   name: "stryke",
-  ignores: ["packages/capnp/src/capnp/**"]
+  ignores: ["packages/capnp/schemas/**"]
 });
 
 export default config;

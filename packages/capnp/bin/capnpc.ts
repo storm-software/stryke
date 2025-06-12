@@ -85,6 +85,11 @@ export function createProgram() {
     "An indicator to disable generation of TypeScript declaration files"
   );
 
+  const ttyOption = new Option(
+    "--tty",
+    "An indicator to enable TTY mode for the compiler"
+  );
+
   const importPathOption = new Option(
     "-I --import-path <dir...>",
     "Add <dir> to the list of directories searched for non-relative imports"
@@ -143,6 +148,7 @@ export function createProgram() {
     .addOption(dtsOption)
     .addOption(noDtsOption)
     .addOption(workspaceRootOption)
+    .addOption(ttyOption)
     .action(compileAction)
     .showSuggestionAfterError(true)
     .showHelpAfterError(true);
@@ -175,7 +181,11 @@ async function compileAction(options: CapnpcCLIOptions) {
     findFilePath(tsconfigPath)
   );
   tsconfig.options.configFilePath = tsconfigPath;
+
   tsconfig.options.noImplicitOverride = false;
+  tsconfig.options.noUnusedLocals = false;
+  tsconfig.options.noUnusedParameters = false;
+
   tsconfig.options.outDir = joinPaths(
     options.projectRoot,
     relativePath(

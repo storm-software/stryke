@@ -102,32 +102,32 @@
         "default": "./dist/rpc.js"
       }
     },
-    "./vendor/*": {
+    "./schemas/*": {
       "import": {
-        "types": "./vendor/*.d.ts",
-        "default": "./vendor/*.js"
+        "types": "./schemas/*.d.ts",
+        "default": "./schemas/*.js"
       },
       "require": {
-        "types": "./vendor/*.d.cts",
-        "default": "./vendor/*.cjs"
+        "types": "./schemas/*.d.cts",
+        "default": "./schemas/*.cjs"
       },
       "default": {
-        "types": "./vendor/*.d.ts",
-        "default": "./vendor/*.js"
+        "types": "./schemas/*.d.ts",
+        "default": "./schemas/*.js"
       }
     },
-    "./vendor/capnp/*": {
+    "./capnp/*": {
       "import": {
-        "types": "./src/vendor/*.d.ts",
-        "default": "./src/vendor/*.js"
+        "types": "./schemas/*.d.ts",
+        "default": "./schemas/*.js"
       },
       "require": {
-        "types": "./src/vendor/*.d.cts",
-        "default": "./src/vendor/*.cjs"
+        "types": "./schemas/*.d.cts",
+        "default": "./schemas/*.cjs"
       },
       "default": {
-        "types": "./src/vendor/*.d.ts",
-        "default": "./src/vendor/*.js"
+        "types": "./schemas/*.d.ts",
+        "default": "./schemas/*.js"
       }
     },
     "./types": {
@@ -181,7 +181,8 @@
     "capnp-es": "catalog:",
     "chalk": "catalog:",
     "commander": "catalog:",
-    "tsup": "catalog:"
+    "tsup": "catalog:",
+    "tsx": "catalog:"
   },
   "publishConfig": {
     "access": "public"

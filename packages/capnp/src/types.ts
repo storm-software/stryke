@@ -18,14 +18,12 @@
 
 /* eslint-disable camelcase */
 
-import type ts from "typescript";
 import type {
-  CodeGeneratorRequest,
-  CodeGeneratorRequest_RequestedFile,
   CodeGeneratorRequest_RequestedFile_Import,
   Field,
   Node
-} from "./capnp/schema";
+} from "capnp-es/capnp/schema";
+import type { ParsedCommandLine } from "typescript";
 
 export interface CodeGeneratorFileContext {
   // inputs
@@ -39,16 +37,13 @@ export interface CodeGeneratorFileContext {
   tsPath: string;
   codeParts?: string[];
 
-  constructor: (
-    req: CodeGeneratorRequest,
-    file: CodeGeneratorRequest_RequestedFile
-  ) => any;
+  constructor: any;
 
   toString: () => string;
 }
 
-export interface CodeGeneratorContext {
-  files: CodeGeneratorFileContext[];
+export class CodeGeneratorContext {
+  files: CodeGeneratorFileContext[] = [];
 }
 
 export interface CapnpcCLIOptions {
@@ -65,13 +60,14 @@ export interface CapnpcCLIOptions {
   standardImport?: boolean;
   projectRoot: string;
   workspaceRoot: string;
+  tty?: boolean;
 }
 
 export type CapnpcOptions = Omit<
   CapnpcCLIOptions,
   "noTs" | "noDts" | "tsconfig" | "schema"
 > & {
-  tsconfig: ts.ParsedCommandLine;
+  tsconfig: ParsedCommandLine;
   schemas: string[];
 };
 

@@ -22,12 +22,12 @@
     },
     "build-schema": {
       "cache": true,
-      "inputs": ["{projectRoot}/src/capnp/*.capnp"],
-      "outputs": ["{projectRoot}/src/capnp/*.ts"],
+      "inputs": ["{projectRoot}/schemas/*.capnp"],
+      "outputs": ["{projectRoot}/schemas/*.ts"],
       "executor": "nx:run-commands",
       "dependsOn": ["build-bin"],
       "options": {
-        "command": "node ./{projectRoot}/dist/bin/capnpc.js --project-root packages/capnp --schema ./{projectRoot}/src/capnp --no-dts"
+        "command": "node ./{projectRoot}/dist/bin/capnpc.js --project-root packages/capnp --schema ./{projectRoot}/schemas --no-dts"
       }
     },
     "build-base": {
@@ -51,7 +51,7 @@
           "pnpm copyfiles --up=2 ./packages/capnp/*.md ./packages/capnp/package.json dist/packages/capnp",
           "pnpm copyfiles --up=4 \"./packages/capnp/dist/src/**/*\" dist/packages/capnp/dist",
           "pnpm copyfiles --up=4 \"./packages/capnp/dist/bin/**/*\" dist/packages/capnp/bin",
-          "pnpm copyfiles --up=4 \"./packages/capnp/dist/vendor/**/*\" dist/packages/capnp/vendor"
+          "pnpm copyfiles --up=4 \"./packages/capnp/dist/schemas/**/*\" dist/packages/capnp/schemas"
         ],
         "parallel": true
       }

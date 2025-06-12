@@ -45,7 +45,7 @@ try {
   }
 
   if (configuration === "production") {
-    proc = $`pnpm nx run-many --target=build --all --exclude="@stryke/monorepo,capnp" --configuration=production --parallel=5`;
+    proc = $`pnpm nx run-many --target=build --all --exclude="@stryke/monorepo" --configuration=production --parallel=5`;
     proc.stdout.on("data", data => {
       echo`${data}`;
     });
@@ -56,20 +56,8 @@ try {
         `An error occured while building the monorepo in production mode: \n\n${result.message}\n`
       );
     }
-
-    proc = $`pnpm nx run capnp:build:production`;
-    proc.stdout.on("data", data => {
-      echo`${data}`;
-    });
-    result = await proc;
-
-    if (!result.ok) {
-      throw new Error(
-        `An error occured while building the capnp package in production mode: \n\n${result.message}\n`
-      );
-    }
   } else {
-    proc = $`pnpm nx run-many --target=build --all --exclude="@stryke/monorepo,capnp" --configuration=${configuration} --nxBail`;
+    proc = $`pnpm nx run-many --target=build --all --exclude="@stryke/monorepo" --configuration=${configuration} --nxBail`;
     proc.stdout.on("data", data => {
       echo`${data}`;
     });
@@ -77,19 +65,7 @@ try {
 
     if (!result.ok) {
       throw new Error(
-        `An error occured while building the monorepo in ${configuration} mode: \n\n${result.message}\n`
-      );
-    }
-
-    proc = $`pnpm nx run capnp:build:${configuration}`;
-    proc.stdout.on("data", data => {
-      echo`${data}`;
-    });
-    result = await proc;
-
-    if (!result.ok) {
-      throw new Error(
-        `An error occured while building the capnp package in ${configuration} mode: \n\n${result.message}\n`
+        `An error occured while building the monorepo in development mode: \n\n${result.message}\n`
       );
     }
   }

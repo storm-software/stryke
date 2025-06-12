@@ -16,6 +16,7 @@
 
  ------------------------------------------------------------------- */
 
+import { fileURLToPath } from "node:url";
 import { defineConfig } from "tsup";
 
 export default defineConfig([
@@ -33,14 +34,15 @@ export default defineConfig([
     shims: true,
     bundle: true,
     splitting: true,
-    external: ["capnp-es"]
+    external: ["typescript"],
+    noExternal: ["capnp-es"]
   },
   {
-    name: "capnp-vendor",
-    entryPoints: ["src/capnp/*.ts"],
+    name: "capnp-schemas",
+    entryPoints: ["schemas/*.ts"],
     format: ["cjs", "esm"],
     platform: "node",
-    outDir: "dist/vendor",
+    outDir: "dist/schemas",
     clean: false,
     dts: true,
     cjsInterop: true,
@@ -49,6 +51,18 @@ export default defineConfig([
     shims: true,
     bundle: true,
     splitting: true,
-    external: ["capnp-es"]
+    external: ["typescript"],
+    noExternal: ["capnp-es"],
+    esbuildOptions: options => {
+      return {
+        ...options,
+        alias: {
+          ...options.alias,
+          "@stryke/capnp": fileURLToPath(
+            new URL("src/index.ts", import.meta.url)
+          )
+        }
+      };
+    }
   }
 ]);

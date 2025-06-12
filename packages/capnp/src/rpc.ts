@@ -16,11 +16,10 @@
 
  ------------------------------------------------------------------- */
 
-// eslint-disable-next-line ts/consistent-type-imports
-import { MessageChannel, MessagePort } from "node:worker_threads";
-
 import { Conn, Deferred, DeferredTransport, Message } from "capnp-es";
-import type { Message as RPCMessage } from "./capnp/rpc";
+import type { Message as RPCMessage } from "capnp-es/capnp/rpc";
+import type { MessagePort } from "node:worker_threads";
+import { MessageChannel } from "node:worker_threads";
 
 /**
  * A class that manages Cap'n Proto RPC connections.

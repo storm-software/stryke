@@ -28,10 +28,10 @@ import type { CapnpcOptions, CapnpcResult } from "./types";
  * @returns A promise that resolves to the compilation result.
  */
 export async function capnpc(options: CapnpcOptions): Promise<CapnpcResult> {
-  const { output, tsconfig, schemas = [] } = options;
+  const { output, tsconfig, schemas = [], tty } = options;
 
   let dataBuf: Buffer = Buffer.alloc(0);
-  if (!process.stdin.isTTY) {
+  if (tty) {
     const chunks: Buffer[] = [];
     process.stdin.on("data", (chunk: Buffer) => {
       chunks.push(chunk);
@@ -82,8 +82,8 @@ export async function capnpc(options: CapnpcOptions): Promise<CapnpcResult> {
 
   return compileAll(dataBuf, {
     ts: options.ts ?? true,
-    js: options.js ?? false,
-    dts: options.dts ?? true,
+    js: false,
+    dts: false,
     tsconfig: tsconfig?.options
-  }) as any;
+  });
 }
