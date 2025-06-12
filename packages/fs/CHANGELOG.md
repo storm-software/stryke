@@ -2,6 +2,12 @@
 
 # Changelog for Stryke - Fs
 
+## [0.21.1](https://github.com/storm-software/stryke/releases/tag/fs%400.21.1) (2025-06-12)
+
+### Bug Fixes
+
+- **capnp:** Patch `capnp-es` to no longer include import extensions
+
 ## [0.21.0](https://github.com/storm-software/stryke/releases/tag/fs%400.21.0) (2025-06-12)
 
 ### Features

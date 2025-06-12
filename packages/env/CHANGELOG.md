@@ -2,6 +2,16 @@
 
 # Changelog for Stryke - Env
 
+## [0.14.1](https://github.com/storm-software/stryke/releases/tag/env%400.14.1) (2025-06-12)
+
+### Bug Fixes
+
+- **capnp:** Patch `capnp-es` to no longer include import extensions
+
+### Updated Dependencies
+
+- Updated fs to 0.21.1
+
 ## [0.14.0](https://github.com/storm-software/stryke/releases/tag/env%400.14.0) (2025-06-12)
 
 ### Features

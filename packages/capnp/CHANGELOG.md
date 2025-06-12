@@ -2,6 +2,16 @@
 
 # Changelog for Stryke - Capnp
 
+## [0.8.1](https://github.com/storm-software/stryke/releases/tag/capnp%400.8.1) (2025-06-12)
+
+### Bug Fixes
+
+- **capnp:** Patch `capnp-es` to no longer include import extensions
+
+### Updated Dependencies
+
+- Updated fs to 0.21.1
+
 ## [0.8.0](https://github.com/storm-software/stryke/releases/tag/capnp%400.8.0) (2025-06-12)
 
 ### Features
