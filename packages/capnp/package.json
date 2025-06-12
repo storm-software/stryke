@@ -170,7 +170,7 @@
     }
   },
   "dependencies": {
-    "@stryke/fs": "0.21.2",
+    "@stryke/fs": "workspace:*",
     "@stryke/path": "workspace:*",
     "hex2dec": "catalog:"
   },
