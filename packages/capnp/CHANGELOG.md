@@ -2,6 +2,17 @@
 
 # Changelog for Stryke - Capnp
 
+## [0.8.0](https://github.com/storm-software/stryke/releases/tag/capnp%400.8.0) (2025-06-12)
+
+### Features
+
+- **fs:** Added separate file type modules and buffer helper functions
+
+### Updated Dependencies
+
+- Updated path to 0.8.0
+- Updated fs to 0.21.0
+
 ## [0.7.0](https://github.com/storm-software/stryke/releases/tag/capnp%400.7.0) (2025-06-12)
 
 ### Features

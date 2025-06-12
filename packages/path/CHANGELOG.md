@@ -2,6 +2,12 @@
 
 # Changelog for Stryke - Path
 
+## [0.8.0](https://github.com/storm-software/stryke/releases/tag/path%400.8.0) (2025-06-12)
+
+### Features
+
+- **fs:** Added separate file type modules and buffer helper functions
+
 ## [0.7.6](https://github.com/storm-software/stryke/releases/tag/path%400.7.6) (2025-06-12)
 
 ### Miscellaneous

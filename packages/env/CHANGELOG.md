@@ -2,6 +2,17 @@
 
 # Changelog for Stryke - Env
 
+## [0.14.0](https://github.com/storm-software/stryke/releases/tag/env%400.14.0) (2025-06-12)
+
+### Features
+
+- **fs:** Added separate file type modules and buffer helper functions
+
+### Updated Dependencies
+
+- Updated path to 0.8.0
+- Updated fs to 0.21.0
+
 ## [0.13.1](https://github.com/storm-software/stryke/releases/tag/env%400.13.1) (2025-06-12)
 
 ### Miscellaneous
