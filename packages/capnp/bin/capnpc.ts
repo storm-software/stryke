@@ -30,8 +30,8 @@ import {
   handleProcess
 } from "@storm-software/config-tools/utilities";
 import { createDirectory } from "@stryke/fs/helpers";
+import { readJsonFile } from "@stryke/fs/json";
 import { listFiles } from "@stryke/fs/list-files";
-import { readJsonFile } from "@stryke/fs/read-file";
 import { existsSync } from "@stryke/path/exists";
 import { findFilePath, relativePath } from "@stryke/path/file-path-fns";
 import { joinPaths } from "@stryke/path/join-paths";

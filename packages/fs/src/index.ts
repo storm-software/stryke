@@ -9,7 +9,7 @@
 
  Website:                  https://stormsoftware.com
  Repository:               https://github.com/storm-software/stryke
- Documentation:            https://stormsoftware.com/projects/stryke/docs
+ Documentation:            https://docs.stormsoftware.com/projects/stryke
  Contact:                  https://stormsoftware.com/contact
 
  SPDX-License-Identifier:  Apache-2.0
@@ -25,6 +25,7 @@
  * @packageDocumentation
  */
 
+export * from "./buffer";
 export * from "./chmod-x";
 export * from "./command-exists";
 export * from "./compress";
@@ -32,10 +33,13 @@ export * from "./constants";
 export * from "./copy-file";
 export * from "./helpers";
 export * from "./install";
+export * from "./json";
 export * from "./list-files";
 export * from "./package-fns";
 export * from "./read-file";
 export * from "./remove-file";
 export * from "./semver-fns";
+export * from "./toml";
 export * from "./tsconfig";
 export * from "./write-file";
+export * from "./yaml";
