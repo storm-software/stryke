@@ -45,7 +45,7 @@ try {
   }
 
   if (configuration === "production") {
-    proc = $`pnpm nx run-many --target=build --all --exclude="@stryke/monorepo,@stryke/capnp" --configuration=production --parallel=5`;
+    proc = $`pnpm nx run-many --target=build --all --exclude="@stryke/monorepo,capnp" --configuration=production --parallel=5`;
     proc.stdout.on("data", data => {
       echo`${data}`;
     });
@@ -69,7 +69,7 @@ try {
       );
     }
   } else {
-    proc = $`pnpm nx run-many --target=build --all --exclude="@stryke/monorepo,@stryke/capnp" --configuration=${configuration} --nxBail`;
+    proc = $`pnpm nx run-many --target=build --all --exclude="@stryke/monorepo,capnp" --configuration=${configuration} --nxBail`;
     proc.stdout.on("data", data => {
       echo`${data}`;
     });
