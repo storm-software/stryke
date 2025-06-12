@@ -29,6 +29,7 @@ import {
   findWorkspaceRootSafe,
   handleProcess
 } from "@storm-software/config-tools/utilities";
+import { createDirectory } from "@stryke/fs/helpers";
 import { listFiles } from "@stryke/fs/list-files";
 import { readJsonFile } from "@stryke/fs/read-file";
 import { existsSync } from "@stryke/path/exists";
@@ -36,6 +37,7 @@ import { findFilePath, relativePath } from "@stryke/path/file-path-fns";
 import { joinPaths } from "@stryke/path/join-paths";
 import type { TsConfigJson } from "@stryke/types/tsconfig";
 import { Command, Option } from "commander";
+import { writeFile } from "node:fs/promises";
 import ts from "typescript";
 import { capnpc } from "../src/compile";
 import type { CapnpcCLIOptions } from "../src/types";
@@ -243,6 +245,34 @@ async function compileAction(options: CapnpcCLIOptions) {
       }
     );
     return;
+  }
+
+  writeInfo(`Writing ${result.files.size} generated files to disk...`, {
+    logLevel: "all"
+  });
+
+  for (const [fileName, content] of result.files) {
+    let filePath = fileName;
+    if (!existsSync(findFilePath(filePath))) {
+      const fullPath = `/${filePath}`;
+      if (existsSync(findFilePath(fullPath))) {
+        filePath = fullPath;
+      }
+    }
+
+    if (options.output) {
+      filePath = joinPaths(options.output, fileName);
+    }
+
+    if (!existsSync(findFilePath(filePath))) {
+      await createDirectory(findFilePath(filePath));
+    }
+
+    await writeFile(
+      filePath,
+      // https://github.com/microsoft/TypeScript/issues/54632
+      content.replace(/^\s+/gm, match => " ".repeat(match.length / 2))
+    );
   }
 
   writeSuccess("⚡ Storm Cap'n Proto Compiler completed successfully.", {
