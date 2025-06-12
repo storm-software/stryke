@@ -2,6 +2,13 @@
 
 # Changelog for Stryke - Http
 
+## [0.8.2](https://github.com/storm-software/stryke/releases/tag/http%400.8.2) (2025-06-12)
+
+### Miscellaneous
+
+- **monorepo:** Reformat the repository's README markdown files
+- **monorepo:** Run format script on repository
+
 ## [0.8.1](https://github.com/storm-software/stryke/releases/tag/http%400.8.1) (2025-05-12)
 
 ### Miscellaneous

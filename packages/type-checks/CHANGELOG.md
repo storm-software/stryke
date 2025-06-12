@@ -2,6 +2,13 @@
 
 # Changelog for Stryke - Type Checks
 
+## [0.3.4](https://github.com/storm-software/stryke/releases/tag/type-checks%400.3.4) (2025-06-12)
+
+### Miscellaneous
+
+- **monorepo:** Reformat the repository's README markdown files
+- **monorepo:** Run format script on repository
+
 ## [0.3.3](https://github.com/storm-software/stryke/releases/tag/type-checks%400.3.3) (2025-05-12)
 
 ### Miscellaneous

@@ -2,6 +2,13 @@
 
 # Changelog for Stryke - Types
 
+## [0.8.4](https://github.com/storm-software/stryke/releases/tag/types%400.8.4) (2025-06-12)
+
+### Miscellaneous
+
+- **monorepo:** Reformat the repository's README markdown files
+- **monorepo:** Run format script on repository
+
 ## [0.8.3](https://github.com/storm-software/stryke/releases/tag/types%400.8.3) (2025-05-13)
 
 ### Bug Fixes

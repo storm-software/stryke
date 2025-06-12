@@ -2,6 +2,17 @@
 
 # Changelog for Stryke - Path
 
+## [0.7.6](https://github.com/storm-software/stryke/releases/tag/path%400.7.6) (2025-06-12)
+
+### Miscellaneous
+
+- **monorepo:** Reformat the repository's README markdown files
+- **monorepo:** Run format script on repository
+
+### Updated Dependencies
+
+- Updated types to 0.8.4
+
 ## [0.7.5](https://github.com/storm-software/stryke/releases/tag/path%400.7.5) (2025-06-04)
 
 ### Bug Fixes

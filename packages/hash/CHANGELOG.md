@@ -2,6 +2,13 @@
 
 # Changelog for Stryke - Hash
 
+## [0.9.6](https://github.com/storm-software/stryke/releases/tag/hash%400.9.6) (2025-06-12)
+
+### Miscellaneous
+
+- **monorepo:** Reformat the repository's README markdown files
+- **monorepo:** Run format script on repository
+
 ## [0.9.5](https://github.com/storm-software/stryke/releases/tag/hash%400.9.5) (2025-06-10)
 
 ### Miscellaneous

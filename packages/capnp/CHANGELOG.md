@@ -2,6 +2,36 @@
 
 # Changelog for Stryke - Capnp
 
+## [0.7.0](https://github.com/storm-software/stryke/releases/tag/capnp%400.7.0) (2025-06-12)
+
+### Features
+
+- **capnp:** Resolve build issue causing stack overflow
+- **capnp:** Added the `no-ts` and `no-dts` CLI options
+- **capnp:** Add `capnp-es` vendored code to the distribution
+
+### Bug Fixes
+
+- **capnp:** Resolve issue waiting for stream input during script execution
+- **capnp:** Update compiler code to write files in the binary
+- **capnp:** Updated the build task definitions to resolve build freezing issue
+- **capnp:** Remove cache setting from `project.json` file
+- **capnp:** Remove the clean dependency
+- **capnp:** Resolve issue generating the vendor build files
+- **capnp:** Resolve build issue by adding separate `vendor` build config
+- **capnp:** Resolved issue with missing `tsup` dev-dependency
+
+### Miscellaneous
+
+- **monorepo:** Reformat the repository's README markdown files
+- **monorepo:** Run format script on repository
+- **capnp:** Added back the project caching
+
+### Updated Dependencies
+
+- Updated path to 0.7.6
+- Updated fs to 0.20.7
+
 ## [0.6.3](https://github.com/storm-software/stryke/releases/tag/capnp%400.6.3) (2025-06-10)
 
 ### Bug Fixes

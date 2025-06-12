@@ -1,6 +1,6 @@
 {
   "name": "@stryke/json",
-  "version": "0.9.0",
+  "version": "0.9.1",
   "type": "module",
   "description": "A package containing JSON parsing/stringify utilities used by Storm Software.",
   "repository": {

@@ -2,6 +2,13 @@
 
 # Changelog for Stryke - Convert
 
+## [0.2.2](https://github.com/storm-software/stryke/releases/tag/convert%400.2.2) (2025-06-12)
+
+### Miscellaneous
+
+- **monorepo:** Reformat the repository's README markdown files
+- **monorepo:** Run format script on repository
+
 ## [0.2.1](https://github.com/storm-software/stryke/releases/tag/convert%400.2.1) (2025-06-06)
 
 ### Miscellaneous

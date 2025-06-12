@@ -2,6 +2,13 @@
 
 # Changelog for Stryke - Trpc Next
 
+## [0.5.7](https://github.com/storm-software/stryke/releases/tag/trpc-next%400.5.7) (2025-06-12)
+
+### Miscellaneous
+
+- **monorepo:** Reformat the repository's README markdown files
+- **monorepo:** Run format script on repository
+
 ## [0.5.6](https://github.com/storm-software/stryke/releases/tag/trpc-next%400.5.6) (2025-05-12)
 
 ### Miscellaneous

@@ -2,6 +2,13 @@
 
 # Changelog for Stryke - Helpers
 
+## [0.6.1](https://github.com/storm-software/stryke/releases/tag/helpers%400.6.1) (2025-06-12)
+
+### Miscellaneous
+
+- **monorepo:** Reformat the repository's README markdown files
+- **monorepo:** Run format script on repository
+
 ## [0.6.0](https://github.com/storm-software/stryke/releases/tag/helpers%400.6.0) (2025-05-28)
 
 ### Features
