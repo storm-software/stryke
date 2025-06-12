@@ -1,5 +1,5 @@
 diff --git a/dist/shared/capnp-es.CbTQkT9D.mjs b/dist/shared/capnp-es.CbTQkT9D.mjs
-index 2affa204b705e4ed28a4fda16118b7f95badafa6..35a08eddf5afca18572c57468d381a9635c8ee67 100644
+index 2affa204b705e4ed28a4fda16118b7f95badafa6..5438ee9c201de6f9b52ad284bcfddc7bd21520c8 100644
 --- a/dist/shared/capnp-es.CbTQkT9D.mjs
 +++ b/dist/shared/capnp-es.CbTQkT9D.mjs
 @@ -115,7 +115,14 @@ const Primitives = {
@@ -69,15 +69,18 @@ index 2affa204b705e4ed28a4fda16118b7f95badafa6..35a08eddf5afca18572c57468d381a96
    ctx.codeParts.push(`import * as $ from '${importPath}';`);
  }
  function generateNestedImports(ctx) {
-@@ -1151,7 +1158,7 @@ function generateNestedImports(ctx) {
+@@ -1151,9 +1158,9 @@ function generateNestedImports(ctx) {
      const { name } = imp;
      let importPath;
      if (name.startsWith("/capnp/")) {
 -      importPath = `capnp-es/capnp/${name.slice(7).replace(/\.capnp$/, "")}`;
 +      importPath = `@stryke/capnp/schemas/${name.slice(7).replace(/\.capnp$/, "")}`;
      } else {
-       importPath = name.replace(/\.capnp$/, ".js");
+-      importPath = name.replace(/\.capnp$/, ".js");
++      importPath = name.replace(/\.capnp$/, "");
        if (importPath[0] !== ".") {
+         importPath = `./${importPath}`;
+       }
 @@ -1186,12 +1193,35 @@ async function compileAll(codeGenRequest, opts) {
    const req = new Message(codeGenRequest, false).getRoot(
      CodeGeneratorRequest

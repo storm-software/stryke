@@ -347,7 +347,7 @@ overrides:
 
 patchedDependencies:
   capnp-es@0.0.11:
-    hash: 824b6bae5f47936633f815d4ffa9019910937dad06e41df5249655046cadee7a
+    hash: f53660f66d5bee0d534f52c8353ad821257e1fcf32d2c09b3ce40c642807de44
     path: patches/capnp-es@0.0.11.patch
 
 importers:
@@ -531,7 +531,7 @@ importers:
         version: 22.15.23
       capnp-es:
         specifier: 'catalog:'
-        version: 0.0.11(patch_hash=824b6bae5f47936633f815d4ffa9019910937dad06e41df5249655046cadee7a)(typescript@5.8.3)
+        version: 0.0.11(patch_hash=f53660f66d5bee0d534f52c8353ad821257e1fcf32d2c09b3ce40c642807de44)(typescript@5.8.3)
       chalk:
         specifier: 'catalog:'
         version: 5.4.1
@@ -15167,7 +15167,7 @@ snapshots:
 
   caniuse-lite@1.0.30001722: {}
 
-  capnp-es@0.0.11(patch_hash=824b6bae5f47936633f815d4ffa9019910937dad06e41df5249655046cadee7a)(typescript@5.8.3):
+  capnp-es@0.0.11(patch_hash=f53660f66d5bee0d534f52c8353ad821257e1fcf32d2c09b3ce40c642807de44)(typescript@5.8.3):
     optionalDependencies:
       typescript: 5.8.3
 
