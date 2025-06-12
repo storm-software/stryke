@@ -18,14 +18,14 @@
 
 /* eslint-disable camelcase */
 
+import type ts from "typescript";
 import type {
   CodeGeneratorRequest,
   CodeGeneratorRequest_RequestedFile,
   CodeGeneratorRequest_RequestedFile_Import,
   Field,
   Node
-} from "capnp-es/capnp/schema";
-import type ts from "typescript";
+} from "./capnp/schema";
 
 export interface CodeGeneratorFileContext {
   // inputs

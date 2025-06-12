@@ -16,14 +16,12 @@
 
  ------------------------------------------------------------------- */
 
-import type { BuildOptions } from "esbuild";
-import { fileURLToPath } from "node:url";
 import { defineConfig } from "tsup";
 
 export default defineConfig([
   {
     name: "capnp-lib",
-    entryPoints: ["src/*.ts"],
+    entryPoints: ["src/index.ts", "src/rpc.ts", "src/types.ts"],
     format: ["cjs", "esm"],
     platform: "node",
     outDir: "dist/src",
@@ -35,17 +33,11 @@ export default defineConfig([
     shims: true,
     bundle: true,
     splitting: true,
-    noExternal: ["capnp-es"],
-    esbuildOptions: (options: BuildOptions) => {
-      options.alias = {
-        ...options.alias,
-        "@stryke/capnp": fileURLToPath(new URL("src/index.ts", import.meta.url))
-      };
-    }
+    external: ["capnp-es"]
   },
   {
     name: "capnp-vendor",
-    entryPoints: ["src/vendor/**/*.ts"],
+    entryPoints: ["src/capnp/*.ts"],
     format: ["cjs", "esm"],
     platform: "node",
     outDir: "dist/vendor",
@@ -57,12 +49,6 @@ export default defineConfig([
     shims: true,
     bundle: true,
     splitting: true,
-    noExternal: ["capnp-es"],
-    esbuildOptions: (options: BuildOptions) => {
-      options.alias = {
-        ...options.alias,
-        "@stryke/capnp": fileURLToPath(new URL("src/index.ts", import.meta.url))
-      };
-    }
+    external: ["capnp-es"]
   }
 ]);

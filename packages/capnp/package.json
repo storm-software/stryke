@@ -118,16 +118,16 @@
     },
     "./vendor/capnp/*": {
       "import": {
-        "types": "./vendor/_capnp/*.d.ts",
-        "default": "./vendor/_capnp/*.js"
+        "types": "./src/vendor/*.d.ts",
+        "default": "./src/vendor/*.js"
       },
       "require": {
-        "types": "./vendor/_capnp/*.d.cts",
-        "default": "./vendor/_capnp/*.cjs"
+        "types": "./src/vendor/*.d.cts",
+        "default": "./src/vendor/*.cjs"
       },
       "default": {
-        "types": "./vendor/_capnp/*.d.ts",
-        "default": "./vendor/_capnp/*.js"
+        "types": "./src/vendor/*.d.ts",
+        "default": "./src/vendor/*.js"
       }
     },
     "./types": {
@@ -148,7 +148,9 @@
   },
   "types": "./dist/index.d.ts",
   "files": [
-    "dist/**/*"
+    "bin/**/*",
+    "dist/**/*",
+    "vendor/**/*"
   ],
   "keywords": [
     "capnp",
@@ -169,7 +171,8 @@
   },
   "dependencies": {
     "@stryke/fs": "workspace:*",
-    "@stryke/path": "workspace:*"
+    "@stryke/path": "workspace:*",
+    "hex2dec": "catalog:"
   },
   "devDependencies": {
     "@storm-software/config": "catalog:",

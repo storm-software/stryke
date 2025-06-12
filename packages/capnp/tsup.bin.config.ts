@@ -32,5 +32,5 @@ export default defineConfig({
   shims: true,
   bundle: true,
   splitting: false,
-  noExternal: ["capnp-es"]
+  external: ["capnp-es"]
 });

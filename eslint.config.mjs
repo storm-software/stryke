@@ -9,7 +9,7 @@
 
  Website:                  https://stormsoftware.com
  Repository:               https://github.com/storm-software/stryke
- Documentation:            https://stormsoftware.com/projects/stryke/docs
+ Documentation:            https://docs.stormsoftware.com/projects/stryke
  Contact:                  https://stormsoftware.com/contact
 
  SPDX-License-Identifier:  Apache-2.0
@@ -21,7 +21,8 @@ import { getStormConfig } from "@storm-software/eslint";
 Error.stackTraceLimit = Number.POSITIVE_INFINITY;
 
 const config = getStormConfig({
-  name: "stryke"
+  name: "stryke",
+  ignores: ["packages/capnp/src/capnp/**"]
 });
 
 export default config;

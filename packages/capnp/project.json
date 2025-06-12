@@ -5,6 +5,14 @@
   "sourceRoot": "packages/capnp/src",
   "targets": {
     "build-bin": {
+      "cache": true,
+      "inputs": [
+        "{projectRoot}/bin/*",
+        "{projectRoot}/src/compile.ts",
+        "{projectRoot}/tsup.bin.config.ts",
+        "{projectRoot}/tsconfig.bin.ts"
+      ],
+      "outputs": ["{projectRoot}/dist/bin/**/*"],
       "executor": "nx:run-commands",
       "dependsOn": ["clean", "^build"],
       "options": {
@@ -13,13 +21,17 @@
       }
     },
     "build-schema": {
+      "cache": true,
+      "inputs": ["{projectRoot}/src/capnp/*.capnp"],
+      "outputs": ["{projectRoot}/src/capnp/*.ts"],
       "executor": "nx:run-commands",
       "dependsOn": ["build-bin"],
       "options": {
-        "command": "node ./{projectRoot}/dist/bin/capnpc.js --project-root packages/capnp --schema ./{projectRoot}/src/vendor/_capnp --no-dts"
+        "command": "node ./{projectRoot}/dist/bin/capnpc.js --project-root packages/capnp --schema ./{projectRoot}/src/capnp --no-dts"
       }
     },
     "build-base": {
+      "cache": true,
       "executor": "nx:run-commands",
       "dependsOn": ["build-schema", "build-bin"],
       "options": {
@@ -28,6 +40,9 @@
       }
     },
     "build": {
+      "cache": true,
+      "inputs": ["{projectRoot}/dist/**/*"],
+      "outputs": ["{workspaceRoot}/dist/packages/capnp/**/*"],
       "executor": "nx:run-commands",
       "dependsOn": ["build-base", "build-schema", "build-bin"],
       "options": {

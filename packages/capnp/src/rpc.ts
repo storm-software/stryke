@@ -16,10 +16,11 @@
 
  ------------------------------------------------------------------- */
 
+// eslint-disable-next-line ts/consistent-type-imports
+import { MessageChannel, MessagePort } from "node:worker_threads";
+
 import { Conn, Deferred, DeferredTransport, Message } from "capnp-es";
-import type { Message as RPCMessage } from "capnp-es/capnp/rpc";
-import type { MessagePort } from "node:worker_threads";
-import { MessageChannel } from "node:worker_threads";
+import type { Message as RPCMessage } from "./capnp/rpc";
 
 /**
  * A class that manages Cap'n Proto RPC connections.
@@ -84,7 +85,7 @@ export class CapnpRPC {
 
     i = this.connectQueue.length;
     while (--i >= 0) {
-      this.connectQueue[i]?.close();
+      this.connectQueue[i]!.close();
     }
 
     for (const id in this.connections) {
@@ -115,7 +116,9 @@ export class MessageChannelTransport extends DeferredTransport {
 
   sendMessage(msg: RPCMessage): void {
     const m = new Message();
+
     m.setRoot(msg);
+
     const buf = m.toArrayBuffer();
     this.port.postMessage(buf, [buf]);
   }

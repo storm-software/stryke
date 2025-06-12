@@ -507,6 +507,9 @@ importers:
       '@stryke/path':
         specifier: workspace:*
         version: link:../path
+      hex2dec:
+        specifier: ^1.1.2
+        version: 1.1.2
       typescript:
         specifier: '>=4.0.0'
         version: 5.8.3
@@ -6470,6 +6473,9 @@ packages:
 
   hermes-parser@0.25.1:
     resolution: {integrity: sha512-6pEjquH3rqaI6cYAXYPcz9MS4rY6R4ngRgrgfDshRptUZIc3lw0MCIJIGDj9++mfySOuPTHB4nrSW99BCvOPIA==}
+
+  hex2dec@1.1.2:
+    resolution: {integrity: sha512-Yu+q/XWr2fFQ11tHxPq4p4EiNkb2y+lAacJNhAdRXVfRIcDH6gi7htWFnnlIzvqHMHoWeIsfXlNAjZInpAOJDA==}
 
   hookable@5.5.3:
     resolution: {integrity: sha512-Yc+BQe8SvoXH1643Qez1zqLRmbA5rCL+sSmk6TVos0LWVfNIB7PGncdlId77WzLGSIB5KaWgTaNTs2lNVEI6VQ==}
@@ -17292,6 +17298,8 @@ snapshots:
   hermes-parser@0.25.1:
     dependencies:
       hermes-estree: 0.25.1
+
+  hex2dec@1.1.2: {}
 
   hookable@5.5.3: {}
 
