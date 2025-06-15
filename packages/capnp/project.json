@@ -43,7 +43,11 @@
       "executor": "nx:run-commands",
       "dependsOn": ["build-base"],
       "options": {
-        "command": "dts-bundle-generator --project ./tsconfig.json --external-inlines capnp-es --inline-declare-global --no-banner -o dist/dts/index.d.ts src/index.ts",
+        "commands": [
+          "dts-bundle-generator --project ./tsconfig.esm.json --external-inlines capnp-es --inline-declare-global --no-banner -o dist/dts/index.d.ts src/index.ts",
+          "dts-bundle-generator --project ./tsconfig.cjs.json --external-inlines capnp-es --inline-declare-global --no-banner -o dist/dts/index.d.cts src/index.ts"
+        ],
+        "parallel": true,
         "cwd": "{projectRoot}"
       }
     },

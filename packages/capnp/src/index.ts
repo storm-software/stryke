@@ -25,8 +25,8 @@
  * @packageDocumentation
  */
 
-export * from "./rpc";
-export * from "./types";
+export * from "./rpc.js";
+export * from "./types.js";
 
 // Export all types and functions from capnp-es
 export * from "capnp-es";
