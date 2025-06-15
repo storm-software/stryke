@@ -146,10 +146,12 @@
     },
     "./package.json": "./package.json"
   },
-  "types": "./dist/index.d.ts",
+  "types": "./dts/index.d.ts",
   "files": [
     "bin/**/*",
     "dist/**/*",
+    "dts/**/*",
+    "schemas/**/*",
     "vendor/**/*"
   ],
   "keywords": [
@@ -170,7 +172,7 @@
     }
   },
   "dependencies": {
-    "@stryke/fs": "0.21.3",
+    "@stryke/fs": "workspace:*",
     "@stryke/path": "workspace:*",
     "hex2dec": "catalog:"
   },
@@ -181,6 +183,7 @@
     "capnp-es": "catalog:",
     "chalk": "catalog:",
     "commander": "catalog:",
+    "dts-bundle-generator": "catalog:",
     "tsup": "catalog:",
     "tsx": "catalog:"
   },

@@ -38,7 +38,10 @@ export class CapnpRPC {
    * This class is used to manage connections and accept incoming connections using the {@link MessageChannel} API.
    */
   public connect(id = 0): Conn {
-    if (this.connections[id] !== undefined) return this.connections[id];
+    if (this.connections[id] !== undefined) {
+      return this.connections[id];
+    }
+
     const ch = new MessageChannel();
     const conn = new Conn(new MessageChannelTransport(ch.port1));
     const accept = this.acceptQueue.pop();
@@ -64,6 +67,7 @@ export class CapnpRPC {
     if (port2 !== undefined) {
       return Promise.resolve(new Conn(new MessageChannelTransport(port2)));
     }
+
     const deferred = new Deferred<Conn>();
     this.acceptQueue.push(deferred);
     return deferred.promise;

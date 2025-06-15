@@ -39,18 +39,27 @@
         "cwd": "{projectRoot}"
       }
     },
+    "build-dts": {
+      "executor": "nx:run-commands",
+      "dependsOn": ["build-base"],
+      "options": {
+        "command": "dts-bundle-generator --project ./tsconfig.json --external-inlines capnp-es --inline-declare-global --no-banner -o dist/dts/index.d.ts src/index.ts",
+        "cwd": "{projectRoot}"
+      }
+    },
     "build": {
       "cache": true,
       "inputs": ["{projectRoot}/dist/**/*"],
       "outputs": ["{workspaceRoot}/dist/packages/capnp/**/*"],
       "executor": "nx:run-commands",
-      "dependsOn": ["build-base", "build-schema", "build-bin"],
+      "dependsOn": ["build-dts", "build-base", "build-schema", "build-bin"],
       "options": {
         "commands": [
           "pnpm copyfiles LICENSE dist/packages/capnp",
           "pnpm copyfiles --up=2 ./packages/capnp/*.md ./packages/capnp/package.json dist/packages/capnp",
           "pnpm copyfiles --up=4 \"./packages/capnp/dist/src/**/*\" dist/packages/capnp/dist",
           "pnpm copyfiles --up=4 \"./packages/capnp/dist/bin/**/*\" dist/packages/capnp/bin",
+          "pnpm copyfiles --up=4 \"./packages/capnp/dist/dts/**/*\" dist/packages/capnp/dts",
           "pnpm copyfiles --up=4 \"./packages/capnp/dist/schemas/**/*\" dist/packages/capnp/schemas"
         ],
         "parallel": true

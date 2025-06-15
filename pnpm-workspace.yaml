@@ -61,6 +61,7 @@ catalog:
   chalk: ^5.4.1
   commander: ^14.0.0
   consola: ^3.4.2
+  dts-bundle-generator: ^9.5.1
   eslint: ^9.20.0
   eslint-flat-config-utils: ^2.0.1
   execa: ^9.5.2

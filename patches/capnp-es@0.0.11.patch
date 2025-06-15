@@ -147,3 +147,67 @@ index 2affa204b705e4ed28a4fda16118b7f95badafa6..626fc608c243db802a100a56edfcc95b
      emitDeclarationOnly: dts && !js,
      declaration: dts
    };
+diff --git a/dist/shared/capnp-es.Dd0AvjKJ.d.mts b/dist/shared/capnp-es.Dd0AvjKJ.d.mts
+index a7dc1ff38c0567b3b76acacb04c89a91d8804a58..e25b3af2edccbd5c0640cd82e6e3b196dc2a2842 100644
+--- a/dist/shared/capnp-es.Dd0AvjKJ.d.mts
++++ b/dist/shared/capnp-es.Dd0AvjKJ.d.mts
+@@ -2650,6 +2650,23 @@ declare class Segment implements DataView {
+      * @param buffer The new buffer to use.
+      */
+     replaceBuffer(buffer: ArrayBuffer): void;
++
++    /**
++     * Read a float16 value from the specified offset.
++     *
++     * @param byteOffset The offset from the beginning of the buffer.
++     * @param littleEndian If true, read the value as little-endian, otherwise read it as big-endian.
++     * @returns The value read from the buffer.
++     */
++    getFloat16(byteOffset: number, littleEndian?: boolean | undefined): number;
++    /**
++     * Write an float16 value to the specified offset.
++     *
++     * @param byteOffset The offset from the beginning of the buffer.
++     * @param val The value to store.
++     */
++    setFloat16(byteOffset: number, val: number): void;
++
+     setBigInt64(byteOffset: number, value: bigint, littleEndian?: boolean): void;
+     /** WARNING: This function is not yet implemented.  */
+     setBigUint64(byteOffset: number, value: bigint, littleEndian?: boolean): void;
+@@ -2667,6 +2684,7 @@ declare class Segment implements DataView {
+      * @param val The value to store.
+      */
+     setFloat64(byteOffset: number, val: number): void;
++
+     /**
+      * Write an int16 value to the specified offset.
+      *
+diff --git a/dist/shared/capnp-es.Dd0AvjKJ.d.ts b/dist/shared/capnp-es.Dd0AvjKJ.d.ts
+index a7dc1ff38c0567b3b76acacb04c89a91d8804a58..774b4401522fc253720bd62c68c277371f40c99b 100644
+--- a/dist/shared/capnp-es.Dd0AvjKJ.d.ts
++++ b/dist/shared/capnp-es.Dd0AvjKJ.d.ts
+@@ -2650,6 +2650,23 @@ declare class Segment implements DataView {
+      * @param buffer The new buffer to use.
+      */
+     replaceBuffer(buffer: ArrayBuffer): void;
++
++    /**
++     * Read a float16 value from the specified offset.
++     *
++     * @param byteOffset The offset from the beginning of the buffer.
++     * @param littleEndian If true, read the value as little-endian, otherwise read it as big-endian.
++     * @returns The value read from the buffer.
++     */
++    getFloat16(byteOffset: number, littleEndian?: boolean | undefined): number;
++    /**
++     * Write an float16 value to the specified offset.
++     *
++     * @param byteOffset The offset from the beginning of the buffer.
++     * @param val The value to store.
++     */
++    setFloat16(byteOffset: number, val: number): void;
++
+     setBigInt64(byteOffset: number, value: bigint, littleEndian?: boolean): void;
+     /** WARNING: This function is not yet implemented.  */
+     setBigUint64(byteOffset: number, value: bigint, littleEndian?: boolean): void;
