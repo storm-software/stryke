@@ -2,6 +2,12 @@
 
 # Changelog for Stryke - Capnp
 
+## [0.9.2](https://github.com/storm-software/stryke/releases/tag/capnp%400.9.2) (2025-06-15)
+
+### Bug Fixes
+
+- **capnp:** Resolve `utils` namespace typing issues from patched dependency
+
 ## [0.9.1](https://github.com/storm-software/stryke/releases/tag/capnp%400.9.1) (2025-06-15)
 
 ### Miscellaneous
