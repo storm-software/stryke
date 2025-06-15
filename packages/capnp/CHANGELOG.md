@@ -2,6 +2,12 @@
 
 # Changelog for Stryke - Capnp
 
+## [0.9.1](https://github.com/storm-software/stryke/releases/tag/capnp%400.9.1) (2025-06-15)
+
+### Miscellaneous
+
+- **capnp:** Added separate cjs and esm type declaration bundles
+
 ## [0.9.0](https://github.com/storm-software/stryke/releases/tag/capnp%400.9.0) (2025-06-15)
 
 ### Features
