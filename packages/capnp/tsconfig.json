@@ -2,7 +2,7 @@
   "extends": "../../tsconfig.base.json",
   "compilerOptions": {
     "rootDir": "../..",
-    "types": ["node"],
+    "types": ["node", "capnp-es"],
     "strict": false,
     "noFallthroughCasesInSwitch": true,
     "noImplicitOverride": false,
