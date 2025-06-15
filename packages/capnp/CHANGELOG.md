@@ -2,6 +2,12 @@
 
 # Changelog for Stryke - Capnp
 
+## [0.9.0](https://github.com/storm-software/stryke/releases/tag/capnp%400.9.0) (2025-06-15)
+
+### Features
+
+- **capnp:** Added a dts bundle to package output
+
 ## [0.8.3](https://github.com/storm-software/stryke/releases/tag/capnp%400.8.3) (2025-06-12)
 
 ### Miscellaneous

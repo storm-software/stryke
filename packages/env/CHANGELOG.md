@@ -2,6 +2,12 @@
 
 # Changelog for Stryke - Env
 
+## [0.15.0](https://github.com/storm-software/stryke/releases/tag/env%400.15.0) (2025-06-15)
+
+### Features
+
+- **capnp:** Added a dts bundle to package output
+
 ## [0.14.4](https://github.com/storm-software/stryke/releases/tag/env%400.14.4) (2025-06-12)
 
 ### Miscellaneous

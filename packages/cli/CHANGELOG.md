@@ -2,6 +2,12 @@
 
 # Changelog for Stryke - Cli
 
+## [0.12.0](https://github.com/storm-software/stryke/releases/tag/cli%400.12.0) (2025-06-15)
+
+### Features
+
+- **capnp:** Added a dts bundle to package output
+
 ## [0.11.1](https://github.com/storm-software/stryke/releases/tag/cli%400.11.1) (2025-06-12)
 
 ### Miscellaneous
