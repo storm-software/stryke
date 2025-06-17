@@ -37,6 +37,7 @@ export * from "./json";
 export * from "./list-files";
 export * from "./package-fns";
 export * from "./read-file";
+export * from "./registry";
 export * from "./remove-file";
 export * from "./semver-fns";
 export * from "./toml";
