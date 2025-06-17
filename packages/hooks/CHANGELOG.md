@@ -2,6 +2,12 @@
 
 # Changelog for Stryke - Hooks
 
+## [0.4.8](https://github.com/storm-software/stryke/releases/tag/hooks%400.4.8) (2025-06-17)
+
+### Miscellaneous
+
+- **monorepo:** Reformat repository packages
+
 ## [0.4.7](https://github.com/storm-software/stryke/releases/tag/hooks%400.4.7) (2025-06-12)
 
 ### Miscellaneous

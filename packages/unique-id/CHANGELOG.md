@@ -2,6 +2,13 @@
 
 # Changelog for Stryke - Unique Id
 
+## [0.3.2](https://github.com/storm-software/stryke/releases/tag/unique-id%400.3.2) (2025-06-17)
+
+### Miscellaneous
+
+- **unique-id:** Format file banners
+- **monorepo:** Reformat repository packages
+
 ## [0.3.1](https://github.com/storm-software/stryke/releases/tag/unique-id%400.3.1) (2025-06-12)
 
 ### Miscellaneous

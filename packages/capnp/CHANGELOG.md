@@ -2,6 +2,18 @@
 
 # Changelog for Stryke - Capnp
 
+## [0.9.3](https://github.com/storm-software/stryke/releases/tag/capnp%400.9.3) (2025-06-17)
+
+### Miscellaneous
+
+- **monorepo:** Lint repository child packages
+- **monorepo:** Reformat repository packages
+
+### Updated Dependencies
+
+- Updated path to 0.8.1
+- Updated fs to 0.22.0
+
 ## [0.9.2](https://github.com/storm-software/stryke/releases/tag/capnp%400.9.2) (2025-06-15)
 
 ### Bug Fixes

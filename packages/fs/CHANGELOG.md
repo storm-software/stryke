@@ -2,6 +2,21 @@
 
 # Changelog for Stryke - Fs
 
+## [0.22.0](https://github.com/storm-software/stryke/releases/tag/fs%400.22.0) (2025-06-17)
+
+### Features
+
+- **fs:** Added the `getRegistry` function and registry helper utilities
+
+### Miscellaneous
+
+- **monorepo:** Reformat repository packages
+
+### Updated Dependencies
+
+- Updated convert to 0.2.3
+- Updated path to 0.8.1
+
 ## [0.21.3](https://github.com/storm-software/stryke/releases/tag/fs%400.21.3) (2025-06-12)
 
 ### Bug Fixes

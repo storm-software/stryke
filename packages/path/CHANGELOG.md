@@ -2,6 +2,16 @@
 
 # Changelog for Stryke - Path
 
+## [0.8.1](https://github.com/storm-software/stryke/releases/tag/path%400.8.1) (2025-06-17)
+
+### Miscellaneous
+
+- **monorepo:** Reformat repository packages
+
+### Updated Dependencies
+
+- Updated types to 0.8.5
+
 ## [0.8.0](https://github.com/storm-software/stryke/releases/tag/path%400.8.0) (2025-06-12)
 
 ### Features

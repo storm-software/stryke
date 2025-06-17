@@ -2,6 +2,12 @@
 
 # Changelog for Stryke - Types
 
+## [0.8.5](https://github.com/storm-software/stryke/releases/tag/types%400.8.5) (2025-06-17)
+
+### Miscellaneous
+
+- **monorepo:** Reformat repository packages
+
 ## [0.8.4](https://github.com/storm-software/stryke/releases/tag/types%400.8.4) (2025-06-12)
 
 ### Miscellaneous

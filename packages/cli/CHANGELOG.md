@@ -2,6 +2,12 @@
 
 # Changelog for Stryke - Cli
 
+## [0.12.1](https://github.com/storm-software/stryke/releases/tag/cli%400.12.1) (2025-06-17)
+
+### Miscellaneous
+
+- **monorepo:** Reformat repository packages
+
 ## [0.12.0](https://github.com/storm-software/stryke/releases/tag/cli%400.12.0) (2025-06-15)
 
 ### Features
