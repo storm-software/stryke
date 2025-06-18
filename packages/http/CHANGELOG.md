@@ -1,5 +1,16 @@
 ![Storm Software](https://public.storm-cdn.com/brand-banner.png)
 
+# Changelog for Stryke - HTTP
+
+## [0.8.4](https://github.com/storm-software/stryke/releases/tag/http%400.8.4) (2025-06-18)
+
+### Miscellaneous
+
+- **http:** Update the file banners
+  ([cee6f2a](https://github.com/storm-software/stryke/commit/cee6f2a))
+
+![Storm Software](https://public.storm-cdn.com/brand-banner.png)
+
 # Changelog for Stryke - Http
 
 ## [0.8.3](https://github.com/storm-software/stryke/releases/tag/http%400.8.3) (2025-06-17)

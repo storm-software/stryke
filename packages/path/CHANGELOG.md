@@ -2,6 +2,13 @@
 
 # Changelog for Stryke - Path
 
+## [0.8.2](https://github.com/storm-software/stryke/releases/tag/path%400.8.2) (2025-06-18)
+
+### Miscellaneous
+
+- **monorepo:** Update workspace `storm-ops` dependencies
+  ([b777ba4](https://github.com/storm-software/stryke/commit/b777ba4))
+
 ## [0.8.1](https://github.com/storm-software/stryke/releases/tag/path%400.8.1) (2025-06-17)
 
 ### Miscellaneous
