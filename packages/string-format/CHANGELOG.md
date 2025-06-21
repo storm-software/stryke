@@ -2,6 +2,13 @@
 
 # Changelog for Stryke - String Format
 
+## [0.5.0](https://github.com/storm-software/stryke/releases/tag/string-format%400.5.0) (2025-06-18)
+
+### Features
+
+- **string-format:** Added format mappings to `titleCase` utility functions
+  ([b15d20c](https://github.com/storm-software/stryke/commit/b15d20c))
+
 ## [0.4.11](https://github.com/storm-software/stryke/releases/tag/string-format%400.4.11) (2025-06-17)
 
 ### Miscellaneous
