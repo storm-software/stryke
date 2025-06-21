@@ -1,9 +1,9 @@
 {
   "extends": "../../tsconfig.base.json",
   "compilerOptions": {
-    "types": ["node"],
+    "types": ["node", "./env"],
     "outDir": "../../dist/out-tsc"
   },
-  "include": ["src/**/*.ts", "./env.d.ts"],
+  "include": ["src/**/*.ts", "env.d.ts"],
   "exclude": ["jest.config.ts", "src/**/*.spec.ts", "src/**/*.test.ts"]
 }

@@ -18,6 +18,8 @@
 
 type EnvObject = Record<string, string | undefined>;
 
+
+/* eslint-disable no-var */
 declare global {
   let EdgeRuntime: undefined | unknown;
   let Netlify: undefined | unknown;
@@ -39,3 +41,5 @@ declare global {
     env: EnvObject;
   }
 }
+
+export {};
