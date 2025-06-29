@@ -2,6 +2,13 @@
 
 # Changelog for Stryke - Path
 
+## [0.9.0](https://github.com/storm-software/stryke/releases/tag/path%400.9.0) (2025-06-29)
+
+### Features
+
+- **path:** Added `isWorkspaceRoot` and `isProjectRoot` helper functions
+  ([23b603e](https://github.com/storm-software/stryke/commit/23b603e))
+
 ## [0.8.2](https://github.com/storm-software/stryke/releases/tag/path%400.8.2) (2025-06-18)
 
 ### Miscellaneous

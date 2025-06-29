@@ -2,6 +2,13 @@
 
 # Changelog for Stryke - String Format
 
+## [0.5.1](https://github.com/storm-software/stryke/releases/tag/string-format%400.5.1) (2025-06-29)
+
+### Bug Fixes
+
+- **string-format:** Resolve issue finding words in `kebabCase` helper function
+  ([175b899](https://github.com/storm-software/stryke/commit/175b899))
+
 ## [0.5.0](https://github.com/storm-software/stryke/releases/tag/string-format%400.5.0) (2025-06-18)
 
 ### Features
