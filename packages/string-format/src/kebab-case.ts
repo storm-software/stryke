@@ -16,8 +16,7 @@
 
  ------------------------------------------------------------------- */
 
-import { EMPTY_STRING } from "@stryke/types";
-import { upperCaseFirst } from "./upper-case-first";
+import { getWords } from "./get-words";
 
 /**
  * Convert the input string to kebab case.
@@ -29,18 +28,10 @@ import { upperCaseFirst } from "./upper-case-first";
  * @returns The kebab-cased string.
  */
 export function kebabCase<T extends string | undefined>(input: T): T {
-  const parts =
-    input
-      ?.replace(
-        /[A-Z]+/g,
-        (input?: string) => upperCaseFirst(input) ?? EMPTY_STRING
-      )
-      ?.split(/(?=[A-Z])|[\s._-]/)
-      .map(x => x.toLowerCase()) ?? [];
-  if (parts.length === 0) return "" as T;
-  if (parts.length === 1) return parts[0] as T;
+  const parts = input ? getWords(input) : [];
+  if (parts.length === 0) {
+    return "" as T;
+  }
 
-  return parts.reduce((ret: string, part: string) => {
-    return `${ret}-${part.toLowerCase()}`.toLowerCase();
-  }) as T;
+  return parts.join("-").toLowerCase() as T;
 }
