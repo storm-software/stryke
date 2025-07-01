@@ -1,5 +1,16 @@
 ![Storm Software](https://public.storm-cdn.com/brand-banner.png)
 
+# Changelog for Stryke - Unique ID
+
+## [0.3.3](https://github.com/storm-software/stryke/releases/tag/unique-id%400.3.3) (2025-07-01)
+
+### Miscellaneous
+
+- **unique-id:** Format package source files and resolve lint rule violations
+  ([7deb66c](https://github.com/storm-software/stryke/commit/7deb66c))
+
+![Storm Software](https://public.storm-cdn.com/brand-banner.png)
+
 # Changelog for Stryke - Unique Id
 
 ## [0.3.2](https://github.com/storm-software/stryke/releases/tag/unique-id%400.3.2) (2025-06-17)

@@ -2,6 +2,14 @@
 
 # Changelog for Stryke - Path
 
+## [0.10.0](https://github.com/storm-software/stryke/releases/tag/path%400.10.0) (2025-07-01)
+
+### Features
+
+- **path:** Added the `hasFileExtension`, `hasFolderName` and
+  `findFileExtensionSafe` utility functions
+  ([277f95f](https://github.com/storm-software/stryke/commit/277f95f))
+
 ## [0.9.0](https://github.com/storm-software/stryke/releases/tag/path%400.9.0) (2025-06-29)
 
 ### Features
