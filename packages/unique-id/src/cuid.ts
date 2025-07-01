@@ -5,7 +5,7 @@
  This code was released as part of the Stryke project. Stryke
  is maintained by Storm Software under the Apache-2.0 license, and is
  free for commercial and private use. For more information, please visit
- our licensing page at https://stormsoftware.com/projects/stryke/license.
+ our licensing page at https://stormsoftware.com/license.
 
  Website:                  https://stormsoftware.com
  Repository:               https://github.com/storm-software/stryke
@@ -44,6 +44,7 @@ const counter = Math.floor(Math.random() * INITIAL_COUNT_MAX) + sequence;
 /**
  * Generate a random letter
  *
+ * @param length - The length of the random string to generate
  * @param random - The random number generator
  * @returns A random letter
  */
@@ -58,6 +59,10 @@ function createEntropy(length = 4, random = Math.random) {
   return entropy;
 }
 
+export interface FingerprintOptions {
+  globalObj?: any;
+}
+
 /**
  * This is a fingerprint of the host environment. It is used to help prevent collisions when generating ids in a distributed system.
  *
@@ -67,7 +72,7 @@ function createEntropy(length = 4, random = Math.random) {
  * @param options - Options
  * @returns The environment's Fingerprint
  */
-function fingerprint(options?: { globalObj?: any }) {
+function fingerprint(options?: FingerprintOptions): string {
   const globalObj =
     (options?.globalObj ?? typeof globalThis === "undefined")
       ? typeof globalThis === "undefined"

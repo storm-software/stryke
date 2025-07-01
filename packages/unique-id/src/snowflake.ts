@@ -5,7 +5,7 @@
  This code was released as part of the Stryke project. Stryke
  is maintained by Storm Software under the Apache-2.0 license, and is
  free for commercial and private use. For more information, please visit
- our licensing page at https://stormsoftware.com/projects/stryke/license.
+ our licensing page at https://stormsoftware.com/license.
 
  Website:                  https://stormsoftware.com
  Repository:               https://github.com/storm-software/stryke
@@ -19,7 +19,7 @@
 /**
  * Options passed to the `generate` function to create a snowflake identifier.
  */
-export interface ISnowflakeGeneratorOptions {
+export interface SnowflakeGeneratorOptions {
   /**
    * The id of the shard running this generator.
    *
@@ -111,8 +111,9 @@ function ToBinaryString(snowflake: SnowflakeResolvable): string {
 
 /**
  * Extract bits and their values from a snowflake.
+ *
  * @param snowflake - Snowflake to extract from
- * @param shift - Number of bits to shift before extracting
+ * @param start - The starting index to extract bits from
  * @param length - Number of bits to extract before stopping
  * @returns A bigint value of the extracted bits
  */
@@ -152,11 +153,9 @@ function extractBits(
  * @param options - The options to use when generating the snowflake
  * @returns A snowflake
  */
-export function snowflake({
-  shardId,
-  epoch,
-  timestamp
-}: ISnowflakeGeneratorOptions): string {
+export function snowflake(options: SnowflakeGeneratorOptions = {}): string {
+  const { shardId, epoch, timestamp } = options ?? {};
+
   let result =
     (BigInt(
       timestamp
