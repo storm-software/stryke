@@ -5,7 +5,7 @@
  This code was released as part of the Stryke project. Stryke
  is maintained by Storm Software under the Apache-2.0 license, and is
  free for commercial and private use. For more information, please visit
- our licensing page at https://stormsoftware.com/projects/stryke/license.
+ our licensing page at https://stormsoftware.com/license.
 
  Website:                  https://stormsoftware.com
  Repository:               https://github.com/storm-software/stryke
@@ -137,16 +137,26 @@ export function findFolderName(filePath: string): string {
  * Find the file extension from a file path.
  *
  * @param filePath - The file path to process
- * @returns The file extension
+ * @returns The file extension or undefined if no extension is found
  */
-export function findFileExtension(filePath: string): string {
-  if (filePath === "..") {
-    return "";
+export function findFileExtension(filePath: string): string | undefined {
+  if (filePath.endsWith(".") || filePath.endsWith("/")) {
+    return undefined;
   }
 
   const match = /.(\.[^./]+|\.)$/.exec(normalizeWindowsPath(filePath));
 
-  return (match && match[1]) || EMPTY_STRING;
+  return (match && match[1]) || undefined;
+}
+
+/**
+ * Find the file extension from a file path or an empty string.
+ *
+ * @param filePath - The file path to process
+ * @returns The file extension or an empty string if no extension is found
+ */
+export function findFileExtensionSafe(filePath: string): string {
+  return findFileExtension(filePath) ?? EMPTY_STRING;
 }
 
 /**
@@ -167,6 +177,26 @@ export function hasFileName(filePath: string): boolean {
  */
 export function hasFilePath(filePath: string): boolean {
   return Boolean(findFilePath(filePath));
+}
+
+/**
+ * Check if a file path has a folder name.
+ *
+ * @param filePath - The file path to process
+ * @returns An indicator specifying if the file path has a folder name
+ */
+export function hasFolderName(filePath: string): boolean {
+  return Boolean(findFolderName(filePath));
+}
+
+/**
+ * Check if a file path has a file extension.
+ *
+ * @param filePath - The file path to process
+ * @returns An indicator specifying if the file path has a file extension
+ */
+export function hasFileExtension(filePath: string): boolean {
+  return Boolean(findFileExtension(filePath));
 }
 
 /**
@@ -272,7 +302,7 @@ export function parsePath(path: string) {
 
   const base = findFolderName(normalizedPath);
   const dir = segments.join("/") || (isAbsolutePath(path) ? "/" : ".");
-  const ext = findFileExtension(path);
+  const ext = findFileExtensionSafe(path);
 
   return {
     root,
