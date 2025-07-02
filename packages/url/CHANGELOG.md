@@ -1,5 +1,16 @@
 ![Storm Software](https://public.storm-cdn.com/brand-banner.png)
 
+# Changelog for Stryke - URL
+
+## [0.2.3](https://github.com/storm-software/stryke/releases/tag/url%400.2.3) (2025-07-02)
+
+### Miscellaneous
+
+- **url:** Format package source code
+  ([388a8d0](https://github.com/storm-software/stryke/commit/388a8d0))
+
+![Storm Software](https://public.storm-cdn.com/brand-banner.png)
+
 # Changelog for Stryke - Url
 
 ## [0.2.2](https://github.com/storm-software/stryke/releases/tag/url%400.2.2) (2025-06-17)

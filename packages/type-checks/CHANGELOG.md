@@ -2,6 +2,13 @@
 
 # Changelog for Stryke - Type Checks
 
+## [0.3.6](https://github.com/storm-software/stryke/releases/tag/type-checks%400.3.6) (2025-07-02)
+
+### Miscellaneous
+
+- **monorepo:** Format package source files
+  ([ebd79bf](https://github.com/storm-software/stryke/commit/ebd79bf))
+
 ## [0.3.5](https://github.com/storm-software/stryke/releases/tag/type-checks%400.3.5) (2025-06-17)
 
 ### Miscellaneous

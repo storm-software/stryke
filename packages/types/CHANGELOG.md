@@ -2,6 +2,13 @@
 
 # Changelog for Stryke - Types
 
+## [0.8.6](https://github.com/storm-software/stryke/releases/tag/types%400.8.6) (2025-07-02)
+
+### Miscellaneous
+
+- **types:** Resolve lint rule violations
+  ([9789abd](https://github.com/storm-software/stryke/commit/9789abd))
+
 ## [0.8.5](https://github.com/storm-software/stryke/releases/tag/types%400.8.5) (2025-06-17)
 
 ### Miscellaneous
