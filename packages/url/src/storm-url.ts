@@ -5,7 +5,7 @@
  This code was released as part of the Stryke project. Stryke
  is maintained by Storm Software under the Apache-2.0 license, and is
  free for commercial and private use. For more information, please visit
- our licensing page at https://stormsoftware.com/projects/stryke/license.
+ our licensing page at https://stormsoftware.com/license.
 
  Website:                  https://stormsoftware.com
  Repository:               https://github.com/storm-software/stryke
@@ -40,7 +40,7 @@ import {
   stringifyQuery
 } from "ufo";
 import { formatLocalePath } from "./helpers";
-import type { IStormURL, StormURLOptions } from "./types";
+import type { StormURLInterface, StormURLOptions } from "./types";
 
 /**
  * A class used to build URLs
@@ -50,7 +50,7 @@ import type { IStormURL, StormURLOptions } from "./types";
  *
  * The [UFO](https://github.com/unjs/ufo) library is used under the hood to parse and stringify URLs.
  */
-export class StormURL implements IStormURL, URL {
+export class StormURL implements StormURLInterface, URL {
   #options: StormURLOptions;
 
   /**
@@ -302,6 +302,7 @@ export class StormURL implements IStormURL, URL {
     return isNonEmptyURL(this.toString());
   }
 
+  // eslint-disable-next-line ts/naming-convention
   public get __typename() {
     return "StormURL";
   }
