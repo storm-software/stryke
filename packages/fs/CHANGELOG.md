@@ -2,6 +2,18 @@
 
 # Changelog for Stryke - Fs
 
+## [0.22.4](https://github.com/storm-software/stryke/releases/tag/fs%400.22.4) (2025-07-02)
+
+### Bug Fixes
+
+- **env:** Resolved issue with invalid TypeScript definition
+  ([141ea02](https://github.com/storm-software/stryke/commit/141ea02))
+
+### Updated Dependencies
+
+- Updated convert to 0.2.4
+- Updated path to 0.10.1
+
 ## [0.22.3](https://github.com/storm-software/stryke/releases/tag/fs%400.22.3) (2025-07-01)
 
 ### Miscellaneous

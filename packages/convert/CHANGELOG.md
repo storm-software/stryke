@@ -2,6 +2,13 @@
 
 # Changelog for Stryke - Convert
 
+## [0.2.4](https://github.com/storm-software/stryke/releases/tag/convert%400.2.4) (2025-07-02)
+
+### Bug Fixes
+
+- **env:** Resolved issue with invalid TypeScript definition
+  ([141ea02](https://github.com/storm-software/stryke/commit/141ea02))
+
 ## [0.2.3](https://github.com/storm-software/stryke/releases/tag/convert%400.2.3) (2025-06-17)
 
 ### Miscellaneous

@@ -2,6 +2,18 @@
 
 # Changelog for Stryke - Capnp
 
+## [0.9.7](https://github.com/storm-software/stryke/releases/tag/capnp%400.9.7) (2025-07-02)
+
+### Bug Fixes
+
+- **env:** Resolved issue with invalid TypeScript definition
+  ([141ea02](https://github.com/storm-software/stryke/commit/141ea02))
+
+### Updated Dependencies
+
+- Updated path to 0.10.1
+- Updated fs to 0.22.4
+
 ## [0.9.6](https://github.com/storm-software/stryke/releases/tag/capnp%400.9.6) (2025-07-01)
 
 ### Miscellaneous

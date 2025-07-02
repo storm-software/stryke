@@ -2,6 +2,13 @@
 
 # Changelog for Stryke - Path
 
+## [0.10.1](https://github.com/storm-software/stryke/releases/tag/path%400.10.1) (2025-07-02)
+
+### Bug Fixes
+
+- **env:** Resolved issue with invalid TypeScript definition
+  ([141ea02](https://github.com/storm-software/stryke/commit/141ea02))
+
 ## [0.10.0](https://github.com/storm-software/stryke/releases/tag/path%400.10.0) (2025-07-01)
 
 ### Features

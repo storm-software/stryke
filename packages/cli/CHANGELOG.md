@@ -1,5 +1,16 @@
 ![Storm Software](https://public.storm-cdn.com/brand-banner.png)
 
+# Changelog for Stryke - CLI
+
+## [0.12.2](https://github.com/storm-software/stryke/releases/tag/cli%400.12.2) (2025-07-02)
+
+### Miscellaneous
+
+- **cli:** Reformat source code files
+  ([6afbd71](https://github.com/storm-software/stryke/commit/6afbd71))
+
+![Storm Software](https://public.storm-cdn.com/brand-banner.png)
+
 # Changelog for Stryke - Cli
 
 ## [0.12.1](https://github.com/storm-software/stryke/releases/tag/cli%400.12.1) (2025-06-17)
