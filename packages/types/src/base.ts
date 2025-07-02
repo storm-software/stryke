@@ -5,7 +5,7 @@
  This code was released as part of the Stryke project. Stryke
  is maintained by Storm Software under the Apache-2.0 license, and is
  free for commercial and private use. For more information, please visit
- our licensing page at https://stormsoftware.com/projects/stryke/license.
+ our licensing page at https://stormsoftware.com/license.
 
  Website:                  https://stormsoftware.com
  Repository:               https://github.com/storm-software/stryke
@@ -316,29 +316,29 @@ export interface RefObject<T> {
   current: T;
 }
 
-export interface IIdentity<T = string> {
+export interface Identity<T = string> {
   id: T;
 }
 
-export interface IVersioned {
+export interface Versioned {
   version: number;
 }
 
-export interface ISequenced {
+export interface Sequenced {
   /**
    * The sequence number (version, or event counter, etc.) of the record
    */
   sequence: number;
 }
 
-export interface ITyped {
+export interface Typed {
   /**
    * The type of the record
    */
   __typename: string;
 }
 
-export interface ClassTypeCheckable<T> extends ITyped {
+export interface ClassTypeCheckable<T> extends Typed {
   /**
    * Run type check on the given value
    * @param value - The value to check

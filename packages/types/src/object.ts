@@ -5,7 +5,7 @@
  This code was released as part of the Stryke project. Stryke
  is maintained by Storm Software under the Apache-2.0 license, and is
  free for commercial and private use. For more information, please visit
- our licensing page at https://stormsoftware.com/projects/stryke/license.
+ our licensing page at https://stormsoftware.com/license.
 
  Website:                  https://stormsoftware.com
  Repository:               https://github.com/storm-software/stryke
@@ -199,9 +199,9 @@ export type ObjectValue<T, K> = K extends keyof T
         : never
       : never;
 
-export type Paths<T> = Paths_<T>;
+export type Paths<T> = InnerPaths<T>;
 
-type Paths_<T, Depth extends number = 0> = T extends
+type InnerPaths<T, Depth extends number = 0> = T extends
   | NonRecursiveType
   | ReadonlyMap<unknown, unknown>
   | ReadonlySet<unknown>
@@ -219,18 +219,18 @@ type Paths_<T, Depth extends number = 0> = T extends
         : never;
 
 export type InternalPaths<
-  _T,
-  Depth extends number = 0,
-  T = Required<_T>
+  TDef,
+  TDepth extends number = 0,
+  T = Required<TDef>
 > = T extends EmptyObject | readonly []
   ? never
   : {
       [Key in keyof T]: Key extends number | string // Limit `Key` to string or number.
         ? // If `Key` is a number, return `Key | `${Key}``, because both `array[0]` and `array['0']` work.
           | Key
-            | (LessThan<Depth, 15> extends true // Limit the depth to prevent infinite recursion
-                ? IsNever<Paths_<T[Key], Sum<Depth, 1>>> extends false
-                  ? `${Key}.${Paths_<T[Key], Sum<Depth, 1>>}`
+            | (LessThan<TDepth, 15> extends true // Limit the depth to prevent infinite recursion
+                ? IsNever<InnerPaths<T[Key], Sum<TDepth, 1>>> extends false
+                  ? `${Key}.${InnerPaths<T[Key], Sum<TDepth, 1>>}`
                   : never
                 : never)
             | ToString<Key>

@@ -5,7 +5,7 @@
  This code was released as part of the Stryke project. Stryke
  is maintained by Storm Software under the Apache-2.0 license, and is
  free for commercial and private use. For more information, please visit
- our licensing page at https://stormsoftware.com/projects/stryke/license.
+ our licensing page at https://stormsoftware.com/license.
 
  Website:                  https://stormsoftware.com
  Repository:               https://github.com/storm-software/stryke
@@ -59,11 +59,11 @@ export type Resolvable<T> = Awaitable<T> | (() => Awaitable<T>);
  * ```
  */
 export type SetReturnType<
-  Function_ extends (...arguments_: any[]) => any,
+  TFunct extends (...arguments_: any[]) => any,
   TypeToReturn
 > =
   // Just using `Parameters<Fn>` isn't ideal because it doesn't handle the `this` fake parameter.
-  Function_ extends (
+  TFunct extends (
     this: infer ThisArgument,
     ...arguments_: infer Arguments
   ) => any
@@ -73,7 +73,7 @@ export type SetReturnType<
       ? (...arguments_: Arguments) => TypeToReturn
       : (this: ThisArgument, ...arguments_: Arguments) => TypeToReturn
     : // This part should be unreachable, but we make it meaningful just in case…
-      (...arguments_: Parameters<Function_>) => TypeToReturn;
+      (...arguments_: Parameters<TFunct>) => TypeToReturn;
 
 export type AsyncFunction = (...arguments_: any[]) => Promise<unknown>;
 
@@ -126,9 +126,9 @@ export type AsyncReturnType<Target extends AsyncFunction> = Awaited<
  * }
  * ```
  */
-export type Asyncify<Function_ extends FunctionLike> = SetReturnType<
-  Function_,
-  Promise<Awaited<ReturnType<Function_>>>
+export type Asyncify<TFunct extends FunctionLike> = SetReturnType<
+  TFunct,
+  Promise<Awaited<ReturnType<TFunct>>>
 >;
 
 /**
