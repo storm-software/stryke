@@ -1,0 +1,23 @@
+{
+  "name": "open-browser",
+  "$schema": "../../node_modules/nx/schemas/project-schema.json",
+  "projectType": "library",
+  "sourceRoot": "packages/open-browser/src",
+  "targets": {
+    "build": {
+      "executor": "nx:run-commands",
+      "dependsOn": ["build-base"],
+      "options": {
+        "commands": [
+          "pnpm copyfiles LICENSE dist/packages/open-browser",
+          "pnpm copyfiles --up=2 ./packages/open-browser/*.md ./packages/open-browser/openChrome.applescript ./packages/open-browser/package.json dist/packages/open-browser",
+          "pnpm copyfiles --up=5 \"./packages/open-browser/dist/*\" dist/packages/open-browser/dist"
+        ]
+      }
+    },
+    "nx-release-publish": {
+      "executor": "@storm-software/workspace-tools:npm-publish"
+    }
+  },
+  "tags": ["platform:node"]
+}

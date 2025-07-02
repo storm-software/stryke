@@ -16,6 +16,8 @@
       "@stryke/env/*": ["packages/env/src/*"],
       "@stryke/fs": ["packages/fs/src/index.ts"],
       "@stryke/fs/*": ["packages/fs/src/*"],
+      "@stryke/open-browser": ["packages/open-browser/src/index.ts"],
+      "@stryke/open-browser/*": ["packages/open-browser/src/*"],
       "@stryke/hash": ["packages/hash/src/index.ts"],
       "@stryke/hash/*": ["packages/hash/src/*"],
       "@stryke/helpers": ["packages/helpers/src/index.ts"],

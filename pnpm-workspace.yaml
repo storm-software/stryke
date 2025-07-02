@@ -20,6 +20,7 @@ catalog:
   '@trpc/next': next
   '@trpc/server': next
   '@trpc/tanstack-react-query': next
+  '@types/cross-spawn': ^6.0.6
   '@types/figlet': ^1.7.0
   '@types/jest': ^29.5.14
   '@types/node': ^22.14.0
@@ -61,6 +62,7 @@ catalog:
   chalk: ^5.4.1
   commander: ^14.0.0
   consola: ^3.4.2
+  cross-spawn: ^7.0.6
   dts-bundle-generator: ^9.5.1
   eslint: ^9.20.0
   eslint-flat-config-utils: ^2.0.1
@@ -128,6 +130,7 @@ overrides:
   '@stryke/convert': workspace:*
   '@stryke/env': workspace:*
   '@stryke/fs': workspace:*
+  '@stryke/open-browser': workspace:*
   '@stryke/hash': workspace:*
   '@stryke/helpers': workspace:*
   '@stryke/hooks': workspace:*
