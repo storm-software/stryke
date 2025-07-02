@@ -136,6 +136,11 @@ export function findFolderName(filePath: string): string {
 /**
  * Find the file extension from a file path.
  *
+ * @remarks
+ * The file extension is the part of the file name that comes after the last dot (`.`) in the file name. If the file name does not contain a dot, or if it ends with a dot, this function will return `undefined`.
+ *
+ * The returned extension **will not** include the dot, for example `txt` or `js` instead of `.txt` or `.js`.
+ *
  * @param filePath - The file path to process
  * @returns The file extension or undefined if no extension is found
  */
@@ -151,6 +156,11 @@ export function findFileExtension(filePath: string): string | undefined {
 
 /**
  * Find the file extension from a file path or an empty string.
+ *
+ *  @remarks
+ * The file extension is the part of the file name that comes after the last dot (`.`) in the file name. If the file name does not contain a dot, or if it ends with a dot, this function will return `undefined`.
+ *
+ * The returned extension **will not** include the dot, for example `txt` or `js` instead of `.txt` or `.js`.
  *
  * @param filePath - The file path to process
  * @returns The file extension or an empty string if no extension is found
