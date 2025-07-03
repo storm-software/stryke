@@ -16,15 +16,26 @@
 
  ------------------------------------------------------------------- */
 
+import { Buffer } from "node:buffer";
+
 /**
- * Convert a utf8 array to string
+ * Converts a string to a Buffer.
  *
- * @credits https://stackoverflow.com/a/41798356/1465919
- * @credits https://stackoverflow.com/a/36949791/1465919
+ * @param str - The string to convert.
+ * @returns The converted Buffer.
  *
- * @param arr - Utf-8 Array
- * @returns The converted string
+ * @example
+ * ```ts
+ * import { stringToBuffer } from "@stryke/convert";
+ *
+ * const buffer = stringToBuffer("Hello, world!");
+ * console.log(buffer); // <Buffer 48 65 6c 6c 6f 2c 20 77 6f 72 6c 64 21>
+ * ```
+ * @see https://nodejs.org/api/buffer.html#buffer_class_buffer
+ * @see https://developer.mozilla.org/en-US/docs/Web/API/Buffer
+ * @see https://stackoverflow.com/a/41798356/1465919
+ *
  */
-export const utf8ArrayToString = (arr: Uint8Array) => {
-  return new TextDecoder().decode(arr);
-};
+export function stringToBuffer(str: string): Buffer {
+  return Buffer.from(str, "utf8");
+}
