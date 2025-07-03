@@ -2,6 +2,13 @@
 
 # Changelog for Stryke - Convert
 
+## [0.3.0](https://github.com/storm-software/stryke/releases/tag/convert%400.3.0) (2025-07-03)
+
+### Features
+
+- **convert:** Added the `stringToBuffer` helper function
+  ([ab43b8a](https://github.com/storm-software/stryke/commit/ab43b8a))
+
 ## [0.2.4](https://github.com/storm-software/stryke/releases/tag/convert%400.2.4) (2025-07-02)
 
 ### Bug Fixes
