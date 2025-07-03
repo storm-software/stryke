@@ -1,6 +1,6 @@
 {
   "name": "@stryke/open-browser",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "type": "module",
   "description": "A package containing helper function to open URLs in the default browser",
   "repository": {

@@ -2,6 +2,13 @@
 
 # Changelog for Stryke - Path
 
+## [0.10.2](https://github.com/storm-software/stryke/releases/tag/path%400.10.2) (2025-07-03)
+
+### Miscellaneous
+
+- **monorepo:** Update workspace package links
+  ([2689e0a](https://github.com/storm-software/stryke/commit/2689e0a))
+
 ## [0.10.1](https://github.com/storm-software/stryke/releases/tag/path%400.10.1) (2025-07-02)
 
 ### Bug Fixes
