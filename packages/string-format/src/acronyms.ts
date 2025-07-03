@@ -5,7 +5,7 @@
  This code was released as part of the Stryke project. Stryke
  is maintained by Storm Software under the Apache-2.0 license, and is
  free for commercial and private use. For more information, please visit
- our licensing page at https://stormsoftware.com/projects/stryke/license.
+ our licensing page at https://stormsoftware.com/license.
 
  Website:                  https://stormsoftware.com
  Repository:               https://github.com/storm-software/stryke
@@ -62,6 +62,7 @@ export const ACRONYMS = [
   "DNS",
   "DNSSEC",
   "DOM",
+  "DSN",
   "DR",
   "DRM",
   "DWH",
@@ -140,6 +141,8 @@ export const ACRONYMS = [
   "OOP",
   "ORM",
   "OS",
+  "OSS",
+  "OSINT",
   "OTP",
   "P2P",
   "PDP",
