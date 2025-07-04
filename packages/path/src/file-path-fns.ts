@@ -76,6 +76,9 @@ export function findFileName(
 /**
  * Find the full file path's directories from a file path.
  *
+ * @remarks
+ * The functionality of this method is similar to the {@link path.dirname} function in Node's path module.
+ *
  * @example
  * ```ts
  * const folderPath = findFilePath("C:\\Users\\user\\Documents\\file.txt");
@@ -100,9 +103,8 @@ export function findFilePath(filePath: string): string {
  * Find the top most folder containing the file from a file path.
  *
  * @remarks
- * If you're looking for the full path of the folder (for example: `C:\\Users\\user\\Documents` instead of just `Documents`) containing the file, use {@link findFilePath} instead.
- *
  * The functionality of this method is similar to the {@link path.basename} function in Node's path module.
+ * If you're looking for the full path of the folder (for example: `C:\\Users\\user\\Documents` instead of just `Documents`) containing the file, use {@link findFilePath} instead.
  *
  * @example
  * const folderPath = findFolderName("C:\\Users\\user\\Documents\\file.txt");

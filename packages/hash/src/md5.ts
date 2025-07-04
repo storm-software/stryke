@@ -16,17 +16,15 @@
 
  ------------------------------------------------------------------- */
 
-/**
- * The hashing library used by Storm Software for building TypeScript applications.
- *
- * @remarks
- * A package containing utility functions that hash data using various algorithms.
- *
- * @packageDocumentation
- */
+import { createHash } from "node:crypto";
 
-export * from "./hash";
-export * from "./hash-files";
-export * from "./md5";
-export * from "./sha-256";
-export * from "./xx-hash";
+/**
+ * Generate an MD5 hash of the provided content.
+ *
+ * @param content - The content to hash.
+ * @param length - The length of the hash to return.
+ * @returns The generated MD5 hash.
+ */
+export function md5(content: string, length = 32) {
+  return createHash("md5").update(content).digest("hex").slice(0, length);
+}
