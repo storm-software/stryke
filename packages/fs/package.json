@@ -20,7 +20,7 @@
   "dependencies": {
     "@antfu/install-pkg": "catalog:",
     "@ltd/j-toml": "catalog:",
-    "@stryke/convert": "0.3.0",
+    "@stryke/convert": "workspace:*",
     "@stryke/path": "workspace:*",
     "@zkochan/js-yaml": "catalog:",
     "chalk": "catalog:",
