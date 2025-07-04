@@ -2,6 +2,13 @@
 
 # Changelog for Stryke - Helpers
 
+## [0.7.0](https://github.com/storm-software/stryke/releases/tag/helpers%400.7.0) (2025-07-04)
+
+### Features
+
+- **hash:** Added the 'MD5' hash utility function
+  ([1b62648](https://github.com/storm-software/stryke/commit/1b62648))
+
 ## [0.6.2](https://github.com/storm-software/stryke/releases/tag/helpers%400.6.2) (2025-06-17)
 
 ### Miscellaneous

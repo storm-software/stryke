@@ -2,6 +2,13 @@
 
 # Changelog for Stryke - Path
 
+## [0.11.0](https://github.com/storm-software/stryke/releases/tag/path%400.11.0) (2025-07-04)
+
+### Features
+
+- **hash:** Added the 'MD5' hash utility function
+  ([1b62648](https://github.com/storm-software/stryke/commit/1b62648))
+
 ## [0.10.2](https://github.com/storm-software/stryke/releases/tag/path%400.10.2) (2025-07-03)
 
 ### Miscellaneous

@@ -2,6 +2,13 @@
 
 # Changelog for Stryke - Hash
 
+## [0.10.0](https://github.com/storm-software/stryke/releases/tag/hash%400.10.0) (2025-07-04)
+
+### Features
+
+- **hash:** Added the 'MD5' hash utility function
+  ([1b62648](https://github.com/storm-software/stryke/commit/1b62648))
+
 ## [0.9.7](https://github.com/storm-software/stryke/releases/tag/hash%400.9.7) (2025-06-17)
 
 ### Miscellaneous
