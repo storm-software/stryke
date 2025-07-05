@@ -2,6 +2,13 @@
 
 # Changelog for Stryke - Path
 
+## [0.12.0](https://github.com/storm-software/stryke/releases/tag/path%400.12.0) (2025-07-05)
+
+### Features
+
+- **path:** Added the `isParentPath` helper function
+  ([f069ff3](https://github.com/storm-software/stryke/commit/f069ff3))
+
 ## [0.11.0](https://github.com/storm-software/stryke/releases/tag/path%400.11.0) (2025-07-04)
 
 ### Features
