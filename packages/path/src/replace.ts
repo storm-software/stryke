@@ -16,6 +16,7 @@
 
  ------------------------------------------------------------------- */
 
+import { isParentPath } from "./is-parent-path";
 import { slash } from "./slash";
 
 /**
@@ -27,13 +28,15 @@ import { slash } from "./slash";
  * // returns "src/index.ts"
  * ```
  *
- * @param path - The path string to replace a substring from
- * @param base - The base path to remove from the beginning of the {@link path}
- * @returns The {@link path} with the {@link base} path removed
+ * @param childPath - The child path to replace the {@link parentPath} substring from
+ * @param parentPath - The parent path to remove from the {@link childPath} parameter
+ * @returns The {@link childPath} with the {@link parentPath} path removed
  */
 export function replacePath(
-  path: string,
-  base: string = process.cwd()
+  childPath: string,
+  parentPath: string = process.cwd()
 ): string {
-  return slash(path).replace(slash(base), "").replace(/^\//, "");
+  return isParentPath(childPath, parentPath)
+    ? slash(childPath).replace(slash(parentPath), "").replace(/^\//, "")
+    : childPath;
 }
