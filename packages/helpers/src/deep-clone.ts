@@ -3,15 +3,16 @@
                        ⚡ Storm Software - Stryke
 
  This code was released as part of the Stryke project. Stryke
- is maintained by Storm Software under the Apache-2.0 License, and is
+ is maintained by Storm Software under the Apache-2.0 license, and is
  free for commercial and private use. For more information, please visit
- our licensing page.
+ our licensing page at https://stormsoftware.com/licenses/projects/stryke.
 
- Website:         https://stormsoftware.com
- Repository:      https://github.com/storm-software/stryke
- Documentation:   https://stormsoftware.com/projects/stryke/docs
- Contact:         https://stormsoftware.com/contact
- License:         https://stormsoftware.com/projects/stryke/license
+ Website:                  https://stormsoftware.com
+ Repository:               https://github.com/storm-software/stryke
+ Documentation:            https://docs.stormsoftware.com/projects/stryke
+ Contact:                  https://stormsoftware.com/contact
+
+ SPDX-License-Identifier:  Apache-2.0
 
  ------------------------------------------------------------------- */
 
@@ -97,15 +98,15 @@ type ValueOf<Instance> =
         ? string
         : Instance;
 
-type IsValueOf<Instance, O extends IValueOf<any>> = Instance extends O
-  ? O extends IValueOf<infer Primitive>
+type IsValueOf<Instance, O extends ValueOfInterface<any>> = Instance extends O
+  ? O extends ValueOfInterface<infer Primitive>
     ? Instance extends Primitive
       ? false
       : true // not Primitive, but Object
     : false // cannot be
   : false;
 
-interface IValueOf<T> {
+interface ValueOfInterface<T> {
   valueOf: () => T;
 }
 
@@ -192,6 +193,7 @@ export function deepClone<T>(obj: T): Resolved<T> {
   if (isTypedArray(obj)) {
     // eslint-disable-next-line ts/no-unsafe-call
     const result = new (Object.getPrototypeOf(obj).constructor)(obj.length);
+    // eslint-disable-next-line ts/naming-convention
     for (const [i, element_] of obj.entries()) {
       result[i] = deepClone(element_);
     }

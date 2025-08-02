@@ -5,7 +5,7 @@
  This code was released as part of the Stryke project. Stryke
  is maintained by Storm Software under the Apache-2.0 license, and is
  free for commercial and private use. For more information, please visit
- our licensing page at https://stormsoftware.com/license.
+ our licensing page at https://stormsoftware.com/licenses/projects/stryke.
 
  Website:                  https://stormsoftware.com
  Repository:               https://github.com/storm-software/stryke
@@ -177,7 +177,7 @@ export async function resolvePackage(
  * @param options - The options to use when resolving the module
  * @returns The module or undefined
  */
-export async function resolvePackageSync(
+export function resolvePackageSync(
   name: string,
   options: PackageResolvingOptions = {}
 ) {
