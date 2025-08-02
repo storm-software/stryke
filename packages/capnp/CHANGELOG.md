@@ -2,6 +2,20 @@
 
 # Changelog for Stryke - Capnp
 
+## [0.9.12](https://github.com/storm-software/stryke/releases/tag/capnp%400.9.12) (2025-08-02)
+
+### Miscellaneous
+
+- **monorepo:** Reformat source file banners
+  ([0698684](https://github.com/storm-software/stryke/commit/0698684))
+- **monorepo:** Update workspace packages' dependencies
+  ([ec96eb4](https://github.com/storm-software/stryke/commit/ec96eb4))
+
+### Updated Dependencies
+
+- Updated path to 0.12.1
+- Updated fs to 0.22.9
+
 ## [0.9.11](https://github.com/storm-software/stryke/releases/tag/capnp%400.9.11) (2025-07-05)
 
 ### Miscellaneous

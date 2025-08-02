@@ -1,5 +1,16 @@
 ![Storm Software](https://public.storm-cdn.com/brand-banner.png)
 
+# Changelog for Stryke - Prisma TRPC Generator
+
+## [0.12.3](https://github.com/storm-software/stryke/releases/tag/prisma-trpc-generator%400.12.3) (2025-08-02)
+
+### Miscellaneous
+
+- **monorepo:** Reformat source file banners
+  ([0698684](https://github.com/storm-software/stryke/commit/0698684))
+
+![Storm Software](https://public.storm-cdn.com/brand-banner.png)
+
 # Changelog for Stryke - Prisma Trpc Generator
 
 ## [0.12.2](https://github.com/storm-software/stryke/releases/tag/prisma-trpc-generator%400.12.2) (2025-06-17)

@@ -2,6 +2,13 @@
 
 # Changelog for Stryke - Convert
 
+## [0.3.1](https://github.com/storm-software/stryke/releases/tag/convert%400.3.1) (2025-08-02)
+
+### Miscellaneous
+
+- **monorepo:** Reformat source file banners
+  ([0698684](https://github.com/storm-software/stryke/commit/0698684))
+
 ## [0.3.0](https://github.com/storm-software/stryke/releases/tag/convert%400.3.0) (2025-07-03)
 
 ### Features

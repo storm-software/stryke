@@ -2,6 +2,13 @@
 
 # Changelog for Stryke - String Format
 
+## [0.5.3](https://github.com/storm-software/stryke/releases/tag/string-format%400.5.3) (2025-08-02)
+
+### Bug Fixes
+
+- **string-format:** Resolve formatting logic in `constantCase` utility
+  ([74551bc](https://github.com/storm-software/stryke/commit/74551bc))
+
 ## [0.5.2](https://github.com/storm-software/stryke/releases/tag/string-format%400.5.2) (2025-07-03)
 
 ### Miscellaneous

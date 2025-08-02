@@ -2,6 +2,13 @@
 
 # Changelog for Stryke - Path
 
+## [0.12.1](https://github.com/storm-software/stryke/releases/tag/path%400.12.1) (2025-08-02)
+
+### Miscellaneous
+
+- **monorepo:** Reformat source file banners
+  ([0698684](https://github.com/storm-software/stryke/commit/0698684))
+
 ## [0.12.0](https://github.com/storm-software/stryke/releases/tag/path%400.12.0) (2025-07-05)
 
 ### Features

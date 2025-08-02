@@ -2,6 +2,13 @@
 
 # Changelog for Stryke - Helpers
 
+## [0.7.1](https://github.com/storm-software/stryke/releases/tag/helpers%400.7.1) (2025-08-02)
+
+### Miscellaneous
+
+- **monorepo:** Reformat source file banners
+  ([0698684](https://github.com/storm-software/stryke/commit/0698684))
+
 ## [0.7.0](https://github.com/storm-software/stryke/releases/tag/helpers%400.7.0) (2025-07-04)
 
 ### Features

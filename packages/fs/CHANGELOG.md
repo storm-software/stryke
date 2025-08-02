@@ -2,6 +2,20 @@
 
 # Changelog for Stryke - Fs
 
+## [0.22.9](https://github.com/storm-software/stryke/releases/tag/fs%400.22.9) (2025-08-02)
+
+### Miscellaneous
+
+- **monorepo:** Reformat source file banners
+  ([0698684](https://github.com/storm-software/stryke/commit/0698684))
+- **monorepo:** Update workspace packages' dependencies
+  ([ec96eb4](https://github.com/storm-software/stryke/commit/ec96eb4))
+
+### Updated Dependencies
+
+- Updated convert to 0.3.1
+- Updated path to 0.12.1
+
 ## [0.22.8](https://github.com/storm-software/stryke/releases/tag/fs%400.22.8) (2025-07-05)
 
 ### Miscellaneous
