@@ -172,13 +172,14 @@
     }
   },
   "dependencies": {
-    "@stryke/fs": "0.22.8",
-    "@stryke/path": "0.12.0",
+    "@stryke/fs": "workspace:*",
+    "@stryke/path": "workspace:*",
     "hex2dec": "catalog:"
   },
   "devDependencies": {
     "@storm-software/config": "catalog:",
     "@storm-software/config-tools": "catalog:",
+    "@storm-software/testing-tools": "catalog:",
     "@types/node": "catalog:",
     "capnp-es": "catalog:",
     "chalk": "catalog:",

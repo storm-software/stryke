@@ -6,7 +6,7 @@
  This code was released as part of the Stryke project. Stryke
  is maintained by Storm Software under the Apache-2.0 license, and is
  free for commercial and private use. For more information, please visit
- our licensing page at https://stormsoftware.com/projects/stryke/license.
+ our licensing page at https://stormsoftware.com/licenses/projects/stryke.
 
  Website:                  https://stormsoftware.com
  Repository:               https://github.com/storm-software/stryke
@@ -20,64 +20,66 @@
 import { $, chalk, echo } from "zx";
 
 try {
-  await echo`${chalk.whiteBright("💣  Nuking the monorepo...")}`;
+  echo`${chalk.whiteBright("💣  Nuking the monorepo...")}`;
 
-  let proc =
-    $`pnpm exec rimraf --no-interactive --glob "**/{node_modules,dist,.storm}"`.timeout(
-      `${5 * 60}s`
-    );
+  let proc = $`pnpm nx clear-cache`.timeout(`${5 * 60}s`);
   proc.stdout.on("data", data => {
     echo`${data}`;
   });
   let result = await proc;
   if (!result.ok) {
     throw new Error(
-      `An error occured while removing node modules and build directories from the monorepo's projects: \n\n${result.message}\n`
+      `An error occurred while clearing Nx cache: \n\n${result.message}\n`
     );
   }
 
-  proc =
-    $`pnpm exec rimraf --no-interactive --glob "node_modules/!rimraf/**"`.timeout(
-      `${5 * 60}s`
-    );
+  proc = $`rm -rf ./.nx/cache ./.nx/workspace-data ./dist ./tmp`.timeout(
+    `${5 * 60}s`
+  );
   proc.stdout.on("data", data => {
     echo`${data}`;
   });
   result = await proc;
   if (!result.ok) {
     throw new Error(
-      `An error occured while removing node modules from the workspace root: \n\n${result.message}\n`
+      `An error occurred while removing cache directories: \n\n${result.message}\n`
     );
   }
 
-  proc = $`pnpm nx clear-cache`.timeout(`${5 * 60}s`);
+  proc = $`rm -rf ./packages/*/node_modules`.timeout(`${5 * 60}s`);
   proc.stdout.on("data", data => {
     echo`${data}`;
   });
   result = await proc;
   if (!result.ok) {
     throw new Error(
-      `An error occured while clearing Nx cache: \n\n${result.message}\n`
+      `An error occurred while removing node modules and build directories from the monorepo's projects: \n\n${result.message}\n`
     );
   }
 
-  proc =
-    $`pnpm exec rimraf --no-interactive -- ./.nx/cache ./.nx/workspace-data ./dist ./tmp ./pnpm-lock.yaml`.timeout(
-      `${5 * 60}s`
-    );
+  proc = $`rm -rf ./tools/*/node_modules`.timeout(`${5 * 60}s`);
   proc.stdout.on("data", data => {
     echo`${data}`;
   });
   result = await proc;
   if (!result.ok) {
     throw new Error(
-      `An error occured while removing cache directories: \n\n${result.message}\n`
+      `An error occurred while removing node modules and build directories from the monorepo's projects: \n\n${result.message}\n`
     );
   }
 
-  echo`${chalk.green("Successfully nuked the cache, node modules, and build folders")}`;
+  proc = $`rm -rf ./node_modules`.timeout(`${5 * 60}s`);
+  proc.stdout.on("data", data => {
+    echo`${data}`;
+  });
+  result = await proc;
+  if (!result.ok) {
+    throw new Error(
+      `An error occurred while removing node modules and build directories from the monorepo's projects: \n\n${result.message}\n`
+    );
+  }
+
+  echo`${chalk.green("  ✅ Successfully nuked the cache, node modules, and build folders \n\n")}`;
 } catch (error) {
-  echo`${chalk.red(error?.message ? error.message : "A failure occured while nuking the monorepo")}`;
-
-  process.exit(1);
+  echo`${chalk.red(error?.message ? error.message : "A failure occurred while nuking the monorepo")}`;
 }
