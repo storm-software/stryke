@@ -5,7 +5,7 @@
  This code was released as part of the Stryke project. Stryke
  is maintained by Storm Software under the Apache-2.0 license, and is
  free for commercial and private use. For more information, please visit
- our licensing page at https://stormsoftware.com/license.
+ our licensing page at https://stormsoftware.com/licenses/projects/stryke.
 
  Website:                  https://stormsoftware.com
  Repository:               https://github.com/storm-software/stryke
@@ -24,10 +24,23 @@ export interface SnakeCaseOptions {
 }
 
 /**
+ * Check if the input string is in snake case.
+ *
+ * @remarks
+ * Snake case is defined as all lowercase letters with underscores separating words - "this_is_an_example"
+ *
+ * @param input - The input string to check.
+ * @returns True if the input is in snake case, false otherwise.
+ */
+export function isSnakeCase(input: string | undefined): boolean {
+  return input ? /^[a-z]+(?:_[a-z0-9]+)*$/.test(input) : false;
+}
+
+/**
  * Convert the input string to snake case.
  *
  *  @remarks
- * "this_is_an_example"
+ * Snake case is defined as all lowercase letters with underscores separating words - "this_is_an_example"
  *
  * @param input - The input string.
  * @param options - Options to control the behavior of the function.
@@ -37,7 +50,7 @@ export function snakeCase<T extends string | undefined>(
   input: T,
   options?: SnakeCaseOptions
 ): T {
-  if (!input) {
+  if (isSnakeCase(input) || input === undefined) {
     return input;
   }
 

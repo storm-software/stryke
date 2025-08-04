@@ -19,17 +19,31 @@
 import { snakeCase } from "./snake-case";
 
 /**
+ * Check if the input string is in constant case.
+ *
+ * @remarks
+ * Constant case is defined as all uppercase letters with underscores separating words - "THIS_IS_AN_EXAMPLE".
+ *
+ * @param input - The input string to check.
+ * @returns True if the input is in constant case, false otherwise.
+ */
+export function isConstantCase(input: string | undefined): boolean {
+  return input ? /^[A-Z0-9_]+$/.test(input) : false;
+}
+
+/**
  * Convert the input string to constant case.
  *
  * @remarks
- * "THIS_IS_AN_EXAMPLE"
+ * Constant case is defined as all uppercase letters with underscores separating words - "THIS_IS_AN_EXAMPLE".
  *
  * @param input - The input string.
  * @returns The constant-cased string.
  */
 export function constantCase<T extends string | undefined>(input: T): T {
-  return input?.toUpperCase()?.replace(/\s+/g, "")?.replaceAll("-", "") ===
-    input
+  return isConstantCase(input) || input === undefined
     ? input
-    : (snakeCase<T>(input)?.toUpperCase() as T);
+    : input?.toUpperCase()?.replace(/\s+/g, "")?.replaceAll("-", "") === input
+      ? input
+      : (snakeCase<T>(input)?.toUpperCase() as T);
 }

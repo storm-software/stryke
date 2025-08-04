@@ -5,7 +5,7 @@
  This code was released as part of the Stryke project. Stryke
  is maintained by Storm Software under the Apache-2.0 license, and is
  free for commercial and private use. For more information, please visit
- our licensing page at https://stormsoftware.com/license.
+ our licensing page at https://stormsoftware.com/licenses/projects/stryke.
 
  Website:                  https://stormsoftware.com
  Repository:               https://github.com/storm-software/stryke
@@ -19,12 +19,23 @@
 import { getWords } from "./get-words";
 
 /**
+ * Check if the input string is in snake case.
+ *
+ * @remarks
+ * Start case is the naming convention in which each word is written with an initial capital letter - "This Is An Example".
+ *
+ * @param input - The input string to check.
+ * @returns True if the input is in start case, false otherwise.
+ */
+export function isStartCase(input: string | undefined): boolean {
+  return input ? /^[A-Z][a-z]*(?: [A-Z][a-z]*)*$/.test(input) : false;
+}
+
+/**
  * Converts the first character of each word in a string to uppercase and the remaining characters to lowercase.
  *
  * @remarks
- * "This Is An Example"
- *
- * Start case is the naming convention in which each word is written with an initial capital letter.
+ * Start case is the naming convention in which each word is written with an initial capital letter - "This Is An Example".
  *
  * @example
  * ```ts
@@ -38,7 +49,7 @@ import { getWords } from "./get-words";
  * @returns The converted string.
  */
 export function startCase<T extends string | undefined>(input?: T): T {
-  if (!input) {
+  if (isStartCase(input) || input === undefined) {
     return input as T;
   }
 

@@ -20,14 +20,29 @@ import { lowerCaseFirst } from "./lower-case-first";
 import { pascalCase } from "./pascal-case";
 
 /**
+ * Check if the input string is in camel case.
+ *
+ * @remarks
+ * Camel case is defined as a lowercase first letter followed by any number of uppercase letters and digits - "thisIsAnExample".
+ *
+ * @param input - The input string to check.
+ * @returns True if the input is in camel case, false otherwise.
+ */
+export function isCamelCase(input: string | undefined): boolean {
+  return input ? /^[a-z][a-zA-Z0-9]*$/.test(input) : false;
+}
+
+/**
  * Convert the input string to camel case.
  *
  * @remarks
- * "thisIsAnExample"
+ * Camel case is defined as a lowercase first letter followed by any number of uppercase letters and digits - "thisIsAnExample".
  *
  * @param input - The input string.
  * @returns The camel-cased string.
  */
 export function camelCase<T extends string | undefined>(input: T): T {
-  return input ? lowerCaseFirst(pascalCase(input)) : input;
+  return isCamelCase(input) || input === undefined
+    ? input
+    : lowerCaseFirst(pascalCase(input));
 }
