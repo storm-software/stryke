@@ -16,6 +16,8 @@
 
  ------------------------------------------------------------------- */
 
+import { getWords } from "./get-words";
+
 /**
  * Check if the input string is in pascal case.
  *
@@ -42,10 +44,7 @@ export function pascalCase<T extends string | undefined>(input?: T): T {
   return (
     isPascalCase(input) || input === undefined
       ? input
-      : input
-          .split(" ")
-          .map(i => i.split("-"))
-          .flat()
+      : getWords(input)
           .map(i =>
             i.length > 0
               ? i.trim().charAt(0).toUpperCase() + i.trim().slice(1)

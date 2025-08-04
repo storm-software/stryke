@@ -17,6 +17,7 @@
  ------------------------------------------------------------------- */
 
 import { EMPTY_STRING } from "@stryke/types";
+import { isConstantCase } from "./constant-case";
 import { upperCaseFirst } from "./upper-case-first";
 
 export interface SnakeCaseOptions {
@@ -52,6 +53,10 @@ export function snakeCase<T extends string | undefined>(
 ): T {
   if (isSnakeCase(input) || input === undefined) {
     return input;
+  }
+
+  if (isConstantCase(input)) {
+    return input.toLowerCase() as T;
   }
 
   const parts =

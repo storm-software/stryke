@@ -16,7 +16,8 @@
 
  ------------------------------------------------------------------- */
 
-import { snakeCase } from "./snake-case";
+import { getWords } from "./get-words";
+import { isSnakeCase } from "./snake-case";
 
 /**
  * Check if the input string is in constant case.
@@ -43,7 +44,7 @@ export function isConstantCase(input: string | undefined): boolean {
 export function constantCase<T extends string | undefined>(input: T): T {
   return isConstantCase(input) || input === undefined
     ? input
-    : input?.toUpperCase()?.replace(/\s+/g, "")?.replaceAll("-", "") === input
-      ? input
-      : (snakeCase<T>(input)?.toUpperCase() as T);
+    : isSnakeCase(input)
+      ? (input.toUpperCase() as T)
+      : (getWords(input).join("_").toUpperCase() as T);
 }
