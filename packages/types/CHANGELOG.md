@@ -2,6 +2,15 @@
 
 # Changelog for Stryke - Types
 
+## [0.8.7](https://github.com/storm-software/stryke/releases/tag/types%400.8.7) (2025-08-04)
+
+### Bug Fixes
+
+- **monorepo:** Resolved repository type-check failures
+  ([d196ace](https://github.com/storm-software/stryke/commit/d196ace))
+- **type-checks:** Resolve type-check linting failures
+  ([8ba113c](https://github.com/storm-software/stryke/commit/8ba113c))
+
 ## [0.8.6](https://github.com/storm-software/stryke/releases/tag/types%400.8.6) (2025-07-02)
 
 ### Miscellaneous

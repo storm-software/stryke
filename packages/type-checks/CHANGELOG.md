@@ -2,6 +2,13 @@
 
 # Changelog for Stryke - Type Checks
 
+## [0.3.7](https://github.com/storm-software/stryke/releases/tag/type-checks%400.3.7) (2025-08-04)
+
+### Bug Fixes
+
+- **type-checks:** Resolve type-check linting failures
+  ([8ba113c](https://github.com/storm-software/stryke/commit/8ba113c))
+
 ## [0.3.6](https://github.com/storm-software/stryke/releases/tag/type-checks%400.3.6) (2025-07-02)
 
 ### Miscellaneous

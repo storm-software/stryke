@@ -2,6 +2,13 @@
 
 # Changelog for Stryke - CLI
 
+## [0.12.3](https://github.com/storm-software/stryke/releases/tag/cli%400.12.3) (2025-08-04)
+
+### Bug Fixes
+
+- **monorepo:** Resolved repository type-check failures
+  ([d196ace](https://github.com/storm-software/stryke/commit/d196ace))
+
 ## [0.12.2](https://github.com/storm-software/stryke/releases/tag/cli%400.12.2) (2025-07-02)
 
 ### Miscellaneous

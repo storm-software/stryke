@@ -2,6 +2,13 @@
 
 # Changelog for Stryke - HTTP
 
+## [0.8.5](https://github.com/storm-software/stryke/releases/tag/http%400.8.5) (2025-08-04)
+
+### Bug Fixes
+
+- **monorepo:** Resolved repository type-check failures
+  ([d196ace](https://github.com/storm-software/stryke/commit/d196ace))
+
 ## [0.8.4](https://github.com/storm-software/stryke/releases/tag/http%400.8.4) (2025-06-18)
 
 ### Miscellaneous

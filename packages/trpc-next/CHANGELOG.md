@@ -1,5 +1,16 @@
 ![Storm Software](https://public.storm-cdn.com/brand-banner.png)
 
+# Changelog for Stryke - TRPC Next
+
+## [0.5.9](https://github.com/storm-software/stryke/releases/tag/trpc-next%400.5.9) (2025-08-04)
+
+### Bug Fixes
+
+- **monorepo:** Resolved repository type-check failures
+  ([d196ace](https://github.com/storm-software/stryke/commit/d196ace))
+
+![Storm Software](https://public.storm-cdn.com/brand-banner.png)
+
 # Changelog for Stryke - Trpc Next
 
 ## [0.5.8](https://github.com/storm-software/stryke/releases/tag/trpc-next%400.5.8) (2025-06-17)

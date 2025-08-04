@@ -2,6 +2,13 @@
 
 # Changelog for Stryke - Hooks
 
+## [0.4.9](https://github.com/storm-software/stryke/releases/tag/hooks%400.4.9) (2025-08-04)
+
+### Bug Fixes
+
+- **monorepo:** Resolved repository type-check failures
+  ([d196ace](https://github.com/storm-software/stryke/commit/d196ace))
+
 ## [0.4.8](https://github.com/storm-software/stryke/releases/tag/hooks%400.4.8) (2025-06-17)
 
 ### Miscellaneous

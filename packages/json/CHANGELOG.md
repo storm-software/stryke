@@ -1,5 +1,16 @@
 ![Storm Software](https://public.storm-cdn.com/brand-banner.png)
 
+# Changelog for Stryke - JSON
+
+## [0.9.3](https://github.com/storm-software/stryke/releases/tag/json%400.9.3) (2025-08-04)
+
+### Bug Fixes
+
+- **monorepo:** Resolved repository type-check failures
+  ([d196ace](https://github.com/storm-software/stryke/commit/d196ace))
+
+![Storm Software](https://public.storm-cdn.com/brand-banner.png)
+
 # Changelog for Stryke - Json
 
 ## [0.9.2](https://github.com/storm-software/stryke/releases/tag/json%400.9.2) (2025-06-17)

@@ -2,6 +2,13 @@
 
 # Changelog for Stryke - URL
 
+## [0.2.4](https://github.com/storm-software/stryke/releases/tag/url%400.2.4) (2025-08-04)
+
+### Bug Fixes
+
+- **monorepo:** Resolved repository type-check failures
+  ([d196ace](https://github.com/storm-software/stryke/commit/d196ace))
+
 ## [0.2.3](https://github.com/storm-software/stryke/releases/tag/url%400.2.3) (2025-07-02)
 
 ### Miscellaneous

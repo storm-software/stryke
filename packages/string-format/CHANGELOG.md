@@ -2,6 +2,20 @@
 
 # Changelog for Stryke - String Format
 
+## [0.6.0](https://github.com/storm-software/stryke/releases/tag/string-format%400.6.0) (2025-08-04)
+
+### Features
+
+- **string-format:** Added helper functions to check the format of a string
+  ([2adb795](https://github.com/storm-software/stryke/commit/2adb795))
+
+### Bug Fixes
+
+- **monorepo:** Resolved repository type-check failures
+  ([d196ace](https://github.com/storm-software/stryke/commit/d196ace))
+- **string-format:** Resolve issues around initial string formats
+  ([313ac89](https://github.com/storm-software/stryke/commit/313ac89))
+
 ## [0.5.3](https://github.com/storm-software/stryke/releases/tag/string-format%400.5.3) (2025-08-02)
 
 ### Bug Fixes
