@@ -1,19 +1,20 @@
-/*-------------------------------------------------------------------
+/* -------------------------------------------------------------------
 
                        ⚡ Storm Software - Stryke
 
  This code was released as part of the Stryke project. Stryke
- is maintained by Storm Software under the Apache-2.0 License, and is
+ is maintained by Storm Software under the Apache-2.0 license, and is
  free for commercial and private use. For more information, please visit
- our licensing page.
+ our licensing page at https://stormsoftware.com/licenses/projects/stryke.
 
- Website:         https://stormsoftware.com
- Repository:      https://github.com/storm-software/stryke
- Documentation:   https://stormsoftware.com/projects/stryke/docs
- Contact:         https://stormsoftware.com/contact
- License:         https://stormsoftware.com/projects/stryke/license
+ Website:                  https://stormsoftware.com
+ Repository:               https://github.com/storm-software/stryke
+ Documentation:            https://docs.stormsoftware.com/projects/stryke
+ Contact:                  https://stormsoftware.com/contact
 
- -------------------------------------------------------------------*/
+ SPDX-License-Identifier:  Apache-2.0
+
+ ------------------------------------------------------------------- */
 
 import { throttle } from "@stryke/helpers/throttle";
 import { useEffect, useState } from "react";
@@ -28,7 +29,7 @@ export const useIdle = (ms = 1000 * 60): boolean => {
   const [idle, setIdle] = useState(false);
 
   useEffect(() => {
-    let timeoutId: number = -1;
+    let timeoutId: any = -1;
 
     const handleTimeout = () => {
       setIdle(true);
@@ -37,8 +38,8 @@ export const useIdle = (ms = 1000 * 60): boolean => {
     const handleEvent = throttle(() => {
       setIdle(false);
 
-      globalThis.clearTimeout(timeoutId);
-      timeoutId = globalThis.setTimeout(handleTimeout, ms);
+      clearTimeout(timeoutId);
+      timeoutId = setTimeout(handleTimeout, ms);
     }, 500);
 
     const handleVisibilityChange = () => {
@@ -47,25 +48,25 @@ export const useIdle = (ms = 1000 * 60): boolean => {
       }
     };
 
-    timeoutId = globalThis.setTimeout(handleTimeout, ms);
+    timeoutId = setTimeout(handleTimeout, ms);
 
-    globalThis.addEventListener("mousemove", handleEvent);
-    globalThis.addEventListener("mousedown", handleEvent);
+    addEventListener("mousemove", handleEvent);
+    addEventListener("mousedown", handleEvent);
     window.addEventListener("resize", handleEvent);
-    globalThis.addEventListener("keydown", handleEvent);
-    globalThis.addEventListener("touchstart", handleEvent);
+    addEventListener("keydown", handleEvent);
+    addEventListener("touchstart", handleEvent);
     window.addEventListener("wheel", handleEvent);
     document.addEventListener("visibilitychange", handleVisibilityChange);
 
     return () => {
-      globalThis.removeEventListener("mousemove", handleEvent);
-      globalThis.removeEventListener("mousedown", handleEvent);
+      removeEventListener("mousemove", handleEvent);
+      removeEventListener("mousedown", handleEvent);
       window.removeEventListener("resize", handleEvent);
-      globalThis.removeEventListener("keydown", handleEvent);
-      globalThis.removeEventListener("touchstart", handleEvent);
+      removeEventListener("keydown", handleEvent);
+      removeEventListener("touchstart", handleEvent);
       window.removeEventListener("wheel", handleEvent);
       document.removeEventListener("visibilitychange", handleVisibilityChange);
-      globalThis.clearTimeout(timeoutId);
+      clearTimeout(timeoutId);
     };
   }, [ms]);
 

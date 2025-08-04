@@ -3,35 +3,36 @@
                        ⚡ Storm Software - Stryke
 
  This code was released as part of the Stryke project. Stryke
- is maintained by Storm Software under the Apache-2.0 License, and is
+ is maintained by Storm Software under the Apache-2.0 license, and is
  free for commercial and private use. For more information, please visit
- our licensing page.
+ our licensing page at https://stormsoftware.com/licenses/projects/stryke.
 
- Website:         https://stormsoftware.com
- Repository:      https://github.com/storm-software/stryke
- Documentation:   https://stormsoftware.com/projects/stryke/docs
- Contact:         https://stormsoftware.com/contact
- License:         https://stormsoftware.com/projects/stryke/license
+ Website:                  https://stormsoftware.com
+ Repository:               https://github.com/storm-software/stryke
+ Documentation:            https://docs.stormsoftware.com/projects/stryke
+ Contact:                  https://stormsoftware.com/contact
+
+ SPDX-License-Identifier:  Apache-2.0
 
  ------------------------------------------------------------------- */
 
 import type {
-  ILogicRule,
-  IOptions,
-  IRule,
-  IRuleFunction,
-  IRuleResult,
+  LogicRuleInterface,
+  OptionsInterface,
+  RuleFunctionInterface,
+  RuleInterface,
+  RuleResultInterface,
   ShieldRule
 } from "./types";
 
 export class Rule<TContext extends Record<string, any>>
-  implements IRule<TContext>
+  implements RuleInterface<TContext>
 {
   readonly name: string;
 
-  func?: IRuleFunction<TContext>;
+  func?: RuleFunctionInterface<TContext>;
 
-  constructor(name: string, func?: IRuleFunction<TContext>) {
+  constructor(name: string, func?: RuleFunctionInterface<TContext>) {
     this.name = name;
     this.func = func;
   }
@@ -42,8 +43,8 @@ export class Rule<TContext extends Record<string, any>>
     path: string,
     input: { [name: string]: any },
     rawInput: unknown,
-    options: IOptions<TContext>
-  ): Promise<IRuleResult> {
+    options: OptionsInterface<TContext>
+  ): Promise<RuleResultInterface> {
     try {
       /* Resolve */
       const res = await this.executeRule(
@@ -89,8 +90,8 @@ export class Rule<TContext extends Record<string, any>>
     path: string,
     input: { [name: string]: any },
     rawInput: unknown,
-    options: IOptions<TContext>
-  ): string | boolean | Error | Promise<IRuleResult> {
+    options: OptionsInterface<TContext>
+  ): string | boolean | Error | Promise<RuleResultInterface> {
     // @ts-ignore
     return this.func(ctx, type, path, input, rawInput, options);
   }
@@ -98,7 +99,7 @@ export class Rule<TContext extends Record<string, any>>
 
 export class LogicRule<TContext extends Record<string, any>>
   extends Rule<TContext>
-  implements ILogicRule<TContext>
+  implements LogicRuleInterface<TContext>
 {
   private rules: ShieldRule<TContext>[];
 
@@ -117,8 +118,8 @@ export class LogicRule<TContext extends Record<string, any>>
     _path: string,
     _input: { [name: string]: any },
     _rawInput: unknown,
-    _options: IOptions<TContext>
-  ): Promise<IRuleResult> {
+    _options: OptionsInterface<TContext>
+  ): Promise<RuleResultInterface> {
     return false;
   }
 
@@ -131,8 +132,8 @@ export class LogicRule<TContext extends Record<string, any>>
     path: string,
     input: { [name: string]: any },
     rawInput: unknown,
-    options: IOptions<TContext>
-  ): Promise<IRuleResult[]> {
+    options: OptionsInterface<TContext>
+  ): Promise<RuleResultInterface[]> {
     const rules = this.getRules();
     const tasks = rules.map(async rule =>
       rule.resolve(ctx, type, path, input, rawInput, options)
@@ -167,8 +168,8 @@ export class RuleOr<
     path: string,
     input: { [name: string]: any },
     rawInput: unknown,
-    options: IOptions<TContext>
-  ): Promise<IRuleResult> {
+    options: OptionsInterface<TContext>
+  ): Promise<RuleResultInterface> {
     const result = await this.evaluate(
       ctx,
       type,
@@ -204,8 +205,8 @@ export class RuleAnd<
     path: string,
     input: { [name: string]: any },
     rawInput: unknown,
-    options: IOptions<TContext>
-  ): Promise<IRuleResult> {
+    options: OptionsInterface<TContext>
+  ): Promise<RuleResultInterface> {
     const result = await this.evaluate(
       ctx,
       type,
@@ -241,8 +242,8 @@ export class RuleChain<
     path: string,
     input: { [name: string]: any },
     rawInput: unknown,
-    options: IOptions<TContext>
-  ): Promise<IRuleResult> {
+    options: OptionsInterface<TContext>
+  ): Promise<RuleResultInterface> {
     const result = await this.evaluate(
       ctx,
       type,
@@ -270,8 +271,8 @@ export class RuleChain<
     path: string,
     input: { [name: string]: any },
     rawInput: unknown,
-    options: IOptions<TContext>
-  ): Promise<IRuleResult[]> {
+    options: OptionsInterface<TContext>
+  ): Promise<RuleResultInterface[]> {
     const rules = this.getRules();
 
     return iterate(rules);
@@ -279,7 +280,7 @@ export class RuleChain<
     async function iterate([
       rule,
       ...otherRules
-    ]: ShieldRule<TContext>[]): Promise<IRuleResult[]> {
+    ]: ShieldRule<TContext>[]): Promise<RuleResultInterface[]> {
       if (rule === undefined) return [];
       return rule
         .resolve(ctx, type, path, input, rawInput, options)
@@ -310,8 +311,8 @@ export class RuleRace<
     path: string,
     input: { [name: string]: any },
     rawInput: unknown,
-    options: IOptions<TContext>
-  ): Promise<IRuleResult> {
+    options: OptionsInterface<TContext>
+  ): Promise<RuleResultInterface> {
     const result = await this.evaluate(
       ctx,
       type,
@@ -339,8 +340,8 @@ export class RuleRace<
     path: string,
     input: { [name: string]: any },
     rawInput: unknown,
-    options: IOptions<TContext>
-  ): Promise<IRuleResult[]> {
+    options: OptionsInterface<TContext>
+  ): Promise<RuleResultInterface[]> {
     const rules = this.getRules();
 
     return iterate(rules);
@@ -348,7 +349,7 @@ export class RuleRace<
     async function iterate([
       rule,
       ...otherRules
-    ]: ShieldRule<TContext>[]): Promise<IRuleResult[]> {
+    ]: ShieldRule<TContext>[]): Promise<RuleResultInterface[]> {
       if (rule === undefined) return [];
       return rule
         .resolve(ctx, type, path, input, rawInput, options)
@@ -365,13 +366,13 @@ export class RuleRace<
 
 export class RuleNot<TContext extends Record<string, any>>
   extends LogicRule<TContext>
-  implements ILogicRule<TContext>
+  implements LogicRuleInterface<TContext>
 {
   error?: Error;
 
   override name: string = "RuleNot";
 
-  override equals!: (rule: IRule<TContext>) => boolean;
+  override equals!: (rule: RuleInterface<TContext>) => boolean;
 
   constructor(rule: ShieldRule<TContext>, error?: Error) {
     super([rule]);
@@ -387,8 +388,8 @@ export class RuleNot<TContext extends Record<string, any>>
     path: string,
     input: { [name: string]: any },
     rawInput: unknown,
-    options: IOptions<TContext>
-  ): Promise<IRuleResult> {
+    options: OptionsInterface<TContext>
+  ): Promise<RuleResultInterface> {
     const [res] = await this.evaluate(
       ctx,
       type,
@@ -411,11 +412,11 @@ export class RuleNot<TContext extends Record<string, any>>
 
 export class RuleTrue<TContext extends Record<string, any>>
   extends LogicRule<TContext>
-  implements ILogicRule<TContext>
+  implements LogicRuleInterface<TContext>
 {
   override name: string = "RuleTrue";
 
-  override equals!: (rule: IRule<TContext>) => boolean;
+  override equals!: (rule: RuleInterface<TContext>) => boolean;
 
   constructor() {
     super([]);
@@ -426,18 +427,18 @@ export class RuleTrue<TContext extends Record<string, any>>
    * Always true.
    *
    */
-  override async resolve(): Promise<IRuleResult> {
+  override async resolve(): Promise<RuleResultInterface> {
     return true;
   }
 }
 
 export class RuleFalse<TContext extends Record<string, any>>
   extends LogicRule<TContext>
-  implements ILogicRule<TContext>
+  implements LogicRuleInterface<TContext>
 {
   override name: string = "RuleTrue";
 
-  override equals!: (rule: IRule<TContext>) => boolean;
+  override equals!: (rule: RuleInterface<TContext>) => boolean;
 
   constructor() {
     super([]);
@@ -448,7 +449,7 @@ export class RuleFalse<TContext extends Record<string, any>>
    * Always false.
    *
    */
-  override async resolve(): Promise<IRuleResult> {
+  override async resolve(): Promise<RuleResultInterface> {
     return false;
   }
 }

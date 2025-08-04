@@ -5,7 +5,7 @@
  This code was released as part of the Stryke project. Stryke
  is maintained by Storm Software under the Apache-2.0 license, and is
  free for commercial and private use. For more information, please visit
- our licensing page at https://stormsoftware.com/license.
+ our licensing page at https://stormsoftware.com/licenses/projects/stryke.
 
  Website:                  https://stormsoftware.com
  Repository:               https://github.com/storm-software/stryke
@@ -38,41 +38,39 @@ export interface RuntimeInfo {
  *
  * Use `runtime === "node"` if you need strict check for Node.js runtime.
  */
-export const isNode = globalThis.process?.release?.name === "node";
+export const isNode = process?.release?.name === "node";
 
 /**
  * Indicates if running in Bun runtime.
  */
-export const isBun =
-  Boolean(globalThis.Bun) || Boolean(globalThis.process?.versions?.bun);
+export const isBun = Boolean(Bun) || Boolean(process?.versions?.bun);
 
 /**
  * Indicates if running in Deno runtime.
  */
-export const isDeno = Boolean(globalThis.Deno);
+export const isDeno = Boolean(Deno);
 
 /**
  * Indicates if running in Fastly runtime.
  */
-export const isFastly = Boolean(globalThis.fastly);
+export const isFastly = Boolean(fastly);
 
 /**
  * Indicates if running in Netlify runtime.
  */
-export const isNetlify = Boolean(globalThis.Netlify);
+export const isNetlify = Boolean(Netlify);
 
 /**
  *
  * Indicates if running in EdgeLight (Vercel Edge) runtime.
  */
-export const isEdgeLight = Boolean(globalThis.EdgeRuntime);
+export const isEdgeLight = Boolean(EdgeRuntime);
 // https://developers.cloudflare.com/workers/runtime-apis/web-standards/#navigatoruseragent
 
 /**
  * Indicates if running in Cloudflare Workers runtime.
  */
-export const isWorkerd =
-  globalThis.navigator?.userAgent === "Cloudflare-Workers";
+export const isWorkerd = navigator?.userAgent === "Cloudflare-Workers";
 
 /**
  * Indicates if the code is running on the server-side

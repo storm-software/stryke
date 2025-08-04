@@ -3,27 +3,33 @@
                        ⚡ Storm Software - Stryke
 
  This code was released as part of the Stryke project. Stryke
- is maintained by Storm Software under the Apache-2.0 License, and is
+ is maintained by Storm Software under the Apache-2.0 license, and is
  free for commercial and private use. For more information, please visit
- our licensing page.
+ our licensing page at https://stormsoftware.com/licenses/projects/stryke.
 
- Website:         https://stormsoftware.com
- Repository:      https://github.com/storm-software/stryke
- Documentation:   https://stormsoftware.com/projects/stryke/docs
- Contact:         https://stormsoftware.com/contact
- License:         https://stormsoftware.com/projects/stryke/license
+ Website:                  https://stormsoftware.com
+ Repository:               https://github.com/storm-software/stryke
+ Documentation:            https://docs.stormsoftware.com/projects/stryke
+ Contact:                  https://stormsoftware.com/contact
+
+ SPDX-License-Identifier:  Apache-2.0
 
  ------------------------------------------------------------------- */
 
 import { LogicRule, Rule } from "./rules";
-import type { ILogicRule, IRule, IRuleFieldMap, ShieldRule } from "./types";
+import type {
+  LogicRuleInterface,
+  RuleFieldMapInterface,
+  RuleInterface,
+  ShieldRule
+} from "./types";
 
 /**
  * Makes sure that a certain field is a rule.
  */
 export function isRule<TContext extends Record<string, any>>(
   x: any
-): x is IRule<TContext> {
+): x is RuleInterface<TContext> {
   return (
     x instanceof Rule || (x && x.constructor && x.constructor.name === "Rule")
   );
@@ -34,7 +40,7 @@ export function isRule<TContext extends Record<string, any>>(
  */
 export function isLogicRule<TContext extends Record<string, any>>(
   x: any
-): x is ILogicRule<TContext> {
+): x is LogicRuleInterface<TContext> {
   return (
     x instanceof LogicRule ||
     (x &&
@@ -63,7 +69,7 @@ export function isRuleFunction<TContext extends Record<string, any>>(
  */
 export function isRuleFieldMap<TContext extends Record<string, any>>(
   x: any
-): x is IRuleFieldMap<TContext> {
+): x is RuleFieldMapInterface<TContext> {
   return (
     typeof x === "object" &&
     Object.values(x).every(rule => isRuleFunction(rule))

@@ -3,50 +3,51 @@
                        ⚡ Storm Software - Stryke
 
  This code was released as part of the Stryke project. Stryke
- is maintained by Storm Software under the Apache-2.0 License, and is
+ is maintained by Storm Software under the Apache-2.0 license, and is
  free for commercial and private use. For more information, please visit
- our licensing page.
+ our licensing page at https://stormsoftware.com/licenses/projects/stryke.
 
- Website:         https://stormsoftware.com
- Repository:      https://github.com/storm-software/stryke
- Documentation:   https://stormsoftware.com/projects/stryke/docs
- Contact:         https://stormsoftware.com/contact
- License:         https://stormsoftware.com/projects/stryke/license
+ Website:                  https://stormsoftware.com
+ Repository:               https://github.com/storm-software/stryke
+ Documentation:            https://docs.stormsoftware.com/projects/stryke
+ Contact:                  https://stormsoftware.com/contact
+
+ SPDX-License-Identifier:  Apache-2.0
 
  ------------------------------------------------------------------- */
 
 export type ShieldRule<
   TContext extends Record<string, any> = Record<string, any>
-> = IRule<TContext> | ILogicRule<TContext>;
+> = RuleInterface<TContext> | LogicRuleInterface<TContext>;
 
-export interface IRule<
+export interface RuleInterface<
   TContext extends Record<string, any> = Record<string, any>
 > {
   name: string;
-  equals: (rule: IRule<TContext>) => boolean;
+  equals: (rule: RuleInterface<TContext>) => boolean;
   resolve: (
     ctx: TContext,
     type: string,
     path: string,
     input: { [name: string]: any },
     rawInput: unknown,
-    options: IOptions<TContext>
-  ) => Promise<IRuleResult>;
+    options: OptionsInterface<TContext>
+  ) => Promise<RuleResultInterface>;
   executeRule: <TContext extends Record<string, any>>(
     ctx: TContext,
     type: string,
     path: string,
     input: { [name: string]: any },
     rawInput: unknown,
-    options: IOptions<TContext>
-  ) => string | boolean | Error | Promise<IRuleResult>;
+    options: OptionsInterface<TContext>
+  ) => string | boolean | Error | Promise<RuleResultInterface>;
 }
 
-export interface IRuleOptions {}
+export interface RuleOptionsInterface {}
 
-export interface ILogicRule<
+export interface LogicRuleInterface<
   TContext extends Record<string, any> = Record<string, any>
-> extends IRule<TContext> {
+> extends RuleInterface<TContext> {
   getRules: () => ShieldRule<TContext>[];
   evaluate: (
     ctx: TContext,
@@ -54,20 +55,20 @@ export interface ILogicRule<
     path: string,
     input: { [name: string]: any },
     rawInput: unknown,
-    options: IOptions<TContext>
-  ) => Promise<IRuleResult[]>;
+    options: OptionsInterface<TContext>
+  ) => Promise<RuleResultInterface[]>;
   resolve: (
     ctx: TContext,
     type: string,
     path: string,
     input: { [name: string]: any },
     rawInput: unknown,
-    options: IOptions<TContext>
-  ) => Promise<IRuleResult>;
+    options: OptionsInterface<TContext>
+  ) => Promise<RuleResultInterface>;
 }
 
-export type IRuleResult = boolean | string | Error;
-export type IRuleFunction<
+export type RuleResultInterface = boolean | string | Error;
+export type RuleFunctionInterface<
   TContext extends Record<string, any> = Record<string, any>
 > = (
   ctx: TContext,
@@ -75,30 +76,30 @@ export type IRuleFunction<
   path: string,
   input: { [name: string]: any },
   rawInput: unknown,
-  options: IOptions<TContext>
-) => IRuleResult | Promise<IRuleResult>;
+  options: OptionsInterface<TContext>
+) => RuleResultInterface | Promise<RuleResultInterface>;
 
-export interface IRuleConstructorOptions {}
+export interface RuleConstructorOptionsInterface {}
 
 // Rules Definition Tree
 
-export interface IRuleTypeMap<
+export interface RuleTypeMapInterface<
   TContext extends Record<string, any> = Record<string, any>
 > {
   [key: string]:
     | ShieldRule<TContext>
-    | IRuleFieldMap<TContext>
-    | IRuleTypeMap<TContext>;
+    | RuleFieldMapInterface<TContext>
+    | RuleTypeMapInterface<TContext>;
 }
 
-export interface IRuleFieldMap<
+export interface RuleFieldMapInterface<
   TContext extends Record<string, any> = Record<string, any>
 > {
   [key: string]: ShieldRule<TContext>;
 }
 
 export type IRules<TContext extends Record<string, any> = Record<string, any>> =
-  ShieldRule<TContext> | IRuleTypeMap<TContext>;
+  ShieldRule<TContext> | RuleTypeMapInterface<TContext>;
 
 export type IFallbackErrorMapperType<
   TContext extends Record<string, any> = Record<string, any>
@@ -117,7 +118,7 @@ export type IFallbackErrorType<
 
 // Generator Options
 
-export interface IOptions<
+export interface OptionsInterface<
   TContext extends Record<string, any> = Record<string, any>
 > {
   debug: boolean;
@@ -126,7 +127,7 @@ export interface IOptions<
   fallbackError?: IFallbackErrorType<TContext>;
 }
 
-export interface IOptionsConstructor<
+export interface OptionsConstructorInterface<
   TContext extends Record<string, any> = Record<string, any>
 > {
   debug?: boolean;
@@ -137,4 +138,4 @@ export interface IOptionsConstructor<
 
 export declare function shield<
   TContext extends Record<string, any> = Record<string, any>
->(ruleTree: IRules<TContext>, options: IOptions<TContext>): any;
+>(ruleTree: IRules<TContext>, options: OptionsInterface<TContext>): any;

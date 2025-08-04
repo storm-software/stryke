@@ -117,7 +117,7 @@
     "@types/pluralize": "catalog:",
     "pluralize": "catalog:",
     "tsup": "catalog:",
-    "zod": "catalog:"
+    "zod": "^4.0.14"
   },
   "publishConfig": {
     "access": "public"

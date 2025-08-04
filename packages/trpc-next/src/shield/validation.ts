@@ -3,19 +3,25 @@
                        ⚡ Storm Software - Stryke
 
  This code was released as part of the Stryke project. Stryke
- is maintained by Storm Software under the Apache-2.0 License, and is
+ is maintained by Storm Software under the Apache-2.0 license, and is
  free for commercial and private use. For more information, please visit
- our licensing page.
+ our licensing page at https://stormsoftware.com/licenses/projects/stryke.
 
- Website:         https://stormsoftware.com
- Repository:      https://github.com/storm-software/stryke
- Documentation:   https://stormsoftware.com/projects/stryke/docs
- Contact:         https://stormsoftware.com/contact
- License:         https://stormsoftware.com/projects/stryke/license
+ Website:                  https://stormsoftware.com
+ Repository:               https://github.com/storm-software/stryke
+ Documentation:            https://docs.stormsoftware.com/projects/stryke
+ Contact:                  https://stormsoftware.com/contact
+
+ SPDX-License-Identifier:  Apache-2.0
 
  ------------------------------------------------------------------- */
 
-import type { ILogicRule, IRule, IRules, ShieldRule } from "./types";
+import type {
+  IRules,
+  LogicRuleInterface,
+  RuleInterface,
+  ShieldRule
+} from "./types";
 import { flattenObjectOf, isLogicRule, isRuleFunction } from "./utils";
 
 /**
@@ -29,7 +35,7 @@ export function validateRuleTree<TContext extends Record<string, any>>(
   const rules = extractRules(ruleTree);
 
   const valid = rules.reduce<{
-    map: Map<string, IRule<TContext>>;
+    map: Map<string, RuleInterface<TContext>>;
     duplicates: string[];
   }>(
     ({ map, duplicates }, rule) => {
@@ -47,7 +53,7 @@ export function validateRuleTree<TContext extends Record<string, any>>(
         return { map, duplicates };
       }
     },
-    { map: new Map<string, IRule<TContext>>(), duplicates: [] }
+    { map: new Map<string, RuleInterface<TContext>>(), duplicates: [] }
   );
 
   if (valid.duplicates.length === 0) {
@@ -66,17 +72,20 @@ export function validateRuleTree<TContext extends Record<string, any>>(
    */
   function extractRules<TContext extends Record<string, any>>(
     ruleTree: IRules<TContext>
-  ): IRule<TContext>[] {
+  ): RuleInterface<TContext>[] {
     const resolvers = flattenObjectOf<ShieldRule<TContext>>(
       ruleTree,
       isRuleFunction
     );
 
-    const rules = resolvers.reduce<IRule<TContext>[]>((rules, rule) => {
+    const rules = resolvers.reduce<RuleInterface<TContext>[]>((rules, rule) => {
       if (isLogicRule(rule)) {
-        return [...rules, ...extractLogicRules(rule)] as IRule<TContext>[];
+        return [
+          ...rules,
+          ...extractLogicRules(rule)
+        ] as RuleInterface<TContext>[];
       } else {
-        return [...rules, rule] as IRule<TContext>[];
+        return [...rules, rule] as RuleInterface<TContext>[];
       }
     }, []);
 
@@ -87,15 +96,20 @@ export function validateRuleTree<TContext extends Record<string, any>>(
    * Recursively extracts Rules from LogicRule
    */
   function extractLogicRules<TContext extends Record<string, any>>(
-    rule: ILogicRule<TContext>
-  ): IRule<TContext>[] {
-    return rule.getRules().reduce<IRule<TContext>[]>((acc, shieldRule) => {
-      if (isLogicRule(shieldRule)) {
-        return [...acc, ...extractLogicRules(shieldRule)] as IRule<TContext>[];
-      } else {
-        return [...acc, shieldRule] as IRule<TContext>[];
-      }
-    }, []);
+    rule: LogicRuleInterface<TContext>
+  ): RuleInterface<TContext>[] {
+    return rule
+      .getRules()
+      .reduce<RuleInterface<TContext>[]>((acc, shieldRule) => {
+        if (isLogicRule(shieldRule)) {
+          return [
+            ...acc,
+            ...extractLogicRules(shieldRule)
+          ] as RuleInterface<TContext>[];
+        } else {
+          return [...acc, shieldRule] as RuleInterface<TContext>[];
+        }
+      }, []);
   }
 }
 

@@ -3,15 +3,16 @@
                        ⚡ Storm Software - Stryke
 
  This code was released as part of the Stryke project. Stryke
- is maintained by Storm Software under the Apache-2.0 License, and is
+ is maintained by Storm Software under the Apache-2.0 license, and is
  free for commercial and private use. For more information, please visit
- our licensing page.
+ our licensing page at https://stormsoftware.com/licenses/projects/stryke.
 
- Website:         https://stormsoftware.com
- Repository:      https://github.com/storm-software/stryke
- Documentation:   https://stormsoftware.com/projects/stryke/docs
- Contact:         https://stormsoftware.com/contact
- License:         https://stormsoftware.com/projects/stryke/license
+ Website:                  https://stormsoftware.com
+ Repository:               https://github.com/storm-software/stryke
+ Documentation:            https://docs.stormsoftware.com/projects/stryke
+ Contact:                  https://stormsoftware.com/contact
+
+ SPDX-License-Identifier:  Apache-2.0
 
  ------------------------------------------------------------------- */
 
@@ -70,7 +71,7 @@ export const find = (val: unknown, path: Reference["key"][]): Reference => {
       if (key === "-") {
         key = length;
       } else if (isString(key)) {
-        const key2 = Math.trunc(key);
+        const key2 = Math.trunc(Number.parseInt(key));
         if (String(key2) !== key) {
           throw new Error("INVALID_INDEX");
         }
@@ -85,7 +86,7 @@ export const find = (val: unknown, path: Reference["key"][]): Reference => {
         val = obj[key];
       }
     } else if (isSetObject(obj)) {
-      val = key in obj ? (obj as any)[key] : undefined;
+      val = key && key in obj ? (obj as any)[key] : undefined;
     } else throw new Error("NOT_FOUND");
   }
   const ref: Reference = {

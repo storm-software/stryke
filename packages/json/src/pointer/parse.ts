@@ -3,15 +3,16 @@
                        ⚡ Storm Software - Stryke
 
  This code was released as part of the Stryke project. Stryke
- is maintained by Storm Software under the Apache-2.0 License, and is
+ is maintained by Storm Software under the Apache-2.0 license, and is
  free for commercial and private use. For more information, please visit
- our licensing page.
+ our licensing page at https://stormsoftware.com/licenses/projects/stryke.
 
- Website:         https://stormsoftware.com
- Repository:      https://github.com/storm-software/stryke
- Documentation:   https://stormsoftware.com/projects/stryke/docs
- Contact:         https://stormsoftware.com/contact
- License:         https://stormsoftware.com/projects/stryke/license
+ Website:                  https://stormsoftware.com
+ Repository:               https://github.com/storm-software/stryke
+ Documentation:            https://docs.stormsoftware.com/projects/stryke
+ Contact:                  https://stormsoftware.com/contact
+
+ SPDX-License-Identifier:  Apache-2.0
 
  ------------------------------------------------------------------- */
 
@@ -19,9 +20,9 @@ import { isNumber } from "@stryke/type-checks/is-number";
 import { isString } from "@stryke/type-checks/is-string";
 import type { JsonPointerPath } from "@stryke/types/json";
 
-const TILDA_ONE = /~1/g;
-const TILDA_ZERO = /~0/g;
-const TILDA = /~/g;
+const TILDE_ONE = /~1/g;
+const TILDE_ZERO = /~0/g;
+const TILDE = /~/g;
 const FORWARD_SLASH = /\//g;
 
 /**
@@ -35,7 +36,7 @@ export function escapePointerSegment(segment: string): string {
     return segment;
   }
 
-  return segment.replace(TILDA, "~0").replace(FORWARD_SLASH, "~1");
+  return segment.replace(TILDE, "~0").replace(FORWARD_SLASH, "~1");
 }
 
 /**
@@ -49,7 +50,7 @@ export function unescapePointerSegment(segment: string): string {
     return segment;
   }
 
-  return segment.replace(TILDA_ONE, "/").replace(TILDA_ZERO, "~");
+  return segment.replace(TILDE_ONE, "/").replace(TILDE_ZERO, "~");
 }
 
 /**
