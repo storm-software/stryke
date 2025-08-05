@@ -44,8 +44,8 @@
       "dependsOn": ["build-base"],
       "options": {
         "commands": [
-          "dts-bundle-generator --project ./tsconfig.esm.json --external-inlines capnp-es --inline-declare-global --no-banner -o dist/dts/index.d.ts src/index.ts",
-          "dts-bundle-generator --project ./tsconfig.cjs.json --external-inlines capnp-es --inline-declare-global --no-banner -o dist/dts/index.d.cts src/index.ts"
+          "dts-bundle-generator --project ./tsconfig.esm.json --external-inlines capnp-es --external-imports node:worker_threads defu typescript --inline-declare-global --no-banner -o dist/dts/index.d.ts src/index.ts",
+          "dts-bundle-generator --project ./tsconfig.cjs.json --external-inlines capnp-es --external-imports node:worker_threads defu typescript --inline-declare-global --no-banner -o dist/dts/index.d.cts src/index.ts"
         ],
         "parallel": true,
         "cwd": "{projectRoot}"

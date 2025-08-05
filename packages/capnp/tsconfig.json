@@ -2,7 +2,7 @@
   "extends": "../../tsconfig.base.json",
   "compilerOptions": {
     "rootDir": "../..",
-    "types": ["node", "capnp-es"],
+    "types": ["node", "capnp-es", "./types/nanotar.d.ts"],
     "strict": false,
     "noFallthroughCasesInSwitch": true,
     "noImplicitOverride": false,
@@ -14,12 +14,14 @@
     "preserveConstEnums": true,
     "removeComments": false,
     "verbatimModuleSyntax": false,
-    "skipLibCheck": true
+    "skipDefaultLibCheck": false,
+    "skipLibCheck": false
   },
   "include": [
     "src/**/*.ts",
     "bin/**/*.ts",
     "schemas/**/*.ts",
+    "types/**/*",
     "tsup.config.ts",
     "tsup.bin.config.ts"
   ],

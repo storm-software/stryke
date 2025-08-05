@@ -1,7 +1,7 @@
 {
   "extends": "./tsconfig.json",
   "compilerOptions": {
-    "module": "nodenext",
-    "moduleResolution": "nodenext"
+    "module": "preserve",
+    "moduleResolution": "bundler"
   }
 }

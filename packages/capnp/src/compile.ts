@@ -21,8 +21,8 @@ import { compileAll } from "capnp-es/compiler";
 import defu from "defu";
 import { Buffer } from "node:buffer";
 import { exec } from "node:child_process";
-import { resolveOptions } from "./helpers";
-import type { CapnpcCLIOptions, CapnpcOptions, CapnpcResult } from "./types";
+import { resolveOptions } from "./helpers.js";
+import type { CapnpcCLIOptions, CapnpcOptions, CapnpcResult } from "./types.js";
 
 /**
  * Compiles Cap'n Proto schemas into TypeScript files.

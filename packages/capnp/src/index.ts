@@ -26,7 +26,6 @@
  */
 
 export * from "./compile.js";
-export * from "./helpers.js";
 export * from "./rpc.js";
 export * from "./types.js";
 

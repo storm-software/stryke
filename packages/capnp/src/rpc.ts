@@ -24,6 +24,7 @@ import { MessageChannel } from "node:worker_threads";
 export class MessageChannelTransport extends DeferredTransport {
   constructor(public port: MessagePort) {
     super();
+
     this.port.on("message", this.resolve);
     this.port.on("messageerror", this.reject);
     this.port.on("close", this.close);

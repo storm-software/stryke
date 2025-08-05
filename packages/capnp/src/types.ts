@@ -23,7 +23,8 @@ import type {
   Field,
   Node
 } from "capnp-es/capnp/schema";
-import type { CompilerOptions } from "typescript";
+// eslint-disable-next-line ts/consistent-type-imports
+import { CompilerOptions } from "typescript";
 
 export interface CodeGeneratorFileContext {
   // inputs

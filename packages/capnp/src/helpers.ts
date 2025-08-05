@@ -26,8 +26,8 @@ import { existsSync } from "@stryke/path/exists";
 import { findFilePath, relativePath } from "@stryke/path/file-path-fns";
 import { joinPaths } from "@stryke/path/join-paths";
 import type { TsConfigJson } from "@stryke/types/tsconfig";
-import ts from "typescript";
-import type { CapnpcCLIOptions, CapnpcOptions } from "./types";
+import { parseJsonConfigFileContent, sys } from "typescript";
+import type { CapnpcCLIOptions, CapnpcOptions } from "./types.js";
 
 /**
  * Resolves the options for the Cap'n Proto compiler.
@@ -57,9 +57,9 @@ export async function resolveOptions(
   }
 
   const resolvedTsconfig = await readJsonFile<TsConfigJson>(tsconfigPath);
-  const tsconfig = ts.parseJsonConfigFileContent(
+  const tsconfig = parseJsonConfigFileContent(
     resolvedTsconfig,
-    ts.sys,
+    sys,
     findFilePath(tsconfigPath)
   );
   tsconfig.options.configFilePath = tsconfigPath;

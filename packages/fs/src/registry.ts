@@ -5,7 +5,7 @@
  This code was released as part of the Stryke project. Stryke
  is maintained by Storm Software under the Apache-2.0 license, and is
  free for commercial and private use. For more information, please visit
- our licensing page at https://stormsoftware.com/projects/stryke/license.
+ our licensing page at https://stormsoftware.com/licenses/projects/stryke.
 
  Website:                  https://stormsoftware.com
  Repository:               https://github.com/storm-software/stryke
@@ -21,12 +21,21 @@ import { getWorkspaceRoot } from "@stryke/path/get-workspace-root";
 import { execSync } from "node:child_process";
 import { parseArgs } from "node:util";
 
+export interface NodeOptionsToken {
+  kind: "option";
+  index: number;
+  name: string;
+  rawName: string;
+  value: undefined;
+  inlineValue: undefined;
+}
+
 const parseNodeArgs = (args: string[]) => {
   const { values, tokens } = parseArgs({ args, strict: false, tokens: true });
 
   // For the `NODE_OPTIONS`, we support arguments with values without the `=`
   // sign. We need to parse them manually.
-  let orphan = null;
+  let orphan: NodeOptionsToken | null | undefined = null;
   for (let i = 0; i < tokens.length; i++) {
     const token = tokens[i]!;
 

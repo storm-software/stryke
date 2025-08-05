@@ -35,9 +35,9 @@ import { findFilePath } from "@stryke/path/file-path-fns";
 import { joinPaths } from "@stryke/path/join-paths";
 import { Command, Option } from "commander";
 import { writeFile } from "node:fs/promises";
-import { capnpc } from "../src/compile";
-import { resolveOptions } from "../src/helpers";
-import type { CapnpcCLIOptions } from "../src/types";
+import { capnpc } from "../src/compile.js";
+import { resolveOptions } from "../src/helpers.js";
+import type { CapnpcCLIOptions } from "../src/types.js";
 
 export function createProgram() {
   writeInfo("⚡ Running Storm Cap'n Proto Compiler Tools", { logLevel: "all" });

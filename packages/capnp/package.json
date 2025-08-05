@@ -189,7 +189,8 @@
     "@stryke/fs": "workspace:*",
     "@stryke/path": "workspace:*",
     "defu": "catalog:",
-    "hex2dec": "catalog:"
+    "hex2dec": "catalog:",
+    "nanotar": "catalog:"
   },
   "devDependencies": {
     "@storm-software/config": "catalog:",
