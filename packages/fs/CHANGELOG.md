@@ -2,6 +2,17 @@
 
 # Changelog for Stryke - Fs
 
+## [0.23.2](https://github.com/storm-software/stryke/releases/tag/fs%400.23.2) (2025-08-05)
+
+### Miscellaneous
+
+- **monorepo:** Update workspace package links
+  ([7a49a62](https://github.com/storm-software/stryke/commit/7a49a62))
+
+### Updated Dependencies
+
+- Updated path to 0.12.3
+
 ## [0.23.1](https://github.com/storm-software/stryke/releases/tag/fs%400.23.1) (2025-08-05)
 
 ### Bug Fixes

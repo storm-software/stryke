@@ -2,6 +2,23 @@
 
 # Changelog for Stryke - Capnp
 
+## [0.10.1](https://github.com/storm-software/stryke/releases/tag/capnp%400.10.1) (2025-08-05)
+
+### Bug Fixes
+
+- **capnp:** Fixed issues with compiler options resolver
+  ([9ed8e4e](https://github.com/storm-software/stryke/commit/9ed8e4e))
+
+### Miscellaneous
+
+- **monorepo:** Update workspace package links
+  ([7a49a62](https://github.com/storm-software/stryke/commit/7a49a62))
+
+### Updated Dependencies
+
+- Updated path to 0.12.3
+- Updated fs to 0.23.2
+
 ## [0.10.0](https://github.com/storm-software/stryke/releases/tag/capnp%400.10.0) (2025-08-05)
 
 ### Features
