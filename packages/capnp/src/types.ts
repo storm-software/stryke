@@ -24,7 +24,7 @@ import type {
   Node
 } from "capnp-es/capnp/schema";
 // eslint-disable-next-line ts/consistent-type-imports
-import { CompilerOptions } from "typescript";
+import { ParsedCommandLine } from "typescript";
 
 export interface CodeGeneratorFileContext {
   // inputs
@@ -64,12 +64,22 @@ export interface CapnpcCLIOptions {
   tty?: boolean;
 }
 
-export type CapnpcOptions = Omit<
-  CapnpcCLIOptions,
-  "noTs" | "noDts" | "tsconfig" | "schema"
-> & {
-  tsconfig: CompilerOptions;
+export type CapnpcOptions = Omit<CapnpcCLIOptions, "tsconfig" | "schema"> & {
+  schemas: string | string[];
+} & (
+    | {
+        tsconfig: ParsedCommandLine;
+        tsconfigPath?: string;
+      }
+    | {
+        tsconfig?: ParsedCommandLine;
+        tsconfigPath: string;
+      }
+  );
+
+export type CapnpcResolvedOptions = Omit<CapnpcOptions, "noTs" | "noDts"> & {
   schemas: string[];
+  tsconfig: ParsedCommandLine;
 };
 
 export interface CapnpcResult {

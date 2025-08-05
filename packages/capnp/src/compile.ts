@@ -22,7 +22,11 @@ import defu from "defu";
 import { Buffer } from "node:buffer";
 import { exec } from "node:child_process";
 import { resolveOptions } from "./helpers.js";
-import type { CapnpcCLIOptions, CapnpcOptions, CapnpcResult } from "./types.js";
+import type {
+  CapnpcOptions,
+  CapnpcResolvedOptions,
+  CapnpcResult
+} from "./types.js";
 
 /**
  * Compiles Cap'n Proto schemas into TypeScript files.
@@ -30,7 +34,9 @@ import type { CapnpcCLIOptions, CapnpcOptions, CapnpcResult } from "./types.js";
  * @param options - The options for the compilation process.
  * @returns A promise that resolves to the compilation result.
  */
-export async function capnpc(options: CapnpcOptions): Promise<CapnpcResult> {
+export async function capnpc(
+  options: CapnpcResolvedOptions
+): Promise<CapnpcResult> {
   const { output, tsconfig, schemas = [], tty } = options;
 
   let dataBuf: Buffer = Buffer.alloc(0);
@@ -87,7 +93,7 @@ export async function capnpc(options: CapnpcOptions): Promise<CapnpcResult> {
     ts: options.ts ?? true,
     js: false,
     dts: false,
-    tsconfig
+    tsconfig: tsconfig.options
   });
 }
 
@@ -98,7 +104,7 @@ export async function capnpc(options: CapnpcOptions): Promise<CapnpcResult> {
  * @param options - The options for the compilation process.
  * @returns A promise that resolves to the compilation result.
  */
-export async function compile(dataBuf: Buffer, options: CapnpcCLIOptions) {
+export async function compile(dataBuf: Buffer, options: CapnpcOptions) {
   const resolvedOptions = await resolveOptions(options);
   if (!resolvedOptions) {
     writeWarning(
@@ -110,10 +116,16 @@ export async function compile(dataBuf: Buffer, options: CapnpcCLIOptions) {
 
   return compileAll(
     dataBuf,
-    defu(resolvedOptions, {
-      ts: true,
-      js: false,
-      dts: false
-    })
+    defu(
+      {
+        tsconfig: resolvedOptions.tsconfig.options
+      },
+      resolvedOptions,
+      {
+        ts: true,
+        js: false,
+        dts: false
+      }
+    )
   );
 }

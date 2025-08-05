@@ -20,14 +20,16 @@ import {
   writeFatal,
   writeWarning
 } from "@storm-software/config-tools/logger/console";
+import { toArray } from "@stryke/convert/to-array";
 import { readJsonFile } from "@stryke/fs/json";
 import { listFiles } from "@stryke/fs/list-files";
 import { existsSync } from "@stryke/path/exists";
 import { findFilePath, relativePath } from "@stryke/path/file-path-fns";
 import { joinPaths } from "@stryke/path/join-paths";
 import type { TsConfigJson } from "@stryke/types/tsconfig";
+import type { ParsedCommandLine } from "typescript";
 import { parseJsonConfigFileContent, sys } from "typescript";
-import type { CapnpcCLIOptions, CapnpcOptions } from "./types.js";
+import type { CapnpcOptions, CapnpcResolvedOptions } from "./types.js";
 
 /**
  * Resolves the options for the Cap'n Proto compiler.
@@ -36,67 +38,79 @@ import type { CapnpcCLIOptions, CapnpcOptions } from "./types.js";
  * @returns The resolved options
  */
 export async function resolveOptions(
-  options: CapnpcCLIOptions
-): Promise<CapnpcOptions | null> {
-  const tsconfigPath = options.tsconfig
-    ?.replace("{projectRoot}", options.projectRoot)
-    ?.replace("{workspaceRoot}", options.workspaceRoot);
-  const schema = options.schema
-    ? options.schema
+  options: CapnpcOptions
+): Promise<CapnpcResolvedOptions | null> {
+  const tsconfigPath = options.tsconfigPath
+    ? options.tsconfigPath
         .replace("{projectRoot}", options.projectRoot)
         .replace("{workspaceRoot}", options.workspaceRoot)
-    : options.projectRoot;
-
-  if (!existsSync(tsconfigPath)) {
-    const errorMessage = options.tsconfig
-      ? `✖ The specified TypeScript configuration file "${tsconfigPath}" does not exist. Please provide a valid path.`
-      : "✖ The specified TypeScript configuration file does not exist. Please provide a valid path.";
-    writeFatal(errorMessage, { logLevel: "all" });
-
-    throw new Error(errorMessage);
-  }
-
-  const resolvedTsconfig = await readJsonFile<TsConfigJson>(tsconfigPath);
-  const tsconfig = parseJsonConfigFileContent(
-    resolvedTsconfig,
-    sys,
-    findFilePath(tsconfigPath)
-  );
-  tsconfig.options.configFilePath = tsconfigPath;
-
-  tsconfig.options.noImplicitOverride = false;
-  tsconfig.options.noUnusedLocals = false;
-  tsconfig.options.noUnusedParameters = false;
-
-  tsconfig.options.outDir = joinPaths(
-    options.projectRoot,
-    relativePath(
-      findFilePath(tsconfigPath),
-      joinPaths(
-        options.workspaceRoot,
-        schema.endsWith(".capnp") ? findFilePath(schema) : schema
-      )
-    )
+    : undefined;
+  const schemas = toArray(
+    options.schemas
+      ? Array.isArray(options.schemas)
+        ? options.schemas.map(schema =>
+            schema
+              .replace("{projectRoot}", options.projectRoot)
+              .replace("{workspaceRoot}", options.workspaceRoot)
+          )
+        : options.schemas
+      : joinPaths(options.projectRoot, "schemas/**/*.capnp")
   );
 
-  const schemas = [] as string[];
-  if (!schema || (!schema.includes("*") && !existsSync(schema))) {
-    throw new Error(
-      `✖ The schema path "${schema}" is invalid. Please provide a valid path.`
+  let resolvedTsconfig!: ParsedCommandLine;
+  if (options.tsconfig) {
+    resolvedTsconfig = options.tsconfig;
+  } else {
+    if (!tsconfigPath || !existsSync(tsconfigPath)) {
+      const errorMessage = tsconfigPath
+        ? `✖ The specified TypeScript configuration file "${tsconfigPath}" does not exist. Please provide a valid path.`
+        : "✖ The specified TypeScript configuration file does not exist. Please provide a valid path.";
+      writeFatal(errorMessage, { logLevel: "all" });
+
+      throw new Error(errorMessage);
+    }
+
+    const tsconfigFile = await readJsonFile<TsConfigJson>(tsconfigPath);
+    resolvedTsconfig = parseJsonConfigFileContent(
+      tsconfigFile,
+      sys,
+      findFilePath(tsconfigPath)
     );
+    if (!resolvedTsconfig) {
+      const errorMessage = `✖ The specified TypeScript configuration file "${tsconfigPath}" is invalid. Please provide a valid configuration.`;
+      writeFatal(errorMessage, { logLevel: "all" });
+
+      throw new Error(errorMessage);
+    }
+
+    resolvedTsconfig.options.configFilePath = tsconfigPath;
+    resolvedTsconfig.options.noImplicitOverride = false;
+    resolvedTsconfig.options.noUnusedLocals = false;
+    resolvedTsconfig.options.noUnusedParameters = false;
   }
 
-  schemas.push(
-    ...(await listFiles(
-      schema.includes("*")
-        ? schema.endsWith(".capnp")
-          ? schema
-          : `${schema}.capnp`
-        : joinPaths(schema, "**/*.capnp")
-    ))
-  );
+  const resolvedSchemas = [] as string[];
+  for (const schema of schemas) {
+    if (!schema || (!schema.includes("*") && !existsSync(schema))) {
+      if (schemas.length <= 1) {
+        throw new Error(
+          `✖ The schema path "${schema}" is invalid. Please provide a valid path.`
+        );
+      }
+    } else {
+      resolvedSchemas.push(
+        ...(await listFiles(
+          schema.includes("*")
+            ? schema.endsWith(".capnp")
+              ? schema
+              : `${schema}.capnp`
+            : joinPaths(schema, "**/*.capnp")
+        ))
+      );
+    }
+  }
 
-  if (schemas.length === 0) {
+  if (resolvedSchemas.length === 0 || !resolvedSchemas[0]) {
     writeWarning(
       `✖ No Cap'n Proto schema files found in the specified source paths: ${schemas.join(
         ", "
@@ -107,13 +121,26 @@ export async function resolveOptions(
     return null;
   }
 
+  resolvedTsconfig.options.outDir = joinPaths(
+    options.projectRoot,
+    relativePath(
+      tsconfigPath ? findFilePath(tsconfigPath) : options.projectRoot,
+      joinPaths(
+        options.workspaceRoot,
+        resolvedSchemas[0].endsWith(".capnp")
+          ? findFilePath(resolvedSchemas[0])
+          : resolvedSchemas[0]
+      )
+    )
+  );
+
   return {
     workspaceRoot: options.workspaceRoot,
     projectRoot: options.projectRoot,
-    schemas,
+    schemas: resolvedSchemas,
     js: options.js ?? false,
     ts: options.ts ?? (options.noTs !== undefined ? !options.noTs : true),
     dts: options.dts ?? (options.noDts !== undefined ? !options.noDts : true),
-    tsconfig: tsconfig?.options
+    tsconfig: resolvedTsconfig
   };
 }

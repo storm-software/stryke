@@ -154,7 +154,14 @@ export function createProgram() {
 }
 
 async function compileAction(options: CapnpcCLIOptions) {
-  const resolvedOptions = await resolveOptions(options);
+  const resolvedOptions = await resolveOptions({
+    ...options,
+    projectRoot: options.projectRoot,
+    tsconfig: undefined,
+    tsconfigPath:
+      options.tsconfig || joinPaths(options.projectRoot, "tsconfig.json"),
+    schemas: options.schema
+  });
   if (!resolvedOptions) {
     writeWarning(
       "✖ Unable to resolve Cap'n Proto compiler options - the program will terminate",
@@ -164,7 +171,7 @@ async function compileAction(options: CapnpcCLIOptions) {
   }
 
   writeInfo(
-    `📦 Storm Cap'n Proto Compiler will output ${
+    `📦  Storm Cap'n Proto Compiler will output ${
       resolvedOptions.ts ? "TypeScript code" : ""
     }${
       resolvedOptions.js
@@ -184,7 +191,7 @@ async function compileAction(options: CapnpcCLIOptions) {
             .replace("{projectRoot}", resolvedOptions.projectRoot)
             .replace("{workspaceRoot}", resolvedOptions.workspaceRoot)
         : resolvedOptions.projectRoot
-    } to ${resolvedOptions.tsconfig.outDir}...`,
+    } to ${resolvedOptions.tsconfig.options.outDir}...`,
     {
       logLevel: "all"
     }
@@ -193,7 +200,7 @@ async function compileAction(options: CapnpcCLIOptions) {
   const result = await capnpc(resolvedOptions);
   if (result.files.size === 0) {
     writeWarning(
-      "⚠️ No files were generated. Please check your schema files.",
+      "⚠️  No files were generated. Please check your schema files.",
       {
         logLevel: "all"
       }
@@ -201,7 +208,7 @@ async function compileAction(options: CapnpcCLIOptions) {
     return;
   }
 
-  writeInfo(`Writing ${result.files.size} generated files to disk...`, {
+  writeInfo(`📋  Writing ${result.files.size} generated files to disk...`, {
     logLevel: "all"
   });
 
@@ -229,7 +236,7 @@ async function compileAction(options: CapnpcCLIOptions) {
     );
   }
 
-  writeSuccess("⚡ Storm Cap'n Proto Compiler completed successfully.", {
+  writeSuccess("⚡  Storm Cap'n Proto Compiler completed successfully.", {
     logLevel: "all"
   });
 }
