@@ -1,3 +1,7 @@
-import { getJestConfig } from "@storm-software/testing-tools";
+import { declarePackage } from "@storm-software/testing-tools/jest/declare-package";
 
-export default getJestConfig("packages/url", true, "url");
+export default declarePackage({
+  projectRoot: "packages/url",
+  isNode: false,
+  displayName: "url"
+});

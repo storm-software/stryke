@@ -1,3 +1,5 @@
-import { getJestConfig } from "@storm-software/testing-tools";
+import { declarePackage } from "@storm-software/testing-tools/jest/declare-package";
 
-export default getJestConfig("packages/json", true, "json");
+export default declarePackage(
+  { projectRoot: "packages/json", isNode: false, displayName: "json"}
+);

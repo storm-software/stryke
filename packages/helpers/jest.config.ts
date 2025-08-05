@@ -1,3 +1,5 @@
-import { getJestConfig } from "@storm-software/testing-tools";
+import { declarePackage } from "@storm-software/testing-tools/jest/declare-package";
 
-export default getJestConfig("packages/helpers", true, "helpers");
+export default declarePackage(
+  { projectRoot: "packages/helpers", isNode: false, displayName: "helpers"}
+);

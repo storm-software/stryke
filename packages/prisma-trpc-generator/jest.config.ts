@@ -1,7 +1,7 @@
-import { getJestConfig } from "@storm-software/testing-tools";
+import { declarePackage } from "@storm-software/testing-tools/jest/declare-package";
 
-export default getJestConfig(
-  "packages/prisma-trpc-generator",
-  true,
-  "prisma-trpc-generator"
-);
+export default declarePackage({
+  projectRoot: "packages/prisma-trpc-generator",
+  isNode: true,
+  displayName: "prisma-trpc-generator"
+});

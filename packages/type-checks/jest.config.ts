@@ -1,3 +1,7 @@
-import { getJestConfig } from "@storm-software/testing-tools";
+import { declarePackage } from "@storm-software/testing-tools/jest/declare-package";
 
-export default getJestConfig("packages/type-checks", true, "type-checks");
+export default declarePackage({
+  projectRoot: "packages/type-checks",
+  isNode: false,
+  displayName: "type-checks"
+});

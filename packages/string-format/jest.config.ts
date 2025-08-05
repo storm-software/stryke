@@ -1,3 +1,7 @@
-import { getJestConfig } from "@storm-software/testing-tools";
+import { declarePackage } from "@storm-software/testing-tools/jest/declare-package";
 
-export default getJestConfig("packages/string-format", true, "string-format");
+export default declarePackage({
+  projectRoot: "packages/string-format",
+  isNode: false,
+  displayName: "string-format"
+});

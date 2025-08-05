@@ -1,3 +1,5 @@
-import { getJestConfig } from "@storm-software/testing-tools";
+import { declarePackage } from "@storm-software/testing-tools/jest/declare-package";
 
-export default getJestConfig("packages/hash", true, "hash");
+export default declarePackage(
+  { projectRoot: "packages/hash", isNode: true, displayName: "hash"}
+);

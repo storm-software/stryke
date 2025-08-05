@@ -1,3 +1,7 @@
-import { getJestConfig } from "@storm-software/testing-tools";
+import { declarePackage } from "@storm-software/testing-tools/jest/declare-package";
 
-export default getJestConfig("packages/open-browser", true, "open-browser");
+export default declarePackage({
+  projectRoot: "packages/open-browser",
+  isNode: true,
+  displayName: "open-browser"
+});

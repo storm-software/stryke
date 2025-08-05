@@ -1,3 +1,7 @@
-import { getJestConfig } from "@storm-software/testing-tools";
+import { declarePackage } from "@storm-software/testing-tools/jest/declare-package";
 
-export default getJestConfig("trpc-next", true, "trpc-next");
+export default declarePackage({
+  projectRoot: "packages/trpc-next",
+  isNode: true,
+  displayName: "trpc-next"
+});
