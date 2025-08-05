@@ -335,7 +335,7 @@ export interface Typed {
   /**
    * The type of the record
    */
-  __typename: string;
+  __type: string;
 }
 
 export interface ClassTypeCheckable<T> extends Typed {
