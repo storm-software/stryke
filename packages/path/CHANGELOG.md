@@ -2,6 +2,17 @@
 
 # Changelog for Stryke - Path
 
+## [0.12.2](https://github.com/storm-software/stryke/releases/tag/path%400.12.2) (2025-08-05)
+
+### Miscellaneous
+
+- **monorepo:** Formatting and package link updates
+  ([090da0a](https://github.com/storm-software/stryke/commit/090da0a))
+
+### Updated Dependencies
+
+- Updated types to 0.8.8
+
 ## [0.12.1](https://github.com/storm-software/stryke/releases/tag/path%400.12.1) (2025-08-02)
 
 ### Miscellaneous

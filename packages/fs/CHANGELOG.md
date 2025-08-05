@@ -2,6 +2,22 @@
 
 # Changelog for Stryke - Fs
 
+## [0.23.1](https://github.com/storm-software/stryke/releases/tag/fs%400.23.1) (2025-08-05)
+
+### Bug Fixes
+
+- **capnp:** Resolved `build-dts` configuration issues
+  ([2f69761](https://github.com/storm-software/stryke/commit/2f69761))
+
+### Miscellaneous
+
+- **monorepo:** Formatting and package link updates
+  ([090da0a](https://github.com/storm-software/stryke/commit/090da0a))
+
+### Updated Dependencies
+
+- Updated path to 0.12.2
+
 ## [0.23.0](https://github.com/storm-software/stryke/releases/tag/fs%400.23.0) (2025-08-04)
 
 ### Features

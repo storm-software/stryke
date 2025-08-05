@@ -2,6 +2,13 @@
 
 # Changelog for Stryke - Types
 
+## [0.8.8](https://github.com/storm-software/stryke/releases/tag/types%400.8.8) (2025-08-05)
+
+### Miscellaneous
+
+- **types:** Update the metadata field on `Typed` to align with `deepkit`
+  ([35bd583](https://github.com/storm-software/stryke/commit/35bd583))
+
 ## [0.8.7](https://github.com/storm-software/stryke/releases/tag/types%400.8.7) (2025-08-04)
 
 ### Bug Fixes

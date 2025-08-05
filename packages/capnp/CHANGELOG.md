@@ -2,6 +2,23 @@
 
 # Changelog for Stryke - Capnp
 
+## [0.10.0](https://github.com/storm-software/stryke/releases/tag/capnp%400.10.0) (2025-08-05)
+
+### Features
+
+- **capnp:** Added a separate `compile` export to the package
+  ([7c6eeee](https://github.com/storm-software/stryke/commit/7c6eeee))
+
+### Bug Fixes
+
+- **capnp:** Resolved `build-dts` configuration issues
+  ([2f69761](https://github.com/storm-software/stryke/commit/2f69761))
+
+### Updated Dependencies
+
+- Updated path to 0.12.2
+- Updated fs to 0.23.1
+
 ## [0.9.13](https://github.com/storm-software/stryke/releases/tag/capnp%400.9.13) (2025-08-04)
 
 ### Miscellaneous
