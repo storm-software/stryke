@@ -74,6 +74,20 @@
         "default": "./dist/index.js"
       }
     },
+    "./helpers": {
+      "import": {
+        "types": "./dist/helpers.d.ts",
+        "default": "./dist/helpers.js"
+      },
+      "require": {
+        "types": "./dist/helpers.d.cts",
+        "default": "./dist/helpers.cjs"
+      },
+      "default": {
+        "types": "./dist/helpers.d.ts",
+        "default": "./dist/helpers.js"
+      }
+    },
     "./compile": {
       "import": {
         "types": "./dist/compile.d.ts",
@@ -172,8 +186,9 @@
     }
   },
   "dependencies": {
-    "@stryke/fs": "0.23.0",
+    "@stryke/fs": "workspace:*",
     "@stryke/path": "workspace:*",
+    "defu": "catalog:",
     "hex2dec": "catalog:"
   },
   "devDependencies": {

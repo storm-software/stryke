@@ -6,7 +6,7 @@
  This code was released as part of the Stryke project. Stryke
  is maintained by Storm Software under the Apache-2.0 license, and is
  free for commercial and private use. For more information, please visit
- our licensing page at https://stormsoftware.com/projects/stryke/license.
+ our licensing page at https://stormsoftware.com/licenses/projects/stryke.
 
  Website:                  https://stormsoftware.com
  Repository:               https://github.com/storm-software/stryke
@@ -30,16 +30,13 @@ import {
   handleProcess
 } from "@storm-software/config-tools/utilities";
 import { createDirectory } from "@stryke/fs/helpers";
-import { readJsonFile } from "@stryke/fs/json";
-import { listFiles } from "@stryke/fs/list-files";
 import { existsSync } from "@stryke/path/exists";
-import { findFilePath, relativePath } from "@stryke/path/file-path-fns";
+import { findFilePath } from "@stryke/path/file-path-fns";
 import { joinPaths } from "@stryke/path/join-paths";
-import type { TsConfigJson } from "@stryke/types/tsconfig";
 import { Command, Option } from "commander";
 import { writeFile } from "node:fs/promises";
-import ts from "typescript";
 import { capnpc } from "../src/compile";
+import { resolveOptions } from "../src/helpers";
 import type { CapnpcCLIOptions } from "../src/types";
 
 export function createProgram() {
@@ -157,96 +154,43 @@ export function createProgram() {
 }
 
 async function compileAction(options: CapnpcCLIOptions) {
-  const tsconfigPath = options.tsconfig.replace(
-    "{projectRoot}",
-    options.projectRoot
-  );
-  const schema = options.schema
-    ? options.schema.replace("{projectRoot}", options.projectRoot)
-    : options.projectRoot;
-
-  if (!existsSync(tsconfigPath)) {
-    const errorMessage = options.tsconfig
-      ? `✖ The specified TypeScript configuration file "${tsconfigPath}" does not exist. Please provide a valid path.`
-      : "✖ The specified TypeScript configuration file does not exist. Please provide a valid path.";
-    writeFatal(errorMessage, { logLevel: "all" });
-
-    throw new Error(errorMessage);
-  }
-
-  const resolvedTsconfig = await readJsonFile<TsConfigJson>(tsconfigPath);
-  const tsconfig = ts.parseJsonConfigFileContent(
-    resolvedTsconfig,
-    ts.sys,
-    findFilePath(tsconfigPath)
-  );
-  tsconfig.options.configFilePath = tsconfigPath;
-
-  tsconfig.options.noImplicitOverride = false;
-  tsconfig.options.noUnusedLocals = false;
-  tsconfig.options.noUnusedParameters = false;
-
-  tsconfig.options.outDir = joinPaths(
-    options.projectRoot,
-    relativePath(
-      findFilePath(tsconfigPath),
-      joinPaths(
-        options.workspaceRoot,
-        schema.endsWith(".capnp") ? findFilePath(schema) : schema
-      )
-    )
-  );
-
-  writeInfo(
-    `📦 Storm Cap'n Proto Compiler will output ${options.ts ? "TypeScript code" : ""}${
-      options.js ? (options.ts ? ", JavaScript code" : "JavaScript code") : ""
-    }${
-      options.dts
-        ? options.ts || options.js
-          ? ", TypeScript declarations"
-          : "TypeScript declarations"
-        : ""
-    } files from schemas at ${schema} to ${tsconfig.options.outDir}...`,
-    {
-      logLevel: "all"
-    }
-  );
-
-  const schemas = [] as string[];
-  if (!schema || (!schema.includes("*") && !existsSync(schema))) {
-    const errorMessage = `✖ The schema path "${schema}" is invalid. Please provide a valid path.`;
-    writeFatal(errorMessage, { logLevel: "all" });
-
-    throw new Error(errorMessage);
-  }
-
-  schemas.push(
-    ...(await listFiles(
-      schema.includes("*")
-        ? schema.endsWith(".capnp")
-          ? schema
-          : `${schema}.capnp`
-        : joinPaths(schema, "**/*.capnp")
-    ))
-  );
-
-  if (schemas.length === 0) {
-    writeFatal(
-      `✖ No Cap'n Proto schema files found in the specified source paths: ${schemas.join(
-        ", "
-      )}. Please ensure that the paths are correct and contain .capnp files.`,
+  const resolvedOptions = await resolveOptions(options);
+  if (!resolvedOptions) {
+    writeWarning(
+      "✖ Unable to resolve Cap'n Proto compiler options - the program will terminate",
       { logLevel: "all" }
     );
     return;
   }
 
-  const result = await capnpc({
-    ...options,
-    tsconfig,
-    schemas,
-    ts: options.ts ?? (options.noTs !== undefined ? !options.noTs : true),
-    dts: options.dts ?? (options.noDts !== undefined ? !options.noDts : true)
-  });
+  writeInfo(
+    `📦 Storm Cap'n Proto Compiler will output ${
+      resolvedOptions.ts ? "TypeScript code" : ""
+    }${
+      resolvedOptions.js
+        ? resolvedOptions.ts
+          ? ", JavaScript code"
+          : "JavaScript code"
+        : ""
+    }${
+      resolvedOptions.dts
+        ? resolvedOptions.ts || resolvedOptions.js
+          ? ", TypeScript declarations"
+          : "TypeScript declarations"
+        : ""
+    } files from schemas at ${
+      options.schema
+        ? options.schema
+            .replace("{projectRoot}", resolvedOptions.projectRoot)
+            .replace("{workspaceRoot}", resolvedOptions.workspaceRoot)
+        : resolvedOptions.projectRoot
+    } to ${resolvedOptions.tsconfig.outDir}...`,
+    {
+      logLevel: "all"
+    }
+  );
+
+  const result = await capnpc(resolvedOptions);
   if (result.files.size === 0) {
     writeWarning(
       "⚠️ No files were generated. Please check your schema files.",

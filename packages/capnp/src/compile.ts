@@ -16,10 +16,13 @@
 
  ------------------------------------------------------------------- */
 
+import { writeWarning } from "@storm-software/config-tools/logger/console";
 import { compileAll } from "capnp-es/compiler";
+import defu from "defu";
 import { Buffer } from "node:buffer";
 import { exec } from "node:child_process";
-import type { CapnpcOptions, CapnpcResult } from "./types";
+import { resolveOptions } from "./helpers";
+import type { CapnpcCLIOptions, CapnpcOptions, CapnpcResult } from "./types";
 
 /**
  * Compiles Cap'n Proto schemas into TypeScript files.
@@ -84,6 +87,33 @@ export async function capnpc(options: CapnpcOptions): Promise<CapnpcResult> {
     ts: options.ts ?? true,
     js: false,
     dts: false,
-    tsconfig: tsconfig?.options
+    tsconfig
   });
+}
+
+/**
+ * Compiles Cap'n Proto schemas into TypeScript files.
+ *
+ * @param dataBuf - The buffer containing the Cap'n Proto schema data.
+ * @param options - The options for the compilation process.
+ * @returns A promise that resolves to the compilation result.
+ */
+export async function compile(dataBuf: Buffer, options: CapnpcCLIOptions) {
+  const resolvedOptions = await resolveOptions(options);
+  if (!resolvedOptions) {
+    writeWarning(
+      "✖ Unable to resolve Cap'n Proto compiler options - the program will terminate",
+      { logLevel: "all" }
+    );
+    return;
+  }
+
+  return compileAll(
+    dataBuf,
+    defu(resolvedOptions, {
+      ts: true,
+      js: false,
+      dts: false
+    })
+  );
 }

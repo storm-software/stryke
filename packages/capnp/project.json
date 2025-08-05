@@ -69,6 +69,32 @@
         "parallel": true
       }
     },
+    "test-schema": {
+      "cache": true,
+      "inputs": ["{projectRoot}/tests/schemas/*.capnp"],
+      "outputs": ["{projectRoot}/tests/schemas/*.ts"],
+      "dependsOn": ["build"],
+      "executor": "nx:run-commands",
+      "options": {
+        "command": "node ./{projectRoot}/dist/bin/capnpc.js --project-root packages/capnp --schema ./{projectRoot}/tests/schemas --no-dts"
+      }
+    },
+    "test": {
+      "cache": true,
+      "inputs": ["testing", "typescript"],
+      "outputs": ["{projectRoot}/tests/**/*.js"],
+      "dependsOn": ["test-schema"],
+      "executor": "@nx/jest:jest",
+      "options": {
+        "jestConfig": "packages/capnp/jest.config.ts",
+        "passWithNoTests": true
+      },
+      "configurations": {
+        "ci": {
+          "ci": true
+        }
+      }
+    },
     "nx-release-publish": {
       "executor": "@storm-software/workspace-tools:npm-publish"
     }

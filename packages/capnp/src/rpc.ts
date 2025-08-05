@@ -21,14 +21,57 @@ import type { Message as RPCMessage } from "capnp-es/capnp/rpc";
 import type { MessagePort } from "node:worker_threads";
 import { MessageChannel } from "node:worker_threads";
 
+export class MessageChannelTransport extends DeferredTransport {
+  constructor(public port: MessagePort) {
+    super();
+    this.port.on("message", this.resolve);
+    this.port.on("messageerror", this.reject);
+    this.port.on("close", this.close);
+  }
+
+  public override close = (): void => {
+    this.port.off("message", this.resolve);
+    this.port.off("messageerror", this.reject);
+    this.port.off("close", this.close);
+    this.port.close();
+    super.close();
+  };
+
+  public sendMessage(msg: RPCMessage): void {
+    const m = new Message();
+    m.setRoot(msg);
+
+    const buf = m.toArrayBuffer();
+    this.port.postMessage(buf, [buf]);
+  }
+}
+
 /**
  * A class that manages Cap'n Proto RPC connections.
  */
 export class CapnpRPC {
+  /**
+   * A queue for deferred connections that are waiting to be accepted.
+   *
+   * @remarks
+   * This is used to manage incoming connections when the accept method is called.
+   */
   protected acceptQueue = new Array<Deferred<Conn>>();
 
+  /**
+   * A map of connections by their ID.
+   *
+   * @remarks
+   * This is used to manage multiple connections and allows for easy retrieval by ID.
+   */
   protected connections: Record<number, Conn> = {};
 
+  /**
+   * A queue for connections that are waiting to be accepted.
+   *
+   * @remarks
+   * This is used to manage incoming connections when the accept method is called.
+   */
   protected connectQueue = new Array<MessagePort>();
 
   /**
@@ -98,31 +141,5 @@ export class CapnpRPC {
     this.acceptQueue.length = 0;
     this.connectQueue.length = 0;
     this.connections = {};
-  }
-}
-
-export class MessageChannelTransport extends DeferredTransport {
-  constructor(public port: MessagePort) {
-    super();
-    this.port.on("message", this.resolve);
-    this.port.on("messageerror", this.reject);
-    this.port.on("close", this.close);
-  }
-
-  override close = (): void => {
-    this.port.off("message", this.resolve);
-    this.port.off("messageerror", this.reject);
-    this.port.off("close", this.close);
-    this.port.close();
-    super.close();
-  };
-
-  sendMessage(msg: RPCMessage): void {
-    const m = new Message();
-
-    m.setRoot(msg);
-
-    const buf = m.toArrayBuffer();
-    this.port.postMessage(buf, [buf]);
   }
 }
