@@ -28,7 +28,7 @@ import { createDirectory, createDirectorySync } from "./helpers";
  * @param filePath - The path to the file to read.
  * @returns The content of the file as an ArrayBuffer.
  */
-export async function readBufferFile(filePath: string): Promise<ArrayBuffer> {
+export async function readFileBuffer(filePath: string): Promise<ArrayBuffer> {
   if (!filePath) {
     throw new Error("No file path provided to read data");
   }
@@ -50,7 +50,7 @@ export async function readBufferFile(filePath: string): Promise<ArrayBuffer> {
  * @param filePath - The path to the file to read.
  * @returns The content of the file as an ArrayBuffer.
  */
-export function readBufferFileSync(filePath: string): ArrayBuffer {
+export function readFileBufferSync(filePath: string): ArrayBuffer {
   if (!filePath) {
     throw new Error("No file path provided to read data");
   }
@@ -69,7 +69,7 @@ export function readBufferFileSync(filePath: string): ArrayBuffer {
  * @param filePath - The path to the file where the data should be written.
  * @param data - The ArrayBuffer containing the data to write.
  */
-export async function writeBufferFile(filePath: string, data: ArrayBuffer) {
+export async function writeFileBuffer(filePath: string, data: ArrayBuffer) {
   if (!filePath) {
     throw new Error("No file path provided to write data");
   }
