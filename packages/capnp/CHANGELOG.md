@@ -2,6 +2,20 @@
 
 # Changelog for Stryke - Capnp
 
+## [0.10.3](https://github.com/storm-software/stryke/releases/tag/capnp%400.10.3) (2025-08-06)
+
+### Bug Fixes
+
+- **capnp:** Resolve issue if output directory was missing
+  ([20b4f4d](https://github.com/storm-software/stryke/commit/20b4f4d))
+- **capnp:** Ensure `output` is provided during compile
+  ([20ba2b6](https://github.com/storm-software/stryke/commit/20ba2b6))
+
+### Miscellaneous
+
+- **monorepo:** Update workspace package links
+  ([1ccb861](https://github.com/storm-software/stryke/commit/1ccb861))
+
 ## [0.10.2](https://github.com/storm-software/stryke/releases/tag/capnp%400.10.2) (2025-08-06)
 
 ### Miscellaneous
