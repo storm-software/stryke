@@ -121,23 +121,29 @@ export async function resolveOptions(
     return null;
   }
 
-  resolvedTsconfig.options.outDir = joinPaths(
-    options.projectRoot,
-    relativePath(
-      tsconfigPath ? findFilePath(tsconfigPath) : options.projectRoot,
-      joinPaths(
-        options.workspaceRoot,
-        resolvedSchemas[0].endsWith(".capnp")
-          ? findFilePath(resolvedSchemas[0])
-          : resolvedSchemas[0]
-      )
-    )
-  );
+  const output = options.output
+    ? options.output
+        .replace("{projectRoot}", options.projectRoot)
+        .replace("{workspaceRoot}", options.workspaceRoot)
+    : joinPaths(
+        options.projectRoot,
+        relativePath(
+          tsconfigPath ? findFilePath(tsconfigPath) : options.projectRoot,
+          joinPaths(
+            options.workspaceRoot,
+            resolvedSchemas[0].endsWith(".capnp")
+              ? findFilePath(resolvedSchemas[0])
+              : resolvedSchemas[0]
+          )
+        )
+      );
+  resolvedTsconfig.options.outDir = output;
 
   return {
     workspaceRoot: options.workspaceRoot,
     projectRoot: options.projectRoot,
     schemas: resolvedSchemas,
+    output,
     js: options.js ?? false,
     ts: options.ts ?? (options.noTs !== undefined ? !options.noTs : true),
     dts: options.dts ?? (options.noDts !== undefined ? !options.noDts : true),

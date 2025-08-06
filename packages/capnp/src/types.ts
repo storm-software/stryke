@@ -77,10 +77,14 @@ export type CapnpcOptions = Omit<CapnpcCLIOptions, "tsconfig" | "schema"> & {
       }
   );
 
-export type CapnpcResolvedOptions = Omit<CapnpcOptions, "noTs" | "noDts"> & {
-  schemas: string[];
-  tsconfig: ParsedCommandLine;
-};
+export type CapnpcResolvedOptions = Omit<
+  CapnpcOptions,
+  "noTs" | "noDts" | "schemas" | "tsconfigPath" | "output"
+> &
+  Required<Pick<CapnpcOptions, "output">> & {
+    schemas: string[];
+    tsconfig: ParsedCommandLine;
+  };
 
 export interface CapnpcResult {
   ctx: CodeGeneratorContext;
