@@ -2,6 +2,13 @@
 
 # Changelog for Stryke - Capnp
 
+## [0.10.4](https://github.com/storm-software/stryke/releases/tag/capnp%400.10.4) (2025-08-06)
+
+### Bug Fixes
+
+- **capnp:** Ensure `schema` paths are correctly formatted
+  ([3072cf8](https://github.com/storm-software/stryke/commit/3072cf8))
+
 ## [0.10.3](https://github.com/storm-software/stryke/releases/tag/capnp%400.10.3) (2025-08-06)
 
 ### Bug Fixes
