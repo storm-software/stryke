@@ -115,7 +115,7 @@ catalog:
   defu: ^6.1.4
   jiti: ^2.4.2
   verdaccio: ^6.0.5
-  zod: "^4.0.14"
+  zod: "^4.0.15"
   zx: ^8.3.2
 linkWorkspacePackages: true
 onlyBuiltDependencies:

@@ -32,7 +32,7 @@ export default defineConfig([
     sourcemap: false,
     tsconfig: "./tsconfig.json",
     shims: true,
-    bundle: false,
+    bundle: true,
     splitting: true,
     external: ["typescript"],
     noExternal: ["capnp-es"]
