@@ -2,6 +2,13 @@
 
 # Changelog for Stryke - Fs
 
+## [0.23.3](https://github.com/storm-software/stryke/releases/tag/fs%400.23.3) (2025-08-06)
+
+### Miscellaneous
+
+- **capnp:** Update the lib build to bundle
+  ([2a488a0](https://github.com/storm-software/stryke/commit/2a488a0))
+
 ## [0.23.2](https://github.com/storm-software/stryke/releases/tag/fs%400.23.2) (2025-08-05)
 
 ### Miscellaneous
