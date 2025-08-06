@@ -47,15 +47,15 @@ export async function resolveOptions(
     : undefined;
   const schemas = toArray(
     options.schemas
-      ? Array.isArray(options.schemas)
-        ? options.schemas.map(schema =>
-            schema
-              .replace("{projectRoot}", options.projectRoot)
-              .replace("{workspaceRoot}", options.workspaceRoot)
-          )
-        : options.schemas
+      ? options.schemas
       : joinPaths(options.projectRoot, "schemas/**/*.capnp")
-  );
+  )
+    .filter(Boolean)
+    .map(schema =>
+      schema
+        .replace("{projectRoot}", options.projectRoot)
+        .replace("{workspaceRoot}", options.workspaceRoot)
+    );
 
   let resolvedTsconfig!: ParsedCommandLine;
   if (options.tsconfig) {
@@ -91,23 +91,12 @@ export async function resolveOptions(
 
   const resolvedSchemas = [] as string[];
   for (const schema of schemas) {
-    if (!schema || (!schema.includes("*") && !existsSync(schema))) {
-      if (schemas.length <= 1) {
-        throw new Error(
-          `✖ The schema path "${schema}" is invalid. Please provide a valid path.`
-        );
-      }
-    } else {
-      resolvedSchemas.push(
-        ...(await listFiles(
-          schema.includes("*")
-            ? schema.endsWith(".capnp")
-              ? schema
-              : `${schema}.capnp`
-            : joinPaths(schema, "**/*.capnp")
-        ))
-      );
+    let formattedSchema = schema;
+    if (!schema.endsWith(".capnp") && !schema.includes("*")) {
+      formattedSchema = `${schema.replace(/\/$/g, "")}/*.capnp`;
     }
+
+    resolvedSchemas.push(...(await listFiles(formattedSchema)));
   }
 
   if (resolvedSchemas.length === 0 || !resolvedSchemas[0]) {
