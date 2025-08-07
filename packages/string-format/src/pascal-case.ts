@@ -16,6 +16,7 @@
 
  ------------------------------------------------------------------- */
 
+import { ACRONYMS } from "./acronyms";
 import { getWords } from "./get-words";
 
 /**
@@ -28,7 +29,10 @@ import { getWords } from "./get-words";
  * @returns True if the input is in pascal case, false otherwise.
  */
 export function isPascalCase(input: string | undefined): boolean {
-  return input ? /^[A-Z][a-zA-Z0-9]*$/.test(input) : false;
+  return input
+    ? (/^[A-Z][A-Z0-9]*$/.test(input) && ACRONYMS.includes(input)) ||
+        /^(?:[A-Z][A-Z0-9]*[a-z]+)*$/.test(input)
+    : false;
 }
 
 /**
@@ -42,7 +46,7 @@ export function isPascalCase(input: string | undefined): boolean {
  */
 export function pascalCase<T extends string | undefined>(input?: T): T {
   return (
-    input === undefined
+    isPascalCase(input) || input === undefined
       ? input
       : getWords(input)
           .map(i =>

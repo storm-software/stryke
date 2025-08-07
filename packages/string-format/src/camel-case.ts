@@ -16,6 +16,7 @@
 
  ------------------------------------------------------------------- */
 
+import { ACRONYMS } from "./acronyms";
 import { lowerCaseFirst } from "./lower-case-first";
 import { pascalCase } from "./pascal-case";
 
@@ -29,7 +30,10 @@ import { pascalCase } from "./pascal-case";
  * @returns True if the input is in camel case, false otherwise.
  */
 export function isCamelCase(input: string | undefined): boolean {
-  return input ? /^[a-z][a-zA-Z0-9]*$/.test(input) : false;
+  return input
+    ? (/^[a-z][a-z0-9]*$/.test(input) && ACRONYMS.includes(input)) ||
+        /^(?:[a-z][a-z0-9]*[A-Z]+)*$/.test(input)
+    : false;
 }
 
 /**
