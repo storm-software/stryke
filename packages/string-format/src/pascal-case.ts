@@ -51,7 +51,8 @@ export function pascalCase<T extends string | undefined>(input?: T): T {
       : getWords(input)
           .map(i =>
             i.length > 0
-              ? i.trim().charAt(0).toUpperCase() + i.trim().slice(1)
+              ? i.trim().charAt(0).toUpperCase() +
+                i.trim().slice(1).toLowerCase()
               : ""
           )
           .join("")

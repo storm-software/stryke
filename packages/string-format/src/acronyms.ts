@@ -211,6 +211,7 @@ export const ACRONYMS = [
   "WLAN",
   "WPA",
   "XACML",
+  "XDG",
   "XML",
   "XSRF",
   "XSS",
