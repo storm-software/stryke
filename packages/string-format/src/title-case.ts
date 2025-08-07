@@ -17,6 +17,7 @@
  ------------------------------------------------------------------- */
 
 import { ACRONYMS } from "./acronyms";
+import { getWords } from "./get-words";
 import { upperCaseFirst } from "./upper-case-first";
 
 export const FORMAT_MAPPING = ACRONYMS.reduce(
@@ -133,10 +134,9 @@ export function titleCase<T extends string | undefined>(
   }
 
   const formatSegment = (segment: string) =>
-    segment
-      .toLowerCase()
-      .split(/[\s\-_]+/)
+    getWords(segment)
       .filter(Boolean)
+      .map(word => word.toLowerCase())
       .map((word, index) => {
         if (
           !options.skipLowerCaseWhenNotFirst &&
