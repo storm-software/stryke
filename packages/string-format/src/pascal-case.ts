@@ -42,7 +42,7 @@ export function isPascalCase(input: string | undefined): boolean {
  */
 export function pascalCase<T extends string | undefined>(input?: T): T {
   return (
-    isPascalCase(input) || input === undefined
+    input === undefined
       ? input
       : getWords(input)
           .map(i =>

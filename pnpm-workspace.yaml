@@ -165,7 +165,6 @@ overrides:
   postcss: ">=8.5.1"
   shell-quote: ">=1.8.2"
   simple-git: ">=3.27.0"
-  zod: ">=4.0.14"
 patchedDependencies:
   capnp-es@0.0.11: patches/capnp-es@0.0.11.patch
 preferWorkspacePackages: true

@@ -111,13 +111,13 @@
     "esbuild": "catalog:",
     "jiti": "catalog:",
     "prettier": "catalog:",
-    "ts-morph": "catalog:"
+    "ts-morph": "catalog:",
+    "zod": "catalog:"
   },
   "devDependencies": {
     "@types/pluralize": "catalog:",
     "pluralize": "catalog:",
-    "tsup": "catalog:",
-    "zod": "^4.0.15"
+    "tsup": "catalog:"
   },
   "publishConfig": {
     "access": "public"
