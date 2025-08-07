@@ -2,6 +2,13 @@
 
 # Changelog for Stryke - String Format
 
+## [0.6.3](https://github.com/storm-software/stryke/releases/tag/string-format%400.6.3) (2025-08-07)
+
+### Bug Fixes
+
+- **string-format:** Resolve issues with converting from CONSTANT_CASE to others
+  ([10ea453](https://github.com/storm-software/stryke/commit/10ea453))
+
 ## [0.6.2](https://github.com/storm-software/stryke/releases/tag/string-format%400.6.2) (2025-08-07)
 
 ### Bug Fixes
