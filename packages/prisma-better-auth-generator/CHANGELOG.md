@@ -1,3 +1,14 @@
+![Storm Software]([object Object])
+
+# Changelog for Stryke - Prisma Better Auth Generator
+
+## [0.13.5](https://github.com/storm-software/stryke/releases/tag/prisma-better-auth-generator%400.13.5) (2025-08-07)
+
+### Bug Fixes
+
+- **string-format:** Resolve issues formatting pascal and camel cases
+  ([12120cb](https://github.com/storm-software/stryke/commit/12120cb))
+
 ![Storm Software](https://public.storm-cdn.com/brand-banner.png)
 
 # Changelog for Stryke - Prisma Better Auth Generator

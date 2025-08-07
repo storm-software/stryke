@@ -1,3 +1,14 @@
+![Storm Software]([object Object])
+
+# Changelog for Stryke - String Format
+
+## [0.6.1](https://github.com/storm-software/stryke/releases/tag/string-format%400.6.1) (2025-08-07)
+
+### Bug Fixes
+
+- **string-format:** Resolve issues formatting pascal and camel cases
+  ([12120cb](https://github.com/storm-software/stryke/commit/12120cb))
+
 ![Storm Software](https://public.storm-cdn.com/brand-banner.png)
 
 # Changelog for Stryke - String Format

@@ -1,3 +1,14 @@
+![Storm Software]([object Object])
+
+# Changelog for Stryke - Type Checks
+
+## [0.3.8](https://github.com/storm-software/stryke/releases/tag/type-checks%400.3.8) (2025-08-07)
+
+### Bug Fixes
+
+- **string-format:** Resolve issues formatting pascal and camel cases
+  ([12120cb](https://github.com/storm-software/stryke/commit/12120cb))
+
 ![Storm Software](https://public.storm-cdn.com/brand-banner.png)
 
 # Changelog for Stryke - Type Checks
