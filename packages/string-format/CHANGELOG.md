@@ -1,3 +1,14 @@
+![Storm Software's logo banner](https://public.storm-cdn.com/brand-banner.png)
+
+# Changelog for Stryke - String Format
+
+## [0.7.0](https://github.com/storm-software/stryke/releases/tag/string-format%400.7.0) (2025-08-07)
+
+### Features
+
+- **string-format:** Added more format check functions
+  ([91a9019](https://github.com/storm-software/stryke/commit/91a9019))
+
 ![Storm Software]([object Object])
 
 # Changelog for Stryke - String Format
