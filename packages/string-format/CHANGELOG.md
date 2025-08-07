@@ -2,6 +2,13 @@
 
 # Changelog for Stryke - String Format
 
+## [0.6.2](https://github.com/storm-software/stryke/releases/tag/string-format%400.6.2) (2025-08-07)
+
+### Bug Fixes
+
+- **string-format:** Resolve issues with string format checkers' RegExp code
+  ([811e9f9](https://github.com/storm-software/stryke/commit/811e9f9))
+
 ## [0.6.1](https://github.com/storm-software/stryke/releases/tag/string-format%400.6.1) (2025-08-07)
 
 ### Bug Fixes

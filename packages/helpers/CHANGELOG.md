@@ -1,3 +1,14 @@
+![Storm Software]([object Object])
+
+# Changelog for Stryke - Helpers
+
+## [0.7.2](https://github.com/storm-software/stryke/releases/tag/helpers%400.7.2) (2025-08-07)
+
+### Bug Fixes
+
+- **string-format:** Resolve issues with string format checkers' RegExp code
+  ([811e9f9](https://github.com/storm-software/stryke/commit/811e9f9))
+
 ![Storm Software](https://public.storm-cdn.com/brand-banner.png)
 
 # Changelog for Stryke - Helpers
