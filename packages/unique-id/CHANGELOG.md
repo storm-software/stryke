@@ -1,3 +1,14 @@
+![Storm Software's logo banner](https://public.storm-cdn.com/brand-banner.png)
+
+# Changelog for Stryke - Unique ID
+
+## [0.3.4](https://github.com/storm-software/stryke/releases/tag/unique-id%400.3.4) (2025-08-08)
+
+### Bug Fixes
+
+- **string-format:** Resolved issues with aronym string formatting
+  ([49f67d4](https://github.com/storm-software/stryke/commit/49f67d4))
+
 ![Storm Software](https://public.storm-cdn.com/brand-banner.png)
 
 # Changelog for Stryke - Unique ID

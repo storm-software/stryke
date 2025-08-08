@@ -2,6 +2,13 @@
 
 # Changelog for Stryke - String Format
 
+## [0.9.1](https://github.com/storm-software/stryke/releases/tag/string-format%400.9.1) (2025-08-08)
+
+### Bug Fixes
+
+- **string-format:** Resolved issues with aronym string formatting
+  ([49f67d4](https://github.com/storm-software/stryke/commit/49f67d4))
+
 ## [0.9.0](https://github.com/storm-software/stryke/releases/tag/string-format%400.9.0) (2025-08-08)
 
 ### Features
