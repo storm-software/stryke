@@ -20,27 +20,25 @@ import { ACRONYM_LIST, ACRONYMS } from "./acronyms";
 import { getWords } from "./get-words";
 import { upperCaseFirst } from "./upper-case-first";
 
-export const DISPLAY_MAPPING = ACRONYM_LIST.reduce(
+export const FORMAT_MAPPING = ACRONYM_LIST.reduce(
   (ret, acronym) => {
-    ret[acronym] = ACRONYMS[acronym]?.display || acronym;
+    ret[acronym.toUpperCase()] = {
+      description:
+        ACRONYMS[acronym]?.description || ACRONYMS[acronym]?.display || acronym,
+      display: ACRONYMS[acronym]?.display || acronym
+    };
     return ret;
   },
   {
-    cspell: "CSpell",
-    eslint: "ESLint"
-  } as Record<string, string>
-);
-
-export const DESCRIPTION_MAPPING = ACRONYM_LIST.reduce(
-  (ret, acronym) => {
-    ret[acronym] =
-      ACRONYMS[acronym]?.description || ACRONYMS[acronym]?.display || acronym;
-    return ret;
-  },
-  {
-    cspell: "CSpell",
-    eslint: "ESLint"
-  } as Record<string, string>
+    CSPELL: { description: "CSpell", display: "CSpell" },
+    ESLINT: { description: "ESLint", display: "ESLint" }
+  } as Record<
+    string,
+    {
+      description: string;
+      display: string;
+    }
+  >
 );
 
 export const LOWER_CASE_WHEN_NOT_FIRST: string[] = [
@@ -66,7 +64,7 @@ export interface TitleCaseOptions {
    * If true, skip the format mapping. This will skip the conversion of known acronyms to their upper case form.
    *
    * @remarks
-   * The current list of word format mappings is stored in {@link DISPLAY_MAPPING}.
+   * The current list of word format mappings is stored in {@link FORMAT_MAPPING}.
    *
    * @defaultValue false
    */
@@ -118,7 +116,7 @@ export function isTitleCase(input: string | undefined): boolean {
 
   return words.every((word, idx) => {
     // Allow for mapped acronyms (all uppercase or mixed case)
-    if (DISPLAY_MAPPING[word.toUpperCase()]) {
+    if (FORMAT_MAPPING[word.toUpperCase()]) {
       return true;
     }
 
@@ -153,40 +151,41 @@ export function titleCase<T extends string | undefined>(
     return input;
   }
 
-  const formatSegment = (segment: string) =>
-    getWords(segment)
-      .filter(Boolean)
-      .map(word => word.toLowerCase())
-      .map((word, index) => {
-        if (
-          !options.skipLowerCaseWhenNotFirst &&
-          LOWER_CASE_WHEN_NOT_FIRST.includes(word.toLowerCase()) &&
-          index > 0
-        ) {
-          return word.toLowerCase();
-        }
-
-        if (!options.skipFormatMapping && DISPLAY_MAPPING[word.toUpperCase()]) {
-          if (options.useDescriptions !== false) {
-            return DESCRIPTION_MAPPING[word.toUpperCase()];
-          } else {
-            return DISPLAY_MAPPING[word.toUpperCase()];
-          }
-        }
-
-        if (
-          options.mapping &&
-          Object.keys(options.mapping).includes(word.toLowerCase())
-        ) {
-          return options.mapping[word.toLowerCase()];
-        }
-
-        return `${upperCaseFirst(word.toLowerCase())}`;
-      })
-      .join(" ");
-
   return input
     .split(/\s+-\s+/)
-    .map(part => formatSegment(part))
+    .map((segment: string) =>
+      getWords(segment)
+        .filter(Boolean)
+        .map((word, index) => {
+          if (
+            !options.skipLowerCaseWhenNotFirst &&
+            LOWER_CASE_WHEN_NOT_FIRST.includes(word.toLowerCase()) &&
+            index > 0
+          ) {
+            return word.toLowerCase();
+          }
+
+          if (
+            !options.skipFormatMapping &&
+            FORMAT_MAPPING[word.toUpperCase()]
+          ) {
+            if (options.useDescriptions !== false) {
+              return FORMAT_MAPPING[word.toUpperCase()]?.description;
+            } else {
+              return FORMAT_MAPPING[word.toUpperCase()]?.display;
+            }
+          }
+
+          if (
+            options.mapping &&
+            Object.keys(options.mapping).includes(word.toUpperCase())
+          ) {
+            return options.mapping[word.toUpperCase()];
+          }
+
+          return `${upperCaseFirst(word)}`;
+        })
+        .join(" ")
+    )
     .join(" - ") as T;
 }

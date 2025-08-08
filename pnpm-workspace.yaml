@@ -33,7 +33,7 @@ catalog:
   "@nx/jest": 21.3.10
   "@nx/js": 21.3.10
   "@nx/plugin": 21.3.10
-  "@nx/react": ^21.0.3
+  "@nx/react": 21.3.10
   "@nx/workspace": 21.3.10
   "@storm-software/build-tools": latest
   "@storm-software/config": latest
@@ -50,7 +50,7 @@ catalog:
   "@storm-software/tsconfig": latest
   "@storm-software/workspace-tools": latest
   "@storm-software/markdownlint": latest
-  "@swc-node/register": ^1.10.9
+  "@swc-node/register": "^1.10.9"
   "@swc/core": ^1.10.14
   "@swc/wasm": ^1.10.14
   "@swc/helpers": ^0.5.15
