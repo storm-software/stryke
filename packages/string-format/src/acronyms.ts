@@ -74,17 +74,14 @@ export const ACRONYMS = [
   "CX", // Customer Experience
   "DAG", // Directed Acyclic Graph
   "DBMS", // Database Management System
-  "DDoS", // Distributed Denial of Service
+  "DDOS", // Distributed Denial of Service
   "DEA", // Drug Enforcement Administration
   "DHS", // Department of Homeland Security
   "DNC", // Democratic National Committee / Do Not Call
   "DNS", // Domain Name System
   "DNSSEC", // Domain Name System Security Extensions
-  "DoD", // Department of Defense
   "DOD", // Department of Defense
-  "DoJ", // Department of Justice
   "DOJ", // Department of Justice
-  "DoT", // Department of Transportation
   "DOT", // Department of Transportation
   "DOM", // Document Object Model
   "DR", // Disaster Recovery
@@ -113,7 +110,7 @@ export const ACRONYMS = [
   "FQDN", // Fully Qualified Domain Name
   "FTC", // Federal Trade Commission
   "FTP", // File Transfer Protocol
-  "FaaS", // Function as a Service
+  "FAAS", // Function as a Service
   "GCP", // Google Cloud Platform
   "GDPR", // General Data Protection Regulation
   "GMT", // Greenwich Mean Time
@@ -134,27 +131,35 @@ export const ACRONYMS = [
   "HTTP", // HyperText Transfer Protocol
   "HTTP/2", // HyperText Transfer Protocol Version 2
   "HTTP/2.0", // HyperText Transfer Protocol Version 2.0
+  "HTTP2", // HyperText Transfer Protocol Version 2
+  "HTTP2.0", // HyperText Transfer Protocol Version 2.0
   "HTTP/3", // HyperText Transfer Protocol Version 3
   "HTTP/3.0", // HyperText Transfer Protocol Version 3.0
-  "HTTP2", // HyperText Transfer Protocol Version 2
+  "HTTP3", // HyperText Transfer Protocol Version 3
+  "HTTP3.0", // HyperText Transfer Protocol Version 3.0
   "HTTPS", // HyperText Transfer Protocol Secure
   "HTTPS/2", // HyperText Transfer Protocol Secure Version 2
+  "HTTPS/2.0", // HyperText Transfer Protocol Secure Version 2.0
+  "HTTPS2", // HyperText Transfer Protocol Secure Version 2
+  "HTTPS2.0", // HyperText Transfer Protocol Secure Version 2.0
   "HTTPS/3", // HyperText Transfer Protocol Secure Version 3
+  "HTTPS/3.0", // HyperText Transfer Protocol Secure Version 3.0
   "HTTPS3", // HyperText Transfer Protocol Secure Version 3
+  "HTTPS3.0", // HyperText Transfer Protocol Secure Version 3.0
   "IAM", // Identity and Access Management
   "IAMM", // Identity and Access Management and Monitoring
   "IAMT", // Identity and Access Management Tool
-  "IaaS", // Infrastructure as a Service
+  "IAAS", // Infrastructure as a Service
   "ID", // Identifier / Identification
   "IFTTT", // If This Then That
   "IMAP", // Internet Message Access Protocol
   "IP", // Internet Protocol
   "IPFS", // InterPlanetary File System
-  "IoT", // Internet of Things
+  "IOT", // Internet of Things
   "JSON", // JavaScript Object Notation
   "JSONP", // JSON with Padding
   "JWT", // JSON Web Token
-  "K8s", // Kubernetes
+  "K8S", // Kubernetes
   "KMS", // Key Management Service
   "KPI", // Key Performance Indicator
   "KV", // Key Value
@@ -166,7 +171,7 @@ export const ACRONYMS = [
   "MFA", // Multi-Factor Authentication
   "ML", // Machine Learning
   "MLB", // Major League Baseball
-  "MLOps", // Machine Learning Operations
+  "MLOPS", // Machine Learning Operations
   "MST", // Mountain Standard Time
   "MVC", // Model View Controller
   "MVP", // Minimum Viable Product / Most Valuable Player
