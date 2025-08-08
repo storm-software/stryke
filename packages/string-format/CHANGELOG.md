@@ -2,6 +2,14 @@
 
 # Changelog for Stryke - String Format
 
+## [0.7.1](https://github.com/storm-software/stryke/releases/tag/string-format%400.7.1) (2025-08-08)
+
+### Miscellaneous
+
+- **string-format:** Added acronym phase comments for lookup and usage in
+  formatting
+  ([2bde1f0](https://github.com/storm-software/stryke/commit/2bde1f0))
+
 ## [0.7.0](https://github.com/storm-software/stryke/releases/tag/string-format%400.7.0) (2025-08-07)
 
 ### Features
