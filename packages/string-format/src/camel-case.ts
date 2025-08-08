@@ -17,8 +17,7 @@
  ------------------------------------------------------------------- */
 
 import { ACRONYMS } from "./acronyms";
-import { lowerCaseFirst } from "./lower-case-first";
-import { pascalCase } from "./pascal-case";
+import { getWords } from "./get-words";
 
 /**
  * Check if the input string is in camel case.
@@ -46,7 +45,18 @@ export function isCamelCase(input: string | undefined): boolean {
  * @returns The camel-cased string.
  */
 export function camelCase<T extends string | undefined>(input: T): T {
-  return isCamelCase(input) || input === undefined
-    ? input
-    : lowerCaseFirst(pascalCase(input));
+  return (
+    isCamelCase(input) || input === undefined
+      ? input
+      : getWords(input)
+          .map((word, index) =>
+            index === 0
+              ? word.trim().toLowerCase()
+              : ACRONYMS.includes(word)
+                ? word.trim().toUpperCase()
+                : word.trim().charAt(0).toLowerCase() +
+                  word.trim().slice(1).toUpperCase()
+          )
+          .join("")
+  ) as T;
 }

@@ -61,6 +61,7 @@ export function startCase<T extends string | undefined>(input?: T): T {
       if (result) {
         result += " ";
       }
+
       result +=
         word === word.toUpperCase()
           ? word

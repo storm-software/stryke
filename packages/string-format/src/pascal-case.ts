@@ -49,11 +49,11 @@ export function pascalCase<T extends string | undefined>(input?: T): T {
     isPascalCase(input) || input === undefined
       ? input
       : getWords(input)
-          .map(i =>
-            i.length > 0
-              ? i.trim().charAt(0).toUpperCase() +
-                i.trim().slice(1).toLowerCase()
-              : ""
+          .map(word =>
+            ACRONYMS.includes(word)
+              ? word.trim().toUpperCase()
+              : word.trim().charAt(0).toUpperCase() +
+                word.trim().slice(1).toLowerCase()
           )
           .join("")
   ) as T;
