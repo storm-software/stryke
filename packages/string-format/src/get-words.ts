@@ -34,6 +34,24 @@
  */
 export const CASE_SPLIT_PATTERN = /[A-Z]?[a-z]+|\d+|[A-Z]+(?![a-z])/g;
 
+export const RELAXED_SPLIT_PATTERN =
+  /[A-Z/.-]?[a-z/.-]+|\d+|[A-Z/.-]+(?![a-z/.-])/g;
+
+/**
+ * Options for splitting a string into words
+ */
+export interface GetWordsOptions {
+  /**
+   * Whether to use a relaxed splitting pattern
+   */
+  relaxed?: boolean;
+
+  /**
+   * Custom regular expression for splitting the string
+   */
+  split?: RegExp;
+}
+
 /**
  * Splits a string into words using a regular expression pattern
  *
@@ -42,14 +60,20 @@ export const CASE_SPLIT_PATTERN = /[A-Z]?[a-z]+|\d+|[A-Z]+(?![a-z])/g;
  * // words: ['camel', 'Case', 'HTTP', 'Request']
  *
  * @param str - The string to split into words
+ * @param options - Options for splitting the string
  * @returns An array of words
  */
-export function getWords(str: string): string[] {
+export function getWords(str: string, options: GetWordsOptions = {}): string[] {
   if (str.length > 5000) {
     throw new Error(
       "The regular expression parameter of `get-words` can't handle strings longer than 2000 characters"
     );
   }
 
-  return [...(str.match(CASE_SPLIT_PATTERN) ?? [])];
+  return [
+    ...(str.match(
+      options.split ??
+        (options.relaxed ? RELAXED_SPLIT_PATTERN : CASE_SPLIT_PATTERN)
+    ) ?? [])
+  ];
 }
