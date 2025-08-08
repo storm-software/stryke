@@ -16,7 +16,7 @@
 
  ------------------------------------------------------------------- */
 
-import { ACRONYMS } from "./acronyms";
+import { ACRONYM_LIST, ACRONYMS } from "./acronyms";
 import { getWords } from "./get-words";
 
 /**
@@ -31,7 +31,7 @@ import { getWords } from "./get-words";
 export function isPascalCase(input: string | undefined): boolean {
   return input
     ? (/^[A-Z][A-Z0-9]*$/.test(input) &&
-        ACRONYMS.includes(input.trim().toUpperCase())) ||
+        ACRONYM_LIST.includes(input.trim().toUpperCase())) ||
         /^(?:[A-Z][A-Z0-9]*[a-z]+)*$/.test(input)
     : false;
 }
@@ -51,8 +51,9 @@ export function pascalCase<T extends string | undefined>(input?: T): T {
       ? input
       : getWords(input)
           .map(word =>
-            ACRONYMS.includes(word.trim().toUpperCase())
-              ? word.trim().toUpperCase()
+            ACRONYM_LIST.includes(word.trim().toUpperCase())
+              ? ACRONYMS[word.trim().toUpperCase()]?.display ||
+                word.trim().toUpperCase()
               : word.trim().charAt(0).toUpperCase() +
                 word.trim().slice(1).toLowerCase()
           )

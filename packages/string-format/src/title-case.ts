@@ -16,19 +16,30 @@
 
  ------------------------------------------------------------------- */
 
-import { ACRONYMS } from "./acronyms";
+import { ACRONYM_LIST, ACRONYMS } from "./acronyms";
 import { getWords } from "./get-words";
 import { upperCaseFirst } from "./upper-case-first";
 
-export const FORMAT_MAPPING = ACRONYMS.reduce(
+export const DISPLAY_MAPPING = ACRONYM_LIST.reduce(
   (ret, acronym) => {
-    ret[acronym.toLowerCase()] = acronym;
+    ret[acronym] = ACRONYMS[acronym]?.display || acronym;
     return ret;
   },
   {
     cspell: "CSpell",
-    eslint: "ESLint",
-    nx: "Nx"
+    eslint: "ESLint"
+  } as Record<string, string>
+);
+
+export const DESCRIPTION_MAPPING = ACRONYM_LIST.reduce(
+  (ret, acronym) => {
+    ret[acronym] =
+      ACRONYMS[acronym]?.description || ACRONYMS[acronym]?.display || acronym;
+    return ret;
+  },
+  {
+    cspell: "CSpell",
+    eslint: "ESLint"
   } as Record<string, string>
 );
 
@@ -55,7 +66,7 @@ export interface TitleCaseOptions {
    * If true, skip the format mapping. This will skip the conversion of known acronyms to their upper case form.
    *
    * @remarks
-   * The current list of word format mappings is stored in {@link FORMAT_MAPPING}.
+   * The current list of word format mappings is stored in {@link DISPLAY_MAPPING}.
    *
    * @defaultValue false
    */
@@ -79,6 +90,13 @@ export interface TitleCaseOptions {
    * This allows you to provide your own mappings for specific words that should be formatted in a certain way.
    */
   mapping?: Record<string, string>;
+
+  /**
+   * If true, use the descriptions from the acronym list instead of the display names.
+   *
+   * @defaultValue true
+   */
+  useDescriptions?: boolean;
 }
 
 /**
@@ -100,7 +118,9 @@ export function isTitleCase(input: string | undefined): boolean {
 
   return words.every((word, idx) => {
     // Allow for mapped acronyms (all uppercase or mixed case)
-    if (Object.values(FORMAT_MAPPING).includes(word)) return true;
+    if (DISPLAY_MAPPING[word.toUpperCase()]) {
+      return true;
+    }
 
     // Lowercase words allowed if not first and in LOWER_CASE_WHEN_NOT_FIRST
     if (
@@ -146,11 +166,12 @@ export function titleCase<T extends string | undefined>(
           return word.toLowerCase();
         }
 
-        if (
-          !options.skipFormatMapping &&
-          Object.keys(FORMAT_MAPPING).includes(word.toLowerCase())
-        ) {
-          return FORMAT_MAPPING[word.toLowerCase()];
+        if (!options.skipFormatMapping && DISPLAY_MAPPING[word.toUpperCase()]) {
+          if (options.useDescriptions !== false) {
+            return DESCRIPTION_MAPPING[word.toUpperCase()];
+          } else {
+            return DISPLAY_MAPPING[word.toUpperCase()];
+          }
         }
 
         if (

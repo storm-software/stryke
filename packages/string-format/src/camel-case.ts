@@ -16,7 +16,7 @@
 
  ------------------------------------------------------------------- */
 
-import { ACRONYMS } from "./acronyms";
+import { ACRONYM_LIST, ACRONYMS } from "./acronyms";
 import { getWords } from "./get-words";
 
 /**
@@ -31,7 +31,7 @@ import { getWords } from "./get-words";
 export function isCamelCase(input: string | undefined): boolean {
   return input
     ? (/^[a-z][a-z0-9]*$/.test(input) &&
-        ACRONYMS.includes(input.trim().toUpperCase())) ||
+        ACRONYM_LIST.includes(input.trim().toUpperCase())) ||
         /^(?:[a-z][a-z0-9]*[A-Z]+)*$/.test(input)
     : false;
 }
@@ -53,8 +53,9 @@ export function camelCase<T extends string | undefined>(input: T): T {
           .map((word, index) =>
             index === 0
               ? word.trim().toLowerCase()
-              : ACRONYMS.includes(word.trim().toUpperCase())
-                ? word.trim().toUpperCase()
+              : ACRONYM_LIST.includes(word.trim().toUpperCase())
+                ? ACRONYMS[word.trim().toUpperCase()]?.display ||
+                  word.trim().toUpperCase()
                 : word.trim().charAt(0).toUpperCase() +
                   word.trim().slice(1).toLowerCase()
           )
