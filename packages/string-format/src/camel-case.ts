@@ -55,8 +55,8 @@ export function camelCase<T extends string | undefined>(input: T): T {
               ? word.trim().toLowerCase()
               : ACRONYMS.includes(word.trim().toUpperCase())
                 ? word.trim().toUpperCase()
-                : word.trim().charAt(0).toLowerCase() +
-                  word.trim().slice(1).toUpperCase()
+                : word.trim().charAt(0).toUpperCase() +
+                  word.trim().slice(1).toLowerCase()
           )
           .join("")
   ) as T;
