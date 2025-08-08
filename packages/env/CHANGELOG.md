@@ -2,6 +2,18 @@
 
 # Changelog for Stryke - Env
 
+## [0.17.0](https://github.com/storm-software/stryke/releases/tag/env%400.17.0) (2025-08-08)
+
+### Features
+
+- **string-format:** Updated acronyms to a lookup table with `description` and
+  `display` names
+  ([3d7c464](https://github.com/storm-software/stryke/commit/3d7c464))
+
+### Updated Dependencies
+
+- Updated string-format to 0.9.0
+
 ## [0.16.0](https://github.com/storm-software/stryke/releases/tag/env%400.16.0) (2025-08-07)
 
 ### Features

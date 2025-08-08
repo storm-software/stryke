@@ -2,6 +2,14 @@
 
 # Changelog for Stryke - String Format
 
+## [0.9.0](https://github.com/storm-software/stryke/releases/tag/string-format%400.9.0) (2025-08-08)
+
+### Features
+
+- **string-format:** Updated acronyms to a lookup table with `description` and
+  `display` names
+  ([3d7c464](https://github.com/storm-software/stryke/commit/3d7c464))
+
 ## [0.8.0](https://github.com/storm-software/stryke/releases/tag/string-format%400.8.0) (2025-08-08)
 
 ### Features
