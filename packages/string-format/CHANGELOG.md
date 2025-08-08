@@ -2,6 +2,13 @@
 
 # Changelog for Stryke - String Format
 
+## [0.7.3](https://github.com/storm-software/stryke/releases/tag/string-format%400.7.3) (2025-08-08)
+
+### Bug Fixes
+
+- **string-format:** Resolve issue with 2nd word camel-case formatting
+  ([74f84fa](https://github.com/storm-software/stryke/commit/74f84fa))
+
 ## [0.7.2](https://github.com/storm-software/stryke/releases/tag/string-format%400.7.2) (2025-08-08)
 
 ### Bug Fixes
