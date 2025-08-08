@@ -2,6 +2,13 @@
 
 # Changelog for Stryke - String Format
 
+## [0.7.2](https://github.com/storm-software/stryke/releases/tag/string-format%400.7.2) (2025-08-08)
+
+### Bug Fixes
+
+- **string-format:** Resolve issue with invalid word casing during formatting
+  ([ce8a300](https://github.com/storm-software/stryke/commit/ce8a300))
+
 ## [0.7.1](https://github.com/storm-software/stryke/releases/tag/string-format%400.7.1) (2025-08-08)
 
 ### Miscellaneous
