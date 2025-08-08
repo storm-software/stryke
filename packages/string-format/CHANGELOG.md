@@ -2,6 +2,13 @@
 
 # Changelog for Stryke - String Format
 
+## [0.8.0](https://github.com/storm-software/stryke/releases/tag/string-format%400.8.0) (2025-08-08)
+
+### Features
+
+- **string-format:** Added the `options` parameter to `getWords` utility
+  ([1fced8f](https://github.com/storm-software/stryke/commit/1fced8f))
+
 ## [0.7.3](https://github.com/storm-software/stryke/releases/tag/string-format%400.7.3) (2025-08-08)
 
 ### Bug Fixes
