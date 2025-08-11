@@ -13,7 +13,7 @@
     "@dotenvx/dotenvx": "catalog:",
     "@stryke/fs": "workspace:*",
     "@stryke/path": "workspace:*",
-    "@stryke/string-format": "0.9.1",
+    "@stryke/string-format": "workspace:*",
     "defu": "catalog:"
   },
   "devDependencies": {
