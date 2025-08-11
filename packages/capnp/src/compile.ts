@@ -17,7 +17,6 @@
  ------------------------------------------------------------------- */
 
 import { writeWarning } from "@storm-software/config-tools/logger/console";
-import { createDirectory } from "@stryke/fs/helpers.js";
 import { existsSync } from "@stryke/path/exists.js";
 import { compileAll } from "capnp-es/compiler";
 import defu from "defu";
@@ -73,7 +72,7 @@ export async function capnpc(
         writeWarning(
           `Output directory "${output}" does not exist, it will be created...`
         );
-        await createDirectory(output);
+        // await createDirectory(output);
       }
 
       opts.push(`-o-:${output}`);
