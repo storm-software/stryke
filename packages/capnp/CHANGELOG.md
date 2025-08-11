@@ -2,6 +2,13 @@
 
 # Changelog for Stryke - Capnp
 
+## [0.10.7](https://github.com/storm-software/stryke/releases/tag/capnp%400.10.7) (2025-08-11)
+
+### Bug Fixes
+
+- **capnp:** Remove extra `createDirectory` from `capnp` command
+  ([e34b993](https://github.com/storm-software/stryke/commit/e34b993))
+
 ## [0.10.6](https://github.com/storm-software/stryke/releases/tag/capnp%400.10.6) (2025-08-11)
 
 ### Bug Fixes
