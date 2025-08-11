@@ -17,10 +17,7 @@
  ------------------------------------------------------------------- */
 
 import { writeWarning } from "@storm-software/config-tools/logger/console";
-import { createDirectory } from "@stryke/fs/helpers.js";
 import { existsSync } from "@stryke/path/exists.js";
-import { getWorkspaceRoot } from "@stryke/path/get-workspace-root.js";
-import { replacePath } from "@stryke/path/replace.js";
 import { compileAll } from "capnp-es/compiler";
 import defu from "defu";
 import { Buffer } from "node:buffer";
@@ -70,16 +67,15 @@ export async function capnpc(
   if (dataBuf.byteLength === 0) {
     const opts: string[] = [];
 
-    if (output) {
-      if (!existsSync(output)) {
-        writeWarning(
-          `Output directory "${output}" does not exist, it will be created...`
-        );
-        await createDirectory(replacePath(output, getWorkspaceRoot()));
-      }
-
+    if (output && existsSync(output)) {
       opts.push(`-o-:${output}`);
     } else {
+      if (output && !existsSync(output)) {
+        writeWarning(
+          `Output directory "${output}" does not exist, will write to schema path...`
+        );
+      }
+
       opts.push("-o-");
     }
 
