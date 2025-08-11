@@ -478,6 +478,7 @@ type StructuredCloneableData =
   | TypedArray
   | Blob
   | File;
+
 // DOM exclusive types
 // | AudioData
 // | CropTarget
