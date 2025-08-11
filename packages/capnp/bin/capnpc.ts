@@ -32,7 +32,9 @@ import {
 import { createDirectory } from "@stryke/fs/helpers";
 import { existsSync } from "@stryke/path/exists";
 import { findFilePath } from "@stryke/path/file-path-fns";
+import { getWorkspaceRoot } from "@stryke/path/get-workspace-root.js";
 import { joinPaths } from "@stryke/path/join-paths";
+import { replacePath } from "@stryke/path/replace.js";
 import { Command, Option } from "commander";
 import { writeFile } from "node:fs/promises";
 import { capnpc } from "../src/compile.js";
@@ -223,10 +225,14 @@ async function compileAction(options: CapnpcCLIOptions) {
 
     if (options.output) {
       filePath = joinPaths(options.output, fileName);
-    }
-
-    if (!existsSync(findFilePath(filePath))) {
-      await createDirectory(findFilePath(filePath));
+      if (!existsSync(findFilePath(options.output))) {
+        writeWarning(
+          `Output directory "${findFilePath(options.output)}" does not exist, it will be created...`
+        );
+        await createDirectory(
+          replacePath(findFilePath(options.output), getWorkspaceRoot())
+        );
+      }
     }
 
     await writeFile(
