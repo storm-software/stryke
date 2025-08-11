@@ -2,6 +2,17 @@
 
 # Changelog for Stryke - Capnp
 
+## [0.10.6](https://github.com/storm-software/stryke/releases/tag/capnp%400.10.6) (2025-08-11)
+
+### Bug Fixes
+
+- **capnp:** Resolve issue with empty schema path generation
+  ([fea0626](https://github.com/storm-software/stryke/commit/fea0626))
+
+### Updated Dependencies
+
+- Updated path to 0.12.4
+
 ## [0.10.5](https://github.com/storm-software/stryke/releases/tag/capnp%400.10.5) (2025-08-11)
 
 ### Bug Fixes

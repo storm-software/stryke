@@ -1,3 +1,14 @@
+![Storm Software's logo banner](https://public.storm-cdn.com/brand-banner.png)
+
+# Changelog for Stryke - Path
+
+## [0.12.4](https://github.com/storm-software/stryke/releases/tag/path%400.12.4) (2025-08-11)
+
+### Miscellaneous
+
+- **monorepo:** Update workspace package links
+  ([f88e6d3](https://github.com/storm-software/stryke/commit/f88e6d3))
+
 ![Storm Software](https://public.storm-cdn.com/brand-banner.png)
 
 # Changelog for Stryke - Path
