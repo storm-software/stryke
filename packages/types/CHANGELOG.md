@@ -1,3 +1,14 @@
+![Storm Software's logo banner](https://public.storm-cdn.com/brand-banner.png)
+
+# Changelog for Stryke - Types
+
+## [0.8.9](https://github.com/storm-software/stryke/releases/tag/types%400.8.9) (2025-08-11)
+
+### Miscellaneous
+
+- **types:** Resolve source code formatting issues
+  ([7ec6b7c](https://github.com/storm-software/stryke/commit/7ec6b7c))
+
 ![Storm Software](https://public.storm-cdn.com/brand-banner.png)
 
 # Changelog for Stryke - Types

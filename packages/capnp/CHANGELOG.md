@@ -1,3 +1,16 @@
+![Storm Software's logo banner](https://public.storm-cdn.com/brand-banner.png)
+
+# Changelog for Stryke - Capnp
+
+## [0.10.5](https://github.com/storm-software/stryke/releases/tag/capnp%400.10.5) (2025-08-11)
+
+### Bug Fixes
+
+- **capnp:** Resolved issue with path format in compiler
+  ([b5c59c1](https://github.com/storm-software/stryke/commit/b5c59c1))
+- **capnp:** Remove un-needed code to create directory
+  ([ef73803](https://github.com/storm-software/stryke/commit/ef73803))
+
 ![Storm Software](https://public.storm-cdn.com/brand-banner.png)
 
 # Changelog for Stryke - Capnp
