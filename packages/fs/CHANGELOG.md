@@ -1,3 +1,14 @@
+![Storm Software's logo banner](https://public.storm-cdn.com/brand-banner.png)
+
+# Changelog for Stryke - Fs
+
+## [0.23.4](https://github.com/storm-software/stryke/releases/tag/fs%400.23.4) (2025-08-11)
+
+### Bug Fixes
+
+- **capnp:** Write output to the schema directory if it doesn't exist
+  ([ee6d045](https://github.com/storm-software/stryke/commit/ee6d045))
+
 ![Storm Software](https://public.storm-cdn.com/brand-banner.png)
 
 # Changelog for Stryke - Fs

@@ -2,6 +2,17 @@
 
 # Changelog for Stryke - Env
 
+## [0.17.2](https://github.com/storm-software/stryke/releases/tag/env%400.17.2) (2025-08-11)
+
+### Bug Fixes
+
+- **capnp:** Write output to the schema directory if it doesn't exist
+  ([ee6d045](https://github.com/storm-software/stryke/commit/ee6d045))
+
+### Updated Dependencies
+
+- Updated fs to 0.23.4
+
 ## [0.17.1](https://github.com/storm-software/stryke/releases/tag/env%400.17.1) (2025-08-11)
 
 ### Miscellaneous
