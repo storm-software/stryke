@@ -2,19 +2,19 @@ packages:
   - tools/*
   - packages/*
 catalog:
-  "@antfu/install-pkg": ^1.0.0
+  "@antfu/install-pkg": ^1.1.0
   "@antfu/ni": ^23.3.1
-  "@dotenvx/dotenvx": 1.35.0
-  "@js-temporal/polyfill": ^0.5.0
-  "@ls-lint/ls-lint": ^2.2.3
+  "@dotenvx/dotenvx": 1.48.4
+  "@js-temporal/polyfill": ^0.5.1
+  "@ls-lint/ls-lint": ^2.3.1
   "@ltd/j-toml": ^1.38.0
-  "@microsoft/api-extractor": ^7.49.2
-  "@prisma/client": ^6.5.0
-  "@prisma/generator-helper": ^6.5.0
-  "@prisma/internals": ^6.5.0
-  "@prisma/prisma-schema-wasm": ^6.6.0-41.9061db3b0058e3d3731c6fe68a1b77061bed4861
-  "@tanstack/react-query": ^5.70.0
-  "@tanstack/react-query-devtools": ^5.70.0
+  "@microsoft/api-extractor": ^7.52.10
+  "@prisma/client": ^6.14.0
+  "@prisma/generator-helper": ^6.14.0
+  "@prisma/internals": ^6.14.0
+  "@prisma/prisma-schema-wasm": ^6.6.0-53.f676762280b54cd07c770017ed3711ddde35f37a
+  "@tanstack/react-query": ^5.85.3
+  "@tanstack/react-query-devtools": ^5.85.3
   "@taplo/cli": ^0.7.0
   "@trpc/client": next
   "@trpc/next": next
@@ -23,18 +23,18 @@ catalog:
   "@types/cross-spawn": ^6.0.6
   "@types/figlet": ^1.7.0
   "@types/jest": 30.0.0
-  "@types/node": ^22.14.0
+  "@types/node": ^22.17.2
   "@types/pluralize": ^0.0.33
   "@types/react": ^19.0.12
   "@types/react-dom": ^19.0.4
-  "@nx/devkit": 21.3.10
-  "@nx/eslint-plugin": 21.3.10
-  "@nx/eslint": 21.3.10
-  "@nx/jest": 21.3.10
-  "@nx/js": 21.3.10
-  "@nx/plugin": 21.3.10
-  "@nx/react": 21.3.10
-  "@nx/workspace": 21.3.10
+  "@nx/devkit": 21.4.0
+  "@nx/eslint-plugin": 21.4.0
+  "@nx/eslint": 21.4.0
+  "@nx/jest": 21.4.0
+  "@nx/js": 21.4.0
+  "@nx/plugin": 21.4.0
+  "@nx/react": 21.4.0
+  "@nx/workspace": 21.4.0
   "@storm-software/build-tools": latest
   "@storm-software/config": latest
   "@storm-software/config-tools": latest
@@ -50,35 +50,35 @@ catalog:
   "@storm-software/tsconfig": latest
   "@storm-software/workspace-tools": latest
   "@storm-software/markdownlint": latest
-  "@swc-node/register": "^1.10.9"
-  "@swc/core": ^1.10.14
-  "@swc/wasm": ^1.10.14
-  "@swc/helpers": ^0.5.15
-  "@types/react-native": 0.72.8
-  "@types/semver": ^7.5.8
-  "@zkochan/js-yaml": ^0.0.7
+  "@swc-node/register": "^1.10.10"
+  "@swc/core": ^1.13.3
+  "@swc/wasm": ^1.13.3
+  "@swc/helpers": ^0.5.17
+  "@types/react-native": 0.73.0
+  "@types/semver": ^7.7.0
+  "@zkochan/js-yaml": ^0.0.9
   buffer: 6.0.3
   capnp-es: ^0.0.11
-  chalk: ^5.4.1
+  chalk: ^5.5.0
   commander: ^14.0.0
   consola: ^3.4.2
   cross-spawn: ^7.0.6
   dts-bundle-generator: ^9.5.1
-  eslint: ^9.31.0
-  eslint-flat-config-utils: ^2.0.1
-  execa: ^9.5.2
-  figlet: ^1.8.0
-  glob: ^11.0.1
+  eslint: ^9.33.0
+  eslint-flat-config-utils: ^2.1.1
+  execa: ^9.6.0
+  figlet: ^1.8.2
+  glob: ^11.0.3
   hex2dec: ^1.1.2
   is-unicode-supported: ^2.1.0
   jest-util: 30.0.5
   js-xxhash: ^4.0.0
   jsonc-parser: 3.3.1
-  knip: 5.43.6
-  lefthook: ^1.10.10
+  knip: 5.62.0
+  lefthook: ^1.12.3
   lines-and-columns: 2.0.4
   ls-lint: ^0.1.2
-  markdownlint-cli2: ^0.17.2
+  markdownlint-cli2: ^0.18.1
   mlly: 1.7.4
   nanotar: ^0.2.0
   nx: 21.3.10
@@ -88,35 +88,35 @@ catalog:
   ohash: ^2.0.11
   parenthesis: ^3.1.8
   pluralize: ^8.0.0
-  prettier: ^3.5.2
-  semver: 7.7.1
+  prettier: ^3.6.2
+  semver: 7.7.2
   server-only: ^0.0.1
-  sherif: 1.3.0
+  sherif: 1.6.1
   string-width: ^7.2.0
   superjson: 2.2.2
   terminal-link: ^3.0.0
   tinyexec: ^0.3.2
-  ts-jest: 29.4.0
+  ts-jest: 29.4.1
   ts-morph: ^25.0.1
   ts-node: 10.9.2
   tsup: ^8.3.5
-  tsdown: ^0.5.8
+  tsdown: ^0.14.1
   tslib: ^2.8.1
   copyfiles: ^2.4.1
   rimraf: ^6.0.1
   react: ^19.1.0
   react-dom: ^19.1.0
   react-native: ^0.77.0
-  tsx: ^4.20.1
+  tsx: ^4.20.4
   typescript: ~5.7.3
-  esbuild: ^0.25.0
-  ufo: 1.5.4
-  unbuild: ^3.3.1
+  esbuild: ^0.25.9
+  ufo: 1.6.1
+  unbuild: ^3.6.1
   defu: ^6.1.4
-  jiti: ^2.4.2
-  verdaccio: ^6.0.5
-  zod: "^4.0.15"
-  zx: ^8.3.2
+  jiti: ^2.5.1
+  verdaccio: ^6.1.6
+  zod: "^4.0.17"
+  zx: ^8.8.0
 linkWorkspacePackages: true
 onlyBuiltDependencies:
   - "@prisma/engines"
