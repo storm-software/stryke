@@ -31,8 +31,9 @@ import type { PackageJson } from "@stryke/types/package-json";
 import type { PackageManager } from "@stryke/types/package-manager";
 import { existsSync } from "node:fs";
 import type { Range } from "semver";
+import { subset } from "semver";
 import { readJsonFile } from "./json";
-import { isValidRange, satisfiesVersion } from "./semver-fns";
+import { isValidRange } from "./semver-fns";
 
 /**
  * Get the package manager used in the project
@@ -214,11 +215,12 @@ export async function isPackageListed(
   return Boolean(
     (packageJson.dependencies &&
       packageName in packageJson.dependencies &&
-      (!version ||
-        satisfiesVersion(packageJson.dependencies[packageName], version))) ??
+      packageJson.dependencies[packageName] &&
+      (!version || subset(packageJson.dependencies[packageName], version))) ??
       (packageJson.devDependencies &&
         packageName in packageJson.devDependencies &&
-        packageJson.devDependencies[packageName])
+        packageJson.devDependencies[packageName] &&
+        (!version || subset(packageJson.devDependencies[packageName], version)))
   );
 }
 
