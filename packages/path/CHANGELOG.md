@@ -2,6 +2,13 @@
 
 # Changelog for Stryke - Path
 
+## [0.12.5](https://github.com/storm-software/stryke/releases/tag/path%400.12.5) (2025-08-28)
+
+### Miscellaneous
+
+- **monorepo:** Reformat repository source files
+  ([b365eb5](https://github.com/storm-software/stryke/commit/b365eb5))
+
 ## [0.12.4](https://github.com/storm-software/stryke/releases/tag/path%400.12.4) (2025-08-11)
 
 ### Miscellaneous

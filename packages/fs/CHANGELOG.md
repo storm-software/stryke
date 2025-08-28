@@ -2,6 +2,17 @@
 
 # Changelog for Stryke - Fs
 
+## [0.24.0](https://github.com/storm-software/stryke/releases/tag/fs%400.24.0) (2025-08-28)
+
+### Features
+
+- **fs:** Added new package and semver helper functions
+  ([4213e23](https://github.com/storm-software/stryke/commit/4213e23))
+
+### Updated Dependencies
+
+- Updated path to 0.12.5
+
 ## [0.23.4](https://github.com/storm-software/stryke/releases/tag/fs%400.23.4) (2025-08-11)
 
 ### Bug Fixes

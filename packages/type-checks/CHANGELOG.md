@@ -1,3 +1,14 @@
+![Storm Software's logo banner](https://public.storm-cdn.com/brand-banner.png)
+
+# Changelog for Stryke - Type Checks
+
+## [0.3.9](https://github.com/storm-software/stryke/releases/tag/type-checks%400.3.9) (2025-08-28)
+
+### Miscellaneous
+
+- **monorepo:** Reformat repository source files
+  ([b365eb5](https://github.com/storm-software/stryke/commit/b365eb5))
+
 ![Storm Software]([object Object])
 
 # Changelog for Stryke - Type Checks
