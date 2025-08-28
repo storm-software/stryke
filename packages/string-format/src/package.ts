@@ -17,6 +17,36 @@
  ------------------------------------------------------------------- */
 
 /**
+ * Check if a package name has a version
+ *
+ * @example
+ * ```typescript
+ * hasPackageVersion("lodash@4.17.21");
+ * // => true
+ * hasPackageVersion("@stryke/core@4.17.21");
+ * // => true
+ * hasPackageVersion("lodash");
+ * // => false
+ * hasPackageVersion("@stryke/core");
+ * // => false
+ * hasPackageVersion("lodash/module");
+ * // => false
+ * hasPackageVersion("@stryke/core/module");
+ * // => false
+ * hasPackageVersion("lodash/module@4.17.21");
+ * // => true
+ * hasPackageVersion("@stryke/core/module@4.17.21");
+ * // => true
+ * ```
+ *
+ * @param value - The package name with version
+ * @returns Whether the package name has a version
+ */
+export function hasPackageVersion(value: string): boolean {
+  return /^.[^\n\r@\u2028\u2029]*@.*$/.test(value);
+}
+
+/**
  * Remove the version from a package name (if it exists)
  *
  * @example
@@ -43,7 +73,7 @@
  * @returns The package name without version
  */
 export function removePackageVersion(value: string) {
-  return /^.[^\n\r@\u2028\u2029]*@.*$/.test(value)
+  return hasPackageVersion(value)
     ? value.substring(0, value.lastIndexOf("@"))
     : value;
 }
@@ -107,7 +137,5 @@ export function getPackageName(value: string) {
  * @returns The package version without the package name if it exists. If not, returns undefined.
  */
 export function getPackageVersion(value: string): string | undefined {
-  return /^.[^\n\r@\u2028\u2029]*@.*$/.test(value)
-    ? value.replace(/^.+@/, "")
-    : undefined;
+  return hasPackageVersion(value) ? value.replace(/^.+@/, "") : undefined;
 }
