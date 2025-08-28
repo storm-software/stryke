@@ -21,6 +21,11 @@ import { getParentPath } from "@stryke/path/get-parent-path";
 import { getWorkspaceRoot } from "@stryke/path/get-workspace-root";
 import type { PackageResolvingOptions } from "@stryke/path/resolve";
 import { resolvePackage } from "@stryke/path/resolve";
+import {
+  getPackageName,
+  getPackageVersion,
+  hasPackageVersion
+} from "@stryke/string-format/package";
 import { isString } from "@stryke/type-checks/is-string";
 import type { PackageJson } from "@stryke/types/package-json";
 import type { PackageManager } from "@stryke/types/package-manager";
@@ -190,14 +195,14 @@ export async function isPackageListed(
   name: string,
   cwdOrOptions?: string | PackageExistsOptions
 ): Promise<boolean> {
-  const packageName = name.replace(/@.*$/, "");
+  const packageName = getPackageName(name);
   const cwd = isString(cwdOrOptions) ? cwdOrOptions : cwdOrOptions?.cwd;
 
   let version = isString(cwdOrOptions) ? undefined : cwdOrOptions?.version;
   if (!version || !isValidRange(version)) {
     version =
-      name.includes("@") && isValidRange(name.replace(/^.*@/, ""))
-        ? name.replace(/^.*@/, "")
+      hasPackageVersion(name) && isValidRange(getPackageVersion(name))
+        ? getPackageVersion(name)
         : undefined;
   }
 
