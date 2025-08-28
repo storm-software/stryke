@@ -5,7 +5,7 @@
  This code was released as part of the Stryke project. Stryke
  is maintained by Storm Software under the Apache-2.0 license, and is
  free for commercial and private use. For more information, please visit
- our licensing page at https://stormsoftware.com/projects/stryke/license.
+ our licensing page at https://stormsoftware.com/licenses/projects/stryke.
 
  Website:                  https://stormsoftware.com
  Repository:               https://github.com/storm-software/stryke
@@ -22,18 +22,40 @@ import { resolve } from "@stryke/path/resolve";
 import "tinyexec";
 
 /**
- * Install a package
+ * Install a specific package
  *
  * @param name - The name of the package to install
  * @param options - The options to use when installing the package
+ */
+export async function install(
+  name: string,
+  options?: InstallPackageOptions
+): Promise<ReturnType<typeof installPackage>>;
+
+/**
+ * Install a list of packages
+ *
+ * @param names - The list of package names to install
+ * @param options - The options to use when installing the package
+ */
+export async function install(
+  names: string[],
+  options?: InstallPackageOptions
+): Promise<ReturnType<typeof installPackage>>;
+
+/**
+ * Install a specific or list of packages
+ *
+ * @param nameOrNames - The name or names of packages to install
+ * @param options - The options to use when installing the package
  * @returns The result of the command or an exception
  */
-export const install = async (
-  names: string | string[],
+export async function install(
+  nameOrNames: string | string[],
   options?: InstallPackageOptions
-) => {
-  return installPackage(names, options);
-};
+): Promise<ReturnType<typeof installPackage>> {
+  return installPackage(nameOrNames, options);
+}
 
 /**
  * Check if a package exists and install it if it does not

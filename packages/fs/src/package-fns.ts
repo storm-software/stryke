@@ -5,7 +5,7 @@
  This code was released as part of the Stryke project. Stryke
  is maintained by Storm Software under the Apache-2.0 license, and is
  free for commercial and private use. For more information, please visit
- our licensing page at https://stormsoftware.com/projects/stryke/license.
+ our licensing page at https://stormsoftware.com/licenses/projects/stryke.
 
  Website:                  https://stormsoftware.com
  Repository:               https://github.com/storm-software/stryke
@@ -21,10 +21,13 @@ import { getParentPath } from "@stryke/path/get-parent-path";
 import { getWorkspaceRoot } from "@stryke/path/get-workspace-root";
 import type { PackageResolvingOptions } from "@stryke/path/resolve";
 import { resolvePackage } from "@stryke/path/resolve";
+import { isString } from "@stryke/type-checks/is-string";
 import type { PackageJson } from "@stryke/types/package-json";
 import type { PackageManager } from "@stryke/types/package-manager";
 import { existsSync } from "node:fs";
+import type { Range } from "semver";
 import { readJsonFile } from "./json";
+import { isValidRange, satisfiesVersion } from "./semver-fns";
 
 /**
  * Get the package manager used in the project
@@ -140,6 +143,18 @@ export async function loadPackageJson(
   return readJsonFile<PackageJson>(path);
 }
 
+export interface PackageExistsOptions {
+  /**
+   * The current working directory
+   */
+  cwd?: string;
+
+  /**
+   * The version range of the package to check
+   */
+  version?: string | Range;
+}
+
 /**
  * Check if a package is listed in the package.json file
  *
@@ -147,19 +162,58 @@ export async function loadPackageJson(
  * @param cwd - The current working directory
  * @returns An indicator specifying if the package is listed
  */
-export async function isPackageListed(name: string, cwd?: string) {
-  let packageName = name;
-  if (packageName.includes("@")) {
-    packageName =
-      !packageName.startsWith("@") || packageName.lastIndexOf("@") > 0
-        ? packageName.slice(0, packageName.lastIndexOf("@"))
-        : packageName;
-  }
-  const pkg = (await loadPackageJson(cwd)) ?? {};
+export async function isPackageListed(
+  name: string,
+  cwd?: string
+): Promise<boolean>;
 
-  return (
-    packageName in (pkg.dependencies ?? {}) ||
-    packageName in (pkg.devDependencies ?? {})
+/**
+ * Check if a package is listed in the package.json file
+ *
+ * @param name - The name of the package
+ * @param options - The options to use when checking if the package is listed
+ * @returns An indicator specifying if the package is listed
+ */
+export async function isPackageListed(
+  name: string,
+  options?: PackageExistsOptions
+): Promise<boolean>;
+
+/**
+ * Check if a package is listed in the package.json file
+ *
+ * @param name - The name of the package
+ * @param cwdOrOptions - The current working directory or options to use when checking if the package is listed
+ * @returns An indicator specifying if the package is listed
+ */
+export async function isPackageListed(
+  name: string,
+  cwdOrOptions?: string | PackageExistsOptions
+): Promise<boolean> {
+  const packageName = name.replace(/@.*$/, "");
+  const cwd = isString(cwdOrOptions) ? cwdOrOptions : cwdOrOptions?.cwd;
+
+  let version = isString(cwdOrOptions) ? undefined : cwdOrOptions?.version;
+  if (!version || !isValidRange(version)) {
+    version =
+      name.includes("@") && isValidRange(name.replace(/^.*@/, ""))
+        ? name.replace(/^.*@/, "")
+        : undefined;
+  }
+
+  const packageJson = await loadPackageJson(cwd);
+  if (!packageJson) {
+    return false;
+  }
+
+  return Boolean(
+    (packageJson.dependencies &&
+      packageName in packageJson.dependencies &&
+      (!version ||
+        satisfiesVersion(packageJson.dependencies[packageName], version))) ??
+      (packageJson.devDependencies &&
+        packageName in packageJson.devDependencies &&
+        packageJson.devDependencies[packageName])
   );
 }
 
