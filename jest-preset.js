@@ -16,14 +16,7 @@
 
  ------------------------------------------------------------------- */
 
-import { isNumber } from "./is-number";
-import { isString } from "./is-string";
+const preset =
+  require("@storm-software/testing-tools/jest/config/preset").default;
 
-/**
- * Check if the provided value's type is an integer
- *
- * @param value - The value to type check
- * @returns An indicator specifying if the value provided is of type `number` and is an integer
- */
-export const isInteger = (value: unknown): boolean =>
-  !isString(value) && isNumber(value) && value % 1 === 0;
+module.exports = { ...preset };
