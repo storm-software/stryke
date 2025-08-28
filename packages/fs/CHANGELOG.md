@@ -2,6 +2,13 @@
 
 # Changelog for Stryke - Fs
 
+## [0.24.2](https://github.com/storm-software/stryke/releases/tag/fs%400.24.2) (2025-08-28)
+
+### Bug Fixes
+
+- **fs:** Resolved issue comparing versions in `isPackageListed` utility
+  ([a9d1bb9](https://github.com/storm-software/stryke/commit/a9d1bb9))
+
 ## [0.24.1](https://github.com/storm-software/stryke/releases/tag/fs%400.24.1) (2025-08-28)
 
 ### Bug Fixes

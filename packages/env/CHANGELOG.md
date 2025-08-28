@@ -2,6 +2,17 @@
 
 # Changelog for Stryke - Env
 
+## [0.17.5](https://github.com/storm-software/stryke/releases/tag/env%400.17.5) (2025-08-28)
+
+### Bug Fixes
+
+- **fs:** Resolved issue comparing versions in `isPackageListed` utility
+  ([a9d1bb9](https://github.com/storm-software/stryke/commit/a9d1bb9))
+
+### Updated Dependencies
+
+- Updated fs to 0.24.2
+
 ## [0.17.4](https://github.com/storm-software/stryke/releases/tag/env%400.17.4) (2025-08-28)
 
 ### Bug Fixes
