@@ -2,6 +2,17 @@
 
 # Changelog for Stryke - Capnp
 
+## [0.10.10](https://github.com/storm-software/stryke/releases/tag/capnp%400.10.10) (2025-08-28)
+
+### Bug Fixes
+
+- **fs:** Resolve issue with `isPackageListed` version parser
+  ([0d21d6b](https://github.com/storm-software/stryke/commit/0d21d6b))
+
+### Updated Dependencies
+
+- Updated fs to 0.24.1
+
 ## [0.10.9](https://github.com/storm-software/stryke/releases/tag/capnp%400.10.9) (2025-08-28)
 
 ### Miscellaneous

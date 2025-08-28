@@ -2,6 +2,15 @@
 
 # Changelog for Stryke - String Format
 
+## [0.10.0](https://github.com/storm-software/stryke/releases/tag/string-format%400.10.0) (2025-08-28)
+
+### Features
+
+- **string-format:** Added the `hasPackageVersion` helper function
+  ([69431ac](https://github.com/storm-software/stryke/commit/69431ac))
+- **string-format:** Added the `package` string name helpers
+  ([557d933](https://github.com/storm-software/stryke/commit/557d933))
+
 ## [0.9.2](https://github.com/storm-software/stryke/releases/tag/string-format%400.9.2) (2025-08-28)
 
 ### Miscellaneous
