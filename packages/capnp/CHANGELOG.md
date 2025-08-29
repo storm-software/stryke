@@ -2,6 +2,17 @@
 
 # Changelog for Stryke - Capnp
 
+## [0.10.12](https://github.com/storm-software/stryke/releases/tag/capnp%400.10.12) (2025-08-29)
+
+### Miscellaneous
+
+- **monorepo:** Update workspace's Nx dependencies to v21.4.1
+  ([9991522](https://github.com/storm-software/stryke/commit/9991522))
+
+### Updated Dependencies
+
+- Updated fs to 0.25.0
+
 ## [0.10.11](https://github.com/storm-software/stryke/releases/tag/capnp%400.10.11) (2025-08-28)
 
 ### Bug Fixes

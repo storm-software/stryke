@@ -2,6 +2,13 @@
 
 # Changelog for Stryke - Fs
 
+## [0.25.0](https://github.com/storm-software/stryke/releases/tag/fs%400.25.0) (2025-08-29)
+
+### Features
+
+- **fs:** Added the `doesPackageMatch` and `getPackageListing` utility functions
+  ([496ccfe](https://github.com/storm-software/stryke/commit/496ccfe))
+
 ## [0.24.2](https://github.com/storm-software/stryke/releases/tag/fs%400.24.2) (2025-08-28)
 
 ### Bug Fixes

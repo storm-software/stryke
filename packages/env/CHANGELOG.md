@@ -2,6 +2,17 @@
 
 # Changelog for Stryke - Env
 
+## [0.17.6](https://github.com/storm-software/stryke/releases/tag/env%400.17.6) (2025-08-29)
+
+### Miscellaneous
+
+- **monorepo:** Update workspace's Nx dependencies to v21.4.1
+  ([9991522](https://github.com/storm-software/stryke/commit/9991522))
+
+### Updated Dependencies
+
+- Updated fs to 0.25.0
+
 ## [0.17.5](https://github.com/storm-software/stryke/releases/tag/env%400.17.5) (2025-08-28)
 
 ### Bug Fixes
