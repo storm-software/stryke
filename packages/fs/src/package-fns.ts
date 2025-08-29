@@ -21,11 +21,7 @@ import { getParentPath } from "@stryke/path/get-parent-path";
 import { getWorkspaceRoot } from "@stryke/path/get-workspace-root";
 import type { PackageResolvingOptions } from "@stryke/path/resolve";
 import { resolvePackage } from "@stryke/path/resolve";
-import {
-  getPackageName,
-  getPackageVersion,
-  hasPackageVersion
-} from "@stryke/string-format/package";
+import { getPackageName } from "@stryke/string-format/package";
 import { isString } from "@stryke/type-checks/is-string";
 import type { PackageJson } from "@stryke/types/package-json";
 import type { PackageManager } from "@stryke/types/package-manager";
@@ -33,7 +29,6 @@ import { existsSync } from "node:fs";
 import type { Range } from "semver";
 import { subset } from "semver";
 import { readJsonFile } from "./json";
-import { isValidRange } from "./semver-fns";
 
 /**
  * Get the package manager used in the project
@@ -154,7 +149,9 @@ export interface PackageExistsOptions {
    * The current working directory
    */
   cwd?: string;
+}
 
+export interface PackageMatchesOptions extends PackageExistsOptions {
   /**
    * The version range of the package to check
    */
@@ -199,14 +196,6 @@ export async function isPackageListed(
   const packageName = getPackageName(name);
   const cwd = isString(cwdOrOptions) ? cwdOrOptions : cwdOrOptions?.cwd;
 
-  let version = isString(cwdOrOptions) ? undefined : cwdOrOptions?.version;
-  if (!version || !isValidRange(version)) {
-    version =
-      hasPackageVersion(name) && isValidRange(getPackageVersion(name))
-        ? getPackageVersion(name)
-        : undefined;
-  }
-
   const packageJson = await loadPackageJson(cwd);
   if (!packageJson) {
     return false;
@@ -215,12 +204,82 @@ export async function isPackageListed(
   return Boolean(
     (packageJson.dependencies &&
       packageName in packageJson.dependencies &&
-      packageJson.dependencies[packageName] &&
-      (!version || subset(packageJson.dependencies[packageName], version))) ??
+      packageJson.dependencies[packageName]) ||
       (packageJson.devDependencies &&
         packageName in packageJson.devDependencies &&
-        packageJson.devDependencies[packageName] &&
-        (!version || subset(packageJson.devDependencies[packageName], version)))
+        packageJson.devDependencies[packageName])
+  );
+}
+
+export interface GetPackageListingReturn {
+  version: string;
+  type: "dependencies" | "devDependencies";
+}
+
+/**
+ * Return the package version and dependency type listed in the package.json file
+ *
+ * @param name - The name of the package
+ * @param cwdOrOptions - The current working directory or options to use when checking if the package is listed
+ * @returns The version and type of the package if listed, otherwise undefined
+ */
+export async function getPackageListing(
+  name: string,
+  cwdOrOptions?: string | PackageExistsOptions
+): Promise<GetPackageListingReturn | undefined> {
+  const packageName = getPackageName(name);
+  const cwd = isString(cwdOrOptions) ? cwdOrOptions : cwdOrOptions?.cwd;
+
+  const packageJson = await loadPackageJson(cwd);
+  if (!packageJson) {
+    return undefined;
+  }
+
+  const version =
+    packageJson.dependencies && packageName in packageJson.dependencies
+      ? packageJson.dependencies[packageName]
+      : packageJson.devDependencies &&
+          packageName in packageJson.devDependencies
+        ? packageJson.devDependencies[packageName]
+        : undefined;
+  const type =
+    (packageJson.dependencies && packageName in packageJson.dependencies
+      ? "dependencies"
+      : packageJson.devDependencies &&
+          packageName in packageJson.devDependencies
+        ? "devDependencies"
+        : undefined) || undefined;
+
+  return version && type
+    ? {
+        version,
+        type
+      }
+    : undefined;
+}
+
+/**
+ * Check if a package version matches a specific version range
+ *
+ * @param name - The name of the package
+ * @param version - The version to check against
+ * @param cwd - The current working directory
+ * @returns An indicator specifying if the package version matches the range
+ */
+export async function doesPackageMatch(
+  name: string,
+  version: string,
+  cwd?: string
+): Promise<boolean> {
+  const pkg = await getPackageListing(name, { cwd });
+  if (!pkg) {
+    return false;
+  }
+
+  return (
+    pkg.version.startsWith("catalog:") ||
+    pkg.version.startsWith("workspace:") ||
+    subset(pkg.version, version)
   );
 }
 
