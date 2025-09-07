@@ -12,6 +12,8 @@
       "@stryke/cli/*": ["packages/cli/src/*"],
       "@stryke/convert": ["packages/convert/src/index.ts"],
       "@stryke/convert/*": ["packages/convert/src/*"],
+      "@stryke/crypto": ["packages/crypto/src/index.ts"],
+      "@stryke/crypto/*": ["packages/crypto/src/*"],
       "@stryke/env": ["packages/env/src/index.ts"],
       "@stryke/env/*": ["packages/env/src/*"],
       "@stryke/fs": ["packages/fs/src/index.ts"],

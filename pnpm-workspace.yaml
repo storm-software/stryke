@@ -131,6 +131,7 @@ overrides:
   "@stryke/capnp": workspace:*
   "@stryke/cli": workspace:*
   "@stryke/convert": workspace:*
+  "@stryke/crypto": workspace:*
   "@stryke/env": workspace:*
   "@stryke/fs": workspace:*
   "@stryke/open-browser": workspace:*
