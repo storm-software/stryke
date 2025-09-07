@@ -19,11 +19,10 @@
 export const ENV_PREFIXES = [
   "VITE_",
   "ONE_",
-  "STORM_PUBLIC_",
   "STORM_",
-  "STORM_STACK_PUBLIC_",
   "STORM_STACK_",
-  "NEXT_PUBLIC_"
+  "NEXT_",
+  "VERCEL_"
 ];
 
 export interface DotenvParseOutput {

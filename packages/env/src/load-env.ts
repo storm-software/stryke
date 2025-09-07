@@ -18,6 +18,7 @@
 
 import type { DotenvPopulateInput } from "@dotenvx/dotenvx";
 import { parse } from "@dotenvx/dotenvx";
+import { toArray } from "@stryke/convert/to-array";
 import { readFile } from "@stryke/fs/read-file";
 import { existsSync } from "@stryke/path/exists";
 import { joinPaths } from "@stryke/path/join-paths";
@@ -105,7 +106,19 @@ export async function loadEnv(
     );
   }
 
-  const prefixes = prefix ? (Array.isArray(prefix) ? prefix : [prefix]) : [];
+  const prefixes = toArray(prefix).reduce((ret, pre) => {
+    if (!pre) {
+      return ret;
+    }
+
+    if (!ret.includes(pre.endsWith("_") ? pre : `${pre}_`)) {
+      ret.push(pre.endsWith("_") ? pre : `${pre}_`);
+    }
+    if (!ret.includes(`${pre.endsWith("_") ? pre : `${pre}_`}PUBLIC_`)) {
+      ret.push(`${pre.endsWith("_") ? pre : `${pre}_`}PUBLIC_`);
+    }
+    return ret;
+  }, [] as string[]);
   const envDirs = Array.isArray(envDir) ? envDir : [envDir];
 
   const env: DotenvParseOutput = {};
