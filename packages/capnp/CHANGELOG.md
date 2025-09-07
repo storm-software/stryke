@@ -2,6 +2,13 @@
 
 # Changelog for Stryke - Capnp
 
+## [0.11.0](https://github.com/storm-software/stryke/releases/tag/capnp%400.11.0) (2025-09-07)
+
+### Features
+
+- **crypto:** Initial check-in of encryption helpers package
+  ([f1b9895](https://github.com/storm-software/stryke/commit/f1b9895))
+
 ## [0.10.12](https://github.com/storm-software/stryke/releases/tag/capnp%400.10.12) (2025-08-29)
 
 ### Miscellaneous
