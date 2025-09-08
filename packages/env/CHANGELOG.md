@@ -2,6 +2,13 @@
 
 # Changelog for Stryke - Env
 
+## [0.18.0](https://github.com/storm-software/stryke/releases/tag/env%400.18.0) (2025-09-07)
+
+### Features
+
+- **env:** Update prefix check to include `PUBLIC_` by default
+  ([8b958d8](https://github.com/storm-software/stryke/commit/8b958d8))
+
 ## [0.17.6](https://github.com/storm-software/stryke/releases/tag/env%400.17.6) (2025-08-29)
 
 ### Miscellaneous

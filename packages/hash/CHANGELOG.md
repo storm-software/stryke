@@ -1,3 +1,14 @@
+![Storm Software's logo banner](https://public.storm-cdn.com/brand-banner.png)
+
+# Changelog for Stryke - Hash
+
+## [0.11.0](https://github.com/storm-software/stryke/releases/tag/hash%400.11.0) (2025-09-07)
+
+### Features
+
+- **hash:** Added the `etag` helper utility
+  ([20ccaae](https://github.com/storm-software/stryke/commit/20ccaae))
+
 ![Storm Software](https://public.storm-cdn.com/brand-banner.png)
 
 # Changelog for Stryke - Hash
