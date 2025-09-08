@@ -2,6 +2,22 @@
 
 # Changelog for Stryke - Fs
 
+## [0.27.0](https://github.com/storm-software/stryke/releases/tag/fs%400.27.0) (2025-09-08)
+
+### Features
+
+- **fs:** Added the `is-file` utils to check file-system item types
+  ([4d44902](https://github.com/storm-software/stryke/commit/4d44902))
+
+### Miscellaneous
+
+- **monorepo:** Update workspace package links
+  ([c741317](https://github.com/storm-software/stryke/commit/c741317))
+
+### Updated Dependencies
+
+- Updated path to 0.13.1
+
 ## [0.26.0](https://github.com/storm-software/stryke/releases/tag/fs%400.26.0) (2025-09-08)
 
 ### Features

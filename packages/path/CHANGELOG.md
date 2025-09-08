@@ -2,6 +2,13 @@
 
 # Changelog for Stryke - Path
 
+## [0.13.1](https://github.com/storm-software/stryke/releases/tag/path%400.13.1) (2025-09-08)
+
+### Bug Fixes
+
+- **path:** Removed remaining references to `node:fs` in package
+  ([1d10c91](https://github.com/storm-software/stryke/commit/1d10c91))
+
 ## [0.13.0](https://github.com/storm-software/stryke/releases/tag/path%400.13.0) (2025-09-08)
 
 ### Features
