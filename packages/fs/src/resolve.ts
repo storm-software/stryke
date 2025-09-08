@@ -17,6 +17,7 @@
  ------------------------------------------------------------------- */
 
 import { correctPath } from "@stryke/path/correct-path";
+import { cwd } from "@stryke/path/cwd";
 import { findFilePath } from "@stryke/path/file-path-fns";
 import { joinPaths } from "@stryke/path/join-paths";
 import type { Platform } from "@stryke/types/system";
@@ -48,7 +49,7 @@ export async function resolve(
 ) {
   const paths = options.paths ?? [];
   if (paths.length === 0) {
-    paths.push(process.cwd());
+    paths.push(cwd());
   }
 
   const workspaceRoot = getWorkspaceRoot();

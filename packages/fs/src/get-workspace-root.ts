@@ -17,6 +17,7 @@
  ------------------------------------------------------------------- */
 
 import { findWorkspaceRootSafe } from "@storm-software/config-tools";
+import { cwd } from "@stryke/path/cwd";
 import { getParentPath } from "@stryke/path/get-parent-path";
 import { isSystemRoot } from "@stryke/path/is-root-dir";
 
@@ -93,7 +94,7 @@ export function getWorkspaceRoot(dir = process.cwd()) {
  * @param dir - A directory to check
  * @returns True if the directory is the workspace root, false otherwise
  */
-export function isWorkspaceRoot(dir: string = process.cwd()): boolean {
+export function isWorkspaceRoot(dir: string = cwd()): boolean {
   const workspaceRoot = getWorkspaceRoot(dir);
   if (workspaceRoot) {
     return workspaceRoot === dir;

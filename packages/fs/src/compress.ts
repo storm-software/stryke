@@ -17,10 +17,11 @@
  ------------------------------------------------------------------- */
 
 import { uint8ArrayToString } from "@stryke/convert/uint8-array-to-string";
-import { findFolderName, isDirectory, resolveParentPath } from "@stryke/path";
+import { findFolderName, resolveParentPath } from "@stryke/path";
 import { joinPaths } from "@stryke/path/join-paths";
 import type { GlobOptions } from "glob";
 import { createTarGzip } from "nanotar";
+import { isDirectory } from "./is-file";
 import { listFiles } from "./list-files";
 import { readFileIfExisting } from "./read-file";
 import { writeFile } from "./write-file";

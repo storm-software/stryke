@@ -16,6 +16,7 @@
 
  ------------------------------------------------------------------- */
 
+import { cwd } from "@stryke/path/cwd";
 import { findFilePath } from "@stryke/path/file-path-fns";
 import { joinPaths } from "@stryke/path/join-paths";
 import type { TsConfigJson } from "@stryke/types/tsconfig";
@@ -31,7 +32,7 @@ import { readJsonFile } from "./json";
  * @returns The parsed tsconfig.json object or null if not found.
  */
 export async function loadTsConfig(
-  filePath: string = process.cwd()
+  filePath: string = cwd()
 ): Promise<TsConfigJson> {
   let tsconfigFilePath = filePath.endsWith(".json")
     ? filePath

@@ -35,6 +35,7 @@ export * from "./exists";
 export * from "./get-workspace-root";
 export * from "./helpers";
 export * from "./install";
+export * from "./is-file";
 export * from "./json";
 export * from "./list-files";
 export * from "./package-fns";

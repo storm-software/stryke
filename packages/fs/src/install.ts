@@ -18,6 +18,7 @@
 
 import type { InstallPackageOptions } from "@antfu/install-pkg";
 import { installPackage } from "@antfu/install-pkg";
+import { cwd } from "@stryke/path/cwd";
 import "tinyexec";
 import { resolve } from "./resolve";
 
@@ -67,7 +68,7 @@ export const packageExists = async (
   name: string,
   options?: InstallPackageOptions
 ) => {
-  const resolvePath = await resolve(options?.cwd || process.cwd());
+  const resolvePath = await resolve(options?.cwd || cwd());
   try {
     await resolve(name, { paths: [resolvePath] });
   } catch {
