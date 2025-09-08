@@ -72,13 +72,15 @@ export function createSecret(
 }
 
 /**
- * Encrypts data using a secret.
+ * Symmetrically encrypts data using the [ChaCha20-Poly1305](https://en.wikipedia.org/wiki/ChaCha20-Poly1305) cipher.
+ *
+ * @see https://en.wikipedia.org/wiki/ChaCha20-Poly1305
  *
  * @param secret - The secret key used for encryption.
  * @param data - The data to encrypt.
  * @returns The encrypted data.
  */
-export function encryptWithSecret(secret: BinaryLike, data: string): string {
+export function encrypt(secret: BinaryLike, data: string): string {
   const iv = randomBytes(CIPHER_IV_LENGTH);
   const salt = randomBytes(CIPHER_SALT_LENGTH);
 
@@ -110,16 +112,15 @@ export function encryptWithSecret(secret: BinaryLike, data: string): string {
 }
 
 /**
- * Decrypts data using a secret.
+ * Symmetrically decrypts data using the [ChaCha20-Poly1305](https://en.wikipedia.org/wiki/ChaCha20-Poly1305) cipher.
+ *
+ * @see https://en.wikipedia.org/wiki/ChaCha20-Poly1305
  *
  * @param secret - The secret key used for decryption.
  * @param encryptedData - The encrypted data to decrypt.
  * @returns The decrypted data.
  */
-export function decryptWithSecret(
-  secret: BinaryLike,
-  encryptedData: string
-): string {
+export function decrypt(secret: BinaryLike, encryptedData: string): string {
   const buffer = Buffer.from(encryptedData, "hex");
 
   const salt = buffer.slice(0, CIPHER_SALT_LENGTH);
