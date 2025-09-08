@@ -21,9 +21,9 @@ import {
   writeWarning
 } from "@storm-software/config-tools/logger/console";
 import { toArray } from "@stryke/convert/to-array";
+import { existsSync } from "@stryke/fs/exists";
 import { readJsonFile } from "@stryke/fs/json";
 import { listFiles } from "@stryke/fs/list-files";
-import { existsSync } from "@stryke/path/exists";
 import { findFilePath, relativePath } from "@stryke/path/file-path-fns";
 import { joinPaths } from "@stryke/path/join-paths";
 import type { TsConfigJson } from "@stryke/types/tsconfig";

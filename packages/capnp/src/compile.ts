@@ -17,7 +17,7 @@
  ------------------------------------------------------------------- */
 
 import { writeWarning } from "@storm-software/config-tools/logger/console";
-import { existsSync } from "@stryke/path/exists.js";
+import { existsSync } from "@stryke/fs/exists";
 import { compileAll } from "capnp-es/compiler";
 import defu from "defu";
 import { Buffer } from "node:buffer";

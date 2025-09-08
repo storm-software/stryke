@@ -29,7 +29,7 @@ import {
   findWorkspaceRootSafe,
   handleProcess
 } from "@storm-software/config-tools/utilities";
-import { existsSync } from "@stryke/path/exists";
+import { existsSync } from "@stryke/fs/exists";
 import { findFilePath } from "@stryke/path/file-path-fns";
 import { joinPaths } from "@stryke/path/join-paths";
 import { Command, Option } from "commander";
