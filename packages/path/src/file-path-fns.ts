@@ -17,11 +17,10 @@
  ------------------------------------------------------------------- */
 
 import { EMPTY_STRING } from "@stryke/types/base";
-import { relative } from "node:path";
 import { normalizeString, normalizeWindowsPath } from "./correct-path";
-import { getWorkspaceRoot } from "./get-workspace-root";
-import { isAbsolutePath } from "./is-file";
+import { isAbsolute, isAbsolutePath } from "./is-type";
 import { joinPaths } from "./join-paths";
+import { ROOT_FOLDER_REGEX } from "./regex";
 
 export interface FindFileNameOptions {
   /**
@@ -218,7 +217,7 @@ export function hasFileExtension(filePath: string): boolean {
  * @param cwd - The current working directory
  * @returns The resolved path
  */
-export function resolvePath(path: string, cwd = getWorkspaceRoot()) {
+export function resolvePath(path: string, cwd = currentDir()) {
   // Normalize windows arguments
   const paths = normalizeWindowsPath(path).split("/");
 
@@ -254,6 +253,42 @@ export function resolvePath(path: string, cwd = getWorkspaceRoot()) {
   return resolvedPath.length > 0 ? resolvedPath : ".";
 }
 
+export function resolve(...paths: string[]) {
+  // Normalize windows arguments
+  paths = paths.map(argument => normalizeWindowsPath(argument));
+
+  let resolvedPath = "";
+  let resolvedAbsolute = false;
+
+  for (
+    let index = paths.length - 1;
+    index >= -1 && !resolvedAbsolute;
+    index--
+  ) {
+    const path = index >= 0 ? paths[index] : currentDir();
+
+    // Skip empty entries
+    if (!path || path.length === 0) {
+      continue;
+    }
+
+    resolvedPath = `${path}/${resolvedPath}`;
+    resolvedAbsolute = isAbsolute(path);
+  }
+
+  // At this point the path should be resolved to a full absolute path, but
+  // handle relative paths to be safe (might happen when process.cwd() fails)
+
+  // Normalize the path
+  resolvedPath = normalizeString(resolvedPath, !resolvedAbsolute);
+
+  if (resolvedAbsolute && !isAbsolute(resolvedPath)) {
+    return `/${resolvedPath}`;
+  }
+
+  return resolvedPath.length > 0 ? resolvedPath : ".";
+}
+
 /**
  * Resolve the file path to an absolute path.
  *
@@ -264,6 +299,55 @@ export function resolvePaths(...paths: string[]) {
   return resolvePath(
     joinPaths(...paths.map(path => normalizeWindowsPath(path)))
   );
+}
+
+/**
+ * Get the current working directory.
+ *
+ * @returns The current working directory or '/' if it cannot be determined
+ */
+export function currentDir() {
+  if (typeof process !== "undefined" && typeof process.cwd === "function") {
+    return process.cwd().replace(/\\/g, "/");
+  }
+  return "/";
+}
+
+/**
+ * Get the relative path from one file to another.
+ *
+ * @remarks
+ * This function is similar to the `path.relative` function in Node's path module.
+ *
+ * @param from - The base path to start from
+ * @param to - The target path to resolve relative to the base path
+ * @returns The relative path from the base path to the target path
+ */
+export function relative(from: string, to: string) {
+  // we cast these because `split` will always be at least one string
+  const _from = resolve(from).replace(ROOT_FOLDER_REGEX, "$1").split("/") as [
+    string,
+    ...string[]
+  ];
+  const _to = resolve(to).replace(ROOT_FOLDER_REGEX, "$1").split("/") as [
+    string,
+    ...string[]
+  ];
+
+  // Different windows drive letters
+  if (_to[0][1] === ":" && _from[0][1] === ":" && _from[0] !== _to[0]) {
+    return _to.join("/");
+  }
+
+  const _fromCopy = [..._from];
+  for (const segment of _fromCopy) {
+    if (_to[0] !== segment) {
+      break;
+    }
+    _from.shift();
+    _to.shift();
+  }
+  return [..._from.map(() => ".."), ..._to].join("/");
 }
 
 /**
@@ -290,8 +374,8 @@ export function relativePath(from: string, to: string, withEndSlash = false) {
  * @param filePath - The file path to process
  * @returns The resolved file path
  */
-export function relativeToWorkspaceRoot(filePath: string) {
-  return relativePath(filePath, getWorkspaceRoot());
+export function relativeToCurrentDir(filePath: string) {
+  return relativePath(filePath, currentDir());
 }
 
 /**

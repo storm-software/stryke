@@ -1,7 +1,6 @@
 {
   "extends": "../../tsconfig.base.json",
   "compilerOptions": {
-    "types": ["node"],
     "outDir": "../../dist/out-tsc"
   },
   "include": ["src/**/*.ts"],

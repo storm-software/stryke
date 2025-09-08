@@ -23,3 +23,5 @@ export const UNC_REGEX = /^[/\\]{2}/;
 
 export const ABSOLUTE_PATH_REGEX =
   /^[/\\](?![/\\])|^[/\\]{2}(?!\.)|^~[/\\]|^[A-Z]:[/\\]/i;
+
+export const ROOT_FOLDER_REGEX = /^\/([A-Z]:)?$/i;

@@ -5,7 +5,7 @@
  This code was released as part of the Stryke project. Stryke
  is maintained by Storm Software under the Apache-2.0 license, and is
  free for commercial and private use. For more information, please visit
- our licensing page at https://stormsoftware.com/license.
+ our licensing page at https://stormsoftware.com/licenses/projects/stryke.
 
  Website:                  https://stormsoftware.com
  Repository:               https://github.com/storm-software/stryke
@@ -16,11 +16,12 @@
 
  ------------------------------------------------------------------- */
 
-/* eslint-disable func-names */
-
-import type path from "node:path";
-
-const _DRIVE_LETTER_START_RE = /^[A-Z]:\//i;
+import { isAbsolute } from "./is-type";
+import {
+  DRIVE_LETTER_REGEX,
+  DRIVE_LETTER_START_REGEX,
+  UNC_REGEX
+} from "./regex";
 
 // Util to normalize windows paths to posix
 function normalizeWindowsPath(input = "") {
@@ -29,18 +30,10 @@ function normalizeWindowsPath(input = "") {
   }
   return input
     .replace(/\\/g, "/")
-    .replace(_DRIVE_LETTER_START_RE, r => r.toUpperCase());
+    .replace(DRIVE_LETTER_START_REGEX, r => r.toUpperCase());
 }
 
-const _UNC_REGEX = /^[/\\]{2}/;
-const _IS_ABSOLUTE_RE = /^[/\\](?![/\\])|^[/\\]{2}(?!\.)|^[A-Z]:[/\\]/i;
-const _DRIVE_LETTER_RE = /^[A-Z]:$/i;
-
-const isAbsolute: typeof path.isAbsolute = function (p) {
-  return _IS_ABSOLUTE_RE.test(p);
-};
-
-const correctPaths = function (path?: string) {
+function correctPaths(path?: string) {
   if (!path || path.length === 0) {
     return ".";
   }
@@ -48,7 +41,7 @@ const correctPaths = function (path?: string) {
   // Normalize windows argument
   path = normalizeWindowsPath(path);
 
-  const isUNCPath = path.match(_UNC_REGEX);
+  const isUNCPath = path.match(UNC_REGEX);
   const isPathAbsolute = isAbsolute(path);
   const trailingSeparator = path[path.length - 1] === "/";
 
@@ -64,7 +57,7 @@ const correctPaths = function (path?: string) {
   if (trailingSeparator) {
     path += "/";
   }
-  if (_DRIVE_LETTER_RE.test(path)) {
+  if (DRIVE_LETTER_REGEX.test(path)) {
     path += "/";
   }
 
@@ -76,7 +69,7 @@ const correctPaths = function (path?: string) {
   }
 
   return isPathAbsolute && !isAbsolute(path) ? `/${path}` : path;
-};
+}
 
 /**
  * Joins all given path segments together using the platform-specific separator as a delimiter.
@@ -85,7 +78,7 @@ const correctPaths = function (path?: string) {
  * @param segments - The path segments to join.
  * @returns The joined and normalized path string.
  */
-export const joinPaths: typeof path.join = function (...segments) {
+export function joinPaths(...segments: string[]): string {
   let path = "";
 
   for (const seg of segments) {
@@ -107,7 +100,7 @@ export const joinPaths: typeof path.join = function (...segments) {
   }
 
   return correctPaths(path);
-};
+}
 
 /**
  * Resolves a string path, resolving '.' and '.' segments and allowing paths above the root.

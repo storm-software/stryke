@@ -9,13 +9,8 @@
     "directory": "packages/path"
   },
   "private": false,
-  "dependencies": {
-    "@storm-software/config-tools": "catalog:",
-    "mlly": "catalog:"
-  },
   "devDependencies": {
-    "@stryke/types": "workspace:*",
-    "@types/node": "catalog:"
+    "@stryke/types": "workspace:*"
   },
   "publishConfig": {
     "access": "public"

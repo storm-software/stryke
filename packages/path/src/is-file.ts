@@ -5,7 +5,7 @@
  This code was released as part of the Stryke project. Stryke
  is maintained by Storm Software under the Apache-2.0 license, and is
  free for commercial and private use. For more information, please visit
- our licensing page at https://stormsoftware.com/license.
+ our licensing page at https://stormsoftware.com/licenses/projects/stryke.
 
  Website:                  https://stormsoftware.com
  Repository:               https://github.com/storm-software/stryke
@@ -18,8 +18,6 @@
 
 import { lstatSync, statSync } from "node:fs";
 import { joinPaths } from "./join-paths";
-import { ABSOLUTE_PATH_REGEX } from "./regex";
-import { slash } from "./slash";
 
 /**
  * Check if the given path is a file.
@@ -86,23 +84,3 @@ export const isDirectorySymlink = (
     })?.isDirectory()
   );
 };
-
-/**
- * Check if the path is an absolute path.
- *
- * @param path - The path to check
- * @returns An indicator specifying if the path is an absolute path
- */
-export function isAbsolutePath(path: string): boolean {
-  return ABSOLUTE_PATH_REGEX.test(slash(path));
-}
-
-/**
- * Check if the path is a relative path.
- *
- * @param path - The path to check
- * @returns An indicator specifying if the path is a relative path
- */
-export function isRelativePath(path: string): boolean {
-  return !isAbsolutePath(path);
-}

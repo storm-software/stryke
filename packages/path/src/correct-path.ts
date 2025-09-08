@@ -16,7 +16,7 @@
 
  ------------------------------------------------------------------- */
 
-import { isAbsolutePath } from "./is-file";
+import { isAbsolutePath } from "./is-type";
 import { joinPaths } from "./join-paths";
 import {
   DRIVE_LETTER_REGEX,
