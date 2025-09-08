@@ -16,6 +16,7 @@
 
  ------------------------------------------------------------------- */
 
+import { cwd as currentDir } from "./cwd";
 import { isAbsolutePath } from "./is-type";
 import { joinPaths } from "./join-paths";
 import {
@@ -180,7 +181,7 @@ export function toAbsolutePath(path: string, cwd?: string): string {
  * @param cwd - The current working directory to use as the base path if the path is not absolute.
  * @returns The relative path.
  */
-export function toRelativePath(path: string, cwd?: string): string {
+export function toRelativePath(path: string, cwd = currentDir()): string {
   if (!path || path.length === 0) {
     return ".";
   }
@@ -188,7 +189,7 @@ export function toRelativePath(path: string, cwd?: string): string {
   if (isAbsolutePath(path)) {
     path = slash(normalizeString(path, true));
   } else {
-    path = slash(normalizeString(joinPaths(cwd || process.cwd(), path), true));
+    path = slash(normalizeString(joinPaths(cwd, path), true));
   }
 
   if (path.startsWith("./")) {

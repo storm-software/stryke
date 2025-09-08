@@ -16,28 +16,17 @@
 
  ------------------------------------------------------------------- */
 
-import { cwd } from "./cwd";
-import { isParentPath } from "./is-parent-path";
-import { slash } from "./slash";
-
 /**
- * Replace the base path from the beginning of the given path.
+ * Get the current working directory.
  *
- * @example
- * ```ts
- * replacePath("/home/user/project/src/index.ts", "/home/user/project");
- * // returns "src/index.ts"
- * ```
+ * @remarks
+ * This function attempts to retrieve the current working directory using `process.cwd()`.
  *
- * @param childPath - The child path to replace the {@link parentPath} substring from
- * @param parentPath - The parent path to remove from the {@link childPath} parameter
- * @returns The {@link childPath} with the {@link parentPath} path removed
+ * @returns The current working directory or '/' if it cannot be determined
  */
-export function replacePath(
-  childPath: string,
-  parentPath: string = cwd()
-): string {
-  return isParentPath(childPath, parentPath)
-    ? slash(childPath).replace(slash(parentPath), "").replace(/^\//, "")
-    : childPath;
+export function cwd() {
+  if (typeof process !== "undefined" && typeof process.cwd === "function") {
+    return process.cwd().replace(/\\/g, "/");
+  }
+  return "/";
 }

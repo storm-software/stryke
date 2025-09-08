@@ -18,6 +18,7 @@
 
 import { EMPTY_STRING } from "@stryke/types/base";
 import { normalizeString, normalizeWindowsPath } from "./correct-path";
+import { cwd as currentDir } from "./cwd";
 import { isAbsolute, isAbsolutePath } from "./is-type";
 import { joinPaths } from "./join-paths";
 import { ROOT_FOLDER_REGEX } from "./regex";
@@ -299,18 +300,6 @@ export function resolvePaths(...paths: string[]) {
   return resolvePath(
     joinPaths(...paths.map(path => normalizeWindowsPath(path)))
   );
-}
-
-/**
- * Get the current working directory.
- *
- * @returns The current working directory or '/' if it cannot be determined
- */
-export function currentDir() {
-  if (typeof process !== "undefined" && typeof process.cwd === "function") {
-    return process.cwd().replace(/\\/g, "/");
-  }
-  return "/";
 }
 
 /**

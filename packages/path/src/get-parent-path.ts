@@ -16,7 +16,7 @@
 
  ------------------------------------------------------------------- */
 
-import { isDirectory, isFile } from "./is-file";
+import { cwd as currentDir } from "./cwd";
 import { joinPaths } from "./join-paths";
 
 /**
@@ -69,12 +69,12 @@ export interface GetParentPathOptions {
  */
 export const getParentPath = (
   name: string | string[],
-  cwd: string,
-  options?: Partial<GetParentPathOptions>
+  cwd = currentDir(),
+  options: Partial<GetParentPathOptions> = {}
 ): string | undefined => {
   const ignoreCase = options?.ignoreCase ?? true;
   const skipCwd = options?.skipCwd ?? false;
-  const targetType = options?.targetType ?? "both";
+  // const targetType = options?.targetType ?? "both";
 
   let dir = cwd;
   if (skipCwd) {
@@ -88,11 +88,11 @@ export const getParentPath = (
 
   while (true) {
     const target = names.find(
-      name =>
-        (isFile(joinPaths(dir, name)) &&
+      name => joinPaths(dir, name)
+      /* (isFile(joinPaths(dir, name)) &&
           (targetType === "file" || targetType === "both")) ||
         (isDirectory(joinPaths(dir, name)) &&
-          (targetType === "directory" || targetType === "both"))
+          (targetType === "directory" || targetType === "both")) */
     );
     if (target) {
       return joinPaths(dir, target);

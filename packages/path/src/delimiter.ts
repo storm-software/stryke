@@ -16,8 +16,6 @@
 
  ------------------------------------------------------------------- */
 
-type NodePath = typeof import("node:path");
-
 /**
  * The platform-specific file delimiter.
  *
@@ -32,8 +30,8 @@ const platforms = {
   posix: undefined,
   win32: undefined
 } as unknown as {
-  posix: NodePath["posix"];
-  win32: NodePath["win32"];
+  posix: any;
+  win32: any;
 };
 
 const mix = (del: ";" | ":" = delimiter) => {
@@ -55,7 +53,7 @@ const mix = (del: ";" | ":" = delimiter) => {
         return platforms[prop as keyof typeof platforms];
       }
     }
-  ) as unknown as NodePath;
+  ) as unknown as typeof platforms & { delimiter: typeof del };
 };
 
 export const posix = /* @__PURE__ */ mix(":");
