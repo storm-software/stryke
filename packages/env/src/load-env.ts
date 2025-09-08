@@ -19,8 +19,8 @@
 import type { DotenvPopulateInput } from "@dotenvx/dotenvx";
 import { parse } from "@dotenvx/dotenvx";
 import { toArray } from "@stryke/convert/to-array";
+import { existsSync } from "@stryke/fs/exists";
 import { readFile } from "@stryke/fs/read-file";
-import { existsSync } from "@stryke/path/exists";
 import { joinPaths } from "@stryke/path/join-paths";
 import defu from "defu";
 import type { DotenvParseOutput } from "./types";
