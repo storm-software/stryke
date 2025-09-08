@@ -16,11 +16,9 @@
 
  ------------------------------------------------------------------- */
 
-import { exists, findFileName, findFilePath, joinPaths } from "@stryke/path";
+import { findFileName, findFilePath } from "@stryke/path/file-path-fns";
 import { getParentPath } from "@stryke/path/get-parent-path";
-import { getWorkspaceRoot } from "@stryke/path/get-workspace-root";
-import type { PackageResolvingOptions } from "@stryke/path/resolve";
-import { resolvePackage } from "@stryke/path/resolve";
+import { joinPaths } from "@stryke/path/join-paths";
 import { getPackageName } from "@stryke/string-format/package";
 import { isString } from "@stryke/type-checks/is-string";
 import type { PackageJson } from "@stryke/types/package-json";
@@ -28,7 +26,11 @@ import type { PackageManager } from "@stryke/types/package-manager";
 import { existsSync } from "node:fs";
 import type { Range } from "semver";
 import { subset } from "semver";
+import { exists } from "./exists";
+import { getWorkspaceRoot } from "./get-workspace-root";
 import { readJsonFile } from "./json";
+import type { PackageResolvingOptions } from "./resolve";
+import { resolvePackage } from "./resolve";
 
 /**
  * Get the package manager used in the project

@@ -17,7 +17,6 @@
  ------------------------------------------------------------------- */
 
 import { correctPath } from "@stryke/path/correct-path";
-import { existsSync } from "@stryke/path/exists";
 import { findFilePath } from "@stryke/path/file-path-fns";
 import type { Abortable } from "node:events";
 import type {
@@ -29,6 +28,7 @@ import type {
 import { writeFileSync as writeFileSyncFs } from "node:fs";
 import { writeFile as writeFileFs } from "node:fs/promises";
 import type { Encoding } from "./constants";
+import { existsSync } from "./exists";
 import { createDirectory, createDirectorySync } from "./helpers";
 
 export interface WriteFileOptions {

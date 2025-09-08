@@ -16,12 +16,12 @@
 
  ------------------------------------------------------------------- */
 
-import { existsSync } from "@stryke/path/exists";
 import { findFilePath } from "@stryke/path/file-path-fns";
 import { joinPaths } from "@stryke/path/join-paths";
 import type { TsConfigJson } from "@stryke/types/tsconfig";
 import defu from "defu";
 import { resolvePath } from "mlly";
+import { existsSync } from "./exists";
 import { readJsonFile } from "./json";
 
 /**

@@ -17,9 +17,9 @@
  ------------------------------------------------------------------- */
 
 import { detectPackageManager } from "@antfu/install-pkg";
-import { getWorkspaceRoot } from "@stryke/path/get-workspace-root";
 import { execSync } from "node:child_process";
 import { parseArgs } from "node:util";
+import { getWorkspaceRoot } from "./get-workspace-root";
 
 export interface NodeOptionsToken {
   kind: "option";
