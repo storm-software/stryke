@@ -3,15 +3,16 @@
                        ⚡ Storm Software - Stryke
 
  This code was released as part of the Stryke project. Stryke
- is maintained by Storm Software under the Apache-2.0 License, and is
+ is maintained by Storm Software under the Apache-2.0 license, and is
  free for commercial and private use. For more information, please visit
- our licensing page.
+ our licensing page at https://stormsoftware.com/licenses/projects/stryke.
 
- Website:         https://stormsoftware.com
- Repository:      https://github.com/storm-software/stryke
- Documentation:   https://stormsoftware.com/projects/stryke/docs
- Contact:         https://stormsoftware.com/contact
- License:         https://stormsoftware.com/projects/stryke/license
+ Website:                  https://stormsoftware.com
+ Repository:               https://github.com/storm-software/stryke
+ Documentation:            https://docs.stormsoftware.com/projects/stryke
+ Contact:                  https://stormsoftware.com/contact
+
+ SPDX-License-Identifier:  Apache-2.0
 
  ------------------------------------------------------------------- */
 
@@ -20,8 +21,8 @@ import type {
   EnvValue,
   GeneratorOptions
 } from "@prisma/generator-helper";
+import { existsSync } from "@stryke/fs/exists";
 import { createDirectory, removeDirectory } from "@stryke/fs/helpers";
-import { existsSync } from "@stryke/path/exists";
 import { joinPaths } from "@stryke/path/join-paths";
 import { lowerCaseFirst } from "@stryke/string-format/lower-case-first";
 import path from "node:path";
@@ -323,7 +324,7 @@ export async function generate(options: GeneratorOptions) {
       continue;
     }
 
-    const plural = pluralize(lowerCaseFirst(model)!);
+    const plural = pluralize(lowerCaseFirst(model));
 
     consoleLog(`Generating tRPC router for model ${model}`);
 
