@@ -2,6 +2,17 @@
 
 # Changelog for Stryke - Fs
 
+## [0.26.0](https://github.com/storm-software/stryke/releases/tag/fs%400.26.0) (2025-09-08)
+
+### Features
+
+- **fs:** Added `exists`, `get-workspace-root`, and `resolve` utilities
+  ([39ca378](https://github.com/storm-software/stryke/commit/39ca378))
+
+### Updated Dependencies
+
+- Updated path to 0.13.0
+
 ## [0.25.0](https://github.com/storm-software/stryke/releases/tag/fs%400.25.0) (2025-08-29)
 
 ### Features

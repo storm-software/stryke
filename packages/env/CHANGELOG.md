@@ -2,6 +2,18 @@
 
 # Changelog for Stryke - Env
 
+## [0.18.1](https://github.com/storm-software/stryke/releases/tag/env%400.18.1) (2025-09-08)
+
+### Bug Fixes
+
+- **env:** Resolved issues with out of date package references
+  ([bf77e7c](https://github.com/storm-software/stryke/commit/bf77e7c))
+
+### Updated Dependencies
+
+- Updated path to 0.13.0
+- Updated fs to 0.26.0
+
 ## [0.18.0](https://github.com/storm-software/stryke/releases/tag/env%400.18.0) (2025-09-07)
 
 ### Features

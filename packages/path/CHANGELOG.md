@@ -2,6 +2,13 @@
 
 # Changelog for Stryke - Path
 
+## [0.13.0](https://github.com/storm-software/stryke/releases/tag/path%400.13.0) (2025-09-08)
+
+### Features
+
+- **path:** Update the package to be platform neutral
+  ([abb6fa0](https://github.com/storm-software/stryke/commit/abb6fa0))
+
 ## [0.12.5](https://github.com/storm-software/stryke/releases/tag/path%400.12.5) (2025-08-28)
 
 ### Miscellaneous

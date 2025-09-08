@@ -1,3 +1,20 @@
+![Storm Software's logo banner](https://public.storm-cdn.com/brand-banner.png)
+
+# Changelog for Stryke - Prisma Better Auth Generator
+
+## [0.13.6](https://github.com/storm-software/stryke/releases/tag/prisma-better-auth-generator%400.13.6) (2025-09-08)
+
+### Bug Fixes
+
+- **prisma-better-auth-generator:** Resolved issues with out of date package
+  references
+  ([90c46a2](https://github.com/storm-software/stryke/commit/90c46a2))
+
+### Updated Dependencies
+
+- Updated path to 0.13.0
+- Updated fs to 0.26.0
+
 ![Storm Software]([object Object])
 
 # Changelog for Stryke - Prisma Better Auth Generator

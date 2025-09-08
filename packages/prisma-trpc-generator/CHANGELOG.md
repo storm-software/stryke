@@ -1,3 +1,19 @@
+![Storm Software's logo banner](https://public.storm-cdn.com/brand-banner.png)
+
+# Changelog for Stryke - Prisma TRPC Generator
+
+## [0.12.6](https://github.com/storm-software/stryke/releases/tag/prisma-trpc-generator%400.12.6) (2025-09-08)
+
+### Bug Fixes
+
+- **prisma-trpc-generator:** Resolved issues with out of date package references
+  ([742aa9c](https://github.com/storm-software/stryke/commit/742aa9c))
+
+### Updated Dependencies
+
+- Updated path to 0.13.0
+- Updated fs to 0.26.0
+
 ![Storm Software]([object Object])
 
 # Changelog for Stryke - Prisma TRPC Generator
