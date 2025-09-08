@@ -2,6 +2,18 @@
 
 # Changelog for Stryke - Crypto
 
+## [0.2.0](https://github.com/storm-software/stryke/releases/tag/crypto%400.2.0) (2025-09-08)
+
+### Features
+
+- **crypto:** Added the `sym` module for symmetric ChaCha20-Poly1305 encryption
+  ([39947e5](https://github.com/storm-software/stryke/commit/39947e5))
+
+### Miscellaneous
+
+- **crypto:** Simplify utility function names
+  ([f4528da](https://github.com/storm-software/stryke/commit/f4528da))
+
 ## [0.1.0](https://github.com/storm-software/stryke/releases/tag/crypto%400.1.0) (2025-09-07)
 
 ### Features

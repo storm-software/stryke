@@ -1,6 +1,6 @@
 {
   "name": "@stryke/crypto",
-  "version": "0.1.0",
+  "version": "0.2.0",
   "type": "module",
   "description": "A package containing cryptographic utilities used by Storm Software.",
   "repository": {
