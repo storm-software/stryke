@@ -9,6 +9,9 @@
     "directory": "packages/crypto"
   },
   "private": false,
+  "dependencies": {
+    "@stryke/type-checks": "workspace:*"
+  },
   "devDependencies": {
     "@types/node": "catalog:"
   },
