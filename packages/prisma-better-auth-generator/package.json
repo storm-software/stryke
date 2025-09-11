@@ -108,7 +108,7 @@
   "dependencies": {
     "@prisma/generator-helper": "catalog:",
     "@prisma/internals": "catalog:",
-    "@stryke/fs": "0.27.1",
+    "@stryke/fs": "workspace:*",
     "@stryke/path": "workspace:*",
     "esbuild": "catalog:",
     "jiti": "catalog:",

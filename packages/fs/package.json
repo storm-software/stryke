@@ -21,7 +21,7 @@
     "@antfu/install-pkg": "catalog:",
     "@ltd/j-toml": "catalog:",
     "@storm-software/config-tools": "catalog:",
-    "@stryke/convert": "0.3.2",
+    "@stryke/convert": "workspace:*",
     "@stryke/path": "workspace:*",
     "@stryke/string-format": "workspace:*",
     "@zkochan/js-yaml": "catalog:",
