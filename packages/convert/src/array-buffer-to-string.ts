@@ -17,21 +17,20 @@
  ------------------------------------------------------------------- */
 
 /**
- * The convert library used by Storm Software for building TypeScript applications.
+ * Convert an ArrayBuffer or Uint8Array to a string
  *
- * @remarks
- * A utility package that helps convert between different data types
- *
- * @packageDocumentation
+ * @param buffer - The ArrayBuffer or Uint8Array to convert
+ * @returns The converted string
  */
-
-export * from "./array-buffer-to-string";
-export * from "./buffer-to-string";
-export * from "./parse-type-definition";
-export * from "./string-to-buffer";
-export * from "./string-to-uint8-array";
-export * from "./to-array";
-export * from "./to-string-key";
-export * from "./uint8-array-to-stream";
-export * from "./uint8-array-to-string";
-export * from "./utf8-array-to-string";
+export function arrayBufferToString(buffer: ArrayBuffer | Uint8Array): string {
+  const bytes = new Uint8Array(buffer);
+  const len = bytes.byteLength;
+  if (len < 65535) {
+    return String.fromCharCode.apply(null, bytes as unknown as number[]);
+  }
+  let binary = "";
+  for (let i = 0; i < len; i++) {
+    binary += String.fromCharCode(bytes[i]!);
+  }
+  return binary;
+}

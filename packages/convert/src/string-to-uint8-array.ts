@@ -22,7 +22,33 @@
  * @param text - The text to convert
  * @returns The converted Uint8Array
  */
-export const stringToUint8Array = (text: string): Uint8Array =>
-  Uint8Array.from(
+export function stringToUint8Array(text: string): Uint8Array {
+  return Uint8Array.from(
     [...encodeURIComponent(text)].map(letter => letter.codePointAt(0)!)
   );
+}
+
+/**
+ * Convert a binary string to Uint8Array
+ *
+ * @param binary - The binary string to convert
+ * @returns The converted Uint8Array
+ */
+export function binaryStringToUint8Array(binary: string): Uint8Array {
+  const len = binary.length;
+  const arr = new Uint8Array(len);
+  for (let i = 0; i < len; i++) {
+    arr[i] = binary.charCodeAt(i);
+  }
+  return arr;
+}
+
+/**
+ * Convert a base64 string to a Uint8Array
+ *
+ * @param data - The base64 string to convert
+ * @returns The converted Uint8Array
+ */
+export function base64StringToUint8Array(data: string): Uint8Array {
+  return stringToUint8Array(atob(data));
+}
