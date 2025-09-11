@@ -2,6 +2,18 @@
 
 # Changelog for Stryke - Fs
 
+## [0.28.0](https://github.com/storm-software/stryke/releases/tag/fs%400.28.0) (2025-09-11)
+
+### Features
+
+- **fs:** Added the `relativeToWorkspaceRoot` and `relativeToProjectRoot`
+  helpers ([3c8d460](https://github.com/storm-software/stryke/commit/3c8d460))
+
+### Miscellaneous
+
+- **monorepo:** Update workspace package links
+  ([ec3e20e](https://github.com/storm-software/stryke/commit/ec3e20e))
+
 ## [0.27.1](https://github.com/storm-software/stryke/releases/tag/fs%400.27.1) (2025-09-11)
 
 ### Miscellaneous
