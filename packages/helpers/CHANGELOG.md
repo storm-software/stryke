@@ -1,3 +1,14 @@
+![Storm Software's logo banner](https://public.storm-cdn.com/brand-banner.png)
+
+# Changelog for Stryke - Helpers
+
+## [0.8.0](https://github.com/storm-software/stryke/releases/tag/helpers%400.8.0) (2025-09-11)
+
+### Features
+
+- **helpers:** Added the `memoize` and `once` utility modules
+  ([68f4cc6](https://github.com/storm-software/stryke/commit/68f4cc6))
+
 ![Storm Software]([object Object])
 
 # Changelog for Stryke - Helpers

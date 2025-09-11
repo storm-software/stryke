@@ -2,6 +2,13 @@
 
 # Changelog for Stryke - Crypto
 
+## [0.3.0](https://github.com/storm-software/stryke/releases/tag/crypto%400.3.0) (2025-09-11)
+
+### Features
+
+- **crypto:** Added the `base-64` helpers module
+  ([36b6631](https://github.com/storm-software/stryke/commit/36b6631))
+
 ## [0.2.0](https://github.com/storm-software/stryke/releases/tag/crypto%400.2.0) (2025-09-08)
 
 ### Features

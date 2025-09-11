@@ -1,3 +1,14 @@
+![Storm Software's logo banner](https://public.storm-cdn.com/brand-banner.png)
+
+# Changelog for Stryke - Convert
+
+## [0.3.2](https://github.com/storm-software/stryke/releases/tag/convert%400.3.2) (2025-09-11)
+
+### Miscellaneous
+
+- **convert:** Reformat source code files
+  ([c0b0f4a](https://github.com/storm-software/stryke/commit/c0b0f4a))
+
 ![Storm Software](https://public.storm-cdn.com/brand-banner.png)
 
 # Changelog for Stryke - Convert
