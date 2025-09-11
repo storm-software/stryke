@@ -2,6 +2,13 @@
 
 # Changelog for Stryke - Convert
 
+## [0.4.0](https://github.com/storm-software/stryke/releases/tag/convert%400.4.0) (2025-09-11)
+
+### Features
+
+- **convert:** Added various conversion helper utilities
+  ([b4dd338](https://github.com/storm-software/stryke/commit/b4dd338))
+
 ## [0.3.2](https://github.com/storm-software/stryke/releases/tag/convert%400.3.2) (2025-09-11)
 
 ### Miscellaneous
