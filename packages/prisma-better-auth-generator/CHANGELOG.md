@@ -2,6 +2,13 @@
 
 # Changelog for Stryke - Prisma Better Auth Generator
 
+## [0.13.10](https://github.com/storm-software/stryke/releases/tag/prisma-better-auth-generator%400.13.10) (2025-09-12)
+
+### Miscellaneous
+
+- **monorepo:** Added required Storm-Ops `tsdoc` package
+  ([7d2fc7c](https://github.com/storm-software/stryke/commit/7d2fc7c))
+
 ## [0.13.9](https://github.com/storm-software/stryke/releases/tag/prisma-better-auth-generator%400.13.9) (2025-09-11)
 
 ### Miscellaneous

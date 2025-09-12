@@ -2,6 +2,17 @@
 
 # Changelog for Stryke - Crypto
 
+## [0.4.0](https://github.com/storm-software/stryke/releases/tag/crypto%400.4.0) (2025-09-12)
+
+### Features
+
+- **crypto:** Added neutral crypto utilites
+  ([3aca214](https://github.com/storm-software/stryke/commit/3aca214))
+
+### Updated Dependencies
+
+- Updated convert to 0.5.0
+
 ## [0.3.0](https://github.com/storm-software/stryke/releases/tag/crypto%400.3.0) (2025-09-11)
 
 ### Features

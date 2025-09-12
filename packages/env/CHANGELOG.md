@@ -2,6 +2,17 @@
 
 # Changelog for Stryke - Env
 
+## [0.18.5](https://github.com/storm-software/stryke/releases/tag/env%400.18.5) (2025-09-12)
+
+### Miscellaneous
+
+- **monorepo:** Added required Storm-Ops `tsdoc` package
+  ([7d2fc7c](https://github.com/storm-software/stryke/commit/7d2fc7c))
+
+### Updated Dependencies
+
+- Updated convert to 0.5.0
+
 ## [0.18.4](https://github.com/storm-software/stryke/releases/tag/env%400.18.4) (2025-09-11)
 
 ### Miscellaneous

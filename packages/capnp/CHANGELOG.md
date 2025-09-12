@@ -2,6 +2,13 @@
 
 # Changelog for Stryke - Capnp
 
+## [0.11.5](https://github.com/storm-software/stryke/releases/tag/capnp%400.11.5) (2025-09-12)
+
+### Miscellaneous
+
+- **monorepo:** Added required Storm-Ops `tsdoc` package
+  ([7d2fc7c](https://github.com/storm-software/stryke/commit/7d2fc7c))
+
 ## [0.11.4](https://github.com/storm-software/stryke/releases/tag/capnp%400.11.4) (2025-09-11)
 
 ### Miscellaneous

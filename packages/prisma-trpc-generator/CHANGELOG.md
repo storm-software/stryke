@@ -2,6 +2,13 @@
 
 # Changelog for Stryke - Prisma TRPC Generator
 
+## [0.12.10](https://github.com/storm-software/stryke/releases/tag/prisma-trpc-generator%400.12.10) (2025-09-12)
+
+### Miscellaneous
+
+- **monorepo:** Added required Storm-Ops `tsdoc` package
+  ([7d2fc7c](https://github.com/storm-software/stryke/commit/7d2fc7c))
+
 ## [0.12.9](https://github.com/storm-software/stryke/releases/tag/prisma-trpc-generator%400.12.9) (2025-09-11)
 
 ### Miscellaneous
