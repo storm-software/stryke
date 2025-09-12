@@ -9,7 +9,6 @@ catalog:
   "@ls-lint/ls-lint": ^2.2.3
   "@ltd/j-toml": ^1.38.0
   "@microsoft/api-extractor": ^7.49.2
-  "@noble/ciphers": ^2.0.0
   "@prisma/client": ^6.5.0
   "@prisma/generator-helper": ^6.5.0
   "@prisma/internals": ^6.5.0
@@ -49,6 +48,7 @@ catalog:
   "@storm-software/untyped": latest
   "@storm-software/testing-tools": latest
   "@storm-software/tsconfig": latest
+  "@storm-software/tsdoc": latest
   "@storm-software/workspace-tools": latest
   "@storm-software/markdownlint": latest
   "@swc-node/register": "^1.10.9"
