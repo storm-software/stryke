@@ -16,15 +16,14 @@
 
  ------------------------------------------------------------------- */
 
+const decoder = new TextDecoder();
+
 /**
- * Convert a utf8 array to string
+ * Convert a utf-8 array to string
  *
- * @credits https://stackoverflow.com/a/41798356/1465919
- * @credits https://stackoverflow.com/a/36949791/1465919
- *
- * @param arr - Utf-8 Array
+ * @param input - Utf-8 Array
  * @returns The converted string
  */
-export const utf8ArrayToString = (arr: Uint8Array) => {
-  return new TextDecoder().decode(arr);
-};
+export function utf8ArrayToString(input: AllowSharedBufferSource): string {
+  return decoder.decode(input);
+}

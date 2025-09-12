@@ -16,23 +16,14 @@
 
  ------------------------------------------------------------------- */
 
-/**
- * The convert library used by Storm Software for building TypeScript applications.
- *
- * @remarks
- * A utility package that helps convert between different data types
- *
- * @packageDocumentation
- */
+const encoder = new TextEncoder();
 
-export * from "./array-buffer-to-string";
-export * from "./buffer-to-string";
-export * from "./parse-type-definition";
-export * from "./string-to-buffer";
-export * from "./string-to-uint8-array";
-export * from "./string-to-utf8-array";
-export * from "./to-array";
-export * from "./to-string-key";
-export * from "./uint8-array-to-stream";
-export * from "./uint8-array-to-string";
-export * from "./utf8-array-to-string";
+/**
+ * Convert a string to a utf-8 array
+ *
+ * @param input - The string to convert
+ * @returns The converted utf-8 array
+ */
+export function stringToUtf8Array(input: string): Uint8Array {
+  return encoder.encode(input);
+}
