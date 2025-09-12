@@ -8,5 +8,5 @@
       "executor": "@storm-software/workspace-tools:npm-publish"
     }
   },
-  "tags": ["platform:node"]
+  "tags": ["platform:neutral"]
 }
