@@ -56,6 +56,7 @@ export const ACRONYMS: Record<
   "BIOS": { description: "Basic Input/Output System" },
   "BGP": { description: "Border Gateway Protocol" },
   "BOM": { description: "Bill of Materials / Byte Order Mark" },
+  "BSON": { description: "Binary JSON" },
   "BYOD": { description: "Bring Your Own Device" },
   "C2C": { description: "Consumer to Consumer" },
   "CAGR": { description: "Compound Annual Growth Rate" },
@@ -93,18 +94,18 @@ export const ACRONYMS: Record<
   "DBMS": { description: "Database Management System" },
   "DDOS": { description: "Distributed Denial of Service", display: "DDoS" },
   "DEA": { description: "Drug Enforcement Administration" },
-  "DEVOPS": { description: "Development Operations", display: "DevOps" },
   "DEVENV": { description: "Devenv", display: "Devenv" },
-  "DOTENV": { description: "Dotenv (.env)", display: "Dotenv" },
-  "DIRENV": { description: "DirEnv", display: "DirEnv" },
+  "DEVOPS": { description: "Development Operations", display: "DevOps" },
   "DHS": { description: "Department of Homeland Security" },
+  "DIRENV": { description: "DirEnv", display: "DirEnv" },
   "DNC": { description: "Democratic National Committee / Do Not Call" },
   "DNS": { description: "Domain Name System" },
   "DNSSEC": { description: "Domain Name System Security Extensions" },
   "DOD": { description: "Department of Defense", display: "DoD" },
   "DOJ": { description: "Department of Justice", display: "DoJ" },
-  "DOT": { description: "Department of Transportation", display: "DoT" },
   "DOM": { description: "Document Object Model" },
+  "DOT": { description: "Department of Transportation", display: "DoT" },
+  "DOTENV": { description: "Dotenv (.env)", display: "Dotenv" },
   "DR": { description: "Disaster Recovery" },
   "DRM": { description: "Digital Rights Management" },
   "DSN": { description: "Data Source Name" },
@@ -122,6 +123,7 @@ export const ACRONYMS: Record<
   "ETC": { description: "Et Cetera" },
   "ETL": { description: "Extract, Transform, Load" },
   "EULA": { description: "End User License Agreement" },
+  "FAAS": { description: "Function as a Service", display: "FaaS" },
   "FAQ": { description: "Frequently Asked Questions" },
   "FBI": { description: "Federal Bureau of Investigation" },
   "FCC": { description: "Federal Communications Commission" },
@@ -131,7 +133,6 @@ export const ACRONYMS: Record<
   "FQDN": { description: "Fully Qualified Domain Name" },
   "FTC": { description: "Federal Trade Commission" },
   "FTP": { description: "File Transfer Protocol" },
-  "FAAS": { description: "Function as a Service", display: "FaaS" },
   "GC": { description: "Garbage Collection" },
   "GCP": { description: "Google Cloud Platform" },
   "GDPR": { description: "General Data Protection Regulation" },
@@ -160,6 +161,11 @@ export const ACRONYMS: Record<
     description: "HyperText Transfer Protocol Version 2 (HTTP/2)",
     display: "HTTP2"
   },
+  "HTTP/3": { description: "HyperText Transfer Protocol Version 3 (HTTP/3)" },
+  "HTTP/3.0": {
+    description: "HyperText Transfer Protocol Version 3 (HTTP/3)",
+    display: "HTTP3"
+  },
   "HTTP2": {
     description: "HyperText Transfer Protocol Version 2 (HTTP/2)",
     display: "HTTP2"
@@ -167,11 +173,6 @@ export const ACRONYMS: Record<
   "HTTP2.0": {
     description: "HyperText Transfer Protocol Version 2 (HTTP/2)",
     display: "HTTP2"
-  },
-  "HTTP/3": { description: "HyperText Transfer Protocol Version 3 (HTTP/3)" },
-  "HTTP/3.0": {
-    description: "HyperText Transfer Protocol Version 3 (HTTP/3)",
-    display: "HTTP3"
   },
   "HTTP3": {
     description: "HyperText Transfer Protocol Version 3 (HTTP/3)",
@@ -189,6 +190,13 @@ export const ACRONYMS: Record<
     description: "HyperText Transfer Protocol Secure Version 2 (HTTPS/2)",
     display: "HTTPS2"
   },
+  "HTTPS/3": {
+    description: "HyperText Transfer Protocol Secure Version 3 (HTTPS/3)"
+  },
+  "HTTPS/3.0": {
+    description: "HyperText Transfer Protocol Secure Version 3 (HTTPS/3)",
+    display: "HTTPS3"
+  },
   "HTTPS2": {
     description: "HyperText Transfer Protocol Secure Version 2 (HTTPS/2)",
     display: "HTTPS2"
@@ -196,13 +204,6 @@ export const ACRONYMS: Record<
   "HTTPS2.0": {
     description: "HyperText Transfer Protocol Secure Version 2 (HTTPS/2)",
     display: "HTTPS2"
-  },
-  "HTTPS/3": {
-    description: "HyperText Transfer Protocol Secure Version 3 (HTTPS/3)"
-  },
-  "HTTPS/3.0": {
-    description: "HyperText Transfer Protocol Secure Version 3 (HTTPS/3)",
-    display: "HTTPS3"
   },
   "HTTPS3": {
     description: "HyperText Transfer Protocol Secure Version 3 (HTTPS/3)",
@@ -212,18 +213,18 @@ export const ACRONYMS: Record<
     description: "HyperText Transfer Protocol Secure Version 3 (HTTPS/3)",
     display: "HTTPS3"
   },
+  "IAAS": { description: "Infrastructure as a Service", display: "IaaS" },
   "IAM": { description: "Identity and Access Management" },
   "IAMM": { description: "Identity and Access Management and Monitoring" },
   "IAMT": { description: "Identity and Access Management Tool" },
-  "IAAS": { description: "Infrastructure as a Service", display: "IaaS" },
   "ID": { description: "Identifier", display: "Id" },
   "IFTTT": { description: "If This Then That" },
   "IMAP": { description: "Internet Message Access Protocol" },
+  "IO": { description: "Input/Output" },
   "IP": { description: "Internet Protocol" },
   "IPFS": { description: "InterPlanetary File System" },
   "IPS": { description: "Intrusion Prevention System" },
   "IQ": { description: "Intelligence Quotient", display: "IQ" },
-  "IO": { description: "Input/Output" },
   "IOT": { description: "Internet of Things", display: "IoT" },
   "JSON": { description: "JavaScript Object Notation" },
   "JSONP": { description: "JSON with Padding" },
@@ -241,13 +242,14 @@ export const ACRONYMS: Record<
   "ML": { description: "Machine Learning" },
   "MLB": { description: "Major League Baseball" },
   "MLOps": { description: "Machine Learning Operations" },
+  "MPA": { description: "Multi-Page Application" },
   "MST": { description: "Mountain Standard Time" },
   "MVC": { description: "Model View Controller" },
   "MVP": { description: "Minimum Viable Product / Most Valuable Player" },
   "NAIA": { description: "National Association of Intercollegiate Athletics" },
   "NAS": { description: "Network Attached Storage" },
-  "NASCAR": { description: "National Association for Stock Car Auto Racing" },
   "NASA": { description: "National Aeronautics and Space Administration" },
+  "NASCAR": { description: "National Association for Stock Car Auto Racing" },
   "NAT": { description: "Network Address Translation" },
   "NBA": { description: "National Basketball Association" },
   "NCAA": { description: "National Collegiate Athletic Association" },
@@ -268,20 +270,20 @@ export const ACRONYMS: Record<
   "OOP": { description: "Object Oriented Programming" },
   "ORM": { description: "Object Relational Mapping" },
   "OS": { description: "Operating System" },
-  "OSS": { description: "Open Source Software" },
   "OSINT": { description: "Open Source Intelligence" },
+  "OSS": { description: "Open Source Software" },
   "OTP": { description: "One-Time Password" },
   "P2P": { description: "Peer to Peer" },
+  "PAAS": { description: "Platform as a Service", display: "PaaS" },
+  "PCI": { description: "Payment Card Industry" },
   "PDP": { description: "Policy Decision Point / Product Detail Page" },
   "PDT": { description: "Pacific Daylight Time" },
   "PGA": { description: "Professional Golfers' Association" },
   "POTUS": { description: "President of the United States" },
+  "PP": { description: "Pages / PayPal / Percentage Points" },
   "PST": { description: "Pacific Standard Time" },
   "PTO": { description: "Paid Time Off / Power Take-Off" },
-  "PAAS": { description: "Platform as a Service", display: "PaaS" },
-  "PCI": { description: "Payment Card Industry" },
   "PKI": { description: "Public Key Infrastructure" },
-  "PP": { description: "Pages / PayPal / Percentage Points" },
   "PWA": { description: "Progressive Web App" },
   "PX": { description: "Pixel" },
   "QA": { description: "Quality Assurance" },
@@ -294,8 +296,9 @@ export const ACRONYMS: Record<
   "ROI": { description: "Return on Investment" },
   "RPC": { description: "Remote Procedure Call" },
   "RPA": { description: "Robotic Process Automation" },
-  "RUM": { description: "Real User Monitoring" },
+  "RSC": { description: "React Server Components" },
   "RSS": { description: "Really Simple Syndication" },
+  "RUM": { description: "Real User Monitoring" },
   "S3": { description: "Simple Storage Service (S3)" },
   "SAN": { description: "Storage Area Network" },
   "SASE": { description: "Secure Access Service Edge" },
@@ -312,8 +315,9 @@ export const ACRONYMS: Record<
   "SMB": { description: "Server Message Block / Small and Medium Business" },
   "SMTP": { description: "Simple Mail Transfer Protocol" },
   "SOAP": { description: "Simple Object Access Protocol" },
-  "SOC": { description: "Security Operations Center / System on Chip" },
   "SOA": { description: "Service Oriented Architecture" },
+  "SOC": { description: "Security Operations Center / System on Chip" },
+  "SPA": { description: "Single Page Application" },
   "SPDY": { description: 'Speedy (pronounced "SPeeDY")' },
   "SPF": { description: "Sender Policy Framework" },
   "SQL": { description: "Structured Query Language" },
@@ -321,9 +325,10 @@ export const ACRONYMS: Record<
   "SRE": { description: "Site Reliability Engineering" },
   "SSH": { description: "Secure Shell" },
   "SSDL": { description: "Secure Software Development Lifecycle" },
+  "SSG": { description: "Static Site Generation" },
+  "SSR": { description: "Server Side Rendering" },
   "SSO": { description: "Single Sign-On" },
   "SSL": { description: "Secure Sockets Layer" },
-  "SSR": { description: "Server Side Rendering" },
   "TDD": { description: "Test Driven Development" },
   "TLD": { description: "Top Level Domain" },
   "TLS": { description: "Transport Layer Security" },
@@ -360,8 +365,8 @@ export const ACRONYMS: Record<
   "XSRF": { description: "Cross-Site Request Forgery" },
   "XSS": { description: "Cross-Site Scripting" },
   "XR": { description: "Extended Reality" },
-  "YMCA": { description: "Young Men's Christian Association" },
   "YAML": { description: "YAML Ain't Markup Language" },
+  "YMCA": { description: "Young Men's Christian Association" },
   "YWCA": { description: "Young Women's Christian Association" },
   "ZTA": { description: "Zero Trust Architecture" }
 } as const;
