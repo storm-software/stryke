@@ -2,6 +2,13 @@
 
 # Changelog for Stryke - String Format
 
+## [0.11.0](https://github.com/storm-software/stryke/releases/tag/string-format%400.11.0) (2025-09-13)
+
+### Features
+
+- **string-format:** Added new items to `ACRONYMS` static object
+  ([5f12d78](https://github.com/storm-software/stryke/commit/5f12d78))
+
 ## [0.10.0](https://github.com/storm-software/stryke/releases/tag/string-format%400.10.0) (2025-08-28)
 
 ### Features

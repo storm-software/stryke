@@ -11,10 +11,10 @@
   "private": false,
   "dependencies": {
     "@dotenvx/dotenvx": "catalog:",
-    "@stryke/convert": "0.5.0",
+    "@stryke/convert": "workspace:*",
     "@stryke/fs": "workspace:*",
     "@stryke/path": "workspace:*",
-    "@stryke/string-format": "workspace:*",
+    "@stryke/string-format": "0.11.0",
     "defu": "catalog:"
   },
   "devDependencies": {
