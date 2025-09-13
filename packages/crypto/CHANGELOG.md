@@ -2,6 +2,13 @@
 
 # Changelog for Stryke - Crypto
 
+## [0.4.1](https://github.com/storm-software/stryke/releases/tag/crypto%400.4.1) (2025-09-13)
+
+### Miscellaneous
+
+- **monorepo:** Update workspace package links
+  ([ad0b548](https://github.com/storm-software/stryke/commit/ad0b548))
+
 ## [0.4.0](https://github.com/storm-software/stryke/releases/tag/crypto%400.4.0) (2025-09-12)
 
 ### Features
