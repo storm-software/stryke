@@ -10,7 +10,7 @@
   },
   "private": false,
   "dependencies": {
-    "@stryke/convert": "0.5.0",
+    "@stryke/convert": "workspace:*",
     "@stryke/type-checks": "workspace:*"
   },
   "publishConfig": {
