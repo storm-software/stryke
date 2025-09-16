@@ -16,14 +16,19 @@
 
  ------------------------------------------------------------------- */
 
+import type {
+  DocumentOptions,
+  ParseOptions,
+  SchemaOptions,
+  ToJSOptions
+} from "yaml";
+import { parse } from "yaml";
 import { readFile, readFileSync } from "./read-file";
 
-export interface YamlReadOptions {
-  /**
-   * Compatibility with JSON.parse behavior. If true, then duplicate keys in a mapping will override values rather than throwing an error.
-   */
-  json?: boolean;
-}
+export type YamlReadOptions = ParseOptions &
+  DocumentOptions &
+  SchemaOptions &
+  ToJSOptions;
 
 /**
  * Reads a YAML file and returns the object the YAML content represents.
@@ -36,15 +41,7 @@ export function readYamlFileSync<T extends object = any>(
   path: string,
   options?: YamlReadOptions
 ): T {
-  const content = readFileSync(path);
-  // eslint-disable-next-line ts/no-require-imports
-  const { load } = require("@zkochan/js-yaml");
-
-  // eslint-disable-next-line ts/no-unsafe-call
-  return load(content, {
-    ...options,
-    filename: path
-  }) as T;
+  return parse(readFileSync(path), options) as T;
 }
 
 /**
@@ -56,15 +53,7 @@ export function readYamlFileSync<T extends object = any>(
  */
 export async function readYamlFile<T extends object = any>(
   path: string,
-  options?: YamlReadOptions
+  options: YamlReadOptions = {}
 ): Promise<T> {
-  const content = await readFile(path);
-  // eslint-disable-next-line ts/no-require-imports
-  const { load } = require("@zkochan/js-yaml");
-
-  // eslint-disable-next-line ts/no-unsafe-call
-  return load(content, {
-    ...options,
-    filename: path
-  }) as T;
+  return parse(await readFile(path), options) as T;
 }

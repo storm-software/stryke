@@ -61,7 +61,7 @@ const DECODE_MAP = new Uint8Array([
 /**
  * Encodes a Uint8Array into a Base64 encoded Uint8Array.
  *
- * @credits https://github.com/hi-ogawa/js-utils
+ * @credit https://github.com/hi-ogawa/js-utils
  *
  * @param input - The input Uint8Array or string to encode.
  * @returns The Base64 encoded Uint8Array.
@@ -112,7 +112,7 @@ export function encodeBase64(input: Uint8Array | string): string {
 /**
  * Decodes a Base64 encoded Uint8Array into a Uint8Array.
  *
- * @credits https://github.com/hi-ogawa/js-utils
+ * @credit https://github.com/hi-ogawa/js-utils
  *
  * @param input - The Base64 encoded Uint8Array or string to decode.
  * @returns The decoded Uint8Array.
