@@ -16,11 +16,11 @@
 
  ------------------------------------------------------------------- */
 
-import { getStormConfig } from "@storm-software/eslint";
+import { defineConfig } from "@storm-software/eslint";
 
 Error.stackTraceLimit = Number.POSITIVE_INFINITY;
 
-const config = getStormConfig({
+const config = defineConfig({
   name: "stryke",
   ignores: ["packages/capnp/schemas/**"]
 });

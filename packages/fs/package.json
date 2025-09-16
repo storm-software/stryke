@@ -24,13 +24,13 @@
     "@stryke/convert": "workspace:*",
     "@stryke/path": "workspace:*",
     "@stryke/string-format": "workspace:*",
-    "@zkochan/js-yaml": "catalog:",
     "chalk": "catalog:",
     "defu": "catalog:",
     "glob": "catalog:",
     "mlly": "catalog:",
     "nanotar": "catalog:",
-    "semver": "catalog:"
+    "semver": "catalog:",
+    "yaml": "catalog:"
   },
   "devDependencies": {
     "@types/node": "catalog:",
