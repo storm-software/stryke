@@ -16,25 +16,31 @@
 
  ------------------------------------------------------------------- */
 
-/**
- * The path library used by Storm Software for building NodeJS applications.
- *
- * @remarks
- * A package containing various utilities that expand the functionality of NodeJs's `path` module
- *
- * @packageDocumentation
- */
+import { cwd } from "./cwd";
+import { isParentPath } from "./is-parent-path";
+import { joinPaths } from "./join-paths";
+import { slash } from "./slash";
 
-export * from "./append";
-export * from "./asset-extensions";
-export * from "./correct-path";
-export * from "./cwd";
-export * from "./delimiter";
-export * from "./file-path-fns";
-export * from "./get-parent-path";
-export * from "./is-parent-path";
-export * from "./is-root-dir";
-export * from "./join-paths";
-export * from "./regex";
-export * from "./replace";
-export * from "./slash";
+/**
+ * Append the base path from the beginning of the given path.
+ *
+ * @example
+ * ```ts
+ * appendPath("/home/user/project/src/index.ts", "/home/user/project");
+ * // returns "src/index.ts"
+ * ```
+ *
+ * @param childPath - The child path to append to the {@link parentPath}
+ * @param parentPath - The parent path to add the {@link childPath} to
+ * @returns The {@link parentPath} with the {@link childPath} appended
+ */
+export function appendPath(
+  childPath: string,
+  parentPath: string = cwd()
+): string {
+  return slash(
+    isParentPath(childPath, parentPath)
+      ? joinPaths(childPath, parentPath)
+      : childPath
+  );
+}

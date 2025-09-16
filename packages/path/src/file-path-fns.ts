@@ -99,6 +99,8 @@ export function findFilePath(filePath: string): string {
   return result === "/" ? result : result.replace(/\/$/, "");
 }
 
+export const dirname = findFilePath;
+
 /**
  * Find the top most folder containing the file from a file path.
  *
@@ -134,6 +136,8 @@ export function findFolderName(filePath: string): string {
 
   return lastSegment ?? EMPTY_STRING;
 }
+
+export const basename = findFolderName;
 
 /**
  * Find the file extension from a file path.

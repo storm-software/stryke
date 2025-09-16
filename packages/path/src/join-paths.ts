@@ -102,6 +102,8 @@ export function joinPaths(...segments: string[]): string {
   return correctPaths(path);
 }
 
+export const join = joinPaths;
+
 /**
  * Resolves a string path, resolving '.' and '.' segments and allowing paths above the root.
  *
