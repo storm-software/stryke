@@ -16,10 +16,23 @@
 
  ------------------------------------------------------------------- */
 
-export * from "./agent";
-export * from "./fetch";
-export * from "./format-data-uri";
-export * from "./http-proxy";
-export * from "./https-proxy";
-export * from "./parse-response";
-export * from "./proxy-agent";
+import type { Agent } from "node:https";
+import { HttpProxyAgent } from "./http-proxy";
+import { HttpsProxyAgent } from "./https-proxy";
+
+/**
+ * If the http(s)_proxy environment variables is set, return a proxy agent.
+ */
+export function getProxyAgent(): Agent | undefined {
+  const httpsProxy = process.env.https_proxy || process.env.HTTPS_PROXY;
+  if (httpsProxy) {
+    return new HttpsProxyAgent(httpsProxy);
+  }
+
+  const httpProxy = process.env.http_proxy || process.env.HTTP_PROXY;
+  if (httpProxy) {
+    return new HttpProxyAgent(httpProxy);
+  }
+
+  return undefined;
+}
