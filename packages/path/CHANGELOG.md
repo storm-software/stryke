@@ -2,6 +2,13 @@
 
 # Changelog for Stryke - Path
 
+## [0.14.0](https://github.com/storm-software/stryke/releases/tag/path%400.14.0) (2025-09-16)
+
+### Features
+
+- **path:** Added the `append` path helper module
+  ([b5e58d6](https://github.com/storm-software/stryke/commit/b5e58d6))
+
 ## [0.13.1](https://github.com/storm-software/stryke/releases/tag/path%400.13.1) (2025-09-08)
 
 ### Bug Fixes

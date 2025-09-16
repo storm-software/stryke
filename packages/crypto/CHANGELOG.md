@@ -2,6 +2,13 @@
 
 # Changelog for Stryke - Crypto
 
+## [0.4.2](https://github.com/storm-software/stryke/releases/tag/crypto%400.4.2) (2025-09-16)
+
+### Miscellaneous
+
+- **monorepo:** Format the package source files
+  ([180b674](https://github.com/storm-software/stryke/commit/180b674))
+
 ## [0.4.1](https://github.com/storm-software/stryke/releases/tag/crypto%400.4.1) (2025-09-13)
 
 ### Miscellaneous
