@@ -1,3 +1,14 @@
+![Storm Software's logo banner](https://public.storm-cdn.com/brand-banner.png)
+
+# Changelog for Stryke - HTTP
+
+## [0.9.0](https://github.com/storm-software/stryke/releases/tag/http%400.9.0) (2025-09-16)
+
+### Features
+
+- **http:** Added various NodeJs helper modules to package
+  ([37e0e5c](https://github.com/storm-software/stryke/commit/37e0e5c))
+
 ![Storm Software](https://public.storm-cdn.com/brand-banner.png)
 
 # Changelog for Stryke - HTTP
