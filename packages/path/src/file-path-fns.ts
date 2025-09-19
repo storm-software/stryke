@@ -16,12 +16,13 @@
 
  ------------------------------------------------------------------- */
 
+import { isSetString } from "@stryke/type-checks";
 import { EMPTY_STRING } from "@stryke/types/base";
 import { normalizeString, normalizeWindowsPath } from "./correct-path";
 import { cwd as currentDir } from "./cwd";
 import { isAbsolute, isAbsolutePath } from "./is-type";
 import { joinPaths } from "./join-paths";
-import { ROOT_FOLDER_REGEX } from "./regex";
+import { FILE_EXTENSION_REGEX, ROOT_FOLDER_REGEX } from "./regex";
 
 export interface FindFileNameOptions {
   /**
@@ -67,7 +68,9 @@ export function findFileName(
   }
 
   if (withExtension === false && result.includes(".")) {
-    return result.substring(0, result.lastIndexOf(".")) || EMPTY_STRING;
+    return (
+      result.replace(`.${findFileExtension(result) ?? ""}`, "") || EMPTY_STRING
+    );
   }
 
   return result;
@@ -143,9 +146,16 @@ export const basename = findFolderName;
  * Find the file extension from a file path.
  *
  * @remarks
+ * The functionality of this method is similar to the {@link path.extname} function in Node's path module.
  * The file extension is the part of the file name that comes after the last dot (`.`) in the file name. If the file name does not contain a dot, or if it ends with a dot, this function will return `undefined`.
  *
  * The returned extension **will not** include the dot, for example `txt` or `js` instead of `.txt` or `.js`.
+ *
+ * @example
+ * ```ts
+ * findFileExtension("C:\\Users\\user\\Documents\\file.config.ts");
+ * // Returns "ts"
+ * ```
  *
  * @param filePath - The file path to process
  * @returns The file extension or undefined if no extension is found
@@ -155,10 +165,14 @@ export function findFileExtension(filePath: string): string | undefined {
     return undefined;
   }
 
-  const match = /.(\.[^./]+|\.)$/.exec(normalizeWindowsPath(filePath));
+  const match = FILE_EXTENSION_REGEX.exec(normalizeWindowsPath(filePath));
 
-  return (match && match[1]) || undefined;
+  return match && match.length > 0 && isSetString(match[0])
+    ? match[0].replace(".", "")
+    : undefined;
 }
+
+export const extname = findFileExtension;
 
 /**
  * Find the file extension from a file path or an empty string.
