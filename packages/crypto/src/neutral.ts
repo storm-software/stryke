@@ -17,5 +17,5 @@
  ------------------------------------------------------------------- */
 
 export * from "./base-64";
-export * from "./encryption.node";
+export * from "./encryption";
 export * from "./hex";

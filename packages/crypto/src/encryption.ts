@@ -16,11 +16,13 @@
 
  ------------------------------------------------------------------- */
 
-import { base64StringToUint8Array } from "@stryke/convert/string-to-uint8-array";
-import { stringToUtf8Array } from "@stryke/convert/string-to-utf8-array";
-import { concatUint8Array } from "@stryke/convert/uint8-array-to-stream";
-import { base64Uint8ArrayToString } from "@stryke/convert/uint8-array-to-string";
-import { utf8ArrayToString } from "@stryke/convert/utf8-array-to-string";
+import {
+  base64StringToUint8Array,
+  concatUint8Array,
+  stringToUtf8Array,
+  uint8ArrayToString,
+  utf8ArrayToString
+} from "@stryke/convert/neutral";
 import { decodeBase64, encodeBase64 } from "./base-64";
 import { decodeHex, encodeHex } from "./hex";
 
@@ -164,9 +166,7 @@ export async function encryptBuffer(
     buffer
   );
 
-  return base64Uint8ArrayToString(
-    concatUint8Array([iv, new Uint8Array(encrypted)])
-  );
+  return uint8ArrayToString(concatUint8Array([iv, new Uint8Array(encrypted)]));
 }
 
 /**

@@ -16,7 +16,7 @@
 
  ------------------------------------------------------------------- */
 
-import { stringToUtf8Array } from "@stryke/convert/string-to-utf8-array";
+import { stringToUint8Array } from "@stryke/convert/neutral";
 import { utf8ArrayToString } from "@stryke/convert/utf8-array-to-string";
 import { isString } from "@stryke/type-checks/is-string";
 import { isUndefined } from "@stryke/type-checks/is-undefined";
@@ -68,7 +68,7 @@ const DECODE_MAP = new Uint8Array([
  */
 export function encodeBase64(input: Uint8Array | string): string {
   if (isString(input)) {
-    input = stringToUtf8Array(input);
+    input = stringToUint8Array(input);
   }
 
   const xLen = input.length;
@@ -119,7 +119,7 @@ export function encodeBase64(input: Uint8Array | string): string {
  */
 export function decodeBase64(input: Uint8Array | string): Uint8Array {
   if (isString(input)) {
-    input = stringToUtf8Array(input);
+    input = stringToUint8Array(input);
   }
 
   const yLen = input.length;
