@@ -5,7 +5,7 @@
  This code was released as part of the Stryke project. Stryke
  is maintained by Storm Software under the Apache-2.0 license, and is
  free for commercial and private use. For more information, please visit
- our licensing page at https://stormsoftware.com/license.
+ our licensing page at https://stormsoftware.com/licenses/projects/stryke.
 
  Website:                  https://stormsoftware.com
  Repository:               https://github.com/storm-software/stryke
@@ -16,7 +16,7 @@
 
  ------------------------------------------------------------------- */
 
-import { hash } from "@stryke/hash";
+import { murmurhash } from "@stryke/hash/neutral";
 import { randomLetter } from "./random";
 
 /**
@@ -86,7 +86,7 @@ function fingerprint(options?: FingerprintOptions): string {
       ? globals + createEntropy(CUID_LARGE_LENGTH, Math.random)
       : createEntropy(CUID_LARGE_LENGTH, Math.random);
 
-  return hash(sourceString).slice(0, Math.max(0, CUID_LARGE_LENGTH));
+  return murmurhash(sourceString).slice(0, Math.max(0, CUID_LARGE_LENGTH));
 }
 
 /**
@@ -112,7 +112,7 @@ export function cuid(): string {
   // intended id output.
   const salt = createEntropy(CUID_LARGE_LENGTH, Math.random);
 
-  const hashed = hash(`${time + salt + count + fingerprint()}`);
+  const hashed = murmurhash(`${time + salt + count + fingerprint()}`);
 
   return `${
     randomLetter() +
