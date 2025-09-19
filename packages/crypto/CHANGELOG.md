@@ -2,6 +2,22 @@
 
 # Changelog for Stryke - Crypto
 
+## [0.5.0](https://github.com/storm-software/stryke/releases/tag/crypto%400.5.0) (2025-09-19)
+
+### Features
+
+- **crypto:** Split package between `neutral` and `node` exports
+  ([cfd15b3](https://github.com/storm-software/stryke/commit/cfd15b3))
+
+### Miscellaneous
+
+- **monorepo:** Update `storm-ops` workspace dependencies
+  ([23343cf](https://github.com/storm-software/stryke/commit/23343cf))
+
+### Updated Dependencies
+
+- Updated convert to 0.6.0
+
 ## [0.4.2](https://github.com/storm-software/stryke/releases/tag/crypto%400.4.2) (2025-09-16)
 
 ### Miscellaneous

@@ -2,6 +2,13 @@
 
 # Changelog for Stryke - Unique ID
 
+## [0.3.5](https://github.com/storm-software/stryke/releases/tag/unique-id%400.3.5) (2025-09-19)
+
+### Bug Fixes
+
+- **unique-id:** Resolve issue with invalid import
+  ([21ec0c1](https://github.com/storm-software/stryke/commit/21ec0c1))
+
 ## [0.3.4](https://github.com/storm-software/stryke/releases/tag/unique-id%400.3.4) (2025-08-08)
 
 ### Bug Fixes

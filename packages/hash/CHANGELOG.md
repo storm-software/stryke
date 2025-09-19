@@ -2,6 +2,13 @@
 
 # Changelog for Stryke - Hash
 
+## [0.12.0](https://github.com/storm-software/stryke/releases/tag/hash%400.12.0) (2025-09-19)
+
+### Features
+
+- **hash:** Split package between `neutral` and `node` exports
+  ([870bbeb](https://github.com/storm-software/stryke/commit/870bbeb))
+
 ## [0.11.0](https://github.com/storm-software/stryke/releases/tag/hash%400.11.0) (2025-09-07)
 
 ### Features

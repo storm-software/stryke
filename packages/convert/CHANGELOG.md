@@ -2,6 +2,13 @@
 
 # Changelog for Stryke - Convert
 
+## [0.6.0](https://github.com/storm-software/stryke/releases/tag/convert%400.6.0) (2025-09-19)
+
+### Features
+
+- **convert:** Split package between `neutral` and `node` exports
+  ([3cd778b](https://github.com/storm-software/stryke/commit/3cd778b))
+
 ## [0.5.0](https://github.com/storm-software/stryke/releases/tag/convert%400.5.0) (2025-09-12)
 
 ### Features
