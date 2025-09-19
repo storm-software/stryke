@@ -16,14 +16,4 @@
 
  ------------------------------------------------------------------- */
 
-export const DRIVE_LETTER_START_REGEX = /^[A-Z]:\//i;
-export const DRIVE_LETTER_REGEX = /^[A-Z]:$/i;
-
-export const UNC_REGEX = /^[/\\]{2}/;
-
-export const ABSOLUTE_PATH_REGEX =
-  /^[/\\](?![/\\])|^[/\\]{2}(?!\.)|^~[/\\]|^[A-Z]:[/\\]/i;
-
-export const ROOT_FOLDER_REGEX = /^\/([A-Z]:)?$/i;
-
-export const FILE_EXTENSION_REGEX = /\.[0-9a-z]+$/i;
+export * from "./correct-path";
