@@ -24,6 +24,8 @@ const decoder = new TextDecoder();
  * @param input - Utf-8 Array
  * @returns The converted string
  */
-export function utf8ArrayToString(input: AllowSharedBufferSource): string {
+export function utf8ArrayToString(
+  input: NodeJS.ArrayBufferView | ArrayBuffer
+): string {
   return decoder.decode(input);
 }

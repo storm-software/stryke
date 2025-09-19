@@ -16,20 +16,7 @@
 
  ------------------------------------------------------------------- */
 
-import { Buffer } from "node:buffer";
 import { arrayBufferToString } from "./array-buffer-to-string";
-
-/**
- * Convert a Uint8Array array to string
- *
- * @see https://stackoverflow.com/a/41798356/1465919
- * @see https://stackoverflow.com/a/36949791/1465919
- *
- * @param arr - Uint8Array to convert
- * @returns The converted string
- */
-export const uint8ArrayToString = (arr: Uint8Array): string =>
-  decodeURIComponent(Buffer.from(arr).toString("utf8"));
 
 /**
  * Convert a Uint8Array to a base64 string
@@ -37,6 +24,6 @@ export const uint8ArrayToString = (arr: Uint8Array): string =>
  * @param buffer - The Uint8Array to convert
  * @returns The converted base64 string
  */
-export function base64Uint8ArrayToString(buffer: Uint8Array): string {
+export function uint8ArrayToString(buffer: Uint8Array): string {
   return btoa(arrayBufferToString(buffer));
 }
