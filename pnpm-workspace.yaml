@@ -62,6 +62,7 @@ catalog:
   capnp-es: ^0.0.11
   chalk: ^5.4.1
   commander: ^14.0.0
+  conventional-changelog-storm-software: ^0.2.0
   cross-spawn: ^7.0.6
   dts-bundle-generator: ^9.5.1
   eslint: ^9.35.0

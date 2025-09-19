@@ -91,6 +91,7 @@
     "@taplo/cli": "catalog:",
     "@types/jest": "catalog:",
     "@types/node": "catalog:",
+    "conventional-changelog-storm-software": "catalog:",
     "copyfiles": "catalog:",
     "eslint": "catalog:",
     "eslint-flat-config-utils": "catalog:",
