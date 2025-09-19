@@ -25,9 +25,9 @@
  * @packageDocumentation
  */
 
+export * from "./digest";
 export * from "./etag";
-export * from "./hash";
 export * from "./hash-files";
 export * from "./md5";
-export * from "./sha-256";
+export * from "./murmurhash";
 export * from "./xx-hash";

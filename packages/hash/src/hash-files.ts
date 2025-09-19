@@ -5,7 +5,7 @@
  This code was released as part of the Stryke project. Stryke
  is maintained by Storm Software under the Apache-2.0 license, and is
  free for commercial and private use. For more information, please visit
- our licensing page at https://stormsoftware.com/license.
+ our licensing page at https://stormsoftware.com/licenses/projects/stryke.
 
  Website:                  https://stormsoftware.com
  Repository:               https://github.com/storm-software/stryke
@@ -19,8 +19,8 @@
 import type { ListOptions } from "@stryke/fs/list-files";
 import { listFiles } from "@stryke/fs/list-files";
 import { readFile } from "@stryke/fs/read-file";
-import type { HashOptions } from "./hash";
-import { hash } from "./hash";
+import type { HashOptions } from "./murmurhash";
+import { murmurhash } from "./murmurhash";
 
 /**
  * Hash a list of file paths into a string based on the file content
@@ -40,7 +40,7 @@ export async function hashFiles(
     })
   );
 
-  return hash(result, options);
+  return murmurhash(result, options);
 }
 
 /**
