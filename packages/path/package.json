@@ -1,6 +1,6 @@
 {
   "name": "@stryke/path",
-  "version": "0.14.1",
+  "version": "0.14.2",
   "type": "module",
   "description": "A package containing various utilities that expand the functionality of NodeJs's built-in `path` module",
   "repository": {
@@ -10,7 +10,7 @@
   },
   "private": false,
   "devDependencies": {
-    "@stryke/type-checks": "workspace:*",
+    "@stryke/type-checks": "0.3.10",
     "@stryke/types": "workspace:*"
   },
   "publishConfig": {

@@ -187,7 +187,7 @@
   },
   "dependencies": {
     "@stryke/fs": "workspace:*",
-    "@stryke/path": "0.14.1",
+    "@stryke/path": "0.14.2",
     "defu": "catalog:",
     "hex2dec": "catalog:",
     "nanotar": "catalog:"

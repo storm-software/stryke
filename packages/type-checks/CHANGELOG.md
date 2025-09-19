@@ -2,6 +2,13 @@
 
 # Changelog for Stryke - Type Checks
 
+## [0.3.10](https://github.com/storm-software/stryke/releases/tag/type-checks%400.3.10) (2025-09-19)
+
+### Miscellaneous
+
+- **path:** Added exports aliases to the package
+  ([f1e9cf6](https://github.com/storm-software/stryke/commit/f1e9cf6))
+
 ## [0.3.9](https://github.com/storm-software/stryke/releases/tag/type-checks%400.3.9) (2025-08-28)
 
 ### Miscellaneous

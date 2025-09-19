@@ -2,6 +2,13 @@
 
 # Changelog for Stryke - Helpers
 
+## [0.8.1](https://github.com/storm-software/stryke/releases/tag/helpers%400.8.1) (2025-09-19)
+
+### Miscellaneous
+
+- **path:** Added exports aliases to the package
+  ([f1e9cf6](https://github.com/storm-software/stryke/commit/f1e9cf6))
+
 ## [0.8.0](https://github.com/storm-software/stryke/releases/tag/helpers%400.8.0) (2025-09-11)
 
 ### Features

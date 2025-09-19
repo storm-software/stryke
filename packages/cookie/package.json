@@ -10,8 +10,8 @@
   },
   "private": false,
   "dependencies": {
-    "@stryke/convert": "0.6.0",
-    "@stryke/type-checks": "workspace:*"
+    "@stryke/convert": "workspace:*",
+    "@stryke/type-checks": "0.3.10"
   },
   "publishConfig": {
     "access": "public"

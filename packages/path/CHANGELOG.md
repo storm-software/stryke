@@ -2,6 +2,22 @@
 
 # Changelog for Stryke - Path
 
+## [0.14.2](https://github.com/storm-software/stryke/releases/tag/path%400.14.2) (2025-09-19)
+
+### Bug Fixes
+
+- **path:** Resolve issue with regular expression in `findFileExtension` helper
+  ([5a7fce2](https://github.com/storm-software/stryke/commit/5a7fce2))
+
+### Miscellaneous
+
+- **path:** Added exports aliases to the package
+  ([f1e9cf6](https://github.com/storm-software/stryke/commit/f1e9cf6))
+
+### Updated Dependencies
+
+- Updated type-checks to 0.3.10
+
 ## [0.14.1](https://github.com/storm-software/stryke/releases/tag/path%400.14.1) (2025-09-19)
 
 ### Miscellaneous
