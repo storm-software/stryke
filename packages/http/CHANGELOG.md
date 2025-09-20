@@ -2,6 +2,13 @@
 
 # Changelog for Stryke - HTTP
 
+## [0.10.0](https://github.com/storm-software/stryke/releases/tag/http%400.10.0) (2025-09-20)
+
+### Features
+
+- **http:** Added the `getFreePort` helper utility
+  ([2e728e9](https://github.com/storm-software/stryke/commit/2e728e9))
+
 ## [0.9.0](https://github.com/storm-software/stryke/releases/tag/http%400.9.0) (2025-09-16)
 
 ### Features

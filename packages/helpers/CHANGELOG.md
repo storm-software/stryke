@@ -2,6 +2,13 @@
 
 # Changelog for Stryke - Helpers
 
+## [0.9.0](https://github.com/storm-software/stryke/releases/tag/helpers%400.9.0) (2025-09-20)
+
+### Features
+
+- **helpers:** Added the `LRUCache` class to package
+  ([a7d07ac](https://github.com/storm-software/stryke/commit/a7d07ac))
+
 ## [0.8.1](https://github.com/storm-software/stryke/releases/tag/helpers%400.8.1) (2025-09-19)
 
 ### Miscellaneous
