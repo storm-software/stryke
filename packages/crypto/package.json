@@ -11,7 +11,7 @@
   "private": false,
   "dependencies": {
     "@stryke/convert": "workspace:*",
-    "@stryke/type-checks": "0.3.10"
+    "@stryke/type-checks": "workspace:*"
   },
   "devDependencies": {
     "@types/node": "catalog:"
