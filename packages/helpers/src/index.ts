@@ -28,6 +28,7 @@ export * from "./get-ordered-by";
 export * from "./get-unique";
 export * from "./identity";
 export * from "./is-equal";
+export * from "./lru-cache";
 export * from "./match-sorter";
 export * from "./memoize";
 export * from "./mutex";
