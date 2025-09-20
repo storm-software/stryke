@@ -16,11 +16,27 @@
 
  ------------------------------------------------------------------- */
 
-export * from "./agent";
-export * from "./fetch";
-export * from "./format-data-uri";
-export * from "./get-free-port";
-export * from "./http-proxy";
-export * from "./https-proxy";
-export * from "./parse-response";
-export * from "./proxy-agent";
+import { createServer } from "node:http";
+
+/**
+ * Finds and returns a free port on the local machine by creating a temporary server that listens on port 0. The operating system assigns an available port, which is then retrieved and returned.
+ *
+ * @returns A promise that resolves to a free port number.
+ */
+export const getFreePort = async (): Promise<number> => {
+  return new Promise((resolve, reject) => {
+    const server = createServer(() => {});
+    server.listen(0, () => {
+      const address = server.address();
+      server.close();
+
+      if (address && typeof address === "object") {
+        resolve(address.port);
+      } else {
+        reject(
+          new Error(`invalid address from server: ${address?.toString()}`)
+        );
+      }
+    });
+  });
+};
