@@ -175,6 +175,23 @@ export function findFileExtension(filePath: string): string | undefined {
 export const extname = findFileExtension;
 
 /**
+ * Find the file extension including the `"."` character prefix from a file path.
+ *
+ * @remarks
+ * The file extension is the part of the file name that comes after (and including) the last dot (`.`) in the file name. If the file name does not contain a dot, or if it ends with a dot, this function will return `undefined`.
+ *
+ * The returned extension **will** include the dot, for example `.txt` or `.js` instead of `txt` or `js`.
+ *
+ * @param filePath - The file path to process
+ * @returns The file extension (including the `"."` prefix) or undefined if no extension is found
+ */
+export function findFileDotExtension(filePath: string): string | undefined {
+  const ext = findFileExtension(filePath);
+
+  return ext ? `.${ext}` : undefined;
+}
+
+/**
  * Find the file extension from a file path or an empty string.
  *
  *  @remarks
@@ -187,6 +204,23 @@ export const extname = findFileExtension;
  */
 export function findFileExtensionSafe(filePath: string): string {
   return findFileExtension(filePath) ?? EMPTY_STRING;
+}
+
+/**
+ * Find the file extension including the `"."` character prefix from a file path or an empty string.
+ *
+ *  @remarks
+ * The file extension is the part of the file name that comes after (and including) the last dot (`.`) in the file name. If the file name does not contain a dot, or if it ends with a dot, this function will return `undefined`.
+ *
+ * The returned extension **will** include the dot, for example `.txt` or `.js` instead of `txt` or `js`.
+ *
+ * @param filePath - The file path to process
+ * @returns The file extension (including the `"."` prefix) or an empty string if no extension is found
+ */
+export function findFileDotExtensionSafe(filePath: string): string {
+  const ext = findFileExtension(filePath);
+
+  return ext ? `.${ext}` : "";
 }
 
 /**
