@@ -2,6 +2,18 @@
 
 # Changelog for Stryke - Path
 
+## [0.15.0](https://github.com/storm-software/stryke/releases/tag/path%400.15.0) (2025-09-20)
+
+### Features
+
+- **path:** Added `findFileDotExtension` and `findFileDotExtensionSafe` utility
+  functions ([8d3bd8b](https://github.com/storm-software/stryke/commit/8d3bd8b))
+
+### Miscellaneous
+
+- **monorepo:** Update workspace package links
+  ([6a19f93](https://github.com/storm-software/stryke/commit/6a19f93))
+
 ## [0.14.2](https://github.com/storm-software/stryke/releases/tag/path%400.14.2) (2025-09-19)
 
 ### Bug Fixes
