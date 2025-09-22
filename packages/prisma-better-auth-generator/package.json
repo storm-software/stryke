@@ -1,6 +1,6 @@
 {
   "name": "@stryke/prisma-better-auth-generator",
-  "version": "0.13.16",
+  "version": "0.13.17",
   "type": "module",
   "description": "A package containing a Prisma v6 generator for Better-Auth authentication.",
   "repository": {
@@ -108,8 +108,8 @@
   "dependencies": {
     "@prisma/generator-helper": "catalog:",
     "@prisma/internals": "catalog:",
-    "@stryke/fs": "workspace:*",
-    "@stryke/path": "workspace:*",
+    "@stryke/fs": "0.28.6",
+    "@stryke/path": "0.15.2",
     "esbuild": "catalog:",
     "jiti": "catalog:",
     "prettier": "catalog:",
