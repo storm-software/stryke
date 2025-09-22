@@ -39,8 +39,10 @@ export function appendPath(
   parentPath: string = cwd()
 ): string {
   return slash(
-    isParentPath(childPath, parentPath)
+    !isParentPath(childPath, parentPath)
       ? joinPaths(childPath, parentPath)
       : childPath
   );
 }
+
+export const append = appendPath;
