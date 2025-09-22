@@ -22,12 +22,15 @@ import { joinPaths } from "./join-paths";
 import { slash } from "./slash";
 
 /**
- * Append the base path from the beginning of the given path.
+ * If not already a parent path, append the base path from the beginning of the given child path.
  *
  * @example
  * ```ts
- * appendPath("/home/user/project/src/index.ts", "/home/user/project");
- * // returns "src/index.ts"
+ * appendPath("src/index.ts", "/home/user/project");
+ * // returns "/home/user/project/src/index.ts"
+ *
+ * appendPath("/user/dev/app.ts", "/user/dev");
+ * // returns "/user/dev/app.ts"
  * ```
  *
  * @param childPath - The child path to append to the {@link parentPath}
@@ -40,7 +43,7 @@ export function appendPath(
 ): string {
   return slash(
     !isParentPath(childPath, parentPath)
-      ? joinPaths(childPath, parentPath)
+      ? joinPaths(parentPath, childPath)
       : childPath
   );
 }
