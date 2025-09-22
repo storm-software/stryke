@@ -2,6 +2,13 @@
 
 # Changelog for Stryke - Path
 
+## [0.15.1](https://github.com/storm-software/stryke/releases/tag/path%400.15.1) (2025-09-22)
+
+### Bug Fixes
+
+- **path:** Resolved issue with applying parent path in `append` module
+  ([a68317c](https://github.com/storm-software/stryke/commit/a68317c))
+
 ## [0.15.0](https://github.com/storm-software/stryke/releases/tag/path%400.15.0) (2025-09-20)
 
 ### Features

@@ -109,7 +109,7 @@
     "@prisma/generator-helper": "catalog:",
     "@prisma/internals": "catalog:",
     "@stryke/fs": "workspace:*",
-    "@stryke/path": "workspace:*",
+    "@stryke/path": "0.15.1",
     "esbuild": "catalog:",
     "jiti": "catalog:",
     "prettier": "catalog:",
