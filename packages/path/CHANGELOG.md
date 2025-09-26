@@ -2,6 +2,13 @@
 
 # Changelog for Stryke - Path
 
+## [0.15.2](https://github.com/storm-software/stryke/releases/tag/path%400.15.2) (2025-09-22)
+
+### Bug Fixes
+
+- **path:** Resolve issue with path join in `append` helper
+  ([6f2e019](https://github.com/storm-software/stryke/commit/6f2e019))
+
 ## [0.15.1](https://github.com/storm-software/stryke/releases/tag/path%400.15.1) (2025-09-22)
 
 ### Bug Fixes
