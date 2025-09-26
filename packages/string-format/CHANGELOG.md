@@ -2,6 +2,14 @@
 
 # Changelog for Stryke - String Format
 
+## [0.12.0](https://github.com/storm-software/stryke/releases/tag/string-format%400.12.0) (2025-09-26)
+
+### Features
+
+- **string-format:** Enhance the `title-case` utility logic with more correct
+  grammar rules
+  ([c14f4de](https://github.com/storm-software/stryke/commit/c14f4de))
+
 ## [0.11.0](https://github.com/storm-software/stryke/releases/tag/string-format%400.11.0) (2025-09-13)
 
 ### Features
