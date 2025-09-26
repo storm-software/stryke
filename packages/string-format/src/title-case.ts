@@ -16,176 +16,33 @@
 
  ------------------------------------------------------------------- */
 
-import { ACRONYM_LIST, ACRONYMS } from "./acronyms";
-import { getWords } from "./get-words";
+import { combine } from "./combine";
+import { decamelize } from "./decamelize";
+import type { FormatSpecialCasesOptions } from "./format-special-cases";
+import { formatSpecialCases } from "./format-special-cases";
 import { upperCaseFirst } from "./upper-case-first";
 
-export const FORMAT_MAPPING = ACRONYM_LIST.reduce(
-  (ret, acronym) => {
-    ret[acronym.toUpperCase()] = {
-      description:
-        ACRONYMS[acronym]?.description || ACRONYMS[acronym]?.display || acronym,
-      display: ACRONYMS[acronym]?.display || acronym
-    };
-    return ret;
-  },
-  {
-    CSPELL: { description: "CSpell", display: "CSpell" },
-    ESLINT: { description: "ESLint", display: "ESLint" }
-  } as Record<
-    string,
-    {
-      description: string;
-      display: string;
-    }
-  >
-);
-
-export const LOWER_CASE_WHEN_NOT_FIRST: string[] = [
-  "a",
-  "an",
-  "the",
-  "is",
-  "are",
-  "of",
-  "and",
-  "to",
-  "in",
-  "for",
-  "on",
-  "with",
-  "as",
-  "at",
-  "by"
-] as const;
-
-export interface TitleCaseOptions {
-  /**
-   * If true, skip the format mapping. This will skip the conversion of known acronyms to their upper case form.
-   *
-   * @remarks
-   * The current list of word format mappings is stored in {@link FORMAT_MAPPING}.
-   *
-   * @defaultValue false
-   */
-  skipFormatMapping?: boolean;
-
-  /**
-   * If true, lower case words that are not the first word in the title.
-   *
-   * @remarks
-   * The current list of words that are lower cased when not first are stored in {@link LOWER_CASE_WHEN_NOT_FIRST}.
-   *
-   *
-   * @defaultValue false
-   */
-  skipLowerCaseWhenNotFirst?: boolean;
-
-  /**
-   * A custom mapping of words to their formatted versions.
-   *
-   * @remarks
-   * This allows you to provide your own mappings for specific words that should be formatted in a certain way.
-   */
-  mapping?: Record<string, string>;
-
-  /**
-   * If true, use the descriptions from the acronym list instead of the display names.
-   *
-   * @defaultValue true
-   */
-  useDescriptions?: boolean;
-}
-
 /**
- * Check if the input string is in title case.
+ * Convert a string to title case.
  *
- * @remarks
- * Title case is defined as a string where each word is separated by spaces, and starts with an uppercase letter followed by lowercase letters - "This Is An Example".
- *
- * @param input - The input string to check.
- * @returns True if the input is in title case, false otherwise.
- */
-export function isTitleCase(input: string | undefined): boolean {
-  if (!input) {
-    return false;
-  }
-
-  // Split by spaces, hyphens, or underscores, and check each word
-  const words = input.split(/[\s\-_]+/).filter(Boolean);
-
-  return words.every((word, idx) => {
-    // Allow for mapped acronyms (all uppercase or mixed case)
-    if (FORMAT_MAPPING[word.toUpperCase()]) {
-      return true;
-    }
-
-    // Lowercase words allowed if not first and in LOWER_CASE_WHEN_NOT_FIRST
-    if (
-      idx > 0 &&
-      LOWER_CASE_WHEN_NOT_FIRST.includes(word.toLowerCase()) &&
-      word === word.toLowerCase()
-    ) {
-      return true;
-    }
-
-    // Otherwise, must start with uppercase, followed by lowercase or numbers
-    return /^[A-Z][a-z0-9]*$/.test(word);
-  });
-}
-
-/**
- * Convert the input string to title case.
- *
- *  @remarks
- * Title case is defined as a string where each word is separated by spaces, and starts with an uppercase letter followed by lowercase letters - "This Is An Example".
- *
- * @param input - The input string.
+ * @param input - The input string to convert.
+ * @param options - Options for formatting special cases.
  * @returns The title cased string.
  */
 export function titleCase<T extends string | undefined>(
   input: T,
-  options: TitleCaseOptions = {}
+  options?: FormatSpecialCasesOptions
 ): T {
-  if (isTitleCase(input) || input === undefined) {
-    return input;
-  }
-
   return input
-    .split(/\s+-\s+/)
-    .map((segment: string) =>
-      getWords(segment)
-        .filter(Boolean)
-        .map((word, index) => {
-          if (
-            !options.skipLowerCaseWhenNotFirst &&
-            LOWER_CASE_WHEN_NOT_FIRST.includes(word.toLowerCase()) &&
-            index > 0
-          ) {
-            return word.toLowerCase();
-          }
-
-          if (
-            !options.skipFormatMapping &&
-            FORMAT_MAPPING[word.toUpperCase()]
-          ) {
-            if (options.useDescriptions !== false) {
-              return FORMAT_MAPPING[word.toUpperCase()]?.description;
-            } else {
-              return FORMAT_MAPPING[word.toUpperCase()]?.display;
-            }
-          }
-
-          if (
-            options.mapping &&
-            Object.keys(options.mapping).includes(word.toUpperCase())
-          ) {
-            return options.mapping[word.toUpperCase()];
-          }
-
-          return `${upperCaseFirst(word)}`;
-        })
-        .join(" ")
+    ?.split(/\s+-\s+/)
+    .map(segment =>
+      decamelize(segment)
+        .split(/[\s\-_]/)
+        .map(upperCaseFirst)
+        .map((value: string, index: number, array: string[]) =>
+          formatSpecialCases(value, index, array, options)
+        )
+        .reduce(combine)
     )
     .join(" - ") as T;
 }

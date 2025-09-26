@@ -26,10 +26,15 @@
  */
 
 export * from "./acronyms";
+export * from "./articles";
 export * from "./camel-case";
+export * from "./combine";
+export * from "./conjunctions";
 export * from "./constant-case";
 export * from "./deburr";
+export * from "./decamelize";
 export * from "./escape";
+export * from "./format-special-cases";
 export * from "./get-words";
 export * from "./kebab-case";
 export * from "./lower-case-first";
@@ -38,8 +43,10 @@ export * from "./package";
 export * from "./pad";
 export * from "./pascal-case";
 export * from "./period-split";
+export * from "./prepositions";
 export * from "./pretty-bytes";
 export * from "./snake-case";
+export * from "./special-cases";
 export * from "./start-case";
 export * from "./strip-indents";
 export * from "./title-case";
