@@ -34,26 +34,71 @@ const mode =
   process.env.NODE_ENV ||
   "production";
 
-/** Detect if `NODE_ENV` environment variable is `production` */
-export const isProduction = ["prd", "prod", "production"].includes(
-  mode?.toLowerCase()
-);
-
-/** Detect if `NODE_ENV` environment variable is `production` */
+/** Detect if the application is running in a staging environment */
 export const isStaging = ["stg", "stage", "staging"].includes(
   mode?.toLowerCase()
 );
 
-/** Detect if `NODE_ENV` environment variable is `dev` or `development` */
-export const isDevelopment = ["dev", "development"].includes(
-  mode?.toLowerCase()
-);
+/**
+ * Check if the current environment is production.
+ *
+ * @param mode - The mode string to check.
+ * @returns Whether the environment is production
+ */
+export function isProductionMode(mode: string) {
+  return [
+    "prd",
+    "prod",
+    "production",
+    // eslint-disable-next-line @cspell/spellchecker
+    "preprod",
+    // eslint-disable-next-line @cspell/spellchecker
+    "preproduction",
+    "uat"
+  ].includes(mode?.toLowerCase()?.replace(/[\s\-_]/g, ""));
+}
+
+/** Detect if `NODE_ENV` environment variable is `production` */
+export const isProduction = isProductionMode(mode);
+
+/**
+ * Check if the current environment is test.
+ *
+ * @param mode - The mode string to check.
+ * @returns Whether the environment is test
+ */
+export function isTestMode(mode: string) {
+  return [
+    "tst",
+    "test",
+    "testing",
+    "stg",
+    "stage",
+    "staging",
+    "qa",
+    // eslint-disable-next-line @cspell/spellchecker
+    "qualityassurance"
+  ].includes(mode?.toLowerCase()?.replace(/[\s\-_]/g, ""));
+}
 
 /** Detect if `NODE_ENV` environment variable is `test` */
 export const isTest =
-  ["tst", "test", "testing"].includes(mode?.toLowerCase()) ||
-  isStaging ||
-  Boolean(process.env.TEST);
+  isTestMode(mode) || isStaging || Boolean(process.env.TEST);
+
+/**
+ * Check if the current environment is development.
+ *
+ * @param mode - The mode string to check.
+ * @returns Whether the environment is development
+ */
+export function isDevelopmentMode(mode: string) {
+  return ["dev", "development", "int", "integration"].includes(
+    mode?.toLowerCase()?.replace(/[\s\-_]/g, "")
+  );
+}
+
+/** Detect if `NODE_ENV` environment variable is `dev` or `development` */
+export const isDevelopment = isDevelopmentMode(mode) || isDebug;
 
 /** Detect if MINIMAL environment variable is set, running in CI or test or TTY is unavailable */
 export const isMinimal =
