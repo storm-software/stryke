@@ -2,6 +2,13 @@
 
 # Changelog for Stryke - Fs
 
+## [0.28.7](https://github.com/storm-software/stryke/releases/tag/fs%400.28.7) (2025-10-02)
+
+### Miscellaneous
+
+- **types:** Reformat package source code files
+  ([4265aae](https://github.com/storm-software/stryke/commit/4265aae))
+
 ## [0.28.6](https://github.com/storm-software/stryke/releases/tag/fs%400.28.6) (2025-09-22)
 
 ### Miscellaneous

@@ -2,6 +2,13 @@
 
 # Changelog for Stryke - Helpers
 
+## [0.9.1](https://github.com/storm-software/stryke/releases/tag/helpers%400.9.1) (2025-10-02)
+
+### Miscellaneous
+
+- **types:** Reformat package source code files
+  ([4265aae](https://github.com/storm-software/stryke/commit/4265aae))
+
 ## [0.9.0](https://github.com/storm-software/stryke/releases/tag/helpers%400.9.0) (2025-09-20)
 
 ### Features

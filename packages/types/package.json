@@ -1,6 +1,6 @@
 {
   "name": "@stryke/types",
-  "version": "0.9.0",
+  "version": "0.9.1",
   "type": "module",
   "description": "A package containing many base TypeScript type definitions that are shared across many projects.",
   "repository": {

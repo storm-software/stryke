@@ -2,6 +2,22 @@
 
 # Changelog for Stryke - Env
 
+## [0.19.0](https://github.com/storm-software/stryke/releases/tag/env%400.19.0) (2025-10-02)
+
+### Features
+
+- **env:** Added helper functions to parse mode string variables
+  ([676d371](https://github.com/storm-software/stryke/commit/676d371))
+
+### Miscellaneous
+
+- **types:** Reformat package source code files
+  ([4265aae](https://github.com/storm-software/stryke/commit/4265aae))
+
+### Updated Dependencies
+
+- Updated fs to 0.28.7
+
 ## [0.18.13](https://github.com/storm-software/stryke/releases/tag/env%400.18.13) (2025-09-22)
 
 ### Miscellaneous
