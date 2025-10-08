@@ -44,6 +44,22 @@ export async function list<TOptions extends ListOptions>(
 }
 
 /**
+ * A synchronous files and directories listing helper function
+ *
+ * @param filesGlob - A glob pattern to match files
+ * @returns A list of file paths
+ */
+export function listSync<TOptions extends ListOptions>(
+  filesGlob: string,
+  options?: TOptions
+): InferListReturnType<TOptions> {
+  return glob.sync(
+    filesGlob,
+    defu(options ?? {}, DEFAULT_OPTIONS)
+  ) as InferListReturnType<TOptions>;
+}
+
+/**
  * A file listing helper function
  *
  * @param filesGlob - A glob pattern to match files
@@ -70,6 +86,27 @@ export async function listFiles<TOptions extends ListOptions>(
 }
 
 /**
+ * A synchronous file listing helper function
+ *
+ * @param filesGlob - A glob pattern to match files
+ * @returns A list of file paths
+ */
+export function listFilesSync<TOptions extends ListOptions>(
+  filesGlob: string,
+  options?: TOptions
+) {
+  const result = listSync(
+    filesGlob,
+    defu({ withFileTypes: true }, options ?? {}) as GlobOptionsWithFileTypesTrue
+  ).filter(ret => ret.isFile());
+  if (!options?.withFileTypes) {
+    return result.map(file => file.fullpath()) as InferListReturnType<TOptions>;
+  }
+
+  return result as InferListReturnType<TOptions>;
+}
+
+/**
  * A directories listing helper function
  *
  * @param filesGlob - A glob pattern to match files
@@ -87,6 +124,27 @@ export async function listDirectories<TOptions extends ListOptions>(
         options ?? {}
       ) as GlobOptionsWithFileTypesTrue
     )
+  ).filter(ret => ret.isDirectory());
+  if (!options?.withFileTypes) {
+    return result.map(file => file.fullpath()) as InferListReturnType<TOptions>;
+  }
+
+  return result as InferListReturnType<TOptions>;
+}
+
+/**
+ * A synchronous directories listing helper function
+ *
+ * @param filesGlob - A glob pattern to match files
+ * @returns A list of file paths
+ */
+export function listDirectoriesSync<TOptions extends ListOptions>(
+  filesGlob: string,
+  options?: TOptions
+) {
+  const result = listSync(
+    filesGlob,
+    defu({ withFileTypes: true }, options ?? {}) as GlobOptionsWithFileTypesTrue
   ).filter(ret => ret.isDirectory());
   if (!options?.withFileTypes) {
     return result.map(file => file.fullpath()) as InferListReturnType<TOptions>;
