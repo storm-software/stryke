@@ -378,7 +378,7 @@ export type IsFunction<T> = T extends AnyFunction ? true : false;
  *
  * @example
  * ```
- * import type {GlobalThis} from 'type-fest';
+ * import type { GlobalThis } from '@stryke/types';
  *
  * type ExtraGlobals = GlobalThis & {
  *   readonly GLOBAL_TOKEN: string;
@@ -522,7 +522,7 @@ type StructuredCloneableCollection =
  *
  * @example
  * ```
- * import type {StructuredCloneable} from 'type-fest';
+ * import type { StructuredCloneable } from '@stryke/types';
  *
  * class CustomClass {}
  *
