@@ -2,6 +2,18 @@
 
 # Changelog for Stryke - Fs
 
+## [0.29.0](https://github.com/storm-software/stryke/releases/tag/fs%400.29.0) (2025-10-08)
+
+### Features
+
+- **fs:** Added the `listSync`, `listFilesSync`, and `listDirectoriesSync`
+  helper functions
+  ([996fd02](https://github.com/storm-software/stryke/commit/996fd02))
+
+### Updated Dependencies
+
+- Updated path to 0.15.3
+
 ## [0.28.7](https://github.com/storm-software/stryke/releases/tag/fs%400.28.7) (2025-10-02)
 
 ### Miscellaneous

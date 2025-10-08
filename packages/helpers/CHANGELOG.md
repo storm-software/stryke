@@ -2,6 +2,13 @@
 
 # Changelog for Stryke - Helpers
 
+## [0.9.2](https://github.com/storm-software/stryke/releases/tag/helpers%400.9.2) (2025-10-08)
+
+### Miscellaneous
+
+- **monorepo:** Update workspace package links
+  ([af38855](https://github.com/storm-software/stryke/commit/af38855))
+
 ## [0.9.1](https://github.com/storm-software/stryke/releases/tag/helpers%400.9.1) (2025-10-02)
 
 ### Miscellaneous
