@@ -2,6 +2,17 @@
 
 # Changelog for Stryke - Env
 
+## [0.19.3](https://github.com/storm-software/stryke/releases/tag/env%400.19.3) (2025-10-17)
+
+### Miscellaneous
+
+- **monorepo:** Update workspace package links
+  ([35d05c1](https://github.com/storm-software/stryke/commit/35d05c1))
+
+### Updated Dependencies
+
+- Updated fs to 0.30.1
+
 ## [0.19.2](https://github.com/storm-software/stryke/releases/tag/env%400.19.2) (2025-10-17)
 
 ### Miscellaneous

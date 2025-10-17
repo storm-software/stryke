@@ -1,6 +1,6 @@
 {
   "name": "@stryke/env",
-  "version": "0.19.2",
+  "version": "0.19.3",
   "type": "module",
   "description": "A package containing utility functions to handle environment specific processes",
   "repository": {
@@ -12,7 +12,7 @@
   "dependencies": {
     "@dotenvx/dotenvx": "catalog:",
     "@stryke/convert": "workspace:*",
-    "@stryke/fs": "workspace:*",
+    "@stryke/fs": "0.30.1",
     "@stryke/path": "workspace:*",
     "@stryke/string-format": "workspace:*",
     "defu": "catalog:"

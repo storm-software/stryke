@@ -2,6 +2,18 @@
 
 # Changelog for Stryke - Fs
 
+## [0.30.1](https://github.com/storm-software/stryke/releases/tag/fs%400.30.1) (2025-10-17)
+
+### Bug Fixes
+
+- **fs:** Resolve issues with `copy-file` module functions
+  ([042bc1d](https://github.com/storm-software/stryke/commit/042bc1d))
+
+### Miscellaneous
+
+- **monorepo:** Update workspace package links
+  ([35d05c1](https://github.com/storm-software/stryke/commit/35d05c1))
+
 ## [0.30.0](https://github.com/storm-software/stryke/releases/tag/fs%400.30.0) (2025-10-17)
 
 ### Features
