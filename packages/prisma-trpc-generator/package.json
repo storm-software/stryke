@@ -1,6 +1,6 @@
 {
   "name": "@stryke/prisma-trpc-generator",
-  "version": "0.12.20",
+  "version": "0.12.21",
   "type": "module",
   "description": "A fork of the prisma-trpc-generator code to work in ESM with Prisma v6.",
   "repository": {
@@ -106,7 +106,7 @@
   "dependencies": {
     "@prisma/generator-helper": "catalog:",
     "@prisma/internals": "catalog:",
-    "@stryke/fs": "workspace:*",
+    "@stryke/fs": "0.30.2",
     "@stryke/path": "workspace:*",
     "esbuild": "catalog:",
     "jiti": "catalog:",

@@ -2,6 +2,13 @@
 
 # Changelog for Stryke - Fs
 
+## [0.30.2](https://github.com/storm-software/stryke/releases/tag/fs%400.30.2) (2025-10-17)
+
+### Bug Fixes
+
+- **fs:** Resolve issue appending missing asterisks to copy `source` path
+  ([4c5f3f5](https://github.com/storm-software/stryke/commit/4c5f3f5))
+
 ## [0.30.1](https://github.com/storm-software/stryke/releases/tag/fs%400.30.1) (2025-10-17)
 
 ### Bug Fixes
