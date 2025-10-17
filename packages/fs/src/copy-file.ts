@@ -70,16 +70,18 @@ export async function copyFiles(
 
   await createDirectory(dest);
   return Promise.all(
-    (await listFiles(src)).map(async entryPath => {
-      const fromEntryPath = joinPaths(src, entryPath);
-      const toEntryPath = joinPaths(dest, entryPath);
+    (await listFiles(src.includes("*") ? src : joinPaths(src, "**", "*"))).map(
+      async entryPath => {
+        const fromEntryPath = joinPaths(src, entryPath);
+        const toEntryPath = joinPaths(dest, entryPath);
 
-      if (isDirectory(entryPath)) {
-        await copyFiles(fromEntryPath, toEntryPath);
-      } else {
-        await copyFile(fromEntryPath, toEntryPath);
+        if (isDirectory(entryPath)) {
+          await copyFiles(fromEntryPath, toEntryPath);
+        } else {
+          await copyFile(fromEntryPath, toEntryPath);
+        }
       }
-    })
+    )
   );
 }
 
@@ -100,14 +102,16 @@ export function copyFilesSync(source: string | URL, destination: string | URL) {
   }
 
   createDirectorySync(dest);
-  return listFilesSync(src).map(entryPath => {
-    const fromEntryPath = joinPaths(src, entryPath);
-    const toEntryPath = joinPaths(dest, entryPath);
+  return listFilesSync(src.includes("*") ? src : joinPaths(src, "**", "*")).map(
+    entryPath => {
+      const fromEntryPath = joinPaths(src, entryPath);
+      const toEntryPath = joinPaths(dest, entryPath);
 
-    if (isDirectory(entryPath)) {
-      copyFilesSync(fromEntryPath, toEntryPath);
-    } else {
-      copyFileSync(fromEntryPath, toEntryPath);
+      if (isDirectory(entryPath)) {
+        copyFilesSync(fromEntryPath, toEntryPath);
+      } else {
+        copyFileSync(fromEntryPath, toEntryPath);
+      }
     }
-  });
+  );
 }
