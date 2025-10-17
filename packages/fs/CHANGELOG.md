@@ -2,6 +2,22 @@
 
 # Changelog for Stryke - Fs
 
+## [0.30.0](https://github.com/storm-software/stryke/releases/tag/fs%400.30.0) (2025-10-17)
+
+### Features
+
+- **fs:** Added the copy file helper utilities
+  ([11ca6ad](https://github.com/storm-software/stryke/commit/11ca6ad))
+
+### Miscellaneous
+
+- **monorepo:** Update workspace package links
+  ([7dca096](https://github.com/storm-software/stryke/commit/7dca096))
+
+### Updated Dependencies
+
+- Updated path to 0.15.4
+
 ## [0.29.0](https://github.com/storm-software/stryke/releases/tag/fs%400.29.0) (2025-10-08)
 
 ### Features

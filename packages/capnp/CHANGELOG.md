@@ -2,6 +2,18 @@
 
 # Changelog for Stryke - Capnp
 
+## [0.11.14](https://github.com/storm-software/stryke/releases/tag/capnp%400.11.14) (2025-10-17)
+
+### Miscellaneous
+
+- **monorepo:** Update workspace package links
+  ([7dca096](https://github.com/storm-software/stryke/commit/7dca096))
+
+### Updated Dependencies
+
+- Updated path to 0.15.4
+- Updated fs to 0.30.0
+
 ## [0.11.13](https://github.com/storm-software/stryke/releases/tag/capnp%400.11.13) (2025-10-08)
 
 ### Miscellaneous
