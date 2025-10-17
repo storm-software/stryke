@@ -16,8 +16,31 @@
 
  ------------------------------------------------------------------- */
 
-import type { CopySyncOptions } from "node:fs";
-import { constants, copyFileSync, cpSync } from "node:fs";
+import type { CopyOptions, CopySyncOptions } from "node:fs";
+import { constants, copyFileSync as cpFileSync, cpSync } from "node:fs";
+import { cp, copyFile as cpFile } from "node:fs/promises";
+
+/**
+ * Copy a file from one location to another
+ *
+ * @param file - The file to copy
+ * @param to - The destination location
+ * @returns An indicator specifying if the copy was successful
+ */
+export const copyFile = async (file: string, to: string) => {
+  return cpFile(file, to, constants.COPYFILE_FICLONE);
+};
+
+/**
+ * Synchronously copy a file from one location to another
+ *
+ * @param file - The file to copy
+ * @param to - The destination location
+ * @returns An indicator specifying if the copy was successful
+ */
+export const copyFileSync = (file: string, to: string) => {
+  return cpFileSync(file, to, constants.COPYFILE_FICLONE);
+};
 
 /**
  * Copy files from one location to another
@@ -27,21 +50,26 @@ import { constants, copyFileSync, cpSync } from "node:fs";
  * @param options - The copy options
  * @returns An indicator specifying if the copy was successful
  */
-export const copyFiles = (
+export const copyFiles = async (
+  from: string,
+  to: string,
+  options?: CopyOptions
+) => {
+  return cp(from, to, options);
+};
+
+/**
+ * Synchronously copy files from one location to another
+ *
+ * @param from - The source location
+ * @param to - The destination location
+ * @param options - The copy options
+ * @returns An indicator specifying if the copy was successful
+ */
+export const copyFilesSync = (
   from: string,
   to: string,
   options?: CopySyncOptions
 ) => {
   return cpSync(from, to, options);
-};
-
-/**
- * Copy a file from one location to another
- *
- * @param file - The file to copy
- * @param to - The destination location
- * @returns An indicator specifying if the copy was successful
- */
-export const copyFile = (file: string, to: string) => {
-  return copyFileSync(file, to, constants.COPYFILE_FICLONE);
 };
