@@ -11,7 +11,7 @@
 </div>
 
 <br />
-This package is part of Storm Software's **🌩️ Stryke** monorepo. Stryke packages TypeScript utility packages with shared functionality common to many Storm Software applications.
+This package is part of Storm Software's **💥 Stryke** monorepo. Stryke packages TypeScript utility packages with shared functionality common to many Storm Software applications.
 
 <br />
 

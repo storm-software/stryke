@@ -2,7 +2,7 @@
   "name": "@stryke/monorepo",
   "version": "0.0.1",
   "type": "module",
-  "description": "🌩️ A monorepo containing TypeScript utility packages with shared functionality common to many Storm Software applications.",
+  "description": "💥 A monorepo containing TypeScript utility packages with shared functionality common to many Storm Software applications.",
   "repository": "storm-software/stryke.git",
   "homepage": "https://stormsoftware.com",
   "bugs": {
@@ -121,12 +121,7 @@
   },
   "namespace": "@stryke",
   "nx": {
-    "includedScripts": [
-      "lint",
-      "format",
-      "commit",
-      "release"
-    ]
+    "includedScripts": ["lint", "format", "commit", "release"]
   },
   "prettier": "@storm-software/prettier/config.json",
   "triggerEmptyDevReleaseByIncrementingThisNumber": 0
