@@ -16,60 +16,98 @@
 
  ------------------------------------------------------------------- */
 
-import type { CopyOptions, CopySyncOptions } from "node:fs";
-import { constants, copyFileSync as cpFileSync, cpSync } from "node:fs";
-import { cp, copyFile as cpFile } from "node:fs/promises";
+import { joinPaths } from "@stryke/path";
+import { fileURLToPath } from "mlly";
+import { copyFileSync as cpfSync } from "node:fs";
+import { copyFile as cpf } from "node:fs/promises";
+import { createDirectory, createDirectorySync } from "./helpers";
+import { isDirectory, isFile } from "./is-file";
+import { listFiles, listFilesSync } from "./list-files";
 
 /**
  * Copy a file from one location to another
  *
- * @param file - The file to copy
- * @param to - The destination location
+ * @param source - The file to copy, this can be a file, directory, URL, or glob pattern
+ * @param destination - The destination location
  * @returns An indicator specifying if the copy was successful
  */
-export const copyFile = async (file: string, to: string) => {
-  return cpFile(file, to, constants.COPYFILE_FICLONE);
-};
+export async function copyFile(
+  source: string | URL,
+  destination: string | URL
+) {
+  return cpf(source, destination);
+}
 
 /**
  * Synchronously copy a file from one location to another
  *
- * @param file - The file to copy
- * @param to - The destination location
+ * @param source - The file to copy, this can be a file, directory, URL, or glob pattern
+ * @param destination - The destination location
  * @returns An indicator specifying if the copy was successful
  */
-export const copyFileSync = (file: string, to: string) => {
-  return cpFileSync(file, to, constants.COPYFILE_FICLONE);
-};
+export function copyFileSync(source: string | URL, destination: string | URL) {
+  return cpfSync(source, destination);
+}
 
 /**
  * Copy files from one location to another
  *
- * @param from - The source location
- * @param to - The destination location
- * @param options - The copy options
+ * @param source - The source location, this can be a file, directory, URL, or glob pattern
+ * @param destination - The destination location
  * @returns An indicator specifying if the copy was successful
  */
-export const copyFiles = async (
-  from: string,
-  to: string,
-  options?: CopyOptions
-) => {
-  return cp(from, to, options);
-};
+export async function copyFiles(
+  source: string | URL,
+  destination: string | URL
+) {
+  const src = source instanceof URL ? fileURLToPath(source) : source;
+  const dest =
+    destination instanceof URL ? fileURLToPath(destination) : destination;
+
+  if (isFile(src)) {
+    return copyFile(src, dest);
+  }
+
+  await createDirectory(dest);
+  return Promise.all(
+    (await listFiles(src)).map(async entryPath => {
+      const fromEntryPath = joinPaths(src, entryPath);
+      const toEntryPath = joinPaths(dest, entryPath);
+
+      if (isDirectory(entryPath)) {
+        await copyFiles(fromEntryPath, toEntryPath);
+      } else {
+        await copyFile(fromEntryPath, toEntryPath);
+      }
+    })
+  );
+}
 
 /**
  * Synchronously copy files from one location to another
  *
- * @param from - The source location
- * @param to - The destination location
- * @param options - The copy options
+ * @param source - The source location, this can be a file, directory, URL, or glob pattern
+ * @param destination - The destination location
  * @returns An indicator specifying if the copy was successful
  */
-export const copyFilesSync = (
-  from: string,
-  to: string,
-  options?: CopySyncOptions
-) => {
-  return cpSync(from, to, options);
-};
+export function copyFilesSync(source: string | URL, destination: string | URL) {
+  const src = source instanceof URL ? fileURLToPath(source) : source;
+  const dest =
+    destination instanceof URL ? fileURLToPath(destination) : destination;
+
+  if (isFile(src)) {
+    return copyFileSync(src, dest);
+  }
+
+  createDirectorySync(dest);
+  return listFilesSync(src).map(entryPath => {
+    const fromEntryPath = joinPaths(src, entryPath);
+    const toEntryPath = joinPaths(dest, entryPath);
+
+    if (isDirectory(entryPath)) {
+      copyFilesSync(fromEntryPath, toEntryPath);
+    } else {
+      copyFileSync(fromEntryPath, toEntryPath);
+    }
+  });
+}
