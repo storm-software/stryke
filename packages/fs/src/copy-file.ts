@@ -16,7 +16,8 @@
 
  ------------------------------------------------------------------- */
 
-import { joinPaths } from "@stryke/path";
+import { joinPaths } from "@stryke/path/join";
+import { replacePath } from "@stryke/path/replace";
 import { fileURLToPath } from "mlly";
 import { copyFileSync as cpfSync } from "node:fs";
 import { copyFile as cpf } from "node:fs/promises";
@@ -72,13 +73,16 @@ export async function copyFiles(
   return Promise.all(
     (await listFiles(src.includes("*") ? src : joinPaths(src, "**", "*"))).map(
       async entryPath => {
-        const fromEntryPath = joinPaths(src, entryPath);
-        const toEntryPath = joinPaths(dest, entryPath);
-
         if (isDirectory(entryPath)) {
-          await copyFiles(fromEntryPath, toEntryPath);
+          await copyFiles(
+            entryPath,
+            joinPaths(dest, replacePath(entryPath, src))
+          );
         } else {
-          await copyFile(fromEntryPath, toEntryPath);
+          await copyFile(
+            entryPath,
+            joinPaths(dest, replacePath(entryPath, src))
+          );
         }
       }
     )
@@ -104,13 +108,10 @@ export function copyFilesSync(source: string | URL, destination: string | URL) {
   createDirectorySync(dest);
   return listFilesSync(src.includes("*") ? src : joinPaths(src, "**", "*")).map(
     entryPath => {
-      const fromEntryPath = joinPaths(src, entryPath);
-      const toEntryPath = joinPaths(dest, entryPath);
-
       if (isDirectory(entryPath)) {
-        copyFilesSync(fromEntryPath, toEntryPath);
+        copyFilesSync(entryPath, joinPaths(dest, replacePath(entryPath, src)));
       } else {
-        copyFileSync(fromEntryPath, toEntryPath);
+        copyFileSync(entryPath, joinPaths(dest, replacePath(entryPath, src)));
       }
     }
   );
