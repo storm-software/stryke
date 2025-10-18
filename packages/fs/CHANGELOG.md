@@ -2,6 +2,13 @@
 
 # Changelog for Stryke - Fs
 
+## [0.30.3](https://github.com/storm-software/stryke/releases/tag/fs%400.30.3) (2025-10-18)
+
+### Bug Fixes
+
+- **fs:** Resolve issue with base paths provided to copy file helpers
+  ([94c194c](https://github.com/storm-software/stryke/commit/94c194c))
+
 ## [0.30.2](https://github.com/storm-software/stryke/releases/tag/fs%400.30.2) (2025-10-17)
 
 ### Bug Fixes
