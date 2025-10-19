@@ -19,6 +19,8 @@
 import { findFilePath } from "@stryke/path/file-path-fns";
 import { joinPaths } from "@stryke/path/join";
 import { replacePath } from "@stryke/path/replace";
+import { isString } from "@stryke/type-checks";
+import type { AssetGlob } from "@stryke/types/file";
 import { fileURLToPath } from "mlly";
 import { copyFileSync as cpfSync } from "node:fs";
 import { copyFile as cpf } from "node:fs/promises";
@@ -35,11 +37,11 @@ import { listFiles, listFilesSync } from "./list-files";
  * @returns An indicator specifying if the copy was successful
  */
 export async function copyFile(
-  source: string | URL,
+  source: string | URL | AssetGlob,
   destination: string | URL
 ) {
   const src = source instanceof URL ? fileURLToPath(source) : source;
-  if (existsSync(src)) {
+  if (isString(src) && existsSync(src)) {
     return cpf(src, destination);
   }
 }
@@ -51,9 +53,12 @@ export async function copyFile(
  * @param destination - The destination location
  * @returns An indicator specifying if the copy was successful
  */
-export function copyFileSync(source: string | URL, destination: string | URL) {
+export function copyFileSync(
+  source: string | URL | AssetGlob,
+  destination: string | URL
+) {
   const src = source instanceof URL ? fileURLToPath(source) : source;
-  if (existsSync(src)) {
+  if (isString(src) && existsSync(src)) {
     return cpfSync(src, destination);
   }
 }
@@ -66,33 +71,34 @@ export function copyFileSync(source: string | URL, destination: string | URL) {
  * @returns An indicator specifying if the copy was successful
  */
 export async function copyFiles(
-  source: string | URL,
+  source: string | URL | AssetGlob,
   destination: string | URL
 ) {
   const src = source instanceof URL ? fileURLToPath(source) : source;
   const dest =
     destination instanceof URL ? fileURLToPath(destination) : destination;
 
-  if (isFile(src)) {
+  if (isString(src) && isFile(src)) {
     return copyFile(src, dest);
   }
 
   await createDirectory(dest);
   return Promise.all(
-    (await listFiles(src.includes("*") ? src : joinPaths(src, "**", "*"))).map(
-      async entryPath => {
-        const destFile = joinPaths(dest, replacePath(entryPath, src));
-        if (!existsSync(findFilePath(destFile))) {
-          await createDirectory(findFilePath(destFile));
-        }
-
-        if (isDirectory(entryPath)) {
-          await copyFiles(entryPath, destFile);
-        } else {
-          await copyFile(entryPath, destFile);
-        }
+    (await listFiles(src)).map(async entryPath => {
+      const destFile = joinPaths(
+        dest,
+        replacePath(entryPath, isString(src) ? src : src.input)
+      );
+      if (!existsSync(findFilePath(destFile))) {
+        await createDirectory(findFilePath(destFile));
       }
-    )
+
+      if (isDirectory(entryPath)) {
+        await copyFiles(entryPath, destFile);
+      } else {
+        await copyFile(entryPath, destFile);
+      }
+    })
   );
 }
 
@@ -103,28 +109,32 @@ export async function copyFiles(
  * @param destination - The destination location
  * @returns An indicator specifying if the copy was successful
  */
-export function copyFilesSync(source: string | URL, destination: string | URL) {
+export function copyFilesSync(
+  source: string | URL | AssetGlob,
+  destination: string | URL
+) {
   const src = source instanceof URL ? fileURLToPath(source) : source;
   const dest =
     destination instanceof URL ? fileURLToPath(destination) : destination;
 
-  if (isFile(src)) {
+  if (isString(src) && isFile(src)) {
     return copyFileSync(src, dest);
   }
 
   createDirectorySync(dest);
-  return listFilesSync(src.includes("*") ? src : joinPaths(src, "**", "*")).map(
-    entryPath => {
-      const destFile = joinPaths(dest, replacePath(entryPath, src));
-      if (!existsSync(findFilePath(destFile))) {
-        createDirectorySync(findFilePath(destFile));
-      }
-
-      if (isDirectory(entryPath)) {
-        copyFilesSync(entryPath, destFile);
-      } else {
-        copyFileSync(entryPath, destFile);
-      }
+  return listFilesSync(src).map(entryPath => {
+    const destFile = joinPaths(
+      dest,
+      replacePath(entryPath, isString(src) ? src : src.input)
+    );
+    if (!existsSync(findFilePath(destFile))) {
+      createDirectorySync(findFilePath(destFile));
     }
-  );
+
+    if (isDirectory(entryPath)) {
+      copyFilesSync(entryPath, destFile);
+    } else {
+      copyFileSync(entryPath, destFile);
+    }
+  });
 }
