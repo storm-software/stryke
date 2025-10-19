@@ -2,6 +2,13 @@
 
 # Changelog for Stryke - Fs
 
+## [0.30.5](https://github.com/storm-software/stryke/releases/tag/fs%400.30.5) (2025-10-19)
+
+### Bug Fixes
+
+- **fs:** Resolve issue with missing files in copy helpers
+  ([d560319](https://github.com/storm-software/stryke/commit/d560319))
+
 ## [0.30.4](https://github.com/storm-software/stryke/releases/tag/fs%400.30.4) (2025-10-19)
 
 ### Bug Fixes
