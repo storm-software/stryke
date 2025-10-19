@@ -2,6 +2,13 @@
 
 # Changelog for Stryke - Types
 
+## [0.10.0](https://github.com/storm-software/stryke/releases/tag/types%400.10.0) (2025-10-19)
+
+### Features
+
+- **types:** Added the `AssetGlob` type definition
+  ([ab7b180](https://github.com/storm-software/stryke/commit/ab7b180))
+
 ## [0.9.2](https://github.com/storm-software/stryke/releases/tag/types%400.9.2) (2025-10-08)
 
 ### Miscellaneous

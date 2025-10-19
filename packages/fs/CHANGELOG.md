@@ -2,6 +2,13 @@
 
 # Changelog for Stryke - Fs
 
+## [0.31.0](https://github.com/storm-software/stryke/releases/tag/fs%400.31.0) (2025-10-19)
+
+### Features
+
+- **fs:** Added support for `AssetGlob` in `listFiles` and `copyFiles` functions
+  ([dd68507](https://github.com/storm-software/stryke/commit/dd68507))
+
 ## [0.30.5](https://github.com/storm-software/stryke/releases/tag/fs%400.30.5) (2025-10-19)
 
 ### Bug Fixes
