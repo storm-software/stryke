@@ -21,6 +21,7 @@ import { replacePath } from "@stryke/path/replace";
 import { fileURLToPath } from "mlly";
 import { copyFileSync as cpfSync } from "node:fs";
 import { copyFile as cpf } from "node:fs/promises";
+import { existsSync } from "./exists";
 import { createDirectory, createDirectorySync } from "./helpers";
 import { isDirectory, isFile } from "./is-file";
 import { listFiles, listFilesSync } from "./list-files";
@@ -36,7 +37,10 @@ export async function copyFile(
   source: string | URL,
   destination: string | URL
 ) {
-  return cpf(source, destination);
+  const src = source instanceof URL ? fileURLToPath(source) : source;
+  if (existsSync(src)) {
+    return cpf(src, destination);
+  }
 }
 
 /**
@@ -47,7 +51,10 @@ export async function copyFile(
  * @returns An indicator specifying if the copy was successful
  */
 export function copyFileSync(source: string | URL, destination: string | URL) {
-  return cpfSync(source, destination);
+  const src = source instanceof URL ? fileURLToPath(source) : source;
+  if (existsSync(src)) {
+    return cpfSync(src, destination);
+  }
 }
 
 /**
