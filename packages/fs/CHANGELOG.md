@@ -2,6 +2,18 @@
 
 # Changelog for Stryke - Fs
 
+## [0.31.2](https://github.com/storm-software/stryke/releases/tag/fs%400.31.2) (2025-10-19)
+
+### Bug Fixes
+
+- **fs:** Resolve issue copying files with no extensions
+  ([b6bacdf](https://github.com/storm-software/stryke/commit/b6bacdf))
+
+### Miscellaneous
+
+- **monorepo:** Update workspace package links
+  ([127e66b](https://github.com/storm-software/stryke/commit/127e66b))
+
 ## [0.31.1](https://github.com/storm-software/stryke/releases/tag/fs%400.31.1) (2025-10-19)
 
 ### Bug Fixes
