@@ -16,6 +16,7 @@
 
  ------------------------------------------------------------------- */
 
+import { findFilePath } from "@stryke/path/file-path-fns";
 import { joinPaths } from "@stryke/path/join";
 import { replacePath } from "@stryke/path/replace";
 import { fileURLToPath } from "mlly";
@@ -80,16 +81,15 @@ export async function copyFiles(
   return Promise.all(
     (await listFiles(src.includes("*") ? src : joinPaths(src, "**", "*"))).map(
       async entryPath => {
+        const destFile = joinPaths(dest, replacePath(entryPath, src));
+        if (!existsSync(findFilePath(destFile))) {
+          await createDirectory(findFilePath(destFile));
+        }
+
         if (isDirectory(entryPath)) {
-          await copyFiles(
-            entryPath,
-            joinPaths(dest, replacePath(entryPath, src))
-          );
+          await copyFiles(entryPath, destFile);
         } else {
-          await copyFile(
-            entryPath,
-            joinPaths(dest, replacePath(entryPath, src))
-          );
+          await copyFile(entryPath, destFile);
         }
       }
     )
@@ -115,10 +115,15 @@ export function copyFilesSync(source: string | URL, destination: string | URL) {
   createDirectorySync(dest);
   return listFilesSync(src.includes("*") ? src : joinPaths(src, "**", "*")).map(
     entryPath => {
+      const destFile = joinPaths(dest, replacePath(entryPath, src));
+      if (!existsSync(findFilePath(destFile))) {
+        createDirectorySync(findFilePath(destFile));
+      }
+
       if (isDirectory(entryPath)) {
-        copyFilesSync(entryPath, joinPaths(dest, replacePath(entryPath, src)));
+        copyFilesSync(entryPath, destFile);
       } else {
-        copyFileSync(entryPath, joinPaths(dest, replacePath(entryPath, src)));
+        copyFileSync(entryPath, destFile);
       }
     }
   );
