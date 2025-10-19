@@ -41,8 +41,15 @@ export async function copyFile(
   destination: string | URL
 ) {
   const src = source instanceof URL ? fileURLToPath(source) : source;
+  const dest =
+    destination instanceof URL ? fileURLToPath(destination) : destination;
+
+  if (!existsSync(findFilePath(dest))) {
+    await createDirectory(findFilePath(dest));
+  }
+
   if (isString(src) && existsSync(src)) {
-    return cpf(src, destination);
+    return cpf(src, dest);
   }
 }
 
@@ -58,8 +65,15 @@ export function copyFileSync(
   destination: string | URL
 ) {
   const src = source instanceof URL ? fileURLToPath(source) : source;
+  const dest =
+    destination instanceof URL ? fileURLToPath(destination) : destination;
+
+  if (!existsSync(findFilePath(dest))) {
+    createDirectorySync(findFilePath(dest));
+  }
+
   if (isString(src) && existsSync(src)) {
-    return cpfSync(src, destination);
+    return cpfSync(src, dest);
   }
 }
 
@@ -82,16 +96,12 @@ export async function copyFiles(
     return copyFile(src, dest);
   }
 
-  await createDirectory(dest);
   return Promise.all(
     (await listFiles(src)).map(async entryPath => {
       const destFile = joinPaths(
         dest,
         replacePath(entryPath, isString(src) ? src : src.input)
       );
-      if (!existsSync(findFilePath(destFile))) {
-        await createDirectory(findFilePath(destFile));
-      }
 
       if (isDirectory(entryPath)) {
         await copyFiles(entryPath, destFile);
@@ -121,15 +131,11 @@ export function copyFilesSync(
     return copyFileSync(src, dest);
   }
 
-  createDirectorySync(dest);
   return listFilesSync(src).map(entryPath => {
     const destFile = joinPaths(
       dest,
       replacePath(entryPath, isString(src) ? src : src.input)
     );
-    if (!existsSync(findFilePath(destFile))) {
-      createDirectorySync(findFilePath(destFile));
-    }
 
     if (isDirectory(entryPath)) {
       copyFilesSync(entryPath, destFile);
