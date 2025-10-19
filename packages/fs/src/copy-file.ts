@@ -16,7 +16,12 @@
 
  ------------------------------------------------------------------- */
 
-import { findFilePath } from "@stryke/path/file-path-fns";
+import {
+  findFileName,
+  findFilePath,
+  hasFileExtension
+} from "@stryke/path/file-path-fns";
+import { resolveParentPath } from "@stryke/path/get-parent-path";
 import { joinPaths } from "@stryke/path/join";
 import { replacePath } from "@stryke/path/replace";
 import { isString } from "@stryke/type-checks";
@@ -37,12 +42,20 @@ import { listFiles, listFilesSync } from "./list-files";
  * @returns An indicator specifying if the copy was successful
  */
 export async function copyFile(
-  source: string | URL | AssetGlob,
+  source: string | URL,
   destination: string | URL
 ) {
   const src = source instanceof URL ? fileURLToPath(source) : source;
-  const dest =
+  let dest =
     destination instanceof URL ? fileURLToPath(destination) : destination;
+
+  if (
+    isFile(src) &&
+    !hasFileExtension(src) &&
+    findFileName(src) === findFileName(dest)
+  ) {
+    dest = resolveParentPath(dest);
+  }
 
   if (!existsSync(findFilePath(dest))) {
     await createDirectory(findFilePath(dest));
@@ -60,13 +73,18 @@ export async function copyFile(
  * @param destination - The destination location
  * @returns An indicator specifying if the copy was successful
  */
-export function copyFileSync(
-  source: string | URL | AssetGlob,
-  destination: string | URL
-) {
+export function copyFileSync(source: string | URL, destination: string | URL) {
   const src = source instanceof URL ? fileURLToPath(source) : source;
-  const dest =
+  let dest =
     destination instanceof URL ? fileURLToPath(destination) : destination;
+
+  if (
+    isFile(src) &&
+    !hasFileExtension(src) &&
+    findFileName(src) === findFileName(dest)
+  ) {
+    dest = resolveParentPath(dest);
+  }
 
   if (!existsSync(findFilePath(dest))) {
     createDirectorySync(findFilePath(dest));
