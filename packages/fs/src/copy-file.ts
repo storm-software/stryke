@@ -46,18 +46,18 @@ export async function copyFile(
   destination: string | URL
 ) {
   const src = source instanceof URL ? fileURLToPath(source) : source;
-  let dest =
+  const dest =
     destination instanceof URL ? fileURLToPath(destination) : destination;
 
   if (
     isFile(src) &&
-    !hasFileExtension(src) &&
+    !hasFileExtension(dest) &&
     findFileName(src) === findFileName(dest)
   ) {
-    dest = resolveParentPath(dest);
-  }
-
-  if (!existsSync(findFilePath(dest))) {
+    if (!existsSync(resolveParentPath(dest))) {
+      await createDirectory(resolveParentPath(dest));
+    }
+  } else if (!existsSync(findFilePath(dest))) {
     await createDirectory(findFilePath(dest));
   }
 
@@ -75,18 +75,18 @@ export async function copyFile(
  */
 export function copyFileSync(source: string | URL, destination: string | URL) {
   const src = source instanceof URL ? fileURLToPath(source) : source;
-  let dest =
+  const dest =
     destination instanceof URL ? fileURLToPath(destination) : destination;
 
   if (
     isFile(src) &&
-    !hasFileExtension(src) &&
+    !hasFileExtension(dest) &&
     findFileName(src) === findFileName(dest)
   ) {
-    dest = resolveParentPath(dest);
-  }
-
-  if (!existsSync(findFilePath(dest))) {
+    if (!existsSync(resolveParentPath(dest))) {
+      createDirectorySync(resolveParentPath(dest));
+    }
+  } else if (!existsSync(findFilePath(dest))) {
     createDirectorySync(findFilePath(dest));
   }
 
