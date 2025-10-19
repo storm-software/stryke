@@ -16,11 +16,7 @@
 
  ------------------------------------------------------------------- */
 
-import {
-  findFileName,
-  findFilePath,
-  hasFileExtension
-} from "@stryke/path/file-path-fns";
+import { findFilePath, hasFileExtension } from "@stryke/path/file-path-fns";
 import { resolveParentPath } from "@stryke/path/get-parent-path";
 import { joinPaths } from "@stryke/path/join";
 import { replacePath } from "@stryke/path/replace";
@@ -49,11 +45,7 @@ export async function copyFile(
   const dest =
     destination instanceof URL ? fileURLToPath(destination) : destination;
 
-  if (
-    isFile(src) &&
-    !hasFileExtension(dest) &&
-    findFileName(src) === findFileName(dest)
-  ) {
+  if (!hasFileExtension(dest)) {
     if (!existsSync(resolveParentPath(dest))) {
       await createDirectory(resolveParentPath(dest));
     }
@@ -78,11 +70,7 @@ export function copyFileSync(source: string | URL, destination: string | URL) {
   const dest =
     destination instanceof URL ? fileURLToPath(destination) : destination;
 
-  if (
-    isFile(src) &&
-    !hasFileExtension(dest) &&
-    findFileName(src) === findFileName(dest)
-  ) {
+  if (!hasFileExtension(dest)) {
     if (!existsSync(resolveParentPath(dest))) {
       createDirectorySync(resolveParentPath(dest));
     }

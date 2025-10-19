@@ -43,7 +43,9 @@ export async function list<TOptions extends ListOptions>(
 ): Promise<InferListReturnType<TOptions>> {
   return glob(
     isString(filesGlob)
-      ? filesGlob
+      ? filesGlob.includes("*")
+        ? filesGlob
+        : joinPaths(filesGlob, "**/*")
       : filesGlob.input
         ? joinPaths(filesGlob.input, filesGlob.glob)
         : filesGlob.glob,
@@ -69,7 +71,9 @@ export function listSync<TOptions extends ListOptions>(
 ): InferListReturnType<TOptions> {
   return glob.sync(
     isString(filesGlob)
-      ? filesGlob
+      ? filesGlob.includes("*")
+        ? filesGlob
+        : joinPaths(filesGlob, "**/*")
       : filesGlob.input
         ? joinPaths(filesGlob.input, filesGlob.glob)
         : filesGlob.glob,
