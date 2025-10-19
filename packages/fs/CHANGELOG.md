@@ -2,6 +2,13 @@
 
 # Changelog for Stryke - Fs
 
+## [0.30.4](https://github.com/storm-software/stryke/releases/tag/fs%400.30.4) (2025-10-19)
+
+### Bug Fixes
+
+- **fs:** Check file exists prior to copying it
+  ([151652e](https://github.com/storm-software/stryke/commit/151652e))
+
 ## [0.30.3](https://github.com/storm-software/stryke/releases/tag/fs%400.30.3) (2025-10-18)
 
 ### Bug Fixes
