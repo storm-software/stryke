@@ -49,3 +49,31 @@ export type FilterPattern =
   | string
   | RegExp
   | null;
+
+export interface FileInputOutput {
+  input: string;
+  output: string;
+}
+
+/**
+ * An interface got representing an asset files with glob patterns.
+ */
+export type AssetGlob = Required<Omit<FileInputOutput, "input">> &
+  Partial<Pick<FileInputOutput, "input">> & {
+    /**
+     * A glob pattern to match files.
+     */
+    glob: string;
+
+    /**
+     * An array of glob patterns to ignore files.
+     */
+    ignore?: string[];
+
+    /**
+     * Include `.dot` files in normal matches and `globstar` matches. Note that an explicit dot in a portion of the pattern will always match dot files.
+     *
+     * @defaultValue true
+     */
+    dot?: boolean;
+  };
