@@ -91,7 +91,9 @@
     "./package.json": "./package.json"
   },
   "types": "./dist/index.d.ts",
-  "files": ["dist/**/*"],
+  "files": [
+    "dist/**/*"
+  ],
   "keywords": [
     "stryke",
     "typescript",
@@ -106,7 +108,7 @@
   "dependencies": {
     "@prisma/generator-helper": "catalog:",
     "@prisma/internals": "catalog:",
-    "@stryke/fs": "0.31.0",
+    "@stryke/fs": "workspace:*",
     "@stryke/path": "workspace:*",
     "esbuild": "catalog:",
     "jiti": "catalog:",
