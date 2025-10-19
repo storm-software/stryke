@@ -2,6 +2,13 @@
 
 # Changelog for Stryke - Fs
 
+## [0.31.3](https://github.com/storm-software/stryke/releases/tag/fs%400.31.3) (2025-10-19)
+
+### Bug Fixes
+
+- **fs:** Ensure extensionless copy files are handled properly
+  ([1e2d6d2](https://github.com/storm-software/stryke/commit/1e2d6d2))
+
 ## [0.31.2](https://github.com/storm-software/stryke/releases/tag/fs%400.31.2) (2025-10-19)
 
 ### Bug Fixes
