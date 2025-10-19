@@ -2,6 +2,17 @@
 
 # Changelog for Stryke - Fs
 
+## [0.31.1](https://github.com/storm-software/stryke/releases/tag/fs%400.31.1) (2025-10-19)
+
+### Bug Fixes
+
+- **fs:** Ensure the destination path is added prior to copying files
+  ([3df994c](https://github.com/storm-software/stryke/commit/3df994c))
+
+### Updated Dependencies
+
+- Updated path to 0.15.5
+
 ## [0.31.0](https://github.com/storm-software/stryke/releases/tag/fs%400.31.0) (2025-10-19)
 
 ### Features
