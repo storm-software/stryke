@@ -16,25 +16,19 @@
 
  ------------------------------------------------------------------- */
 
-/**
- * The path library used by Storm Software for building NodeJS applications.
- *
- * @remarks
- * A package containing various utilities that expand the functionality of NodeJs's `path` module
- *
- * @packageDocumentation
- */
+import { joinPaths } from "./join-paths";
 
-export * from "./append";
-export * from "./asset-extensions";
-export * from "./correct-path";
-export * from "./cwd";
-export * from "./delimiter";
-export * from "./file-path-fns";
-export * from "./is-parent-path";
-export * from "./is-root-dir";
-export * from "./join-paths";
-export * from "./regex";
-export * from "./replace";
-export * from "./resolve-parent-path";
-export * from "./slash";
+/**
+ * Resolve the parent path of the provided path.
+ *
+ * @param path - The path to resolve.
+ * @param count - The number of parent directories to traverse.
+ * @returns The parent path of the provided path.
+ */
+export const resolveParentPath = (path: string, count: number = 1): string => {
+  let parentPath = path.replaceAll(/\/+$/g, "");
+  for (let i = 0; i < count; i++) {
+    parentPath = joinPaths(parentPath, "..");
+  }
+  return parentPath;
+};

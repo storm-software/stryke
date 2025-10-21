@@ -16,27 +16,12 @@
 
  ------------------------------------------------------------------- */
 
-import { cwd as currentDir } from "./cwd";
-import { joinPaths } from "./join-paths";
+import { toArray } from "@stryke/convert/to-array";
+import { cwd as currentDir } from "@stryke/path/cwd";
+import { joinPaths } from "@stryke/path/join-paths";
+import { resolveParentPath } from "@stryke/path/resolve-parent-path";
+import { existsSync } from "node:fs";
 
-/**
- * Resolve the parent path of the provided path.
- *
- * @param path - The path to resolve.
- * @param count - The number of parent directories to traverse.
- * @returns The parent path of the provided path.
- */
-export const resolveParentPath = (path: string, count: number = 1): string => {
-  let parentPath = path.replaceAll(/\/+$/g, "");
-  for (let i = 0; i < count; i++) {
-    parentPath = joinPaths(parentPath, "..");
-  }
-  return parentPath;
-};
-
-/**
- * Options for the `getParentPath` function.
- */
 export interface GetParentPathOptions {
   /**
    * Whether to ignore the case of the file names when checking for existence.
@@ -53,11 +38,11 @@ export interface GetParentPathOptions {
   skipCwd: boolean;
 
   /**
-   * The type of target to look for.
+   * Should we include the found file/directory name in the results.
    *
-   * @defaultValue "both"
+   * @defaultValue false
    */
-  targetType: "file" | "directory" | "both";
+  includeNameInResults?: boolean;
 }
 
 /**
@@ -74,28 +59,22 @@ export const getParentPath = (
 ): string | undefined => {
   const ignoreCase = options?.ignoreCase ?? true;
   const skipCwd = options?.skipCwd ?? false;
-  // const targetType = options?.targetType ?? "both";
+  const includeNameInResults = options?.includeNameInResults ?? false;
 
   let dir = cwd;
   if (skipCwd) {
     dir = resolveParentPath(cwd);
   }
 
-  let names = Array.isArray(name) ? name : [name];
+  let names = toArray(name);
   if (ignoreCase) {
     names = names.map(name => name.toLowerCase());
   }
 
   while (true) {
-    const target = names.find(
-      name => joinPaths(dir, name)
-      /* (isFile(joinPaths(dir, name)) &&
-          (targetType === "file" || targetType === "both")) ||
-        (isDirectory(joinPaths(dir, name)) &&
-          (targetType === "directory" || targetType === "both")) */
-    );
+    const target = names.find(name => existsSync(joinPaths(dir, name)));
     if (target) {
-      return joinPaths(dir, target);
+      return includeNameInResults ? joinPaths(dir, target) : dir;
     }
 
     const parentDir = resolveParentPath(dir);
@@ -103,6 +82,7 @@ export const getParentPath = (
       // It'll fail anyway
       return undefined;
     }
+
     dir = parentDir;
   }
 };

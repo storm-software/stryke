@@ -17,7 +17,6 @@
  ------------------------------------------------------------------- */
 
 import { findFileName, findFilePath } from "@stryke/path/file-path-fns";
-import { getParentPath } from "@stryke/path/get-parent-path";
 import { joinPaths } from "@stryke/path/join-paths";
 import { getPackageName } from "@stryke/string-format/package";
 import { isString } from "@stryke/type-checks/is-string";
@@ -27,6 +26,7 @@ import { existsSync } from "node:fs";
 import type { Range } from "semver";
 import { subset } from "semver";
 import { exists } from "./exists";
+import { getParentPath } from "./get-parent-path";
 import { getWorkspaceRoot } from "./get-workspace-root";
 import { readJsonFile } from "./json";
 import type { PackageResolvingOptions } from "./resolve";
