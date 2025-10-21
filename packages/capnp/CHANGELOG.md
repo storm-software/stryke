@@ -2,6 +2,18 @@
 
 # Changelog for Stryke - Capnp
 
+## [0.12.0](https://github.com/storm-software/stryke/releases/tag/capnp%400.12.0) (2025-10-21)
+
+### Features
+
+- **path:** Resolve issues with parent path resolution functions
+  ([f3abb0f](https://github.com/storm-software/stryke/commit/f3abb0f))
+
+### Updated Dependencies
+
+- Updated path to 0.16.0
+- Updated fs to 0.32.0
+
 ## [0.11.24](https://github.com/storm-software/stryke/releases/tag/capnp%400.11.24) (2025-10-19)
 
 ### Miscellaneous

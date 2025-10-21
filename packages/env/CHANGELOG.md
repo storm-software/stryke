@@ -2,6 +2,18 @@
 
 # Changelog for Stryke - Env
 
+## [0.20.0](https://github.com/storm-software/stryke/releases/tag/env%400.20.0) (2025-10-21)
+
+### Features
+
+- **path:** Resolve issues with parent path resolution functions
+  ([f3abb0f](https://github.com/storm-software/stryke/commit/f3abb0f))
+
+### Updated Dependencies
+
+- Updated path to 0.16.0
+- Updated fs to 0.32.0
+
 ## [0.19.12](https://github.com/storm-software/stryke/releases/tag/env%400.19.12) (2025-10-19)
 
 ### Miscellaneous

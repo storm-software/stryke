@@ -2,6 +2,13 @@
 
 # Changelog for Stryke - Path
 
+## [0.16.0](https://github.com/storm-software/stryke/releases/tag/path%400.16.0) (2025-10-21)
+
+### Features
+
+- **path:** Resolve issues with parent path resolution functions
+  ([f3abb0f](https://github.com/storm-software/stryke/commit/f3abb0f))
+
 ## [0.15.5](https://github.com/storm-software/stryke/releases/tag/path%400.15.5) (2025-10-19)
 
 ### Miscellaneous

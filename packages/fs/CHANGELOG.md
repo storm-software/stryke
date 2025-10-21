@@ -2,6 +2,22 @@
 
 # Changelog for Stryke - Fs
 
+## [0.32.0](https://github.com/storm-software/stryke/releases/tag/fs%400.32.0) (2025-10-21)
+
+### Features
+
+- **path:** Resolve issues with parent path resolution functions
+  ([f3abb0f](https://github.com/storm-software/stryke/commit/f3abb0f))
+
+### Miscellaneous
+
+- **fs:** Update import paths to new modules
+  ([7ea2440](https://github.com/storm-software/stryke/commit/7ea2440))
+
+### Updated Dependencies
+
+- Updated path to 0.16.0
+
 ## [0.31.4](https://github.com/storm-software/stryke/releases/tag/fs%400.31.4) (2025-10-19)
 
 ### Bug Fixes
