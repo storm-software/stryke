@@ -2,6 +2,17 @@
 
 # Changelog for Stryke - Prisma Better Auth Generator
 
+## [0.14.2](https://github.com/storm-software/stryke/releases/tag/prisma-better-auth-generator%400.14.2) (2025-10-21)
+
+### Bug Fixes
+
+- **fs:** Ensure correct return value is provided by `getParentPath` helper
+  ([cbabed5](https://github.com/storm-software/stryke/commit/cbabed5))
+
+### Updated Dependencies
+
+- Updated fs to 0.32.2
+
 ## [0.14.1](https://github.com/storm-software/stryke/releases/tag/prisma-better-auth-generator%400.14.1) (2025-10-21)
 
 ### Bug Fixes

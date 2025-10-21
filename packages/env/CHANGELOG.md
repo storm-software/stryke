@@ -2,6 +2,17 @@
 
 # Changelog for Stryke - Env
 
+## [0.20.2](https://github.com/storm-software/stryke/releases/tag/env%400.20.2) (2025-10-21)
+
+### Bug Fixes
+
+- **fs:** Ensure correct return value is provided by `getParentPath` helper
+  ([cbabed5](https://github.com/storm-software/stryke/commit/cbabed5))
+
+### Updated Dependencies
+
+- Updated fs to 0.32.2
+
 ## [0.20.1](https://github.com/storm-software/stryke/releases/tag/env%400.20.1) (2025-10-21)
 
 ### Bug Fixes

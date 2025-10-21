@@ -2,6 +2,17 @@
 
 # Changelog for Stryke - Prisma TRPC Generator
 
+## [0.13.2](https://github.com/storm-software/stryke/releases/tag/prisma-trpc-generator%400.13.2) (2025-10-21)
+
+### Bug Fixes
+
+- **fs:** Ensure correct return value is provided by `getParentPath` helper
+  ([cbabed5](https://github.com/storm-software/stryke/commit/cbabed5))
+
+### Updated Dependencies
+
+- Updated fs to 0.32.2
+
 ## [0.13.1](https://github.com/storm-software/stryke/releases/tag/prisma-trpc-generator%400.13.1) (2025-10-21)
 
 ### Bug Fixes

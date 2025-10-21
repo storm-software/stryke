@@ -2,6 +2,13 @@
 
 # Changelog for Stryke - Fs
 
+## [0.32.2](https://github.com/storm-software/stryke/releases/tag/fs%400.32.2) (2025-10-21)
+
+### Bug Fixes
+
+- **fs:** Ensure correct return value is provided by `getParentPath` helper
+  ([cbabed5](https://github.com/storm-software/stryke/commit/cbabed5))
+
 ## [0.32.1](https://github.com/storm-software/stryke/releases/tag/fs%400.32.1) (2025-10-21)
 
 ### Bug Fixes
