@@ -17,9 +17,9 @@
  ------------------------------------------------------------------- */
 
 import { findFilePath, hasFileExtension } from "@stryke/path/file-path-fns";
-import { resolveParentPath } from "@stryke/path/get-parent-path";
 import { joinPaths } from "@stryke/path/join";
 import { replacePath } from "@stryke/path/replace";
+import { resolveParentPath } from "@stryke/path/resolve-parent-path";
 import { isString } from "@stryke/type-checks";
 import type { AssetGlob } from "@stryke/types/file";
 import { fileURLToPath } from "mlly";

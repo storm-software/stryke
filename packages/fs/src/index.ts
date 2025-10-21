@@ -32,6 +32,7 @@ export * from "./compress";
 export * from "./constants";
 export * from "./copy-file";
 export * from "./exists";
+export * from "./get-parent-path";
 export * from "./get-workspace-root";
 export * from "./helpers";
 export * from "./install";
