@@ -25,15 +25,11 @@ import { readFile as readFileFs } from "node:fs/promises";
  * @param filePath - The file path to write to
  */
 export const readFileSync = (filePath: string): string => {
-  try {
-    if (!filePath) {
-      throw new Error("No file path provided to read data");
-    }
-
-    return readFileSyncFs(filePath, { encoding: "utf8" });
-  } catch {
-    throw new Error("An error occurred writing data to file");
+  if (!filePath) {
+    throw new Error("No file path provided to read data");
   }
+
+  return readFileSyncFs(filePath, { encoding: "utf8" });
 };
 
 /**
@@ -42,15 +38,11 @@ export const readFileSync = (filePath: string): string => {
  * @param filePath - The file path to read to
  */
 export const readFile = async (filePath: string): Promise<string> => {
-  try {
-    if (!filePath) {
-      throw new Error("No file path provided to read data");
-    }
-
-    return await readFileFs(filePath, { encoding: "utf8" });
-  } catch {
-    throw new Error("An error occurred writing data to file");
+  if (!filePath) {
+    throw new Error("No file path provided to read data");
   }
+
+  return readFileFs(filePath, { encoding: "utf8" });
 };
 
 /**
