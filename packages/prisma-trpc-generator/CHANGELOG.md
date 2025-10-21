@@ -2,6 +2,17 @@
 
 # Changelog for Stryke - Prisma TRPC Generator
 
+## [0.13.1](https://github.com/storm-software/stryke/releases/tag/prisma-trpc-generator%400.13.1) (2025-10-21)
+
+### Bug Fixes
+
+- **fs:** Remove unneeded try-catch block from read-file
+  ([596dc65](https://github.com/storm-software/stryke/commit/596dc65))
+
+### Updated Dependencies
+
+- Updated fs to 0.32.1
+
 ## [0.13.0](https://github.com/storm-software/stryke/releases/tag/prisma-trpc-generator%400.13.0) (2025-10-21)
 
 ### Features
