@@ -34,13 +34,17 @@ import { resolvePackage } from "./resolve";
 
 /**
  * Get the package manager used in the project
+ *
  * @param dir - The path to the project
  * @returns The package manager used in the project
  */
 export function getPackageManager(dir = getWorkspaceRoot()): PackageManager {
   const lockFile = getParentPath(
     ["package-lock.json", "yarn.lock", "pnpm-lock.yaml", "bun.lock"],
-    dir
+    dir,
+    {
+      includeNameInResults: true
+    }
   );
 
   if (!lockFile) {
@@ -138,7 +142,10 @@ export async function getPackageInfo(
 export async function loadPackageJson(
   cwd = getWorkspaceRoot()
 ): Promise<PackageJson | null> {
-  const path = getParentPath("package.json", cwd, { skipCwd: false });
+  const path = getParentPath("package.json", cwd, {
+    skipCwd: false,
+    includeNameInResults: true
+  });
   if (!path || !existsSync(path)) {
     return null;
   }

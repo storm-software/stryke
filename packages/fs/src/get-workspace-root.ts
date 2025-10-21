@@ -115,7 +115,10 @@ export function getWorkspaceRoot(dir = cwd()) {
 
   result = dir;
   while (result && !isSystemRoot(result)) {
-    result = getParentPath("storm-workspace.json", result, { skipCwd: true });
+    result = getParentPath("storm-workspace.json", result, {
+      skipCwd: true,
+      includeNameInResults: false
+    });
     if (result) {
       return result;
     }

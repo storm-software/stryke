@@ -21,6 +21,7 @@ import { cwd as currentDir } from "@stryke/path/cwd";
 import { joinPaths } from "@stryke/path/join-paths";
 import { resolveParentPath } from "@stryke/path/resolve-parent-path";
 import { existsSync } from "node:fs";
+import { isDirectory } from "./is-file";
 
 export interface GetParentPathOptions {
   /**
@@ -74,7 +75,9 @@ export const getParentPath = (
   while (true) {
     const target = names.find(name => existsSync(joinPaths(dir, name)));
     if (target) {
-      return includeNameInResults ? joinPaths(dir, target) : dir;
+      return includeNameInResults || isDirectory(joinPaths(dir, target))
+        ? joinPaths(dir, target)
+        : dir;
     }
 
     const parentDir = resolveParentPath(dir);
