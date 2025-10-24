@@ -17,6 +17,10 @@
  ------------------------------------------------------------------- */
 
 import { cwd } from "./cwd";
+import {
+  findFileDotExtensionSafe,
+  findFileExtensionSafe
+} from "./file-path-fns";
 import { isParentPath } from "./is-parent-path";
 import { slash } from "./slash";
 
@@ -40,4 +44,28 @@ export function replacePath(
   return isParentPath(childPath, parentPath)
     ? slash(childPath).replace(slash(parentPath), "").replace(/^\//, "")
     : childPath;
+}
+
+/**
+ * Replace the extension of a given path with the provided value.
+ *
+ * @example
+ * ```ts
+ * replaceExtension("/home/user/project/src/index.ts", ".js");
+ * // returns "/home/user/project/src/index.js"
+ * replaceExtension("/home/user/project/src/index.ts");
+ * // returns "/home/user/project/src/index"
+ * ```
+ *
+ * @param path - The path that will have its current extension replaced
+ * @param replacement - The value (or an empty string) to replace the current extension with
+ * @returns The path with the replaced extension
+ */
+export function replaceExtension(path: string, replacement = ""): string {
+  return path.replace(
+    !replacement || replacement.includes(".")
+      ? findFileDotExtensionSafe(path)
+      : findFileExtensionSafe(path),
+    replacement
+  );
 }
