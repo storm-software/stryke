@@ -2,6 +2,13 @@
 
 # Changelog for Stryke - Path
 
+## [0.17.0](https://github.com/storm-software/stryke/releases/tag/path%400.17.0) (2025-10-24)
+
+### Features
+
+- **path:** Added the `replaceExtension` helper utility
+  ([4a9d1f9](https://github.com/storm-software/stryke/commit/4a9d1f9))
+
 ## [0.16.0](https://github.com/storm-software/stryke/releases/tag/path%400.16.0) (2025-10-21)
 
 ### Features
