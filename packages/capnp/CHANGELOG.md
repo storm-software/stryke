@@ -2,6 +2,13 @@
 
 # Changelog for Stryke - Capnp
 
+## [0.12.12](https://github.com/storm-software/stryke/releases/tag/capnp%400.12.12) (2025-10-28)
+
+### Bug Fixes
+
+- **capnp:** Update `commander` to use the new API
+  ([2ca2803](https://github.com/storm-software/stryke/commit/2ca2803))
+
 ## [0.12.11](https://github.com/storm-software/stryke/releases/tag/capnp%400.12.11) (2025-10-28)
 
 ### Bug Fixes
