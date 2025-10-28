@@ -38,13 +38,14 @@ import type { CapnpcOptions, CapnpcResolvedOptions } from "./types.js";
  * @returns The resolved options
  */
 export async function resolveOptions(
-  options: CapnpcOptions
+  options: Omit<CapnpcOptions, "workspaceRoot" | "projectRoot"> &
+    Required<Pick<CapnpcOptions, "workspaceRoot" | "projectRoot">>
 ): Promise<CapnpcResolvedOptions | null> {
   const tsconfigPath = options.tsconfigPath
     ? options.tsconfigPath
         .replace("{projectRoot}", options.projectRoot)
         .replace("{workspaceRoot}", options.workspaceRoot)
-    : undefined;
+    : joinPaths(options.projectRoot, "tsconfig.json");
   const schemas = toArray(
     options.schemas
       ? options.schemas

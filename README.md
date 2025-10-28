@@ -11,7 +11,7 @@
 </div>
 <br />
 
-Storm Software's **💥 Stryke** monorepo containing TypeScript utility packages
+Storm Software's **🌩️ Stryke** monorepo containing TypeScript utility packages
 with shared functionality common to many Storm Software applications
 
 <br />
@@ -31,7 +31,7 @@ keeping the codebase maintainable.
 <!-- markdownlint-disable -->
 
 > [!IMPORTANT] 
-> This repository, and the apps, libraries, and tools contained within, is still in it's initial development phase. As a result, bugs and issues are expected with it's usage. When the main development phase completes, a proper release will be performed, the packages will be availible through NPM (and other distributions), and this message will be removed. However, in the meantime, please feel free to report any issues you may come across.
+> This repository, and the apps, libraries, and tools contained within, is still in it's initial development phase. As a result, bugs and issues are expected with it's usage. When the main development phase completes, a proper release will be performed, the packages will be available through NPM (and other distributions), and this message will be removed. However, in the meantime, please feel free to report any issues you may come across.
 
 <!-- markdownlint-restore -->
 <!-- prettier-ignore-end -->
@@ -56,7 +56,7 @@ keeping the codebase maintainable.
   - [Running End-to-End Tests](#running-end-to-end-tests)
   - [Understand your workspace](#understand-your-workspace)
 - [☁ Nx Cloud](#-nx-cloud)
-  - [Distributed Computation Caching & Distributed Task Execution](#distributed-computation-caching--distributed-task-execution)
+  - [Distributed Computation Caching \& Distributed Task Execution](#distributed-computation-caching--distributed-task-execution)
 - [Roadmap](#roadmap)
 - [Contributing](#contributing)
 - [Support](#support)

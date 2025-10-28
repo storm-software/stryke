@@ -38,6 +38,104 @@ import { capnpc } from "../src/compile.js";
 import { resolveOptions } from "../src/helpers.js";
 import type { CapnpcCLIOptions } from "../src/types.js";
 
+const compileAction =
+  (workspaceRoot: string) => async (options: CapnpcCLIOptions) => {
+    if (!options.projectRoot) {
+      throw new Error(
+        "✖ The project root directory must be specified using the -p or --project-root option."
+      );
+    }
+
+    const resolvedOptions = await resolveOptions({
+      workspaceRoot,
+      ...options,
+      tsconfig: undefined,
+      tsconfigPath: options.tsconfig,
+      schemas: options.schema
+    } as Parameters<typeof resolveOptions>[0]);
+    if (!resolvedOptions) {
+      writeWarning(
+        "✖ Unable to resolve Cap'n Proto compiler options - the program will terminate",
+        { logLevel: "all" }
+      );
+      return;
+    }
+
+    writeInfo(
+      `📦  Storm Cap'n Proto Compiler will output ${
+        resolvedOptions.ts ? "TypeScript code" : ""
+      }${
+        resolvedOptions.js
+          ? resolvedOptions.ts
+            ? ", JavaScript code"
+            : "JavaScript code"
+          : ""
+      }${
+        resolvedOptions.dts
+          ? resolvedOptions.ts || resolvedOptions.js
+            ? ", TypeScript declarations"
+            : "TypeScript declarations"
+          : ""
+      } files from schemas at ${
+        options.schema
+          ? options.schema
+              .replace("{projectRoot}", resolvedOptions.projectRoot)
+              .replace("{workspaceRoot}", resolvedOptions.workspaceRoot)
+          : resolvedOptions.projectRoot
+      } to ${resolvedOptions.tsconfig.options.outDir}...`,
+      {
+        logLevel: "all"
+      }
+    );
+
+    const result = await capnpc(resolvedOptions);
+    if (result.files.size === 0) {
+      writeWarning(
+        "⚠️  No files were generated. Please check your schema files.",
+        {
+          logLevel: "all"
+        }
+      );
+      return;
+    }
+
+    writeInfo(`📋  Writing ${result.files.size} generated files to disk...`, {
+      logLevel: "all"
+    });
+
+    for (const [fileName, content] of result.files) {
+      let filePath = fileName;
+      if (!existsSync(findFilePath(filePath))) {
+        const fullPath = `/${filePath}`;
+        if (existsSync(findFilePath(fullPath))) {
+          filePath = fullPath;
+        }
+      }
+
+      if (options.output) {
+        filePath = joinPaths(options.output, fileName);
+        if (!existsSync(findFilePath(options.output))) {
+          writeWarning(
+            `Output directory "${findFilePath(options.output)}" does not exist, it will be created...`
+          );
+          // await createDirectory(
+          //   replacePath(findFilePath(options.output), getWorkspaceRoot())
+          // );
+        }
+      }
+
+      await writeFile(
+        filePath,
+        // https://github.com/microsoft/TypeScript/issues/54632
+        content.replace(/^\s+/gm, match => " ".repeat(match.length / 2))
+      );
+    }
+
+    writeSuccess("⚡  Storm Cap'n Proto Compiler completed successfully.", {
+      logLevel: "all"
+    });
+  };
+
 export function createProgram() {
   writeInfo("⚡ Running Storm Cap'n Proto Compiler Tools", { logLevel: "all" });
 
@@ -81,11 +179,6 @@ export function createProgram() {
     "An indicator to enable TTY mode for the compiler"
   );
 
-  const importPathOption = new Option(
-    "-I --import-path <dir...>",
-    "Add <dir> to the list of directories searched for non-relative imports"
-  );
-
   const skipGenerateId = new Option(
     "--skip-generating-id",
     "Skip generating a new 64-bit unique ID for use in a Cap'n Proto schema"
@@ -114,7 +207,7 @@ export function createProgram() {
   const workspaceRootOption = new Option(
     "-w --workspace-root <path>",
     "The path to the workspace root directory"
-  ).default(root);
+  );
 
   program
     .command("compile", { isDefault: true })
@@ -122,7 +215,6 @@ export function createProgram() {
     .addOption(projectRootOption)
     .addOption(schemaOption)
     .addOption(outputOption)
-    .addOption(importPathOption)
     .addOption(tsconfigOption)
     .addOption(skipGenerateId)
     .addOption(skipStandardImportOption)
@@ -132,103 +224,11 @@ export function createProgram() {
     .addOption(noDtsOption)
     .addOption(workspaceRootOption)
     .addOption(ttyOption)
-    .action(compileAction)
+    .action(compileAction(root!))
     .showSuggestionAfterError(true)
     .showHelpAfterError(true);
 
   return program;
-}
-
-async function compileAction(options: CapnpcCLIOptions) {
-  const resolvedOptions = await resolveOptions({
-    ...options,
-    projectRoot: options.projectRoot,
-    tsconfig: undefined,
-    tsconfigPath:
-      options.tsconfig || joinPaths(options.projectRoot, "tsconfig.json"),
-    schemas: options.schema
-  });
-  if (!resolvedOptions) {
-    writeWarning(
-      "✖ Unable to resolve Cap'n Proto compiler options - the program will terminate",
-      { logLevel: "all" }
-    );
-    return;
-  }
-
-  writeInfo(
-    `📦  Storm Cap'n Proto Compiler will output ${
-      resolvedOptions.ts ? "TypeScript code" : ""
-    }${
-      resolvedOptions.js
-        ? resolvedOptions.ts
-          ? ", JavaScript code"
-          : "JavaScript code"
-        : ""
-    }${
-      resolvedOptions.dts
-        ? resolvedOptions.ts || resolvedOptions.js
-          ? ", TypeScript declarations"
-          : "TypeScript declarations"
-        : ""
-    } files from schemas at ${
-      options.schema
-        ? options.schema
-            .replace("{projectRoot}", resolvedOptions.projectRoot)
-            .replace("{workspaceRoot}", resolvedOptions.workspaceRoot)
-        : resolvedOptions.projectRoot
-    } to ${resolvedOptions.tsconfig.options.outDir}...`,
-    {
-      logLevel: "all"
-    }
-  );
-
-  const result = await capnpc(resolvedOptions);
-  if (result.files.size === 0) {
-    writeWarning(
-      "⚠️  No files were generated. Please check your schema files.",
-      {
-        logLevel: "all"
-      }
-    );
-    return;
-  }
-
-  writeInfo(`📋  Writing ${result.files.size} generated files to disk...`, {
-    logLevel: "all"
-  });
-
-  for (const [fileName, content] of result.files) {
-    let filePath = fileName;
-    if (!existsSync(findFilePath(filePath))) {
-      const fullPath = `/${filePath}`;
-      if (existsSync(findFilePath(fullPath))) {
-        filePath = fullPath;
-      }
-    }
-
-    if (options.output) {
-      filePath = joinPaths(options.output, fileName);
-      if (!existsSync(findFilePath(options.output))) {
-        writeWarning(
-          `Output directory "${findFilePath(options.output)}" does not exist, it will be created...`
-        );
-        // await createDirectory(
-        //   replacePath(findFilePath(options.output), getWorkspaceRoot())
-        // );
-      }
-    }
-
-    await writeFile(
-      filePath,
-      // https://github.com/microsoft/TypeScript/issues/54632
-      content.replace(/^\s+/gm, match => " ".repeat(match.length / 2))
-    );
-  }
-
-  writeSuccess("⚡  Storm Cap'n Proto Compiler completed successfully.", {
-    logLevel: "all"
-  });
 }
 
 void (async () => {

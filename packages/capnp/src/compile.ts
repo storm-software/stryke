@@ -112,7 +112,9 @@ export async function capnpc(
  * @returns A promise that resolves to the compilation result.
  */
 export async function compile(dataBuf: Buffer, options: CapnpcOptions) {
-  const resolvedOptions = await resolveOptions(options);
+  const resolvedOptions = await resolveOptions(
+    options as Parameters<typeof resolveOptions>[0]
+  );
   if (!resolvedOptions) {
     writeWarning(
       "✖ Unable to resolve Cap'n Proto compiler options - the program will terminate",

@@ -58,8 +58,8 @@ export interface CapnpcCLIOptions {
   tsconfig: string;
   skipGenerateId?: boolean;
   noStandardImport?: boolean;
-  projectRoot: string;
-  workspaceRoot: string;
+  projectRoot?: string;
+  workspaceRoot?: string;
   tty?: boolean;
 }
 
@@ -78,9 +78,16 @@ export type CapnpcOptions = Omit<CapnpcCLIOptions, "tsconfig" | "schema"> & {
 
 export type CapnpcResolvedOptions = Omit<
   CapnpcOptions,
-  "noTs" | "noDts" | "schemas" | "tsconfigPath" | "output" | "importPath"
+  | "noTs"
+  | "noDts"
+  | "schemas"
+  | "tsconfigPath"
+  | "output"
+  | "importPath"
+  | "projectRoot"
+  | "workspaceRoot"
 > &
-  Required<Pick<CapnpcOptions, "output">> & {
+  Required<Pick<CapnpcOptions, "output" | "projectRoot" | "workspaceRoot">> & {
     ts: boolean;
     importPath: string[];
     schemas: string[];
