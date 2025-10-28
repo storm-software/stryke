@@ -32,7 +32,7 @@ import {
 import { existsSync } from "@stryke/fs/exists";
 import { findFilePath } from "@stryke/path/file-path-fns";
 import { joinPaths } from "@stryke/path/join-paths";
-import { Command, Option } from "commander";
+import { Command } from "commander";
 import { writeFile } from "node:fs/promises";
 import { capnpc } from "../src/compile.js";
 import { resolveOptions } from "../src/helpers.js";
@@ -146,84 +146,51 @@ export function createProgram() {
     process.chdir(root);
   }
 
-  const program = new Command("storm-capnpc");
-  program.version("1.0.0", "-v --version", "display CLI version");
-
-  const projectRootOption = new Option(
-    "-p --project-root <path>",
-    "The path to the project root directory"
-  );
-
-  const noTsOption = new Option(
-    "--no-ts",
-    "An indicator to disable generation of TypeScript files"
-  );
-
-  const jsOption = new Option(
-    "--js",
-    "An indicator to generate JavaScript files"
-  );
-
-  const dtsOption = new Option(
-    "--dts",
-    "An indicator to generate TypeScript declaration files"
-  );
-
-  const noDtsOption = new Option(
-    "--no-dts",
-    "An indicator to disable generation of TypeScript declaration files"
-  );
-
-  const ttyOption = new Option(
-    "--tty",
-    "An indicator to enable TTY mode for the compiler"
-  );
-
-  const skipGenerateId = new Option(
-    "--skip-generating-id",
-    "Skip generating a new 64-bit unique ID for use in a Cap'n Proto schema"
-  );
-
-  const skipStandardImportOption = new Option(
-    "--no-standard-imports",
-    "Skip adding default import paths; use only those specified by -I"
-  );
-
-  const schemaOption = new Option(
-    "-s --schema <path>",
-    "The directory (or a glob to the directory) containing the Cap'n Proto schema files to compile (default: current working directory)"
-  );
-
-  const outputOption = new Option(
-    "-o --output <path>",
-    "The directory to output the generated files to"
-  );
-
-  const tsconfigOption = new Option(
-    "--tsconfig <path>",
-    "The path to the TypeScript configuration file to use for compilation"
-  );
-
-  const workspaceRootOption = new Option(
-    "-w --workspace-root <path>",
-    "The path to the workspace root directory"
-  );
+  const program = new Command();
+  program
+    .name("storm-capnpc")
+    .description("Run the Storm Cap'n Proto compiler")
+    .version("1.0.0", "-v --version", "display CLI version");
 
   program
     .command("compile", { isDefault: true })
-    .description("Run the Storm Cap'n Proto compiler")
-    .addOption(projectRootOption)
-    .addOption(schemaOption)
-    .addOption(outputOption)
-    .addOption(tsconfigOption)
-    .addOption(skipGenerateId)
-    .addOption(skipStandardImportOption)
-    .addOption(noTsOption)
-    .addOption(jsOption)
-    .addOption(dtsOption)
-    .addOption(noDtsOption)
-    .addOption(workspaceRootOption)
-    .addOption(ttyOption)
+    .option(
+      "-p --project-root <path>",
+      "The path to the project root directory"
+    )
+    .option(
+      "-s --schema <path>",
+      "The directory (or a glob to the directory) containing the Cap'n Proto schema files to compile (default: current working directory)"
+    )
+    .option(
+      "-o --output <path>",
+      "The directory to output the generated files to"
+    )
+    .option(
+      "--tsconfig <path>",
+      "The path to the TypeScript configuration file to use for compilation"
+    )
+    .option(
+      "--skip-generating-id",
+      "Skip generating a new 64-bit unique ID for use in a Cap'n Proto schema"
+    )
+    .option(
+      "--no-standard-imports",
+      "Skip adding default import paths; use only those specified by -I"
+    )
+    .option("--no-ts", "An indicator to disable generation of TypeScript files")
+    .option("--js", "An indicator to generate JavaScript files")
+    .option("--dts", "An indicator to generate TypeScript declaration files")
+    .option(
+      "--no-dts",
+      "An indicator to disable generation of TypeScript declaration files"
+    )
+    .option(
+      "-w --workspace-root <path>",
+      "The path to the workspace root directory",
+      root || process.cwd()
+    )
+    .option("--tty", "An indicator to enable TTY mode for the compiler")
     .action(compileAction(root!))
     .showSuggestionAfterError(true)
     .showHelpAfterError(true);
