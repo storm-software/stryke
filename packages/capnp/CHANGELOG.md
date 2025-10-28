@@ -2,6 +2,18 @@
 
 # Changelog for Stryke - Capnp
 
+## [0.12.7](https://github.com/storm-software/stryke/releases/tag/capnp%400.12.7) (2025-10-28)
+
+### Bug Fixes
+
+- **capnp:** Resolve issue parsing array options
+  ([3957c53](https://github.com/storm-software/stryke/commit/3957c53))
+
+### Miscellaneous
+
+- **capnp:** Bundle `commander` in script
+  ([d6348a8](https://github.com/storm-software/stryke/commit/d6348a8))
+
 ## [0.12.6](https://github.com/storm-software/stryke/releases/tag/capnp%400.12.6) (2025-10-28)
 
 ### Bug Fixes
