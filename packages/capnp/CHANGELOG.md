@@ -2,6 +2,13 @@
 
 # Changelog for Stryke - Capnp
 
+## [0.12.11](https://github.com/storm-software/stryke/releases/tag/capnp%400.12.11) (2025-10-28)
+
+### Bug Fixes
+
+- **capnp:** Update bin script to use latest `commander` API
+  ([fb8127b](https://github.com/storm-software/stryke/commit/fb8127b))
+
 ## [0.12.10](https://github.com/storm-software/stryke/releases/tag/capnp%400.12.10) (2025-10-28)
 
 ### Bug Fixes
