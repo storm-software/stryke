@@ -62,10 +62,8 @@ export interface BufferConversionsInterface {
  * ```
  *
  * @param convert - Conversion functions
- * @param uri - Data URI to turn into a Buffer instance
+ * @returns An object containing the parsed data URI properties and the decoded data as a Buffer instance.
  * @throws `TypeError` if `uri` is not a valid Data URI
- * @returns An object containing the parsed data URI properties
- *   and the decoded data as a Buffer instance.
  */
 export const makeDataUriToBuffer =
   (convert: BufferConversionsInterface) =>

@@ -9,6 +9,9 @@
     "directory": "packages/http"
   },
   "private": false,
+  "dependencies": {
+    "defu": "catalog:"
+  },
   "devDependencies": {
     "@types/node": "catalog:"
   },

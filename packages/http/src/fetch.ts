@@ -16,40 +16,51 @@
 
  ------------------------------------------------------------------- */
 
+import { isString } from "@stryke/type-checks";
+import { defu } from "defu";
 import { Buffer } from "node:buffer";
 import http from "node:http";
+import type { RequestOptions } from "node:https";
 import https from "node:https";
 import { getProxyAgent } from "./proxy-agent";
 
-export interface FetchRequestOptions {
-  isDev?: boolean;
+export interface FetchRequestOptions extends RequestOptions {
+  /**
+   * Timeout in milliseconds
+   *
+   * @defaultValue 3000
+   */
+  timeout?: number;
 }
 
 /**
  * Fetches a resource from a URL.
  *
  * @remarks
- * Makes a simple GET request and returns the entire response as a Buffer.
- *
- * Features:
- * - Throws if the response status is not 200.
- * - Applies a 3000 ms timeout when `isDev` is `true`.
+ * Makes a simple GET request and returns the entire response as a Buffer. Throws if the response status is not 200.
  *
  * @param url - The URL to fetch.
  * @returns A promise that resolves to the response body as a Buffer.
  */
-export async function $fetch(
-  url: string,
+export async function fetchRequest(
+  url: string | URL,
   options: FetchRequestOptions = {}
 ): Promise<Buffer> {
   return new Promise((resolve, reject) => {
-    const { protocol } = new URL(url);
+    let protocol = "http:";
+    if (isString(url)) {
+      const parsedUrl = new URL(url);
+      protocol = parsedUrl.protocol;
+    } else {
+      protocol = url.protocol;
+    }
+
     const client = protocol === "https:" ? https : http;
-    const timeout = options.isDev ? 3000 : undefined;
+    const timeout = options.timeout ?? 3000;
 
     const req = client.request(
       url,
-      {
+      defu(options, {
         agent: getProxyAgent(),
         headers: {
           // The file format is based off of the user agent, make sure woff2 files are fetched
@@ -58,11 +69,13 @@ export async function $fetch(
             "AppleWebKit/537.36 (KHTML, like Gecko) " +
             "Chrome/104.0.0.0 Safari/537.36"
         }
-      },
+      }) as Parameters<typeof client.request>[1],
       res => {
         if (res.statusCode !== 200) {
           reject(
-            new Error(`Request failed: ${url} (status: ${res.statusCode})`)
+            new Error(
+              `Request failed: ${url.toString()} (status: ${res.statusCode})`
+            )
           );
           return;
         }
@@ -83,4 +96,4 @@ export async function $fetch(
   });
 }
 
-export const fetch = $fetch;
+export const fetch = fetchRequest;
