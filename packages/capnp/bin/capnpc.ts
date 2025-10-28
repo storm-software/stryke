@@ -84,12 +84,7 @@ export function createProgram() {
   const importPathOption = new Option(
     "-I --import-path <dir...>",
     "Add <dir> to the list of directories searched for non-relative imports"
-  ).argParser((val: string) => {
-    if (val.startsWith("-I") || val.startsWith("--import-path")) {
-      return val.split(",").map(dir => dir.trim());
-    }
-    return [val.trim()];
-  });
+  );
 
   const skipGenerateId = new Option(
     "--skip-generating-id",

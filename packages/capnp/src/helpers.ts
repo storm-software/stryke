@@ -129,8 +129,10 @@ export async function resolveOptions(
   resolvedTsconfig.options.outDir = output;
 
   return {
-    importPath: [],
     ...options,
+    importPath: options.importPath
+      ? options.importPath.split(",").map(dir => dir.trim())
+      : [],
     workspaceRoot: options.workspaceRoot,
     projectRoot: options.projectRoot,
     schemas: resolvedSchemas,

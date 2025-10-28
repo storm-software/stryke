@@ -33,5 +33,5 @@ export default defineConfig({
   bundle: true,
   splitting: false,
   external: ["typescript"],
-  noExternal: ["capnp-es", "chalk", "commander"]
+  noExternal: ["capnp-es"]
 });

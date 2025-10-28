@@ -54,7 +54,7 @@ export interface CapnpcCLIOptions {
   noDts?: boolean;
   schema: string;
   output?: string;
-  importPath?: string[];
+  importPath?: string;
   tsconfig: string;
   skipGenerateId?: boolean;
   noStandardImport?: boolean;
@@ -78,10 +78,11 @@ export type CapnpcOptions = Omit<CapnpcCLIOptions, "tsconfig" | "schema"> & {
 
 export type CapnpcResolvedOptions = Omit<
   CapnpcOptions,
-  "noTs" | "noDts" | "schemas" | "tsconfigPath" | "output"
+  "noTs" | "noDts" | "schemas" | "tsconfigPath" | "output" | "importPath"
 > &
   Required<Pick<CapnpcOptions, "output">> & {
     ts: boolean;
+    importPath: string[];
     schemas: string[];
     tsconfig: ParsedCommandLine;
   };
