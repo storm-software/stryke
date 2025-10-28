@@ -2,6 +2,13 @@
 
 # Changelog for Stryke - Capnp
 
+## [0.12.8](https://github.com/storm-software/stryke/releases/tag/capnp%400.12.8) (2025-10-28)
+
+### Bug Fixes
+
+- **capnp:** Resolve issue apply default values in CLI options
+  ([5679bea](https://github.com/storm-software/stryke/commit/5679bea))
+
 ## [0.12.7](https://github.com/storm-software/stryke/releases/tag/capnp%400.12.7) (2025-10-28)
 
 ### Bug Fixes
