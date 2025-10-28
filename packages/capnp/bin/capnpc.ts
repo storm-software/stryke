@@ -56,11 +56,6 @@ export function createProgram() {
     "The path to the project root directory"
   );
 
-  const tsOption = new Option(
-    "--ts",
-    "An indicator to generate TypeScript files"
-  ).default(true);
-
   const noTsOption = new Option(
     "--no-ts",
     "An indicator to disable generation of TypeScript files"
@@ -69,7 +64,7 @@ export function createProgram() {
   const jsOption = new Option(
     "--js",
     "An indicator to generate JavaScript files"
-  ).default(false);
+  );
 
   const dtsOption = new Option(
     "--dts",
@@ -98,15 +93,15 @@ export function createProgram() {
       return [val.trim()];
     });
 
-  const generateId = new Option(
-    "-i --generate-id",
-    "Generate a new 64-bit unique ID for use in a Cap'n Proto schema"
-  ).default(true);
+  const skipGenerateId = new Option(
+    "--skip-generating-id",
+    "Skip generating a new 64-bit unique ID for use in a Cap'n Proto schema"
+  );
 
-  const standardImportOption = new Option(
-    "--standard-import",
-    "Add default import paths; use only those specified by -I"
-  ).default(true);
+  const skipStandardImportOption = new Option(
+    "--no-standard-imports",
+    "Skip adding default import paths; use only those specified by -I"
+  );
 
   const schemaOption = new Option(
     "-s --schema <path>",
@@ -136,9 +131,8 @@ export function createProgram() {
     .addOption(outputOption)
     .addOption(importPathOption)
     .addOption(tsconfigOption)
-    .addOption(generateId)
-    .addOption(standardImportOption)
-    .addOption(tsOption)
+    .addOption(skipGenerateId)
+    .addOption(skipStandardImportOption)
     .addOption(noTsOption)
     .addOption(jsOption)
     .addOption(dtsOption)

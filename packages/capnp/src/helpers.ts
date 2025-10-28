@@ -129,13 +129,14 @@ export async function resolveOptions(
   resolvedTsconfig.options.outDir = output;
 
   return {
+    ...options,
     workspaceRoot: options.workspaceRoot,
     projectRoot: options.projectRoot,
     schemas: resolvedSchemas,
     output,
-    js: options.js ?? false,
-    ts: options.ts ?? (options.noTs !== undefined ? !options.noTs : true),
-    dts: options.dts ?? (options.noDts !== undefined ? !options.noDts : true),
+    js: options.js === true,
+    ts: options.noTs !== true,
+    dts: options.dts ?? options.noDts !== true,
     tsconfig: resolvedTsconfig
   };
 }

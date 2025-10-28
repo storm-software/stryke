@@ -48,7 +48,6 @@ export class CodeGeneratorContext {
 }
 
 export interface CapnpcCLIOptions {
-  ts?: boolean;
   noTs?: boolean;
   js?: boolean;
   dts?: boolean;
@@ -57,8 +56,8 @@ export interface CapnpcCLIOptions {
   output?: string;
   importPath?: string[];
   tsconfig: string;
-  generateId?: boolean;
-  standardImport?: boolean;
+  skipGenerateId?: boolean;
+  noStandardImport?: boolean;
   projectRoot: string;
   workspaceRoot: string;
   tty?: boolean;
@@ -82,6 +81,7 @@ export type CapnpcResolvedOptions = Omit<
   "noTs" | "noDts" | "schemas" | "tsconfigPath" | "output"
 > &
   Required<Pick<CapnpcOptions, "output">> & {
+    ts: boolean;
     schemas: string[];
     tsconfig: ParsedCommandLine;
   };
