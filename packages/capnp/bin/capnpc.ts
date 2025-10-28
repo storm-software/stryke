@@ -192,8 +192,7 @@ export function createProgram() {
     )
     .option("--tty", "An indicator to enable TTY mode for the compiler")
     .action(compileAction(root!))
-    .showSuggestionAfterError(true)
-    .showHelpAfterError(true);
+    .showHelpAfterError();
 
   return program;
 }
