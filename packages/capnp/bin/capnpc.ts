@@ -192,7 +192,7 @@ export function createProgram() {
   const schemaOption = new Option(
     "-s --schema <path>",
     "The directory (or a glob to the directory) containing the Cap'n Proto schema files to compile (default: current working directory)"
-  ).default(joinPaths("{projectRoot}", "**/*.capnp"));
+  );
 
   const outputOption = new Option(
     "-o --output <path>",
@@ -202,7 +202,7 @@ export function createProgram() {
   const tsconfigOption = new Option(
     "--tsconfig <path>",
     "The path to the TypeScript configuration file to use for compilation"
-  ).default(joinPaths("{projectRoot}", "tsconfig.json"));
+  );
 
   const workspaceRootOption = new Option(
     "-w --workspace-root <path>",

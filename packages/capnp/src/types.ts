@@ -52,10 +52,10 @@ export interface CapnpcCLIOptions {
   js?: boolean;
   dts?: boolean;
   noDts?: boolean;
-  schema: string;
+  schema?: string;
   output?: string;
   importPath?: string;
-  tsconfig: string;
+  tsconfig?: string;
   skipGenerateId?: boolean;
   noStandardImport?: boolean;
   projectRoot?: string;
