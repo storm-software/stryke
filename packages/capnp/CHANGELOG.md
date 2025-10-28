@@ -2,6 +2,13 @@
 
 # Changelog for Stryke - Capnp
 
+## [0.12.6](https://github.com/storm-software/stryke/releases/tag/capnp%400.12.6) (2025-10-28)
+
+### Bug Fixes
+
+- **capnp:** Resolve issue parsing `--import-path` option
+  ([ac07caa](https://github.com/storm-software/stryke/commit/ac07caa))
+
 ## [0.12.5](https://github.com/storm-software/stryke/releases/tag/capnp%400.12.5) (2025-10-28)
 
 ### Bug Fixes
