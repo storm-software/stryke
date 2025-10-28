@@ -2,6 +2,13 @@
 
 # Changelog for Stryke - Capnp
 
+## [0.12.10](https://github.com/storm-software/stryke/releases/tag/capnp%400.12.10) (2025-10-28)
+
+### Bug Fixes
+
+- **capnp:** Update `commander` initialization methods
+  ([decc6b5](https://github.com/storm-software/stryke/commit/decc6b5))
+
 ## [0.12.9](https://github.com/storm-software/stryke/releases/tag/capnp%400.12.9) (2025-10-28)
 
 ### Bug Fixes
