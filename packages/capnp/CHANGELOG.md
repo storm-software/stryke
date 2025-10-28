@@ -2,6 +2,13 @@
 
 # Changelog for Stryke - Capnp
 
+## [0.12.9](https://github.com/storm-software/stryke/releases/tag/capnp%400.12.9) (2025-10-28)
+
+### Bug Fixes
+
+- **capnp:** Ensure the defaults are applied in helper functions
+  ([b87361e](https://github.com/storm-software/stryke/commit/b87361e))
+
 ## [0.12.8](https://github.com/storm-software/stryke/releases/tag/capnp%400.12.8) (2025-10-28)
 
 ### Bug Fixes
