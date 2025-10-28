@@ -191,8 +191,7 @@ export function createProgram() {
       root || process.cwd()
     )
     .option("--tty", "An indicator to enable TTY mode for the compiler")
-    .action(compileAction(root!))
-    .showHelpAfterError();
+    .action(compileAction(root!));
 
   return program;
 }
