@@ -2,6 +2,13 @@
 
 # Changelog for Stryke - HTTP
 
+## [0.11.0](https://github.com/storm-software/stryke/releases/tag/http%400.11.0) (2025-10-28)
+
+### Features
+
+- **http:** Enhanced the `options` provided to the `fetchRequest` helper utility
+  ([a9fc260](https://github.com/storm-software/stryke/commit/a9fc260))
+
 ## [0.10.0](https://github.com/storm-software/stryke/releases/tag/http%400.10.0) (2025-09-20)
 
 ### Features
