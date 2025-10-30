@@ -118,7 +118,7 @@ export function stripStars(path?: string) {
       return ret;
     }
 
-    return ret + (ret.length > 0 ? `/${segment}` : segment);
+    return ret + (ret ? `/${segment}` : segment);
   }, "");
 }
 

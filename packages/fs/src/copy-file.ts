@@ -106,17 +106,14 @@ export async function copyFiles(
 
   return Promise.all(
     (await listFiles(src)).map(async entryPath => {
-      let sourcePath = (isString(src) ? src : src.input) as string;
+      let sourcePath = stripStars(isString(src) ? src : src.input);
       if (!isParentPath(entryPath, sourcePath)) {
         if (isParentPath(entryPath, joinPaths(cwd(), sourcePath))) {
           sourcePath = joinPaths(cwd(), sourcePath);
         }
       }
 
-      const destFile = joinPaths(
-        dest,
-        stripStars(replacePath(entryPath, sourcePath))
-      );
+      const destFile = joinPaths(dest, replacePath(entryPath, sourcePath));
 
       if (isDirectory(entryPath)) {
         await copyFiles(entryPath, destFile);
@@ -147,17 +144,14 @@ export function copyFilesSync(
   }
 
   return listFilesSync(src).map(entryPath => {
-    let sourcePath = (isString(src) ? src : src.input) as string;
+    let sourcePath = stripStars(isString(src) ? src : src.input);
     if (!isParentPath(entryPath, sourcePath)) {
       if (isParentPath(entryPath, joinPaths(cwd(), sourcePath))) {
         sourcePath = joinPaths(cwd(), sourcePath);
       }
     }
 
-    const destFile = joinPaths(
-      dest,
-      stripStars(replacePath(entryPath, sourcePath))
-    );
+    const destFile = joinPaths(dest, replacePath(entryPath, sourcePath));
 
     if (isDirectory(entryPath)) {
       copyFilesSync(entryPath, destFile);

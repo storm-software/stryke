@@ -46,10 +46,10 @@ catalog:
   '@tanstack/react-query': ^5.90.5
   '@tanstack/react-query-devtools': ^5.70.0
   '@taplo/cli': ^0.7.0
-  '@trpc/client': ^11.0.0
-  '@trpc/next': ^11.0.0
-  '@trpc/server': ^11.0.0
-  '@trpc/tanstack-react-query': ^11.0.0
+  '@trpc/client': ^11.7.1
+  '@trpc/next': ^11.7.1
+  '@trpc/server': ^11.7.1
+  '@trpc/tanstack-react-query': ^11.7.1
   '@types/cross-spawn': ^6.0.6
   '@types/figlet': ^1.7.0
   '@types/jest': 30.0.0
