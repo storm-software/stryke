@@ -16,6 +16,7 @@
 
  ------------------------------------------------------------------- */
 
+import { correctPath } from "./correct-path";
 import { cwd } from "./cwd";
 import {
   findFileDotExtensionSafe,
@@ -41,9 +42,11 @@ export function replacePath(
   childPath: string,
   parentPath: string = cwd()
 ): string {
-  return isParentPath(childPath, parentPath)
-    ? slash(childPath).replace(slash(parentPath), "").replace(/^\//, "")
-    : childPath;
+  return correctPath(
+    isParentPath(childPath, parentPath)
+      ? slash(childPath).replace(slash(parentPath), "").replace(/^\//, "")
+      : childPath
+  );
 }
 
 /**
@@ -62,10 +65,12 @@ export function replacePath(
  * @returns The path with the replaced extension
  */
 export function replaceExtension(path: string, replacement = ""): string {
-  return path.replace(
-    !replacement || replacement.includes(".")
-      ? findFileDotExtensionSafe(path)
-      : findFileExtensionSafe(path),
-    replacement
+  return correctPath(
+    path.replace(
+      !replacement || replacement.includes(".")
+        ? findFileDotExtensionSafe(path)
+        : findFileExtensionSafe(path),
+      replacement
+    )
   );
 }

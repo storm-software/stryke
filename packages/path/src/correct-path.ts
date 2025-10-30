@@ -85,6 +85,44 @@ export function correctPath(path?: string) {
 }
 
 /**
+ * Remove any star tokens (*) from the end of the file path
+ *
+ * @example
+ * stripStars("src/**") // returns "src"
+ * stripStars("src/*") // returns "src"
+ * stripStars("src/**\/*") // returns "src"
+ * stripStars("src/**\/*.txt") // returns "src"
+ * stripStars("src/**\/file.txt") // returns "src"
+ * stripStars("src/file.txt") // returns "src/file.txt"
+ * stripStars("") // returns "."
+ *
+ * @param path - The path to correct.
+ * @returns The corrected path.
+ */
+export function stripStars(path?: string) {
+  if (!path || path.length === 0) {
+    return ".";
+  }
+
+  path = correctPath(path);
+
+  let found = false;
+
+  return path.split("/").reduce((ret, segment) => {
+    if (!segment?.trim()) {
+      return ret;
+    }
+
+    if (found || segment.includes("*")) {
+      found = true;
+      return ret;
+    }
+
+    return ret + (ret.length > 0 ? `/${segment}` : segment);
+  }, "");
+}
+
+/**
  * Resolves a string path, resolving '.' and '.' segments and allowing paths above the root.
  *
  * @param path - The path to normalize.
