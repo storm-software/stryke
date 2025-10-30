@@ -2,6 +2,27 @@
 
 # Changelog for Stryke - Fs
 
+## [0.32.5](https://github.com/storm-software/stryke/releases/tag/fs%400.32.5) (2025-10-30)
+
+### Bug Fixes
+
+- **fs:** Resolve issue replacing star paths in files
+  ([0e2a085](https://github.com/storm-software/stryke/commit/0e2a085))
+- **monorepo:** Resolve `type-check` failures
+  ([a1eabd0](https://github.com/storm-software/stryke/commit/a1eabd0))
+- **fs:** Resolve issue with missing parent path in `copyFiles` helper's
+  `source` parameter
+  ([7571e29](https://github.com/storm-software/stryke/commit/7571e29))
+
+### Miscellaneous
+
+- **monorepo:** Update workspace package links
+  ([c4b2b7b](https://github.com/storm-software/stryke/commit/c4b2b7b))
+
+### Updated Dependencies
+
+- Updated path to 0.18.1
+
 ## [0.32.4](https://github.com/storm-software/stryke/releases/tag/fs%400.32.4) (2025-10-30)
 
 ### Bug Fixes

@@ -1,3 +1,14 @@
+![Storm Software's logo banner](https://public.storm-cdn.com/brand-banner.png)
+
+# Changelog for Stryke - TRPC Next
+
+## [0.5.10](https://github.com/storm-software/stryke/releases/tag/trpc-next%400.5.10) (2025-10-30)
+
+### Bug Fixes
+
+- **trpc-next:** Resolve `type-check` failures
+  ([ade17aa](https://github.com/storm-software/stryke/commit/ade17aa))
+
 ![Storm Software](https://public.storm-cdn.com/brand-banner.png)
 
 # Changelog for Stryke - TRPC Next

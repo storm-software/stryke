@@ -2,6 +2,20 @@
 
 # Changelog for Stryke - Path
 
+## [0.18.1](https://github.com/storm-software/stryke/releases/tag/path%400.18.1) (2025-10-30)
+
+### Bug Fixes
+
+- **fs:** Resolve issue replacing star paths in files
+  ([0e2a085](https://github.com/storm-software/stryke/commit/0e2a085))
+
+### Miscellaneous
+
+- **path:** Sort `package.json` dependencies
+  ([7b84f6b](https://github.com/storm-software/stryke/commit/7b84f6b))
+- **monorepo:** Update workspace package links
+  ([c4b2b7b](https://github.com/storm-software/stryke/commit/c4b2b7b))
+
 ## [0.18.0](https://github.com/storm-software/stryke/releases/tag/path%400.18.0) (2025-10-30)
 
 ### Features

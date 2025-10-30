@@ -2,6 +2,13 @@
 
 # Changelog for Stryke - HTTP
 
+## [0.11.1](https://github.com/storm-software/stryke/releases/tag/http%400.11.1) (2025-10-30)
+
+### Bug Fixes
+
+- **monorepo:** Resolve `type-check` failures
+  ([a1eabd0](https://github.com/storm-software/stryke/commit/a1eabd0))
+
 ## [0.11.0](https://github.com/storm-software/stryke/releases/tag/http%400.11.0) (2025-10-28)
 
 ### Features

@@ -1,3 +1,14 @@
+![Storm Software's logo banner](https://public.storm-cdn.com/brand-banner.png)
+
+# Changelog for Stryke - CLI
+
+## [0.12.4](https://github.com/storm-software/stryke/releases/tag/cli%400.12.4) (2025-10-30)
+
+### Bug Fixes
+
+- **cli:** Resolve `type-check` failures
+  ([9213578](https://github.com/storm-software/stryke/commit/9213578))
+
 ![Storm Software](https://public.storm-cdn.com/brand-banner.png)
 
 # Changelog for Stryke - CLI
