@@ -49,7 +49,7 @@ import type {
   ProcedureType,
   RouterRecord
 } from "@trpc/server/unstable-core-do-not-import";
-import type { ResolverDef } from "@trpc/tanstack-react-query";
+import type { FeatureFlags, ResolverDef } from "@trpc/tanstack-react-query";
 import type { ReadonlyRequestCookies } from "next/dist/server/web/spec-extension/adapters/request-cookies";
 import { transformer } from "./shared";
 
@@ -88,6 +88,7 @@ export type NextAppDirDecorateRouterRecord<
             output: inferTransformedProcedureOutput<TRoot, $Value>;
             errorShape: TRoot["errorShape"];
             transformer: TRoot["transformer"];
+            featureFlags: FeatureFlags;
           }
         >
       : $Value extends RouterRecord
