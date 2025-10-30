@@ -38,7 +38,7 @@ const DEFAULT_OPTIONS: ListOptions = {
  * @returns A list of file paths
  */
 export async function list<TOptions extends ListOptions>(
-  filesGlob: string | AssetGlob,
+  filesGlob: string | Omit<AssetGlob, "output">,
   options?: TOptions
 ): Promise<InferListReturnType<TOptions>> {
   return glob(
@@ -66,7 +66,7 @@ export async function list<TOptions extends ListOptions>(
  * @returns A list of file paths
  */
 export function listSync<TOptions extends ListOptions>(
-  filesGlob: string | AssetGlob,
+  filesGlob: string | Omit<AssetGlob, "output">,
   options?: TOptions
 ): InferListReturnType<TOptions> {
   return glob.sync(
@@ -94,7 +94,7 @@ export function listSync<TOptions extends ListOptions>(
  * @returns A list of file paths
  */
 export async function listFiles<TOptions extends ListOptions>(
-  filesGlob: string | AssetGlob,
+  filesGlob: string | Omit<AssetGlob, "output">,
   options?: TOptions
 ) {
   const result = (
@@ -120,7 +120,7 @@ export async function listFiles<TOptions extends ListOptions>(
  * @returns A list of file paths
  */
 export function listFilesSync<TOptions extends ListOptions>(
-  filesGlob: string | AssetGlob,
+  filesGlob: string | Omit<AssetGlob, "output">,
   options?: TOptions
 ) {
   const result = listSync(
@@ -141,7 +141,7 @@ export function listFilesSync<TOptions extends ListOptions>(
  * @returns A list of file paths
  */
 export async function listDirectories<TOptions extends ListOptions>(
-  filesGlob: string | AssetGlob,
+  filesGlob: string | Omit<AssetGlob, "output">,
   options?: TOptions
 ) {
   const result = (
@@ -167,7 +167,7 @@ export async function listDirectories<TOptions extends ListOptions>(
  * @returns A list of file paths
  */
 export function listDirectoriesSync<TOptions extends ListOptions>(
-  filesGlob: string | AssetGlob,
+  filesGlob: string | Omit<AssetGlob, "output">,
   options?: TOptions
 ) {
   const result = listSync(

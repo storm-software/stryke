@@ -16,6 +16,7 @@
 
  ------------------------------------------------------------------- */
 
+import { stripStars } from "@stryke/path/correct-path";
 import { findFilePath, hasFileExtension } from "@stryke/path/file-path-fns";
 import { joinPaths } from "@stryke/path/join";
 import { replacePath } from "@stryke/path/replace";
@@ -91,7 +92,7 @@ export function copyFileSync(source: string | URL, destination: string | URL) {
  * @returns An indicator specifying if the copy was successful
  */
 export async function copyFiles(
-  source: string | URL | AssetGlob,
+  source: string | URL | Omit<AssetGlob, "output">,
   destination: string | URL
 ) {
   const src = source instanceof URL ? fileURLToPath(source) : source;
@@ -106,7 +107,7 @@ export async function copyFiles(
     (await listFiles(src)).map(async entryPath => {
       const destFile = joinPaths(
         dest,
-        replacePath(entryPath, isString(src) ? src : src.input)
+        stripStars(replacePath(entryPath, isString(src) ? src : src.input))
       );
 
       if (isDirectory(entryPath)) {
@@ -126,7 +127,7 @@ export async function copyFiles(
  * @returns An indicator specifying if the copy was successful
  */
 export function copyFilesSync(
-  source: string | URL | AssetGlob,
+  source: string | URL | Omit<AssetGlob, "output">,
   destination: string | URL
 ) {
   const src = source instanceof URL ? fileURLToPath(source) : source;
@@ -140,7 +141,7 @@ export function copyFilesSync(
   return listFilesSync(src).map(entryPath => {
     const destFile = joinPaths(
       dest,
-      replacePath(entryPath, isString(src) ? src : src.input)
+      stripStars(replacePath(entryPath, isString(src) ? src : src.input))
     );
 
     if (isDirectory(entryPath)) {
