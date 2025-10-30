@@ -18,7 +18,7 @@
 
 import type { Resolvable } from "@stryke/types/async";
 import type { MaybePromise } from "@stryke/types/base";
-import type { Fonts, Options } from "figlet";
+import type { FigletOptions } from "figlet";
 
 /**
  * A resolved command with arguments using the current directories package manager
@@ -134,10 +134,34 @@ export type ParsedArgs<T extends ArgsDef = ArgsDef> = RawArgs &
   { [K in keyof T as T[K] extends { alias: string[] } ? T[K]["alias"][number] : never]: ParsedArg<T[K]> } &
   Record<string, string | number | boolean | string[]>;
 
+export declare type FontName =
+  | "1Row"
+  | "3-D"
+  | "3D Diagonal"
+  | "3D-ASCII"
+  | "3x5"
+  | "4Max"
+  | "5 Line Oblique"
+  | "Standard"
+  | "Ghost"
+  | "Big"
+  | "Block"
+  | "Bubble"
+  | "Digital"
+  | "Ivrit"
+  | "Mini"
+  | "Script"
+  | "Shadow"
+  | "Slant"
+  | "Small"
+  | "Speed"
+  | "Tinker-Toy"
+  | string;
+
 export interface CommandMetaTitle {
   name?: string;
-  font?: Fonts;
-  options?: Options;
+  font?: FontName;
+  options?: FigletOptions;
   hidden?: boolean;
 }
 

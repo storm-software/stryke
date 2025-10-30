@@ -17,7 +17,7 @@
  ------------------------------------------------------------------- */
 
 import { titleCase } from "@stryke/string-format/title-case";
-import { text } from "figlet";
+import figlet from "figlet";
 import type { CommandMeta, CommandMetaTitle } from "./types";
 import { colors } from "./utils/color";
 import { link } from "./utils/link";
@@ -28,7 +28,7 @@ import { link } from "./utils/link";
  * @param banner - The banner to write.
  * @param author - The author of the banner.
  */
-export function renderBanner(
+export async function renderBanner(
   banner: CommandMetaTitle,
   author?: CommandMetaTitle
 ) {
@@ -37,7 +37,7 @@ export function renderBanner(
     banner.hidden !== true &&
     Boolean(process.env.STORM_SKIP_BANNER) !== true
   ) {
-    text(
+    await figlet.text(
       titleCase(banner.name ?? "Storm CLI"),
       banner.options ?? {
         font: banner.font ?? "Larry 3D"
@@ -54,7 +54,7 @@ export function renderBanner(
     );
 
     if (author && author?.hidden !== true) {
-      text(
+      await figlet.text(
         `author ${titleCase(author.name ?? "Storm")}`,
         author?.options ?? { font: author.font ?? "Doom" },
         (err, data) => {
