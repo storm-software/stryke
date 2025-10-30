@@ -16,6 +16,7 @@
 
  ------------------------------------------------------------------- */
 
+import { cwd, isParentPath } from "@stryke/path";
 import { stripStars } from "@stryke/path/correct-path";
 import { findFilePath, hasFileExtension } from "@stryke/path/file-path-fns";
 import { joinPaths } from "@stryke/path/join";
@@ -105,9 +106,16 @@ export async function copyFiles(
 
   return Promise.all(
     (await listFiles(src)).map(async entryPath => {
+      let sourcePath = (isString(src) ? src : src.input) as string;
+      if (!isParentPath(entryPath, sourcePath)) {
+        if (isParentPath(entryPath, joinPaths(cwd(), sourcePath))) {
+          sourcePath = joinPaths(cwd(), sourcePath);
+        }
+      }
+
       const destFile = joinPaths(
         dest,
-        stripStars(replacePath(entryPath, isString(src) ? src : src.input))
+        stripStars(replacePath(entryPath, sourcePath))
       );
 
       if (isDirectory(entryPath)) {
@@ -139,9 +147,16 @@ export function copyFilesSync(
   }
 
   return listFilesSync(src).map(entryPath => {
+    let sourcePath = (isString(src) ? src : src.input) as string;
+    if (!isParentPath(entryPath, sourcePath)) {
+      if (isParentPath(entryPath, joinPaths(cwd(), sourcePath))) {
+        sourcePath = joinPaths(cwd(), sourcePath);
+      }
+    }
+
     const destFile = joinPaths(
       dest,
-      stripStars(replacePath(entryPath, isString(src) ? src : src.input))
+      stripStars(replacePath(entryPath, sourcePath))
     );
 
     if (isDirectory(entryPath)) {
