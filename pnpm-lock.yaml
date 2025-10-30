@@ -2592,8 +2592,8 @@ packages:
     resolution: {integrity: sha512-vD+PqNbb7sHv8u6aaPO6q4mkQS4UByXlHH2bkUFQhDYBYLRBK5QDq8hqpKPERwaxTQMEufufwMuUGhtZm5pMaA==}
     engines: {bun: '>=1.0.15', node: '>=18.18.0'}
 
-  '@eslint/compat@1.4.0':
-    resolution: {integrity: sha512-DEzm5dKeDBPm3r08Ixli/0cmxr8LkRdwxMRUIJBlSCpAwSrvFEJpVBzV+66JhDxiaqKxnRzCXhtiMiczF7Hglg==}
+  '@eslint/compat@1.4.1':
+    resolution: {integrity: sha512-cfO82V9zxxGBxcQDr1lfaYB7wykTa0b00mGa36FrJl7iTFd0Z2cHfEYuxcBRP/iNijCsWsEkA+jzT8hGYmv33w==}
     engines: {node: ^18.18.0 || ^20.9.0 || >=21.1.0}
     peerDependencies:
       eslint: ^8.40 || 9
@@ -2617,8 +2617,8 @@ packages:
     resolution: {integrity: sha512-78Md3/Rrxh83gCxoUc0EiciuOHsIITzLy53m3d9UyiW8y9Dj2D29FeETqyKA+BRK76tnTp6RXWb3pCay8Oyomg==}
     engines: {node: ^18.18.0 || ^20.9.0 || >=21.1.0}
 
-  '@eslint/core@0.16.0':
-    resolution: {integrity: sha512-nmC8/totwobIiFcGkDza3GIKfAw1+hLiYVrh3I1nIomQ8PEr5cxg34jnkmGawul/ep52wGRAcyeDCNtWKSOj4Q==}
+  '@eslint/core@0.17.0':
+    resolution: {integrity: sha512-yL/sLrpmtDaFEiUj1osRP4TI2MDz1AddJL+jZ7KSqvBuliN4xqYY54IfdN8qD8Toa6g1iloph1fxQNkjOxrrpQ==}
     engines: {node: ^18.18.0 || ^20.9.0 || >=21.1.0}
 
   '@eslint/eslintrc@3.3.1':
@@ -2668,8 +2668,8 @@ packages:
     peerDependencies:
       graphql: ^14.0.0 || ^15.0.0 || ^16.0.0 || ^17.0.0
 
-  '@graphql-tools/code-file-loader@8.1.22':
-    resolution: {integrity: sha512-FSka29kqFkfFmw36CwoQ+4iyhchxfEzPbXOi37lCEjWLHudGaPkXc3RyB9LdmBxx3g3GHEu43a5n5W8gfcrMdA==}
+  '@graphql-tools/code-file-loader@8.1.23':
+    resolution: {integrity: sha512-GauJkiMwewSxelPWtsOn0ygOCjAnbDR9/AomN6iwyEY4DG3Ea76f+Iy/aUQWnRKElBWArXiqiHA7tiiUosKyZw==}
     engines: {node: '>=16.0.0'}
     peerDependencies:
       graphql: ^14.0.0 || ^15.0.0 || ^16.0.0 || ^17.0.0
@@ -2704,56 +2704,56 @@ packages:
     peerDependencies:
       graphql: ^14.0.0 || ^15.0.0 || ^16.0.0 || ^17.0.0
 
-  '@graphql-tools/executor-legacy-ws@1.1.19':
-    resolution: {integrity: sha512-bEbv/SlEdhWQD0WZLUX1kOenEdVZk1yYtilrAWjRUgfHRZoEkY9s+oiqOxnth3z68wC2MWYx7ykkS5hhDamixg==}
+  '@graphql-tools/executor-legacy-ws@1.1.20':
+    resolution: {integrity: sha512-tyolgsRbsc4U7mwn05mVhOSK33rUSIv2CZKIxVyFyyqwXhjm4OIJSP3tA4fzN/a8UAas+159iF6LbbWztT7Njw==}
     engines: {node: '>=16.0.0'}
     peerDependencies:
       graphql: ^14.0.0 || ^15.0.0 || ^16.0.0 || ^17.0.0
 
-  '@graphql-tools/executor@1.4.9':
-    resolution: {integrity: sha512-SAUlDT70JAvXeqV87gGzvDzUGofn39nvaVcVhNf12Dt+GfWHtNNO/RCn/Ea4VJaSLGzraUd41ObnN3i80EBU7w==}
+  '@graphql-tools/executor@1.4.10':
+    resolution: {integrity: sha512-/o7QScMdJpx/qIJlQcYs9ohB2qU2jSpuMyPStQy30kKTLHKyMETWpbljvRsuQxHJ2MJmEF3bYZgBHzdNAQHhug==}
     engines: {node: '>=16.0.0'}
     peerDependencies:
       graphql: ^14.0.0 || ^15.0.0 || ^16.0.0 || ^17.0.0
 
-  '@graphql-tools/graphql-file-loader@8.1.2':
-    resolution: {integrity: sha512-VB6ttpwkqCu0KsA1/Wmev4qsu05Qfw49kgVSKkPjuyDQfVaqtr9ewEQRkX5CqnqHGEeLl6sOlNGEMM5fCVMWGQ==}
+  '@graphql-tools/graphql-file-loader@8.1.3':
+    resolution: {integrity: sha512-5KmcPf+bOayN/iV9K9perrTHrwFKU2XV+nAkXgxLNmYypD4mqqln/pYyQ182lnUs3/oIyTYj7qji4CqdqckGrg==}
     engines: {node: '>=16.0.0'}
     peerDependencies:
       graphql: ^14.0.0 || ^15.0.0 || ^16.0.0 || ^17.0.0
 
-  '@graphql-tools/graphql-tag-pluck@8.3.21':
-    resolution: {integrity: sha512-TJhELNvR1tmghXMi6HVKp/Swxbx1rcSp/zdkuJZT0DCM3vOY11FXY6NW3aoxumcuYDNN3jqXcCPKstYGFPi5GQ==}
+  '@graphql-tools/graphql-tag-pluck@8.3.22':
+    resolution: {integrity: sha512-vC0GESi3ltU1X8VXvYrFI6IyM2YJLaHsBVuKWmEPT6LbKFSNuJ70+cv3XISQsgeg1QVKDpfE1P+bOXt7wfRkEg==}
     engines: {node: '>=16.0.0'}
     peerDependencies:
       graphql: ^14.0.0 || ^15.0.0 || ^16.0.0 || ^17.0.0
 
-  '@graphql-tools/import@7.1.2':
-    resolution: {integrity: sha512-+tlNQbLEqAA4LdWoLwM1tckx95lo8WIKd8vhj99b9rLwN/KfLwHWzdS3jnUFK7+99vmHmN1oE5v5zmqJz0MTKw==}
+  '@graphql-tools/import@7.1.3':
+    resolution: {integrity: sha512-EMfEJDZnS//pK5i7JpHwdPJ9nY5CXPWFY9ceEaCUO+OrVWpueLSUo6Hw5QXRqOnzzDx6wzBlYJKwEDBBd4OW4w==}
     engines: {node: '>=16.0.0'}
     peerDependencies:
       graphql: ^14.0.0 || ^15.0.0 || ^16.0.0 || ^17.0.0
 
-  '@graphql-tools/json-file-loader@8.0.20':
-    resolution: {integrity: sha512-5v6W+ZLBBML5SgntuBDLsYoqUvwfNboAwL6BwPHi3z/hH1f8BS9/0+MCW9OGY712g7E4pc3y9KqS67mWF753eA==}
+  '@graphql-tools/json-file-loader@8.0.21':
+    resolution: {integrity: sha512-T41Q+3GcpF1kLcNGx6lxK0GKre0Iq0eHBA4aJtk47tTPTQoT3aR7ekblPBySgw8FYpsGtjgK1wk8MHVXNrpW+w==}
     engines: {node: '>=16.0.0'}
     peerDependencies:
       graphql: ^14.0.0 || ^15.0.0 || ^16.0.0 || ^17.0.0
 
-  '@graphql-tools/load@8.1.2':
-    resolution: {integrity: sha512-WhDPv25/jRND+0uripofMX0IEwo6mrv+tJg6HifRmDu8USCD7nZhufT0PP7lIcuutqjIQFyogqT70BQsy6wOgw==}
+  '@graphql-tools/load@8.1.3':
+    resolution: {integrity: sha512-LOFV8dWIrSGZJg6UOvdK+cnxymhxIaojOU6uJoF24k2YuIcWHXqGapGqLa838T25+PXPYRKoXUNZO73pnvJ9Gg==}
     engines: {node: '>=16.0.0'}
     peerDependencies:
       graphql: ^14.0.0 || ^15.0.0 || ^16.0.0 || ^17.0.0
 
-  '@graphql-tools/merge@9.1.1':
-    resolution: {integrity: sha512-BJ5/7Y7GOhTuvzzO5tSBFL4NGr7PVqTJY3KeIDlVTT8YLcTXtBR+hlrC3uyEym7Ragn+zyWdHeJ9ev+nRX1X2w==}
+  '@graphql-tools/merge@9.1.2':
+    resolution: {integrity: sha512-Ny9YhWKv+KxZFdXYt+wlyEW55GzhFiq4daV4wYgpP0aRbwQaczNJd1L3VjjBsPKjmW8lctZXUoqYTqU5QPcBGw==}
     engines: {node: '>=16.0.0'}
     peerDependencies:
       graphql: ^14.0.0 || ^15.0.0 || ^16.0.0 || ^17.0.0
 
-  '@graphql-tools/schema@10.0.25':
-    resolution: {integrity: sha512-/PqE8US8kdQ7lB9M5+jlW8AyVjRGCKU7TSktuW3WNKSKmDO0MK1wakvb5gGdyT49MjAIb4a3LWxIpwo5VygZuw==}
+  '@graphql-tools/schema@10.0.26':
+    resolution: {integrity: sha512-KOmjuiWa9poP/Lza4HV0ZBPYGJI3VE3QzXA/8e0+wjcsRuEmxMLP82re1PUg0QRzp2UzifAB/gd7DoXmVGG9Fg==}
     engines: {node: '>=16.0.0'}
     peerDependencies:
       graphql: ^14.0.0 || ^15.0.0 || ^16.0.0 || ^17.0.0
@@ -2764,8 +2764,8 @@ packages:
     peerDependencies:
       graphql: ^14.0.0 || ^15.0.0 || ^16.0.0 || ^17.0.0
 
-  '@graphql-tools/utils@10.9.1':
-    resolution: {integrity: sha512-B1wwkXk9UvU7LCBkPs8513WxOQ2H8Fo5p8HR1+Id9WmYE5+bd51vqN+MbrqvWczHCH2gwkREgHJN88tE0n1FCw==}
+  '@graphql-tools/utils@10.10.0':
+    resolution: {integrity: sha512-OOeab5Y9qeKq0zfoJCSScMcDfGcIxp05+LW2xYVCS2l3su+K3lYcg5+cAAx9n0SFxpJl8zF5denq2QDsfM7NnQ==}
     engines: {node: '>=16.0.0'}
     peerDependencies:
       graphql: ^14.0.0 || ^15.0.0 || ^16.0.0 || ^17.0.0
@@ -3877,8 +3877,8 @@ packages:
       rollup:
         optional: true
 
-  '@rollup/plugin-replace@6.0.2':
-    resolution: {integrity: sha512-7QaYCf8bqF04dOy7w/eHmJeNExxTYwvKAmlSAH/EaWWUzbT0h5sbF6bktFoX/0F/0qwng5/dWFMyf3gzaM8DsQ==}
+  '@rollup/plugin-replace@6.0.3':
+    resolution: {integrity: sha512-J4RZarRvQAm5IF0/LwUUg+obsm+xZhYnbMXmXROyoSE1ATJe3oXSb9L5MMppdxP2ylNSjv6zFBwKYjcKMucVfA==}
     engines: {node: '>=14.0.0'}
     peerDependencies:
       rollup: ^1.20.0||^2.0.0||^3.0.0||^4.0.0
@@ -4907,8 +4907,8 @@ packages:
     resolution: {integrity: sha512-efg/bunOUMVXV+MlljJCrpuT+OQRrQS4wJyGL92B3epUGlgZ8DXs+nxN5v59v1a6AocAdSKwHgZS0g9txmBhOg==}
     engines: {node: '>=18'}
 
-  '@vitest/eslint-plugin@1.3.26':
-    resolution: {integrity: sha512-oP+Vyqgp+kLuMagG0tRkcT7e2tUoE+XWgti1OFxqdTpmMlSZJ6BWSC3rv8vzhtDXReXNyAJI1eojuc7N0QqbNQ==}
+  '@vitest/eslint-plugin@1.4.0':
+    resolution: {integrity: sha512-TMzJ0Vqdsc71stblzI0ZdqSnt6Bp4mJ+amD3Hv3qhKK82hBUnznYfnLwA80gdGfe5V24ysndMOoSGrol6fyvbA==}
     engines: {node: '>=18'}
     peerDependencies:
       eslint: '>=8.57.0'
@@ -5209,8 +5209,8 @@ packages:
     resolution: {integrity: sha512-ilYanEU8vxxBexpJd8cWM4ElSQq4QctCLKih0TSfjIfCQTeyH/6zVrmIJfLPrKTKJRbiG+cfnZbQIjAlJmF1jQ==}
     engines: {node: '>=4'}
 
-  axios@1.13.0:
-    resolution: {integrity: sha512-zt40Pz4zcRXra9CVV31KeyofwiNvAbJ5B6YPz9pMJ+yOSLikvPT4Yi5LjfgjRa9CawVYBaD1JQzIVcIvBejKeA==}
+  axios@1.13.1:
+    resolution: {integrity: sha512-hU4EGxxt+j7TQijx1oYdAjw4xuIp1wRQSsbMFwSthCWeBQur1eF+qJ5iQ5sN3Tw8YRzQNKb8jszgBdMDVqwJcw==}
 
   axios@1.8.2:
     resolution: {integrity: sha512-ls4GYBm5aig9vWx8AWDSGLpnpDQRtWAfrjU+EuytuODrFBkqesN2RkOQCBzrA1RQNHw1SmRMSDDDSwzNAYQ6Rg==}
@@ -5347,8 +5347,8 @@ packages:
   base64-js@1.5.1:
     resolution: {integrity: sha512-AKpaYlHn8t4SVbOHCy+b5+KKgvR4vrsD8vbvrbiQJps7fKDTkjkDry6ji0rUJjC0kzbNePLwzxq8iypo41qeWA==}
 
-  baseline-browser-mapping@2.8.20:
-    resolution: {integrity: sha512-JMWsdF+O8Orq3EMukbUN1QfbLK9mX2CkUmQBcW2T0s8OmdAUL5LLM/6wFwSrqXzlXB13yhyK9gTKS1rIizOduQ==}
+  baseline-browser-mapping@2.8.21:
+    resolution: {integrity: sha512-JU0h5APyQNsHOlAM7HnQnPToSDQoEBZqzu/YBlqDnEeymPnZDREeXJA3KBMQee+dKteAxZ2AtvQEvVYdZf241Q==}
     hasBin: true
 
   bcrypt-pbkdf@1.0.2:
@@ -5556,8 +5556,8 @@ packages:
   character-reference-invalid@2.0.1:
     resolution: {integrity: sha512-iBZ4F4wRbyORVsu0jPV7gXkOsGYjGHPmAyv+HiHG8gi5PtC9KI2j1+v8/tlibRvjoWX027ypmG/n0HtO5t7unw==}
 
-  chardet@2.1.0:
-    resolution: {integrity: sha512-bNFETTG/pM5ryzQ9Ad0lJOTa6HWD/YsScAR3EnCPZRPlQh77JocYktSHOUHelyhm8IARL+o4c4F1bP5KVOjiRA==}
+  chardet@2.1.1:
+    resolution: {integrity: sha512-PsezH1rqdV9VvyNhxxOW32/d75r01NY7TQCmOqomRo15ZSOKbpTFVsfjghxo6JloQUCGnH4k1LGu0R4yCLlWQQ==}
 
   chevrotain@7.1.1:
     resolution: {integrity: sha512-wy3mC1x4ye+O+QkEinVJkPf5u2vsrDIYW9G7ZuwFl6v/Yu0LwUuT2POsb+NUWApebyxfkQq6+yDfRExbnI5rcw==}
@@ -5958,8 +5958,8 @@ packages:
     engines: {node: '>=4'}
     hasBin: true
 
-  cssnano-preset-default@7.0.9:
-    resolution: {integrity: sha512-tCD6AAFgYBOVpMBX41KjbvRh9c2uUjLXRyV7KHSIrwHiq5Z9o0TFfUCoM3TwVrRsRteN3sVXGNvjVNxYzkpTsA==}
+  cssnano-preset-default@7.0.10:
+    resolution: {integrity: sha512-6ZBjW0Lf1K1Z+0OKUAUpEN62tSXmYChXWi2NAA0afxEVsj9a+MbcB1l5qel6BHJHmULai2fCGRthCeKSFbScpA==}
     engines: {node: ^18.12.0 || ^20.9.0 || >=22.0}
     peerDependencies:
       postcss: '>=8.5.1'
@@ -5970,8 +5970,8 @@ packages:
     peerDependencies:
       postcss: '>=8.5.1'
 
-  cssnano@7.1.1:
-    resolution: {integrity: sha512-fm4D8ti0dQmFPeF8DXSAA//btEmqCOgAc/9Oa3C1LW94h5usNrJEfrON7b4FkPZgnDEn6OUs5NdxiJZmAtGOpQ==}
+  cssnano@7.1.2:
+    resolution: {integrity: sha512-HYOPBsNvoiFeR1eghKD5C3ASm64v9YVyJB4Ivnl2gqKoQYvjjN/G0rztvKQq8OxocUtC6sjqY8jwYngIB4AByA==}
     engines: {node: ^18.12.0 || ^20.9.0 || >=22.0}
     peerDependencies:
       postcss: '>=8.5.1'
@@ -6221,8 +6221,8 @@ packages:
     engines: {node: '>=0.10.0'}
     hasBin: true
 
-  electron-to-chromium@1.5.241:
-    resolution: {integrity: sha512-ILMvKX/ZV5WIJzzdtuHg8xquk2y0BOGlFOxBVwTpbiXqWIH0hamG45ddU4R3PQ0gYu+xgo0vdHXHli9sHIGb4w==}
+  electron-to-chromium@1.5.243:
+    resolution: {integrity: sha512-ZCphxFW3Q1TVhcgS9blfut1PX8lusVi2SvXQgmEEnK4TCmE1JhH2JkjJN+DNt0pJJwfBri5AROBnz2b/C+YU9g==}
 
   emittery@0.13.1:
     resolution: {integrity: sha512-DeWwawk6r5yR9jFgnDKYt4sLS0LmHJJi3ZOnb5/JdbYwj3nW+FxQnHIjhBKz8YLC7oRNPVM9NQ47I3CVx34eqQ==}
@@ -8830,6 +8830,10 @@ packages:
     resolution: {integrity: sha512-IPZ167aShDZZUMdRk66cyQAW3qr0WzbHkPdMYa8bzZhlHhO3jALbKdxcaak7W9FfT2rZNpQuUu4Od7ILEpXSaw==}
     engines: {node: 20 || >=22}
 
+  minimatch@10.1.1:
+    resolution: {integrity: sha512-enIvLvRAFZYXJzkCYG5RKmPfrFArdLv+R+lbQ53BmIMLIry74bjKzX6iHAm8WYamJkhSSEabrWN5D97XnKObjQ==}
+    engines: {node: 20 || >=22}
+
   minimatch@3.1.2:
     resolution: {integrity: sha512-J7p63hRiAjw1NDEww1W7i37+ByIrOWO5XQQAzZ3VOcL0PNybwpfmV/N05zFAzwQ9USyEcX6t3UO+K5aqBQOIHw==}
 
@@ -9010,8 +9014,8 @@ packages:
   node-machine-id@1.1.12:
     resolution: {integrity: sha512-QNABxbrPa3qEIfrE6GOJ7BYIuignnJw7iQ2YPbc3Nla1HzRJjXzZOiikfF8m7eAMfichLt3M4VgLOetqgDmgGQ==}
 
-  node-releases@2.0.26:
-    resolution: {integrity: sha512-S2M9YimhSjBSvYnlr5/+umAnPHE++ODwt5e2Ij6FoX45HA/s4vHdkDx1eax2pAPeAOqu4s9b7ppahsyEFdVqQA==}
+  node-releases@2.0.27:
+    resolution: {integrity: sha512-nmh3lCkYZ3grZvqcCH+fjmQ7X+H0OeZgP40OierEaAptX4XofMh5kwNbWh7lBduUzCcV/8kZ+NDLCwm2iorIlA==}
 
   noms@0.0.0:
     resolution: {integrity: sha512-lNDU9VJaOPxUmXcLb+HQFeUgQQPtMI24Gt6hgfuMHRJgMRHMF/qZ4HJD3GDru4sSw9IQl2jPjAYnQrdIeLbwow==}
@@ -9414,20 +9418,20 @@ packages:
     peerDependencies:
       postcss: '>=8.5.1'
 
-  postcss-colormin@7.0.4:
-    resolution: {integrity: sha512-ziQuVzQZBROpKpfeDwmrG+Vvlr0YWmY/ZAk99XD+mGEBuEojoFekL41NCsdhyNUtZI7DPOoIWIR7vQQK9xwluw==}
+  postcss-colormin@7.0.5:
+    resolution: {integrity: sha512-ekIBP/nwzRWhEMmIxHHbXHcMdzd1HIUzBECaj5KEdLz9DVP2HzT065sEhvOx1dkLjYW7jyD0CngThx6bpFi2fA==}
     engines: {node: ^18.12.0 || ^20.9.0 || >=22.0}
     peerDependencies:
       postcss: '>=8.5.1'
 
-  postcss-convert-values@7.0.7:
-    resolution: {integrity: sha512-HR9DZLN04Xbe6xugRH6lS4ZQH2zm/bFh/ZyRkpedZozhvh+awAfbA0P36InO4fZfDhvYfNJeNvlTf1sjwGbw/A==}
+  postcss-convert-values@7.0.8:
+    resolution: {integrity: sha512-+XNKuPfkHTCEo499VzLMYn94TiL3r9YqRE3Ty+jP7UX4qjewUONey1t7CG21lrlTLN07GtGM8MqFVp86D4uKJg==}
     engines: {node: ^18.12.0 || ^20.9.0 || >=22.0}
     peerDependencies:
       postcss: '>=8.5.1'
 
-  postcss-discard-comments@7.0.4:
-    resolution: {integrity: sha512-6tCUoql/ipWwKtVP/xYiFf1U9QgJ0PUvxN7pTcsQ8Ns3Fnwq1pU5D5s1MhT/XySeLq6GXNvn37U46Ded0TckWg==}
+  postcss-discard-comments@7.0.5:
+    resolution: {integrity: sha512-IR2Eja8WfYgN5n32vEGSctVQ1+JARfu4UH8M7bgGh1bC+xI/obsPJXaBpQF7MAByvgwZinhpHpdrmXtvVVlKcQ==}
     engines: {node: ^18.12.0 || ^20.9.0 || >=22.0}
     peerDependencies:
       postcss: '>=8.5.1'
@@ -9474,8 +9478,8 @@ packages:
     peerDependencies:
       postcss: '>=8.5.1'
 
-  postcss-merge-rules@7.0.6:
-    resolution: {integrity: sha512-2jIPT4Tzs8K87tvgCpSukRQ2jjd+hH6Bb8rEEOUDmmhOeTcqDg5fEFK8uKIu+Pvc3//sm3Uu6FRqfyv7YF7+BQ==}
+  postcss-merge-rules@7.0.7:
+    resolution: {integrity: sha512-njWJrd/Ms6XViwowaaCc+/vqhPG3SmXn725AGrnl+BgTuRPEacjiLEaGq16J6XirMJbtKkTwnt67SS+e2WGoew==}
     engines: {node: ^18.12.0 || ^20.9.0 || >=22.0}
     peerDependencies:
       postcss: '>=8.5.1'
@@ -9492,8 +9496,8 @@ packages:
     peerDependencies:
       postcss: '>=8.5.1'
 
-  postcss-minify-params@7.0.4:
-    resolution: {integrity: sha512-3OqqUddfH8c2e7M35W6zIwv7jssM/3miF9cbCSb1iJiWvtguQjlxZGIHK9JRmc8XAKmE2PFGtHSM7g/VcW97sw==}
+  postcss-minify-params@7.0.5:
+    resolution: {integrity: sha512-FGK9ky02h6Ighn3UihsyeAH5XmLEE2MSGH5Tc4tXMFtEDx7B+zTG6hD/+/cT+fbF7PbYojsmmWjyTwFwW1JKQQ==}
     engines: {node: ^18.12.0 || ^20.9.0 || >=22.0}
     peerDependencies:
       postcss: '>=8.5.1'
@@ -9546,8 +9550,8 @@ packages:
     peerDependencies:
       postcss: '>=8.5.1'
 
-  postcss-normalize-unicode@7.0.4:
-    resolution: {integrity: sha512-LvIURTi1sQoZqj8mEIE8R15yvM+OhbR1avynMtI9bUzj5gGKR/gfZFd8O7VMj0QgJaIFzxDwxGl/ASMYAkqO8g==}
+  postcss-normalize-unicode@7.0.5:
+    resolution: {integrity: sha512-X6BBwiRxVaFHrb2WyBMddIeB5HBjJcAaUHyhLrM2FsxSq5TFqcHSsK7Zu1otag+o0ZphQGJewGH1tAyrD0zX1Q==}
     engines: {node: ^18.12.0 || ^20.9.0 || >=22.0}
     peerDependencies:
       postcss: '>=8.5.1'
@@ -9570,8 +9574,8 @@ packages:
     peerDependencies:
       postcss: '>=8.5.1'
 
-  postcss-reduce-initial@7.0.4:
-    resolution: {integrity: sha512-rdIC9IlMBn7zJo6puim58Xd++0HdbvHeHaPgXsimMfG1ijC5A9ULvNLSE0rUKVJOvNMcwewW4Ga21ngyJjY/+Q==}
+  postcss-reduce-initial@7.0.5:
+    resolution: {integrity: sha512-RHagHLidG8hTZcnr4FpyMB2jtgd/OcyAazjMhoy5qmWJOx1uxKh4ntk0Pb46ajKM0rkf32lRH4C8c9qQiPR6IA==}
     engines: {node: ^18.12.0 || ^20.9.0 || >=22.0}
     peerDependencies:
       postcss: '>=8.5.1'
@@ -9621,8 +9625,8 @@ packages:
     resolution: {integrity: sha512-RiBETaaP9veVstE4vUwSIcdATj6dKmXljouXc/DDNwBSPTp8FRkLGDSGFClKsAFeeg+13SB0Z1JZvbD76bigJw==}
     engines: {node: ^14.15.0 || >=16.0.0}
 
-  prettier-plugin-jsdoc@1.3.3:
-    resolution: {integrity: sha512-YIxejcbPYK4N58jHGiXjYvrCzBMyvV2AEMSoF5LvqqeMEI0nsmww57I6NGnpVc0AU9ncFCTEBoYHN/xuBf80YA==}
+  prettier-plugin-jsdoc@1.5.0:
+    resolution: {integrity: sha512-Fehp5qkFQhNFcxUilDPEcqHX8AdP6oGyCRLatqRc0gLXv3qOtndTnnUxfHCYc26I4Lc1A4lVozAtWEE8o7ubUA==}
     engines: {node: '>=14.13.1 || >=16.0.0'}
     peerDependencies:
       prettier: ^3.0.0
@@ -10524,8 +10528,8 @@ packages:
       babel-plugin-macros:
         optional: true
 
-  stylehacks@7.0.6:
-    resolution: {integrity: sha512-iitguKivmsueOmTO0wmxURXBP8uqOO+zikLGZ7Mm9e/94R4w5T999Js2taS/KBOnQ/wdC3jN3vNSrkGDrlnqQg==}
+  stylehacks@7.0.7:
+    resolution: {integrity: sha512-bJkD0JkEtbRrMFtwgpJyBbFIwfDDONQ1Ov3sDLZQP8HuJ73kBOyx66H4bOcAbVWmnfLdvQ0AJwXxOMkpujcO6g==}
     engines: {node: ^18.12.0 || ^20.9.0 || >=22.0}
     peerDependencies:
       postcss: '>=8.5.1'
@@ -13068,9 +13072,9 @@ snapshots:
       - supports-color
       - typescript
 
-  '@eslint/compat@1.4.0(eslint@9.35.0(jiti@2.6.1))':
+  '@eslint/compat@1.4.1(eslint@9.35.0(jiti@2.6.1))':
     dependencies:
-      '@eslint/core': 0.16.0
+      '@eslint/core': 0.17.0
     optionalDependencies:
       eslint: 9.35.0(jiti@2.6.1)
 
@@ -13092,7 +13096,7 @@ snapshots:
     dependencies:
       '@types/json-schema': 7.0.15
 
-  '@eslint/core@0.16.0':
+  '@eslint/core@0.17.0':
     dependencies:
       '@types/json-schema': 7.0.15
 
@@ -13136,9 +13140,9 @@ snapshots:
 
   '@graphql-eslint/eslint-plugin@4.3.0(@types/node@22.15.23)(eslint@9.35.0(jiti@2.6.1))(graphql@16.10.0)(typescript@5.8.3)':
     dependencies:
-      '@graphql-tools/code-file-loader': 8.1.22(graphql@16.10.0)
-      '@graphql-tools/graphql-tag-pluck': 8.3.21(graphql@16.10.0)
-      '@graphql-tools/utils': 10.9.1(graphql@16.10.0)
+      '@graphql-tools/code-file-loader': 8.1.23(graphql@16.10.0)
+      '@graphql-tools/graphql-tag-pluck': 8.3.22(graphql@16.10.0)
+      '@graphql-tools/utils': 10.10.0(graphql@16.10.0)
       debug: 4.4.3
       eslint: 9.35.0(jiti@2.6.1)
       fast-glob: 3.3.3
@@ -13161,16 +13165,16 @@ snapshots:
 
   '@graphql-tools/batch-execute@9.0.19(graphql@16.10.0)':
     dependencies:
-      '@graphql-tools/utils': 10.9.1(graphql@16.10.0)
+      '@graphql-tools/utils': 10.10.0(graphql@16.10.0)
       '@whatwg-node/promise-helpers': 1.3.2
       dataloader: 2.2.3
       graphql: 16.10.0
       tslib: 2.8.1
 
-  '@graphql-tools/code-file-loader@8.1.22(graphql@16.10.0)':
+  '@graphql-tools/code-file-loader@8.1.23(graphql@16.10.0)':
     dependencies:
-      '@graphql-tools/graphql-tag-pluck': 8.3.21(graphql@16.10.0)
-      '@graphql-tools/utils': 10.9.1(graphql@16.10.0)
+      '@graphql-tools/graphql-tag-pluck': 8.3.22(graphql@16.10.0)
+      '@graphql-tools/utils': 10.10.0(graphql@16.10.0)
       globby: 11.1.0
       graphql: 16.10.0
       tslib: 2.8.1
@@ -13181,9 +13185,9 @@ snapshots:
   '@graphql-tools/delegate@10.2.23(graphql@16.10.0)':
     dependencies:
       '@graphql-tools/batch-execute': 9.0.19(graphql@16.10.0)
-      '@graphql-tools/executor': 1.4.9(graphql@16.10.0)
-      '@graphql-tools/schema': 10.0.25(graphql@16.10.0)
-      '@graphql-tools/utils': 10.9.1(graphql@16.10.0)
+      '@graphql-tools/executor': 1.4.10(graphql@16.10.0)
+      '@graphql-tools/schema': 10.0.26(graphql@16.10.0)
+      '@graphql-tools/utils': 10.10.0(graphql@16.10.0)
       '@repeaterjs/repeater': 3.0.6
       '@whatwg-node/promise-helpers': 1.3.2
       dataloader: 2.2.3
@@ -13194,19 +13198,19 @@ snapshots:
   '@graphql-tools/executor-common@0.0.4(graphql@16.10.0)':
     dependencies:
       '@envelop/core': 5.3.2
-      '@graphql-tools/utils': 10.9.1(graphql@16.10.0)
+      '@graphql-tools/utils': 10.10.0(graphql@16.10.0)
       graphql: 16.10.0
 
   '@graphql-tools/executor-common@0.0.6(graphql@16.10.0)':
     dependencies:
       '@envelop/core': 5.3.2
-      '@graphql-tools/utils': 10.9.1(graphql@16.10.0)
+      '@graphql-tools/utils': 10.10.0(graphql@16.10.0)
       graphql: 16.10.0
 
   '@graphql-tools/executor-graphql-ws@2.0.7(graphql@16.10.0)':
     dependencies:
       '@graphql-tools/executor-common': 0.0.6(graphql@16.10.0)
-      '@graphql-tools/utils': 10.9.1(graphql@16.10.0)
+      '@graphql-tools/utils': 10.10.0(graphql@16.10.0)
       '@whatwg-node/disposablestack': 0.0.6
       graphql: 16.10.0
       graphql-ws: 6.0.6(graphql@16.10.0)(ws@8.18.3)
@@ -13224,7 +13228,7 @@ snapshots:
     dependencies:
       '@graphql-hive/signal': 1.0.0
       '@graphql-tools/executor-common': 0.0.4(graphql@16.10.0)
-      '@graphql-tools/utils': 10.9.1(graphql@16.10.0)
+      '@graphql-tools/utils': 10.10.0(graphql@16.10.0)
       '@repeaterjs/repeater': 3.0.6
       '@whatwg-node/disposablestack': 0.0.6
       '@whatwg-node/fetch': 0.10.11
@@ -13235,9 +13239,9 @@ snapshots:
     transitivePeerDependencies:
       - '@types/node'
 
-  '@graphql-tools/executor-legacy-ws@1.1.19(graphql@16.10.0)':
+  '@graphql-tools/executor-legacy-ws@1.1.20(graphql@16.10.0)':
     dependencies:
-      '@graphql-tools/utils': 10.9.1(graphql@16.10.0)
+      '@graphql-tools/utils': 10.10.0(graphql@16.10.0)
       '@types/ws': 8.18.1
       graphql: 16.10.0
       isomorphic-ws: 5.0.0(ws@8.18.3)
@@ -13247,9 +13251,9 @@ snapshots:
       - bufferutil
       - utf-8-validate
 
-  '@graphql-tools/executor@1.4.9(graphql@16.10.0)':
+  '@graphql-tools/executor@1.4.10(graphql@16.10.0)':
     dependencies:
-      '@graphql-tools/utils': 10.9.1(graphql@16.10.0)
+      '@graphql-tools/utils': 10.10.0(graphql@16.10.0)
       '@graphql-typed-document-node/core': 3.2.0(graphql@16.10.0)
       '@repeaterjs/repeater': 3.0.6
       '@whatwg-node/disposablestack': 0.0.6
@@ -13257,10 +13261,10 @@ snapshots:
       graphql: 16.10.0
       tslib: 2.8.1
 
-  '@graphql-tools/graphql-file-loader@8.1.2(graphql@16.10.0)':
+  '@graphql-tools/graphql-file-loader@8.1.3(graphql@16.10.0)':
     dependencies:
-      '@graphql-tools/import': 7.1.2(graphql@16.10.0)
-      '@graphql-tools/utils': 10.9.1(graphql@16.10.0)
+      '@graphql-tools/import': 7.1.3(graphql@16.10.0)
+      '@graphql-tools/utils': 10.10.0(graphql@16.10.0)
       globby: 11.1.0
       graphql: 16.10.0
       tslib: 2.8.1
@@ -13268,22 +13272,22 @@ snapshots:
     transitivePeerDependencies:
       - supports-color
 
-  '@graphql-tools/graphql-tag-pluck@8.3.21(graphql@16.10.0)':
+  '@graphql-tools/graphql-tag-pluck@8.3.22(graphql@16.10.0)':
     dependencies:
       '@babel/core': 7.28.5
       '@babel/parser': 7.28.5
       '@babel/plugin-syntax-import-assertions': 7.27.1(@babel/core@7.28.5)
       '@babel/traverse': 7.28.5
       '@babel/types': 7.28.5
-      '@graphql-tools/utils': 10.9.1(graphql@16.10.0)
+      '@graphql-tools/utils': 10.10.0(graphql@16.10.0)
       graphql: 16.10.0
       tslib: 2.8.1
     transitivePeerDependencies:
       - supports-color
 
-  '@graphql-tools/import@7.1.2(graphql@16.10.0)':
+  '@graphql-tools/import@7.1.3(graphql@16.10.0)':
     dependencies:
-      '@graphql-tools/utils': 10.9.1(graphql@16.10.0)
+      '@graphql-tools/utils': 10.10.0(graphql@16.10.0)
       '@theguild/federation-composition': 0.20.2(graphql@16.10.0)
       graphql: 16.10.0
       resolve-from: 5.0.0
@@ -13291,32 +13295,32 @@ snapshots:
     transitivePeerDependencies:
       - supports-color
 
-  '@graphql-tools/json-file-loader@8.0.20(graphql@16.10.0)':
+  '@graphql-tools/json-file-loader@8.0.21(graphql@16.10.0)':
     dependencies:
-      '@graphql-tools/utils': 10.9.1(graphql@16.10.0)
+      '@graphql-tools/utils': 10.10.0(graphql@16.10.0)
       globby: 11.1.0
       graphql: 16.10.0
       tslib: 2.8.1
       unixify: 1.0.0
 
-  '@graphql-tools/load@8.1.2(graphql@16.10.0)':
+  '@graphql-tools/load@8.1.3(graphql@16.10.0)':
     dependencies:
-      '@graphql-tools/schema': 10.0.25(graphql@16.10.0)
-      '@graphql-tools/utils': 10.9.1(graphql@16.10.0)
+      '@graphql-tools/schema': 10.0.26(graphql@16.10.0)
+      '@graphql-tools/utils': 10.10.0(graphql@16.10.0)
       graphql: 16.10.0
       p-limit: 3.1.0
       tslib: 2.8.1
 
-  '@graphql-tools/merge@9.1.1(graphql@16.10.0)':
+  '@graphql-tools/merge@9.1.2(graphql@16.10.0)':
     dependencies:
-      '@graphql-tools/utils': 10.9.1(graphql@16.10.0)
+      '@graphql-tools/utils': 10.10.0(graphql@16.10.0)
       graphql: 16.10.0
       tslib: 2.8.1
 
-  '@graphql-tools/schema@10.0.25(graphql@16.10.0)':
+  '@graphql-tools/schema@10.0.26(graphql@16.10.0)':
     dependencies:
-      '@graphql-tools/merge': 9.1.1(graphql@16.10.0)
-      '@graphql-tools/utils': 10.9.1(graphql@16.10.0)
+      '@graphql-tools/merge': 9.1.2(graphql@16.10.0)
+      '@graphql-tools/utils': 10.10.0(graphql@16.10.0)
       graphql: 16.10.0
       tslib: 2.8.1
 
@@ -13324,8 +13328,8 @@ snapshots:
     dependencies:
       '@graphql-tools/executor-graphql-ws': 2.0.7(graphql@16.10.0)
       '@graphql-tools/executor-http': 1.3.3(@types/node@22.15.23)(graphql@16.10.0)
-      '@graphql-tools/executor-legacy-ws': 1.1.19(graphql@16.10.0)
-      '@graphql-tools/utils': 10.9.1(graphql@16.10.0)
+      '@graphql-tools/executor-legacy-ws': 1.1.20(graphql@16.10.0)
+      '@graphql-tools/utils': 10.10.0(graphql@16.10.0)
       '@graphql-tools/wrap': 10.1.4(graphql@16.10.0)
       '@types/ws': 8.18.1
       '@whatwg-node/fetch': 0.10.11
@@ -13343,7 +13347,7 @@ snapshots:
       - uWebSockets.js
       - utf-8-validate
 
-  '@graphql-tools/utils@10.9.1(graphql@16.10.0)':
+  '@graphql-tools/utils@10.10.0(graphql@16.10.0)':
     dependencies:
       '@graphql-typed-document-node/core': 3.2.0(graphql@16.10.0)
       '@whatwg-node/promise-helpers': 1.3.2
@@ -13355,8 +13359,8 @@ snapshots:
   '@graphql-tools/wrap@10.1.4(graphql@16.10.0)':
     dependencies:
       '@graphql-tools/delegate': 10.2.23(graphql@16.10.0)
-      '@graphql-tools/schema': 10.0.25(graphql@16.10.0)
-      '@graphql-tools/utils': 10.9.1(graphql@16.10.0)
+      '@graphql-tools/schema': 10.0.26(graphql@16.10.0)
+      '@graphql-tools/utils': 10.10.0(graphql@16.10.0)
       '@whatwg-node/promise-helpers': 1.3.2
       graphql: 16.10.0
       tslib: 2.8.1
@@ -13501,7 +13505,7 @@ snapshots:
 
   '@inquirer/external-editor@1.0.2(@types/node@22.15.23)':
     dependencies:
-      chardet: 2.1.0
+      chardet: 2.1.1
       iconv-lite: 0.7.0
     optionalDependencies:
       '@types/node': 22.15.23
@@ -15002,7 +15006,7 @@ snapshots:
     optionalDependencies:
       rollup: 4.52.5
 
-  '@rollup/plugin-replace@6.0.2(rollup@4.52.5)':
+  '@rollup/plugin-replace@6.0.3(rollup@4.52.5)':
     dependencies:
       '@rollup/pluginutils': 5.3.0(rollup@4.52.5)
       magic-string: 0.30.21
@@ -15335,7 +15339,7 @@ snapshots:
       '@typescript-eslint/parser': 8.46.2(eslint@9.35.0(jiti@2.6.1))(typescript@5.8.3)
       '@typescript-eslint/utils': 8.46.2(eslint@9.35.0(jiti@2.6.1))(typescript@5.8.3)
       '@unocss/eslint-plugin': 66.0.0(eslint@9.35.0(jiti@2.6.1))(typescript@5.8.3)
-      '@vitest/eslint-plugin': 1.3.26(eslint@9.35.0(jiti@2.6.1))(typescript@5.8.3)
+      '@vitest/eslint-plugin': 1.4.0(eslint@9.35.0(jiti@2.6.1))(typescript@5.8.3)
       astro-eslint-parser: 1.2.1
       chalk: 4.1.2
       defu: 6.1.4
@@ -15477,7 +15481,7 @@ snapshots:
   '@storm-software/prettier@0.57.13(prettier-plugin-astro@0.14.1)(prettier-plugin-organize-imports@4.1.0(prettier@3.6.2)(typescript@5.8.3))(prettier-plugin-pkg@0.18.1(prettier@3.6.2))(prettier-plugin-prisma@5.0.0(prettier@3.6.2))(prettier-plugin-sh@0.15.0(prettier@3.6.2))(prettier-plugin-toml@2.0.4(prettier@3.6.2))(prettier@3.6.2)':
     dependencies:
       prettier: 3.6.2
-      prettier-plugin-jsdoc: 1.3.3(prettier@3.6.2)
+      prettier-plugin-jsdoc: 1.5.0(prettier@3.6.2)
       prettier-plugin-organize-imports: 4.1.0(prettier@3.6.2)(typescript@5.8.3)
       prettier-plugin-pkg: 0.18.1(prettier@3.6.2)
       prettier-plugin-prisma: 5.0.0(prettier@3.6.2)
@@ -16554,7 +16558,7 @@ snapshots:
       minimatch: 7.4.6
       semver: 7.7.1
 
-  '@vitest/eslint-plugin@1.3.26(eslint@9.35.0(jiti@2.6.1))(typescript@5.8.3)':
+  '@vitest/eslint-plugin@1.4.0(eslint@9.35.0(jiti@2.6.1))(typescript@5.8.3)':
     dependencies:
       '@typescript-eslint/scope-manager': 8.46.2
       '@typescript-eslint/utils': 8.46.2(eslint@9.35.0(jiti@2.6.1))(typescript@5.8.3)
@@ -16860,7 +16864,7 @@ snapshots:
 
   axe-core@4.11.0: {}
 
-  axios@1.13.0:
+  axios@1.13.1:
     dependencies:
       follow-redirects: 1.15.11
       form-data: 4.0.4
@@ -17059,7 +17063,7 @@ snapshots:
 
   base64-js@1.5.1: {}
 
-  baseline-browser-mapping@2.8.20: {}
+  baseline-browser-mapping@2.8.21: {}
 
   bcrypt-pbkdf@1.0.2:
     dependencies:
@@ -17119,10 +17123,10 @@ snapshots:
 
   browserslist@4.27.0:
     dependencies:
-      baseline-browser-mapping: 2.8.20
+      baseline-browser-mapping: 2.8.21
       caniuse-lite: 1.0.30001751
-      electron-to-chromium: 1.5.241
-      node-releases: 2.0.26
+      electron-to-chromium: 1.5.243
+      node-releases: 2.0.27
       update-browserslist-db: 1.1.4(browserslist@4.27.0)
 
   bs-logger@0.2.6:
@@ -17266,7 +17270,7 @@ snapshots:
 
   character-reference-invalid@2.0.1: {}
 
-  chardet@2.1.0: {}
+  chardet@2.1.1: {}
 
   chevrotain@7.1.1:
     dependencies:
@@ -17772,24 +17776,24 @@ snapshots:
 
   cssesc@3.0.0: {}
 
-  cssnano-preset-default@7.0.9(postcss@8.5.6):
+  cssnano-preset-default@7.0.10(postcss@8.5.6):
     dependencies:
       browserslist: 4.27.0
       css-declaration-sorter: 7.3.0(postcss@8.5.6)
       cssnano-utils: 5.0.1(postcss@8.5.6)
       postcss: 8.5.6
       postcss-calc: 10.1.1(postcss@8.5.6)
-      postcss-colormin: 7.0.4(postcss@8.5.6)
-      postcss-convert-values: 7.0.7(postcss@8.5.6)
-      postcss-discard-comments: 7.0.4(postcss@8.5.6)
+      postcss-colormin: 7.0.5(postcss@8.5.6)
+      postcss-convert-values: 7.0.8(postcss@8.5.6)
+      postcss-discard-comments: 7.0.5(postcss@8.5.6)
       postcss-discard-duplicates: 7.0.2(postcss@8.5.6)
       postcss-discard-empty: 7.0.1(postcss@8.5.6)
       postcss-discard-overridden: 7.0.1(postcss@8.5.6)
       postcss-merge-longhand: 7.0.5(postcss@8.5.6)
-      postcss-merge-rules: 7.0.6(postcss@8.5.6)
+      postcss-merge-rules: 7.0.7(postcss@8.5.6)
       postcss-minify-font-values: 7.0.1(postcss@8.5.6)
       postcss-minify-gradients: 7.0.1(postcss@8.5.6)
-      postcss-minify-params: 7.0.4(postcss@8.5.6)
+      postcss-minify-params: 7.0.5(postcss@8.5.6)
       postcss-minify-selectors: 7.0.5(postcss@8.5.6)
       postcss-normalize-charset: 7.0.1(postcss@8.5.6)
       postcss-normalize-display-values: 7.0.1(postcss@8.5.6)
@@ -17797,11 +17801,11 @@ snapshots:
       postcss-normalize-repeat-style: 7.0.1(postcss@8.5.6)
       postcss-normalize-string: 7.0.1(postcss@8.5.6)
       postcss-normalize-timing-functions: 7.0.1(postcss@8.5.6)
-      postcss-normalize-unicode: 7.0.4(postcss@8.5.6)
+      postcss-normalize-unicode: 7.0.5(postcss@8.5.6)
       postcss-normalize-url: 7.0.1(postcss@8.5.6)
       postcss-normalize-whitespace: 7.0.1(postcss@8.5.6)
       postcss-ordered-values: 7.0.2(postcss@8.5.6)
-      postcss-reduce-initial: 7.0.4(postcss@8.5.6)
+      postcss-reduce-initial: 7.0.5(postcss@8.5.6)
       postcss-reduce-transforms: 7.0.1(postcss@8.5.6)
       postcss-svgo: 7.1.0(postcss@8.5.6)
       postcss-unique-selectors: 7.0.4(postcss@8.5.6)
@@ -17810,9 +17814,9 @@ snapshots:
     dependencies:
       postcss: 8.5.6
 
-  cssnano@7.1.1(postcss@8.5.6):
+  cssnano@7.1.2(postcss@8.5.6):
     dependencies:
-      cssnano-preset-default: 7.0.9(postcss@8.5.6)
+      cssnano-preset-default: 7.0.10(postcss@8.5.6)
       lilconfig: 3.1.3
       postcss: 8.5.6
 
@@ -18033,7 +18037,7 @@ snapshots:
     dependencies:
       jake: 10.9.4
 
-  electron-to-chromium@1.5.241: {}
+  electron-to-chromium@1.5.243: {}
 
   emittery@0.13.1: {}
 
@@ -18295,7 +18299,7 @@ snapshots:
 
   eslint-config-flat-gitignore@2.1.0(eslint@9.35.0(jiti@2.6.1)):
     dependencies:
-      '@eslint/compat': 1.4.0(eslint@9.35.0(jiti@2.6.1))
+      '@eslint/compat': 1.4.1(eslint@9.35.0(jiti@2.6.1))
       eslint: 9.35.0(jiti@2.6.1)
 
   eslint-config-prettier@10.1.8(eslint@9.35.0(jiti@2.6.1)):
@@ -18399,7 +18403,7 @@ snapshots:
       eslint: 9.35.0(jiti@2.6.1)
       eslint-import-context: 0.1.9(unrs-resolver@1.11.1)
       is-glob: 4.0.3
-      minimatch: 10.0.3
+      minimatch: 10.1.1
       semver: 7.7.3
       stable-hash-x: 0.2.0
       unrs-resolver: 1.11.1
@@ -19306,7 +19310,7 @@ snapshots:
     dependencies:
       foreground-child: 3.3.1
       jackspeak: 4.1.1
-      minimatch: 10.0.3
+      minimatch: 10.1.1
       minipass: 7.1.2
       package-json-from-dist: 1.0.1
       path-scurry: 2.0.0
@@ -19372,12 +19376,12 @@ snapshots:
 
   graphql-config@5.1.5(@types/node@22.15.23)(graphql@16.10.0)(typescript@5.8.3):
     dependencies:
-      '@graphql-tools/graphql-file-loader': 8.1.2(graphql@16.10.0)
-      '@graphql-tools/json-file-loader': 8.0.20(graphql@16.10.0)
-      '@graphql-tools/load': 8.1.2(graphql@16.10.0)
-      '@graphql-tools/merge': 9.1.1(graphql@16.10.0)
+      '@graphql-tools/graphql-file-loader': 8.1.3(graphql@16.10.0)
+      '@graphql-tools/json-file-loader': 8.0.21(graphql@16.10.0)
+      '@graphql-tools/load': 8.1.3(graphql@16.10.0)
+      '@graphql-tools/merge': 9.1.2(graphql@16.10.0)
       '@graphql-tools/url-loader': 8.0.33(@types/node@22.15.23)(graphql@16.10.0)
-      '@graphql-tools/utils': 10.9.1(graphql@16.10.0)
+      '@graphql-tools/utils': 10.10.0(graphql@16.10.0)
       cosmiconfig: 8.3.6(typescript@5.8.3)
       graphql: 16.10.0
       jiti: 2.6.1
@@ -22002,6 +22006,10 @@ snapshots:
     dependencies:
       '@isaacs/brace-expansion': 5.0.0
 
+  minimatch@10.1.1:
+    dependencies:
+      '@isaacs/brace-expansion': 5.0.0
+
   minimatch@3.1.2:
     dependencies:
       brace-expansion: 1.1.12
@@ -22043,7 +22051,7 @@ snapshots:
     dependencies:
       autoprefixer: 10.4.21(postcss@8.5.6)
       citty: 0.1.6
-      cssnano: 7.1.1(postcss@8.5.6)
+      cssnano: 7.1.2(postcss@8.5.6)
       defu: 6.1.4
       esbuild: 0.25.11
       jiti: 1.21.7
@@ -22158,7 +22166,7 @@ snapshots:
 
   node-machine-id@1.1.12: {}
 
-  node-releases@2.0.26: {}
+  node-releases@2.0.27: {}
 
   noms@0.0.0:
     dependencies:
@@ -22233,7 +22241,7 @@ snapshots:
       '@yarnpkg/lockfile': 1.1.0
       '@yarnpkg/parsers': 3.0.2
       '@zkochan/js-yaml': 0.0.7
-      axios: 1.13.0
+      axios: 1.13.1
       chalk: 4.1.2
       cli-cursor: 3.1.0
       cli-spinners: 2.6.1
@@ -22286,7 +22294,7 @@ snapshots:
       '@yarnpkg/lockfile': 1.1.0
       '@yarnpkg/parsers': 3.0.2
       '@zkochan/js-yaml': 0.0.7
-      axios: 1.13.0
+      axios: 1.13.1
       chalk: 4.1.2
       cli-cursor: 3.1.0
       cli-spinners: 2.6.1
@@ -22339,7 +22347,7 @@ snapshots:
       '@yarnpkg/lockfile': 1.1.0
       '@yarnpkg/parsers': 3.0.2
       '@zkochan/js-yaml': 0.0.7
-      axios: 1.13.0
+      axios: 1.13.1
       chalk: 4.1.2
       cli-cursor: 3.1.0
       cli-spinners: 2.6.1
@@ -22757,7 +22765,7 @@ snapshots:
       postcss-selector-parser: 7.1.0
       postcss-value-parser: 4.2.0
 
-  postcss-colormin@7.0.4(postcss@8.5.6):
+  postcss-colormin@7.0.5(postcss@8.5.6):
     dependencies:
       browserslist: 4.27.0
       caniuse-api: 3.0.0
@@ -22765,13 +22773,13 @@ snapshots:
       postcss: 8.5.6
       postcss-value-parser: 4.2.0
 
-  postcss-convert-values@7.0.7(postcss@8.5.6):
+  postcss-convert-values@7.0.8(postcss@8.5.6):
     dependencies:
       browserslist: 4.27.0
       postcss: 8.5.6
       postcss-value-parser: 4.2.0
 
-  postcss-discard-comments@7.0.4(postcss@8.5.6):
+  postcss-discard-comments@7.0.5(postcss@8.5.6):
     dependencies:
       postcss: 8.5.6
       postcss-selector-parser: 7.1.0
@@ -22810,9 +22818,9 @@ snapshots:
     dependencies:
       postcss: 8.5.6
       postcss-value-parser: 4.2.0
-      stylehacks: 7.0.6(postcss@8.5.6)
+      stylehacks: 7.0.7(postcss@8.5.6)
 
-  postcss-merge-rules@7.0.6(postcss@8.5.6):
+  postcss-merge-rules@7.0.7(postcss@8.5.6):
     dependencies:
       browserslist: 4.27.0
       caniuse-api: 3.0.0
@@ -22832,7 +22840,7 @@ snapshots:
       postcss: 8.5.6
       postcss-value-parser: 4.2.0
 
-  postcss-minify-params@7.0.4(postcss@8.5.6):
+  postcss-minify-params@7.0.5(postcss@8.5.6):
     dependencies:
       browserslist: 4.27.0
       cssnano-utils: 5.0.1(postcss@8.5.6)
@@ -22879,7 +22887,7 @@ snapshots:
       postcss: 8.5.6
       postcss-value-parser: 4.2.0
 
-  postcss-normalize-unicode@7.0.4(postcss@8.5.6):
+  postcss-normalize-unicode@7.0.5(postcss@8.5.6):
     dependencies:
       browserslist: 4.27.0
       postcss: 8.5.6
@@ -22901,7 +22909,7 @@ snapshots:
       postcss: 8.5.6
       postcss-value-parser: 4.2.0
 
-  postcss-reduce-initial@7.0.4(postcss@8.5.6):
+  postcss-reduce-initial@7.0.5(postcss@8.5.6):
     dependencies:
       browserslist: 4.27.0
       caniuse-api: 3.0.0
@@ -22950,7 +22958,7 @@ snapshots:
       prettier: 3.6.2
       sass-formatter: 0.7.9
 
-  prettier-plugin-jsdoc@1.3.3(prettier@3.6.2):
+  prettier-plugin-jsdoc@1.5.0(prettier@3.6.2):
     dependencies:
       binary-searching: 2.0.5
       comment-parser: 1.4.1
@@ -24005,7 +24013,7 @@ snapshots:
       '@babel/core': 7.28.5
       babel-plugin-macros: 3.1.0
 
-  stylehacks@7.0.6(postcss@8.5.6):
+  stylehacks@7.0.7(postcss@8.5.6):
     dependencies:
       browserslist: 4.27.0
       postcss: 8.5.6
@@ -24547,7 +24555,7 @@ snapshots:
       '@rollup/plugin-commonjs': 28.0.9(rollup@4.52.5)
       '@rollup/plugin-json': 6.1.0(rollup@4.52.5)
       '@rollup/plugin-node-resolve': 16.0.3(rollup@4.52.5)
-      '@rollup/plugin-replace': 6.0.2(rollup@4.52.5)
+      '@rollup/plugin-replace': 6.0.3(rollup@4.52.5)
       '@rollup/pluginutils': 5.3.0(rollup@4.52.5)
       citty: 0.1.6
       consola: 3.4.2
