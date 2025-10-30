@@ -22,7 +22,7 @@
     "@ltd/j-toml": "catalog:",
     "@storm-software/config-tools": "catalog:",
     "@stryke/convert": "workspace:*",
-    "@stryke/path": "0.18.0",
+    "@stryke/path": "workspace:*",
     "@stryke/string-format": "workspace:*",
     "chalk": "catalog:",
     "defu": "catalog:",

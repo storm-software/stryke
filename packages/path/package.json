@@ -12,7 +12,8 @@
   "devDependencies": {
     "@stryke/convert": "workspace:*",
     "@stryke/type-checks": "workspace:*",
-    "@stryke/types": "workspace:*"
+    "@stryke/types": "workspace:*",
+    "@storm-software/testing-tools": "catalog:"
   },
   "publishConfig": {
     "access": "public"
