@@ -2,6 +2,17 @@
 
 # Changelog for Stryke - Fs
 
+## [0.32.4](https://github.com/storm-software/stryke/releases/tag/fs%400.32.4) (2025-10-30)
+
+### Bug Fixes
+
+- **fs:** Resolve issue with stars in file paths
+  ([97ff201](https://github.com/storm-software/stryke/commit/97ff201))
+
+### Updated Dependencies
+
+- Updated path to 0.18.0
+
 ## [0.32.3](https://github.com/storm-software/stryke/releases/tag/fs%400.32.3) (2025-10-28)
 
 ### Miscellaneous

@@ -2,6 +2,13 @@
 
 # Changelog for Stryke - Path
 
+## [0.18.0](https://github.com/storm-software/stryke/releases/tag/path%400.18.0) (2025-10-30)
+
+### Features
+
+- **path:** Added the `stripStars` helper function
+  ([8ee85c9](https://github.com/storm-software/stryke/commit/8ee85c9))
+
 ## [0.17.0](https://github.com/storm-software/stryke/releases/tag/path%400.17.0) (2025-10-24)
 
 ### Features
