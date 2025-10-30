@@ -177,7 +177,7 @@ export const deriveNewSemverVersion = (
 
   if (isRelativeVersionKeyword(semverSpecifier)) {
     // Derive the new version from the current version combined with the new version specifier.
-    const derivedVersion = inc(currentSemverVersion, semverSpecifier, preid);
+    const derivedVersion = inc(currentSemverVersion, semverSpecifier, preid!);
 
     if (!derivedVersion) {
       throw new Error(

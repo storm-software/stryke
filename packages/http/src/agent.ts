@@ -140,16 +140,13 @@ export abstract class Agent extends http.Agent {
 
   // In order to properly update the socket pool, we need to call `getName()` on
   // the core `https.Agent` if it is a secureEndpoint.
-  getName(options?: AgentConnectOpts): string {
+  override getName(options?: AgentConnectOpts): string {
     const secureEndpoint = this.isSecureEndpoint(options);
     if (secureEndpoint) {
       // @ts-expect-error `getName()` isn't defined in `@types/node`
-      // eslint-disable-next-line ts/no-unsafe-call
       return HttpsAgent.prototype.getName.call(this, options);
     }
 
-    // @ts-expect-error `getName()` isn't defined in `@types/node`
-    // eslint-disable-next-line ts/no-unsafe-call
     return super.getName(options);
   }
 
@@ -190,7 +187,7 @@ export abstract class Agent extends http.Agent {
       );
   }
 
-  createConnection(): Duplex {
+  override createConnection(): Duplex {
     const socket = this[INTERNAL].currentSocket;
     this[INTERNAL].currentSocket = undefined;
     if (!socket) {
