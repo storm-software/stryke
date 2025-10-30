@@ -10,10 +10,10 @@
   },
   "private": false,
   "devDependencies": {
+    "@storm-software/testing-tools": "catalog:",
     "@stryke/convert": "workspace:*",
     "@stryke/type-checks": "workspace:*",
-    "@stryke/types": "workspace:*",
-    "@storm-software/testing-tools": "catalog:"
+    "@stryke/types": "workspace:*"
   },
   "publishConfig": {
     "access": "public"
