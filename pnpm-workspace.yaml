@@ -1,95 +1,104 @@
 packages:
   - tools/*
   - packages/*
+
 catalog:
-  "@antfu/install-pkg": ^1.0.0
-  "@antfu/ni": ^23.3.1
-  "@dotenvx/dotenvx": 1.35.0
-  "@js-temporal/polyfill": ^0.5.0
-  "@ls-lint/ls-lint": ^2.2.3
-  "@ltd/j-toml": ^1.38.0
-  "@microsoft/api-extractor": ^7.49.2
-  "@prisma/client": ^6.5.0
-  "@prisma/generator-helper": ^6.5.0
-  "@prisma/internals": ^6.5.0
-  "@prisma/prisma-schema-wasm": ^6.6.0-41.9061db3b0058e3d3731c6fe68a1b77061bed4861
-  "@tanstack/react-query": ^5.70.0
-  "@tanstack/react-query-devtools": ^5.70.0
-  "@taplo/cli": ^0.7.0
-  "@trpc/client": next
-  "@trpc/next": next
-  "@trpc/server": next
-  "@trpc/tanstack-react-query": next
-  "@types/cross-spawn": ^6.0.6
-  "@types/figlet": ^1.7.0
-  "@types/jest": 30.0.0
-  "@types/node": ^22.14.0
-  "@types/pluralize": ^0.0.33
-  "@types/react": ^19.0.12
-  "@types/react-dom": ^19.0.4
-  "@nx/devkit": ^21.4.1
-  "@nx/eslint-plugin": ^21.4.1
-  "@nx/eslint": ^21.4.1
-  "@nx/jest": ^21.4.1
-  "@nx/js": ^21.4.1
-  "@nx/plugin": ^21.4.1
-  "@nx/react": ^21.4.1
-  "@nx/workspace": ^21.4.1
-  "@storm-software/build-tools": latest
-  "@storm-software/config": latest
-  "@storm-software/config-tools": latest
-  "@storm-software/cspell": latest
-  "@storm-software/git-tools": latest
-  "@storm-software/linting-tools": latest
-  "@storm-software/pnpm-tools": latest
-  "@storm-software/eslint": latest
-  "@storm-software/esbuild": latest
-  "@storm-software/prettier": latest
-  "@storm-software/unbuild": latest
-  "@storm-software/untyped": latest
-  "@storm-software/testing-tools": latest
-  "@storm-software/tsconfig": latest
-  "@storm-software/tsdoc": latest
-  "@storm-software/workspace-tools": latest
-  "@storm-software/markdownlint": latest
-  "@swc-node/register": "^1.10.9"
-  "@swc/core": ^1.10.14
-  "@swc/wasm": ^1.10.14
-  "@swc/helpers": ^0.5.15
-  "@types/react-native": 0.72.8
-  "@types/semver": ^7.5.8
+  '@antfu/install-pkg': ^1.1.0
+  '@antfu/ni': ^23.3.1
+  '@dotenvx/dotenvx': 1.35.0
+  '@js-temporal/polyfill': ^0.5.1
+  '@ls-lint/ls-lint': ^2.3.1
+  '@ltd/j-toml': ^1.38.0
+  '@microsoft/api-extractor': ^7.49.2
+  '@nx/devkit': ^21.6.8
+  '@nx/eslint': ^21.6.8
+  '@nx/eslint-plugin': ^21.6.8
+  '@nx/jest': ^21.6.8
+  '@nx/js': ^21.6.8
+  '@nx/plugin': ^21.6.8
+  '@nx/react': ^21.4.1
+  '@nx/workspace': ^21.6.8
+  '@prisma/client': ^6.5.0
+  '@prisma/generator-helper': ^6.18.0
+  '@prisma/internals': ^6.18.0
+  '@prisma/prisma-schema-wasm': ^6.6.0-41.9061db3b0058e3d3731c6fe68a1b77061bed4861
+  '@storm-software/build-tools': ^0.158.14
+  '@storm-software/config': ^1.134.14
+  '@storm-software/config-tools': ^1.188.14
+  '@storm-software/cspell': ^0.45.14
+  '@storm-software/esbuild': ^0.53.14
+  '@storm-software/eslint': ^0.169.14
+  '@storm-software/git-tools': ^2.123.14
+  '@storm-software/linting-tools': ^1.132.14
+  '@storm-software/markdownlint': ^0.30.14
+  '@storm-software/pnpm-tools': latest
+  '@storm-software/prettier': ^0.57.14
+  '@storm-software/testing-tools': ^1.119.14
+  '@storm-software/tsconfig': ^0.47.14
+  '@storm-software/tsdoc': ^0.13.14
+  '@storm-software/unbuild': ^0.57.14
+  '@storm-software/untyped': ^0.23.14
+  '@storm-software/workspace-tools': ^1.292.14
+  '@swc-node/register': ^1.11.1
+  '@swc/core': ^1.14.0
+  '@swc/helpers': ^0.5.17
+  '@swc/wasm': ^1.10.14
+  '@tanstack/react-query': ^5.90.5
+  '@tanstack/react-query-devtools': ^5.70.0
+  '@taplo/cli': ^0.7.0
+  '@trpc/client': ^11.0.0
+  '@trpc/next': ^11.0.0
+  '@trpc/server': ^11.0.0
+  '@trpc/tanstack-react-query': ^11.0.0
+  '@types/cross-spawn': ^6.0.6
+  '@types/figlet': ^1.7.0
+  '@types/jest': 30.0.0
+  '@types/node': ^22.18.13
+  '@types/pluralize': ^0.0.33
+  '@types/react': ^19.2.2
+  '@types/react-dom': ^19.2.2
+  '@types/react-native': 0.72.8
+  '@types/semver': ^7.7.1
   buffer: 6.0.3
   capnp-es: ^0.0.11
-  chalk: ^5.4.1
-  commander: ^14.0.0
-  conventional-changelog-storm-software: ^0.2.0
+  chalk: ^5.6.2
+  commander: ^14.0.2
+  conventional-changelog-storm-software: ^0.2.20
+  copyfiles: ^2.4.1
   cross-spawn: ^7.0.6
+  defu: ^6.1.4
   dts-bundle-generator: ^9.5.1
-  eslint: ^9.35.0
-  eslint-flat-config-utils: ^2.0.1
-  execa: ^9.5.2
-  figlet: ^1.8.0
-  glob: ^11.0.1
+  esbuild: ^0.25.11
+  eslint: ^9.38.0
+  eslint-flat-config-utils: ^2.1.4
+  execa: ^9.6.0
+  figlet: ^1.9.3
+  glob: ^11.0.3
   hex2dec: ^1.1.2
   is-unicode-supported: ^2.1.0
+  jest: 30.0.5
+  jest-environment-jsdom: 30.0.5
+  jest-environment-node: ^29.7.0
   jest-util: 30.0.5
+  jiti: ^2.6.1
   js-xxhash: ^4.0.0
   jsonc-parser: 3.3.1
   knip: 5.43.6
-  lefthook: ^1.10.10
+  lefthook: ^1.13.6
   lines-and-columns: 2.0.4
   ls-lint: ^0.1.2
   markdownlint-cli2: ^0.17.2
   mlly: 1.7.4
   nanotar: ^0.2.0
-  nx: ^21.4.1
-  jest: 30.0.5
-  jest-environment-jsdom: 30.0.5
-  jest-environment-node: ^29.7.0
+  nx: ^21.6.8
   ohash: ^2.0.11
   parenthesis: ^3.1.8
   pluralize: ^8.0.0
-  prettier: ^3.5.2
+  prettier: ^3.6.2
+  react: ^19.2.0
+  react-dom: ^19.2.0
+  react-native: ^0.77.3
+  rimraf: ^6.0.1
   semver: 7.7.1
   server-only: ^0.0.1
   sherif: 1.3.0
@@ -100,74 +109,71 @@ catalog:
   ts-jest: 29.4.0
   ts-morph: ^25.0.1
   ts-node: 10.9.2
-  tsup: ^8.3.5
   tsdown: ^0.5.8
   tslib: ^2.8.1
-  copyfiles: ^2.4.1
-  rimraf: ^6.0.1
-  react: ^19.1.0
-  react-dom: ^19.1.0
-  react-native: ^0.77.0
-  tsx: ^4.20.1
+  tsup: ^8.5.0
+  tsx: ^4.20.6
   typescript: ~5.7.3
-  esbuild: ^0.25.0
   ufo: 1.5.4
   unbuild: ^3.3.1
-  defu: ^6.1.4
-  jiti: ^2.5.1
-  verdaccio: ^6.0.5
+  verdaccio: ^6.2.1
   yaml: ^2.8.1
-  zod: "^4.0.15"
-  zx: ^8.3.2
+  zod: ^4.1.12
+  zx: ^8.8.5
+
 linkWorkspacePackages: true
+
 onlyBuiltDependencies:
-  - "@prisma/engines"
-  - "@swc/core"
+  - '@prisma/engines'
+  - '@swc/core'
   - core-js
   - esbuild
   - lefthook
   - nx
   - sharp
   - unrs-resolver
+
 overrides:
-  "@stryke/capnp": workspace:*
-  "@stryke/cli": workspace:*
-  "@stryke/convert": workspace:*
-  "@stryke/crypto": workspace:*
-  "@stryke/env": workspace:*
-  "@stryke/fs": workspace:*
-  "@stryke/open-browser": workspace:*
-  "@stryke/hash": workspace:*
-  "@stryke/helpers": workspace:*
-  "@stryke/hooks": workspace:*
-  "@stryke/http": workspace:*
-  "@stryke/json": workspace:*
-  "@stryke/path": workspace:*
-  "@stryke/prisma-better-auth-generator": workspace:*
-  "@stryke/prisma-trpc-generator": workspace:*
-  "@stryke/string-format": workspace:*
-  "@stryke/trpc-next": workspace:*
-  "@stryke/type-checks": workspace:*
-  "@stryke/types": workspace:*
-  "@stryke/unique-id": workspace:*
-  "@stryke/url": workspace:*
-  cookie: ">=0.7.0"
-  debug: ">=4.4.0"
-  follow-redirects: ">=1.15.9"
-  got: ">=14.4.5"
-  ip: ">=2.0.1"
-  loader-utils: ">=3.3.1"
-  markdown-it: ">=14.1.0"
-  micromatch: ">=4.0.8"
-  next: ">=13.4.20-canary.13"
-  node-fetch: ">=3.3.2"
-  nth-check: ">=2.1.1"
-  parse-path: ">=7.0.0"
-  parse-url: ">=9.2.0"
-  path-to-regexp: ">=0.1.12"
-  postcss: ">=8.5.1"
-  shell-quote: ">=1.8.2"
-  simple-git: ">=3.27.0"
+  '@stryke/capnp': workspace:*
+  '@stryke/cli': workspace:*
+  '@stryke/convert': workspace:*
+  '@stryke/crypto': workspace:*
+  '@stryke/env': workspace:*
+  '@stryke/fs': workspace:*
+  '@stryke/hash': workspace:*
+  '@stryke/helpers': workspace:*
+  '@stryke/hooks': workspace:*
+  '@stryke/http': workspace:*
+  '@stryke/json': workspace:*
+  '@stryke/open-browser': workspace:*
+  '@stryke/path': workspace:*
+  '@stryke/prisma-better-auth-generator': workspace:*
+  '@stryke/prisma-trpc-generator': workspace:*
+  '@stryke/string-format': workspace:*
+  '@stryke/trpc-next': workspace:*
+  '@stryke/type-checks': workspace:*
+  '@stryke/types': workspace:*
+  '@stryke/unique-id': workspace:*
+  '@stryke/url': workspace:*
+  cookie: '>=0.7.0'
+  debug: '>=4.4.0'
+  follow-redirects: '>=1.15.9'
+  got: '>=14.4.5'
+  ip: '>=2.0.1'
+  loader-utils: '>=3.3.1'
+  markdown-it: '>=14.1.0'
+  micromatch: '>=4.0.8'
+  next: '>=13.4.20-canary.13'
+  node-fetch: '>=3.3.2'
+  nth-check: '>=2.1.1'
+  parse-path: '>=7.0.0'
+  parse-url: '>=9.2.0'
+  path-to-regexp: '>=0.1.12'
+  postcss: '>=8.5.1'
+  shell-quote: '>=1.8.2'
+  simple-git: '>=3.27.0'
+
 patchedDependencies:
   capnp-es@0.0.11: patches/capnp-es@0.0.11.patch
+
 preferWorkspacePackages: true
