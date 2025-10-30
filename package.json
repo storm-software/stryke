@@ -20,7 +20,7 @@
   },
   "license": "Apache-2.0",
   "private": true,
-  "packageManager": "pnpm@10.10.0",
+  "packageManager": "pnpm@10.20.0",
   "engines": {
     "node": ">=22.14.0",
     "pnpm": ">=10.10.0"
@@ -121,7 +121,12 @@
   },
   "namespace": "@stryke",
   "nx": {
-    "includedScripts": ["lint", "format", "commit", "release"]
+    "includedScripts": [
+      "lint",
+      "format",
+      "commit",
+      "release"
+    ]
   },
   "prettier": "@storm-software/prettier/config.json",
   "triggerEmptyDevReleaseByIncrementingThisNumber": 0
