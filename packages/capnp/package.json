@@ -180,8 +180,8 @@
     }
   },
   "dependencies": {
-    "@stryke/fs": "workspace:*",
-    "@stryke/path": "0.18.5",
+    "@stryke/fs": "0.32.10",
+    "@stryke/path": "workspace:*",
     "defu": "catalog:",
     "hex2dec": "catalog:",
     "nanotar": "catalog:"

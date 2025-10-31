@@ -2,6 +2,13 @@
 
 # Changelog for Stryke - Fs
 
+## [0.32.10](https://github.com/storm-software/stryke/releases/tag/fs%400.32.10) (2025-10-31)
+
+### Bug Fixes
+
+- **fs:** Update `copyFiles` logic to remove stars prior to replace
+  ([a623783](https://github.com/storm-software/stryke/commit/a623783))
+
 ## [0.32.9](https://github.com/storm-software/stryke/releases/tag/fs%400.32.9) (2025-10-31)
 
 ### Bug Fixes
