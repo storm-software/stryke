@@ -2,6 +2,13 @@
 
 # Changelog for Stryke - Path
 
+## [0.18.5](https://github.com/storm-software/stryke/releases/tag/path%400.18.5) (2025-10-31)
+
+### Miscellaneous
+
+- **path:** Revert slash updates to path helpers
+  ([a7c4261](https://github.com/storm-software/stryke/commit/a7c4261))
+
 ## [0.18.4](https://github.com/storm-software/stryke/releases/tag/path%400.18.4) (2025-10-31)
 
 ### Bug Fixes
