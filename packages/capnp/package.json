@@ -161,7 +161,13 @@
     "./package.json": "./package.json"
   },
   "types": "./dts/index.d.ts",
-  "files": ["bin/**/*", "dist/**/*", "dts/**/*", "schemas/**/*", "vendor/**/*"],
+  "files": [
+    "bin/**/*",
+    "dist/**/*",
+    "dts/**/*",
+    "schemas/**/*",
+    "vendor/**/*"
+  ],
   "keywords": [
     "capnp",
     "capnproto",
@@ -180,8 +186,8 @@
     }
   },
   "dependencies": {
-    "@stryke/fs": "0.32.6",
-    "@stryke/path": "0.18.2",
+    "@stryke/fs": "workspace:*",
+    "@stryke/path": "workspace:*",
     "defu": "catalog:",
     "hex2dec": "catalog:",
     "nanotar": "catalog:"
