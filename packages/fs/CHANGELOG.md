@@ -2,6 +2,18 @@
 
 # Changelog for Stryke - Fs
 
+## [0.32.9](https://github.com/storm-software/stryke/releases/tag/fs%400.32.9) (2025-10-31)
+
+### Bug Fixes
+
+- **fs:** Resolve issue replacing partial path from source directory during copy
+  ([962394d](https://github.com/storm-software/stryke/commit/962394d))
+
+### Miscellaneous
+
+- **monorepo:** Update workspace package links
+  ([27c29d0](https://github.com/storm-software/stryke/commit/27c29d0))
+
 ## [0.32.8](https://github.com/storm-software/stryke/releases/tag/fs%400.32.8) (2025-10-31)
 
 ### Miscellaneous
