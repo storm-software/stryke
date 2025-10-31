@@ -44,7 +44,13 @@ export function replacePath(
 ): string {
   return correctPath(
     isParentPath(childPath, parentPath)
-      ? slash(childPath).replace(slash(parentPath), "").replace(/^\//, "")
+      ? slash(childPath)
+          .replace(/^\/+/g, "")
+          .replace(/\/+$/g, "")
+          .replace(
+            slash(parentPath).replace(/^\/+/g, "").replace(/\/+$/g, ""),
+            ""
+          )
       : childPath
   );
 }

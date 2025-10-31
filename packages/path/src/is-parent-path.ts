@@ -41,14 +41,18 @@ import { slash } from "./slash";
  */
 export function isParentPath(childPath: string, parentPath: string): boolean {
   const normalizedChild = slash(
-    childPath.replace(/\\/g, "/").replace(/\/$/, "")
+    childPath.replace(/\/+/g, "/").replace(/\/+$/, "")
   );
   const normalizedParent = slash(
-    parentPath.replace(/\\/g, "/").replace(/\/$/, "")
+    parentPath.replace(/\/+/g, "/").replace(/\/+$/, "")
   );
 
   return (
-    normalizedChild !== normalizedParent &&
-    normalizedChild.startsWith(`${normalizedParent}/`)
+    normalizedChild.replace(/^\/+/g, "").replace(/\/+$/g, "") !==
+      normalizedParent.replace(/^\/+/g, "").replace(/\/+$/g, "") &&
+    normalizedChild
+      .replace(/^\/+/g, "")
+      .replace(/\/+$/g, "")
+      .startsWith(normalizedParent.replace(/^\/+/g, "").replace(/\/+$/g, ""))
   );
 }
