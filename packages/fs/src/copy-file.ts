@@ -110,6 +110,8 @@ export async function copyFiles(
       if (!isParentPath(entryPath, sourcePath)) {
         if (isParentPath(entryPath, joinPaths(cwd(), sourcePath))) {
           sourcePath = joinPaths(cwd(), sourcePath);
+        } else if (isParentPath(entryPath, cwd())) {
+          sourcePath = cwd();
         }
       }
 
@@ -148,6 +150,8 @@ export function copyFilesSync(
     if (!isParentPath(entryPath, sourcePath)) {
       if (isParentPath(entryPath, joinPaths(cwd(), sourcePath))) {
         sourcePath = joinPaths(cwd(), sourcePath);
+      } else if (isParentPath(entryPath, cwd())) {
+        sourcePath = cwd();
       }
     }
 
