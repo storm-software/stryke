@@ -2,6 +2,13 @@
 
 # Changelog for Stryke - Path
 
+## [0.18.3](https://github.com/storm-software/stryke/releases/tag/path%400.18.3) (2025-10-31)
+
+### Bug Fixes
+
+- **path:** Correct issue with replacing slashes in paths
+  ([c50eec9](https://github.com/storm-software/stryke/commit/c50eec9))
+
 ## [0.18.2](https://github.com/storm-software/stryke/releases/tag/path%400.18.2) (2025-10-31)
 
 ### Bug Fixes
