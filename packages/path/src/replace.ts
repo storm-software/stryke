@@ -16,14 +16,13 @@
 
  ------------------------------------------------------------------- */
 
-import { correctPath } from "./correct-path";
 import { cwd } from "./cwd";
 import {
   findFileDotExtensionSafe,
   findFileExtensionSafe
 } from "./file-path-fns";
 import { isParentPath } from "./is-parent-path";
-import { formatSlash } from "./slash";
+import { slash } from "./slash";
 
 /**
  * Replace the base path from the beginning of the given path.
@@ -42,15 +41,9 @@ export function replacePath(
   childPath: string,
   parentPath: string = cwd()
 ): string {
-  return formatSlash(
-    correctPath(
-      isParentPath(childPath, parentPath)
-        ? formatSlash(childPath)
-            .replace(formatSlash(parentPath), "")
-            .replace(/^\/+/g, "")
-        : childPath
-    )
-  );
+  return isParentPath(childPath, parentPath)
+    ? slash(childPath).replace(slash(parentPath), "").replace(/^\//, "")
+    : childPath;
 }
 
 /**
@@ -69,12 +62,10 @@ export function replacePath(
  * @returns The path with the replaced extension
  */
 export function replaceExtension(path: string, replacement = ""): string {
-  return correctPath(
-    path.replace(
-      !replacement || replacement.includes(".")
-        ? findFileDotExtensionSafe(path)
-        : findFileExtensionSafe(path),
-      replacement
-    )
+  return path.replace(
+    !replacement || replacement.includes(".")
+      ? findFileDotExtensionSafe(path)
+      : findFileExtensionSafe(path),
+    replacement
   );
 }
