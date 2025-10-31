@@ -16,9 +16,10 @@
 
  ------------------------------------------------------------------- */
 
-import { cwd, isParentPath } from "@stryke/path";
+import { appendPath, cwd } from "@stryke/path";
 import { stripStars } from "@stryke/path/correct-path";
 import { findFilePath, hasFileExtension } from "@stryke/path/file-path-fns";
+import { isAbsolutePath } from "@stryke/path/is-type";
 import { joinPaths } from "@stryke/path/join";
 import { replacePath } from "@stryke/path/replace";
 import { resolveParentPath } from "@stryke/path/resolve-parent-path";
@@ -104,23 +105,23 @@ export async function copyFiles(
     return copyFile(src, dest);
   }
 
+  let sourcePath = stripStars(isString(src) ? src : src.input);
+  if (!isAbsolutePath(sourcePath)) {
+    sourcePath = appendPath(sourcePath, cwd());
+  }
+
   return Promise.all(
     (await listFiles(src)).map(async entryPath => {
-      let sourcePath = stripStars(isString(src) ? src : src.input);
-      if (!isParentPath(entryPath, sourcePath)) {
-        if (isParentPath(entryPath, joinPaths(cwd(), sourcePath))) {
-          sourcePath = joinPaths(cwd(), sourcePath);
-        } else if (isParentPath(entryPath, cwd())) {
-          sourcePath = cwd();
-        }
-      }
-
-      const destFile = joinPaths(dest, replacePath(entryPath, sourcePath));
-
       if (isDirectory(entryPath)) {
-        await copyFiles(entryPath, destFile);
+        await copyFiles(
+          entryPath,
+          joinPaths(dest, replacePath(entryPath, sourcePath))
+        );
       } else {
-        await copyFile(entryPath, destFile);
+        await copyFile(
+          entryPath,
+          joinPaths(dest, replacePath(entryPath, sourcePath))
+        );
       }
     })
   );
@@ -145,22 +146,16 @@ export function copyFilesSync(
     return copyFileSync(src, dest);
   }
 
+  let sourcePath = stripStars(isString(src) ? src : src.input);
+  if (!isAbsolutePath(sourcePath)) {
+    sourcePath = appendPath(sourcePath, cwd());
+  }
+
   return listFilesSync(src).map(entryPath => {
-    let sourcePath = stripStars(isString(src) ? src : src.input);
-    if (!isParentPath(entryPath, sourcePath)) {
-      if (isParentPath(entryPath, joinPaths(cwd(), sourcePath))) {
-        sourcePath = joinPaths(cwd(), sourcePath);
-      } else if (isParentPath(entryPath, cwd())) {
-        sourcePath = cwd();
-      }
-    }
-
-    const destFile = joinPaths(dest, replacePath(entryPath, sourcePath));
-
     if (isDirectory(entryPath)) {
-      copyFilesSync(entryPath, destFile);
+      copyFilesSync(entryPath, replacePath(entryPath, sourcePath));
     } else {
-      copyFileSync(entryPath, destFile);
+      copyFileSync(entryPath, replacePath(entryPath, sourcePath));
     }
   });
 }
