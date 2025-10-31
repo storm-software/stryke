@@ -16,7 +16,7 @@
 
  ------------------------------------------------------------------- */
 
-import { isSetString } from "@stryke/type-checks";
+import { isSetString } from "@stryke/type-checks/is-set-string";
 import { EMPTY_STRING } from "@stryke/types/base";
 import { normalizeString, normalizeWindowsPath } from "./correct-path";
 import { cwd as currentDir } from "./cwd";

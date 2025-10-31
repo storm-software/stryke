@@ -45,7 +45,9 @@ export function replacePath(
   return formatSlash(
     correctPath(
       isParentPath(childPath, parentPath)
-        ? formatSlash(childPath).replace(formatSlash(parentPath), "")
+        ? formatSlash(childPath)
+            .replace(formatSlash(parentPath), "")
+            .replace(/^\/+/g, "")
         : childPath
     )
   );
