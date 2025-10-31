@@ -16,10 +16,8 @@
 
  ------------------------------------------------------------------- */
 
-import { appendPath, cwd } from "@stryke/path";
 import { stripStars } from "@stryke/path/correct-path";
 import { findFilePath, hasFileExtension } from "@stryke/path/file-path-fns";
-import { isAbsolutePath } from "@stryke/path/is-type";
 import { joinPaths } from "@stryke/path/join";
 import { replacePath } from "@stryke/path/replace";
 import { resolveParentPath } from "@stryke/path/resolve-parent-path";
@@ -105,23 +103,17 @@ export async function copyFiles(
     return copyFile(src, dest);
   }
 
-  let sourcePath = stripStars(isString(src) ? src : src.input);
-  if (!isAbsolutePath(sourcePath)) {
-    sourcePath = appendPath(sourcePath, cwd());
-  }
-
   return Promise.all(
     (await listFiles(src)).map(async entryPath => {
+      const destFile = joinPaths(
+        dest,
+        replacePath(entryPath, isString(src) ? stripStars(src) : src.input)
+      );
+
       if (isDirectory(entryPath)) {
-        await copyFiles(
-          entryPath,
-          joinPaths(dest, replacePath(entryPath, sourcePath))
-        );
+        await copyFiles(entryPath, destFile);
       } else {
-        await copyFile(
-          entryPath,
-          joinPaths(dest, replacePath(entryPath, sourcePath))
-        );
+        await copyFile(entryPath, destFile);
       }
     })
   );
@@ -146,16 +138,16 @@ export function copyFilesSync(
     return copyFileSync(src, dest);
   }
 
-  let sourcePath = stripStars(isString(src) ? src : src.input);
-  if (!isAbsolutePath(sourcePath)) {
-    sourcePath = appendPath(sourcePath, cwd());
-  }
-
   return listFilesSync(src).map(entryPath => {
+    const destFile = joinPaths(
+      dest,
+      replacePath(entryPath, isString(src) ? stripStars(src) : src.input)
+    );
+
     if (isDirectory(entryPath)) {
-      copyFilesSync(entryPath, replacePath(entryPath, sourcePath));
+      copyFilesSync(entryPath, destFile);
     } else {
-      copyFileSync(entryPath, replacePath(entryPath, sourcePath));
+      copyFileSync(entryPath, destFile);
     }
   });
 }
