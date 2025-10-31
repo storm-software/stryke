@@ -1,6 +1,6 @@
 {
   "name": "@stryke/capnp",
-  "version": "0.12.14",
+  "version": "0.12.15",
   "type": "module",
   "description": "A package to assist in running the Cap'n Proto compiler and creating Cap'n Proto serialization protocol schemas.",
   "repository": {
@@ -161,13 +161,7 @@
     "./package.json": "./package.json"
   },
   "types": "./dts/index.d.ts",
-  "files": [
-    "bin/**/*",
-    "dist/**/*",
-    "dts/**/*",
-    "schemas/**/*",
-    "vendor/**/*"
-  ],
+  "files": ["bin/**/*", "dist/**/*", "dts/**/*", "schemas/**/*", "vendor/**/*"],
   "keywords": [
     "capnp",
     "capnproto",
@@ -186,8 +180,8 @@
     }
   },
   "dependencies": {
-    "@stryke/fs": "workspace:*",
-    "@stryke/path": "workspace:*",
+    "@stryke/fs": "0.32.8",
+    "@stryke/path": "0.18.4",
     "defu": "catalog:",
     "hex2dec": "catalog:",
     "nanotar": "catalog:"

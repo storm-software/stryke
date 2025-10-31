@@ -2,6 +2,13 @@
 
 # Changelog for Stryke - Path
 
+## [0.18.4](https://github.com/storm-software/stryke/releases/tag/path%400.18.4) (2025-10-31)
+
+### Bug Fixes
+
+- **path:** Resolve issue with extra slash returned from `replacePath` function
+  ([9474025](https://github.com/storm-software/stryke/commit/9474025))
+
 ## [0.18.3](https://github.com/storm-software/stryke/releases/tag/path%400.18.3) (2025-10-31)
 
 ### Bug Fixes
