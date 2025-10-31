@@ -19,7 +19,7 @@
 import { cwd } from "./cwd";
 import { isParentPath } from "./is-parent-path";
 import { joinPaths } from "./join-paths";
-import { slash } from "./slash";
+import { formatSlash } from "./slash";
 
 /**
  * If not already a parent path, append the base path from the beginning of the given child path.
@@ -41,7 +41,7 @@ export function appendPath(
   childPath: string,
   parentPath: string = cwd()
 ): string {
-  return slash(
+  return formatSlash(
     !isParentPath(childPath, parentPath)
       ? joinPaths(parentPath, childPath)
       : childPath

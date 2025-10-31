@@ -16,7 +16,7 @@
 
  ------------------------------------------------------------------- */
 
-import { slash } from "./slash";
+import { formatSlash } from "./slash";
 
 /**
  * Check if a given path is a parent of another path.
@@ -40,19 +40,11 @@ import { slash } from "./slash";
  * @returns `true` if `childPath` is a child of `parentPath`, otherwise `false`.
  */
 export function isParentPath(childPath: string, parentPath: string): boolean {
-  const normalizedChild = slash(
-    childPath.replace(/\/+/g, "/").replace(/\/+$/, "")
-  );
-  const normalizedParent = slash(
-    parentPath.replace(/\/+/g, "/").replace(/\/+$/, "")
-  );
+  const normalizedChild = formatSlash(childPath);
+  const normalizedParent = formatSlash(parentPath);
 
   return (
-    normalizedChild.replace(/^\/+/g, "").replace(/\/+$/g, "") !==
-      normalizedParent.replace(/^\/+/g, "").replace(/\/+$/g, "") &&
-    normalizedChild
-      .replace(/^\/+/g, "")
-      .replace(/\/+$/g, "")
-      .startsWith(normalizedParent.replace(/^\/+/g, "").replace(/\/+$/g, ""))
+    formatSlash(normalizedChild) !== formatSlash(normalizedParent) &&
+    formatSlash(normalizedChild).startsWith(formatSlash(normalizedParent))
   );
 }

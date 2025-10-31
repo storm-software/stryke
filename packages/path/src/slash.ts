@@ -16,6 +16,8 @@
 
  ------------------------------------------------------------------- */
 
+import { isAbsolutePath } from "./is-type";
+
 /**
  * Replace backslash to slash
  *
@@ -28,4 +30,18 @@ export function slash(path: string) {
   }
 
   return path.replace(/\\/g, "/");
+}
+
+/**
+ * Replace backslash to slash and remove unneeded leading and trailing slashes
+ *
+ * @param path - The string to replace
+ * @returns The string with replaced backslashes
+ */
+export function formatSlash(path: string) {
+  const formatted = slash(path);
+
+  return isAbsolutePath(formatted)
+    ? formatted.replace(/\/+$/g, "")
+    : formatted.replace(/^\.\//g, "").replace(/\/+$/g, "");
 }

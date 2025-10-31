@@ -23,7 +23,7 @@ import {
   findFileExtensionSafe
 } from "./file-path-fns";
 import { isParentPath } from "./is-parent-path";
-import { slash } from "./slash";
+import { formatSlash } from "./slash";
 
 /**
  * Replace the base path from the beginning of the given path.
@@ -42,16 +42,12 @@ export function replacePath(
   childPath: string,
   parentPath: string = cwd()
 ): string {
-  return correctPath(
-    isParentPath(childPath, parentPath)
-      ? slash(childPath)
-          .replace(/^\/+/g, "")
-          .replace(/\/+$/g, "")
-          .replace(
-            slash(parentPath).replace(/^\/+/g, "").replace(/\/+$/g, ""),
-            ""
-          )
-      : childPath
+  return formatSlash(
+    correctPath(
+      isParentPath(childPath, parentPath)
+        ? formatSlash(childPath).replace(formatSlash(parentPath), "")
+        : childPath
+    )
   );
 }
 
