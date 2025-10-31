@@ -2,6 +2,17 @@
 
 # Changelog for Stryke - Fs
 
+## [0.32.6](https://github.com/storm-software/stryke/releases/tag/fs%400.32.6) (2025-10-31)
+
+### Miscellaneous
+
+- **fs:** Remove `cmd` from copied files
+  ([5fb17d4](https://github.com/storm-software/stryke/commit/5fb17d4))
+
+### Updated Dependencies
+
+- Updated path to 0.18.2
+
 ## [0.32.5](https://github.com/storm-software/stryke/releases/tag/fs%400.32.5) (2025-10-30)
 
 ### Bug Fixes

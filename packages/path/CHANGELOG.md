@@ -2,6 +2,13 @@
 
 # Changelog for Stryke - Path
 
+## [0.18.2](https://github.com/storm-software/stryke/releases/tag/path%400.18.2) (2025-10-31)
+
+### Bug Fixes
+
+- **path:** Resolve issue with extra slash characters
+  ([3c69774](https://github.com/storm-software/stryke/commit/3c69774))
+
 ## [0.18.1](https://github.com/storm-software/stryke/releases/tag/path%400.18.1) (2025-10-30)
 
 ### Bug Fixes

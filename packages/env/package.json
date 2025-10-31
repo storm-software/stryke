@@ -12,8 +12,8 @@
   "dependencies": {
     "@dotenvx/dotenvx": "catalog:",
     "@stryke/convert": "workspace:*",
-    "@stryke/fs": "0.32.5",
-    "@stryke/path": "0.18.1",
+    "@stryke/fs": "0.32.6",
+    "@stryke/path": "0.18.2",
     "@stryke/string-format": "workspace:*",
     "defu": "catalog:"
   },
