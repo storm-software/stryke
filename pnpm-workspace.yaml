@@ -19,31 +19,31 @@ catalog:
   '@nx/react': ^21.4.1
   '@nx/workspace': ^21.6.8
   '@prisma/client': ^6.5.0
-  '@prisma/generator-helper': ^6.18.0
-  '@prisma/internals': ^6.18.0
+  '@prisma/generator-helper': ^6.19.0
+  '@prisma/internals': ^6.19.0
   '@prisma/prisma-schema-wasm': ^6.6.0-41.9061db3b0058e3d3731c6fe68a1b77061bed4861
-  '@storm-software/build-tools': ^0.158.14
-  '@storm-software/config': ^1.134.14
-  '@storm-software/config-tools': ^1.188.14
-  '@storm-software/cspell': ^0.45.14
-  '@storm-software/esbuild': ^0.53.14
-  '@storm-software/eslint': ^0.169.14
-  '@storm-software/git-tools': ^2.123.14
-  '@storm-software/linting-tools': ^1.132.14
-  '@storm-software/markdownlint': ^0.30.14
+  '@storm-software/build-tools': ^0.158.19
+  '@storm-software/config': ^1.134.19
+  '@storm-software/config-tools': ^1.188.19
+  '@storm-software/cspell': ^0.45.19
+  '@storm-software/esbuild': ^0.53.19
+  '@storm-software/eslint': ^0.169.19
+  '@storm-software/git-tools': ^2.124.2
+  '@storm-software/linting-tools': ^1.132.19
+  '@storm-software/markdownlint': ^0.30.19
   '@storm-software/pnpm-tools': latest
-  '@storm-software/prettier': ^0.57.14
-  '@storm-software/testing-tools': ^1.119.14
-  '@storm-software/tsconfig': ^0.47.14
-  '@storm-software/tsdoc': ^0.13.14
-  '@storm-software/unbuild': ^0.57.14
-  '@storm-software/untyped': ^0.23.14
-  '@storm-software/workspace-tools': ^1.292.14
+  '@storm-software/prettier': ^0.57.19
+  '@storm-software/testing-tools': ^1.119.19
+  '@storm-software/tsconfig': ^0.47.19
+  '@storm-software/tsdoc': ^0.13.19
+  '@storm-software/unbuild': ^0.57.19
+  '@storm-software/untyped': ^0.23.19
+  '@storm-software/workspace-tools': ^1.292.19
   '@swc-node/register': ^1.11.1
-  '@swc/core': ^1.14.0
+  '@swc/core': ^1.15.0
   '@swc/helpers': ^0.5.17
   '@swc/wasm': ^1.10.14
-  '@tanstack/react-query': ^5.90.5
+  '@tanstack/react-query': ^5.90.7
   '@tanstack/react-query-devtools': ^5.70.0
   '@taplo/cli': ^0.7.0
   '@trpc/client': ^11.7.1
@@ -53,7 +53,7 @@ catalog:
   '@types/cross-spawn': ^6.0.6
   '@types/figlet': ^1.7.0
   '@types/jest': 30.0.0
-  '@types/node': ^22.18.13
+  '@types/node': ^22.19.0
   '@types/pluralize': ^0.0.33
   '@types/react': ^19.2.2
   '@types/react-dom': ^19.2.2
@@ -68,8 +68,8 @@ catalog:
   cross-spawn: ^7.0.6
   defu: ^6.1.4
   dts-bundle-generator: ^9.5.1
-  esbuild: ^0.25.11
-  eslint: ^9.38.0
+  esbuild: ^0.25.12
+  eslint: ^9.39.1
   eslint-flat-config-utils: ^2.1.4
   execa: ^9.6.0
   figlet: ^1.9.3

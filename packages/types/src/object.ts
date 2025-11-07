@@ -401,7 +401,7 @@ type UncheckedIndex<T, U extends number | string> = [T] extends [
  * - Returns `unknown` if `Key` is not a property of `BaseType`, since TypeScript uses structural typing, and it cannot be guaranteed that extra properties unknown to the type system will exist at runtime.
  * - Returns `undefined` from nullish values, to match the behavior of most deep-key libraries like `lodash`, `dot-prop`, etc.
  */
-type PropertyOf<
+export type PropertyOf<
   BaseType,
   Key extends string,
   // eslint-disable-next-line ts/no-empty-object-type

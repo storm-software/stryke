@@ -236,3 +236,15 @@ export function toRelativePath(path: string, cwd = currentDir()): string {
 
   return path;
 }
+
+/**
+ * Adds a trailing slash to a path if it doesn't already have one.
+ *
+ * @param path - The path to modify.
+ * @returns The modified path with a trailing slash.
+ */
+export function withTrailingSlash(path: string): string {
+  const result = correctPath(path);
+
+  return result.endsWith("/") ? result : `${result}/`;
+}
