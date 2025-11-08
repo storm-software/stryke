@@ -21,10 +21,7 @@
   "license": "Apache-2.0",
   "private": true,
   "packageManager": "pnpm@10.20.0",
-  "engines": {
-    "node": ">=22.14.0",
-    "pnpm": ">=10.10.0"
-  },
+  "engines": { "node": ">=22.14.0", "pnpm": ">=10.20.0" },
   "keywords": [
     "stryke",
     "typescript",
@@ -40,7 +37,7 @@
     "bootstrap": "pnpm exec zx tools/scripts/src/bootstrap.mjs",
     "build": "pnpm exec zx tools/scripts/src/build.mjs --prod",
     "build-dev": "pnpm exec zx tools/scripts/src/build.mjs --dev",
-    "clean": "pnpm exec rimraf dist",
+    "clean": "pnpm exec zx tools/scripts/src/clean.mjs",
     "commit": "pnpm exec storm-git commit",
     "dep-graph": "nx dep-graph",
     "e2e": "nx e2e",
@@ -115,19 +112,9 @@
     "verdaccio": "catalog:",
     "zx": "catalog:"
   },
-  "manypkg": {
-    "defaultBranch": "main",
-    "workspaceProtocol": "require"
-  },
+  "manypkg": { "defaultBranch": "main", "workspaceProtocol": "require" },
   "namespace": "@stryke",
-  "nx": {
-    "includedScripts": [
-      "lint",
-      "format",
-      "commit",
-      "release"
-    ]
-  },
+  "nx": { "includedScripts": ["lint", "format", "commit", "release"] },
   "prettier": "@storm-software/prettier/config.json",
   "triggerEmptyDevReleaseByIncrementingThisNumber": 0
 }
