@@ -1,3 +1,16 @@
+![Storm Software's logo banner](https://public.storm-cdn.com/brand-banner.png)
+
+# Changelog for Stryke - Hooks
+
+## [0.4.10](https://github.com/storm-software/stryke/releases/tag/hooks%400.4.10) (11/08/2025)
+
+### Updated Dependencies
+
+- Updated **type-checks** to **v0.3.11**
+- Updated **helpers** to **v0.9.3**
+- Updated **types** to **v0.10.1**
+- Updated **env** to **v0.20.12**
+
 ![Storm Software](https://public.storm-cdn.com/brand-banner.png)
 
 # Changelog for Stryke - Hooks

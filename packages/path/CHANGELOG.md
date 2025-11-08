@@ -2,6 +2,19 @@
 
 # Changelog for Stryke - Path
 
+## [0.19.0](https://github.com/storm-software/stryke/releases/tag/path%400.19.0) (11/08/2025)
+
+### Features
+
+- **path:** Added the `withTrailingSlash` helper function
+  ([0f05e36](https://github.com/storm-software/stryke/commit/0f05e36))
+
+### Updated Dependencies
+
+- Updated **type-checks** to **v0.3.11**
+- Updated **convert** to **v0.6.1**
+- Updated **types** to **v0.10.1**
+
 ## [0.18.5](https://github.com/storm-software/stryke/releases/tag/path%400.18.5) (2025-10-31)
 
 ### Miscellaneous

@@ -2,6 +2,13 @@
 
 # Changelog for Stryke - Types
 
+## [0.10.1](https://github.com/storm-software/stryke/releases/tag/types%400.10.1) (11/08/2025)
+
+### Features
+
+- **path:** Added the `withTrailingSlash` helper function
+  ([0f05e36](https://github.com/storm-software/stryke/commit/0f05e36))
+
 ## [0.10.0](https://github.com/storm-software/stryke/releases/tag/types%400.10.0) (2025-10-19)
 
 ### Features
