@@ -21,23 +21,39 @@ import type { Message as RPCMessage } from "capnp-es/capnp/rpc";
 import type { MessagePort } from "node:worker_threads";
 import { MessageChannel } from "node:worker_threads";
 
-export class MessageChannelTransport extends DeferredTransport {
-  constructor(public port: MessagePort) {
+/**
+ * A transport class for Cap'n Proto RPC that uses {@link MessageChannel} for communication.
+ */
+export class CapnpRPCMessageChannelTransport extends DeferredTransport {
+  public port: MessagePort;
+
+  public constructor(port: MessagePort) {
     super();
+
+    this.port = port;
 
     this.port.on("message", this.resolve);
     this.port.on("messageerror", this.reject);
     this.port.on("close", this.close);
   }
 
+  /**
+   * Closes the transport and removes all event listeners.
+   */
   public override close = (): void => {
     this.port.off("message", this.resolve);
     this.port.off("messageerror", this.reject);
     this.port.off("close", this.close);
     this.port.close();
+
     super.close();
   };
 
+  /**
+   * Sends a Cap'n Proto RPC message over the MessagePort.
+   *
+   * @param msg - The RPC message to send.
+   */
   public sendMessage(msg: RPCMessage): void {
     const m = new Message();
     m.setRoot(msg);
@@ -87,14 +103,14 @@ export class CapnpRPC {
     }
 
     const ch = new MessageChannel();
-    const conn = new Conn(new MessageChannelTransport(ch.port1));
+    const conn = new Conn(new CapnpRPCMessageChannelTransport(ch.port1));
     const accept = this.acceptQueue.pop();
     this.connections[id] = conn;
 
     if (accept === undefined) {
       this.connectQueue.push(ch.port2);
     } else {
-      accept.resolve(new Conn(new MessageChannelTransport(ch.port2)));
+      accept.resolve(new Conn(new CapnpRPCMessageChannelTransport(ch.port2)));
     }
 
     return conn;
@@ -109,7 +125,9 @@ export class CapnpRPC {
   public async accept(): Promise<Conn> {
     const port2 = this.connectQueue.pop();
     if (port2 !== undefined) {
-      return Promise.resolve(new Conn(new MessageChannelTransport(port2)));
+      return Promise.resolve(
+        new Conn(new CapnpRPCMessageChannelTransport(port2))
+      );
     }
 
     const deferred = new Deferred<Conn>();

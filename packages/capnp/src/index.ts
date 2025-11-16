@@ -26,7 +26,6 @@
  */
 
 export * from "./compile.js";
-export * from "./rpc.js";
 export * from "./types.js";
 
 // Export all types and functions from capnp-es
