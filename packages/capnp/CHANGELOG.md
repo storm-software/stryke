@@ -2,6 +2,18 @@
 
 # Changelog for Stryke - Capnp
 
+## [0.12.21](https://github.com/storm-software/stryke/releases/tag/capnp%400.12.21) (11/16/2025)
+
+### Miscellaneous
+
+- **capnp:** Move `CapnpRPC` exports out of index module
+  ([a92e39b](https://github.com/storm-software/stryke/commit/a92e39b))
+
+### Updated Dependencies
+
+- Updated **path** to **v0.19.2**
+- Updated **fs** to **v0.32.13**
+
 ## [0.12.20](https://github.com/storm-software/stryke/releases/tag/capnp%400.12.20) (11/16/2025)
 
 ### Updated Dependencies

@@ -2,6 +2,12 @@
 
 # Changelog for Stryke - CLI
 
+## [0.12.7](https://github.com/storm-software/stryke/releases/tag/cli%400.12.7) (11/16/2025)
+
+### Updated Dependencies
+
+- Updated **env** to **v0.20.14**
+
 ## [0.12.6](https://github.com/storm-software/stryke/releases/tag/cli%400.12.6) (11/16/2025)
 
 ### Updated Dependencies
