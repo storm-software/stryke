@@ -2,6 +2,16 @@
 
 # Changelog for Stryke - CLI
 
+## [0.12.6](https://github.com/storm-software/stryke/releases/tag/cli%400.12.6) (11/16/2025)
+
+### Updated Dependencies
+
+- Updated **string-format** to **v0.12.2**
+- Updated **type-checks** to **v0.3.12**
+- Updated **convert** to **v0.6.2**
+- Updated **types** to **v0.10.2**
+- Updated **env** to **v0.20.13**
+
 ## [0.12.5](https://github.com/storm-software/stryke/releases/tag/cli%400.12.5) (11/08/2025)
 
 ### Updated Dependencies

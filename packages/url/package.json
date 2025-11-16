@@ -1,6 +1,6 @@
 {
   "name": "@stryke/url",
-  "version": "0.2.5",
+  "version": "0.2.6",
   "type": "module",
   "description": "A package containing the `StormURL` class, which is used to parse and manipulate URLs.",
   "repository": {
