@@ -17,13 +17,17 @@
  ------------------------------------------------------------------- */
 
 import { getUnique } from "@stryke/helpers/get-unique";
-import { appendPath, replacePath } from "@stryke/path";
-import { correctPath } from "@stryke/path/correct-path";
+import { appendExtension, replacePath } from "@stryke/path";
+import { correctPath, toAbsolutePath } from "@stryke/path/correct-path";
 import { cwd } from "@stryke/path/cwd";
-import { findFileName, findFilePath } from "@stryke/path/file-path-fns";
+import {
+  findFileExtension,
+  findFileName,
+  findFilePath
+} from "@stryke/path/file-path-fns";
+import { isAbsolutePath } from "@stryke/path/is-type";
 import { joinPaths } from "@stryke/path/join-paths";
 import { interopDefault, resolvePath, resolvePathSync } from "mlly";
-import { existsSync } from "node:fs";
 import { getWorkspaceRoot } from "./get-workspace-root";
 
 export const DEFAULT_EXTENSIONS = [
@@ -64,6 +68,83 @@ export interface ResolveOptions {
 }
 
 /**
+ * Get the resolution paths based on the provided paths, current working directory, and workspace root.
+ *
+ * @param paths - An array of paths to include in the resolution.
+ * @returns An array of unique, corrected resolution paths.
+ */
+export function getResolutionPaths(paths: string[] = []) {
+  let resolutionPaths = paths;
+  if (!resolutionPaths.includes(cwd())) {
+    resolutionPaths.push(cwd());
+  }
+
+  const workspaceRoot = getWorkspaceRoot();
+  if (!resolutionPaths.includes(workspaceRoot)) {
+    resolutionPaths.push(workspaceRoot);
+  }
+
+  resolutionPaths = getUnique(
+    resolutionPaths
+      .filter(Boolean)
+      .map(path => correctPath(path))
+      .reduce((ret, path, _, arr) => {
+        ret.push(path);
+        if (!isAbsolutePath(path)) {
+          ret.push(toAbsolutePath(path, cwd()));
+          ret.push(toAbsolutePath(path, workspaceRoot));
+
+          arr.forEach(existing => {
+            ret.push(toAbsolutePath(path, existing));
+          });
+        }
+
+        return ret;
+      }, [] as string[])
+  );
+
+  return resolutionPaths;
+}
+
+/**
+ * Get all combinations of resolution paths for a given path and options.
+ *
+ * @param path - The base path to combine with resolution paths.
+ * @param options - The options containing resolution paths.
+ * @returns An array of unique, corrected resolution paths.
+ */
+export function getResolutionCombinations(
+  path: string,
+  options: ResolveOptions = {}
+) {
+  const paths = getResolutionPaths(options.paths);
+  const extensions = options.extensions ?? DEFAULT_EXTENSIONS;
+
+  let combinations = paths.map(base => joinPaths(path, base));
+  if (findFileName(path, { withExtension: false }) !== "index") {
+    combinations = combinations.reduce((ret, combination) => {
+      ret.push(combination);
+      ret.push(joinPaths(combination, "index"));
+
+      return ret;
+    }, [] as string[]);
+  }
+
+  if (!findFileExtension(path)) {
+    combinations = combinations.reduce((ret, combination) => {
+      ret.push(combination);
+      extensions.forEach(ext => {
+        ret.push(appendExtension(combination, ext));
+      });
+
+      return ret;
+    }, [] as string[]);
+  }
+
+  return getUnique(combinations.filter(Boolean)).map(p => correctPath(p));
+}
+
+/**
  * Resolve the path to a specified module
  *
  * @param path - The path to the module
@@ -74,36 +155,7 @@ export async function resolve(
   path: string,
   options: ResolveOptions = {}
 ): Promise<string> {
-  let paths = options.paths ?? [];
-  if (paths.length === 0) {
-    paths.push(cwd());
-  }
-
-  const workspaceRoot = getWorkspaceRoot();
-  if (!paths.includes(workspaceRoot)) {
-    paths.push(workspaceRoot);
-  }
-
-  paths = getUnique(
-    paths
-      .filter(Boolean)
-      .map(p => correctPath(p))
-      .reduce((ret, p, _, arr) => {
-        ret.push(p);
-
-        if (existsSync(appendPath(p, workspaceRoot))) {
-          ret.push(appendPath(p, workspaceRoot));
-        }
-
-        arr.forEach(existing => {
-          if (existsSync(appendPath(p, existing))) {
-            ret.push(appendPath(p, existing));
-          }
-        });
-
-        return ret;
-      }, [] as string[])
-  );
+  const paths = getResolutionPaths(options.paths);
 
   let result: string | undefined;
   let error: Error | undefined;
@@ -162,36 +214,7 @@ export async function resolve(
  * @returns The path to the module or undefined
  */
 export function resolveSync(path: string, options: ResolveOptions = {}) {
-  let paths = options.paths ?? [];
-  if (paths.length === 0) {
-    paths.push(process.cwd());
-  }
-
-  const workspaceRoot = getWorkspaceRoot();
-  if (!paths.includes(workspaceRoot)) {
-    paths.push(workspaceRoot);
-  }
-
-  paths = getUnique(
-    paths
-      .filter(Boolean)
-      .map(p => correctPath(p))
-      .reduce((ret, p, _, arr) => {
-        ret.push(p);
-
-        if (existsSync(appendPath(p, workspaceRoot))) {
-          ret.push(appendPath(p, workspaceRoot));
-        }
-
-        arr.forEach(existing => {
-          if (existsSync(appendPath(p, existing))) {
-            ret.push(appendPath(p, existing));
-          }
-        });
-
-        return ret;
-      }, [] as string[])
-  );
+  const paths = getResolutionPaths(options.paths);
 
   let result!: string;
   let error: Error | undefined;
