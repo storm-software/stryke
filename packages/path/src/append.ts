@@ -49,3 +49,22 @@ export function appendPath(
 }
 
 export const append = appendPath;
+
+/**
+ * Append the extension to the given path.
+ *
+ * @example
+ * ```ts
+ * appendExtension("/home/user/project/src/index", ".ts");
+ * // returns "/home/user/project/src/index.ts"
+ * appendExtension("/home/user/project/src/index.ts", ".js");
+ * // returns "/home/user/project/src/index.ts.js"
+ * ```
+ *
+ * @param path - The path to append the extension to.
+ * @param extension - The extension to append.
+ * @returns The path with the appended extension.
+ */
+export function appendExtension(path: string, extension: string): string {
+  return `${path}.${extension.replace(/^\./, "")}`;
+}

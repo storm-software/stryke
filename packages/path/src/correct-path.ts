@@ -16,6 +16,7 @@
 
  ------------------------------------------------------------------- */
 
+import { appendPath } from "./append";
 import { cwd as currentDir } from "./cwd";
 import { isAbsolutePath } from "./is-type";
 import { joinPaths } from "./join-paths";
@@ -204,12 +205,12 @@ export function normalizeString(path: string, allowAboveRoot: boolean) {
  * @param cwd - The current working directory to use as the base path if the path is not absolute.
  * @returns The absolute path.
  */
-export function toAbsolutePath(path: string, cwd?: string): string {
+export function toAbsolutePath(path: string, cwd = currentDir()): string {
   if (isAbsolutePath(path)) {
     return path;
   }
 
-  return slash(normalizeString(joinPaths(cwd || process.cwd(), path), true));
+  return slash(normalizeString(appendPath(path, cwd), true));
 }
 
 /**
