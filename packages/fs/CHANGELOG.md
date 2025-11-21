@@ -2,6 +2,23 @@
 
 # Changelog for Stryke - Fs
 
+## [0.33.3](https://github.com/storm-software/stryke/releases/tag/fs%400.33.3) (11/21/2025)
+
+### Bug Fixes
+
+- **fs:** Update the error handling logic in `resolve` utilities
+  ([9975776](https://github.com/storm-software/stryke/commit/9975776))
+
+### Updated Dependencies
+
+- Updated **string-format** to **v0.12.7**
+- Updated **type-checks** to **v0.3.17**
+- Updated **convert** to **v0.6.7**
+- Updated **helpers** to **v0.9.9**
+- Updated **types** to **v0.10.7**
+- Updated **json** to **v0.9.10**
+- Updated **path** to **v0.21.1**
+
 ## [0.33.2](https://github.com/storm-software/stryke/releases/tag/fs%400.33.2) (11/21/2025)
 
 ### Bug Fixes
