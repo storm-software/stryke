@@ -2,6 +2,19 @@
 
 # Changelog for Stryke - Path
 
+## [0.20.0](https://github.com/storm-software/stryke/releases/tag/path%400.20.0) (11/21/2025)
+
+### Features
+
+- **path:** Use `appendPath` in `toAbsolutePath` and added `appendExtension`
+  utility ([ebd77a3](https://github.com/storm-software/stryke/commit/ebd77a3))
+
+### Updated Dependencies
+
+- Updated **type-checks** to **v0.3.15**
+- Updated **convert** to **v0.6.5**
+- Updated **types** to **v0.10.5**
+
 ## [0.19.4](https://github.com/storm-software/stryke/releases/tag/path%400.19.4) (11/21/2025)
 
 ### Updated Dependencies
