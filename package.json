@@ -21,7 +21,10 @@
   "license": "Apache-2.0",
   "private": true,
   "packageManager": "pnpm@10.23.0",
-  "engines": { "node": ">=24.11.0", "pnpm": ">=10.23.0" },
+  "engines": {
+    "node": ">=24.11.0",
+    "pnpm": ">=10.23.0"
+  },
   "keywords": [
     "stryke",
     "typescript",
@@ -75,8 +78,8 @@
     "@storm-software/git-tools": "catalog:",
     "@storm-software/linting-tools": "catalog:",
     "@storm-software/markdownlint": "catalog:",
-    "@storm-software/prettier": "catalog:",
     "@storm-software/pnpm-tools": "catalog:",
+    "@storm-software/prettier": "catalog:",
     "@storm-software/testing-tools": "catalog:",
     "@storm-software/tsconfig": "catalog:",
     "@storm-software/tsdoc": "catalog:",
@@ -113,9 +116,19 @@
     "verdaccio": "catalog:",
     "zx": "catalog:"
   },
-  "manypkg": { "defaultBranch": "main", "workspaceProtocol": "require" },
+  "manypkg": {
+    "defaultBranch": "main",
+    "workspaceProtocol": "require"
+  },
   "namespace": "@stryke",
-  "nx": { "includedScripts": ["lint", "format", "commit", "release"] },
+  "nx": {
+    "includedScripts": [
+      "lint",
+      "format",
+      "commit",
+      "release"
+    ]
+  },
   "prettier": "@storm-software/prettier/config.json",
   "triggerEmptyDevReleaseByIncrementingThisNumber": 0
 }

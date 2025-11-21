@@ -3,62 +3,62 @@ packages:
   - packages/*
 
 catalog:
-  "@antfu/install-pkg": ^1.1.0
-  "@antfu/ni": ^23.3.1
-  "@dotenvx/dotenvx": 1.35.0
-  "@js-temporal/polyfill": ^0.5.1
-  "@ls-lint/ls-lint": ^2.3.1
-  "@ltd/j-toml": ^1.38.0
-  "@microsoft/api-extractor": ^7.49.2
-  "@nx/devkit": 22.1.0
-  "@nx/eslint": 22.1.0
-  "@nx/eslint-plugin": 22.1.0
-  "@nx/jest": 22.1.0
-  "@nx/js": 22.1.0
-  "@nx/plugin": 22.1.0
-  "@nx/react": 22.1.0
-  "@nx/workspace": 22.1.0
-  "@prisma/client": ^6.5.0
-  "@prisma/generator-helper": ^6.19.0
-  "@prisma/internals": ^6.19.0
-  "@prisma/prisma-schema-wasm": ^6.6.0-41.9061db3b0058e3d3731c6fe68a1b77061bed4861
-  "@storm-software/build-tools": ^0.158.48
-  "@storm-software/config": ^1.134.48
-  "@storm-software/config-tools": ^1.188.48
-  "@storm-software/cspell": ^0.45.48
-  "@storm-software/esbuild": ^0.53.48
-  "@storm-software/eslint": ^0.169.48
-  "@storm-software/git-tools": ^2.124.31
-  "@storm-software/linting-tools": ^1.132.48
-  "@storm-software/markdownlint": ^0.30.48
-  "@storm-software/pnpm-tools": ^0.6.48
-  "@storm-software/prettier": ^0.57.48
-  "@storm-software/testing-tools": ^1.119.48
-  "@storm-software/tsconfig": ^0.47.48
-  "@storm-software/tsdoc": ^0.13.48
-  "@storm-software/unbuild": ^0.57.48
-  "@storm-software/untyped": ^0.23.19
-  "@storm-software/workspace-tools": ^1.293.18
-  "@swc-node/register": ^1.11.1
-  "@swc/core": ^1.15.3
-  "@swc/helpers": ^0.5.17
-  "@swc/wasm": ^1.10.14
-  "@tanstack/react-query": ^5.90.10
-  "@tanstack/react-query-devtools": ^5.70.0
-  "@taplo/cli": ^0.7.0
-  "@trpc/client": ^11.7.1
-  "@trpc/next": ^11.7.1
-  "@trpc/server": ^11.7.1
-  "@trpc/tanstack-react-query": ^11.7.1
-  "@types/cross-spawn": ^6.0.6
-  "@types/figlet": ^1.7.0
-  "@types/jest": 30.0.0
-  "@types/node": ^24.10.1
-  "@types/pluralize": ^0.0.33
-  "@types/react": ^19.2.6
-  "@types/react-dom": ^19.2.3
-  "@types/react-native": 0.72.8
-  "@types/semver": ^7.7.1
+  '@antfu/install-pkg': ^1.1.0
+  '@antfu/ni': ^23.3.1
+  '@dotenvx/dotenvx': 1.35.0
+  '@js-temporal/polyfill': ^0.5.1
+  '@ls-lint/ls-lint': ^2.3.1
+  '@ltd/j-toml': ^1.38.0
+  '@microsoft/api-extractor': ^7.49.2
+  '@nx/devkit': 22.1.0
+  '@nx/eslint': 22.1.0
+  '@nx/eslint-plugin': 22.1.0
+  '@nx/jest': 22.1.0
+  '@nx/js': 22.1.0
+  '@nx/plugin': 22.1.0
+  '@nx/react': 22.1.0
+  '@nx/workspace': 22.1.0
+  '@prisma/client': ^6.5.0
+  '@prisma/generator-helper': ^6.19.0
+  '@prisma/internals': ^6.19.0
+  '@prisma/prisma-schema-wasm': ^6.6.0-41.9061db3b0058e3d3731c6fe68a1b77061bed4861
+  '@storm-software/build-tools': ^0.158.48
+  '@storm-software/config': ^1.134.48
+  '@storm-software/config-tools': ^1.188.48
+  '@storm-software/cspell': ^0.45.48
+  '@storm-software/esbuild': ^0.53.48
+  '@storm-software/eslint': ^0.169.48
+  '@storm-software/git-tools': ^2.124.31
+  '@storm-software/linting-tools': ^1.132.48
+  '@storm-software/markdownlint': ^0.30.48
+  '@storm-software/pnpm-tools': ^0.6.48
+  '@storm-software/prettier': ^0.57.48
+  '@storm-software/testing-tools': ^1.119.48
+  '@storm-software/tsconfig': ^0.47.48
+  '@storm-software/tsdoc': ^0.13.48
+  '@storm-software/unbuild': ^0.57.48
+  '@storm-software/untyped': ^0.23.19
+  '@storm-software/workspace-tools': ^1.293.18
+  '@swc-node/register': ^1.11.1
+  '@swc/core': ^1.15.3
+  '@swc/helpers': ^0.5.17
+  '@swc/wasm': ^1.10.14
+  '@tanstack/react-query': ^5.90.10
+  '@tanstack/react-query-devtools': ^5.70.0
+  '@taplo/cli': ^0.7.0
+  '@trpc/client': ^11.7.1
+  '@trpc/next': ^11.7.1
+  '@trpc/server': ^11.7.1
+  '@trpc/tanstack-react-query': ^11.7.1
+  '@types/cross-spawn': ^6.0.6
+  '@types/figlet': ^1.7.0
+  '@types/jest': 30.0.0
+  '@types/node': ^24.10.1
+  '@types/pluralize': ^0.0.33
+  '@types/react': ^19.2.6
+  '@types/react-dom': ^19.2.3
+  '@types/react-native': 0.72.8
+  '@types/semver': ^7.7.1
   buffer: 6.0.3
   capnp-es: ^0.0.11
   chalk: ^5.6.2
@@ -125,8 +125,8 @@ configDependencies:
   pnpm-plugin-storm-software: 0.1.5+sha512-16Ijc82jqsCQMdJq033lcWFm2juk74MgzQ0fMWCcw1J52KuqtslhClrf1TNax3iK81lq14+Z1p0IgYxGSbwskw==
 
 onlyBuiltDependencies:
-  - "@prisma/engines"
-  - "@swc/core"
+  - '@prisma/engines'
+  - '@swc/core'
   - core-js
   - esbuild
   - lefthook
@@ -135,44 +135,44 @@ onlyBuiltDependencies:
   - unrs-resolver
 
 overrides:
-  "@stryke/capnp": workspace:*
-  "@stryke/cli": workspace:*
-  "@stryke/convert": workspace:*
-  "@stryke/crypto": workspace:*
-  "@stryke/env": workspace:*
-  "@stryke/fs": workspace:*
-  "@stryke/hash": workspace:*
-  "@stryke/helpers": workspace:*
-  "@stryke/hooks": workspace:*
-  "@stryke/http": workspace:*
-  "@stryke/json": workspace:*
-  "@stryke/open-browser": workspace:*
-  "@stryke/path": workspace:*
-  "@stryke/prisma-better-auth-generator": workspace:*
-  "@stryke/prisma-trpc-generator": workspace:*
-  "@stryke/string-format": workspace:*
-  "@stryke/trpc-next": workspace:*
-  "@stryke/type-checks": workspace:*
-  "@stryke/types": workspace:*
-  "@stryke/unique-id": workspace:*
-  "@stryke/url": workspace:*
-  cookie: ">=0.7.0"
-  debug: ">=4.4.0"
-  follow-redirects: ">=1.15.9"
-  got: ">=14.4.5"
-  ip: ">=2.0.1"
-  loader-utils: ">=3.3.1"
-  markdown-it: ">=14.1.0"
-  micromatch: ">=4.0.8"
-  next: ">=13.4.20-canary.13"
-  node-fetch: ">=3.3.2"
-  nth-check: ">=2.1.1"
-  parse-path: ">=7.0.0"
-  parse-url: ">=9.2.0"
-  path-to-regexp: ">=0.1.12"
-  postcss: ">=8.5.1"
-  shell-quote: ">=1.8.2"
-  simple-git: ">=3.27.0"
+  '@stryke/capnp': workspace:*
+  '@stryke/cli': workspace:*
+  '@stryke/convert': workspace:*
+  '@stryke/crypto': workspace:*
+  '@stryke/env': workspace:*
+  '@stryke/fs': workspace:*
+  '@stryke/hash': workspace:*
+  '@stryke/helpers': workspace:*
+  '@stryke/hooks': workspace:*
+  '@stryke/http': workspace:*
+  '@stryke/json': workspace:*
+  '@stryke/open-browser': workspace:*
+  '@stryke/path': workspace:*
+  '@stryke/prisma-better-auth-generator': workspace:*
+  '@stryke/prisma-trpc-generator': workspace:*
+  '@stryke/string-format': workspace:*
+  '@stryke/trpc-next': workspace:*
+  '@stryke/type-checks': workspace:*
+  '@stryke/types': workspace:*
+  '@stryke/unique-id': workspace:*
+  '@stryke/url': workspace:*
+  cookie: '>=0.7.0'
+  debug: '>=4.4.0'
+  follow-redirects: '>=1.15.9'
+  got: '>=14.4.5'
+  ip: '>=2.0.1'
+  loader-utils: '>=3.3.1'
+  markdown-it: '>=14.1.0'
+  micromatch: '>=4.0.8'
+  next: '>=13.4.20-canary.13'
+  node-fetch: '>=3.3.2'
+  nth-check: '>=2.1.1'
+  parse-path: '>=7.0.0'
+  parse-url: '>=9.2.0'
+  path-to-regexp: '>=0.1.12'
+  postcss: '>=8.5.1'
+  shell-quote: '>=1.8.2'
+  simple-git: '>=3.27.0'
 
 patchedDependencies:
   capnp-es@0.0.11: patches/capnp-es@0.0.11.patch
