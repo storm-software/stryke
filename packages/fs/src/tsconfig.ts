@@ -16,8 +16,10 @@
 
  ------------------------------------------------------------------- */
 
+import { toArray } from "@stryke/convert/to-array";
 import { cwd } from "@stryke/path/cwd";
 import { findFileExtension, findFilePath } from "@stryke/path/file-path-fns";
+import { isNpmScopedPackage } from "@stryke/path/is-type";
 import { joinPaths } from "@stryke/path/join-paths";
 import type { TsConfigJson } from "@stryke/types/tsconfig";
 import defu from "defu";
@@ -56,13 +58,11 @@ export async function loadTsConfig(
   }
 
   if (config?.extends) {
-    const extendsList = Array.isArray(config.extends)
-      ? config.extends
-      : [config.extends];
-
-    for (const extendsName of extendsList) {
+    for (const extendsName of toArray(config.extends)) {
       const parentConfig = await loadTsConfig(
-        joinPaths(findFilePath(tsconfigFilePath), extendsName)
+        isNpmScopedPackage(extendsName)
+          ? extendsName
+          : joinPaths(findFilePath(tsconfigFilePath), extendsName)
       );
       if (parentConfig) {
         config = defu(config, parentConfig ?? {});

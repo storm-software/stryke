@@ -23,11 +23,13 @@ import { cwd } from "@stryke/path/cwd";
 import {
   findFileExtension,
   findFileName,
-  findFilePath
+  findFilePath,
+  findFolderName
 } from "@stryke/path/file-path-fns";
-import { isAbsolutePath } from "@stryke/path/is-type";
+import { isAbsolutePath, isNpmScopedPackage } from "@stryke/path/is-type";
 import { joinPaths } from "@stryke/path/join-paths";
 import { interopDefault, resolvePath, resolvePathSync } from "mlly";
+import { existsSync } from "./exists";
 import { getWorkspaceRoot } from "./get-workspace-root";
 
 export const DEFAULT_EXTENSIONS = [
@@ -107,6 +109,28 @@ export function getResolutionPaths(paths: string[] = []) {
 }
 
 /**
+ * Get the node_modules resolution paths based on the provided paths.
+ *
+ * @param paths - An array of paths to include in the resolution.
+ * @returns An array of unique, corrected node_modules resolution paths.
+ */
+export function getNodeModulesPaths(paths: string[] = []) {
+  return getUnique(
+    paths.reduce((ret, path) => {
+      if (findFolderName(path) === "node_modules") {
+        ret.push(correctPath(path));
+      }
+
+      if (existsSync(joinPaths(path, "node_modules"))) {
+        ret.push(correctPath(joinPaths(path, "node_modules")));
+      }
+
+      return ret;
+    }, [] as string[])
+  );
+}
+
+/**
  * Get all combinations of resolution paths for a given path and options.
  *
  * @param path - The base path to combine with resolution paths.
@@ -117,7 +141,13 @@ export function getResolutionCombinations(
   path: string,
   options: ResolveOptions = {}
 ) {
-  const paths = getResolutionPaths(options.paths);
+  let paths = getResolutionPaths(options.paths);
+  if (isNpmScopedPackage(path)) {
+    paths = getNodeModulesPaths(paths);
+  } else {
+    paths.push(...getNodeModulesPaths(paths));
+  }
+
   const extensions = options.extensions ?? DEFAULT_EXTENSIONS;
 
   let combinations = paths.map(base => joinPaths(path, base));
@@ -155,7 +185,12 @@ export async function resolve(
   path: string,
   options: ResolveOptions = {}
 ): Promise<string> {
-  const paths = getResolutionPaths(options.paths);
+  let paths = getResolutionPaths(options.paths);
+  if (isNpmScopedPackage(path)) {
+    paths = getNodeModulesPaths(paths);
+  } else {
+    paths.push(...getNodeModulesPaths(paths));
+  }
 
   let result: string | undefined;
   let error: Error | undefined;
@@ -214,7 +249,12 @@ export async function resolve(
  * @returns The path to the module or undefined
  */
 export function resolveSync(path: string, options: ResolveOptions = {}) {
-  const paths = getResolutionPaths(options.paths);
+  let paths = getResolutionPaths(options.paths);
+  if (isNpmScopedPackage(path)) {
+    paths = getNodeModulesPaths(paths);
+  } else {
+    paths.push(...getNodeModulesPaths(paths));
+  }
 
   let result!: string;
   let error: Error | undefined;
