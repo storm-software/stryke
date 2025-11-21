@@ -20,31 +20,32 @@
 import { $, chalk, echo } from "zx";
 
 try {
-  await echo`${chalk.whiteBright("🔄  Updating Storm Software packages...")}`;
+  await echo`${chalk.whiteBright("🔄  Updating the workspace's Storm Software dependencies and re-linking workspace packages...")}`;
 
-  let proc = $`pnpm dedupe`.timeout(`${30 * 60}s`);
-  proc.stdout.on("data", data => {
-    echo`${data}`;
-  });
+  // 1) Update @storm-software/* packages to the latest version
+  await echo`${chalk.whiteBright("Checking for @storm-software/* updates...")}`;
+  let proc = $`pnpm exec storm-pnpm update @storm-software/ --install`.timeout(
+    `${8 * 60}s`
+  );
+  proc.stdout.on("data", data => echo`${data}`);
   let result = await proc;
-  if (!result.ok) {
+  if (result.exitCode !== 0) {
     throw new Error(
-      `An error occurred while updating "storm-software" packages: \n\n${result.message}\n`
+      `An error occurred while updating "@storm-software/*" packages:\n\n${result.message}\n`
     );
   }
 
-  proc = $`pnpm update --recursive --workspace`.timeout(`${30 * 60}s`);
-  proc.stdout.on("data", data => {
-    echo`${data}`;
-  });
+  // 2) Ensure workspace:* links are up to date
+  proc = $`pnpm update --recursive --workspace`.timeout(`${8 * 60}s`);
+  proc.stdout.on("data", data => echo`${data}`);
   result = await proc;
-  if (!result.ok) {
+  if (result.exitCode !== 0) {
     throw new Error(
-      `An error occurred while updating "storm-stack" packages: \n\n${result.message}\n`
+      `An error occurred while refreshing workspace links:\n\n${result.message}\n`
     );
   }
 
-  echo`${chalk.green("Successfully updated Storm dependency packages")}`;
+  echo`${chalk.green(" ✔ Successfully updated Storm Software package dependencies and re-linked workspace packages")}\n\n`;
 } catch (error) {
   echo`${chalk.red(error?.message ? error.message : "A failure occurred while updating Storm dependency packages")}`;
 

@@ -20,8 +20,8 @@
   },
   "license": "Apache-2.0",
   "private": true,
-  "packageManager": "pnpm@10.20.0",
-  "engines": { "node": ">=22.14.0", "pnpm": ">=10.20.0" },
+  "packageManager": "pnpm@10.23.0",
+  "engines": { "node": ">=24.11.0", "pnpm": ">=10.23.0" },
   "keywords": [
     "stryke",
     "typescript",
@@ -76,6 +76,7 @@
     "@storm-software/linting-tools": "catalog:",
     "@storm-software/markdownlint": "catalog:",
     "@storm-software/prettier": "catalog:",
+    "@storm-software/pnpm-tools": "catalog:",
     "@storm-software/testing-tools": "catalog:",
     "@storm-software/tsconfig": "catalog:",
     "@storm-software/tsdoc": "catalog:",
