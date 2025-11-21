@@ -17,7 +17,7 @@
  ------------------------------------------------------------------- */
 
 import { getUnique } from "@stryke/helpers/get-unique";
-import { appendExtension, replacePath } from "@stryke/path";
+import { appendExtension } from "@stryke/path";
 import { correctPath, toAbsolutePath } from "@stryke/path/correct-path";
 import { cwd } from "@stryke/path/cwd";
 import {
@@ -205,37 +205,29 @@ export async function resolve(
     error = err as Error;
   }
 
-  if (!result) {
-    for (let i = 0; i < paths.length && !result; i++) {
-      try {
-        result = await resolvePath(replacePath(path, paths[i]), {
-          url: paths,
-          extensions: options.extensions ?? DEFAULT_EXTENSIONS,
-          conditions: options.conditions
-        });
-      } catch (err) {
-        error = err as Error;
-      }
-    }
-  }
-
-  if (!result && findFileName(path, { withExtension: false }) !== "index") {
-    try {
-      result = await resolve(joinPaths(path, "index"), {
-        ...options,
-        paths
-      });
-      if (result) {
-        // Remove the previously added index file from the path
-        result = findFilePath(result);
-      }
-    } catch (err) {
-      error = err as Error;
-    }
-  }
+  // if (!result) {
+  //   for (let i = 0; i < paths.length && !result; i++) {
+  //     try {
+  //       result = await resolvePath(replacePath(path, paths[i]), {
+  //         url: paths,
+  //         extensions: options.extensions ?? DEFAULT_EXTENSIONS,
+  //         conditions: options.conditions
+  //       });
+  //     } catch (err) {
+  //       error = err as Error;
+  //     }
+  //   }
+  // }
 
   if (!result) {
-    throw error ?? new Error(`Cannot resolve module '${path}'`);
+    throw new Error(
+      `Unable to resolve module "${
+        path
+      }". The following import paths were tried: \n${paths.join("\n")}`,
+      {
+        cause: error
+      }
+    );
   }
 
   return correctPath(result);
@@ -269,37 +261,44 @@ export function resolveSync(path: string, options: ResolveOptions = {}) {
     error = err as Error;
   }
 
-  if (!result) {
-    for (let i = 0; i < paths.length && !result; i++) {
-      try {
-        result = resolvePathSync(replacePath(path, paths[i]), {
-          url: paths,
-          extensions: options.extensions ?? DEFAULT_EXTENSIONS,
-          conditions: options.conditions
-        });
-      } catch (err) {
-        error = err as Error;
-      }
-    }
-  }
+  // if (!result) {
+  //   for (let i = 0; i < paths.length && !result; i++) {
+  //     try {
+  //       result = resolvePathSync(replacePath(path, paths[i]), {
+  //         url: paths,
+  //         extensions: options.extensions ?? DEFAULT_EXTENSIONS,
+  //         conditions: options.conditions
+  //       });
+  //     } catch (err) {
+  //       error = err as Error;
+  //     }
+  //   }
+  // }
 
-  if (!result && findFileName(path, { withExtension: false }) !== "index") {
-    try {
-      result = resolveSync(joinPaths(path, "index"), {
-        ...options,
-        paths
-      });
-      if (result) {
-        // Remove the previously added index file from the path
-        result = findFilePath(result);
-      }
-    } catch (err) {
-      error = err as Error;
-    }
-  }
+  // if (!result && findFileName(path, { withExtension: false }) !== "index") {
+  //   try {
+  //     result = resolveSync(joinPaths(path, "index"), {
+  //       ...options,
+  //       paths
+  //     });
+  //     if (result) {
+  //       // Remove the previously added index file from the path
+  //       result = findFilePath(result);
+  //     }
+  //   } catch (err) {
+  //     error = err as Error;
+  //   }
+  // }
 
   if (!result) {
-    throw error ?? new Error(`Cannot resolve module '${path}'`);
+    throw new Error(
+      `Unable to resolve module "${
+        path
+      }". The following import paths were tried: \n${paths.join("\n")}`,
+      {
+        cause: error
+      }
+    );
   }
 
   return correctPath(result);
