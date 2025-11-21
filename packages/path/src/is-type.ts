@@ -16,7 +16,7 @@
 
  ------------------------------------------------------------------- */
 
-import { ABSOLUTE_PATH_REGEX } from "./regex";
+import { ABSOLUTE_PATH_REGEX, NPM_SCOPED_PACKAGE_REGEX } from "./regex";
 import { slash } from "./slash";
 
 /**
@@ -63,4 +63,44 @@ export function isRelativePath(path: string): boolean {
  */
 export function isRelative(path: string): boolean {
   return isRelativePath(path);
+}
+
+/**
+ * Check if the path is a npm package path.
+ *
+ * @remarks
+ * This only checks if the path matches the npm namespace scoped package naming convention such as `@scope/package-name`. This is an alias for {@link isNpmScopedPackage}.
+ *
+ * @example
+ * ```ts
+ * isNpmScopedPackage("@stryke/path"); // returns true
+ * isNpmScopedPackage("lodash"); // returns false
+ * isNpmNamespacePackage("./src/index.ts"); // returns false
+ * ```
+ *
+ * @param path - The path to check
+ * @returns An indicator specifying if the path is a npm package path
+ */
+export function isNpmScopedPackagePath(path: string): boolean {
+  return NPM_SCOPED_PACKAGE_REGEX.test(slash(path));
+}
+
+/**
+ * Check if the path is a npm package path.
+ *
+ * @remarks
+ * This only checks if the path matches the npm namespace scoped package naming convention such as `@scope/package-name`. This is an alias for {@link isNpmScopedPackagePath}.
+ *
+ * @example
+ * ```ts
+ * isNpmScopedPackagePath("@stryke/path"); // returns true
+ * isNpmScopedPackagePath("lodash"); // returns false
+ * isNpmScopedPackagePath("./src/index.ts"); // returns false
+ * ```
+ *
+ * @param path - The path to check
+ * @returns An indicator specifying if the path is a npm package path
+ */
+export function isNpmScopedPackage(path: string): boolean {
+  return isNpmScopedPackagePath(path);
 }

@@ -420,7 +420,7 @@ importers:
         version: 0.53.48(@babel/traverse@7.28.5)(@swc-node/register@1.11.1(@swc/core@1.15.3(@swc/helpers@0.5.17))(@swc/types@0.1.25)(typescript@5.8.3))(@swc/core@1.15.3(@swc/helpers@0.5.17))(@swc/helpers@0.5.17)(nx@22.1.0(@swc-node/register@1.11.1(@swc/core@1.15.3(@swc/helpers@0.5.17))(@swc/types@0.1.25)(typescript@5.8.3))(@swc/core@1.15.3(@swc/helpers@0.5.17)))(typescript@5.8.3)(verdaccio@6.2.1(typanion@3.14.0))
       '@storm-software/eslint':
         specifier: 'catalog:'
-        version: 0.169.48(afd7018e674f3e4347de7bb19c86b7d2)
+        version: 0.169.48(8e6bc5f8e3fed8f464fd6395b298d1f0)
       '@storm-software/git-tools':
         specifier: 'catalog:'
         version: 2.124.31(@babel/traverse@7.28.5)(@swc-node/register@1.11.1(@swc/core@1.15.3(@swc/helpers@0.5.17))(@swc/types@0.1.25)(typescript@5.8.3))(@swc/core@1.15.3(@swc/helpers@0.5.17))(@types/node@24.10.1)(conventional-changelog-storm-software@0.3.48(conventional-changelog-conventionalcommits@9.1.0))(verdaccio@6.2.1(typanion@3.14.0))(zod@4.1.12)
@@ -444,7 +444,7 @@ importers:
         version: 0.47.48
       '@storm-software/tsdoc':
         specifier: 'catalog:'
-        version: 0.13.48(@microsoft/api-extractor@7.55.0(@types/node@24.10.1))(@microsoft/tsdoc-config@0.18.0)(@microsoft/tsdoc@0.16.0)
+        version: 0.13.48(@microsoft/api-extractor@7.55.1(@types/node@24.10.1))(@microsoft/tsdoc-config@0.18.0)(@microsoft/tsdoc@0.16.0)
       '@storm-software/unbuild':
         specifier: 'catalog:'
         version: 0.57.48(@nx/devkit@22.1.0(nx@22.1.0(@swc-node/register@1.11.1(@swc/core@1.15.3(@swc/helpers@0.5.17))(@swc/types@0.1.25)(typescript@5.8.3))(@swc/core@1.15.3(@swc/helpers@0.5.17))))(@nx/js@22.1.0(@babel/traverse@7.28.5)(@swc-node/register@1.11.1(@swc/core@1.15.3(@swc/helpers@0.5.17))(@swc/types@0.1.25)(typescript@5.8.3))(@swc/core@1.15.3(@swc/helpers@0.5.17))(nx@22.1.0(@swc-node/register@1.11.1(@swc/core@1.15.3(@swc/helpers@0.5.17))(@swc/types@0.1.25)(typescript@5.8.3))(@swc/core@1.15.3(@swc/helpers@0.5.17)))(verdaccio@6.2.1(typanion@3.14.0)))(@swc/core@1.15.3(@swc/helpers@0.5.17))(@swc/helpers@0.5.17)(@types/picomatch@4.0.2)(nx@22.1.0(@swc-node/register@1.11.1(@swc/core@1.15.3(@swc/helpers@0.5.17))(@swc/types@0.1.25)(typescript@5.8.3))(@swc/core@1.15.3(@swc/helpers@0.5.17)))(rollup@4.53.3)(typescript@5.8.3)
@@ -531,7 +531,7 @@ importers:
         version: 2.8.1
       tsup:
         specifier: 'catalog:'
-        version: 8.5.1(@microsoft/api-extractor@7.55.0(@types/node@24.10.1))(@swc/core@1.15.3(@swc/helpers@0.5.17))(jiti@2.4.2)(postcss@8.5.6)(tsx@4.20.6)(typescript@5.8.3)(yaml@2.8.1)
+        version: 8.5.1(@microsoft/api-extractor@7.55.1(@types/node@24.10.1))(@swc/core@1.15.3(@swc/helpers@0.5.17))(jiti@2.4.2)(postcss@8.5.6)(tsx@4.20.6)(typescript@5.8.3)(yaml@2.8.1)
       typescript:
         specifier: 5.8.3
         version: 5.8.3
@@ -589,7 +589,7 @@ importers:
         version: 9.5.1
       tsup:
         specifier: 'catalog:'
-        version: 8.5.1(@microsoft/api-extractor@7.55.0(@types/node@24.10.1))(@swc/core@1.15.3(@swc/helpers@0.5.17))(jiti@2.6.1)(postcss@8.5.6)(tsx@4.20.6)(typescript@5.9.3)(yaml@2.8.1)
+        version: 8.5.1(@microsoft/api-extractor@7.55.1(@types/node@24.10.1))(@swc/core@1.15.3(@swc/helpers@0.5.17))(jiti@2.6.1)(postcss@8.5.6)(tsx@4.20.6)(typescript@5.9.3)(yaml@2.8.1)
       tsx:
         specifier: 'catalog:'
         version: 4.20.6
@@ -860,7 +860,7 @@ importers:
         version: 8.0.0
       tsup:
         specifier: 'catalog:'
-        version: 8.5.1(@microsoft/api-extractor@7.55.0(@types/node@24.10.1))(@swc/core@1.15.3(@swc/helpers@0.5.17))(jiti@2.6.1)(postcss@8.5.6)(tsx@4.20.6)(typescript@5.9.3)(yaml@2.8.1)
+        version: 8.5.1(@microsoft/api-extractor@7.55.1(@types/node@24.10.1))(@swc/core@1.15.3(@swc/helpers@0.5.17))(jiti@2.6.1)(postcss@8.5.6)(tsx@4.20.6)(typescript@5.9.3)(yaml@2.8.1)
 
   packages/prisma-trpc-generator:
     dependencies:
@@ -903,7 +903,7 @@ importers:
         version: 8.0.0
       tsup:
         specifier: 'catalog:'
-        version: 8.5.1(@microsoft/api-extractor@7.55.0(@types/node@24.10.1))(@swc/core@1.15.3(@swc/helpers@0.5.17))(jiti@2.6.1)(postcss@8.5.6)(tsx@4.20.6)(typescript@5.9.3)(yaml@2.8.1)
+        version: 8.5.1(@microsoft/api-extractor@7.55.1(@types/node@24.10.1))(@swc/core@1.15.3(@swc/helpers@0.5.17))(jiti@2.6.1)(postcss@8.5.6)(tsx@4.20.6)(typescript@5.9.3)(yaml@2.8.1)
 
   packages/string-format: {}
 
@@ -991,7 +991,7 @@ importers:
         version: 22.1.0(@swc-node/register@1.11.1(@swc/core@1.7.26(@swc/helpers@0.5.17))(@swc/types@0.1.25)(typescript@5.8.3))(@swc/core@1.7.26(@swc/helpers@0.5.17))
       tsup:
         specifier: 'catalog:'
-        version: 8.5.1(@microsoft/api-extractor@7.55.0(@types/node@24.10.1))(@swc/core@1.7.26(@swc/helpers@0.5.17))(jiti@2.6.1)(postcss@8.5.6)(tsx@4.20.6)(typescript@5.8.3)(yaml@2.8.1)
+        version: 8.5.1(@microsoft/api-extractor@7.55.1(@types/node@24.10.1))(@swc/core@1.7.26(@swc/helpers@0.5.17))(jiti@2.6.1)(postcss@8.5.6)(tsx@4.20.6)(typescript@5.8.3)(yaml@2.8.1)
     devDependencies:
       '@storm-software/tsconfig':
         specifier: 'catalog:'
@@ -3281,11 +3281,11 @@ packages:
   '@ltd/j-toml@1.38.0':
     resolution: {integrity: sha512-lYtBcmvHustHQtg4X7TXUu1Xa/tbLC3p2wLvgQI+fWVySguVZJF60Snxijw5EiohumxZbR10kWYFFebh1zotiw==}
 
-  '@microsoft/api-extractor-model@7.32.0':
-    resolution: {integrity: sha512-QIVJSreb8fGGJy1Qx0yzGVXxvHJN1WXgkFNHFheVv1iBJNqgvp+xeT3ienJmRwXmPPc5Es/cxBrXtKZJR3i7iw==}
+  '@microsoft/api-extractor-model@7.32.1':
+    resolution: {integrity: sha512-u4yJytMYiUAnhcNQcZDTh/tVtlrzKlyKrQnLOV+4Qr/5gV+cpufWzCYAB1Q23URFqD6z2RoL2UYncM9xJVGNKA==}
 
-  '@microsoft/api-extractor@7.55.0':
-    resolution: {integrity: sha512-TYc5OtAK/9E3HGgd2bIfSjQDYIwPc0dysf9rPiwXZGsq916I6W2oww9bhm1OxPOeg6rMfOX3PoroGd7oCryYog==}
+  '@microsoft/api-extractor@7.55.1':
+    resolution: {integrity: sha512-l8Z+8qrLkZFM3HM95Dbpqs6G39fpCa7O5p8A7AkA6hSevxkgwsOlLrEuPv0ADOyj5dI1Af5WVDiwpKG/ya5G3w==}
     hasBin: true
 
   '@microsoft/tsdoc-config@0.17.1':
@@ -4152,8 +4152,8 @@ packages:
     cpu: [x64]
     os: [win32]
 
-  '@rushstack/node-core-library@5.18.0':
-    resolution: {integrity: sha512-XDebtBdw5S3SuZIt+Ra2NieT8kQ3D2Ow1HxhDQ/2soinswnOu9e7S69VSwTOLlQnx5mpWbONu+5JJjDxMAb6Fw==}
+  '@rushstack/node-core-library@5.19.0':
+    resolution: {integrity: sha512-BxAopbeWBvNJ6VGiUL+5lbJXywTdsnMeOS8j57Cn/xY10r6sV/gbsTlfYKjzVCUBZATX2eRzJHSMCchsMTGN6A==}
     peerDependencies:
       '@types/node': '*'
     peerDependenciesMeta:
@@ -4171,16 +4171,16 @@ packages:
   '@rushstack/rig-package@0.6.0':
     resolution: {integrity: sha512-ZQmfzsLE2+Y91GF15c65L/slMRVhF6Hycq04D4TwtdGaUAbIXXg9c5pKA5KFU7M4QMaihoobp9JJYpYcaY3zOw==}
 
-  '@rushstack/terminal@0.19.3':
-    resolution: {integrity: sha512-0P8G18gK9STyO+CNBvkKPnWGMxESxecTYqOcikHOVIHXa9uAuTK+Fw8TJq2Gng1w7W6wTC9uPX6hGNvrMll2wA==}
+  '@rushstack/terminal@0.19.4':
+    resolution: {integrity: sha512-f4XQk02CrKfrMgyOfhYd3qWI944dLC21S4I/LUhrlAP23GTMDNG6EK5effQtFkISwUKCgD9vMBrJZaPSUquxWQ==}
     peerDependencies:
       '@types/node': '*'
     peerDependenciesMeta:
       '@types/node':
         optional: true
 
-  '@rushstack/ts-command-line@5.1.3':
-    resolution: {integrity: sha512-Kdv0k/BnnxIYFlMVC1IxrIS0oGQd4T4b7vKfx52Y2+wk2WZSDFIvedr7JrhenzSlm3ou5KwtoTGTGd5nbODRug==}
+  '@rushstack/ts-command-line@5.1.4':
+    resolution: {integrity: sha512-H0I6VdJ6sOUbktDFpP2VW5N29w8v4hRoNZOQz02vtEi6ZTYL1Ju8u+TcFiFawUDrUsx/5MQTUhd79uwZZVwVlA==}
 
   '@samchon/openapi@2.5.3':
     resolution: {integrity: sha512-gLcGqPGsr/V43yNrhC+5E8ZR8y1JdLZDgkC6ULg+B03uvmdS2C7qIXpIWUe19MUPvXt5SCpjhvOykomEspinaw==}
@@ -14812,23 +14812,23 @@ snapshots:
 
   '@ltd/j-toml@1.38.0': {}
 
-  '@microsoft/api-extractor-model@7.32.0(@types/node@24.10.1)':
+  '@microsoft/api-extractor-model@7.32.1(@types/node@24.10.1)':
     dependencies:
       '@microsoft/tsdoc': 0.16.0
       '@microsoft/tsdoc-config': 0.18.0
-      '@rushstack/node-core-library': 5.18.0(@types/node@24.10.1)
+      '@rushstack/node-core-library': 5.19.0(@types/node@24.10.1)
     transitivePeerDependencies:
       - '@types/node'
 
-  '@microsoft/api-extractor@7.55.0(@types/node@24.10.1)':
+  '@microsoft/api-extractor@7.55.1(@types/node@24.10.1)':
     dependencies:
-      '@microsoft/api-extractor-model': 7.32.0(@types/node@24.10.1)
+      '@microsoft/api-extractor-model': 7.32.1(@types/node@24.10.1)
       '@microsoft/tsdoc': 0.16.0
       '@microsoft/tsdoc-config': 0.18.0
-      '@rushstack/node-core-library': 5.18.0(@types/node@24.10.1)
+      '@rushstack/node-core-library': 5.19.0(@types/node@24.10.1)
       '@rushstack/rig-package': 0.6.0
-      '@rushstack/terminal': 0.19.3(@types/node@24.10.1)
-      '@rushstack/ts-command-line': 5.1.3(@types/node@24.10.1)
+      '@rushstack/terminal': 0.19.4(@types/node@24.10.1)
+      '@rushstack/ts-command-line': 5.1.4(@types/node@24.10.1)
       '@types/lodash': 4.14.116
       '@types/resolve': 1.20.2
       '@types/semver': 7.5.0
@@ -16079,7 +16079,7 @@ snapshots:
   '@rollup/rollup-win32-x64-msvc@4.53.3':
     optional: true
 
-  '@rushstack/node-core-library@5.18.0(@types/node@24.10.1)':
+  '@rushstack/node-core-library@5.19.0(@types/node@24.10.1)':
     dependencies:
       '@types/fs-extra': 7.0.0
       '@types/jju': 1.4.1
@@ -16106,18 +16106,18 @@ snapshots:
       resolve: 1.22.11
       strip-json-comments: 3.1.1
 
-  '@rushstack/terminal@0.19.3(@types/node@24.10.1)':
+  '@rushstack/terminal@0.19.4(@types/node@24.10.1)':
     dependencies:
-      '@rushstack/node-core-library': 5.18.0(@types/node@24.10.1)
+      '@rushstack/node-core-library': 5.19.0(@types/node@24.10.1)
       '@rushstack/problem-matcher': 0.1.1(@types/node@24.10.1)
       '@types/supports-color': 8.1.3
       supports-color: 8.1.1
     optionalDependencies:
       '@types/node': 24.10.1
 
-  '@rushstack/ts-command-line@5.1.3(@types/node@24.10.1)':
+  '@rushstack/ts-command-line@5.1.4(@types/node@24.10.1)':
     dependencies:
-      '@rushstack/terminal': 0.19.3(@types/node@24.10.1)
+      '@rushstack/terminal': 0.19.4(@types/node@24.10.1)
       '@types/argparse': 1.0.38
       argparse: 1.0.10
       string-argv: 0.3.2
@@ -16320,7 +16320,7 @@ snapshots:
       - typescript
       - verdaccio
 
-  '@storm-software/eslint@0.169.48(afd7018e674f3e4347de7bb19c86b7d2)':
+  '@storm-software/eslint@0.169.48(8e6bc5f8e3fed8f464fd6395b298d1f0)':
     dependencies:
       '@antfu/install-pkg': 1.1.0
       '@clack/prompts': 0.10.1
@@ -16335,7 +16335,7 @@ snapshots:
       '@prettier/plugin-xml': 3.4.1(prettier@3.6.2)
       '@storm-software/config': 1.134.48
       '@storm-software/config-tools': 1.188.48
-      '@storm-software/tsdoc': 0.13.48(@microsoft/api-extractor@7.55.0(@types/node@24.10.1))(@microsoft/tsdoc-config@0.18.0)(@microsoft/tsdoc@0.16.0)
+      '@storm-software/tsdoc': 0.13.48(@microsoft/api-extractor@7.55.1(@types/node@24.10.1))(@microsoft/tsdoc-config@0.18.0)(@microsoft/tsdoc@0.16.0)
       '@stylistic/eslint-plugin': 4.4.1(@types/eslint@9.6.1)(eslint@9.39.1(@types/eslint@9.6.1)(jiti@2.4.2))(typescript@5.8.3)
       '@types/eslint': 9.6.1
       '@typescript-eslint/eslint-plugin': 8.47.0(@types/eslint@9.6.1)(@typescript-eslint/parser@8.47.0(eslint@9.39.1(@types/eslint@9.6.1)(jiti@2.4.2))(typescript@5.8.3))(eslint@9.39.1(@types/eslint@9.6.1)(jiti@2.4.2))(typescript@5.8.3)
@@ -16511,13 +16511,13 @@ snapshots:
     dependencies:
       '@total-typescript/ts-reset': 0.5.1
 
-  '@storm-software/tsdoc@0.13.48(@microsoft/api-extractor@7.55.0(@types/node@24.10.1))(@microsoft/tsdoc-config@0.18.0)(@microsoft/tsdoc@0.16.0)':
+  '@storm-software/tsdoc@0.13.48(@microsoft/api-extractor@7.55.1(@types/node@24.10.1))(@microsoft/tsdoc-config@0.18.0)(@microsoft/tsdoc@0.16.0)':
     optionalDependencies:
-      '@microsoft/api-extractor': 7.55.0(@types/node@24.10.1)
+      '@microsoft/api-extractor': 7.55.1(@types/node@24.10.1)
       '@microsoft/tsdoc': 0.16.0
       '@microsoft/tsdoc-config': 0.18.0
 
-  '@storm-software/tsdown@0.45.48(@babel/runtime@7.28.4)(@microsoft/api-extractor@7.55.0(@types/node@24.10.1))(@nx/devkit@22.0.4(nx@22.1.0(@swc-node/register@1.11.1(@swc/core@1.15.3(@swc/helpers@0.5.17))(@swc/types@0.1.25)(typescript@5.8.3))(@swc/core@1.15.3(@swc/helpers@0.5.17))))(@nx/js@22.0.4(@babel/traverse@7.28.5)(@swc-node/register@1.11.1(@swc/core@1.15.3(@swc/helpers@0.5.17))(@swc/types@0.1.25)(typescript@5.8.3))(@swc/core@1.15.3(@swc/helpers@0.5.17))(nx@22.1.0(@swc-node/register@1.11.1(@swc/core@1.15.3(@swc/helpers@0.5.17))(@swc/types@0.1.25)(typescript@5.8.3))(@swc/core@1.15.3(@swc/helpers@0.5.17)))(verdaccio@6.2.1(typanion@3.14.0)))(@swc-node/register@1.11.1(@swc/core@1.15.3(@swc/helpers@0.5.17))(@swc/types@0.1.25)(typescript@5.8.3))(@swc/core@1.15.3(@swc/helpers@0.5.17))(@swc/helpers@0.5.17)(jiti@2.4.2)(postcss@8.5.6)(spdx-exceptions@2.5.0)(spdx-license-ids@3.0.22)(tsdown@0.15.4(oxc-resolver@11.13.2)(typescript@5.8.3))(tsx@4.20.6)(typescript@5.8.3)(yaml@2.8.1)':
+  '@storm-software/tsdown@0.45.48(@babel/runtime@7.28.4)(@microsoft/api-extractor@7.55.1(@types/node@24.10.1))(@nx/devkit@22.0.4(nx@22.1.0(@swc-node/register@1.11.1(@swc/core@1.15.3(@swc/helpers@0.5.17))(@swc/types@0.1.25)(typescript@5.8.3))(@swc/core@1.15.3(@swc/helpers@0.5.17))))(@nx/js@22.0.4(@babel/traverse@7.28.5)(@swc-node/register@1.11.1(@swc/core@1.15.3(@swc/helpers@0.5.17))(@swc/types@0.1.25)(typescript@5.8.3))(@swc/core@1.15.3(@swc/helpers@0.5.17))(nx@22.1.0(@swc-node/register@1.11.1(@swc/core@1.15.3(@swc/helpers@0.5.17))(@swc/types@0.1.25)(typescript@5.8.3))(@swc/core@1.15.3(@swc/helpers@0.5.17)))(verdaccio@6.2.1(typanion@3.14.0)))(@swc-node/register@1.11.1(@swc/core@1.15.3(@swc/helpers@0.5.17))(@swc/types@0.1.25)(typescript@5.8.3))(@swc/core@1.15.3(@swc/helpers@0.5.17))(@swc/helpers@0.5.17)(jiti@2.4.2)(postcss@8.5.6)(spdx-exceptions@2.5.0)(spdx-license-ids@3.0.22)(tsdown@0.15.4(oxc-resolver@11.13.2)(typescript@5.8.3))(tsx@4.20.6)(typescript@5.8.3)(yaml@2.8.1)':
     dependencies:
       '@storm-software/build-tools': 0.158.48(@nx/devkit@22.0.4(nx@22.1.0(@swc-node/register@1.11.1(@swc/core@1.15.3(@swc/helpers@0.5.17))(@swc/types@0.1.25)(typescript@5.8.3))(@swc/core@1.15.3(@swc/helpers@0.5.17))))(@nx/js@22.0.4(@babel/traverse@7.28.5)(@swc-node/register@1.11.1(@swc/core@1.15.3(@swc/helpers@0.5.17))(@swc/types@0.1.25)(typescript@5.8.3))(@swc/core@1.15.3(@swc/helpers@0.5.17))(nx@22.1.0(@swc-node/register@1.11.1(@swc/core@1.15.3(@swc/helpers@0.5.17))(@swc/types@0.1.25)(typescript@5.8.3))(@swc/core@1.15.3(@swc/helpers@0.5.17)))(verdaccio@6.2.1(typanion@3.14.0)))(@swc/helpers@0.5.17)(nx@22.0.4(@swc-node/register@1.11.1(@swc/core@1.15.3(@swc/helpers@0.5.17))(@swc/types@0.1.25)(typescript@5.8.3))(@swc/core@1.15.3(@swc/helpers@0.5.17)))(typescript@5.8.3)
       '@storm-software/config': 1.134.48
@@ -16530,9 +16530,9 @@ snapshots:
       rolldown: 1.0.0-beta.1(@babel/runtime@7.28.4)
       source-map: 0.7.4
       tsdown: 0.15.4(oxc-resolver@11.13.2)(typescript@5.8.3)
-      tsup: 8.4.0(@microsoft/api-extractor@7.55.0(@types/node@24.10.1))(@swc/core@1.15.3(@swc/helpers@0.5.17))(jiti@2.4.2)(postcss@8.5.6)(tsx@4.20.6)(typescript@5.8.3)(yaml@2.8.1)
+      tsup: 8.4.0(@microsoft/api-extractor@7.55.1(@types/node@24.10.1))(@swc/core@1.15.3(@swc/helpers@0.5.17))(jiti@2.4.2)(postcss@8.5.6)(tsx@4.20.6)(typescript@5.8.3)(yaml@2.8.1)
     optionalDependencies:
-      '@microsoft/api-extractor': 7.55.0(@types/node@24.10.1)
+      '@microsoft/api-extractor': 7.55.1(@types/node@24.10.1)
       spdx-exceptions: 2.5.0
       spdx-license-ids: 3.0.22
     transitivePeerDependencies:
@@ -16551,7 +16551,7 @@ snapshots:
       - typescript
       - yaml
 
-  '@storm-software/tsdown@0.45.48(@babel/runtime@7.28.4)(@microsoft/api-extractor@7.55.0(@types/node@24.10.1))(@nx/devkit@22.0.4(nx@22.1.0(@swc-node/register@1.11.1(@swc/core@1.7.26(@swc/helpers@0.5.17))(@swc/types@0.1.25)(typescript@5.8.3))(@swc/core@1.7.26(@swc/helpers@0.5.17))))(@nx/js@22.0.4(@babel/traverse@7.28.5)(@swc-node/register@1.11.1(@swc/core@1.7.26(@swc/helpers@0.5.17))(@swc/types@0.1.25)(typescript@5.8.3))(@swc/core@1.7.26(@swc/helpers@0.5.17))(nx@22.1.0(@swc-node/register@1.11.1(@swc/core@1.7.26(@swc/helpers@0.5.17))(@swc/types@0.1.25)(typescript@5.8.3))(@swc/core@1.7.26(@swc/helpers@0.5.17)))(verdaccio@6.2.1(typanion@3.14.0)))(@swc-node/register@1.11.1(@swc/core@1.7.26(@swc/helpers@0.5.17))(@swc/types@0.1.25)(typescript@5.8.3))(@swc/core@1.7.26(@swc/helpers@0.5.17))(@swc/helpers@0.5.17)(jiti@2.4.2)(postcss@8.5.6)(spdx-exceptions@2.5.0)(spdx-license-ids@3.0.22)(tsdown@0.15.4(oxc-resolver@11.13.2)(typescript@5.8.3))(tsx@4.20.6)(typescript@5.8.3)(yaml@2.8.1)':
+  '@storm-software/tsdown@0.45.48(@babel/runtime@7.28.4)(@microsoft/api-extractor@7.55.1(@types/node@24.10.1))(@nx/devkit@22.0.4(nx@22.1.0(@swc-node/register@1.11.1(@swc/core@1.7.26(@swc/helpers@0.5.17))(@swc/types@0.1.25)(typescript@5.8.3))(@swc/core@1.7.26(@swc/helpers@0.5.17))))(@nx/js@22.0.4(@babel/traverse@7.28.5)(@swc-node/register@1.11.1(@swc/core@1.7.26(@swc/helpers@0.5.17))(@swc/types@0.1.25)(typescript@5.8.3))(@swc/core@1.7.26(@swc/helpers@0.5.17))(nx@22.1.0(@swc-node/register@1.11.1(@swc/core@1.7.26(@swc/helpers@0.5.17))(@swc/types@0.1.25)(typescript@5.8.3))(@swc/core@1.7.26(@swc/helpers@0.5.17)))(verdaccio@6.2.1(typanion@3.14.0)))(@swc-node/register@1.11.1(@swc/core@1.7.26(@swc/helpers@0.5.17))(@swc/types@0.1.25)(typescript@5.8.3))(@swc/core@1.7.26(@swc/helpers@0.5.17))(@swc/helpers@0.5.17)(jiti@2.4.2)(postcss@8.5.6)(spdx-exceptions@2.5.0)(spdx-license-ids@3.0.22)(tsdown@0.15.4(oxc-resolver@11.13.2)(typescript@5.8.3))(tsx@4.20.6)(typescript@5.8.3)(yaml@2.8.1)':
     dependencies:
       '@storm-software/build-tools': 0.158.48(@nx/devkit@22.0.4(nx@22.1.0(@swc-node/register@1.11.1(@swc/core@1.7.26(@swc/helpers@0.5.17))(@swc/types@0.1.25)(typescript@5.8.3))(@swc/core@1.7.26(@swc/helpers@0.5.17))))(@nx/js@22.0.4(@babel/traverse@7.28.5)(@swc-node/register@1.11.1(@swc/core@1.7.26(@swc/helpers@0.5.17))(@swc/types@0.1.25)(typescript@5.8.3))(@swc/core@1.7.26(@swc/helpers@0.5.17))(nx@22.1.0(@swc-node/register@1.11.1(@swc/core@1.7.26(@swc/helpers@0.5.17))(@swc/types@0.1.25)(typescript@5.8.3))(@swc/core@1.7.26(@swc/helpers@0.5.17)))(verdaccio@6.2.1(typanion@3.14.0)))(@swc/helpers@0.5.17)(nx@22.0.4(@swc-node/register@1.11.1(@swc/core@1.7.26(@swc/helpers@0.5.17))(@swc/types@0.1.25)(typescript@5.8.3))(@swc/core@1.7.26(@swc/helpers@0.5.17)))(typescript@5.8.3)
       '@storm-software/config': 1.134.48
@@ -16564,9 +16564,9 @@ snapshots:
       rolldown: 1.0.0-beta.1(@babel/runtime@7.28.4)
       source-map: 0.7.4
       tsdown: 0.15.4(oxc-resolver@11.13.2)(typescript@5.8.3)
-      tsup: 8.4.0(@microsoft/api-extractor@7.55.0(@types/node@24.10.1))(@swc/core@1.7.26(@swc/helpers@0.5.17))(jiti@2.4.2)(postcss@8.5.6)(tsx@4.20.6)(typescript@5.8.3)(yaml@2.8.1)
+      tsup: 8.4.0(@microsoft/api-extractor@7.55.1(@types/node@24.10.1))(@swc/core@1.7.26(@swc/helpers@0.5.17))(jiti@2.4.2)(postcss@8.5.6)(tsx@4.20.6)(typescript@5.8.3)(yaml@2.8.1)
     optionalDependencies:
-      '@microsoft/api-extractor': 7.55.0(@types/node@24.10.1)
+      '@microsoft/api-extractor': 7.55.1(@types/node@24.10.1)
       spdx-exceptions: 2.5.0
       spdx-license-ids: 3.0.22
     transitivePeerDependencies:
@@ -16716,7 +16716,7 @@ snapshots:
   '@storm-software/workspace-tools@1.293.18(@babel/runtime@7.28.4)(@babel/traverse@7.28.5)(@swc-node/register@1.11.1(@swc/core@1.15.3(@swc/helpers@0.5.17))(@swc/types@0.1.25)(typescript@5.8.3))(@swc/core@1.15.3(@swc/helpers@0.5.17))(@swc/helpers@0.5.17)(@types/node@24.10.1)(@types/picomatch@4.0.2)(markdownlint-cli2@0.17.2)(nx@22.1.0(@swc-node/register@1.11.1(@swc/core@1.15.3(@swc/helpers@0.5.17))(@swc/types@0.1.25)(typescript@5.8.3))(@swc/core@1.15.3(@swc/helpers@0.5.17)))(postcss@8.5.6)(prettier-plugin-astro@0.14.1)(prettier-plugin-organize-imports@4.1.0(prettier@3.6.2)(typescript@5.8.3))(prettier-plugin-pkg@0.18.1(prettier@3.6.2))(prettier-plugin-prisma@5.0.0(prettier@3.6.2))(prettier-plugin-sh@0.15.0(prettier@3.6.2))(prettier-plugin-toml@2.0.4(prettier@3.6.2))(prettier@3.6.2)(rollup@4.53.3)(spdx-exceptions@2.5.0)(spdx-license-ids@3.0.22)(tsdown@0.15.4(oxc-resolver@11.13.2)(typescript@5.8.3))(tsx@4.20.6)(typescript@5.8.3)(verdaccio@6.2.1(typanion@3.14.0))(yaml@2.8.1)':
     dependencies:
       '@ltd/j-toml': 1.38.0
-      '@microsoft/api-extractor': 7.55.0(@types/node@24.10.1)
+      '@microsoft/api-extractor': 7.55.1(@types/node@24.10.1)
       '@nx/devkit': 22.0.4(nx@22.1.0(@swc-node/register@1.11.1(@swc/core@1.15.3(@swc/helpers@0.5.17))(@swc/types@0.1.25)(typescript@5.8.3))(@swc/core@1.15.3(@swc/helpers@0.5.17)))
       '@nx/js': 22.0.4(@babel/traverse@7.28.5)(@swc-node/register@1.11.1(@swc/core@1.15.3(@swc/helpers@0.5.17))(@swc/types@0.1.25)(typescript@5.8.3))(@swc/core@1.15.3(@swc/helpers@0.5.17))(nx@22.1.0(@swc-node/register@1.11.1(@swc/core@1.15.3(@swc/helpers@0.5.17))(@swc/types@0.1.25)(typescript@5.8.3))(@swc/core@1.15.3(@swc/helpers@0.5.17)))(verdaccio@6.2.1(typanion@3.14.0))
       '@samchon/openapi': 2.5.3
@@ -16728,7 +16728,7 @@ snapshots:
       '@storm-software/npm-tools': 0.6.4
       '@storm-software/pnpm-tools': 0.6.48
       '@storm-software/prettier': 0.57.48(prettier-plugin-astro@0.14.1)(prettier-plugin-organize-imports@4.1.0(prettier@3.6.2)(typescript@5.8.3))(prettier-plugin-pkg@0.18.1(prettier@3.6.2))(prettier-plugin-prisma@5.0.0(prettier@3.6.2))(prettier-plugin-sh@0.15.0(prettier@3.6.2))(prettier-plugin-toml@2.0.4(prettier@3.6.2))(prettier@3.6.2)
-      '@storm-software/tsdown': 0.45.48(@babel/runtime@7.28.4)(@microsoft/api-extractor@7.55.0(@types/node@24.10.1))(@nx/devkit@22.0.4(nx@22.1.0(@swc-node/register@1.11.1(@swc/core@1.15.3(@swc/helpers@0.5.17))(@swc/types@0.1.25)(typescript@5.8.3))(@swc/core@1.15.3(@swc/helpers@0.5.17))))(@nx/js@22.0.4(@babel/traverse@7.28.5)(@swc-node/register@1.11.1(@swc/core@1.15.3(@swc/helpers@0.5.17))(@swc/types@0.1.25)(typescript@5.8.3))(@swc/core@1.15.3(@swc/helpers@0.5.17))(nx@22.1.0(@swc-node/register@1.11.1(@swc/core@1.15.3(@swc/helpers@0.5.17))(@swc/types@0.1.25)(typescript@5.8.3))(@swc/core@1.15.3(@swc/helpers@0.5.17)))(verdaccio@6.2.1(typanion@3.14.0)))(@swc-node/register@1.11.1(@swc/core@1.15.3(@swc/helpers@0.5.17))(@swc/types@0.1.25)(typescript@5.8.3))(@swc/core@1.15.3(@swc/helpers@0.5.17))(@swc/helpers@0.5.17)(jiti@2.4.2)(postcss@8.5.6)(spdx-exceptions@2.5.0)(spdx-license-ids@3.0.22)(tsdown@0.15.4(oxc-resolver@11.13.2)(typescript@5.8.3))(tsx@4.20.6)(typescript@5.8.3)(yaml@2.8.1)
+      '@storm-software/tsdown': 0.45.48(@babel/runtime@7.28.4)(@microsoft/api-extractor@7.55.1(@types/node@24.10.1))(@nx/devkit@22.0.4(nx@22.1.0(@swc-node/register@1.11.1(@swc/core@1.15.3(@swc/helpers@0.5.17))(@swc/types@0.1.25)(typescript@5.8.3))(@swc/core@1.15.3(@swc/helpers@0.5.17))))(@nx/js@22.0.4(@babel/traverse@7.28.5)(@swc-node/register@1.11.1(@swc/core@1.15.3(@swc/helpers@0.5.17))(@swc/types@0.1.25)(typescript@5.8.3))(@swc/core@1.15.3(@swc/helpers@0.5.17))(nx@22.1.0(@swc-node/register@1.11.1(@swc/core@1.15.3(@swc/helpers@0.5.17))(@swc/types@0.1.25)(typescript@5.8.3))(@swc/core@1.15.3(@swc/helpers@0.5.17)))(verdaccio@6.2.1(typanion@3.14.0)))(@swc-node/register@1.11.1(@swc/core@1.15.3(@swc/helpers@0.5.17))(@swc/types@0.1.25)(typescript@5.8.3))(@swc/core@1.15.3(@swc/helpers@0.5.17))(@swc/helpers@0.5.17)(jiti@2.4.2)(postcss@8.5.6)(spdx-exceptions@2.5.0)(spdx-license-ids@3.0.22)(tsdown@0.15.4(oxc-resolver@11.13.2)(typescript@5.8.3))(tsx@4.20.6)(typescript@5.8.3)(yaml@2.8.1)
       '@storm-software/unbuild': 0.57.48(@nx/devkit@22.0.4(nx@22.1.0(@swc-node/register@1.11.1(@swc/core@1.15.3(@swc/helpers@0.5.17))(@swc/types@0.1.25)(typescript@5.8.3))(@swc/core@1.15.3(@swc/helpers@0.5.17))))(@nx/js@22.0.4(@babel/traverse@7.28.5)(@swc-node/register@1.11.1(@swc/core@1.15.3(@swc/helpers@0.5.17))(@swc/types@0.1.25)(typescript@5.8.3))(@swc/core@1.15.3(@swc/helpers@0.5.17))(nx@22.1.0(@swc-node/register@1.11.1(@swc/core@1.15.3(@swc/helpers@0.5.17))(@swc/types@0.1.25)(typescript@5.8.3))(@swc/core@1.15.3(@swc/helpers@0.5.17)))(verdaccio@6.2.1(typanion@3.14.0)))(@swc/core@1.15.3(@swc/helpers@0.5.17))(@swc/helpers@0.5.17)(@types/picomatch@4.0.2)(nx@22.1.0(@swc-node/register@1.11.1(@swc/core@1.15.3(@swc/helpers@0.5.17))(@swc/types@0.1.25)(typescript@5.8.3))(@swc/core@1.15.3(@swc/helpers@0.5.17)))(rollup@4.53.3)(typescript@5.8.3)
       '@types/micromatch': 4.0.10
       '@types/semver': 7.5.8
@@ -16780,7 +16780,7 @@ snapshots:
   '@storm-software/workspace-tools@1.293.18(@babel/runtime@7.28.4)(@babel/traverse@7.28.5)(@swc-node/register@1.11.1(@swc/core@1.7.26(@swc/helpers@0.5.17))(@swc/types@0.1.25)(typescript@5.8.3))(@swc/core@1.7.26(@swc/helpers@0.5.17))(@swc/helpers@0.5.17)(@types/node@24.10.1)(@types/picomatch@4.0.2)(markdownlint-cli2@0.17.2)(nx@22.1.0(@swc-node/register@1.11.1(@swc/core@1.7.26(@swc/helpers@0.5.17))(@swc/types@0.1.25)(typescript@5.8.3))(@swc/core@1.7.26(@swc/helpers@0.5.17)))(postcss@8.5.6)(prettier-plugin-astro@0.14.1)(prettier-plugin-organize-imports@4.1.0(prettier@3.6.2)(typescript@5.8.3))(prettier-plugin-pkg@0.18.1(prettier@3.6.2))(prettier-plugin-prisma@5.0.0(prettier@3.6.2))(prettier-plugin-sh@0.15.0(prettier@3.6.2))(prettier-plugin-toml@2.0.4(prettier@3.6.2))(prettier@3.6.2)(rollup@4.53.3)(spdx-exceptions@2.5.0)(spdx-license-ids@3.0.22)(tsdown@0.15.4(oxc-resolver@11.13.2)(typescript@5.8.3))(tsx@4.20.6)(typescript@5.8.3)(verdaccio@6.2.1(typanion@3.14.0))(yaml@2.8.1)':
     dependencies:
       '@ltd/j-toml': 1.38.0
-      '@microsoft/api-extractor': 7.55.0(@types/node@24.10.1)
+      '@microsoft/api-extractor': 7.55.1(@types/node@24.10.1)
       '@nx/devkit': 22.0.4(nx@22.1.0(@swc-node/register@1.11.1(@swc/core@1.7.26(@swc/helpers@0.5.17))(@swc/types@0.1.25)(typescript@5.8.3))(@swc/core@1.7.26(@swc/helpers@0.5.17)))
       '@nx/js': 22.0.4(@babel/traverse@7.28.5)(@swc-node/register@1.11.1(@swc/core@1.7.26(@swc/helpers@0.5.17))(@swc/types@0.1.25)(typescript@5.8.3))(@swc/core@1.7.26(@swc/helpers@0.5.17))(nx@22.1.0(@swc-node/register@1.11.1(@swc/core@1.7.26(@swc/helpers@0.5.17))(@swc/types@0.1.25)(typescript@5.8.3))(@swc/core@1.7.26(@swc/helpers@0.5.17)))(verdaccio@6.2.1(typanion@3.14.0))
       '@samchon/openapi': 2.5.3
@@ -16792,7 +16792,7 @@ snapshots:
       '@storm-software/npm-tools': 0.6.4
       '@storm-software/pnpm-tools': 0.6.48
       '@storm-software/prettier': 0.57.48(prettier-plugin-astro@0.14.1)(prettier-plugin-organize-imports@4.1.0(prettier@3.6.2)(typescript@5.8.3))(prettier-plugin-pkg@0.18.1(prettier@3.6.2))(prettier-plugin-prisma@5.0.0(prettier@3.6.2))(prettier-plugin-sh@0.15.0(prettier@3.6.2))(prettier-plugin-toml@2.0.4(prettier@3.6.2))(prettier@3.6.2)
-      '@storm-software/tsdown': 0.45.48(@babel/runtime@7.28.4)(@microsoft/api-extractor@7.55.0(@types/node@24.10.1))(@nx/devkit@22.0.4(nx@22.1.0(@swc-node/register@1.11.1(@swc/core@1.7.26(@swc/helpers@0.5.17))(@swc/types@0.1.25)(typescript@5.8.3))(@swc/core@1.7.26(@swc/helpers@0.5.17))))(@nx/js@22.0.4(@babel/traverse@7.28.5)(@swc-node/register@1.11.1(@swc/core@1.7.26(@swc/helpers@0.5.17))(@swc/types@0.1.25)(typescript@5.8.3))(@swc/core@1.7.26(@swc/helpers@0.5.17))(nx@22.1.0(@swc-node/register@1.11.1(@swc/core@1.7.26(@swc/helpers@0.5.17))(@swc/types@0.1.25)(typescript@5.8.3))(@swc/core@1.7.26(@swc/helpers@0.5.17)))(verdaccio@6.2.1(typanion@3.14.0)))(@swc-node/register@1.11.1(@swc/core@1.7.26(@swc/helpers@0.5.17))(@swc/types@0.1.25)(typescript@5.8.3))(@swc/core@1.7.26(@swc/helpers@0.5.17))(@swc/helpers@0.5.17)(jiti@2.4.2)(postcss@8.5.6)(spdx-exceptions@2.5.0)(spdx-license-ids@3.0.22)(tsdown@0.15.4(oxc-resolver@11.13.2)(typescript@5.8.3))(tsx@4.20.6)(typescript@5.8.3)(yaml@2.8.1)
+      '@storm-software/tsdown': 0.45.48(@babel/runtime@7.28.4)(@microsoft/api-extractor@7.55.1(@types/node@24.10.1))(@nx/devkit@22.0.4(nx@22.1.0(@swc-node/register@1.11.1(@swc/core@1.7.26(@swc/helpers@0.5.17))(@swc/types@0.1.25)(typescript@5.8.3))(@swc/core@1.7.26(@swc/helpers@0.5.17))))(@nx/js@22.0.4(@babel/traverse@7.28.5)(@swc-node/register@1.11.1(@swc/core@1.7.26(@swc/helpers@0.5.17))(@swc/types@0.1.25)(typescript@5.8.3))(@swc/core@1.7.26(@swc/helpers@0.5.17))(nx@22.1.0(@swc-node/register@1.11.1(@swc/core@1.7.26(@swc/helpers@0.5.17))(@swc/types@0.1.25)(typescript@5.8.3))(@swc/core@1.7.26(@swc/helpers@0.5.17)))(verdaccio@6.2.1(typanion@3.14.0)))(@swc-node/register@1.11.1(@swc/core@1.7.26(@swc/helpers@0.5.17))(@swc/types@0.1.25)(typescript@5.8.3))(@swc/core@1.7.26(@swc/helpers@0.5.17))(@swc/helpers@0.5.17)(jiti@2.4.2)(postcss@8.5.6)(spdx-exceptions@2.5.0)(spdx-license-ids@3.0.22)(tsdown@0.15.4(oxc-resolver@11.13.2)(typescript@5.8.3))(tsx@4.20.6)(typescript@5.8.3)(yaml@2.8.1)
       '@storm-software/unbuild': 0.57.48(@nx/devkit@22.0.4(nx@22.1.0(@swc-node/register@1.11.1(@swc/core@1.7.26(@swc/helpers@0.5.17))(@swc/types@0.1.25)(typescript@5.8.3))(@swc/core@1.7.26(@swc/helpers@0.5.17))))(@nx/js@22.0.4(@babel/traverse@7.28.5)(@swc-node/register@1.11.1(@swc/core@1.7.26(@swc/helpers@0.5.17))(@swc/types@0.1.25)(typescript@5.8.3))(@swc/core@1.7.26(@swc/helpers@0.5.17))(nx@22.1.0(@swc-node/register@1.11.1(@swc/core@1.7.26(@swc/helpers@0.5.17))(@swc/types@0.1.25)(typescript@5.8.3))(@swc/core@1.7.26(@swc/helpers@0.5.17)))(verdaccio@6.2.1(typanion@3.14.0)))(@swc/core@1.7.26(@swc/helpers@0.5.17))(@swc/helpers@0.5.17)(@types/picomatch@4.0.2)(nx@22.1.0(@swc-node/register@1.11.1(@swc/core@1.7.26(@swc/helpers@0.5.17))(@swc/types@0.1.25)(typescript@5.8.3))(@swc/core@1.7.26(@swc/helpers@0.5.17)))(rollup@4.53.3)(typescript@5.8.3)
       '@types/micromatch': 4.0.10
       '@types/semver': 7.5.8
@@ -26237,7 +26237,7 @@ snapshots:
 
   tslib@2.8.1: {}
 
-  tsup@8.4.0(@microsoft/api-extractor@7.55.0(@types/node@24.10.1))(@swc/core@1.15.3(@swc/helpers@0.5.17))(jiti@2.4.2)(postcss@8.5.6)(tsx@4.20.6)(typescript@5.8.3)(yaml@2.8.1):
+  tsup@8.4.0(@microsoft/api-extractor@7.55.1(@types/node@24.10.1))(@swc/core@1.15.3(@swc/helpers@0.5.17))(jiti@2.4.2)(postcss@8.5.6)(tsx@4.20.6)(typescript@5.8.3)(yaml@2.8.1):
     dependencies:
       '@types/debug': 4.1.12
       bundle-require: 5.1.0(esbuild@0.25.12)
@@ -26257,7 +26257,7 @@ snapshots:
       tinyglobby: 0.2.15
       tree-kill: 1.2.2
     optionalDependencies:
-      '@microsoft/api-extractor': 7.55.0(@types/node@24.10.1)
+      '@microsoft/api-extractor': 7.55.1(@types/node@24.10.1)
       '@swc/core': 1.15.3(@swc/helpers@0.5.17)
       postcss: 8.5.6
       typescript: 5.8.3
@@ -26267,7 +26267,7 @@ snapshots:
       - tsx
       - yaml
 
-  tsup@8.4.0(@microsoft/api-extractor@7.55.0(@types/node@24.10.1))(@swc/core@1.7.26(@swc/helpers@0.5.17))(jiti@2.4.2)(postcss@8.5.6)(tsx@4.20.6)(typescript@5.8.3)(yaml@2.8.1):
+  tsup@8.4.0(@microsoft/api-extractor@7.55.1(@types/node@24.10.1))(@swc/core@1.7.26(@swc/helpers@0.5.17))(jiti@2.4.2)(postcss@8.5.6)(tsx@4.20.6)(typescript@5.8.3)(yaml@2.8.1):
     dependencies:
       '@types/debug': 4.1.12
       bundle-require: 5.1.0(esbuild@0.25.12)
@@ -26287,7 +26287,7 @@ snapshots:
       tinyglobby: 0.2.15
       tree-kill: 1.2.2
     optionalDependencies:
-      '@microsoft/api-extractor': 7.55.0(@types/node@24.10.1)
+      '@microsoft/api-extractor': 7.55.1(@types/node@24.10.1)
       '@swc/core': 1.7.26(@swc/helpers@0.5.17)
       postcss: 8.5.6
       typescript: 5.8.3
@@ -26297,7 +26297,7 @@ snapshots:
       - tsx
       - yaml
 
-  tsup@8.5.1(@microsoft/api-extractor@7.55.0(@types/node@24.10.1))(@swc/core@1.15.3(@swc/helpers@0.5.17))(jiti@2.4.2)(postcss@8.5.6)(tsx@4.20.6)(typescript@5.8.3)(yaml@2.8.1):
+  tsup@8.5.1(@microsoft/api-extractor@7.55.1(@types/node@24.10.1))(@swc/core@1.15.3(@swc/helpers@0.5.17))(jiti@2.4.2)(postcss@8.5.6)(tsx@4.20.6)(typescript@5.8.3)(yaml@2.8.1):
     dependencies:
       '@types/debug': 4.1.12
       bundle-require: 5.1.0(esbuild@0.27.0)
@@ -26318,7 +26318,7 @@ snapshots:
       tinyglobby: 0.2.15
       tree-kill: 1.2.2
     optionalDependencies:
-      '@microsoft/api-extractor': 7.55.0(@types/node@24.10.1)
+      '@microsoft/api-extractor': 7.55.1(@types/node@24.10.1)
       '@swc/core': 1.15.3(@swc/helpers@0.5.17)
       postcss: 8.5.6
       typescript: 5.8.3
@@ -26328,7 +26328,7 @@ snapshots:
       - tsx
       - yaml
 
-  tsup@8.5.1(@microsoft/api-extractor@7.55.0(@types/node@24.10.1))(@swc/core@1.15.3(@swc/helpers@0.5.17))(jiti@2.6.1)(postcss@8.5.6)(tsx@4.20.6)(typescript@5.9.3)(yaml@2.8.1):
+  tsup@8.5.1(@microsoft/api-extractor@7.55.1(@types/node@24.10.1))(@swc/core@1.15.3(@swc/helpers@0.5.17))(jiti@2.6.1)(postcss@8.5.6)(tsx@4.20.6)(typescript@5.9.3)(yaml@2.8.1):
     dependencies:
       '@types/debug': 4.1.12
       bundle-require: 5.1.0(esbuild@0.27.0)
@@ -26349,7 +26349,7 @@ snapshots:
       tinyglobby: 0.2.15
       tree-kill: 1.2.2
     optionalDependencies:
-      '@microsoft/api-extractor': 7.55.0(@types/node@24.10.1)
+      '@microsoft/api-extractor': 7.55.1(@types/node@24.10.1)
       '@swc/core': 1.15.3(@swc/helpers@0.5.17)
       postcss: 8.5.6
       typescript: 5.9.3
@@ -26359,7 +26359,7 @@ snapshots:
       - tsx
       - yaml
 
-  tsup@8.5.1(@microsoft/api-extractor@7.55.0(@types/node@24.10.1))(@swc/core@1.7.26(@swc/helpers@0.5.17))(jiti@2.6.1)(postcss@8.5.6)(tsx@4.20.6)(typescript@5.8.3)(yaml@2.8.1):
+  tsup@8.5.1(@microsoft/api-extractor@7.55.1(@types/node@24.10.1))(@swc/core@1.7.26(@swc/helpers@0.5.17))(jiti@2.6.1)(postcss@8.5.6)(tsx@4.20.6)(typescript@5.8.3)(yaml@2.8.1):
     dependencies:
       '@types/debug': 4.1.12
       bundle-require: 5.1.0(esbuild@0.27.0)
@@ -26380,7 +26380,7 @@ snapshots:
       tinyglobby: 0.2.15
       tree-kill: 1.2.2
     optionalDependencies:
-      '@microsoft/api-extractor': 7.55.0(@types/node@24.10.1)
+      '@microsoft/api-extractor': 7.55.1(@types/node@24.10.1)
       '@swc/core': 1.7.26(@swc/helpers@0.5.17)
       postcss: 8.5.6
       typescript: 5.8.3

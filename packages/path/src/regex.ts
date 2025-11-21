@@ -27,3 +27,6 @@ export const ABSOLUTE_PATH_REGEX =
 export const ROOT_FOLDER_REGEX = /^\/([A-Z]:)?$/i;
 
 export const FILE_EXTENSION_REGEX = /\.[0-9a-z]+$/i;
+
+export const PACKAGE_PATH_REGEX = /^@\w+\/.*$/;
+export const NPM_SCOPED_PACKAGE_REGEX = /^(?:@[\w-]+\/)?[\w-]+$/;
