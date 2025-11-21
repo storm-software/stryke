@@ -2,6 +2,22 @@
 
 # Changelog for Stryke - Fs
 
+## [0.32.14](https://github.com/storm-software/stryke/releases/tag/fs%400.32.14) (11/21/2025)
+
+### Miscellaneous
+
+- **fs:** Improve `resolve` utilities to handle more edge cases
+  ([1939143](https://github.com/storm-software/stryke/commit/1939143))
+
+### Updated Dependencies
+
+- Updated **string-format** to **v0.12.3**
+- Updated **type-checks** to **v0.3.13**
+- Updated **convert** to **v0.6.3**
+- Updated **types** to **v0.10.3**
+- Updated **json** to **v0.9.6**
+- Updated **path** to **v0.19.3**
+
 ## [0.32.13](https://github.com/storm-software/stryke/releases/tag/fs%400.32.13) (11/16/2025)
 
 ### Updated Dependencies
