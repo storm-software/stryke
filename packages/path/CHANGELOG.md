@@ -2,6 +2,19 @@
 
 # Changelog for Stryke - Path
 
+## [0.21.0](https://github.com/storm-software/stryke/releases/tag/path%400.21.0) (11/21/2025)
+
+### Features
+
+- **path:** Added the `isNpmScopedPackage` helper utility
+  ([d74d846](https://github.com/storm-software/stryke/commit/d74d846))
+
+### Updated Dependencies
+
+- Updated **type-checks** to **v0.3.16**
+- Updated **convert** to **v0.6.6**
+- Updated **types** to **v0.10.6**
+
 ## [0.20.0](https://github.com/storm-software/stryke/releases/tag/path%400.20.0) (11/21/2025)
 
 ### Features

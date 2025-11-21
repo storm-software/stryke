@@ -2,6 +2,23 @@
 
 # Changelog for Stryke - Fs
 
+## [0.33.2](https://github.com/storm-software/stryke/releases/tag/fs%400.33.2) (11/21/2025)
+
+### Bug Fixes
+
+- **fs:** Fixed module resolution with scoped npm packages
+  ([f4886bd](https://github.com/storm-software/stryke/commit/f4886bd))
+
+### Updated Dependencies
+
+- Updated **string-format** to **v0.12.6**
+- Updated **type-checks** to **v0.3.16**
+- Updated **convert** to **v0.6.6**
+- Updated **helpers** to **v0.9.8**
+- Updated **types** to **v0.10.6**
+- Updated **json** to **v0.9.9**
+- Updated **path** to **v0.21.0**
+
 ## [0.33.1](https://github.com/storm-software/stryke/releases/tag/fs%400.33.1) (11/21/2025)
 
 ### Bug Fixes
