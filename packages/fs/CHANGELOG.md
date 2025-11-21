@@ -2,6 +2,25 @@
 
 # Changelog for Stryke - Fs
 
+## [0.32.15](https://github.com/storm-software/stryke/releases/tag/fs%400.32.15) (11/21/2025)
+
+### Miscellaneous
+
+- **fs:** Reformat `package.json` file
+  ([baca705](https://github.com/storm-software/stryke/commit/baca705))
+- **fs:** Ensure all path combinations are included in resolution utilities
+  ([b3d9dc1](https://github.com/storm-software/stryke/commit/b3d9dc1))
+
+### Updated Dependencies
+
+- Updated **string-format** to **v0.12.4**
+- Updated **type-checks** to **v0.3.14**
+- Updated **convert** to **v0.6.4**
+- Updated **helpers** to **v0.9.6**
+- Updated **types** to **v0.10.4**
+- Updated **json** to **v0.9.7**
+- Updated **path** to **v0.19.4**
+
 ## [0.32.14](https://github.com/storm-software/stryke/releases/tag/fs%400.32.14) (11/21/2025)
 
 ### Miscellaneous

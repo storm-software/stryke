@@ -1,6 +1,6 @@
 {
   "name": "@stryke/capnp",
-  "version": "0.12.22",
+  "version": "0.12.23",
   "type": "module",
   "description": "A package to assist in running the Cap'n Proto compiler and creating Cap'n Proto serialization protocol schemas.",
   "repository": {
