@@ -16,24 +16,49 @@
 
  ------------------------------------------------------------------- */
 
+import { replacePath } from "@stryke/path";
 import { correctPath } from "@stryke/path/correct-path";
 import { cwd } from "@stryke/path/cwd";
-import { findFilePath } from "@stryke/path/file-path-fns";
+import { findFileName, findFilePath } from "@stryke/path/file-path-fns";
 import { joinPaths } from "@stryke/path/join-paths";
-import type { Platform } from "@stryke/types/system";
 import { interopDefault, resolvePath, resolvePathSync } from "mlly";
 import { getWorkspaceRoot } from "./get-workspace-root";
 
-export interface PackageResolvingOptions {
+export const DEFAULT_EXTENSIONS = [
+  "js",
+  "jsx",
+  "mjs",
+  "cjs",
+  "ts",
+  "tsx",
+  "mts",
+  "cts",
+  "json",
+  "jsonc",
+  "json5",
+  "node"
+];
+
+export interface ResolveOptions {
   /**
    * Paths to resolve the package from
    */
   paths?: string[];
 
   /**
-   * Resolve path as linux (stand-in for unix/posix) or win32
+   * File extensions to consider when resolving the module
+   *
+   * @remarks
+   * Extensions can be provided with or without the leading dot. The resolver utilities will handle both cases.
+   *
+   * @defaultValue ["js", "jsx", "mjs", "cjs", "ts", "tsx", "mts", "cts", "json", "jsonc", "json5", "node", "wasm"]
    */
-  platform?: Platform;
+  extensions?: string[];
+
+  /**
+   * Conditions to consider when resolving package exports.
+   */
+  conditions?: string[];
 }
 
 /**
@@ -43,11 +68,8 @@ export interface PackageResolvingOptions {
  * @param options - The options to use when resolving the module
  * @returns A promise for the path to the module
  */
-export async function resolve(
-  path: string,
-  options: PackageResolvingOptions = {}
-) {
-  const paths = options.paths ?? [];
+export async function resolve(path: string, options: ResolveOptions = {}) {
+  let paths = options.paths ?? [];
   if (paths.length === 0) {
     paths.push(cwd());
   }
@@ -57,11 +79,55 @@ export async function resolve(
     paths.push(workspaceRoot);
   }
 
-  return correctPath(
-    await resolvePath(path, {
-      url: paths
-    })
-  );
+  paths = paths.filter(Boolean).map(p => correctPath(p));
+
+  let result!: string;
+  let error: Error | undefined;
+
+  try {
+    result = await resolvePath(path, {
+      url: paths,
+      extensions: options.extensions ?? DEFAULT_EXTENSIONS,
+      conditions: options.conditions
+    });
+  } catch (err) {
+    error = err as Error;
+  }
+
+  if (!result) {
+    for (let i = 0; i < paths.length && !result; i++) {
+      try {
+        result = await resolvePath(replacePath(path, paths[i]), {
+          url: paths,
+          extensions: options.extensions ?? DEFAULT_EXTENSIONS,
+          conditions: options.conditions
+        });
+      } catch (err) {
+        error = err as Error;
+      }
+    }
+  }
+
+  if (!result && findFileName(path, { withExtension: false }) !== "index") {
+    try {
+      result = await resolve(joinPaths(path, "index"), {
+        ...options,
+        paths
+      });
+      if (result) {
+        // Remove the previously added index file from the path
+        result = findFilePath(result);
+      }
+    } catch (err) {
+      error = err as Error;
+    }
+  }
+
+  if (!result) {
+    throw error ?? new Error(`Cannot resolve module '${path}'`);
+  }
+
+  return correctPath(result);
 }
 
 /**
@@ -71,11 +137,8 @@ export async function resolve(
  * @param options - The options to use when resolving the module
  * @returns The path to the module or undefined
  */
-export function resolveSync(
-  path: string,
-  options: PackageResolvingOptions = {}
-) {
-  const paths = options.paths ?? [];
+export function resolveSync(path: string, options: ResolveOptions = {}) {
+  let paths = options.paths ?? [];
   if (paths.length === 0) {
     paths.push(process.cwd());
   }
@@ -85,11 +148,55 @@ export function resolveSync(
     paths.push(workspaceRoot);
   }
 
-  return correctPath(
-    resolvePathSync(path, {
-      url: options.paths
-    })
-  );
+  paths = paths.filter(Boolean).map(p => correctPath(p));
+
+  let result!: string;
+  let error: Error | undefined;
+
+  try {
+    result = resolvePathSync(path, {
+      url: paths,
+      extensions: options.extensions ?? DEFAULT_EXTENSIONS,
+      conditions: options.conditions
+    });
+  } catch (err) {
+    error = err as Error;
+  }
+
+  if (!result) {
+    for (let i = 0; i < paths.length && !result; i++) {
+      try {
+        result = resolvePathSync(replacePath(path, paths[i]), {
+          url: paths,
+          extensions: options.extensions ?? DEFAULT_EXTENSIONS,
+          conditions: options.conditions
+        });
+      } catch (err) {
+        error = err as Error;
+      }
+    }
+  }
+
+  if (!result && findFileName(path, { withExtension: false }) !== "index") {
+    try {
+      result = resolveSync(joinPaths(path, "index"), {
+        ...options,
+        paths
+      });
+      if (result) {
+        // Remove the previously added index file from the path
+        result = findFilePath(result);
+      }
+    } catch (err) {
+      error = err as Error;
+    }
+  }
+
+  if (!result) {
+    throw error ?? new Error(`Cannot resolve module '${path}'`);
+  }
+
+  return correctPath(result);
 }
 
 /**
@@ -99,10 +206,7 @@ export function resolveSync(
  * @param options - The options to use when resolving the module
  * @returns A promise for the path to the module
  */
-export async function resolveSafe(
-  name: string,
-  options: PackageResolvingOptions = {}
-) {
+export async function resolveSafe(name: string, options: ResolveOptions = {}) {
   try {
     return await resolve(name, options);
   } catch {
@@ -117,10 +221,7 @@ export async function resolveSafe(
  * @param options - The options to use when resolving the module
  * @returns The path to the module or undefined
  */
-export function resolveSafeSync(
-  name: string,
-  options: PackageResolvingOptions = {}
-) {
+export function resolveSafeSync(name: string, options: ResolveOptions = {}) {
   try {
     return resolveSync(name, options);
   } catch {
@@ -155,7 +256,7 @@ export async function importModule<T = any>(path: string): Promise<T> {
  */
 export async function resolvePackage(
   name: string,
-  options: PackageResolvingOptions = {}
+  options: ResolveOptions = {}
 ) {
   let result = await resolveSafe(joinPaths(name, "package.json"), options);
   if (!result) {
@@ -178,10 +279,7 @@ export async function resolvePackage(
  * @param options - The options to use when resolving the module
  * @returns The module or undefined
  */
-export function resolvePackageSync(
-  name: string,
-  options: PackageResolvingOptions = {}
-) {
+export function resolvePackageSync(name: string, options: ResolveOptions = {}) {
   let result = resolveSafeSync(joinPaths(name, "package.json"), options);
   if (!result) {
     result = resolveSafeSync(joinPaths(name, "index.js"), options);

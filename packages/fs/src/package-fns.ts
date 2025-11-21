@@ -29,7 +29,7 @@ import { exists } from "./exists";
 import { getParentPath } from "./get-parent-path";
 import { getWorkspaceRoot } from "./get-workspace-root";
 import { readJsonFile } from "./json";
-import type { PackageResolvingOptions } from "./resolve";
+import type { ResolveOptions } from "./resolve";
 import { resolvePackage } from "./resolve";
 
 /**
@@ -94,10 +94,7 @@ async function searchPackageJson(dir: string) {
   return packageJsonPath;
 }
 
-async function getPackageJsonPath(
-  name: string,
-  options: PackageResolvingOptions = {}
-) {
+async function getPackageJsonPath(name: string, options: ResolveOptions = {}) {
   const entry = await resolvePackage(name, options);
   if (!entry) {
     return;
@@ -115,7 +112,7 @@ async function getPackageJsonPath(
  */
 export async function getPackageInfo(
   name: string,
-  options: PackageResolvingOptions = {}
+  options: ResolveOptions = {}
 ) {
   const packageJsonPath = await getPackageJsonPath(name, options);
   if (!packageJsonPath) {
@@ -299,9 +296,6 @@ export async function doesPackageMatch(
  * @param options - The options to use when resolving the package
  * @returns An indicator specifying if the package exists
  */
-export function isPackageExists(
-  name: string,
-  options: PackageResolvingOptions = {}
-) {
+export function isPackageExists(name: string, options: ResolveOptions = {}) {
   return Boolean(resolvePackage(name, options));
 }
