@@ -16,12 +16,14 @@
 
  ------------------------------------------------------------------- */
 
-import { replacePath } from "@stryke/path";
+import { getUnique } from "@stryke/helpers/get-unique";
+import { appendPath, replacePath } from "@stryke/path";
 import { correctPath } from "@stryke/path/correct-path";
 import { cwd } from "@stryke/path/cwd";
 import { findFileName, findFilePath } from "@stryke/path/file-path-fns";
 import { joinPaths } from "@stryke/path/join-paths";
 import { interopDefault, resolvePath, resolvePathSync } from "mlly";
+import { existsSync } from "node:fs";
 import { getWorkspaceRoot } from "./get-workspace-root";
 
 export const DEFAULT_EXTENSIONS = [
@@ -68,7 +70,10 @@ export interface ResolveOptions {
  * @param options - The options to use when resolving the module
  * @returns A promise for the path to the module
  */
-export async function resolve(path: string, options: ResolveOptions = {}) {
+export async function resolve(
+  path: string,
+  options: ResolveOptions = {}
+): Promise<string> {
   let paths = options.paths ?? [];
   if (paths.length === 0) {
     paths.push(cwd());
@@ -79,9 +84,28 @@ export async function resolve(path: string, options: ResolveOptions = {}) {
     paths.push(workspaceRoot);
   }
 
-  paths = paths.filter(Boolean).map(p => correctPath(p));
+  paths = getUnique(
+    paths
+      .filter(Boolean)
+      .map(p => correctPath(p))
+      .reduce((ret, p, _, arr) => {
+        ret.push(p);
 
-  let result!: string;
+        if (existsSync(appendPath(p, workspaceRoot))) {
+          ret.push(appendPath(p, workspaceRoot));
+        }
+
+        arr.forEach(existing => {
+          if (existsSync(appendPath(p, existing))) {
+            ret.push(appendPath(p, existing));
+          }
+        });
+
+        return ret;
+      }, [] as string[])
+  );
+
+  let result: string | undefined;
   let error: Error | undefined;
 
   try {
@@ -148,7 +172,26 @@ export function resolveSync(path: string, options: ResolveOptions = {}) {
     paths.push(workspaceRoot);
   }
 
-  paths = paths.filter(Boolean).map(p => correctPath(p));
+  paths = getUnique(
+    paths
+      .filter(Boolean)
+      .map(p => correctPath(p))
+      .reduce((ret, p, _, arr) => {
+        ret.push(p);
+
+        if (existsSync(appendPath(p, workspaceRoot))) {
+          ret.push(appendPath(p, workspaceRoot));
+        }
+
+        arr.forEach(existing => {
+          if (existsSync(appendPath(p, existing))) {
+            ret.push(appendPath(p, existing));
+          }
+        });
+
+        return ret;
+      }, [] as string[])
+  );
 
   let result!: string;
   let error: Error | undefined;
