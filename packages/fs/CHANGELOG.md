@@ -2,6 +2,13 @@
 
 # Changelog for Stryke - Fs
 
+## [0.33.1](https://github.com/storm-software/stryke/releases/tag/fs%400.33.1) (11/21/2025)
+
+### Bug Fixes
+
+- **fs:** Use `resolve` method to find tsconfig file paths
+  ([22d7155](https://github.com/storm-software/stryke/commit/22d7155))
+
 ## [0.33.0](https://github.com/storm-software/stryke/releases/tag/fs%400.33.0) (11/21/2025)
 
 ### Features
