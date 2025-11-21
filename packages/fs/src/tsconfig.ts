@@ -17,13 +17,13 @@
  ------------------------------------------------------------------- */
 
 import { cwd } from "@stryke/path/cwd";
-import { findFilePath } from "@stryke/path/file-path-fns";
+import { findFileExtension, findFilePath } from "@stryke/path/file-path-fns";
 import { joinPaths } from "@stryke/path/join-paths";
 import type { TsConfigJson } from "@stryke/types/tsconfig";
 import defu from "defu";
-import { resolvePath } from "mlly";
 import { existsSync } from "./exists";
 import { readJsonFile } from "./json";
+import { resolve } from "./resolve";
 
 /**
  * Loads a tsconfig.json file and returns the parsed JSON object.
@@ -34,11 +34,12 @@ import { readJsonFile } from "./json";
 export async function loadTsConfig(
   filePath: string = cwd()
 ): Promise<TsConfigJson> {
-  let tsconfigFilePath = filePath.endsWith(".json")
-    ? filePath
-    : joinPaths(filePath, "tsconfig.json");
+  let tsconfigFilePath =
+    findFileExtension(filePath) === "json"
+      ? filePath
+      : joinPaths(filePath, "tsconfig.json");
   if (!existsSync(tsconfigFilePath)) {
-    tsconfigFilePath = await resolvePath(filePath, { url: import.meta.url });
+    tsconfigFilePath = await resolve(filePath, { extensions: ["json"] });
     if (!existsSync(tsconfigFilePath)) {
       throw new Error(
         `tsconfig.json not found at ${tsconfigFilePath}. Please ensure the file exists.`
