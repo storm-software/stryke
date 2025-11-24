@@ -2,6 +2,23 @@
 
 # Changelog for Stryke - Fs
 
+## [0.33.4](https://github.com/storm-software/stryke/releases/tag/fs%400.33.4) (11/24/2025)
+
+### Bug Fixes
+
+- **fs:** Resolve path format issue in `getResolutionCombinations` utility
+  ([3e273f5](https://github.com/storm-software/stryke/commit/3e273f5))
+
+### Updated Dependencies
+
+- Updated **string-format** to **v0.12.8**
+- Updated **type-checks** to **v0.3.18**
+- Updated **convert** to **v0.6.8**
+- Updated **helpers** to **v0.9.10**
+- Updated **types** to **v0.10.8**
+- Updated **json** to **v0.9.11**
+- Updated **path** to **v0.21.2**
+
 ## [0.33.3](https://github.com/storm-software/stryke/releases/tag/fs%400.33.3) (11/21/2025)
 
 ### Bug Fixes
