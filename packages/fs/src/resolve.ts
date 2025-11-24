@@ -150,7 +150,7 @@ export function getResolutionCombinations(
 
   const extensions = options.extensions ?? DEFAULT_EXTENSIONS;
 
-  let combinations = paths.map(base => joinPaths(path, base));
+  let combinations = paths.map(base => joinPaths(base, path));
   if (findFileName(path, { withExtension: false }) !== "index") {
     combinations = combinations.reduce((ret, combination) => {
       ret.push(combination);
