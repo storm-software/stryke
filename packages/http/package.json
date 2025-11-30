@@ -10,13 +10,14 @@
   },
   "private": false,
   "dependencies": {
-    "@stryke/convert": "workspace:*",
     "@stryke/type-checks": "workspace:*",
     "@stryke/url": "workspace:*",
-    "defu": "catalog:"
+    "defu": "catalog:",
+    "undici": "^7.16.0"
   },
   "devDependencies": {
-    "@types/node": "catalog:"
+    "@types/node": "catalog:",
+    "undici-types": "^7.16.0"
   },
   "publishConfig": {
     "access": "public"

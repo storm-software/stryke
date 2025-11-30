@@ -22,7 +22,7 @@
 
 import spawn from "cross-spawn";
 import { execSync } from "node:child_process";
-import path from "node:path";
+import { dirname } from "node:path";
 import { fileURLToPath } from "node:url";
 import picocolors from "picocolors";
 
@@ -101,10 +101,8 @@ async function startBrowserProcess(
       "Chromium"
     ];
 
-    const importMetaUrl = import.meta.url;
-
-    const _dirname = importMetaUrl
-      ? path.dirname(fileURLToPath(importMetaUrl))
+    const _dirname = import.meta.url
+      ? dirname(fileURLToPath(import.meta.url))
       : __dirname;
 
     for (const chromiumBrowser of supportedChromiumBrowsers) {

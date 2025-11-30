@@ -36,7 +36,7 @@ interface HttpsConnectOpts extends tls.ConnectionOptions {
 
 export type AgentConnectOpts = HttpConnectOpts | HttpsConnectOpts;
 
-const SYMBOL_INTERNAL = Symbol("AgentBaseInternalState");
+const SYMBOL_INTERNAL = Symbol("Agent");
 
 interface InternalState {
   defaultPort?: number;
