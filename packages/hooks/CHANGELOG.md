@@ -2,6 +2,15 @@
 
 # Changelog for Stryke - Hooks
 
+## [0.4.20](https://github.com/storm-software/stryke/releases/tag/hooks%400.4.20) (11/30/2025)
+
+### Updated Dependencies
+
+- Updated **type-checks** to **v0.4.0**
+- Updated **helpers** to **v0.9.11**
+- Updated **types** to **v0.10.9**
+- Updated **env** to **v0.20.22**
+
 ## [0.4.19](https://github.com/storm-software/stryke/releases/tag/hooks%400.4.19) (11/24/2025)
 
 ### Updated Dependencies

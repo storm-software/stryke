@@ -2,6 +2,19 @@
 
 # Changelog for Stryke - URL
 
+## [0.3.0](https://github.com/storm-software/stryke/releases/tag/url%400.3.0) (11/30/2025)
+
+### Features
+
+- **url:** Added the `isValidURL` helper function
+  ([8d39b6c](https://github.com/storm-software/stryke/commit/8d39b6c))
+
+### Updated Dependencies
+
+- Updated **type-checks** to **v0.4.0**
+- Updated **json** to **v0.9.12**
+- Updated **path** to **v0.21.3**
+
 ## [0.2.13](https://github.com/storm-software/stryke/releases/tag/url%400.2.13) (11/24/2025)
 
 ### Updated Dependencies

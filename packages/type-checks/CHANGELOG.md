@@ -2,6 +2,17 @@
 
 # Changelog for Stryke - Type Checks
 
+## [0.4.0](https://github.com/storm-software/stryke/releases/tag/type-checks%400.4.0) (11/30/2025)
+
+### Features
+
+- **type-checks:** Added `isURL` utility function
+  ([3b628ba](https://github.com/storm-software/stryke/commit/3b628ba))
+
+### Updated Dependencies
+
+- Updated **types** to **v0.10.9**
+
 ## [0.3.18](https://github.com/storm-software/stryke/releases/tag/type-checks%400.3.18) (11/24/2025)
 
 ### Updated Dependencies
