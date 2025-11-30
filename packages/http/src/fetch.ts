@@ -17,50 +17,41 @@
  ------------------------------------------------------------------- */
 
 import { isSetString } from "@stryke/type-checks/is-set-string";
-import { isURL } from "@stryke/type-checks/is-url";
 import { isValidURL } from "@stryke/url/helpers";
 import { defu } from "defu";
-import type { UrlObject } from "node:url";
-import type { Dispatcher } from "undici";
-import { request } from "undici";
+import type { RequestInfo } from "undici";
+import { fetch as undiciFetch } from "undici";
 import { getProxyAgent } from "./proxy-agent";
 
-export type FetchRequestOptions<T = null> = { dispatcher?: Dispatcher } & Omit<
-  Dispatcher.RequestOptions<T>,
-  "origin" | "path" | "method"
-> &
-  Partial<Pick<Dispatcher.RequestOptions, "method">> & {
-    /**
-     * Timeout in milliseconds
-     *
-     * @defaultValue 5000
-     */
-    timeout?: number;
-  };
+export type FetchRequestOptions = RequestInit & {
+  /**
+   * Timeout in milliseconds
+   *
+   * @defaultValue 5000
+   */
+  timeout?: number;
+};
 
 /**
  * Fetches a resource from a URL.
  *
- * @param url - The URL to fetch.
- * @returns A promise that resolves to the response.
+ * @param input - The URL to fetch.
+ * @param options - Additional fetch options.
+ * @returns The fetched response.
  */
-export async function fetchRequest<T = null>(
-  url: string | URL | UrlObject,
-  options: FetchRequestOptions<T> = {}
+export async function fetchRequest(
+  input: RequestInfo,
+  options: FetchRequestOptions = {}
 ) {
-  if (isSetString(url)) {
-    if (!isValidURL(url)) {
-      throw new Error(`Invalid URL format provided: ${url}`);
-    }
-  } else if (!isURL(url)) {
-    throw new Error("Invalid URL provided to fetch");
+  if (isSetString(input) && !isValidURL(input)) {
+    throw new Error(`Invalid URL format provided: ${input}`);
   }
 
   const abort = new AbortController();
   setTimeout(() => abort.abort(), options.timeout ?? 5000);
 
-  return request<T>(
-    url,
+  return undiciFetch(
+    input,
     defu(options, {
       agent: getProxyAgent(),
       signal: abort.signal,
