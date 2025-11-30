@@ -1,6 +1,6 @@
 {
   "name": "@stryke/type-checks",
-  "version": "0.4.2",
+  "version": "0.4.3",
   "type": "module",
   "description": "A package containing various type-check functions to validate TypeScript values.",
   "repository": {

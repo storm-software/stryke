@@ -2,6 +2,18 @@
 
 # Changelog for Stryke - HTTP
 
+## [0.12.2](https://github.com/storm-software/stryke/releases/tag/http%400.12.2) (11/30/2025)
+
+### Miscellaneous
+
+- **http:** Update `fetch` helper to use `undici` fetch method
+  ([110fd12](https://github.com/storm-software/stryke/commit/110fd12))
+
+### Updated Dependencies
+
+- Updated **type-checks** to **v0.4.3**
+- Updated **url** to **v0.3.3**
+
 ## [0.12.1](https://github.com/storm-software/stryke/releases/tag/http%400.12.1) (11/30/2025)
 
 ### Miscellaneous
