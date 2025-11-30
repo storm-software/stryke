@@ -2,6 +2,25 @@
 
 # Changelog for Stryke - HTTP
 
+## [0.12.0](https://github.com/storm-software/stryke/releases/tag/http%400.12.0) (11/30/2025)
+
+### Miscellaneous
+
+- **http:** Sort `dependencies` in `package.json` file
+  ([46185ab](https://github.com/storm-software/stryke/commit/46185ab))
+
+### Features
+
+- **http:** Added string and JSON response parsers to `fetch` helper
+  ([a74a294](https://github.com/storm-software/stryke/commit/a74a294))
+
+### Updated Dependencies
+
+- Updated **type-checks** to **v0.4.1**
+- Updated **convert** to **v0.6.10**
+- Updated **json** to **v0.9.13**
+- Updated **url** to **v0.3.1**
+
 ## [0.11.10](https://github.com/storm-software/stryke/releases/tag/http%400.11.10) (11/30/2025)
 
 ### Updated Dependencies
