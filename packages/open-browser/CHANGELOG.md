@@ -2,6 +2,13 @@
 
 # Changelog for Stryke - Open Browser
 
+## [0.2.11](https://github.com/storm-software/stryke/releases/tag/open-browser%400.2.11) (11/30/2025)
+
+### Miscellaneous
+
+- **http:** Updated `fetch` helpers to use `undici` package
+  ([19d4e4f](https://github.com/storm-software/stryke/commit/19d4e4f))
+
 ## [0.2.0](https://github.com/storm-software/stryke/releases/tag/open-browser%400.2.0) (2025-09-16)
 
 ### Features
