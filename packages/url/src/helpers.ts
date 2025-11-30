@@ -35,3 +35,15 @@ export function formatLocalePath(locale: string) {
 
   return result.toLowerCase();
 }
+
+/**
+ * Check if a string has a valid URL format.
+ *
+ * @param str - The string to check.
+ * @returns `true` if the string is a valid URL, otherwise `false`.
+ */
+export function isValidURL(str: string): boolean {
+  return /(?:https?:\/\/.)?(?:www\.)?[-\w@:%.+~#=]{2,256}\.[a-z]{2,6}\b[-\w@:%+.~#?&/=]*/.test(
+    str
+  );
+}

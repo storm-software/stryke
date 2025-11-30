@@ -39,7 +39,7 @@ import {
   stringifyParsedURL,
   stringifyQuery
 } from "ufo";
-import { formatLocalePath } from "./helpers";
+import { formatLocalePath, isValidURL } from "./helpers";
 import type { StormURLInterface, StormURLOptions } from "./types";
 
 /**
@@ -94,6 +94,10 @@ export class StormURL implements StormURLInterface, URL {
   #params: Record<string, any>;
 
   constructor(initialURL: string, options: StormURLOptions = { decode: true }) {
+    if (initialURL && !isValidURL(initialURL)) {
+      throw new TypeError(`Invalid URL: ${initialURL}`);
+    }
+
     this.#options = options;
 
     const parsedURL = parseURL(
