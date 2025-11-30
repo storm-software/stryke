@@ -16,7 +16,11 @@
 
  ------------------------------------------------------------------- */
 
-import { isString } from "@stryke/type-checks";
+import { bufferToString } from "@stryke/convert/buffer-to-string";
+import { StormJSON } from "@stryke/json/storm-json";
+import { isSetString } from "@stryke/type-checks/is-set-string";
+import { isURL } from "@stryke/type-checks/is-url";
+import { isValidURL } from "@stryke/url/helpers";
 import { defu } from "defu";
 import { Buffer } from "node:buffer";
 import http from "node:http";
@@ -33,6 +37,23 @@ export interface FetchRequestOptions extends RequestOptions {
   timeout?: number;
 }
 
+export interface FetchResponse extends Buffer {
+  /**
+   * Parses the response body as JSON.
+   *
+   * @typeParam T - The type to parse the JSON as.
+   * @returns The parsed JSON object.
+   */
+  json: <T extends object = Record<string, any>>() => T;
+
+  /**
+   * Converts the response body to a string.
+   *
+   * @returns The response body as a string.
+   */
+  text: () => string;
+}
+
 /**
  * Fetches a resource from a URL.
  *
@@ -45,14 +66,22 @@ export interface FetchRequestOptions extends RequestOptions {
 export async function fetchRequest(
   url: string | URL,
   options: FetchRequestOptions = {}
-): Promise<Buffer> {
+): Promise<FetchResponse> {
   return new Promise((resolve, reject) => {
     let protocol = "http:";
-    if (isString(url)) {
+    if (isSetString(url)) {
+      if (!isValidURL(url)) {
+        reject(new Error(`Invalid URL format provided: ${url}`));
+        return;
+      }
+
       const parsedUrl = new URL(url);
       protocol = parsedUrl.protocol;
-    } else {
+    } else if (isURL(url)) {
       protocol = url.protocol;
+    } else {
+      reject(new Error("Invalid URL provided to fetch"));
+      return;
     }
 
     const client = protocol === "https:" ? https : http;
@@ -79,9 +108,17 @@ export async function fetchRequest(
           );
           return;
         }
+
         const chunks: Buffer[] = [];
         res.on("data", chunk => chunks.push(Buffer.from(chunk)));
-        res.on("end", () => resolve(Buffer.concat(chunks)));
+        res.on("end", () => {
+          const body = Buffer.concat(chunks) as FetchResponse;
+          body.text = () => bufferToString(body);
+          body.json = <T extends object = Record<string, any>>() =>
+            StormJSON.parse<T>(body.text());
+
+          resolve(body);
+        });
       }
     );
 
@@ -97,3 +134,33 @@ export async function fetchRequest(
 }
 
 export const fetch = fetchRequest;
+
+/**
+ * Fetches a string resource from a URL.
+ *
+ * @param url - The URL to fetch.
+ * @returns A promise that resolves to the response body as a Buffer.
+ */
+export async function fetchString(
+  url: string | URL,
+  options: FetchRequestOptions = {}
+): Promise<string> {
+  const response = await fetchRequest(url, options);
+
+  return response.text();
+}
+
+/**
+ * Fetches a JSON resource from a URL.
+ *
+ * @param url - The URL to fetch.
+ * @returns A promise that resolves to the response body as a Buffer.
+ */
+export async function fetchJSON<T extends object = Record<string, any>>(
+  url: string | URL,
+  options: FetchRequestOptions = {}
+): Promise<T> {
+  const response = await fetchRequest(url, options);
+
+  return response.json<T>();
+}

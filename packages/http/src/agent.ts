@@ -36,7 +36,7 @@ interface HttpsConnectOpts extends tls.ConnectionOptions {
 
 export type AgentConnectOpts = HttpConnectOpts | HttpsConnectOpts;
 
-const INTERNAL = Symbol("AgentBaseInternalState");
+const SYMBOL_INTERNAL = Symbol("AgentBaseInternalState");
 
 interface InternalState {
   defaultPort?: number;
@@ -45,7 +45,7 @@ interface InternalState {
 }
 
 export abstract class Agent extends http.Agent {
-  private [INTERNAL]: InternalState;
+  private [SYMBOL_INTERNAL]: InternalState;
 
   // Set by `http.Agent` - missing from `@types/node`
   options!: Partial<net.TcpNetConnectOpts & tls.ConnectionOptions>;
@@ -54,7 +54,7 @@ export abstract class Agent extends http.Agent {
 
   constructor(opts?: http.AgentOptions) {
     super(opts);
-    this[INTERNAL] = {};
+    this[SYMBOL_INTERNAL] = {};
   }
 
   abstract connect(
@@ -175,7 +175,7 @@ export abstract class Agent extends http.Agent {
               return cb(err as Error);
             }
           }
-          this[INTERNAL].currentSocket = socket;
+          this[SYMBOL_INTERNAL].currentSocket = socket;
           // @ts-expect-error `createSocket()` isn't defined in `@types/node`
           // eslint-disable-next-line ts/no-unsafe-call
           super.createSocket(req, options, cb);
@@ -188,8 +188,8 @@ export abstract class Agent extends http.Agent {
   }
 
   override createConnection(): Duplex {
-    const socket = this[INTERNAL].currentSocket;
-    this[INTERNAL].currentSocket = undefined;
+    const socket = this[SYMBOL_INTERNAL].currentSocket;
+    this[SYMBOL_INTERNAL].currentSocket = undefined;
     if (!socket) {
       throw new Error("No socket was returned in the `connect()` function");
     }
@@ -198,25 +198,27 @@ export abstract class Agent extends http.Agent {
 
   get defaultPort(): number {
     return (
-      this[INTERNAL].defaultPort ?? (this.protocol === "https:" ? 443 : 80)
+      this[SYMBOL_INTERNAL].defaultPort ??
+      (this.protocol === "https:" ? 443 : 80)
     );
   }
 
   set defaultPort(v: number) {
-    if (this[INTERNAL]) {
-      this[INTERNAL].defaultPort = v;
+    if (this[SYMBOL_INTERNAL]) {
+      this[SYMBOL_INTERNAL].defaultPort = v;
     }
   }
 
   get protocol(): string {
     return (
-      this[INTERNAL].protocol ?? (this.isSecureEndpoint() ? "https:" : "http:")
+      this[SYMBOL_INTERNAL].protocol ??
+      (this.isSecureEndpoint() ? "https:" : "http:")
     );
   }
 
   set protocol(v: string) {
-    if (this[INTERNAL]) {
-      this[INTERNAL].protocol = v;
+    if (this[SYMBOL_INTERNAL]) {
+      this[SYMBOL_INTERNAL].protocol = v;
     }
   }
 }

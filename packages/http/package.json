@@ -10,7 +10,10 @@
   },
   "private": false,
   "dependencies": {
-    "defu": "catalog:"
+    "defu": "catalog:",
+    "@stryke/url": "workspace:*",
+    "@stryke/convert": "workspace:*",
+    "@stryke/type-checks": "workspace:*"
   },
   "devDependencies": {
     "@types/node": "catalog:"

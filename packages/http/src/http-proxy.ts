@@ -56,8 +56,7 @@ interface HttpProxyAgentClientRequest extends ClientRequest {
 }
 
 /**
- * The `HttpProxyAgent` implements an HTTP Agent subclass that connects
- * to the specified "HTTP proxy server" in order to proxy HTTP requests.
+ * The `HttpProxyAgent` implements an HTTP Agent subclass that connects to the specified "HTTP proxy server" in order to proxy HTTP requests.
  */
 export class HttpProxyAgent<Uri extends string> extends Agent {
   static protocols = ["http", "https"] as const;

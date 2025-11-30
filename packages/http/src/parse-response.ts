@@ -26,6 +26,12 @@ export interface ConnectResponse {
   headers: IncomingHttpHeaders;
 }
 
+/**
+ * Parses the proxy CONNECT response from the given socket.
+ *
+ * @param socket - The socket to read the response from.
+ * @returns A promise that resolves to the CONNECT response and any buffered data.
+ */
 export async function parseProxyResponse(
   socket: Readable
 ): Promise<{ connect: ConnectResponse; buffered: Buffer }> {

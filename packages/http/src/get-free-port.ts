@@ -23,7 +23,7 @@ import { createServer } from "node:http";
  *
  * @returns A promise that resolves to a free port number.
  */
-export const getFreePort = async (): Promise<number> => {
+export async function getFreePort(): Promise<number> {
   return new Promise((resolve, reject) => {
     const server = createServer(() => {});
     server.listen(0, () => {
@@ -39,4 +39,4 @@ export const getFreePort = async (): Promise<number> => {
       }
     });
   });
-};
+}

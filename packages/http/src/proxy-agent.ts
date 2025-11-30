@@ -22,6 +22,8 @@ import { HttpsProxyAgent } from "./https-proxy";
 
 /**
  * If the http(s)_proxy environment variables is set, return a proxy agent.
+ *
+ * @returns The proxy agent or undefined if no proxy is set.
  */
 export function getProxyAgent(): Agent | undefined {
   const httpsProxy = process.env.https_proxy || process.env.HTTPS_PROXY;
