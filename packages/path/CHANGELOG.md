@@ -2,6 +2,19 @@
 
 # Changelog for Stryke - Path
 
+## [0.22.0](https://github.com/storm-software/stryke/releases/tag/path%400.22.0) (12/01/2025)
+
+### Features
+
+- **path:** Added `options` to the `findFilePath` helper functions
+  ([dfb4ebb](https://github.com/storm-software/stryke/commit/dfb4ebb))
+
+### Updated Dependencies
+
+- Updated **type-checks** to **v0.4.4**
+- Updated **convert** to **v0.6.13**
+- Updated **types** to **v0.10.13**
+
 ## [0.21.6](https://github.com/storm-software/stryke/releases/tag/path%400.21.6) (11/30/2025)
 
 ### Updated Dependencies

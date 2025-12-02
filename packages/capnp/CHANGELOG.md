@@ -2,6 +2,15 @@
 
 # Changelog for Stryke - Capnp
 
+## [0.12.33](https://github.com/storm-software/stryke/releases/tag/capnp%400.12.33) (12/01/2025)
+
+### Updated Dependencies
+
+- Updated **convert** to **v0.6.13**
+- Updated **types** to **v0.10.13**
+- Updated **path** to **v0.22.0**
+- Updated **fs** to **v0.33.9**
+
 ## [0.12.32](https://github.com/storm-software/stryke/releases/tag/capnp%400.12.32) (11/30/2025)
 
 ### Updated Dependencies
