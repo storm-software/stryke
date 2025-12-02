@@ -89,13 +89,17 @@ export function findFileName(
  * ```
  *
  * @param filePath - The file path to process
+ * @param options - Options to control the file name extraction
  * @returns The full file path's directories
  */
-export function findFilePath(filePath: string): string {
+export function findFilePath(
+  filePath: string,
+  options: FindFileNameOptions = {}
+): string {
   const normalizedPath = normalizeWindowsPath(filePath);
 
   const result = normalizedPath.replace(
-    findFileName(normalizedPath, { requireExtension: true }),
+    findFileName(normalizedPath, { requireExtension: false, ...options }),
     ""
   );
 
@@ -116,10 +120,14 @@ export const dirname = findFilePath;
  * // folderPath = "Documents"
  *
  * @param filePath - The file path to process
+ * @param options - Options to control the file name extraction
  * @returns The folder containing the file
  */
-export function findFolderName(filePath: string): string {
-  const segments = findFilePath(filePath).split("/");
+export function findFolderName(
+  filePath: string,
+  options?: FindFileNameOptions
+): string {
+  const segments = findFilePath(filePath, options).split("/");
 
   let lastSegment = "";
   for (let i = segments.length - 1; i >= 0; i--) {
