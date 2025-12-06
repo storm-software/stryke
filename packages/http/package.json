@@ -22,5 +22,47 @@
   },
   "publishConfig": {
     "access": "public"
+  },
+  "main": "./dist/index.cjs",
+  "module": "./dist/index.mjs",
+  "types": "./dist/index.d.cts",
+  "exports": {
+    ".": {
+      "require": "./dist/index.cjs",
+      "import": "./dist/index.mjs"
+    },
+    "./agent": {
+      "require": "./dist/agent.cjs",
+      "import": "./dist/agent.mjs"
+    },
+    "./fetch": {
+      "require": "./dist/fetch.cjs",
+      "import": "./dist/fetch.mjs"
+    },
+    "./format-data-uri": {
+      "require": "./dist/format-data-uri.cjs",
+      "import": "./dist/format-data-uri.mjs"
+    },
+    "./get-free-port": {
+      "require": "./dist/get-free-port.cjs",
+      "import": "./dist/get-free-port.mjs"
+    },
+    "./http-proxy": {
+      "require": "./dist/http-proxy.cjs",
+      "import": "./dist/http-proxy.mjs"
+    },
+    "./https-proxy": {
+      "require": "./dist/https-proxy.cjs",
+      "import": "./dist/https-proxy.mjs"
+    },
+    "./parse-response": {
+      "require": "./dist/parse-response.cjs",
+      "import": "./dist/parse-response.mjs"
+    },
+    "./proxy-agent": {
+      "require": "./dist/proxy-agent.cjs",
+      "import": "./dist/proxy-agent.mjs"
+    },
+    "./*": "./*"
   }
 }

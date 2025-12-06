@@ -15,5 +15,67 @@
   },
   "publishConfig": {
     "access": "public"
+  },
+  "main": "./dist/index.cjs",
+  "module": "./dist/index.mjs",
+  "types": "./dist/index.d.cts",
+  "exports": {
+    ".": {
+      "require": "./dist/index.cjs",
+      "import": "./dist/index.mjs"
+    },
+    "./array-buffer-to-string": {
+      "require": "./dist/array-buffer-to-string.cjs",
+      "import": "./dist/array-buffer-to-string.mjs"
+    },
+    "./buffer-to-string": {
+      "require": "./dist/buffer-to-string.cjs",
+      "import": "./dist/buffer-to-string.mjs"
+    },
+    "./neutral": {
+      "require": "./dist/neutral.cjs",
+      "import": "./dist/neutral.mjs"
+    },
+    "./parse-type-definition": {
+      "require": "./dist/parse-type-definition.cjs",
+      "import": "./dist/parse-type-definition.mjs"
+    },
+    "./string-to-buffer": {
+      "require": "./dist/string-to-buffer.cjs",
+      "import": "./dist/string-to-buffer.mjs"
+    },
+    "./string-to-uint8-array": {
+      "require": "./dist/string-to-uint8-array.cjs",
+      "import": "./dist/string-to-uint8-array.mjs"
+    },
+    "./string-to-utf8-array": {
+      "require": "./dist/string-to-utf8-array.cjs",
+      "import": "./dist/string-to-utf8-array.mjs"
+    },
+    "./to-array": {
+      "require": "./dist/to-array.cjs",
+      "import": "./dist/to-array.mjs"
+    },
+    "./to-string-key": {
+      "require": "./dist/to-string-key.cjs",
+      "import": "./dist/to-string-key.mjs"
+    },
+    "./uint8-array-to-stream": {
+      "require": "./dist/uint8-array-to-stream.cjs",
+      "import": "./dist/uint8-array-to-stream.mjs"
+    },
+    "./uint8-array-to-string": {
+      "require": "./dist/uint8-array-to-string.cjs",
+      "import": "./dist/uint8-array-to-string.mjs"
+    },
+    "./uint8-array-to-string.node": {
+      "require": "./dist/uint8-array-to-string.node.cjs",
+      "import": "./dist/uint8-array-to-string.node.mjs"
+    },
+    "./utf8-array-to-string": {
+      "require": "./dist/utf8-array-to-string.cjs",
+      "import": "./dist/utf8-array-to-string.mjs"
+    },
+    "./*": "./*"
   }
 }

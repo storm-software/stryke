@@ -38,5 +38,83 @@
   },
   "publishConfig": {
     "access": "public"
+  },
+  "main": "./dist/index.cjs",
+  "module": "./dist/index.mjs",
+  "types": "./dist/index.d.cts",
+  "exports": {
+    ".": {
+      "require": "./dist/index.cjs",
+      "import": "./dist/index.mjs"
+    },
+    "./use-battery": {
+      "require": "./dist/use-battery.cjs",
+      "import": "./dist/use-battery.mjs"
+    },
+    "./use-callback-ref": {
+      "require": "./dist/use-callback-ref.cjs",
+      "import": "./dist/use-callback-ref.mjs"
+    },
+    "./use-callback-stable": {
+      "require": "./dist/use-callback-stable.cjs",
+      "import": "./dist/use-callback-stable.mjs"
+    },
+    "./use-click-away": {
+      "require": "./dist/use-click-away.cjs",
+      "import": "./dist/use-click-away.mjs"
+    },
+    "./use-compose-refs": {
+      "require": "./dist/use-compose-refs.cjs",
+      "import": "./dist/use-compose-refs.mjs"
+    },
+    "./use-copy-to-clipboard": {
+      "require": "./dist/use-copy-to-clipboard.cjs",
+      "import": "./dist/use-copy-to-clipboard.mjs"
+    },
+    "./use-debounce": {
+      "require": "./dist/use-debounce.cjs",
+      "import": "./dist/use-debounce.mjs"
+    },
+    "./use-did-finish-ssr": {
+      "require": "./dist/use-did-finish-ssr.cjs",
+      "import": "./dist/use-did-finish-ssr.mjs"
+    },
+    "./use-escape-keydown": {
+      "require": "./dist/use-escape-keydown.cjs",
+      "import": "./dist/use-escape-keydown.mjs"
+    },
+    "./use-event": {
+      "require": "./dist/use-event.cjs",
+      "import": "./dist/use-event.mjs"
+    },
+    "./use-hover": {
+      "require": "./dist/use-hover.cjs",
+      "import": "./dist/use-hover.mjs"
+    },
+    "./use-idle": {
+      "require": "./dist/use-idle.cjs",
+      "import": "./dist/use-idle.mjs"
+    },
+    "./use-isomorphic-layout-effect": {
+      "require": "./dist/use-isomorphic-layout-effect.cjs",
+      "import": "./dist/use-isomorphic-layout-effect.mjs"
+    },
+    "./use-keyboard-visible": {
+      "require": "./dist/use-keyboard-visible.cjs",
+      "import": "./dist/use-keyboard-visible.mjs"
+    },
+    "./use-memo-stable": {
+      "require": "./dist/use-memo-stable.cjs",
+      "import": "./dist/use-memo-stable.mjs"
+    },
+    "./use-network-state": {
+      "require": "./dist/use-network-state.cjs",
+      "import": "./dist/use-network-state.mjs"
+    },
+    "./use-previous": {
+      "require": "./dist/use-previous.cjs",
+      "import": "./dist/use-previous.mjs"
+    },
+    "./*": "./*"
   }
 }

@@ -14,5 +14,35 @@
   },
   "publishConfig": {
     "access": "public"
+  },
+  "main": "./dist/index.cjs",
+  "module": "./dist/index.mjs",
+  "types": "./dist/index.d.cts",
+  "exports": {
+    ".": {
+      "require": "./dist/index.cjs",
+      "import": "./dist/index.mjs"
+    },
+    "./cuid": {
+      "require": "./dist/cuid.cjs",
+      "import": "./dist/cuid.mjs"
+    },
+    "./nanoid-client": {
+      "require": "./dist/nanoid-client.cjs",
+      "import": "./dist/nanoid-client.mjs"
+    },
+    "./random": {
+      "require": "./dist/random.cjs",
+      "import": "./dist/random.mjs"
+    },
+    "./snowflake": {
+      "require": "./dist/snowflake.cjs",
+      "import": "./dist/snowflake.mjs"
+    },
+    "./uuid": {
+      "require": "./dist/uuid.cjs",
+      "import": "./dist/uuid.mjs"
+    },
+    "./*": "./*"
   }
 }

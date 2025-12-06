@@ -14,5 +14,123 @@
   },
   "publishConfig": {
     "access": "public"
+  },
+  "main": "./dist/index.cjs",
+  "module": "./dist/index.mjs",
+  "types": "./dist/index.d.cts",
+  "exports": {
+    ".": {
+      "require": "./dist/index.cjs",
+      "import": "./dist/index.mjs"
+    },
+    "./acronyms": {
+      "require": "./dist/acronyms.cjs",
+      "import": "./dist/acronyms.mjs"
+    },
+    "./articles": {
+      "require": "./dist/articles.cjs",
+      "import": "./dist/articles.mjs"
+    },
+    "./camel-case": {
+      "require": "./dist/camel-case.cjs",
+      "import": "./dist/camel-case.mjs"
+    },
+    "./combine": {
+      "require": "./dist/combine.cjs",
+      "import": "./dist/combine.mjs"
+    },
+    "./conjunctions": {
+      "require": "./dist/conjunctions.cjs",
+      "import": "./dist/conjunctions.mjs"
+    },
+    "./constant-case": {
+      "require": "./dist/constant-case.cjs",
+      "import": "./dist/constant-case.mjs"
+    },
+    "./deburr": {
+      "require": "./dist/deburr.cjs",
+      "import": "./dist/deburr.mjs"
+    },
+    "./decamelize": {
+      "require": "./dist/decamelize.cjs",
+      "import": "./dist/decamelize.mjs"
+    },
+    "./escape": {
+      "require": "./dist/escape.cjs",
+      "import": "./dist/escape.mjs"
+    },
+    "./format-special-cases": {
+      "require": "./dist/format-special-cases.cjs",
+      "import": "./dist/format-special-cases.mjs"
+    },
+    "./get-words": {
+      "require": "./dist/get-words.cjs",
+      "import": "./dist/get-words.mjs"
+    },
+    "./kebab-case": {
+      "require": "./dist/kebab-case.cjs",
+      "import": "./dist/kebab-case.mjs"
+    },
+    "./lower-case-first": {
+      "require": "./dist/lower-case-first.cjs",
+      "import": "./dist/lower-case-first.mjs"
+    },
+    "./normalize-email": {
+      "require": "./dist/normalize-email.cjs",
+      "import": "./dist/normalize-email.mjs"
+    },
+    "./package": {
+      "require": "./dist/package.cjs",
+      "import": "./dist/package.mjs"
+    },
+    "./pad": {
+      "require": "./dist/pad.cjs",
+      "import": "./dist/pad.mjs"
+    },
+    "./pascal-case": {
+      "require": "./dist/pascal-case.cjs",
+      "import": "./dist/pascal-case.mjs"
+    },
+    "./period-split": {
+      "require": "./dist/period-split.cjs",
+      "import": "./dist/period-split.mjs"
+    },
+    "./prepositions": {
+      "require": "./dist/prepositions.cjs",
+      "import": "./dist/prepositions.mjs"
+    },
+    "./pretty-bytes": {
+      "require": "./dist/pretty-bytes.cjs",
+      "import": "./dist/pretty-bytes.mjs"
+    },
+    "./snake-case": {
+      "require": "./dist/snake-case.cjs",
+      "import": "./dist/snake-case.mjs"
+    },
+    "./special-cases": {
+      "require": "./dist/special-cases.cjs",
+      "import": "./dist/special-cases.mjs"
+    },
+    "./start-case": {
+      "require": "./dist/start-case.cjs",
+      "import": "./dist/start-case.mjs"
+    },
+    "./strip-indents": {
+      "require": "./dist/strip-indents.cjs",
+      "import": "./dist/strip-indents.mjs"
+    },
+    "./title-case": {
+      "require": "./dist/title-case.cjs",
+      "import": "./dist/title-case.mjs"
+    },
+    "./unescape": {
+      "require": "./dist/unescape.cjs",
+      "import": "./dist/unescape.mjs"
+    },
+    "./upper-case-first": {
+      "require": "./dist/upper-case-first.cjs",
+      "import": "./dist/upper-case-first.mjs"
+    },
+    "./*": "./*"
   }
 }

@@ -18,13 +18,10 @@
 
 import { defineTSDownConfig } from "@stryke/tools-config/tsdown.config";
 
-export default defineTSDownConfig({
-  name: "capnp-bin",
-  entry: ["bin/capnpc.ts"],
-  outDir: "dist/bin",
-  clean: false,
-  external: ["typescript"],
-  noExternal: ["capnp-es"],
-  skipNodeModulesBundle: true,
-  unbundle: false
-});
+export default defineTSDownConfig([
+  {
+    name: "hooks",
+    entry: ["src/*.ts"],
+    platform: "browser"
+  }
+]);

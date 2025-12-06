@@ -18,13 +18,16 @@
 
 import { defineTSDownConfig } from "@stryke/tools-config/tsdown.config";
 
-export default defineTSDownConfig({
-  name: "capnp-bin",
-  entry: ["bin/capnpc.ts"],
-  outDir: "dist/bin",
-  clean: false,
-  external: ["typescript"],
-  noExternal: ["capnp-es"],
-  skipNodeModulesBundle: true,
-  unbundle: false
-});
+export default defineTSDownConfig([
+  {
+    name: "prisma-trpc-next",
+    target: "esnext",
+    entry: ["src/index.ts"],
+    tsconfig: "./tsconfig.json",
+    skipNodeModulesBundle: true,
+    dts: {
+      parallel: true,
+      newContext: true
+    }
+  }
+]);

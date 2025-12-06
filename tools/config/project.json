@@ -4,5 +4,18 @@
   "sourceRoot": "tools/config/src",
   "projectType": "library",
   "tags": [],
-  "targets": {}
+  "targets": {
+    "build-base": {
+      "executor": "nx:run-commands",
+      "options": {
+        "commands": ["# Do nothing"]
+      }
+    },
+    "build": {
+      "executor": "nx:run-commands",
+      "options": {
+        "commands": ["# Do nothing"]
+      }
+    }
+  }
 }

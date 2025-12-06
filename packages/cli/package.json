@@ -25,5 +25,87 @@
   },
   "publishConfig": {
     "access": "public"
+  },
+  "main": "./dist/index.cjs",
+  "module": "./dist/index.mjs",
+  "types": "./dist/index.d.cts",
+  "exports": {
+    ".": {
+      "require": "./dist/index.cjs",
+      "import": "./dist/index.mjs"
+    },
+    "./create-options": {
+      "require": "./dist/create-options.cjs",
+      "import": "./dist/create-options.mjs"
+    },
+    "./define-command": {
+      "require": "./dist/define-command.cjs",
+      "import": "./dist/define-command.mjs"
+    },
+    "./execute": {
+      "require": "./dist/execute.cjs",
+      "import": "./dist/execute.mjs"
+    },
+    "./get-command": {
+      "require": "./dist/get-command.cjs",
+      "import": "./dist/get-command.mjs"
+    },
+    "./meta": {
+      "require": "./dist/meta.cjs",
+      "import": "./dist/meta.mjs"
+    },
+    "./parse": {
+      "require": "./dist/parse.cjs",
+      "import": "./dist/parse.mjs"
+    },
+    "./run": {
+      "require": "./dist/run.cjs",
+      "import": "./dist/run.mjs"
+    },
+    "./shutdown": {
+      "require": "./dist/shutdown.cjs",
+      "import": "./dist/shutdown.mjs"
+    },
+    "./types": {
+      "require": "./dist/types.cjs",
+      "import": "./dist/types.mjs"
+    },
+    "./usage": {
+      "require": "./dist/usage.cjs",
+      "import": "./dist/usage.mjs"
+    },
+    "./utils": {
+      "require": "./dist/utils/index.cjs",
+      "import": "./dist/utils/index.mjs"
+    },
+    "./utils/align-text": {
+      "require": "./dist/utils/align-text.cjs",
+      "import": "./dist/utils/align-text.mjs"
+    },
+    "./utils/box": {
+      "require": "./dist/utils/box.cjs",
+      "import": "./dist/utils/box.mjs"
+    },
+    "./utils/color": {
+      "require": "./dist/utils/color.cjs",
+      "import": "./dist/utils/color.mjs"
+    },
+    "./utils/format": {
+      "require": "./dist/utils/format.cjs",
+      "import": "./dist/utils/format.mjs"
+    },
+    "./utils/format-columns": {
+      "require": "./dist/utils/format-columns.cjs",
+      "import": "./dist/utils/format-columns.mjs"
+    },
+    "./utils/link": {
+      "require": "./dist/utils/link.cjs",
+      "import": "./dist/utils/link.mjs"
+    },
+    "./utils/strip-ansi": {
+      "require": "./dist/utils/strip-ansi.cjs",
+      "import": "./dist/utils/strip-ansi.mjs"
+    },
+    "./*": "./*"
   }
 }

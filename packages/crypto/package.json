@@ -19,5 +19,35 @@
   },
   "publishConfig": {
     "access": "public"
+  },
+  "main": "./dist/index.cjs",
+  "module": "./dist/index.mjs",
+  "types": "./dist/index.d.cts",
+  "exports": {
+    ".": {
+      "require": "./dist/index.cjs",
+      "import": "./dist/index.mjs"
+    },
+    "./base-64": {
+      "require": "./dist/base-64.cjs",
+      "import": "./dist/base-64.mjs"
+    },
+    "./encryption": {
+      "require": "./dist/encryption.cjs",
+      "import": "./dist/encryption.mjs"
+    },
+    "./encryption.node": {
+      "require": "./dist/encryption.node.cjs",
+      "import": "./dist/encryption.node.mjs"
+    },
+    "./hex": {
+      "require": "./dist/hex.cjs",
+      "import": "./dist/hex.mjs"
+    },
+    "./neutral": {
+      "require": "./dist/neutral.cjs",
+      "import": "./dist/neutral.mjs"
+    },
+    "./*": "./*"
   }
 }

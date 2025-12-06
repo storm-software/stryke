@@ -18,5 +18,83 @@
   },
   "publishConfig": {
     "access": "public"
+  },
+  "main": "./dist/index.cjs",
+  "module": "./dist/index.mjs",
+  "types": "./dist/index.d.cts",
+  "exports": {
+    ".": {
+      "require": "./dist/index.cjs",
+      "import": "./dist/index.mjs"
+    },
+    "./append": {
+      "require": "./dist/append.cjs",
+      "import": "./dist/append.mjs"
+    },
+    "./asset-extensions": {
+      "require": "./dist/asset-extensions.cjs",
+      "import": "./dist/asset-extensions.mjs"
+    },
+    "./correct-path": {
+      "require": "./dist/correct-path.cjs",
+      "import": "./dist/correct-path.mjs"
+    },
+    "./cwd": {
+      "require": "./dist/cwd.cjs",
+      "import": "./dist/cwd.mjs"
+    },
+    "./delimiter": {
+      "require": "./dist/delimiter.cjs",
+      "import": "./dist/delimiter.mjs"
+    },
+    "./file-path-fns": {
+      "require": "./dist/file-path-fns.cjs",
+      "import": "./dist/file-path-fns.mjs"
+    },
+    "./find": {
+      "require": "./dist/find.cjs",
+      "import": "./dist/find.mjs"
+    },
+    "./is-parent-path": {
+      "require": "./dist/is-parent-path.cjs",
+      "import": "./dist/is-parent-path.mjs"
+    },
+    "./is-root-dir": {
+      "require": "./dist/is-root-dir.cjs",
+      "import": "./dist/is-root-dir.mjs"
+    },
+    "./is-type": {
+      "require": "./dist/is-type.cjs",
+      "import": "./dist/is-type.mjs"
+    },
+    "./join": {
+      "require": "./dist/join.cjs",
+      "import": "./dist/join.mjs"
+    },
+    "./join-paths": {
+      "require": "./dist/join-paths.cjs",
+      "import": "./dist/join-paths.mjs"
+    },
+    "./normalize": {
+      "require": "./dist/normalize.cjs",
+      "import": "./dist/normalize.mjs"
+    },
+    "./regex": {
+      "require": "./dist/regex.cjs",
+      "import": "./dist/regex.mjs"
+    },
+    "./replace": {
+      "require": "./dist/replace.cjs",
+      "import": "./dist/replace.mjs"
+    },
+    "./resolve-parent-path": {
+      "require": "./dist/resolve-parent-path.cjs",
+      "import": "./dist/resolve-parent-path.mjs"
+    },
+    "./slash": {
+      "require": "./dist/slash.cjs",
+      "import": "./dist/slash.mjs"
+    },
+    "./*": "./*"
   }
 }

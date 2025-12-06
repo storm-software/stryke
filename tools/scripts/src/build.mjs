@@ -40,7 +40,7 @@ try {
   let result = await proc;
   if (!result.ok) {
     throw new Error(
-      `An error occured while bootstrapping the monorepo: \n\n${result.message}\n`
+      `An error occurred while bootstrapping the monorepo: \n\n${result.message}\n`
     );
   }
 
@@ -53,11 +53,11 @@ try {
 
     if (!result.ok) {
       throw new Error(
-        `An error occured while building the monorepo in production mode: \n\n${result.message}\n`
+        `An error occurred while building the monorepo in production mode: \n\n${result.message}\n`
       );
     }
   } else {
-    proc = $`pnpm nx run-many --target=build --all --exclude="@stryke/monorepo" --configuration=${configuration} --nxBail`;
+    proc = $`pnpm nx run-many --target=build --all --exclude="@stryke/monorepo" --configuration=${configuration} --parallel=5 --nxBail`;
     proc.stdout.on("data", data => {
       echo`${data}`;
     });
@@ -65,14 +65,14 @@ try {
 
     if (!result.ok) {
       throw new Error(
-        `An error occured while building the monorepo in development mode: \n\n${result.message}\n`
+        `An error occurred while building the monorepo in development mode: \n\n${result.message}\n`
       );
     }
   }
 
   echo`${chalk.green(` ✔ Successfully built the monorepo in ${configuration} mode!`)}`;
 } catch (error) {
-  echo`${chalk.red(error?.message ? error.message : "A failure occured while building the monorepo")}`;
+  echo`${chalk.red(error?.message ? error.message : "A failure occurred while building the monorepo")}`;
 
   process.exit(1);
 }

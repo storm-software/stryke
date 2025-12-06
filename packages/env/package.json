@@ -23,5 +23,43 @@
   },
   "publishConfig": {
     "access": "public"
+  },
+  "main": "./dist/index.cjs",
+  "module": "./dist/index.mjs",
+  "types": "./dist/index.d.cts",
+  "exports": {
+    ".": {
+      "require": "./dist/index.cjs",
+      "import": "./dist/index.mjs"
+    },
+    "./ci-checks": {
+      "require": "./dist/ci-checks.cjs",
+      "import": "./dist/ci-checks.mjs"
+    },
+    "./environment-checks": {
+      "require": "./dist/environment-checks.cjs",
+      "import": "./dist/environment-checks.mjs"
+    },
+    "./get-env-paths": {
+      "require": "./dist/get-env-paths.cjs",
+      "import": "./dist/get-env-paths.mjs"
+    },
+    "./load-env": {
+      "require": "./dist/load-env.cjs",
+      "import": "./dist/load-env.mjs"
+    },
+    "./providers": {
+      "require": "./dist/providers.cjs",
+      "import": "./dist/providers.mjs"
+    },
+    "./runtime-checks": {
+      "require": "./dist/runtime-checks.cjs",
+      "import": "./dist/runtime-checks.mjs"
+    },
+    "./types": {
+      "require": "./dist/types.cjs",
+      "import": "./dist/types.mjs"
+    },
+    "./*": "./*"
   }
 }

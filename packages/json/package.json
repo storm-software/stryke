@@ -20,5 +20,59 @@
   },
   "publishConfig": {
     "access": "public"
+  },
+  "main": "./dist/index.cjs",
+  "module": "./dist/index.mjs",
+  "types": "./dist/index.d.cts",
+  "exports": {
+    ".": {
+      "require": "./dist/index.cjs",
+      "import": "./dist/index.mjs"
+    },
+    "./pointer": {
+      "require": "./dist/pointer/index.cjs",
+      "import": "./dist/pointer/index.mjs"
+    },
+    "./pointer/find-reference": {
+      "require": "./dist/pointer/find-reference.cjs",
+      "import": "./dist/pointer/find-reference.mjs"
+    },
+    "./pointer/parse": {
+      "require": "./dist/pointer/parse.cjs",
+      "import": "./dist/pointer/parse.mjs"
+    },
+    "./storm-json": {
+      "require": "./dist/storm-json.cjs",
+      "import": "./dist/storm-json.mjs"
+    },
+    "./types": {
+      "require": "./dist/types.cjs",
+      "import": "./dist/types.mjs"
+    },
+    "./utils": {
+      "require": "./dist/utils/index.cjs",
+      "import": "./dist/utils/index.mjs"
+    },
+    "./utils/code-frames": {
+      "require": "./dist/utils/code-frames.cjs",
+      "import": "./dist/utils/code-frames.mjs"
+    },
+    "./utils/parse": {
+      "require": "./dist/utils/parse.cjs",
+      "import": "./dist/utils/parse.mjs"
+    },
+    "./utils/parse-error": {
+      "require": "./dist/utils/parse-error.cjs",
+      "import": "./dist/utils/parse-error.mjs"
+    },
+    "./utils/stringify": {
+      "require": "./dist/utils/stringify.cjs",
+      "import": "./dist/utils/stringify.mjs"
+    },
+    "./utils/strip-comments": {
+      "require": "./dist/utils/strip-comments.cjs",
+      "import": "./dist/utils/strip-comments.mjs"
+    },
+    "./*": "./*"
   }
 }

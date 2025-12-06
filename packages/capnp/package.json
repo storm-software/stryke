@@ -86,7 +86,7 @@
       "require": "./dist/src/types.cjs",
       "import": "./dist/src/types.mjs"
     },
-    "./package.json": "./package.json"
+    "./*": "./*"
   },
   "types": "./dist/src/index.d.cts",
   "files": [

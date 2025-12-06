@@ -16,7 +16,7 @@
 
  ------------------------------------------------------------------- */
 
-import { defineTSDownConfig } from "@stryke/tools-config/tsdown.shared";
+import { defineTSDownConfig } from "@stryke/tools-config/tsdown.config";
 import { fileURLToPath } from "node:url";
 
 export default defineTSDownConfig([

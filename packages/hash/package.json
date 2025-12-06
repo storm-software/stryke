@@ -18,5 +18,43 @@
   },
   "publishConfig": {
     "access": "public"
+  },
+  "main": "./dist/index.cjs",
+  "module": "./dist/index.mjs",
+  "types": "./dist/index.d.cts",
+  "exports": {
+    ".": {
+      "require": "./dist/index.cjs",
+      "import": "./dist/index.mjs"
+    },
+    "./digest": {
+      "require": "./dist/digest.cjs",
+      "import": "./dist/digest.mjs"
+    },
+    "./etag": {
+      "require": "./dist/etag.cjs",
+      "import": "./dist/etag.mjs"
+    },
+    "./hash-files": {
+      "require": "./dist/hash-files.cjs",
+      "import": "./dist/hash-files.mjs"
+    },
+    "./md5": {
+      "require": "./dist/md5.cjs",
+      "import": "./dist/md5.mjs"
+    },
+    "./murmurhash": {
+      "require": "./dist/murmurhash.cjs",
+      "import": "./dist/murmurhash.mjs"
+    },
+    "./neutral": {
+      "require": "./dist/neutral.cjs",
+      "import": "./dist/neutral.mjs"
+    },
+    "./xx-hash": {
+      "require": "./dist/xx-hash.cjs",
+      "import": "./dist/xx-hash.mjs"
+    },
+    "./*": "./*"
   }
 }

@@ -18,5 +18,27 @@
   },
   "publishConfig": {
     "access": "public"
+  },
+  "main": "./dist/index.cjs",
+  "module": "./dist/index.mjs",
+  "types": "./dist/index.d.cts",
+  "exports": {
+    ".": {
+      "require": "./dist/index.cjs",
+      "import": "./dist/index.mjs"
+    },
+    "./helpers": {
+      "require": "./dist/helpers.cjs",
+      "import": "./dist/helpers.mjs"
+    },
+    "./storm-url": {
+      "require": "./dist/storm-url.cjs",
+      "import": "./dist/storm-url.mjs"
+    },
+    "./types": {
+      "require": "./dist/types.cjs",
+      "import": "./dist/types.mjs"
+    },
+    "./*": "./*"
   }
 }

@@ -43,20 +43,20 @@
     "prisma-trpc-generator-cjs": "dist/generator.cjs",
     "prisma-trpc-generator-mjs": "dist/generator.js"
   },
-  "main": "./dist/index.cjs",
-  "module": "./dist/index.mjs",
+  "main": "./packages/prisma-trpc-generator/dist/index.cjs",
+  "module": "./packages/prisma-trpc-generator/dist/index.mjs",
   "exports": {
     ".": {
-      "require": "./dist/index.cjs",
-      "import": "./dist/index.mjs"
+      "require": "./packages/prisma-trpc-generator/dist/index.cjs",
+      "import": "./packages/prisma-trpc-generator/dist/index.mjs"
     },
     "./generator": {
-      "require": "./dist/generator.cjs",
-      "import": "./dist/generator.mjs"
+      "require": "./packages/prisma-trpc-generator/dist/generator.cjs",
+      "import": "./packages/prisma-trpc-generator/dist/generator.mjs"
     },
-    "./package.json": "./package.json"
+    "./*": "./*"
   },
-  "types": "./dist/index.d.cts",
+  "types": "./packages/prisma-trpc-generator/dist/index.d.cts",
   "files": [
     "dist/**/*"
   ],
@@ -66,10 +66,7 @@
     "utilities",
     "storm-software",
     "storm",
-    "storm-ops",
-    "cyclone-ui",
-    "sullivanpj",
-    "monorepo"
+    "sullivanpj"
   ],
   "dependencies": {
     "@prisma/generator-helper": "catalog:",

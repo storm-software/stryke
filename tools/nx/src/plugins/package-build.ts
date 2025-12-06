@@ -22,12 +22,9 @@ import {
   getProjectConfigFromProjectRoot,
   getProjectRoot
 } from "@storm-software/workspace-tools/utils/plugin-helpers";
-import {
-  getProjectTag,
-  ProjectTagConstants,
-  setDefaultProjectTags
-} from "@storm-software/workspace-tools/utils/project-tags";
-import { join } from "node:path";
+import { setDefaultProjectTags } from "@storm-software/workspace-tools/utils/project-tags";
+import { existsSync } from "node:fs";
+import { basename, join } from "node:path";
 import { readNxJson } from "nx/src/config/nx-json.js";
 import type { ProjectConfiguration } from "nx/src/config/workspace-json-project-json.js";
 import { readTargetsFromPackageJson } from "nx/src/utils/package-json.js";
@@ -44,12 +41,12 @@ export const createNodesV2: CreateNodesV2<StrykePackageBuildPluginOptions> = [
     return createNodesFromFiles(
       (configFile, options, context) => {
         try {
-          console.log(`Processing project.json file: ${configFile}`);
+          console.log(`[${name}]: Processing project.json file: ${configFile}`);
 
           const projectRoot = getProjectRoot(configFile, context.workspaceRoot);
           if (!projectRoot) {
             console.error(
-              `project.json file must be location in the project root directory: ${configFile}`
+              `[${name}]: project.json file must be location in the project root directory: ${configFile}`
             );
             return {};
           }
@@ -57,7 +54,7 @@ export const createNodesV2: CreateNodesV2<StrykePackageBuildPluginOptions> = [
           const tsconfigJson = readJsonFile(join(projectRoot, "tsconfig.json"));
           if (!tsconfigJson) {
             console.error(
-              `No tsconfig.json found in project root: ${projectRoot}`
+              `[${name}]: No tsconfig.json found in project root: ${projectRoot}`
             );
             return {};
           }
@@ -65,7 +62,7 @@ export const createNodesV2: CreateNodesV2<StrykePackageBuildPluginOptions> = [
           const packageJson = readJsonFile(join(projectRoot, "package.json"));
           if (!packageJson) {
             console.error(
-              `No package.json found in project root: ${projectRoot}`
+              `[${name}]: No package.json found in project root: ${projectRoot}`
             );
             return {};
           }
@@ -73,11 +70,6 @@ export const createNodesV2: CreateNodesV2<StrykePackageBuildPluginOptions> = [
           const project = getProjectConfigFromProjectRoot(
             projectRoot,
             packageJson
-          );
-
-          const platformTag = getProjectTag(
-            project,
-            ProjectTagConstants.Platform.TAG_ID
           );
 
           const nxJson = readNxJson(context.workspaceRoot);
@@ -89,29 +81,71 @@ export const createNodesV2: CreateNodesV2<StrykePackageBuildPluginOptions> = [
               context.workspaceRoot
             );
 
-            
-          targets.build ??= {
-            cache: true,
-            inputs: ["typescript", "^production"],
-            outputs: ["{workspaceRoot}/dist/{projectRoot}"],
-            command: "tsdown",
-            defaultConfiguration: "production",
-            options: {
-              cwd: projectRoot,
-              name: project?.name ?? "unknown-package",
-              entry: ["src/index.ts"],
-              platform:
-                platformTag === "worker" ? "browser" : platformTag || "neutral"
-            },
-            configurations: {
-              production: {
-                debug: false
-              },
-              development: {
-                debug: true
-              }
+          if (project?.name && !project?.name.startsWith("tools")) {
+            if (
+              existsSync(join(projectRoot, "tsdown.config.ts")) ||
+              existsSync(join(projectRoot, basename(configFile)))
+            ) {
+              console.log(
+                `[${name}]: ${project.name} project at ${projectRoot} contains custom tsdown.config.ts`
+              );
+
+              targets.build ??= {
+                cache: true,
+                inputs: ["typescript", "^production"],
+                outputs: ["{workspaceRoot}/dist/{projectRoot}"],
+                command: `tsdown --config \"${
+                  existsSync(join(projectRoot, "tsdown.config.ts"))
+                    ? "tsdown.config.ts"
+                    : ""
+                }\" --cwd \"${join(context.workspaceRoot, projectRoot)}\"`,
+                defaultConfiguration: "production",
+                options: {
+                  cwd: projectRoot,
+                  name: project?.name
+                },
+                configurations: {
+                  production: {
+                    debug: false,
+                    sourcemap: false
+                  },
+                  development: {
+                    debug: true,
+                    sourcemap: true
+                  }
+                }
+              };
+            } else {
+              console.log(
+                `[${name}]: ${project.name} project at ${projectRoot} will use default tsdown.config.ts`
+              );
+
+              targets.build ??= {
+                cache: true,
+                inputs: ["typescript", "^production"],
+                outputs: ["{workspaceRoot}/dist/{projectRoot}"],
+                command: `tsdown \"src/**/*.ts\" --config \"../../tools/config/tsdown.config.ts\" --cwd \"${join(
+                  context.workspaceRoot,
+                  projectRoot
+                )}\"`,
+                defaultConfiguration: "production",
+                options: {
+                  cwd: projectRoot,
+                  name: project?.name
+                },
+                configurations: {
+                  production: {
+                    debug: false,
+                    sourcemap: false
+                  },
+                  development: {
+                    debug: true,
+                    sourcemap: true
+                  }
+                }
+              };
             }
-          };
+          }
 
           let relativeRoot = projectRoot
             .replaceAll("\\", "/")
@@ -120,7 +154,7 @@ export const createNodesV2: CreateNodesV2<StrykePackageBuildPluginOptions> = [
             relativeRoot = relativeRoot.slice(1);
           }
 
-          targets.clean = {
+          targets.clean ??= {
             executor: "nx:run-commands",
             inputs: [
               `{workspaceRoot}/${configFile}`,
@@ -149,12 +183,14 @@ export const createNodesV2: CreateNodesV2<StrykePackageBuildPluginOptions> = [
                 }
               }
             : {};
-          console.log(`Writing Results for ${project?.name ?? "missing name"}`);
+          console.log(
+            `[${name}]: Writing Results for ${project?.name ?? "missing name"}`
+          );
           console.log(result);
 
           return result;
-        } catch (error_) {
-          console.error(error_);
+        } catch (err) {
+          console.error(err);
           return {};
         }
       },

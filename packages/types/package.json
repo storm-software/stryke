@@ -8,12 +8,143 @@
     "url": "https://github.com/storm-software/stryke.git",
     "directory": "packages/types"
   },
+  "homepage": "https://stormsoftware.com",
+  "bugs": {
+    "url": "https://stormsoftware.com/support",
+    "email": "support@stormsoftware.com"
+  },
+  "author": {
+    "name": "Storm Software",
+    "email": "contact@stormsoftware.com",
+    "url": "https://stormsoftware.com"
+  },
+  "maintainers": [
+    {
+      "name": "Storm Software",
+      "email": "contact@stormsoftware.com",
+      "url": "https://stormsoftware.com"
+    }
+  ],
+  "contributors": [
+    {
+      "name": "Storm Software",
+      "email": "contact@stormsoftware.com",
+      "url": "https://stormsoftware.com"
+    }
+  ],
+  "funding": {
+    "type": "github",
+    "url": "https://github.com/sponsors/storm-software"
+  },
+  "license": "Apache-2.0",
   "private": false,
+  "main": "./dist/index.cjs",
+  "module": "./dist/index.mjs",
+  "exports": {
+    ".": {
+      "require": "./dist/index.cjs",
+      "import": "./dist/index.mjs"
+    },
+    "./array": {
+      "require": "./dist/array.cjs",
+      "import": "./dist/array.mjs"
+    },
+    "./async": {
+      "require": "./dist/async.cjs",
+      "import": "./dist/async.mjs"
+    },
+    "./base": {
+      "require": "./dist/base.cjs",
+      "import": "./dist/base.mjs"
+    },
+    "./configuration": {
+      "require": "./dist/configuration.cjs",
+      "import": "./dist/configuration.mjs"
+    },
+    "./file": {
+      "require": "./dist/file.cjs",
+      "import": "./dist/file.mjs"
+    },
+    "./form": {
+      "require": "./dist/form.cjs",
+      "import": "./dist/form.mjs"
+    },
+    "./json": {
+      "require": "./dist/json.cjs",
+      "import": "./dist/json.mjs"
+    },
+    "./logic": {
+      "require": "./dist/logic.cjs",
+      "import": "./dist/logic.mjs"
+    },
+    "./messages": {
+      "require": "./dist/messages.cjs",
+      "import": "./dist/messages.mjs"
+    },
+    "./navigator": {
+      "require": "./dist/navigator.cjs",
+      "import": "./dist/navigator.mjs"
+    },
+    "./number": {
+      "require": "./dist/number.cjs",
+      "import": "./dist/number.mjs"
+    },
+    "./object": {
+      "require": "./dist/object.cjs",
+      "import": "./dist/object.mjs"
+    },
+    "./package-json": {
+      "require": "./dist/package-json.cjs",
+      "import": "./dist/package-json.mjs"
+    },
+    "./package-manager": {
+      "require": "./dist/package-manager.cjs",
+      "import": "./dist/package-manager.mjs"
+    },
+    "./string": {
+      "require": "./dist/string.cjs",
+      "import": "./dist/string.mjs"
+    },
+    "./system": {
+      "require": "./dist/system.cjs",
+      "import": "./dist/system.mjs"
+    },
+    "./tsconfig": {
+      "require": "./dist/tsconfig.cjs",
+      "import": "./dist/tsconfig.mjs"
+    },
+    "./user": {
+      "require": "./dist/user.cjs",
+      "import": "./dist/user.mjs"
+    },
+    "./utilities": {
+      "require": "./dist/utilities.cjs",
+      "import": "./dist/utilities.mjs"
+    },
+    "./validations": {
+      "require": "./dist/validations.cjs",
+      "import": "./dist/validations.mjs"
+    },
+    "./*": "./*"
+  },
+  "typings": "dist/index.d.mts",
+  "files": [
+    "dist/**/*"
+  ],
+  "keywords": [
+    "stryke",
+    "typescript",
+    "utilities",
+    "storm-software",
+    "storm",
+    "sullivanpj"
+  ],
   "devDependencies": {
     "@types/node": "catalog:",
     "tsdown": "catalog:"
   },
   "publishConfig": {
     "access": "public"
-  }
+  },
+  "types": "./dist/index.d.cts"
 }

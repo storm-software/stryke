@@ -14,5 +14,143 @@
   },
   "publishConfig": {
     "access": "public"
+  },
+  "main": "./dist/index.cjs",
+  "module": "./dist/index.mjs",
+  "types": "./dist/index.d.cts",
+  "exports": {
+    ".": {
+      "require": "./dist/index.cjs",
+      "import": "./dist/index.mjs"
+    },
+    "./arg-identity": {
+      "require": "./dist/arg-identity.cjs",
+      "import": "./dist/arg-identity.mjs"
+    },
+    "./debounce": {
+      "require": "./dist/debounce.cjs",
+      "import": "./dist/debounce.mjs"
+    },
+    "./deep-clone": {
+      "require": "./dist/deep-clone.cjs",
+      "import": "./dist/deep-clone.mjs"
+    },
+    "./deep-merge": {
+      "require": "./dist/deep-merge.cjs",
+      "import": "./dist/deep-merge.mjs"
+    },
+    "./delay": {
+      "require": "./dist/delay.cjs",
+      "import": "./dist/delay.mjs"
+    },
+    "./errors": {
+      "require": "./dist/errors.cjs",
+      "import": "./dist/errors.mjs"
+    },
+    "./filter-empty": {
+      "require": "./dist/filter-empty.cjs",
+      "import": "./dist/filter-empty.mjs"
+    },
+    "./flatten-object": {
+      "require": "./dist/flatten-object.cjs",
+      "import": "./dist/flatten-object.mjs"
+    },
+    "./get-field": {
+      "require": "./dist/get-field.cjs",
+      "import": "./dist/get-field.mjs"
+    },
+    "./get-ordered-by": {
+      "require": "./dist/get-ordered-by.cjs",
+      "import": "./dist/get-ordered-by.mjs"
+    },
+    "./get-unique": {
+      "require": "./dist/get-unique.cjs",
+      "import": "./dist/get-unique.mjs"
+    },
+    "./identity": {
+      "require": "./dist/identity.cjs",
+      "import": "./dist/identity.mjs"
+    },
+    "./is-equal": {
+      "require": "./dist/is-equal.cjs",
+      "import": "./dist/is-equal.mjs"
+    },
+    "./lru-cache": {
+      "require": "./dist/lru-cache.cjs",
+      "import": "./dist/lru-cache.mjs"
+    },
+    "./match-sorter": {
+      "require": "./dist/match-sorter.cjs",
+      "import": "./dist/match-sorter.mjs"
+    },
+    "./memoize": {
+      "require": "./dist/memoize.cjs",
+      "import": "./dist/memoize.mjs"
+    },
+    "./mutex": {
+      "require": "./dist/mutex.cjs",
+      "import": "./dist/mutex.mjs"
+    },
+    "./noop": {
+      "require": "./dist/noop.cjs",
+      "import": "./dist/noop.mjs"
+    },
+    "./omit": {
+      "require": "./dist/omit.cjs",
+      "import": "./dist/omit.mjs"
+    },
+    "./once": {
+      "require": "./dist/once.cjs",
+      "import": "./dist/once.mjs"
+    },
+    "./pick": {
+      "require": "./dist/pick.cjs",
+      "import": "./dist/pick.mjs"
+    },
+    "./remove-accents": {
+      "require": "./dist/remove-accents.cjs",
+      "import": "./dist/remove-accents.mjs"
+    },
+    "./remove-empty-items": {
+      "require": "./dist/remove-empty-items.cjs",
+      "import": "./dist/remove-empty-items.mjs"
+    },
+    "./semaphore": {
+      "require": "./dist/semaphore.cjs",
+      "import": "./dist/semaphore.mjs"
+    },
+    "./set-field": {
+      "require": "./dist/set-field.cjs",
+      "import": "./dist/set-field.mjs"
+    },
+    "./throttle": {
+      "require": "./dist/throttle.cjs",
+      "import": "./dist/throttle.mjs"
+    },
+    "./timeout": {
+      "require": "./dist/timeout.cjs",
+      "import": "./dist/timeout.mjs"
+    },
+    "./to-deep-key": {
+      "require": "./dist/to-deep-key.cjs",
+      "import": "./dist/to-deep-key.mjs"
+    },
+    "./to-path": {
+      "require": "./dist/to-path.cjs",
+      "import": "./dist/to-path.mjs"
+    },
+    "./unflatten-object": {
+      "require": "./dist/unflatten-object.cjs",
+      "import": "./dist/unflatten-object.mjs"
+    },
+    "./union": {
+      "require": "./dist/union.cjs",
+      "import": "./dist/union.mjs"
+    },
+    "./with-timeout": {
+      "require": "./dist/with-timeout.cjs",
+      "import": "./dist/with-timeout.mjs"
+    },
+    "./*": "./*"
   }
 }

@@ -18,5 +18,31 @@
   },
   "publishConfig": {
     "access": "public"
+  },
+  "main": "./dist/index.cjs",
+  "module": "./dist/index.mjs",
+  "types": "./dist/index.d.cts",
+  "exports": {
+    ".": {
+      "require": "./dist/index.cjs",
+      "import": "./dist/index.mjs"
+    },
+    "./parse": {
+      "require": "./dist/parse.cjs",
+      "import": "./dist/parse.mjs"
+    },
+    "./split": {
+      "require": "./dist/split.cjs",
+      "import": "./dist/split.mjs"
+    },
+    "./stringify": {
+      "require": "./dist/stringify.cjs",
+      "import": "./dist/stringify.mjs"
+    },
+    "./types": {
+      "require": "./dist/types.cjs",
+      "import": "./dist/types.mjs"
+    },
+    "./*": "./*"
   }
 }
