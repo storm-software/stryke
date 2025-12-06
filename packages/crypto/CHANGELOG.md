@@ -2,6 +2,18 @@
 
 # Changelog for Stryke - Crypto
 
+## [0.5.18](https://github.com/storm-software/stryke/releases/tag/crypto%400.5.18) (12/06/2025)
+
+### Features
+
+- **tools-nx:** Resolved issue inferring build command-line arguments for local
+  packages ([de00278](https://github.com/storm-software/stryke/commit/de00278))
+
+### Updated Dependencies
+
+- Updated **type-checks** to **v0.5.2**
+- Updated **convert** to **v0.6.17**
+
 ## [0.5.17](https://github.com/storm-software/stryke/releases/tag/crypto%400.5.17) (12/06/2025)
 
 ### Updated Dependencies

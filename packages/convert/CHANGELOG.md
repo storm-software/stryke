@@ -2,6 +2,18 @@
 
 # Changelog for Stryke - Convert
 
+## [0.6.17](https://github.com/storm-software/stryke/releases/tag/convert%400.6.17) (12/06/2025)
+
+### Features
+
+- **tools-nx:** Resolved issue inferring build command-line arguments for local
+  packages ([de00278](https://github.com/storm-software/stryke/commit/de00278))
+
+### Updated Dependencies
+
+- Updated **type-checks** to **v0.5.2**
+- Updated **types** to **v0.10.16**
+
 ## [0.6.16](https://github.com/storm-software/stryke/releases/tag/convert%400.6.16) (12/06/2025)
 
 ### Updated Dependencies

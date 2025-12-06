@@ -2,6 +2,17 @@
 
 # Changelog for Stryke - Unique ID
 
+## [0.3.24](https://github.com/storm-software/stryke/releases/tag/unique-id%400.3.24) (12/06/2025)
+
+### Features
+
+- **tools-nx:** Resolved issue inferring build command-line arguments for local
+  packages ([de00278](https://github.com/storm-software/stryke/commit/de00278))
+
+### Updated Dependencies
+
+- Updated **hash** to **v0.12.19**
+
 ## [0.3.23](https://github.com/storm-software/stryke/releases/tag/unique-id%400.3.23) (12/06/2025)
 
 ### Updated Dependencies

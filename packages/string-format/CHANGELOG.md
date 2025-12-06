@@ -2,6 +2,18 @@
 
 # Changelog for Stryke - String Format
 
+## [0.12.17](https://github.com/storm-software/stryke/releases/tag/string-format%400.12.17) (12/06/2025)
+
+### Features
+
+- **tools-nx:** Resolved issue inferring build command-line arguments for local
+  packages ([de00278](https://github.com/storm-software/stryke/commit/de00278))
+
+### Updated Dependencies
+
+- Updated **helpers** to **v0.9.19**
+- Updated **types** to **v0.10.16**
+
 ## [0.12.16](https://github.com/storm-software/stryke/releases/tag/string-format%400.12.16) (12/06/2025)
 
 ### Updated Dependencies

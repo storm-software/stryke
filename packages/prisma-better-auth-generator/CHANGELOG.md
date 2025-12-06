@@ -2,6 +2,20 @@
 
 # Changelog for Stryke - Prisma Better Auth Generator
 
+## [0.14.30](https://github.com/storm-software/stryke/releases/tag/prisma-better-auth-generator%400.14.30) (12/06/2025)
+
+### Features
+
+- **tools-nx:** Resolved issue inferring build command-line arguments for local
+  packages ([de00278](https://github.com/storm-software/stryke/commit/de00278))
+
+### Updated Dependencies
+
+- Updated **string-format** to **v0.12.17**
+- Updated **path** to **v0.22.4**
+- Updated **env** to **v0.20.30**
+- Updated **fs** to **v0.33.13**
+
 ## [0.14.29](https://github.com/storm-software/stryke/releases/tag/prisma-better-auth-generator%400.14.29) (12/06/2025)
 
 ### Updated Dependencies

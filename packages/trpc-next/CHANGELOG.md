@@ -2,6 +2,27 @@
 
 # Changelog for Stryke - TRPC Next
 
+## [0.5.29](https://github.com/storm-software/stryke/releases/tag/trpc-next%400.5.29) (12/06/2025)
+
+### Bug Fixes
+
+- **trpc-next:** Resolve issue bundling `tsx` files
+  ([bc914aa](https://github.com/storm-software/stryke/commit/bc914aa))
+- **monorepo:** Update `storm-ops` packages to resolve build issues
+  ([ea2b179](https://github.com/storm-software/stryke/commit/ea2b179))
+
+### Features
+
+- **tools-nx:** Resolved issue inferring build command-line arguments for local
+  packages ([de00278](https://github.com/storm-software/stryke/commit/de00278))
+
+### Updated Dependencies
+
+- Updated **types** to **v0.10.16**
+- Updated **path** to **v0.22.4**
+- Updated **env** to **v0.20.30**
+- Updated **url** to **v0.3.8**
+
 ## [0.5.28](https://github.com/storm-software/stryke/releases/tag/trpc-next%400.5.28) (12/06/2025)
 
 ### Updated Dependencies

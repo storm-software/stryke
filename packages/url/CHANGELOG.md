@@ -2,6 +2,19 @@
 
 # Changelog for Stryke - URL
 
+## [0.3.8](https://github.com/storm-software/stryke/releases/tag/url%400.3.8) (12/06/2025)
+
+### Features
+
+- **tools-nx:** Resolved issue inferring build command-line arguments for local
+  packages ([de00278](https://github.com/storm-software/stryke/commit/de00278))
+
+### Updated Dependencies
+
+- Updated **type-checks** to **v0.5.2**
+- Updated **json** to **v0.9.20**
+- Updated **path** to **v0.22.4**
+
 ## [0.3.7](https://github.com/storm-software/stryke/releases/tag/url%400.3.7) (12/06/2025)
 
 ### Updated Dependencies

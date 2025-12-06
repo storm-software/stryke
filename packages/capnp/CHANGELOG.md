@@ -2,6 +2,25 @@
 
 # Changelog for Stryke - Capnp
 
+## [0.12.37](https://github.com/storm-software/stryke/releases/tag/capnp%400.12.37) (12/06/2025)
+
+### Bug Fixes
+
+- **monorepo:** Update `storm-ops` packages to resolve build issues
+  ([ea2b179](https://github.com/storm-software/stryke/commit/ea2b179))
+
+### Features
+
+- **tools-nx:** Resolved issue inferring build command-line arguments for local
+  packages ([de00278](https://github.com/storm-software/stryke/commit/de00278))
+
+### Updated Dependencies
+
+- Updated **convert** to **v0.6.17**
+- Updated **types** to **v0.10.16**
+- Updated **path** to **v0.22.4**
+- Updated **fs** to **v0.33.13**
+
 ## [0.12.36](https://github.com/storm-software/stryke/releases/tag/capnp%400.12.36) (12/06/2025)
 
 ### Miscellaneous

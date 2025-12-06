@@ -2,6 +2,21 @@
 
 # Changelog for Stryke - CLI
 
+## [0.12.23](https://github.com/storm-software/stryke/releases/tag/cli%400.12.23) (12/06/2025)
+
+### Features
+
+- **tools-nx:** Resolved issue inferring build command-line arguments for local
+  packages ([de00278](https://github.com/storm-software/stryke/commit/de00278))
+
+### Updated Dependencies
+
+- Updated **string-format** to **v0.12.17**
+- Updated **type-checks** to **v0.5.2**
+- Updated **convert** to **v0.6.17**
+- Updated **types** to **v0.10.16**
+- Updated **env** to **v0.20.30**
+
 ## [0.12.22](https://github.com/storm-software/stryke/releases/tag/cli%400.12.22) (12/06/2025)
 
 ### Updated Dependencies

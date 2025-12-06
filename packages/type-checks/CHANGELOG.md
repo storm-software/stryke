@@ -2,6 +2,17 @@
 
 # Changelog for Stryke - Type Checks
 
+## [0.5.2](https://github.com/storm-software/stryke/releases/tag/type-checks%400.5.2) (12/06/2025)
+
+### Features
+
+- **tools-nx:** Resolved issue inferring build command-line arguments for local
+  packages ([de00278](https://github.com/storm-software/stryke/commit/de00278))
+
+### Updated Dependencies
+
+- Updated **types** to **v0.10.16**
+
 ## [0.5.1](https://github.com/storm-software/stryke/releases/tag/type-checks%400.5.1) (12/06/2025)
 
 ### Updated Dependencies

@@ -2,6 +2,13 @@
 
 # Changelog for Stryke - Types
 
+## [0.10.16](https://github.com/storm-software/stryke/releases/tag/types%400.10.16) (12/06/2025)
+
+### Features
+
+- **tools-nx:** Resolved issue inferring build command-line arguments for local
+  packages ([de00278](https://github.com/storm-software/stryke/commit/de00278))
+
 ## [0.10.14](https://github.com/storm-software/stryke/releases/tag/types%400.10.14) (12/05/2025)
 
 ### Features

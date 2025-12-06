@@ -2,6 +2,20 @@
 
 # Changelog for Stryke - Hooks
 
+## [0.4.28](https://github.com/storm-software/stryke/releases/tag/hooks%400.4.28) (12/06/2025)
+
+### Features
+
+- **tools-nx:** Resolved issue inferring build command-line arguments for local
+  packages ([de00278](https://github.com/storm-software/stryke/commit/de00278))
+
+### Updated Dependencies
+
+- Updated **type-checks** to **v0.5.2**
+- Updated **helpers** to **v0.9.19**
+- Updated **types** to **v0.10.16**
+- Updated **env** to **v0.20.30**
+
 ## [0.4.27](https://github.com/storm-software/stryke/releases/tag/hooks%400.4.27) (12/06/2025)
 
 ### Updated Dependencies

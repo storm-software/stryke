@@ -2,6 +2,18 @@
 
 # Changelog for Stryke - JSON
 
+## [0.9.20](https://github.com/storm-software/stryke/releases/tag/json%400.9.20) (12/06/2025)
+
+### Features
+
+- **tools-nx:** Resolved issue inferring build command-line arguments for local
+  packages ([de00278](https://github.com/storm-software/stryke/commit/de00278))
+
+### Updated Dependencies
+
+- Updated **type-checks** to **v0.5.2**
+- Updated **types** to **v0.10.16**
+
 ## [0.9.19](https://github.com/storm-software/stryke/releases/tag/json%400.9.19) (12/06/2025)
 
 ### Updated Dependencies
