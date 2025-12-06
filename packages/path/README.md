@@ -3,7 +3,13 @@
 <!-- markdownlint-disable -->
 
 
-<div align="center"><img src="https://public.storm-cdn.com/storm-banner.gif" width="100%" alt="Storm Software" /></div>
+<div align="center">
+<picture>
+  <source media="(prefers-color-scheme: dark)" srcset="https://public.storm-cdn.com/storm-software/banner-1280x640-dark-optimized.gif">
+  <source media="(prefers-color-scheme: light)" srcset="https://public.storm-cdn.com/storm-software/banner-1280x640-light-optimized.gif">
+<img src="https://public.storm-cdn.com/storm-software/banner-1280x640-dark-optimized.gif" width="100%" alt="Storm Software" />
+</picture>
+</div>
 <br />
 
 <div align="center">
@@ -96,7 +102,7 @@ yarn add -D @stryke/path
 
 ## Reduced Package Size
 
-This project uses [tsup](https://tsup.egoist.dev/) to package the source code
+This project uses [tsdown](https://tsdown.dev) to package the source code
 due to its ability to remove unused code and ship smaller javascript files
 thanks to code splitting. This helps to greatly reduce the size of the package
 and to make it easier to use in other projects.
@@ -240,10 +246,13 @@ specification. Contributions of any kind welcome!
 <br />
 
 <hr />
-<br />
 
 <div align="center">
-<img src="https://public.storm-cdn.com/logo-banner.png" width="100%" alt="Storm Software" />
+<picture>
+  <source media="(prefers-color-scheme: dark)" srcset="https://public.storm-cdn.com/storm-software/banner-1280x320-dark-optimized.webp">
+  <source media="(prefers-color-scheme: light)" srcset="https://public.storm-cdn.com/storm-software/banner-1280x320-light-optimized.webp">
+<img src="https://public.storm-cdn.com/storm-software/banner-1280x320-dark-optimized.webp" width="100%" alt="Storm Software" />
+</picture>
 </div>
 <br />
 

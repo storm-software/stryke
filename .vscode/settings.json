@@ -7,8 +7,8 @@
   },
   "json.schemas": [
     {
-      "url": "https://cdn.jsdelivr.net/npm/tsup/schema.json",
-      "fileMatch": ["tsup.config.json"]
+      "url": "https://json.schemastore.org/github-workflow.json",
+      "fileMatch": [".github/workflows/*.{yml,yaml}"]
     },
     {
       "url": "https://cdn.jsdelivr.net/npm/nx/schemas/nx-schema.json",

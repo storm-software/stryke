@@ -9,6 +9,9 @@
     "directory": "packages/type-checks"
   },
   "private": false,
+  "devDependencies": {
+    "tsdown": "catalog:"
+  },
   "publishConfig": {
     "access": "public"
   }

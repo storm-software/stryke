@@ -37,7 +37,8 @@
     "@types/node": "catalog:",
     "@types/semver": "catalog:",
     "nx": "catalog:",
-    "tinyexec": "catalog:"
+    "tinyexec": "catalog:",
+    "tsdown": "catalog:"
   },
   "publishConfig": {
     "access": "public"

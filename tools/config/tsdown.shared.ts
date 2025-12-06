@@ -16,36 +16,38 @@
 
  ------------------------------------------------------------------- */
 
-import type { Options } from "tsup";
-import { defineConfig } from "tsup";
+import type { UserConfig } from "tsdown";
+import { defineConfig } from "tsdown";
 
-export type TsupOptions = Partial<Options> &
-  Pick<Options, "name" | "entryPoints">;
+export type TSDownOptions = Partial<UserConfig> & Pick<UserConfig, "name">;
 
-const defaultOptions: TsupOptions = {
+const defaultOptions: Omit<Partial<UserConfig>, "name"> = {
+  entry: ["src/index.ts"],
   target: "node22",
   outDir: "dist",
   format: ["cjs", "esm"],
-  bundle: true,
-  splitting: true,
   treeshake: true,
-  keepNames: true,
+  exports: true,
   clean: true,
   sourcemap: false,
+  unbundle: true,
   platform: "node",
   tsconfig: "./tsconfig.json",
+  minify: true,
   dts: true,
-  shims: true
+  shims: true,
+  nodeProtocol: true,
+  skipNodeModulesBundle: true
 };
 
-export function defineTsupConfig(options: TsupOptions | TsupOptions[]) {
+export function defineTSDownConfig(options: TSDownOptions | TSDownOptions[]) {
   return Array.isArray(options)
     ? defineConfig(
         options.map(option => ({
           ...defaultOptions,
           onSuccess: async () => {
             // eslint-disable-next-line no-console
-            console.log(`✅ ${option.name} build completed successfully!`);
+            console.log(` ✔ ${option.name} build completed successfully!`);
           },
           ...option
         }))
@@ -54,7 +56,7 @@ export function defineTsupConfig(options: TsupOptions | TsupOptions[]) {
         ...defaultOptions,
         onSuccess: async () => {
           // eslint-disable-next-line no-console
-          console.log(`✅ ${options.name} build completed successfully!`);
+          console.log(` ✔ ${options.name} build completed successfully!`);
         },
         ...options
       });

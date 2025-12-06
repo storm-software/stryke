@@ -16,22 +16,13 @@
 
  ------------------------------------------------------------------- */
 
-import { defineConfig } from "tsup";
+import { defineTSDownConfig } from "@stryke/tools-config/tsdown.shared";
 
-export default defineConfig({
-  name: "capnp-bin",
-  entryPoints: ["bin/capnpc.ts"],
-  format: ["cjs", "esm"],
-  platform: "node",
-  outDir: "dist/bin",
-  clean: false,
-  dts: true,
-  cjsInterop: true,
-  sourcemap: false,
-  tsconfig: "./tsconfig.json",
-  shims: true,
-  bundle: true,
-  splitting: false,
-  external: ["typescript"],
-  noExternal: ["capnp-es"]
-});
+export default defineTSDownConfig([
+  {
+    name: "prisma-trpc-generator",
+    entry: ["src/index.ts", "src/generator.ts"],
+    skipNodeModulesBundle: false,
+    external: ["esbuild", "typescript"]
+  }
+]);

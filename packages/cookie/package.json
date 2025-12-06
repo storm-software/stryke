@@ -13,7 +13,11 @@
     "@stryke/convert": "workspace:*",
     "@stryke/type-checks": "workspace:*"
   },
+  "devDependencies": {
+    "tsdown": "catalog:"
+  },
   "publishConfig": {
     "access": "public"
   }
 }
+  

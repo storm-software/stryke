@@ -9,6 +9,9 @@
     "directory": "packages/string-format"
   },
   "private": false,
+  "devDependencies": {
+    "tsdown": "catalog:"
+  },
   "publishConfig": {
     "access": "public"
   }

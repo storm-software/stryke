@@ -9,6 +9,9 @@
     "directory": "packages/unique-id"
   },
   "private": false,
+  "devDependencies": {
+    "tsdown": "catalog:"
+  },
   "publishConfig": {
     "access": "public"
   }

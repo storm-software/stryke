@@ -39,129 +39,63 @@
   "license": "Apache-2.0",
   "private": false,
   "bin": {
-    "storm-capnpc": "bin/capnpc.js",
+    "storm-capnpc": "bin/capnpc.mjs",
     "storm-capnpc-cjs": "bin/capnpc.cjs",
-    "storm-capnpc-esm": "bin/capnpc.js"
+    "storm-capnpc-esm": "bin/capnpc.mjs"
   },
-  "main": "./dist/index.cjs",
-  "module": "./dist/index.js",
+  "main": "./dist/src/index.cjs",
+  "module": "./dist/src/index.mjs",
   "exports": {
     ".": {
-      "import": {
-        "types": "./dts/index.d.ts",
-        "default": "./dist/index.js"
-      },
-      "require": {
-        "types": "./dts/index.d.cts",
-        "default": "./dist/index.cjs"
-      },
-      "default": {
-        "types": "./dts/index.d.ts",
-        "default": "./dist/index.js"
-      }
-    },
-    "./index": {
-      "import": {
-        "types": "./dts/index.d.ts",
-        "default": "./dist/index.js"
-      },
-      "require": {
-        "types": "./dts/index.d.cts",
-        "default": "./dist/index.cjs"
-      },
-      "default": {
-        "types": "./dts/index.d.ts",
-        "default": "./dist/index.js"
-      }
-    },
-    "./helpers": {
-      "import": {
-        "types": "./dist/helpers.d.ts",
-        "default": "./dist/helpers.js"
-      },
-      "require": {
-        "types": "./dist/helpers.d.cts",
-        "default": "./dist/helpers.cjs"
-      },
-      "default": {
-        "types": "./dist/helpers.d.ts",
-        "default": "./dist/helpers.js"
-      }
+      "require": "./dist/src/index.cjs",
+      "import": "./dist/src/index.mjs"
     },
     "./compile": {
-      "import": {
-        "types": "./dist/compile.d.ts",
-        "default": "./dist/compile.js"
-      },
-      "require": {
-        "types": "./dist/compile.d.cts",
-        "default": "./dist/compile.cjs"
-      },
-      "default": {
-        "types": "./dist/compile.d.ts",
-        "default": "./dist/compile.js"
-      }
+      "require": "./dist/src/compile.cjs",
+      "import": "./dist/src/compile.mjs"
+    },
+    "./cpp": {
+      "require": "./dist/schemas/cpp.cjs",
+      "import": "./dist/schemas/cpp.mjs"
+    },
+    "./helpers": {
+      "require": "./dist/src/helpers.cjs",
+      "import": "./dist/src/helpers.mjs"
+    },
+    "./persistent": {
+      "require": "./dist/schemas/persistent.cjs",
+      "import": "./dist/schemas/persistent.mjs"
     },
     "./rpc": {
-      "import": {
-        "types": "./dist/rpc.d.ts",
-        "default": "./dist/rpc.js"
-      },
-      "require": {
-        "types": "./dist/rpc.d.cts",
-        "default": "./dist/rpc.cjs"
-      },
-      "default": {
-        "types": "./dist/rpc.d.ts",
-        "default": "./dist/rpc.js"
-      }
+      "require": "./dist/schemas/rpc.cjs",
+      "import": "./dist/schemas/rpc.mjs"
     },
-    "./schemas/*": {
-      "import": {
-        "types": "./schemas/*.d.ts",
-        "default": "./schemas/*.js"
-      },
-      "require": {
-        "types": "./schemas/*.d.cts",
-        "default": "./schemas/*.cjs"
-      },
-      "default": {
-        "types": "./schemas/*.d.ts",
-        "default": "./schemas/*.js"
-      }
+    "./rpc-twoparty": {
+      "require": "./dist/schemas/rpc-twoparty.cjs",
+      "import": "./dist/schemas/rpc-twoparty.mjs"
     },
-    "./capnp/*": {
-      "import": {
-        "types": "./schemas/*.d.ts",
-        "default": "./schemas/*.js"
-      },
-      "require": {
-        "types": "./schemas/*.d.cts",
-        "default": "./schemas/*.cjs"
-      },
-      "default": {
-        "types": "./schemas/*.d.ts",
-        "default": "./schemas/*.js"
-      }
+    "./schema": {
+      "require": "./dist/schemas/schema.cjs",
+      "import": "./dist/schemas/schema.mjs"
+    },
+    "./ts": {
+      "require": "./dist/schemas/ts.cjs",
+      "import": "./dist/schemas/ts.mjs"
     },
     "./types": {
-      "import": {
-        "types": "./dist/types.d.ts",
-        "default": "./dist/types.js"
-      },
-      "require": {
-        "types": "./dist/types.d.cts",
-        "default": "./dist/types.cjs"
-      },
-      "default": {
-        "types": "./dist/types.d.ts",
-        "default": "./dist/types.js"
-      }
+      "require": "./dist/src/types.cjs",
+      "import": "./dist/src/types.mjs"
     },
     "./package.json": "./package.json"
   },
-  "types": "./dts/index.d.ts",
-  "files": ["bin/**/*", "dist/**/*", "dts/**/*", "schemas/**/*", "vendor/**/*"],
+  "types": "./dist/src/index.d.cts",
+  "files": [
+    "bin/**/*",
+    "dist/**/*",
+    "dts/**/*",
+    "schemas/**/*",
+    "vendor/**/*"
+  ],
   "keywords": [
     "capnp",
     "capnproto",
@@ -195,8 +129,9 @@
     "chalk": "catalog:",
     "commander": "catalog:",
     "dts-bundle-generator": "catalog:",
-    "tsup": "catalog:",
-    "tsx": "catalog:"
+    "tsdown": "catalog:",
+    "tsx": "catalog:",
+    "@stryke/tools-config": "workspace:*"
   },
   "publishConfig": {
     "access": "public"

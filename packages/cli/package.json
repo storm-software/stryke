@@ -20,7 +20,8 @@
   },
   "devDependencies": {
     "@types/figlet": "catalog:",
-    "@types/node": "catalog:"
+    "@types/node": "catalog:",
+    "tsdown": "catalog:"
   },
   "publishConfig": {
     "access": "public"

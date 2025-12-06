@@ -51,7 +51,7 @@ export async function digest(
 ): Promise<string> {
   const arrayBuffer = await globalThis.crypto.subtle.digest(
     algorithm,
-    stringToUint8Array(data)
+    stringToUint8Array(data) as BufferSource
   );
 
   return arrayBufferToString(arrayBuffer);

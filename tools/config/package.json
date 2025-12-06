@@ -1,5 +1,12 @@
 {
   "name": "@stryke/tools-config",
   "version": "0.0.1",
-  "private": true
+  "private": true,
+    "exports": {
+    "./package.json": "./package.json",
+    ".": "./index.ts",
+    "./index": "./index.ts",
+    "./tsdown.shared": "./tsdown.shared.ts",
+    "./tsup.shared": "./tsup.shared.ts"
+  }
 }

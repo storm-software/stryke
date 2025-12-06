@@ -22,8 +22,8 @@
     "bin/**/*.ts",
     "schemas/**/*.ts",
     "types/**/*",
-    "tsup.config.ts",
-    "tsup.bin.config.ts"
+    "tsdown.config.ts",
+    "tsdown.bin.config.ts"
   ],
   "exclude": ["jest.config.ts", "src/**/*.spec.ts", "src/**/*.test.ts"]
 }

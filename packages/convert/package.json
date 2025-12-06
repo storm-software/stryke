@@ -10,7 +10,8 @@
   },
   "private": false,
   "devDependencies": {
-    "@types/node": "catalog:"
+    "@types/node": "catalog:",
+    "tsdown": "catalog:"
   },
   "publishConfig": {
     "access": "public"

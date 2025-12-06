@@ -22,8 +22,13 @@
  * @param buffer - The ArrayBuffer or Uint8Array to convert
  * @returns The converted string
  */
-export function arrayBufferToString(buffer: ArrayBuffer | Uint8Array): string {
-  const bytes = new Uint8Array(buffer);
+export function arrayBufferToString(
+  buffer: ArrayBuffer | ArrayBufferLike | Uint8Array
+): string {
+  const bytes =
+    buffer instanceof Uint8Array
+      ? buffer
+      : new Uint8Array(buffer as ArrayBufferLike);
   const len = bytes.byteLength;
   if (len < 65535) {
     return String.fromCharCode.apply(null, bytes as unknown as number[]);

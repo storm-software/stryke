@@ -13,6 +13,9 @@
     "js-xxhash": "catalog:",
     "ohash": "catalog:"
   },
+    "devDependencies": {
+    "tsdown": "catalog:"
+  },
   "publishConfig": {
     "access": "public"
   }

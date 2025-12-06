@@ -117,7 +117,7 @@
   "devDependencies": {
     "@types/pluralize": "catalog:",
     "pluralize": "catalog:",
-    "tsup": "catalog:"
+    "tsdown": "catalog:"
   },
   "publishConfig": {
     "access": "public"

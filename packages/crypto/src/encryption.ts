@@ -102,10 +102,10 @@ export async function encrypt(
   const encrypted = await crypto.subtle.encrypt(
     {
       name: "AES-GCM",
-      iv
+      iv: iv as Uint8Array<ArrayBuffer>
     },
     key,
-    stringToUtf8Array(plaintext)
+    stringToUtf8Array(plaintext) as BufferSource
   );
 
   // iv is 12, hex brings it to 24
@@ -131,10 +131,10 @@ export async function decrypt(
   const decrypted = await crypto.subtle.decrypt(
     {
       name: "AES-GCM",
-      iv: decodeHex(encrypted.slice(0, IV_LENGTH))
+      iv: decodeHex(encrypted.slice(0, IV_LENGTH)) as Uint8Array<ArrayBuffer>
     },
     key,
-    decodeBase64(encrypted.slice(IV_LENGTH))
+    decodeBase64(encrypted.slice(IV_LENGTH)) as BufferSource
   );
 
   return utf8ArrayToString(decrypted);

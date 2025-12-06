@@ -89,17 +89,17 @@ export const createNodesV2: CreateNodesV2<StrykePackageBuildPluginOptions> = [
               context.workspaceRoot
             );
 
-          targets["type-check"] ??= {
+          targets.typecheck ??= {
             cache: true,
             inputs: ["typescript", "^production"],
             outputs: ["{workspaceRoot}/dist/{projectRoot}"],
-            executor: "nx:run-commands",
-            dependsOn: ["^type-check", "^build"],
-            options: {
-              command: `pnpm exec tsc --noEmit --pretty --project ${join(
+            dependsOn: ["^typecheck", "^build"],
+            command: `pnpm exec tsc --noEmit --pretty --project ${join(
                 projectRoot,
                 "tsconfig.json"
-              )}`
+              )}`,
+            options: {
+              
             }
           };
 
@@ -107,10 +107,13 @@ export const createNodesV2: CreateNodesV2<StrykePackageBuildPluginOptions> = [
             cache: true,
             inputs: ["typescript", "^production"],
             outputs: ["{workspaceRoot}/dist/{projectRoot}"],
-            executor: "@storm-software/workspace-tools:unbuild",
-            dependsOn: ["type-check"],
+            dependsOn: ["typecheck"],
+            command: "tsdown",
             defaultConfiguration: "production",
             options: {
+              cwd: projectRoot,
+              name: project?.name ?? "unknown-package",
+              entry: ["src/index.ts"],
               platform:
                 platformTag === "worker" ? "browser" : platformTag || "neutral"
             },

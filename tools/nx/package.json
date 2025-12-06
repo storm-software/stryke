@@ -20,70 +20,6 @@
   "module": "dist/index.mjs",
   "exports": {
     "./package.json": "./package.json",
-    "./docs/*": "./docs/*",
-    "./migrations.json": "./migrations.json",
-    "./executors.json": "./executors.json",
-    "./executors/*/schema.json": "./dist/src/executors/*/schema.json",
-    "./generators.json": "./generators.json",
-    "./generators/*/schema.json": "./dist/src/generators/*/schema.json",
-    ".": {
-      "import": {
-        "types": "./dist/index.d.mts",
-        "default": "./dist/index.mjs"
-      },
-      "require": {
-        "types": "./dist/index.d.ts",
-        "default": "./dist/index.js"
-      },
-      "default": {
-        "types": "./dist/index.d.ts",
-        "default": "./dist/index.js"
-      }
-    },
-    "./index": {
-      "import": {
-        "types": "./dist/index.d.mts",
-        "default": "./dist/index.mjs"
-      },
-      "require": {
-        "types": "./dist/index.d.ts",
-        "default": "./dist/index.js"
-      },
-      "default": {
-        "types": "./dist/index.d.ts",
-        "default": "./dist/index.js"
-      }
-    },
-    "./executors": {
-      "import": {
-        "types": "./dist/executors.d.mts",
-        "default": "./dist/executors.mjs"
-      },
-      "require": {
-        "types": "./dist/executors.d.ts",
-        "default": "./dist/executors.js"
-      },
-      "default": {
-        "types": "./dist/executors.d.ts",
-        "default": "./dist/executors.js"
-      }
-    },
-    "./generators": {
-      "import": {
-        "types": "./dist/generators.d.mts",
-        "default": "./dist/generators.mjs"
-      },
-      "require": {
-        "types": "./dist/generators.d.ts",
-        "default": "./dist/generators.js"
-      },
-      "default": {
-        "types": "./dist/generators.d.ts",
-        "default": "./dist/generators.js"
-      }
-    },
-    "./executors/*/executor.js": "./dist/src/executors/*/executor.js",
-    "./generators/*/generator.js": "./dist/src/generators/*/generator.js",
     "./plugins/package-build": "./dist/src/plugins/package-build.js"
   },
   "typings": "dist/index.d.ts",
@@ -99,17 +35,13 @@
     "@nx/devkit": "catalog:",
     "@storm-software/workspace-tools": "catalog:",
     "nx": "catalog:",
-    "tsup": "catalog:"
+    "tsdown": "catalog:"
   },
   "devDependencies": {
     "@storm-software/tsconfig": "catalog:",
     "@types/node": "catalog:",
     "eslint-flat-config-utils": "catalog:",
     "tslib": "catalog:",
-    "tsup": "catalog:",
-    "typescript": "5.8.3"
-  },
-  "publishConfig": {
-    "access": "public"
+    "typescript": "^5.9.3"
   }
 }

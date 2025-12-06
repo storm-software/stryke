@@ -16,25 +16,15 @@
 
  ------------------------------------------------------------------- */
 
-import { defineConfig } from "tsup";
+import { defineTSDownConfig } from "@stryke/tools-config/tsdown.shared";
 
-export default defineConfig([
-  {
-    name: "prisma-better-auth-generator",
-    entryPoints: ["src/index.ts", "src/generator.ts"],
-    format: ["cjs", "esm"],
-    platform: "node",
-    outDir: "dist",
-    clean: true,
-    dts: true,
-    cjsInterop: true,
-    sourcemap: false,
-    tsconfig: "./tsconfig.json",
-    shims: true,
-    bundle: true,
-    splitting: false,
-    skipNodeModulesBundle: false,
-    removeNodeProtocol: false,
-    external: ["esbuild", "typescript"]
-  }
-]);
+export default defineTSDownConfig({
+  name: "capnp-bin",
+  entry: ["bin/capnpc.ts"],
+  outDir: "dist/bin",
+  clean: false,
+  external: ["typescript"],
+  noExternal: ["capnp-es"],
+  skipNodeModulesBundle: true,
+  unbundle: false
+});

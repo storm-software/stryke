@@ -39,7 +39,8 @@
   "devDependencies": {
     "@types/react": "catalog:",
     "@types/react-dom": "catalog:",
-    "@types/react-native": "catalog:"
+    "@types/react-native": "catalog:",
+    "tsdown": "catalog:"
   },
   "publishConfig": {
     "access": "public"

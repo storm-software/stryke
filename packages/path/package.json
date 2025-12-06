@@ -13,7 +13,8 @@
     "@storm-software/testing-tools": "catalog:",
     "@stryke/convert": "workspace:*",
     "@stryke/type-checks": "workspace:*",
-    "@stryke/types": "workspace:*"
+    "@stryke/types": "workspace:*",
+    "tsdown": "catalog:"
   },
   "publishConfig": {
     "access": "public"

@@ -16,53 +16,27 @@
 
  ------------------------------------------------------------------- */
 
+import { defineTSDownConfig } from "@stryke/tools-config/tsdown.shared";
 import { fileURLToPath } from "node:url";
-import { defineConfig } from "tsup";
 
-export default defineConfig([
+export default defineTSDownConfig([
   {
     name: "capnp-lib",
-    entryPoints: ["src/*.ts"],
-    format: ["cjs", "esm"],
-    platform: "node",
+    entry: ["src/*.ts"],
     outDir: "dist/src",
     clean: false,
-    dts: true,
-    cjsInterop: true,
-    sourcemap: false,
-    tsconfig: "./tsconfig.json",
-    shims: true,
-    bundle: true,
-    splitting: true,
     external: ["typescript"],
     noExternal: ["capnp-es"]
   },
   {
     name: "capnp-schemas",
-    entryPoints: ["schemas/*.ts"],
-    format: ["cjs", "esm"],
-    platform: "node",
+    entry: ["schemas/*.ts"],
     outDir: "dist/schemas",
     clean: false,
-    dts: true,
-    cjsInterop: true,
-    sourcemap: false,
-    tsconfig: "./tsconfig.json",
-    shims: true,
-    bundle: true,
-    splitting: true,
     external: ["typescript"],
     noExternal: ["capnp-es"],
-    esbuildOptions: options => {
-      return {
-        ...options,
-        alias: {
-          ...options.alias,
-          "@stryke/capnp": fileURLToPath(
-            new URL("src/index.ts", import.meta.url)
-          )
-        }
-      };
+    alias: {
+      "@stryke/capnp": fileURLToPath(new URL("src/index.ts", import.meta.url))
     }
   }
 ]);

@@ -55,7 +55,13 @@
       "@stryke/unique-id": ["packages/unique-id/src/index.ts"],
       "@stryke/unique-id/*": ["packages/unique-id/src/*"],
       "@stryke/url": ["packages/url/src/index.ts"],
-      "@stryke/url/*": ["packages/url/src/*"]
+      "@stryke/url/*": ["packages/url/src/*"],
+      "@stryke/tools-config": ["tools/config/index.ts"],
+      "@stryke/tools-config/*": ["tools/config/*"],
+      "@stryke/tools-nx": ["tools/nx/src/index.ts"],
+      "@stryke/tools-nx/*": ["tools/nx/src/*"],
+      "@stryke/tools-scripts": ["tools/scripts/src/index.ts"],
+      "@stryke/tools-scripts/*": ["tools/scripts/src/*"]
     }
   }
 }

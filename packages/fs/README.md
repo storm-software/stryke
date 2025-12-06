@@ -3,7 +3,13 @@
 <!-- markdownlint-disable -->
 
 
-<div align="center"><img src="https://public.storm-cdn.com/storm-banner.gif" width="100%" alt="Storm Software" /></div>
+<div align="center">
+<picture>
+  <source media="(prefers-color-scheme: dark)" srcset="https://public.storm-cdn.com/storm-software/banner-1280x640-dark-optimized.gif">
+  <source media="(prefers-color-scheme: light)" srcset="https://public.storm-cdn.com/storm-software/banner-1280x640-light-optimized.gif">
+<img src="https://public.storm-cdn.com/storm-software/banner-1280x640-dark-optimized.gif" width="100%" alt="Storm Software" />
+</picture>
+</div>
 <br />
 
 <div align="center">
@@ -51,19 +57,21 @@ provides a more modern and functional approach to working with the file system.
 
 ## Table of Contents
 
-- [Installing](#installing)
-- [Reduced Package Size](#reduced-package-size)
-- [Development](#development)
-  - [Building](#building)
-  - [Running unit tests](#running-unit-tests)
-  - [Linting](#linting)
-- [Storm Workspaces](#storm-workspaces)
-- [Roadmap](#roadmap)
-- [Support](#support)
-- [License](#license)
-- [Changelog](#changelog)
-- [Contributing](#contributing)
-- [Contributors](#contributors)
+- [Stryke - File System Helpers](#stryke---file-system-helpers)
+  - [Table of Contents](#table-of-contents)
+  - [Installing](#installing)
+  - [Reduced Package Size](#reduced-package-size)
+  - [Development](#development)
+    - [Building](#building)
+    - [Running unit tests](#running-unit-tests)
+    - [Linting](#linting)
+  - [Storm Workspaces](#storm-workspaces)
+  - [Roadmap](#roadmap)
+  - [Support](#support)
+  - [License](#license)
+  - [Changelog](#changelog)
+  - [Contributing](#contributing)
+  - [Contributors](#contributors)
 
 <!-- END doctoc -->
 
@@ -95,7 +103,7 @@ yarn add -D @stryke/fs
 
 ## Reduced Package Size
 
-This project uses [tsup](https://tsup.egoist.dev/) to package the source code
+This project uses [tsdown](https://tsdown.dev) to package the source code
 due to its ability to remove unused code and ship smaller javascript files
 thanks to code splitting. This helps to greatly reduce the size of the package
 and to make it easier to use in other projects.
@@ -239,10 +247,13 @@ specification. Contributions of any kind welcome!
 <br />
 
 <hr />
-<br />
 
 <div align="center">
-<img src="https://public.storm-cdn.com/logo-banner.png" width="100%" alt="Storm Software" />
+<picture>
+  <source media="(prefers-color-scheme: dark)" srcset="https://public.storm-cdn.com/storm-software/banner-1280x320-dark-optimized.webp">
+  <source media="(prefers-color-scheme: light)" srcset="https://public.storm-cdn.com/storm-software/banner-1280x320-light-optimized.webp">
+<img src="https://public.storm-cdn.com/storm-software/banner-1280x320-dark-optimized.webp" width="100%" alt="Storm Software" />
+</picture>
 </div>
 <br />
 

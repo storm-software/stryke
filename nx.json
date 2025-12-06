@@ -12,9 +12,20 @@
     }
   },
   "plugins": [
-    "@storm-software/workspace-tools/plugins/typescript",
+    {
+      "plugin": "@storm-software/workspace-tools/plugins/typescript",
+      "options": {
+        "projectLinks": "alias",
+         "enableTypeCheck": false
+      }
+    },
     "@storm-software/workspace-tools/plugins/typescript/untyped",
     "./dist/plugins/package-build.js",
-    "@storm-software/workspace-tools/plugins/typescript/tsup"
+    {
+      "plugin": "@storm-software/workspace-tools/plugins/typescript/tsdown",
+      "options": {
+        "projectLinks": "alias"
+      }
+    }
   ]
 }

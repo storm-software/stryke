@@ -15,7 +15,8 @@
   },
   "devDependencies": {
     "@types/cross-spawn": "catalog:",
-    "@types/node": "catalog:"
+    "@types/node": "catalog:",
+    "tsdown": "catalog:"
   },
   "publishConfig": {
     "access": "public"

@@ -1,6 +1,12 @@
-<div align="center"><img src="https://pub-761b436209f44a4d886487c917806c08.r2.dev/storm-banner.gif" width="100%" alt="Storm Software" /></div>
-
+<div align="center">
+<picture>
+  <source media="(prefers-color-scheme: dark)" srcset="https://public.storm-cdn.com/storm-software/banner-1280x640-dark-optimized.gif">
+  <source media="(prefers-color-scheme: light)" srcset="https://public.storm-cdn.com/storm-software/banner-1280x640-light-optimized.gif">
+<img src="https://public.storm-cdn.com/storm-software/banner-1280x640-dark-optimized.gif" width="100%" alt="Storm Software" />
+</picture>
+</div>
 <br />
+
 <div align="center">
 <b>
 <a href="https://stormsoftware.com" target="_blank">Website</a>  •
@@ -56,7 +62,7 @@ keeping the codebase maintainable.
   - [Running End-to-End Tests](#running-end-to-end-tests)
   - [Understand your workspace](#understand-your-workspace)
 - [☁ Nx Cloud](#-nx-cloud)
-  - [Distributed Computation Caching & Distributed Task Execution](#distributed-computation-caching--distributed-task-execution)
+  - [Distributed Computation Caching \& Distributed Task Execution](#distributed-computation-caching--distributed-task-execution)
 - [Roadmap](#roadmap)
 - [Contributing](#contributing)
 - [Support](#support)
@@ -354,10 +360,13 @@ specification. Contributions of any kind welcome!
 <br />
 
 <hr />
-<br />
 
 <div align="center">
-<img src="https://pub-761b436209f44a4d886487c917806c08.r2.dev/logo-banner.png" width="100%" alt="Storm Software" />
+<picture>
+  <source media="(prefers-color-scheme: dark)" srcset="https://public.storm-cdn.com/storm-software/banner-1280x320-dark-optimized.webp">
+  <source media="(prefers-color-scheme: light)" srcset="https://public.storm-cdn.com/storm-software/banner-1280x320-light-optimized.webp">
+<img src="https://public.storm-cdn.com/storm-software/banner-1280x320-dark-optimized.webp" width="100%" alt="Storm Software" />
+</picture>
 </div>
 <br />
 

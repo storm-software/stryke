@@ -55,7 +55,7 @@ try {
     );
   }
 
-  echo`${chalk.green("Successfully formatted the monorepo's files")}`;
+  echo`${chalk.green(" ✔ Successfully formatted the monorepo's files")}`;
 } catch (error) {
   echo`${chalk.red(error?.message ? error.message : "A failure occured while formatting the monorepo")}`;
 
