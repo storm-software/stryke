@@ -2,6 +2,19 @@
 
 # Changelog for Stryke - Path
 
+## [0.22.1](https://github.com/storm-software/stryke/releases/tag/path%400.22.1) (12/05/2025)
+
+### Features
+
+- **monorepo:** Update repository to use `tsdown` to build/bundle packages
+  ([8ceb909](https://github.com/storm-software/stryke/commit/8ceb909))
+
+### Updated Dependencies
+
+- Updated **type-checks** to **v0.4.5**
+- Updated **convert** to **v0.6.14**
+- Updated **types** to **v0.10.14**
+
 ## [0.22.0](https://github.com/storm-software/stryke/releases/tag/path%400.22.0) (12/01/2025)
 
 ### Features

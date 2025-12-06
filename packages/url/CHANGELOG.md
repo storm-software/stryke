@@ -2,6 +2,19 @@
 
 # Changelog for Stryke - URL
 
+## [0.3.5](https://github.com/storm-software/stryke/releases/tag/url%400.3.5) (12/05/2025)
+
+### Features
+
+- **monorepo:** Update repository to use `tsdown` to build/bundle packages
+  ([8ceb909](https://github.com/storm-software/stryke/commit/8ceb909))
+
+### Updated Dependencies
+
+- Updated **type-checks** to **v0.4.5**
+- Updated **json** to **v0.9.17**
+- Updated **path** to **v0.22.1**
+
 ## [0.3.4](https://github.com/storm-software/stryke/releases/tag/url%400.3.4) (12/01/2025)
 
 ### Updated Dependencies

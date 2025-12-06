@@ -2,6 +2,26 @@
 
 # Changelog for Stryke - Prisma TRPC Generator
 
+## [0.13.27](https://github.com/storm-software/stryke/releases/tag/prisma-trpc-generator%400.13.27) (12/05/2025)
+
+### Miscellaneous
+
+- **monorepo:** Reformat repository `package.json` files
+  ([3ce9073](https://github.com/storm-software/stryke/commit/3ce9073))
+
+### Features
+
+- **monorepo:** Update repository to use `tsdown` to build/bundle packages
+  ([8ceb909](https://github.com/storm-software/stryke/commit/8ceb909))
+
+### Updated Dependencies
+
+- Updated **string-format** to **v0.12.14**
+- Updated **types** to **v0.10.14**
+- Updated **path** to **v0.22.1**
+- Updated **env** to **v0.20.27**
+- Updated **fs** to **v0.33.10**
+
 ## [0.13.26](https://github.com/storm-software/stryke/releases/tag/prisma-trpc-generator%400.13.26) (12/01/2025)
 
 ### Updated Dependencies

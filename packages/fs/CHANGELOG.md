@@ -2,6 +2,23 @@
 
 # Changelog for Stryke - Fs
 
+## [0.33.10](https://github.com/storm-software/stryke/releases/tag/fs%400.33.10) (12/05/2025)
+
+### Features
+
+- **monorepo:** Update repository to use `tsdown` to build/bundle packages
+  ([8ceb909](https://github.com/storm-software/stryke/commit/8ceb909))
+
+### Updated Dependencies
+
+- Updated **string-format** to **v0.12.14**
+- Updated **type-checks** to **v0.4.5**
+- Updated **convert** to **v0.6.14**
+- Updated **helpers** to **v0.9.16**
+- Updated **types** to **v0.10.14**
+- Updated **json** to **v0.9.17**
+- Updated **path** to **v0.22.1**
+
 ## [0.33.9](https://github.com/storm-software/stryke/releases/tag/fs%400.33.9) (12/01/2025)
 
 ### Updated Dependencies

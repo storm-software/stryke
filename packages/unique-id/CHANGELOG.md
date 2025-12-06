@@ -2,6 +2,17 @@
 
 # Changelog for Stryke - Unique ID
 
+## [0.3.21](https://github.com/storm-software/stryke/releases/tag/unique-id%400.3.21) (12/05/2025)
+
+### Features
+
+- **monorepo:** Update repository to use `tsdown` to build/bundle packages
+  ([8ceb909](https://github.com/storm-software/stryke/commit/8ceb909))
+
+### Updated Dependencies
+
+- Updated **hash** to **v0.12.16**
+
 ## [0.3.20](https://github.com/storm-software/stryke/releases/tag/unique-id%400.3.20) (12/01/2025)
 
 ### Updated Dependencies

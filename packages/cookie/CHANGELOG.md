@@ -2,6 +2,18 @@
 
 # Changelog for Stryke - Cookie
 
+## [0.1.15](https://github.com/storm-software/stryke/releases/tag/cookie%400.1.15) (12/05/2025)
+
+### Features
+
+- **monorepo:** Update repository to use `tsdown` to build/bundle packages
+  ([8ceb909](https://github.com/storm-software/stryke/commit/8ceb909))
+
+### Updated Dependencies
+
+- Updated **type-checks** to **v0.4.5**
+- Updated **convert** to **v0.6.14**
+
 ## [0.1.14](https://github.com/storm-software/stryke/releases/tag/cookie%400.1.14) (12/01/2025)
 
 ### Updated Dependencies

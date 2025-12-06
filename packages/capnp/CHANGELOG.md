@@ -2,6 +2,25 @@
 
 # Changelog for Stryke - Capnp
 
+## [0.12.34](https://github.com/storm-software/stryke/releases/tag/capnp%400.12.34) (12/05/2025)
+
+### Miscellaneous
+
+- **monorepo:** Reformat repository `package.json` files
+  ([3ce9073](https://github.com/storm-software/stryke/commit/3ce9073))
+
+### Features
+
+- **monorepo:** Update repository to use `tsdown` to build/bundle packages
+  ([8ceb909](https://github.com/storm-software/stryke/commit/8ceb909))
+
+### Updated Dependencies
+
+- Updated **convert** to **v0.6.14**
+- Updated **types** to **v0.10.14**
+- Updated **path** to **v0.22.1**
+- Updated **fs** to **v0.33.10**
+
 ## [0.12.33](https://github.com/storm-software/stryke/releases/tag/capnp%400.12.33) (12/01/2025)
 
 ### Updated Dependencies

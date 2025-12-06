@@ -2,6 +2,21 @@
 
 # Changelog for Stryke - CLI
 
+## [0.12.20](https://github.com/storm-software/stryke/releases/tag/cli%400.12.20) (12/05/2025)
+
+### Features
+
+- **monorepo:** Update repository to use `tsdown` to build/bundle packages
+  ([8ceb909](https://github.com/storm-software/stryke/commit/8ceb909))
+
+### Updated Dependencies
+
+- Updated **string-format** to **v0.12.14**
+- Updated **type-checks** to **v0.4.5**
+- Updated **convert** to **v0.6.14**
+- Updated **types** to **v0.10.14**
+- Updated **env** to **v0.20.27**
+
 ## [0.12.19](https://github.com/storm-software/stryke/releases/tag/cli%400.12.19) (12/01/2025)
 
 ### Updated Dependencies

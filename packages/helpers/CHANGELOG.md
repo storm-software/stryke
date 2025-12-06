@@ -2,6 +2,19 @@
 
 # Changelog for Stryke - Helpers
 
+## [0.9.16](https://github.com/storm-software/stryke/releases/tag/helpers%400.9.16) (12/05/2025)
+
+### Features
+
+- **monorepo:** Update repository to use `tsdown` to build/bundle packages
+  ([8ceb909](https://github.com/storm-software/stryke/commit/8ceb909))
+
+### Updated Dependencies
+
+- Updated **type-checks** to **v0.4.5**
+- Updated **convert** to **v0.6.14**
+- Updated **types** to **v0.10.14**
+
 ## [0.9.15](https://github.com/storm-software/stryke/releases/tag/helpers%400.9.15) (12/01/2025)
 
 ### Updated Dependencies

@@ -2,6 +2,23 @@
 
 # Changelog for Stryke - HTTP
 
+## [0.12.4](https://github.com/storm-software/stryke/releases/tag/http%400.12.4) (12/05/2025)
+
+### Miscellaneous
+
+- **monorepo:** Reformat repository `package.json` files
+  ([3ce9073](https://github.com/storm-software/stryke/commit/3ce9073))
+
+### Features
+
+- **monorepo:** Update repository to use `tsdown` to build/bundle packages
+  ([8ceb909](https://github.com/storm-software/stryke/commit/8ceb909))
+
+### Updated Dependencies
+
+- Updated **type-checks** to **v0.4.5**
+- Updated **url** to **v0.3.5**
+
 ## [0.12.3](https://github.com/storm-software/stryke/releases/tag/http%400.12.3) (12/01/2025)
 
 ### Updated Dependencies

@@ -2,6 +2,13 @@
 
 # Changelog for Stryke - Types
 
+## [0.10.14](https://github.com/storm-software/stryke/releases/tag/types%400.10.14) (12/05/2025)
+
+### Features
+
+- **monorepo:** Update repository to use `tsdown` to build/bundle packages
+  ([8ceb909](https://github.com/storm-software/stryke/commit/8ceb909))
+
 ## [0.10.1](https://github.com/storm-software/stryke/releases/tag/types%400.10.1) (11/08/2025)
 
 ### Features

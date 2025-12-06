@@ -2,6 +2,20 @@
 
 # Changelog for Stryke - TRPC Next
 
+## [0.5.26](https://github.com/storm-software/stryke/releases/tag/trpc-next%400.5.26) (12/05/2025)
+
+### Features
+
+- **monorepo:** Update repository to use `tsdown` to build/bundle packages
+  ([8ceb909](https://github.com/storm-software/stryke/commit/8ceb909))
+
+### Updated Dependencies
+
+- Updated **types** to **v0.10.14**
+- Updated **path** to **v0.22.1**
+- Updated **env** to **v0.20.27**
+- Updated **url** to **v0.3.5**
+
 ## [0.5.25](https://github.com/storm-software/stryke/releases/tag/trpc-next%400.5.25) (12/01/2025)
 
 ### Updated Dependencies

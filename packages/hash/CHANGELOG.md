@@ -2,6 +2,18 @@
 
 # Changelog for Stryke - Hash
 
+## [0.12.16](https://github.com/storm-software/stryke/releases/tag/hash%400.12.16) (12/05/2025)
+
+### Features
+
+- **monorepo:** Update repository to use `tsdown` to build/bundle packages
+  ([8ceb909](https://github.com/storm-software/stryke/commit/8ceb909))
+
+### Updated Dependencies
+
+- Updated **convert** to **v0.6.14**
+- Updated **fs** to **v0.33.10**
+
 ## [0.12.15](https://github.com/storm-software/stryke/releases/tag/hash%400.12.15) (12/01/2025)
 
 ### Updated Dependencies

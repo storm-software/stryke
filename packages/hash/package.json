@@ -1,6 +1,6 @@
 {
   "name": "@stryke/hash",
-  "version": "0.12.15",
+  "version": "0.12.16",
   "type": "module",
   "description": "A package containing utility functions that hash data using various algorithms.",
   "repository": {
@@ -13,7 +13,7 @@
     "js-xxhash": "catalog:",
     "ohash": "catalog:"
   },
-    "devDependencies": {
+  "devDependencies": {
     "tsdown": "catalog:"
   },
   "publishConfig": {
