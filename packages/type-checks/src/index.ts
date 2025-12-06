@@ -27,6 +27,7 @@
 
 export * from "./get-object-tag";
 export * from "./is-array-like";
+export * from "./is-set-array";
 export * from "./is-async-iterable";
 export * from "./is-bigint";
 export * from "./is-boolean";

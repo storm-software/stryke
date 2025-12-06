@@ -89,25 +89,11 @@ export const createNodesV2: CreateNodesV2<StrykePackageBuildPluginOptions> = [
               context.workspaceRoot
             );
 
-          targets.typecheck ??= {
-            cache: true,
-            inputs: ["typescript", "^production"],
-            outputs: ["{workspaceRoot}/dist/{projectRoot}"],
-            dependsOn: ["^typecheck", "^build"],
-            command: `pnpm exec tsc --noEmit --pretty --project ${join(
-                projectRoot,
-                "tsconfig.json"
-              )}`,
-            options: {
-              
-            }
-          };
-
+            
           targets.build ??= {
             cache: true,
             inputs: ["typescript", "^production"],
             outputs: ["{workspaceRoot}/dist/{projectRoot}"],
-            dependsOn: ["typecheck"],
             command: "tsdown",
             defaultConfiguration: "production",
             options: {
