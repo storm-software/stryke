@@ -2,6 +2,13 @@
 
 # Changelog for Stryke - Type Checks
 
+## [0.5.0](https://github.com/storm-software/stryke/releases/tag/type-checks%400.5.0) (12/05/2025)
+
+### Features
+
+- **type-checks:** Added `isSetArray` helper function
+  ([aabcc12](https://github.com/storm-software/stryke/commit/aabcc12))
+
 ## [0.4.5](https://github.com/storm-software/stryke/releases/tag/type-checks%400.4.5) (12/05/2025)
 
 ### Features
