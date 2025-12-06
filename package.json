@@ -109,8 +109,8 @@
     "sherif": "catalog:",
     "ts-jest": "catalog:",
     "ts-node": "catalog:",
-    "tslib": "catalog:",
     "tsdown": "catalog:",
+    "tslib": "catalog:",
     "typescript": "^5.9.3",
     "verdaccio": "catalog:",
     "zx": "catalog:"

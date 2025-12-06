@@ -124,14 +124,14 @@
     "@storm-software/config": "catalog:",
     "@storm-software/config-tools": "catalog:",
     "@storm-software/testing-tools": "catalog:",
+    "@stryke/tools-config": "workspace:*",
     "@types/node": "catalog:",
     "capnp-es": "catalog:",
     "chalk": "catalog:",
     "commander": "catalog:",
     "dts-bundle-generator": "catalog:",
     "tsdown": "catalog:",
-    "tsx": "catalog:",
-    "@stryke/tools-config": "workspace:*"
+    "tsx": "catalog:"
   },
   "publishConfig": {
     "access": "public"

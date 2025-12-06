@@ -17,8 +17,8 @@
   },
   "devDependencies": {
     "@types/node": "catalog:",
-    "undici-types": "^7.16.0",
-    "tsdown": "catalog:"
+    "tsdown": "catalog:",
+    "undici-types": "^7.16.0"
   },
   "publishConfig": {
     "access": "public"
