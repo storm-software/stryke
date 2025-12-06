@@ -57,7 +57,9 @@
     "./package.json": "./package.json"
   },
   "types": "./dist/index.d.cts",
-  "files": ["dist/**/*"],
+  "files": [
+    "dist/**/*"
+  ],
   "keywords": [
     "stryke",
     "typescript",
