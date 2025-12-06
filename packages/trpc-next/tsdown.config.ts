@@ -22,9 +22,12 @@ export default defineTSDownConfig([
   {
     name: "prisma-trpc-next",
     target: "esnext",
-    entry: ["src/index.ts"],
-    tsconfig: "./tsconfig.json",
-    skipNodeModulesBundle: true,
-    dts: false
+    platform: "neutral",
+    entry: ["src/**/*.ts", "src/**/*.tsx"],
+    tsconfig: "tsconfig.json",
+    dts: {
+      parallel: true,
+      newContext: true
+    }
   }
 ]);

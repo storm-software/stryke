@@ -43,20 +43,20 @@
     "prisma-trpc-generator-cjs": "dist/generator.cjs",
     "prisma-trpc-generator-mjs": "dist/generator.js"
   },
-  "main": "./packages/prisma-trpc-generator/dist/index.cjs",
-  "module": "./packages/prisma-trpc-generator/dist/index.mjs",
+  "main": "./dist/index.cjs",
+  "module": "./dist/index.mjs",
   "exports": {
     ".": {
-      "require": "./packages/prisma-trpc-generator/dist/index.cjs",
-      "import": "./packages/prisma-trpc-generator/dist/index.mjs"
+      "require": "./dist/index.cjs",
+      "import": "./dist/index.mjs"
     },
     "./generator": {
-      "require": "./packages/prisma-trpc-generator/dist/generator.cjs",
-      "import": "./packages/prisma-trpc-generator/dist/generator.mjs"
+      "require": "./dist/generator.cjs",
+      "import": "./dist/generator.mjs"
     },
     "./*": "./*"
   },
-  "types": "./packages/prisma-trpc-generator/dist/index.d.cts",
+  "types": "./dist/index.d.cts",
   "files": [
     "dist/**/*"
   ],

@@ -1,7 +1,6 @@
 {
   "extends": "../../tsconfig.base.json",
   "compilerOptions": {
-    "jsx": "preserve",
     "lib": ["ESNext", "DOM", "DOM.Iterable"],
     "types": ["@trpc/next"],
     "outDir": "../../dist/out-tsc"

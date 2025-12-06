@@ -16,7 +16,7 @@
       "plugin": "@storm-software/workspace-tools/plugins/typescript",
       "options": {
         "projectLinks": "alias",
-         "enableTypeCheck": false
+        "enableTypeCheck": false
       }
     },
     "@storm-software/workspace-tools/plugins/typescript/untyped",

@@ -44,5 +44,75 @@
   },
   "publishConfig": {
     "access": "public"
+  },
+  "main": "./dist/index.cjs",
+  "module": "./dist/index.mjs",
+  "types": "./dist/index.d.cts",
+  "exports": {
+    ".": {
+      "require": "./dist/index.cjs",
+      "import": "./dist/index.mjs"
+    },
+    "./action-handler": {
+      "require": "./dist/action-handler.cjs",
+      "import": "./dist/action-handler.mjs"
+    },
+    "./client": {
+      "require": "./dist/client.cjs",
+      "import": "./dist/client.mjs"
+    },
+    "./server": {
+      "require": "./dist/server.cjs",
+      "import": "./dist/server.mjs"
+    },
+    "./shared": {
+      "require": "./dist/shared.cjs",
+      "import": "./dist/shared.mjs"
+    },
+    "./shield": {
+      "require": "./dist/shield/index.cjs",
+      "import": "./dist/shield/index.mjs"
+    },
+    "./shield/constructors": {
+      "require": "./dist/shield/constructors.cjs",
+      "import": "./dist/shield/constructors.mjs"
+    },
+    "./shield/generator": {
+      "require": "./dist/shield/generator.cjs",
+      "import": "./dist/shield/generator.mjs"
+    },
+    "./shield/rules": {
+      "require": "./dist/shield/rules.cjs",
+      "import": "./dist/shield/rules.mjs"
+    },
+    "./shield/shield": {
+      "require": "./dist/shield/shield.cjs",
+      "import": "./dist/shield/shield.mjs"
+    },
+    "./shield/types": {
+      "require": "./dist/shield/types.cjs",
+      "import": "./dist/shield/types.mjs"
+    },
+    "./shield/utils": {
+      "require": "./dist/shield/utils.cjs",
+      "import": "./dist/shield/utils.mjs"
+    },
+    "./shield/validation": {
+      "require": "./dist/shield/validation.cjs",
+      "import": "./dist/shield/validation.mjs"
+    },
+    "./tanstack-query/client": {
+      "require": "./dist/tanstack-query/client.cjs",
+      "import": "./dist/tanstack-query/client.mjs"
+    },
+    "./tanstack-query/server": {
+      "require": "./dist/tanstack-query/server.cjs",
+      "import": "./dist/tanstack-query/server.mjs"
+    },
+    "./types": {
+      "require": "./dist/types.cjs",
+      "import": "./dist/types.mjs"
+    },
+    "./*": "./*"
   }
 }
