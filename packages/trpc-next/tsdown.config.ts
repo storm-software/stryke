@@ -25,9 +25,6 @@ export default defineTSDownConfig([
     entry: ["src/index.ts"],
     tsconfig: "./tsconfig.json",
     skipNodeModulesBundle: true,
-    dts: {
-      parallel: true,
-      newContext: true
-    }
+    dts: false
   }
 ]);

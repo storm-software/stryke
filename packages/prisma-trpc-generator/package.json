@@ -57,7 +57,9 @@
     "./*": "./*"
   },
   "types": "./packages/prisma-trpc-generator/dist/index.d.cts",
-  "files": ["dist/**/*"],
+  "files": [
+    "dist/**/*"
+  ],
   "keywords": [
     "stryke",
     "typescript",
