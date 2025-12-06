@@ -17,6 +17,7 @@ rules:
       - lock.yml
       - gitguardian.yml
       - contributors.yml
+      - codeql.yml
   excessive-permissions:
     ignore:
       - release.yml
