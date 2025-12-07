@@ -89,7 +89,13 @@
     "./*": "./*"
   },
   "types": "./dist/src/index.d.cts",
-  "files": ["bin/**/*", "dist/**/*", "dts/**/*", "schemas/**/*", "vendor/**/*"],
+  "files": [
+    "bin/**/*",
+    "dist/**/*",
+    "dts/**/*",
+    "schemas/**/*",
+    "vendor/**/*"
+  ],
   "keywords": [
     "capnp",
     "capnproto",

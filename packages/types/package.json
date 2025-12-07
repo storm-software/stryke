@@ -127,6 +127,7 @@
     },
     "./*": "./*"
   },
+  "types": "./dist/index.d.cts",
   "typings": "dist/index.d.mts",
   "files": ["dist/**/*"],
   "keywords": [
@@ -143,6 +144,5 @@
   },
   "publishConfig": {
     "access": "public"
-  },
-  "types": "./dist/index.d.cts"
+  }
 }

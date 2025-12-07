@@ -27,7 +27,6 @@
 
 export * from "./get-object-tag";
 export * from "./is-array-like";
-export * from "./is-set-array";
 export * from "./is-async-iterable";
 export * from "./is-bigint";
 export * from "./is-boolean";
@@ -58,6 +57,7 @@ export * from "./is-ref";
 export * from "./is-regexp";
 export * from "./is-select-option";
 export * from "./is-set";
+export * from "./is-set-array";
 export * from "./is-set-object";
 export * from "./is-set-string";
 export * from "./is-string";

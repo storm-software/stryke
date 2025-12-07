@@ -9,23 +9,8 @@
     "directory": "packages/http"
   },
   "private": false,
-  "dependencies": {
-    "@stryke/type-checks": "workspace:*",
-    "@stryke/url": "workspace:*",
-    "defu": "catalog:",
-    "undici": "^7.16.0"
-  },
-  "devDependencies": {
-    "@types/node": "catalog:",
-    "tsdown": "catalog:",
-    "undici-types": "^7.16.0"
-  },
-  "publishConfig": {
-    "access": "public"
-  },
   "main": "./dist/index.cjs",
   "module": "./dist/index.mjs",
-  "types": "./dist/index.d.cts",
   "exports": {
     ".": {
       "require": "./dist/index.cjs",
@@ -64,5 +49,20 @@
       "import": "./dist/proxy-agent.mjs"
     },
     "./*": "./*"
+  },
+  "types": "./dist/index.d.cts",
+  "dependencies": {
+    "@stryke/type-checks": "workspace:*",
+    "@stryke/url": "workspace:*",
+    "defu": "catalog:",
+    "undici": "^7.16.0"
+  },
+  "devDependencies": {
+    "@types/node": "catalog:",
+    "tsdown": "catalog:",
+    "undici-types": "^7.16.0"
+  },
+  "publishConfig": {
+    "access": "public"
   }
 }

@@ -411,8 +411,10 @@ export type Constructor<T, Arguments extends unknown[] = any[]> = new (
  * We cannot use a `type` here because TypeScript throws: 'abstract' modifier cannot appear on a type member. (1070)
  */
 
-export interface AbstractClass<T, Arguments extends unknown[] = any[]>
-  extends AbstractConstructor<T, Arguments> {
+export interface AbstractClass<
+  T,
+  Arguments extends unknown[] = any[]
+> extends AbstractConstructor<T, Arguments> {
   prototype: Pick<T, keyof T>;
 }
 

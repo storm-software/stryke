@@ -9,15 +9,8 @@
     "directory": "packages/unique-id"
   },
   "private": false,
-  "devDependencies": {
-    "tsdown": "catalog:"
-  },
-  "publishConfig": {
-    "access": "public"
-  },
   "main": "./dist/index.cjs",
   "module": "./dist/index.mjs",
-  "types": "./dist/index.d.cts",
   "exports": {
     ".": {
       "require": "./dist/index.cjs",
@@ -44,5 +37,12 @@
       "import": "./dist/uuid.mjs"
     },
     "./*": "./*"
+  },
+  "types": "./dist/index.d.cts",
+  "devDependencies": {
+    "tsdown": "catalog:"
+  },
+  "publishConfig": {
+    "access": "public"
   }
 }

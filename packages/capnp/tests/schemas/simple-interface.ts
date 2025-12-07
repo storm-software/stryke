@@ -8,7 +8,7 @@ export class SimpleInterface_Subtract$Params extends $.Struct {
   public static override readonly _capnp = {
     displayName: "subtract$Params",
     id: "888da0aceabad12a",
-    size: new $.ObjectSize(8, 0),
+    size: new $.ObjectSize(8, 0)
   };
   get a(): number {
     return $.utils.getInt32(0, this);
@@ -22,13 +22,15 @@ export class SimpleInterface_Subtract$Params extends $.Struct {
   set b(value: number) {
     $.utils.setInt32(4, value, this);
   }
-  public override toString(): string { return "SimpleInterface_Subtract$Params_" + super.toString(); }
+  public override toString(): string {
+    return "SimpleInterface_Subtract$Params_" + super.toString();
+  }
 }
 export class SimpleInterface_Subtract$Results extends $.Struct {
   public static override readonly _capnp = {
     displayName: "subtract$Results",
     id: "b0164441a304b38f",
-    size: new $.ObjectSize(8, 0),
+    size: new $.ObjectSize(8, 0)
   };
   get result(): number {
     return $.utils.getInt32(0, this);
@@ -36,11 +38,15 @@ export class SimpleInterface_Subtract$Results extends $.Struct {
   set result(value: number) {
     $.utils.setInt32(0, value, this);
   }
-  public override toString(): string { return "SimpleInterface_Subtract$Results_" + super.toString(); }
+  public override toString(): string {
+    return "SimpleInterface_Subtract$Results_" + super.toString();
+  }
 }
 export class SimpleInterface_Subtract$Results$Promise {
   pipeline: $.Pipeline<any, any, SimpleInterface_Subtract$Results>;
-  constructor(pipeline: $.Pipeline<any, any, SimpleInterface_Subtract$Results>) {
+  constructor(
+    pipeline: $.Pipeline<any, any, SimpleInterface_Subtract$Results>
+  ) {
     this.pipeline = pipeline;
   }
   async promise(): Promise<SimpleInterface_Subtract$Results> {
@@ -61,11 +67,14 @@ export class SimpleInterface$Client {
       ResultsClass: SimpleInterface_Subtract$Results,
       interfaceId: SimpleInterface$Client.interfaceId,
       methodId: 0,
-      interfaceName: "packages/capnp/tests/schemas/simple-interface.capnp:SimpleInterface",
+      interfaceName:
+        "packages/capnp/tests/schemas/simple-interface.capnp:SimpleInterface",
       methodName: "subtract"
     }
   ];
-  subtract(paramsFunc?: (params: SimpleInterface_Subtract$Params) => void): SimpleInterface_Subtract$Results$Promise {
+  subtract(
+    paramsFunc?: (params: SimpleInterface_Subtract$Params) => void
+  ): SimpleInterface_Subtract$Results$Promise {
     const answer = this.client.call({
       method: SimpleInterface$Client.methods[0],
       paramsFunc: paramsFunc
@@ -76,7 +85,10 @@ export class SimpleInterface$Client {
 }
 $.Registry.register(SimpleInterface$Client.interfaceId, SimpleInterface$Client);
 export interface SimpleInterface$Server$Target {
-  subtract(params: SimpleInterface_Subtract$Params, results: SimpleInterface_Subtract$Results): Promise<void>;
+  subtract(
+    params: SimpleInterface_Subtract$Params,
+    results: SimpleInterface_Subtract$Results
+  ): Promise<void>;
 }
 export class SimpleInterface$Server extends $.Server {
   public override readonly target: SimpleInterface$Server$Target;
@@ -99,7 +111,9 @@ export class SimpleInterface extends $.Interface {
   public static override readonly _capnp = {
     displayName: "SimpleInterface",
     id: "daf73e960b8928d6",
-    size: new $.ObjectSize(0, 0),
+    size: new $.ObjectSize(0, 0)
   };
-  public override toString(): string { return "SimpleInterface_" + super.toString(); }
+  public override toString(): string {
+    return "SimpleInterface_" + super.toString();
+  }
 }

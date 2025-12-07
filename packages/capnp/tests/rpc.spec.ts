@@ -1,8 +1,7 @@
-import { Hash, HashFactory } from "./schemas/hash-factory";
-import { SimpleInterface } from "./schemas/simple-interface";
 import { createHash } from "node:crypto";
 import { CapnpRPC } from "../src/rpc";
-
+import { Hash, HashFactory } from "./schemas/hash-factory";
+import { SimpleInterface } from "./schemas/simple-interface";
 
 // describe('Workspaces', () => {
 //   let fs: TempFs;
@@ -81,8 +80,6 @@ import { CapnpRPC } from "../src/rpc";
 //   });
 // });
 
-
-
 describe("rpc", () => {
   let rpc: CapnpRPC;
 
@@ -100,7 +97,7 @@ describe("rpc", () => {
       s.initMain(SimpleInterface, {
         subtract: async (p, r) => {
           r.result = p.a - p.b;
-        },
+        }
       });
       return s;
     };
@@ -109,7 +106,7 @@ describe("rpc", () => {
       const res = await rpc
         .connect()
         .bootstrap(SimpleInterface)
-        .subtract((p) => {
+        .subtract(p => {
           p.a = 9;
           p.b = -1;
         })
@@ -133,26 +130,26 @@ describe("rpc", () => {
               return r._initHash(digest.length).copyBuffer(digest);
             },
 
-            write: (p) =>
+            write: p =>
               new Promise((resolve, reject) =>
-                hash.write(p.data.toUint8Array(), undefined, (err) =>
-                  err ? reject(err) : resolve(),
-                ),
-              ),
+                hash.write(p.data.toUint8Array(), undefined, err =>
+                  err ? reject(err) : resolve()
+                )
+              )
           });
           r.hash = hs.client();
-        },
+        }
       });
       return s;
     };
 
     const client = async () => {
       const hash = rpc.connect().bootstrap(HashFactory).newSha1().getHash();
-      hash.write((p) => {
+      hash.write(p => {
         const buf = encodeUtf8("hello ");
         p._initData(buf.byteLength).copyBuffer(buf);
       });
-      hash.write((p) => {
+      hash.write(p => {
         const buf = encodeUtf8("world");
         p._initData(buf.byteLength).copyBuffer(buf);
       });
@@ -163,7 +160,7 @@ describe("rpc", () => {
     const [, result] = await Promise.all([server(), client()]);
     expect(
       // @ts-expect-error
-      bufferToHex(result),
+      bufferToHex(result)
     ).toBe("[2a ae 6c 35 c9 4f cf b4 15 db e9 5f 40 8b 9c e9 1e e8 46 ed]");
   }, 1000);
 });

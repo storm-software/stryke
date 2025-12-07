@@ -25,9 +25,9 @@ import type {
   ShieldRule
 } from "./types";
 
-export class Rule<TContext extends Record<string, any>>
-  implements RuleInterface<TContext>
-{
+export class Rule<
+  TContext extends Record<string, any>
+> implements RuleInterface<TContext> {
   readonly name: string;
 
   func?: RuleFunctionInterface<TContext>;

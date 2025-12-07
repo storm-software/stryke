@@ -1,9 +1,9 @@
 {
   "name": "@stryke/tools-config",
   "version": "0.0.1",
-  "private": true,
   "type": "module",
-    "exports": {
+  "private": true,
+  "exports": {
     "./package.json": "./package.json",
     ".": "./index.ts",
     "./index": "./index.ts",

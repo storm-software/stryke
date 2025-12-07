@@ -94,6 +94,7 @@ export const createNodesV2: CreateNodesV2<StrykePackageBuildPluginOptions> = [
                 cache: true,
                 inputs: ["typescript", "^production"],
                 outputs: ["{workspaceRoot}/dist/{projectRoot}"],
+                dependsOn: ["^build"],
                 command: `tsdown --config \"${
                   existsSync(join(projectRoot, "tsdown.config.ts"))
                     ? "tsdown.config.ts"

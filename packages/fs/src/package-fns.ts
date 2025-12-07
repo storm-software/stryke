@@ -211,9 +211,9 @@ export async function isPackageListed(
     (packageJson.dependencies &&
       packageName in packageJson.dependencies &&
       packageJson.dependencies[packageName]) ||
-      (packageJson.devDependencies &&
-        packageName in packageJson.devDependencies &&
-        packageJson.devDependencies[packageName])
+    (packageJson.devDependencies &&
+      packageName in packageJson.devDependencies &&
+      packageJson.devDependencies[packageName])
   );
 }
 

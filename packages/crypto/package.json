@@ -9,20 +9,8 @@
     "directory": "packages/crypto"
   },
   "private": false,
-  "dependencies": {
-    "@stryke/convert": "workspace:*",
-    "@stryke/type-checks": "workspace:*"
-  },
-  "devDependencies": {
-    "@types/node": "catalog:",
-    "tsdown": "catalog:"
-  },
-  "publishConfig": {
-    "access": "public"
-  },
   "main": "./dist/index.cjs",
   "module": "./dist/index.mjs",
-  "types": "./dist/index.d.cts",
   "exports": {
     ".": {
       "require": "./dist/index.cjs",
@@ -49,5 +37,17 @@
       "import": "./dist/neutral.mjs"
     },
     "./*": "./*"
+  },
+  "types": "./dist/index.d.cts",
+  "dependencies": {
+    "@stryke/convert": "workspace:*",
+    "@stryke/type-checks": "workspace:*"
+  },
+  "devDependencies": {
+    "@types/node": "catalog:",
+    "tsdown": "catalog:"
+  },
+  "publishConfig": {
+    "access": "public"
   }
 }

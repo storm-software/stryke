@@ -9,26 +9,8 @@
     "directory": "packages/cli"
   },
   "private": false,
-  "dependencies": {
-    "@antfu/ni": "catalog:",
-    "defu": "catalog:",
-    "execa": "catalog:",
-    "figlet": "catalog:",
-    "is-unicode-supported": "catalog:",
-    "string-width": "catalog:",
-    "terminal-link": "catalog:"
-  },
-  "devDependencies": {
-    "@types/figlet": "catalog:",
-    "@types/node": "catalog:",
-    "tsdown": "catalog:"
-  },
-  "publishConfig": {
-    "access": "public"
-  },
   "main": "./dist/index.cjs",
   "module": "./dist/index.mjs",
-  "types": "./dist/index.d.cts",
   "exports": {
     ".": {
       "require": "./dist/index.cjs",
@@ -107,5 +89,23 @@
       "import": "./dist/utils/strip-ansi.mjs"
     },
     "./*": "./*"
+  },
+  "types": "./dist/index.d.cts",
+  "dependencies": {
+    "@antfu/ni": "catalog:",
+    "defu": "catalog:",
+    "execa": "catalog:",
+    "figlet": "catalog:",
+    "is-unicode-supported": "catalog:",
+    "string-width": "catalog:",
+    "terminal-link": "catalog:"
+  },
+  "devDependencies": {
+    "@types/figlet": "catalog:",
+    "@types/node": "catalog:",
+    "tsdown": "catalog:"
+  },
+  "publishConfig": {
+    "access": "public"
   }
 }

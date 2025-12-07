@@ -9,43 +9,8 @@
     "directory": "packages/fs"
   },
   "private": false,
-  "peerDependencies": {
-    "nx": "catalog:"
-  },
-  "peerDependenciesMeta": {
-    "nx": {
-      "optional": true
-    }
-  },
-  "dependencies": {
-    "@antfu/install-pkg": "catalog:",
-    "@ltd/j-toml": "catalog:",
-    "@storm-software/config-tools": "catalog:",
-    "@stryke/convert": "workspace:*",
-    "@stryke/helpers": "workspace:*",
-    "@stryke/path": "workspace:*",
-    "@stryke/string-format": "workspace:*",
-    "chalk": "catalog:",
-    "defu": "catalog:",
-    "glob": "catalog:",
-    "mlly": "catalog:",
-    "nanotar": "catalog:",
-    "semver": "catalog:",
-    "yaml": "catalog:"
-  },
-  "devDependencies": {
-    "@types/node": "catalog:",
-    "@types/semver": "catalog:",
-    "nx": "catalog:",
-    "tinyexec": "catalog:",
-    "tsdown": "catalog:"
-  },
-  "publishConfig": {
-    "access": "public"
-  },
   "main": "./dist/index.cjs",
   "module": "./dist/index.mjs",
-  "types": "./dist/index.d.cts",
   "exports": {
     ".": {
       "require": "./dist/index.cjs",
@@ -148,5 +113,40 @@
       "import": "./dist/yaml.mjs"
     },
     "./*": "./*"
+  },
+  "types": "./dist/index.d.cts",
+  "peerDependencies": {
+    "nx": "catalog:"
+  },
+  "peerDependenciesMeta": {
+    "nx": {
+      "optional": true
+    }
+  },
+  "dependencies": {
+    "@antfu/install-pkg": "catalog:",
+    "@ltd/j-toml": "catalog:",
+    "@storm-software/config-tools": "catalog:",
+    "@stryke/convert": "workspace:*",
+    "@stryke/helpers": "workspace:*",
+    "@stryke/path": "workspace:*",
+    "@stryke/string-format": "workspace:*",
+    "chalk": "catalog:",
+    "defu": "catalog:",
+    "glob": "catalog:",
+    "mlly": "catalog:",
+    "nanotar": "catalog:",
+    "semver": "catalog:",
+    "yaml": "catalog:"
+  },
+  "devDependencies": {
+    "@types/node": "catalog:",
+    "@types/semver": "catalog:",
+    "nx": "catalog:",
+    "tinyexec": "catalog:",
+    "tsdown": "catalog:"
+  },
+  "publishConfig": {
+    "access": "public"
   }
 }

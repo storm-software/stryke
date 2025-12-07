@@ -1,5 +1,7 @@
 import { declarePackage } from "@storm-software/testing-tools/jest/declare-package";
 
-export default declarePackage(
-  { projectRoot: "packages/json", isNode: false, displayName: "json"}
-);
+export default declarePackage({
+  projectRoot: "packages/json",
+  isNode: false,
+  displayName: "json"
+});

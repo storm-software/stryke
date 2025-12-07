@@ -9,19 +9,8 @@
     "directory": "packages/path"
   },
   "private": false,
-  "devDependencies": {
-    "@storm-software/testing-tools": "catalog:",
-    "@stryke/convert": "workspace:*",
-    "@stryke/type-checks": "workspace:*",
-    "@stryke/types": "workspace:*",
-    "tsdown": "catalog:"
-  },
-  "publishConfig": {
-    "access": "public"
-  },
   "main": "./dist/index.cjs",
   "module": "./dist/index.mjs",
-  "types": "./dist/index.d.cts",
   "exports": {
     ".": {
       "require": "./dist/index.cjs",
@@ -96,5 +85,16 @@
       "import": "./dist/slash.mjs"
     },
     "./*": "./*"
+  },
+  "types": "./dist/index.d.cts",
+  "devDependencies": {
+    "@storm-software/testing-tools": "catalog:",
+    "@stryke/convert": "workspace:*",
+    "@stryke/type-checks": "workspace:*",
+    "@stryke/types": "workspace:*",
+    "tsdown": "catalog:"
+  },
+  "publishConfig": {
+    "access": "public"
   }
 }

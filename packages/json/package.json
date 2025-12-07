@@ -9,21 +9,8 @@
     "directory": "packages/json"
   },
   "private": false,
-  "dependencies": {
-    "buffer": "catalog:",
-    "lines-and-columns": "catalog:",
-    "superjson": "catalog:"
-  },
-  "devDependencies": {
-    "@types/node": "catalog:",
-    "tsdown": "catalog:"
-  },
-  "publishConfig": {
-    "access": "public"
-  },
   "main": "./dist/index.cjs",
   "module": "./dist/index.mjs",
-  "types": "./dist/index.d.cts",
   "exports": {
     ".": {
       "require": "./dist/index.cjs",
@@ -74,5 +61,18 @@
       "import": "./dist/utils/strip-comments.mjs"
     },
     "./*": "./*"
+  },
+  "types": "./dist/index.d.cts",
+  "dependencies": {
+    "buffer": "catalog:",
+    "lines-and-columns": "catalog:",
+    "superjson": "catalog:"
+  },
+  "devDependencies": {
+    "@types/node": "catalog:",
+    "tsdown": "catalog:"
+  },
+  "publishConfig": {
+    "access": "public"
   }
 }

@@ -9,19 +9,8 @@
     "directory": "packages/cookie"
   },
   "private": false,
-  "dependencies": {
-    "@stryke/convert": "workspace:*",
-    "@stryke/type-checks": "workspace:*"
-  },
-  "devDependencies": {
-    "tsdown": "catalog:"
-  },
-  "publishConfig": {
-    "access": "public"
-  },
   "main": "./dist/index.cjs",
   "module": "./dist/index.mjs",
-  "types": "./dist/index.d.cts",
   "exports": {
     ".": {
       "require": "./dist/index.cjs",
@@ -44,5 +33,16 @@
       "import": "./dist/types.mjs"
     },
     "./*": "./*"
+  },
+  "types": "./dist/index.d.cts",
+  "dependencies": {
+    "@stryke/convert": "workspace:*",
+    "@stryke/type-checks": "workspace:*"
+  },
+  "devDependencies": {
+    "tsdown": "catalog:"
+  },
+  "publishConfig": {
+    "access": "public"
   }
 }

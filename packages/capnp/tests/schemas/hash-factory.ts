@@ -8,23 +8,30 @@ export class HashFactory_NewSha1$Params extends $.Struct {
   public static override readonly _capnp = {
     displayName: "newSha1$Params",
     id: "82994ca98e892c55",
-    size: new $.ObjectSize(0, 0),
+    size: new $.ObjectSize(0, 0)
   };
-  public override toString(): string { return "HashFactory_NewSha1$Params_" + super.toString(); }
+  public override toString(): string {
+    return "HashFactory_NewSha1$Params_" + super.toString();
+  }
 }
 export class HashFactory_NewSha1$Results extends $.Struct {
   public static override readonly _capnp = {
     displayName: "newSha1$Results",
     id: "9ad1223357407533",
-    size: new $.ObjectSize(0, 1),
+    size: new $.ObjectSize(0, 1)
   };
   get hash(): Hash$Client {
     return new Hash$Client($.utils.getInterfaceClientOrNullAt(0, this));
   }
   set hash(value: Hash$Client) {
-    $.utils.setInterfacePointer(this.segment.message.addCap(value.client), $.utils.getPointer(0, this));
+    $.utils.setInterfacePointer(
+      this.segment.message.addCap(value.client),
+      $.utils.getPointer(0, this)
+    );
   }
-  public override toString(): string { return "HashFactory_NewSha1$Results_" + super.toString(); }
+  public override toString(): string {
+    return "HashFactory_NewSha1$Results_" + super.toString();
+  }
 }
 export class HashFactory_NewSha1$Results$Promise {
   pipeline: $.Pipeline<any, any, HashFactory_NewSha1$Results>;
@@ -52,11 +59,14 @@ export class HashFactory$Client {
       ResultsClass: HashFactory_NewSha1$Results,
       interfaceId: HashFactory$Client.interfaceId,
       methodId: 0,
-      interfaceName: "packages/capnp/tests/schemas/hash-factory.capnp:HashFactory",
+      interfaceName:
+        "packages/capnp/tests/schemas/hash-factory.capnp:HashFactory",
       methodName: "newSha1"
     }
   ];
-  newSha1(paramsFunc?: (params: HashFactory_NewSha1$Params) => void): HashFactory_NewSha1$Results$Promise {
+  newSha1(
+    paramsFunc?: (params: HashFactory_NewSha1$Params) => void
+  ): HashFactory_NewSha1$Results$Promise {
     const answer = this.client.call({
       method: HashFactory$Client.methods[0],
       paramsFunc: paramsFunc
@@ -67,7 +77,10 @@ export class HashFactory$Client {
 }
 $.Registry.register(HashFactory$Client.interfaceId, HashFactory$Client);
 export interface HashFactory$Server$Target {
-  newSha1(params: HashFactory_NewSha1$Params, results: HashFactory_NewSha1$Results): Promise<void>;
+  newSha1(
+    params: HashFactory_NewSha1$Params,
+    results: HashFactory_NewSha1$Results
+  ): Promise<void>;
 }
 export class HashFactory$Server extends $.Server {
   public override readonly target: HashFactory$Server$Target;
@@ -90,15 +103,17 @@ export class HashFactory extends $.Interface {
   public static override readonly _capnp = {
     displayName: "HashFactory",
     id: "cb1e6205ea21d707",
-    size: new $.ObjectSize(0, 0),
+    size: new $.ObjectSize(0, 0)
   };
-  public override toString(): string { return "HashFactory_" + super.toString(); }
+  public override toString(): string {
+    return "HashFactory_" + super.toString();
+  }
 }
 export class Hash_Write$Params extends $.Struct {
   public static override readonly _capnp = {
     displayName: "write$Params",
     id: "f65501e064be5175",
-    size: new $.ObjectSize(0, 1),
+    size: new $.ObjectSize(0, 1)
   };
   _adoptData(value: $.Orphan<$.Data>): void {
     $.utils.adopt(value, $.utils.getPointer(0, this));
@@ -118,15 +133,19 @@ export class Hash_Write$Params extends $.Struct {
   set data(value: $.Data) {
     $.utils.copyFrom(value, $.utils.getPointer(0, this));
   }
-  public override toString(): string { return "Hash_Write$Params_" + super.toString(); }
+  public override toString(): string {
+    return "Hash_Write$Params_" + super.toString();
+  }
 }
 export class Hash_Write$Results extends $.Struct {
   public static override readonly _capnp = {
     displayName: "write$Results",
     id: "dffb54fe160f874c",
-    size: new $.ObjectSize(0, 0),
+    size: new $.ObjectSize(0, 0)
   };
-  public override toString(): string { return "Hash_Write$Results_" + super.toString(); }
+  public override toString(): string {
+    return "Hash_Write$Results_" + super.toString();
+  }
 }
 export class Hash_Write$Results$Promise {
   pipeline: $.Pipeline<any, any, Hash_Write$Results>;
@@ -141,15 +160,17 @@ export class Hash_Sum$Params extends $.Struct {
   public static override readonly _capnp = {
     displayName: "sum$Params",
     id: "b494960a8116663b",
-    size: new $.ObjectSize(0, 0),
+    size: new $.ObjectSize(0, 0)
   };
-  public override toString(): string { return "Hash_Sum$Params_" + super.toString(); }
+  public override toString(): string {
+    return "Hash_Sum$Params_" + super.toString();
+  }
 }
 export class Hash_Sum$Results extends $.Struct {
   public static override readonly _capnp = {
     displayName: "sum$Results",
     id: "e9098d3e3e6517b0",
-    size: new $.ObjectSize(0, 1),
+    size: new $.ObjectSize(0, 1)
   };
   _adoptHash(value: $.Orphan<$.Data>): void {
     $.utils.adopt(value, $.utils.getPointer(0, this));
@@ -169,7 +190,9 @@ export class Hash_Sum$Results extends $.Struct {
   set hash(value: $.Data) {
     $.utils.copyFrom(value, $.utils.getPointer(0, this));
   }
-  public override toString(): string { return "Hash_Sum$Results_" + super.toString(); }
+  public override toString(): string {
+    return "Hash_Sum$Results_" + super.toString();
+  }
 }
 export class Hash_Sum$Results$Promise {
   pipeline: $.Pipeline<any, any, Hash_Sum$Results>;
@@ -207,7 +230,9 @@ export class Hash$Client {
       methodName: "sum"
     }
   ];
-  write(paramsFunc?: (params: Hash_Write$Params) => void): Hash_Write$Results$Promise {
+  write(
+    paramsFunc?: (params: Hash_Write$Params) => void
+  ): Hash_Write$Results$Promise {
     const answer = this.client.call({
       method: Hash$Client.methods[0],
       paramsFunc: paramsFunc
@@ -215,7 +240,9 @@ export class Hash$Client {
     const pipeline = new $.Pipeline(Hash_Write$Results, answer);
     return new Hash_Write$Results$Promise(pipeline);
   }
-  sum(paramsFunc?: (params: Hash_Sum$Params) => void): Hash_Sum$Results$Promise {
+  sum(
+    paramsFunc?: (params: Hash_Sum$Params) => void
+  ): Hash_Sum$Results$Promise {
     const answer = this.client.call({
       method: Hash$Client.methods[1],
       paramsFunc: paramsFunc
@@ -254,7 +281,9 @@ export class Hash extends $.Interface {
   public static override readonly _capnp = {
     displayName: "Hash",
     id: "e9620cda4245af9a",
-    size: new $.ObjectSize(0, 0),
+    size: new $.ObjectSize(0, 0)
   };
-  public override toString(): string { return "Hash_" + super.toString(); }
+  public override toString(): string {
+    return "Hash_" + super.toString();
+  }
 }

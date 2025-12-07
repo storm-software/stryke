@@ -1,5 +1,7 @@
 import { declarePackage } from "@storm-software/testing-tools/jest/declare-package";
 
-export default declarePackage(
-  { projectRoot: "packages/convert", isNode: false, displayName: "convert"}
-);
+export default declarePackage({
+  projectRoot: "packages/convert",
+  isNode: false,
+  displayName: "convert"
+});

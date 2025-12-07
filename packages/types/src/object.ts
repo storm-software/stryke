@@ -211,7 +211,7 @@ type InnerPaths<T, Depth extends number = 0> = T extends
     : T extends UnknownArray
       ? number extends T["length"]
         ? // We need to handle the fixed and non-fixed index part of the array separately.
-          | InternalPaths<VariablePartOfArray<T>[number][], Depth>
+            | InternalPaths<VariablePartOfArray<T>[number][], Depth>
             | InternalPaths<StaticPartOfArray<T>, Depth>
         : InternalPaths<T, Depth>
       : T extends object
@@ -227,7 +227,7 @@ export type InternalPaths<
   : {
       [Key in keyof T]: Key extends number | string // Limit `Key` to string or number.
         ? // If `Key` is a number, return `Key | `${Key}``, because both `array[0]` and `array['0']` work.
-          | Key
+            | Key
             | (LessThan<TDepth, 15> extends true // Limit the depth to prevent infinite recursion
                 ? IsNever<InnerPaths<T[Key], Sum<TDepth, 1>>> extends false
                   ? `${Key}.${InnerPaths<T[Key], Sum<TDepth, 1>>}`

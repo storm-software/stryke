@@ -22,13 +22,13 @@
 </div>
 
 <br />
-This package is part of Storm Software's **🌩️ Stryke** monorepo. Stryke packages TypeScript utility packages with shared functionality common to many Storm Software applications.
+This package is part of Storm Software's **💥 Stryke** monorepo. Stryke packages TypeScript utility packages with shared functionality common to many Storm Software applications.
 
 <br />
 
 <h3 align="center">💻 Visit <a href="https://stormsoftware.com" target="_blank">stormsoftware.com</a> to stay up to date with this developer</h3><br />
 
-[![Version](https://img.shields.io/badge/version-0.21.3-1fb2a6.svg?style=for-the-badge&color=1fb2a6)](https://prettier.io/)&nbsp;[![Nx](https://img.shields.io/badge/Nx-17.0.2-lightgrey?style=for-the-badge&logo=nx&logoWidth=20&&color=1fb2a6)](http://nx.dev/)&nbsp;[![NextJs](https://img.shields.io/badge/Next.js-14.0.2-lightgrey?style=for-the-badge&logo=nextdotjs&logoWidth=20&color=1fb2a6)](https://nextjs.org/)&nbsp;[![Commitizen friendly](https://img.shields.io/badge/commitizen-friendly-brightgreen.svg?style=for-the-badge&logo=commitlint&color=1fb2a6)](http://commitizen.github.io/cz-cli/)&nbsp;![Semantic-Release](https://img.shields.io/badge/%20%20%F0%9F%93%A6%F0%9F%9A%80-semantic--release-e10079.svg?style=for-the-badge&color=1fb2a6)&nbsp;[![documented with Fumadocs](https://img.shields.io/badge/documented_with-fumadocs-success.svg?style=for-the-badge&logo=readthedocs&color=1fb2a6)](https://fumadocs.vercel.app/)&nbsp;![GitHub Workflow Status (with event)](https://img.shields.io/github/actions/workflow/status/storm-software/stryke/cr.yml?style=for-the-badge&logo=github-actions&color=1fb2a6)
+[![Version](https://img.shields.io/badge/version-0.33.13-1fb2a6.svg?style=for-the-badge&color=1fb2a6)](https://prettier.io/)&nbsp;[![Nx](https://img.shields.io/badge/Nx-17.0.2-lightgrey?style=for-the-badge&logo=nx&logoWidth=20&&color=1fb2a6)](http://nx.dev/)&nbsp;[![NextJs](https://img.shields.io/badge/Next.js-14.0.2-lightgrey?style=for-the-badge&logo=nextdotjs&logoWidth=20&color=1fb2a6)](https://nextjs.org/)&nbsp;[![Commitizen friendly](https://img.shields.io/badge/commitizen-friendly-brightgreen.svg?style=for-the-badge&logo=commitlint&color=1fb2a6)](http://commitizen.github.io/cz-cli/)&nbsp;![Semantic-Release](https://img.shields.io/badge/%20%20%F0%9F%93%A6%F0%9F%9A%80-semantic--release-e10079.svg?style=for-the-badge&color=1fb2a6)&nbsp;[![documented with Fumadocs](https://img.shields.io/badge/documented_with-fumadocs-success.svg?style=for-the-badge&logo=readthedocs&color=1fb2a6)](https://fumadocs.vercel.app/)&nbsp;![GitHub Workflow Status (with event)](https://img.shields.io/github/actions/workflow/status/storm-software/stryke/cr.yml?style=for-the-badge&logo=github-actions&color=1fb2a6)
 
 > [!IMPORTANT] Important
 > This repository, and the apps, libraries, and tools contained within, is still in it's initial development phase. As a result, bugs and  issues are expected with it's usage. When the main development phase completes, a proper release will be performed, the packages will be available through NPM (and other distributions), and this message will be removed. However, in the meantime, please feel free to report any issues you may come across.
@@ -57,21 +57,19 @@ provides a more modern and functional approach to working with the file system.
 
 ## Table of Contents
 
-- [Stryke - File System Helpers](#stryke---file-system-helpers)
-  - [Table of Contents](#table-of-contents)
-  - [Installing](#installing)
-  - [Reduced Package Size](#reduced-package-size)
-  - [Development](#development)
-    - [Building](#building)
-    - [Running unit tests](#running-unit-tests)
-    - [Linting](#linting)
-  - [Storm Workspaces](#storm-workspaces)
-  - [Roadmap](#roadmap)
-  - [Support](#support)
-  - [License](#license)
-  - [Changelog](#changelog)
-  - [Contributing](#contributing)
-  - [Contributors](#contributors)
+- [Installing](#installing)
+- [Reduced Package Size](#reduced-package-size)
+- [Development](#development)
+  - [Building](#building)
+  - [Running unit tests](#running-unit-tests)
+  - [Linting](#linting)
+- [Storm Workspaces](#storm-workspaces)
+- [Roadmap](#roadmap)
+- [Support](#support)
+- [License](#license)
+- [Changelog](#changelog)
+- [Contributing](#contributing)
+- [Contributors](#contributors)
 
 <!-- END doctoc -->
 
@@ -103,10 +101,10 @@ yarn add -D @stryke/fs
 
 ## Reduced Package Size
 
-This project uses [tsdown](https://tsdown.dev) to package the source code
-due to its ability to remove unused code and ship smaller javascript files
-thanks to code splitting. This helps to greatly reduce the size of the package
-and to make it easier to use in other projects.
+This project uses [tsdown](https://tsdown.dev) to package the source code due to
+its ability to remove unused code and ship smaller javascript files thanks to
+code splitting. This helps to greatly reduce the size of the package and to make
+it easier to use in other projects.
 
 ## Development
 
