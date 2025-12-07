@@ -2,6 +2,18 @@
 
 # Changelog for Stryke - Hash
 
+## [0.12.20](https://github.com/storm-software/stryke/releases/tag/hash%400.12.20) (12/07/2025)
+
+### Miscellaneous
+
+- **monorepo:** Format monorepo source files
+  ([9428936](https://github.com/storm-software/stryke/commit/9428936))
+
+### Updated Dependencies
+
+- Updated **convert** to **v0.6.18**
+- Updated **fs** to **v0.33.14**
+
 ## [0.12.19](https://github.com/storm-software/stryke/releases/tag/hash%400.12.19) (12/06/2025)
 
 ### Features

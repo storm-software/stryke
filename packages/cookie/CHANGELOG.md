@@ -2,6 +2,18 @@
 
 # Changelog for Stryke - Cookie
 
+## [0.1.19](https://github.com/storm-software/stryke/releases/tag/cookie%400.1.19) (12/07/2025)
+
+### Miscellaneous
+
+- **monorepo:** Format monorepo source files
+  ([9428936](https://github.com/storm-software/stryke/commit/9428936))
+
+### Updated Dependencies
+
+- Updated **type-checks** to **v0.5.3**
+- Updated **convert** to **v0.6.18**
+
 ## [0.1.18](https://github.com/storm-software/stryke/releases/tag/cookie%400.1.18) (12/06/2025)
 
 ### Features

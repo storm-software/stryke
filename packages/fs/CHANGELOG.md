@@ -2,6 +2,23 @@
 
 # Changelog for Stryke - Fs
 
+## [0.33.14](https://github.com/storm-software/stryke/releases/tag/fs%400.33.14) (12/07/2025)
+
+### Miscellaneous
+
+- **monorepo:** Format monorepo source files
+  ([9428936](https://github.com/storm-software/stryke/commit/9428936))
+
+### Updated Dependencies
+
+- Updated **string-format** to **v0.12.18**
+- Updated **type-checks** to **v0.5.3**
+- Updated **convert** to **v0.6.18**
+- Updated **helpers** to **v0.9.20**
+- Updated **types** to **v0.10.17**
+- Updated **json** to **v0.9.21**
+- Updated **path** to **v0.22.5**
+
 ## [0.33.13](https://github.com/storm-software/stryke/releases/tag/fs%400.33.13) (12/06/2025)
 
 ### Features

@@ -2,6 +2,13 @@
 
 # Changelog for Stryke - Types
 
+## [0.10.17](https://github.com/storm-software/stryke/releases/tag/types%400.10.17) (12/07/2025)
+
+### Miscellaneous
+
+- **monorepo:** Format monorepo source files
+  ([9428936](https://github.com/storm-software/stryke/commit/9428936))
+
 ## [0.10.16](https://github.com/storm-software/stryke/releases/tag/types%400.10.16) (12/06/2025)
 
 ### Features

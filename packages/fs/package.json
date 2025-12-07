@@ -1,6 +1,6 @@
 {
   "name": "@stryke/fs",
-  "version": "0.33.13",
+  "version": "0.33.14",
   "type": "module",
   "description": "A package containing various file system utilities that expand the functionality of NodeJs's built-in `fs` module.",
   "repository": {
