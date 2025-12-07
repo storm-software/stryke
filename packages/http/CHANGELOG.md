@@ -2,6 +2,18 @@
 
 # Changelog for Stryke - HTTP
 
+## [0.12.8](https://github.com/storm-software/stryke/releases/tag/http%400.12.8) (12/07/2025)
+
+### Miscellaneous
+
+- **monorepo:** Format monorepo source files
+  ([9428936](https://github.com/storm-software/stryke/commit/9428936))
+
+### Updated Dependencies
+
+- Updated **type-checks** to **v0.5.3**
+- Updated **url** to **v0.3.9**
+
 ## [0.12.7](https://github.com/storm-software/stryke/releases/tag/http%400.12.7) (12/06/2025)
 
 ### Features

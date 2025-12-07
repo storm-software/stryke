@@ -2,6 +2,13 @@
 
 # Changelog for Stryke - Open Browser
 
+## [0.2.17](https://github.com/storm-software/stryke/releases/tag/open-browser%400.2.17) (12/07/2025)
+
+### Miscellaneous
+
+- **monorepo:** Format monorepo source files
+  ([9428936](https://github.com/storm-software/stryke/commit/9428936))
+
 ## [0.2.14](https://github.com/storm-software/stryke/releases/tag/open-browser%400.2.14) (12/05/2025)
 
 ### Features

@@ -2,6 +2,21 @@
 
 # Changelog for Stryke - CLI
 
+## [0.12.24](https://github.com/storm-software/stryke/releases/tag/cli%400.12.24) (12/07/2025)
+
+### Miscellaneous
+
+- **monorepo:** Format monorepo source files
+  ([9428936](https://github.com/storm-software/stryke/commit/9428936))
+
+### Updated Dependencies
+
+- Updated **string-format** to **v0.12.18**
+- Updated **type-checks** to **v0.5.3**
+- Updated **convert** to **v0.6.18**
+- Updated **types** to **v0.10.17**
+- Updated **env** to **v0.20.31**
+
 ## [0.12.23](https://github.com/storm-software/stryke/releases/tag/cli%400.12.23) (12/06/2025)
 
 ### Features

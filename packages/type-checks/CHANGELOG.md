@@ -2,6 +2,17 @@
 
 # Changelog for Stryke - Type Checks
 
+## [0.5.3](https://github.com/storm-software/stryke/releases/tag/type-checks%400.5.3) (12/07/2025)
+
+### Miscellaneous
+
+- **monorepo:** Format monorepo source files
+  ([9428936](https://github.com/storm-software/stryke/commit/9428936))
+
+### Updated Dependencies
+
+- Updated **types** to **v0.10.17**
+
 ## [0.5.2](https://github.com/storm-software/stryke/releases/tag/type-checks%400.5.2) (12/06/2025)
 
 ### Features

@@ -2,6 +2,19 @@
 
 # Changelog for Stryke - URL
 
+## [0.3.9](https://github.com/storm-software/stryke/releases/tag/url%400.3.9) (12/07/2025)
+
+### Miscellaneous
+
+- **monorepo:** Format monorepo source files
+  ([9428936](https://github.com/storm-software/stryke/commit/9428936))
+
+### Updated Dependencies
+
+- Updated **type-checks** to **v0.5.3**
+- Updated **json** to **v0.9.21**
+- Updated **path** to **v0.22.5**
+
 ## [0.3.8](https://github.com/storm-software/stryke/releases/tag/url%400.3.8) (12/06/2025)
 
 ### Features

@@ -2,6 +2,17 @@
 
 # Changelog for Stryke - Unique ID
 
+## [0.3.25](https://github.com/storm-software/stryke/releases/tag/unique-id%400.3.25) (12/07/2025)
+
+### Miscellaneous
+
+- **monorepo:** Format monorepo source files
+  ([9428936](https://github.com/storm-software/stryke/commit/9428936))
+
+### Updated Dependencies
+
+- Updated **hash** to **v0.12.20**
+
 ## [0.3.24](https://github.com/storm-software/stryke/releases/tag/unique-id%400.3.24) (12/06/2025)
 
 ### Features

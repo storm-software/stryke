@@ -2,6 +2,19 @@
 
 # Changelog for Stryke - Path
 
+## [0.22.5](https://github.com/storm-software/stryke/releases/tag/path%400.22.5) (12/07/2025)
+
+### Miscellaneous
+
+- **monorepo:** Format monorepo source files
+  ([9428936](https://github.com/storm-software/stryke/commit/9428936))
+
+### Updated Dependencies
+
+- Updated **type-checks** to **v0.5.3**
+- Updated **convert** to **v0.6.18**
+- Updated **types** to **v0.10.17**
+
 ## [0.22.4](https://github.com/storm-software/stryke/releases/tag/path%400.22.4) (12/06/2025)
 
 ### Features
