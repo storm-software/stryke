@@ -2,6 +2,13 @@
 
 # Changelog for Stryke - Types
 
+## [0.10.21](https://github.com/storm-software/stryke/releases/tag/types%400.10.21) (12/08/2025)
+
+### Bug Fixes
+
+- **capnp:** Ensure `capnp-es` is packaged in bundle
+  ([8a28a82](https://github.com/storm-software/stryke/commit/8a28a82))
+
 ## [0.10.19](https://github.com/storm-software/stryke/releases/tag/types%400.10.19) (12/07/2025)
 
 ### Bug Fixes

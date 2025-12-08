@@ -2,6 +2,13 @@
 
 # Changelog for Stryke - Open Browser
 
+## [0.2.21](https://github.com/storm-software/stryke/releases/tag/open-browser%400.2.21) (12/08/2025)
+
+### Bug Fixes
+
+- **capnp:** Ensure `capnp-es` is packaged in bundle
+  ([8a28a82](https://github.com/storm-software/stryke/commit/8a28a82))
+
 ## [0.2.19](https://github.com/storm-software/stryke/releases/tag/open-browser%400.2.19) (12/07/2025)
 
 ### Bug Fixes

@@ -2,6 +2,20 @@
 
 # Changelog for Stryke - Capnp
 
+## [0.12.42](https://github.com/storm-software/stryke/releases/tag/capnp%400.12.42) (12/08/2025)
+
+### Bug Fixes
+
+- **capnp:** Ensure `capnp-es` is packaged in bundle
+  ([8a28a82](https://github.com/storm-software/stryke/commit/8a28a82))
+
+### Updated Dependencies
+
+- Updated **convert** to **v0.6.22**
+- Updated **types** to **v0.10.21**
+- Updated **path** to **v0.22.9**
+- Updated **fs** to **v0.33.18**
+
 ## [0.12.41](https://github.com/storm-software/stryke/releases/tag/capnp%400.12.41) (12/07/2025)
 
 ### Bug Fixes

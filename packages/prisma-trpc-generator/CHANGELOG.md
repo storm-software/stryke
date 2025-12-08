@@ -2,6 +2,21 @@
 
 # Changelog for Stryke - Prisma TRPC Generator
 
+## [0.13.35](https://github.com/storm-software/stryke/releases/tag/prisma-trpc-generator%400.13.35) (12/08/2025)
+
+### Bug Fixes
+
+- **capnp:** Ensure `capnp-es` is packaged in bundle
+  ([8a28a82](https://github.com/storm-software/stryke/commit/8a28a82))
+
+### Updated Dependencies
+
+- Updated **string-format** to **v0.12.22**
+- Updated **types** to **v0.10.21**
+- Updated **path** to **v0.22.9**
+- Updated **env** to **v0.20.35**
+- Updated **fs** to **v0.33.18**
+
 ## [0.13.34](https://github.com/storm-software/stryke/releases/tag/prisma-trpc-generator%400.13.34) (12/07/2025)
 
 ### Bug Fixes
