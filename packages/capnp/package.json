@@ -43,52 +43,56 @@
     "storm-capnpc-cjs": "bin/capnpc.cjs",
     "storm-capnpc-esm": "bin/capnpc.mjs"
   },
-  "main": "./dist/src/index.cjs",
-  "module": "./dist/src/index.mjs",
+  "main": "./dist/index.cjs",
+  "module": "./dist/index.mjs",
   "exports": {
     ".": {
-      "require": "./dist/src/index.cjs",
-      "import": "./dist/src/index.mjs"
-    },
-    "./compile": {
-      "require": "./dist/src/compile.cjs",
-      "import": "./dist/src/compile.mjs"
-    },
-    "./cpp": {
-      "require": "./dist/schemas/cpp.cjs",
-      "import": "./dist/schemas/cpp.mjs"
-    },
-    "./helpers": {
-      "require": "./dist/src/helpers.cjs",
-      "import": "./dist/src/helpers.mjs"
-    },
-    "./persistent": {
-      "require": "./dist/schemas/persistent.cjs",
-      "import": "./dist/schemas/persistent.mjs"
-    },
-    "./rpc": {
-      "require": "./dist/schemas/rpc.cjs",
-      "import": "./dist/schemas/rpc.mjs"
-    },
-    "./rpc-twoparty": {
-      "require": "./dist/schemas/rpc-twoparty.cjs",
-      "import": "./dist/schemas/rpc-twoparty.mjs"
-    },
-    "./schema": {
-      "require": "./dist/schemas/schema.cjs",
-      "import": "./dist/schemas/schema.mjs"
-    },
-    "./ts": {
-      "require": "./dist/schemas/ts.cjs",
-      "import": "./dist/schemas/ts.mjs"
+      "require": "./dist/index.cjs",
+      "import": "./dist/index.mjs"
     },
     "./types": {
-      "require": "./dist/src/types.cjs",
-      "import": "./dist/src/types.mjs"
+      "require": "./dist/types.cjs",
+      "import": "./dist/types.mjs"
     },
-    "./*": "./*"
+    "./compile": {
+      "require": "./dist/compile.cjs",
+      "import": "./dist/compile.mjs"
+    },
+    "./helpers": {
+      "require": "./dist/helpers.cjs",
+      "import": "./dist/helpers.mjs"
+    },
+    "./rpc-helpers": {
+      "require": "./schemas/rpc-helpers.cjs",
+      "import": "./schemas/rpc-helpers.mjs"
+    },
+    "./cpp": {
+      "require": "./schemas/cpp.cjs",
+      "import": "./schemas/cpp.mjs"
+    },
+    "./persistent": {
+      "require": "./schemas/persistent.cjs",
+      "import": "./schemas/persistent.mjs"
+    },
+    "./rpc": {
+      "require": "./schemas/rpc.cjs",
+      "import": "./schemas/rpc.mjs"
+    },
+    "./rpc-twoparty": {
+      "require": "./schemas/rpc-twoparty.cjs",
+      "import": "./schemas/rpc-twoparty.mjs"
+    },
+    "./schema": {
+      "require": "./schemas/schema.cjs",
+      "import": "./schemas/schema.mjs"
+    },
+    "./ts": {
+      "require": "./schemas/ts.cjs",
+      "import": "./schemas/ts.mjs"
+    },
+    "./*": "./dist/*"
   },
-  "types": "./dist/src/index.d.cts",
+  "types": "./dist/index.d.cts",
   "files": ["bin/**/*", "dist/**/*", "dts/**/*", "schemas/**/*", "vendor/**/*"],
   "keywords": [
     "capnp",

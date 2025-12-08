@@ -23,6 +23,7 @@ export default defineTSDownConfig({
   entry: ["bin/capnpc.ts"],
   outDir: "dist/bin",
   clean: false,
+  exports: false,
   external: ["typescript"],
   noExternal: ["capnp-es"],
   skipNodeModulesBundle: false,

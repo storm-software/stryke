@@ -25,6 +25,7 @@ export default defineTSDownConfig([
     entry: ["src/*.ts"],
     outDir: "dist/src",
     clean: false,
+    exports: false,
     external: ["typescript"],
     noExternal: ["capnp-es"],
     skipNodeModulesBundle: false
@@ -34,6 +35,7 @@ export default defineTSDownConfig([
     entry: ["schemas/*.ts"],
     outDir: "dist/schemas",
     clean: false,
+    exports: false,
     external: ["typescript"],
     noExternal: ["capnp-es"],
     skipNodeModulesBundle: false,
