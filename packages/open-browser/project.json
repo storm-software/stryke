@@ -11,7 +11,7 @@
         "commands": [
           "pnpm copyfiles LICENSE dist/packages/open-browser",
           "pnpm copyfiles --up=2 ./packages/open-browser/*.md ./packages/open-browser/openChrome.applescript ./packages/open-browser/package.json dist/packages/open-browser",
-          "pnpm copyfiles --up=5 \"./packages/open-browser/dist/*\" dist/packages/open-browser/dist"
+          "pnpm copyfiles --up=3 \"./packages/open-browser/dist/*\" dist/packages/open-browser/dist"
         ]
       }
     },
