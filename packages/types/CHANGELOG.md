@@ -2,6 +2,13 @@
 
 # Changelog for Stryke - Types
 
+## [0.10.19](https://github.com/storm-software/stryke/releases/tag/types%400.10.19) (12/07/2025)
+
+### Bug Fixes
+
+- **monorepo:** Resolve issue with package builds in Nx plugin
+  ([6c442b5](https://github.com/storm-software/stryke/commit/6c442b5))
+
 ## [0.10.17](https://github.com/storm-software/stryke/releases/tag/types%400.10.17) (12/07/2025)
 
 ### Miscellaneous

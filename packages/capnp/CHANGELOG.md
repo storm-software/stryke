@@ -2,6 +2,20 @@
 
 # Changelog for Stryke - Capnp
 
+## [0.12.40](https://github.com/storm-software/stryke/releases/tag/capnp%400.12.40) (12/07/2025)
+
+### Bug Fixes
+
+- **monorepo:** Resolve issue with package builds in Nx plugin
+  ([6c442b5](https://github.com/storm-software/stryke/commit/6c442b5))
+
+### Updated Dependencies
+
+- Updated **convert** to **v0.6.20**
+- Updated **types** to **v0.10.19**
+- Updated **path** to **v0.22.7**
+- Updated **fs** to **v0.33.16**
+
 ## [0.12.39](https://github.com/storm-software/stryke/releases/tag/capnp%400.12.39) (12/07/2025)
 
 ### Miscellaneous

@@ -2,6 +2,13 @@
 
 # Changelog for Stryke - Open Browser
 
+## [0.2.19](https://github.com/storm-software/stryke/releases/tag/open-browser%400.2.19) (12/07/2025)
+
+### Bug Fixes
+
+- **open-browser:** Resolve issue with invalid `copyfiles` parameters in build
+  script ([3d292ef](https://github.com/storm-software/stryke/commit/3d292ef))
+
 ## [0.2.17](https://github.com/storm-software/stryke/releases/tag/open-browser%400.2.17) (12/07/2025)
 
 ### Miscellaneous

@@ -2,6 +2,21 @@
 
 # Changelog for Stryke - Prisma TRPC Generator
 
+## [0.13.33](https://github.com/storm-software/stryke/releases/tag/prisma-trpc-generator%400.13.33) (12/07/2025)
+
+### Bug Fixes
+
+- **monorepo:** Resolve issue with package builds in Nx plugin
+  ([6c442b5](https://github.com/storm-software/stryke/commit/6c442b5))
+
+### Updated Dependencies
+
+- Updated **string-format** to **v0.12.20**
+- Updated **types** to **v0.10.19**
+- Updated **path** to **v0.22.7**
+- Updated **env** to **v0.20.33**
+- Updated **fs** to **v0.33.16**
+
 ## [0.13.32](https://github.com/storm-software/stryke/releases/tag/prisma-trpc-generator%400.13.32) (12/07/2025)
 
 ### Updated Dependencies

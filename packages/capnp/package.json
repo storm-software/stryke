@@ -1,6 +1,6 @@
 {
   "name": "@stryke/capnp",
-  "version": "0.12.39",
+  "version": "0.12.40",
   "type": "module",
   "description": "A package to assist in running the Cap'n Proto compiler and creating Cap'n Proto serialization protocol schemas.",
   "repository": {
@@ -89,13 +89,7 @@
     "./*": "./*"
   },
   "types": "./dist/src/index.d.cts",
-  "files": [
-    "bin/**/*",
-    "dist/**/*",
-    "dts/**/*",
-    "schemas/**/*",
-    "vendor/**/*"
-  ],
+  "files": ["bin/**/*", "dist/**/*", "dts/**/*", "schemas/**/*", "vendor/**/*"],
   "keywords": [
     "capnp",
     "capnproto",

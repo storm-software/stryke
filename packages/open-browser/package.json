@@ -1,6 +1,6 @@
 {
   "name": "@stryke/open-browser",
-  "version": "0.2.18",
+  "version": "0.2.19",
   "type": "module",
   "description": "A package containing helper function to open URLs in the default browser",
   "repository": {
@@ -20,5 +20,19 @@
   },
   "publishConfig": {
     "access": "public"
+  },
+  "main": "./dist/index.cjs",
+  "module": "./dist/index.mjs",
+  "types": "./dist/index.d.cts",
+  "exports": {
+    ".": {
+      "require": "./dist/index.cjs",
+      "import": "./dist/index.mjs"
+    },
+    "./open": {
+      "require": "./dist/open.cjs",
+      "import": "./dist/open.mjs"
+    },
+    "./*": "./*"
   }
 }

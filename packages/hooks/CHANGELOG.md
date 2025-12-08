@@ -2,6 +2,20 @@
 
 # Changelog for Stryke - Hooks
 
+## [0.4.31](https://github.com/storm-software/stryke/releases/tag/hooks%400.4.31) (12/07/2025)
+
+### Miscellaneous
+
+- **hooks:** Added missing configuration file from `tsconfig.json`
+  ([f83e71d](https://github.com/storm-software/stryke/commit/f83e71d))
+
+### Updated Dependencies
+
+- Updated **type-checks** to **v0.5.5**
+- Updated **helpers** to **v0.9.22**
+- Updated **types** to **v0.10.19**
+- Updated **env** to **v0.20.33**
+
 ## [0.4.30](https://github.com/storm-software/stryke/releases/tag/hooks%400.4.30) (12/07/2025)
 
 ### Updated Dependencies
