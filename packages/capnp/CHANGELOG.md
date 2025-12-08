@@ -2,6 +2,13 @@
 
 # Changelog for Stryke - Capnp
 
+## [0.12.44](https://github.com/storm-software/stryke/releases/tag/capnp%400.12.44) (12/08/2025)
+
+### Bug Fixes
+
+- **capnp:** Resolve issues with invalid exports in `package.json` file
+  ([27f5542](https://github.com/storm-software/stryke/commit/27f5542))
+
 ## [0.12.43](https://github.com/storm-software/stryke/releases/tag/capnp%400.12.43) (12/08/2025)
 
 ### Updated Dependencies
