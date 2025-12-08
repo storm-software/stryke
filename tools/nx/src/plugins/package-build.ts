@@ -24,7 +24,7 @@ import {
 } from "@storm-software/workspace-tools/utils/plugin-helpers";
 import { setDefaultProjectTags } from "@storm-software/workspace-tools/utils/project-tags";
 import { existsSync } from "node:fs";
-import { basename, join } from "node:path";
+import { join } from "node:path";
 import { readNxJson } from "nx/src/config/nx-json.js";
 import type { ProjectConfiguration } from "nx/src/config/workspace-json-project-json.js";
 import { readTargetsFromPackageJson } from "nx/src/utils/package-json.js";
@@ -82,10 +82,7 @@ export const createNodesV2: CreateNodesV2<StrykePackageBuildPluginOptions> = [
             );
 
           if (project?.name && !project?.name.startsWith("tools")) {
-            if (
-              existsSync(join(projectRoot, "tsdown.config.ts")) ||
-              existsSync(join(projectRoot, basename(configFile)))
-            ) {
+            if (existsSync(join(projectRoot, "tsdown.config.ts"))) {
               console.log(
                 `[${name}]: ${project.name} project at ${projectRoot} contains custom tsdown.config.ts`
               );
@@ -121,7 +118,7 @@ export const createNodesV2: CreateNodesV2<StrykePackageBuildPluginOptions> = [
                 `[${name}]: ${project.name} project at ${projectRoot} will use default tsdown.config.ts`
               );
 
-              targets.build ??= {
+              targets["build-base"] ??= {
                 cache: true,
                 inputs: ["typescript", "^production"],
                 outputs: ["{workspaceRoot}/dist/{projectRoot}"],
@@ -143,6 +140,30 @@ export const createNodesV2: CreateNodesV2<StrykePackageBuildPluginOptions> = [
                     debug: true,
                     sourcemap: true
                   }
+                }
+              };
+
+              targets.build ??= {
+                cache: true,
+                inputs: [
+                  "{workspaceRoot}/LICENSE",
+                  "{projectRoot}/dist",
+                  "{projectRoot}/*.md",
+                  "{projectRoot}/package.json"
+                ],
+                outputs: [`{workspaceRoot}/dist/${projectRoot}`],
+                executor: "nx:run-commands",
+                dependsOn: ["build-base", "^build"],
+                options: {
+                  commands: [
+                    `pnpm copyfiles LICENSE dist/${projectRoot}`,
+                    `pnpm copyfiles --up=2 ./${projectRoot}/*.md ./${
+                      projectRoot
+                    }/package.json dist/${projectRoot}`,
+                    `pnpm copyfiles --up=3 "./${projectRoot}/dist/**/*" dist/${
+                      projectRoot
+                    }/dist`
+                  ]
                 }
               };
             }

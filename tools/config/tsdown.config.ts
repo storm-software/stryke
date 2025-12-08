@@ -32,7 +32,6 @@ export const DEFAULT_OPTIONS: Omit<Partial<UserConfig>, "name"> = {
   },
   clean: false,
   sourcemap: false,
-  unbundle: true,
   platform: "node",
   tsconfig: "./tsconfig.json",
   minify: true,
