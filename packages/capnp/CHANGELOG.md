@@ -2,6 +2,20 @@
 
 # Changelog for Stryke - Capnp
 
+## [0.12.45](https://github.com/storm-software/stryke/releases/tag/capnp%400.12.45) (12/08/2025)
+
+### Miscellaneous
+
+- **capnp:** Update typings provided in `package.json` file
+  ([c85b781](https://github.com/storm-software/stryke/commit/c85b781))
+
+### Updated Dependencies
+
+- Updated **convert** to **v0.6.24**
+- Updated **types** to **v0.10.23**
+- Updated **path** to **v0.22.11**
+- Updated **fs** to **v0.33.20**
+
 ## [0.12.44](https://github.com/storm-software/stryke/releases/tag/capnp%400.12.44) (12/08/2025)
 
 ### Bug Fixes

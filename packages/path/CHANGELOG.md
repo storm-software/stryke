@@ -2,6 +2,14 @@
 
 # Changelog for Stryke - Path
 
+## [0.22.11](https://github.com/storm-software/stryke/releases/tag/path%400.22.11) (12/08/2025)
+
+### Updated Dependencies
+
+- Updated **type-checks** to **v0.5.9**
+- Updated **convert** to **v0.6.24**
+- Updated **types** to **v0.10.23**
+
 ## [0.22.10](https://github.com/storm-software/stryke/releases/tag/path%400.22.10) (12/08/2025)
 
 ### Updated Dependencies
