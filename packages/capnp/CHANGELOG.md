@@ -2,6 +2,20 @@
 
 # Changelog for Stryke - Capnp
 
+## [0.12.39](https://github.com/storm-software/stryke/releases/tag/capnp%400.12.39) (12/07/2025)
+
+### Miscellaneous
+
+- **monorepo:** Include misssing formatted files
+  ([2430e1c](https://github.com/storm-software/stryke/commit/2430e1c))
+
+### Updated Dependencies
+
+- Updated **convert** to **v0.6.19**
+- Updated **types** to **v0.10.18**
+- Updated **path** to **v0.22.6**
+- Updated **fs** to **v0.33.15**
+
 ## [0.12.38](https://github.com/storm-software/stryke/releases/tag/capnp%400.12.38) (12/07/2025)
 
 ### Miscellaneous
