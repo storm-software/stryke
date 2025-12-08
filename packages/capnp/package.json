@@ -47,8 +47,32 @@
   "module": "./dist/index.mjs",
   "exports": {
     ".": {
-      "require": "./dist/index.cjs",
-      "import": "./dist/index.mjs"
+      "import": {
+        "types": "./dts/index.d.ts",
+        "default": "./dist/index.mjs"
+      },
+      "require": {
+        "types": "./dts/index.d.cts",
+        "default": "./dist/index.cjs"
+      },
+      "default": {
+        "types": "./dts/index.d.ts",
+        "default": "./dist/index.mjs"
+      }
+    },
+    "./index": {
+      "import": {
+        "types": "./dts/index.d.ts",
+        "default": "./dist/index.mjs"
+      },
+      "require": {
+        "types": "./dts/index.d.cts",
+        "default": "./dist/index.cjs"
+      },
+      "default": {
+        "types": "./dts/index.d.ts",
+        "default": "./dist/index.mjs"
+      }
     },
     "./types": {
       "require": "./dist/types.cjs",
@@ -92,7 +116,7 @@
     },
     "./*": "./dist/*"
   },
-  "types": "./dist/index.d.cts",
+  "types": "./dts/index.d.ts",
   "files": ["bin/**/*", "dist/**/*", "dts/**/*", "schemas/**/*", "vendor/**/*"],
   "keywords": [
     "capnp",
