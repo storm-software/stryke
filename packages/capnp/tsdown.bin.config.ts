@@ -25,6 +25,6 @@ export default defineTSDownConfig({
   clean: false,
   external: ["typescript"],
   noExternal: ["capnp-es"],
-  skipNodeModulesBundle: true,
+  skipNodeModulesBundle: false,
   unbundle: false
 });
