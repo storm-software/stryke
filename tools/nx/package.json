@@ -39,7 +39,6 @@
   },
   "devDependencies": {
     "@storm-software/tsconfig": "catalog:",
-    "@stryke/tools-config": "workspace:*",
     "@types/node": "catalog:",
     "eslint-flat-config-utils": "catalog:",
     "tslib": "catalog:",

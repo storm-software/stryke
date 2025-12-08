@@ -79,7 +79,6 @@
     "zod": "catalog:"
   },
   "devDependencies": {
-    "@stryke/tools-config": "workspace:*",
     "@types/pluralize": "catalog:",
     "pluralize": "catalog:",
     "tsdown": "catalog:"
