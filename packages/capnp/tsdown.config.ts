@@ -28,7 +28,8 @@ export default defineTSDownConfig([
     exports: false,
     external: ["typescript"],
     noExternal: ["capnp-es"],
-    skipNodeModulesBundle: false
+    skipNodeModulesBundle: false,
+    unbundle: false
   },
   {
     name: "capnp-schemas",
@@ -39,6 +40,7 @@ export default defineTSDownConfig([
     external: ["typescript"],
     noExternal: ["capnp-es"],
     skipNodeModulesBundle: false,
+    unbundle: false,
     alias: {
       "@stryke/capnp": fileURLToPath(new URL("src/index.ts", import.meta.url))
     }

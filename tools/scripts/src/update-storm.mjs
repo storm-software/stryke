@@ -22,7 +22,7 @@ import { $, chalk, echo } from "zx";
 try {
   await echo`${chalk.whiteBright("🔄  Updating the workspace's Storm Software dependencies and re-linking workspace packages...")}`;
 
-  // 1) Update @storm-software/* packages to the latest version
+  // 1) Update @storm-software/* and @stryke/* packages to the latest version
   await echo`${chalk.whiteBright("Checking for @storm-software/* updates...")}`;
   let proc = $`pnpm exec storm-pnpm update @storm-software/ --install`.timeout(
     `${8 * 60}s`
@@ -47,7 +47,9 @@ try {
 
   echo`${chalk.green(" ✔ Successfully updated Storm Software package dependencies and re-linked workspace packages")}\n\n`;
 } catch (error) {
-  echo`${chalk.red(error?.message ? error.message : "A failure occurred while updating Storm dependency packages")}`;
-
+  echo`${chalk.red(
+    error?.message ??
+      "A failure occurred while updating Storm dependency packages"
+  )}`;
   process.exit(1);
 }
