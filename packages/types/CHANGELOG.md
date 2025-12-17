@@ -2,6 +2,13 @@
 
 # Changelog for Stryke - Types
 
+## [0.10.24](https://github.com/storm-software/stryke/releases/tag/types%400.10.24) (12/17/2025)
+
+### Miscellaneous
+
+- **monorepo:** Added `unbundle` to default build config for all of the packages
+  ([bc2993c](https://github.com/storm-software/stryke/commit/bc2993c))
+
 ## [0.10.23](https://github.com/storm-software/stryke/releases/tag/types%400.10.23) (12/08/2025)
 
 ### Miscellaneous

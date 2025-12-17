@@ -2,6 +2,13 @@
 
 # Changelog for Stryke - JSON
 
+## [0.9.28](https://github.com/storm-software/stryke/releases/tag/json%400.9.28) (12/17/2025)
+
+### Updated Dependencies
+
+- Updated **type-checks** to **v0.5.10**
+- Updated **types** to **v0.10.24**
+
 ## [0.9.27](https://github.com/storm-software/stryke/releases/tag/json%400.9.27) (12/08/2025)
 
 ### Updated Dependencies
