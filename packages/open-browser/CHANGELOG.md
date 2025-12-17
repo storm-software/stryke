@@ -2,6 +2,13 @@
 
 # Changelog for Stryke - Open Browser
 
+## [0.2.24](https://github.com/storm-software/stryke/releases/tag/open-browser%400.2.24) (12/17/2025)
+
+### Miscellaneous
+
+- **monorepo:** Added `unbundle` to default build config for all of the packages
+  ([bc2993c](https://github.com/storm-software/stryke/commit/bc2993c))
+
 ## [0.2.23](https://github.com/storm-software/stryke/releases/tag/open-browser%400.2.23) (12/08/2025)
 
 ### Miscellaneous

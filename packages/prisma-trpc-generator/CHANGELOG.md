@@ -2,6 +2,21 @@
 
 # Changelog for Stryke - Prisma TRPC Generator
 
+## [0.13.38](https://github.com/storm-software/stryke/releases/tag/prisma-trpc-generator%400.13.38) (12/17/2025)
+
+### Miscellaneous
+
+- **monorepo:** Added `unbundle` to default build config for all of the packages
+  ([bc2993c](https://github.com/storm-software/stryke/commit/bc2993c))
+
+### Updated Dependencies
+
+- Updated **string-format** to **v0.12.25**
+- Updated **types** to **v0.10.24**
+- Updated **path** to **v0.22.12**
+- Updated **env** to **v0.20.38**
+- Updated **fs** to **v0.33.21**
+
 ## [0.13.37](https://github.com/storm-software/stryke/releases/tag/prisma-trpc-generator%400.13.37) (12/08/2025)
 
 ### Miscellaneous
