@@ -1,3 +1,18 @@
+![Storm Software's logo banner](https://public.storm-cdn.com/storm-software/optimized/banner-1280x320.gif)
+
+# Changelog for Stryke - Type Checks
+
+## [0.5.13](https://github.com/storm-software/stryke/releases/tag/type-checks%400.5.13) (12/18/2025)
+
+### Miscellaneous
+
+- **monorepo:** Update CDN URLs for banner assets
+  ([5aefe1b](https://github.com/storm-software/stryke/commit/5aefe1b))
+
+### Updated Dependencies
+
+- Updated **types** to **v0.10.27**
+
 ![Storm Software's logo banner](https://public.storm-cdn.com/storm-software/banner-1280x320.gif)
 
 # Changelog for Stryke - Type Checks

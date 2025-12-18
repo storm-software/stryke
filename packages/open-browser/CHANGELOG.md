@@ -1,3 +1,14 @@
+![Storm Software's logo banner](https://public.storm-cdn.com/storm-software/optimized/banner-1280x320.gif)
+
+# Changelog for Stryke - Open Browser
+
+## [0.2.27](https://github.com/storm-software/stryke/releases/tag/open-browser%400.2.27) (12/18/2025)
+
+### Miscellaneous
+
+- **monorepo:** Update CDN URLs for banner assets
+  ([5aefe1b](https://github.com/storm-software/stryke/commit/5aefe1b))
+
 ![Storm Software's logo banner](https://public.storm-cdn.com/storm-software/banner-1280x320.gif)
 
 # Changelog for Stryke - Open Browser

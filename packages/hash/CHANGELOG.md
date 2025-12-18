@@ -1,3 +1,19 @@
+![Storm Software's logo banner](https://public.storm-cdn.com/storm-software/optimized/banner-1280x320.gif)
+
+# Changelog for Stryke - Hash
+
+## [0.12.30](https://github.com/storm-software/stryke/releases/tag/hash%400.12.30) (12/18/2025)
+
+### Miscellaneous
+
+- **monorepo:** Update CDN URLs for banner assets
+  ([5aefe1b](https://github.com/storm-software/stryke/commit/5aefe1b))
+
+### Updated Dependencies
+
+- Updated **convert** to **v0.6.28**
+- Updated **fs** to **v0.33.24**
+
 ![Storm Software's logo banner](https://public.storm-cdn.com/storm-software/banner-1280x320.gif)
 
 # Changelog for Stryke - Hash
