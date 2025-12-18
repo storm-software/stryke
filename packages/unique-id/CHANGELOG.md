@@ -1,3 +1,18 @@
+![Storm Software's logo banner](https://public.storm-cdn.com/storm-software/optimized/banner-1280x320.gif)
+
+# Changelog for Stryke - Unique ID
+
+## [0.3.35](https://github.com/storm-software/stryke/releases/tag/unique-id%400.3.35) (12/18/2025)
+
+### Miscellaneous
+
+- **monorepo:** Update CDN URLs for banner assets
+  ([5aefe1b](https://github.com/storm-software/stryke/commit/5aefe1b))
+
+### Updated Dependencies
+
+- Updated **hash** to **v0.12.30**
+
 ![Storm Software's logo banner](https://public.storm-cdn.com/storm-software/banner-1280x320.gif)
 
 # Changelog for Stryke - Unique ID
