@@ -48,6 +48,7 @@ export function isParentPath(childPath: string, parentPath: string): boolean {
   )?.toLowerCase();
 
   return (
+    childPath !== parentPath &&
     normalizedChild !== normalizedParent &&
     normalizedChild.startsWith(`${normalizedParent}/`)
   );
