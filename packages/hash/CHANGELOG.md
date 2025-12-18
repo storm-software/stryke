@@ -1,3 +1,13 @@
+![Storm Software's logo banner](https://public.storm-cdn.com/storm-software/banner-1280x320.gif)
+
+# Changelog for Stryke - Hash
+
+## [0.12.31](https://github.com/storm-software/stryke/releases/tag/hash%400.12.31) (12/18/2025)
+
+### Updated Dependencies
+
+- Updated **fs** to **v0.33.25**
+
 ![Storm Software's logo banner](https://public.storm-cdn.com/storm-software/optimized/banner-1280x320.gif)
 
 # Changelog for Stryke - Hash
@@ -13,10 +23,6 @@
 
 - Updated **convert** to **v0.6.28**
 - Updated **fs** to **v0.33.24**
-
-![Storm Software's logo banner](https://public.storm-cdn.com/storm-software/banner-1280x320.gif)
-
-# Changelog for Stryke - Hash
 
 ## [0.12.29](https://github.com/storm-software/stryke/releases/tag/hash%400.12.29) (12/18/2025)
 

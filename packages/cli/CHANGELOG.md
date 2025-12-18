@@ -1,3 +1,13 @@
+![Storm Software's logo banner](https://public.storm-cdn.com/storm-software/banner-1280x320.gif)
+
+# Changelog for Stryke - CLI
+
+## [0.12.35](https://github.com/storm-software/stryke/releases/tag/cli%400.12.35) (12/18/2025)
+
+### Updated Dependencies
+
+- Updated **env** to **v0.20.42**
+
 ![Storm Software's logo banner](https://public.storm-cdn.com/storm-software/optimized/banner-1280x320.gif)
 
 # Changelog for Stryke - CLI
@@ -16,10 +26,6 @@
 - Updated **convert** to **v0.6.28**
 - Updated **types** to **v0.10.27**
 - Updated **env** to **v0.20.41**
-
-![Storm Software's logo banner](https://public.storm-cdn.com/storm-software/banner-1280x320.gif)
-
-# Changelog for Stryke - CLI
 
 ## [0.12.33](https://github.com/storm-software/stryke/releases/tag/cli%400.12.33) (12/18/2025)
 
