@@ -1,6 +1,6 @@
 {
   "name": "@stryke/types",
-  "version": "0.10.25",
+  "version": "0.10.26",
   "type": "module",
   "description": "A package containing many base TypeScript type definitions that are shared across many projects.",
   "repository": {
@@ -129,9 +129,7 @@
   },
   "types": "./dist/index.d.cts",
   "typings": "dist/index.d.mts",
-  "files": [
-    "dist/**/*"
-  ],
+  "files": ["dist/**/*"],
   "keywords": [
     "stryke",
     "typescript",

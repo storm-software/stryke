@@ -2,6 +2,23 @@
 
 # Changelog for Stryke - Path
 
+## [0.23.0](https://github.com/storm-software/stryke/releases/tag/path%400.23.0) (12/18/2025)
+
+### Features
+
+- **path:** Added options to `appendPath` and improved `isParentPath` helpers
+  ([726a82f](https://github.com/storm-software/stryke/commit/726a82f))
+
+### Updated Dependencies
+
+- Updated **type-checks** to **v0.5.12**
+- Updated **convert** to **v0.6.27**
+- Updated **types** to **v0.10.26**
+
+![Storm Software's logo banner](https://public.storm-cdn.com/storm-software/banner-1280x320-optimized.gif)
+
+# Changelog for Stryke - Path
+
 ## [0.22.13](https://github.com/storm-software/stryke/releases/tag/path%400.22.13) (12/17/2025)
 
 ### Updated Dependencies

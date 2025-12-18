@@ -2,6 +2,17 @@
 
 # Changelog for Stryke - Cookie
 
+## [0.1.28](https://github.com/storm-software/stryke/releases/tag/cookie%400.1.28) (12/18/2025)
+
+### Updated Dependencies
+
+- Updated **type-checks** to **v0.5.12**
+- Updated **convert** to **v0.6.27**
+
+![Storm Software's logo banner](https://public.storm-cdn.com/storm-software/banner-1280x320-optimized.gif)
+
+# Changelog for Stryke - Cookie
+
 ## [0.1.27](https://github.com/storm-software/stryke/releases/tag/cookie%400.1.27) (12/17/2025)
 
 ### Updated Dependencies

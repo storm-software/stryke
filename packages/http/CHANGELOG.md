@@ -2,6 +2,17 @@
 
 # Changelog for Stryke - HTTP
 
+## [0.12.17](https://github.com/storm-software/stryke/releases/tag/http%400.12.17) (12/18/2025)
+
+### Updated Dependencies
+
+- Updated **type-checks** to **v0.5.12**
+- Updated **url** to **v0.3.18**
+
+![Storm Software's logo banner](https://public.storm-cdn.com/storm-software/banner-1280x320-optimized.gif)
+
+# Changelog for Stryke - HTTP
+
 ## [0.12.16](https://github.com/storm-software/stryke/releases/tag/http%400.12.16) (12/17/2025)
 
 ### Updated Dependencies
