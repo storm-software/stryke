@@ -69,7 +69,7 @@ jobs:
           gpg-private-key: ${{ secrets.STORM_BOT_GPG_PRIVATE_KEY }}
           gpg-passphrase: ${{ secrets.STORM_BOT_GPG_PASSPHRASE }}
           package-manager: pnpm
-          package-manager-version: 10.24.0
+          package-manager-version: 10.26.0
           storm-bot-github-token: ${{ secrets.STORM_BOT_GITHUB_TOKEN }}
 
       # Initializes the CodeQL tools for scanning.
