@@ -1,3 +1,16 @@
+![Storm Software's logo banner](https://public.storm-cdn.com/storm-software/optimized/banner-1280x320.gif)
+
+# Changelog for Stryke - Capnp
+
+## [0.12.48](https://github.com/storm-software/stryke/releases/tag/capnp%400.12.48) (12/18/2025)
+
+### Updated Dependencies
+
+- Updated **convert** to **v0.6.27**
+- Updated **types** to **v0.10.26**
+- Updated **path** to **v0.23.0**
+- Updated **fs** to **v0.33.23**
+
 ![Storm Software's logo banner](https://public.storm-cdn.com/storm-software/banner-1280x320-optimized.gif)
 
 # Changelog for Stryke - Capnp

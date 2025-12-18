@@ -1,3 +1,16 @@
+![Storm Software's logo banner](https://public.storm-cdn.com/storm-software/optimized/banner-1280x320.gif)
+
+# Changelog for Stryke - TRPC Next
+
+## [0.5.39](https://github.com/storm-software/stryke/releases/tag/trpc-next%400.5.39) (12/18/2025)
+
+### Updated Dependencies
+
+- Updated **types** to **v0.10.26**
+- Updated **path** to **v0.23.0**
+- Updated **env** to **v0.20.40**
+- Updated **url** to **v0.3.18**
+
 ![Storm Software's logo banner](https://public.storm-cdn.com/storm-software/banner-1280x320-optimized.gif)
 
 # Changelog for Stryke - TRPC Next

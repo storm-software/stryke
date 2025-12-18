@@ -1,3 +1,15 @@
+![Storm Software's logo banner](https://public.storm-cdn.com/storm-software/optimized/banner-1280x320.gif)
+
+# Changelog for Stryke - URL
+
+## [0.3.18](https://github.com/storm-software/stryke/releases/tag/url%400.3.18) (12/18/2025)
+
+### Updated Dependencies
+
+- Updated **type-checks** to **v0.5.12**
+- Updated **json** to **v0.9.30**
+- Updated **path** to **v0.23.0**
+
 ![Storm Software's logo banner](https://public.storm-cdn.com/storm-software/banner-1280x320-optimized.gif)
 
 # Changelog for Stryke - URL
