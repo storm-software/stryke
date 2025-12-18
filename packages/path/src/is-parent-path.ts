@@ -41,11 +41,11 @@ import { slash } from "./slash";
  */
 export function isParentPath(childPath: string, parentPath: string): boolean {
   const normalizedChild = slash(
-    childPath.replace(/\\/g, "/").replace(/\/$/, "")
-  );
+    childPath.replaceAll(/\\/g, "/").replace(/\/*$/, "")
+  )?.toLowerCase();
   const normalizedParent = slash(
-    parentPath.replace(/\\/g, "/").replace(/\/$/, "")
-  );
+    parentPath.replaceAll(/\\/g, "/").replace(/\/*$/, "")
+  )?.toLowerCase();
 
   return (
     normalizedChild !== normalizedParent &&

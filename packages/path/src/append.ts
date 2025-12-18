@@ -21,6 +21,15 @@ import { isParentPath } from "./is-parent-path";
 import { joinPaths } from "./join-paths";
 import { slash } from "./slash";
 
+export interface AppendPathOptions {
+  /**
+   * If `true`, the function will skip appending if the `childPath` is already a child of the `parentPath`.
+   *
+   * @defaultValue true
+   */
+  skipIfAlreadyParent?: boolean;
+}
+
 /**
  * If not already a parent path, append the base path from the beginning of the given child path.
  *
@@ -31,20 +40,31 @@ import { slash } from "./slash";
  *
  * appendPath("/user/dev/app.ts", "/user/dev");
  * // returns "/user/dev/app.ts"
+ *
+ * appendPath("docs/readme.md");
+ * // returns "<current_working_directory>/docs/readme.md"
+ *
+ * appendPath("src/index.ts", "/home/user/project", { skipIfAlreadyParent: false });
+ * // returns "/home/user/project/src/index.ts"
+ *
+ * appendPath("/home/user/project/src/index.ts", "/home/user/project", { skipIfAlreadyParent: false });
+ * // returns "/home/user/project/src/index.ts"
  * ```
  *
  * @param childPath - The child path to append to the {@link parentPath}
  * @param parentPath - The parent path to add the {@link childPath} to
+ * @param options - Options for appending the path
  * @returns The {@link parentPath} with the {@link childPath} appended
  */
 export function appendPath(
   childPath: string,
-  parentPath: string = cwd()
+  parentPath: string = cwd(),
+  options: AppendPathOptions = {}
 ): string {
   return slash(
-    !isParentPath(childPath, parentPath)
-      ? joinPaths(parentPath, childPath)
-      : childPath
+    options.skipIfAlreadyParent !== false && isParentPath(childPath, parentPath)
+      ? childPath
+      : joinPaths(parentPath, childPath)
   );
 }
 
