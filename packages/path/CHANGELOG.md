@@ -2,6 +2,19 @@
 
 # Changelog for Stryke - Path
 
+## [0.24.0](https://github.com/storm-software/stryke/releases/tag/path%400.24.0) (12/19/2025)
+
+### Features
+
+- **path:** Added the `commonPath` utility function
+  ([b1f4c43](https://github.com/storm-software/stryke/commit/b1f4c43))
+
+### Updated Dependencies
+
+- Updated **type-checks** to **v0.5.14**
+- Updated **convert** to **v0.6.29**
+- Updated **types** to **v0.10.28**
+
 ## [0.23.2](https://github.com/storm-software/stryke/releases/tag/path%400.23.2) (12/18/2025)
 
 ### Bug Fixes

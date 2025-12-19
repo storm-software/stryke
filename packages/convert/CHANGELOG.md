@@ -1,3 +1,14 @@
+![Storm Software's logo banner](https://public.storm-cdn.com/storm-software/banner-1280x320.gif)
+
+# Changelog for Stryke - Convert
+
+## [0.6.29](https://github.com/storm-software/stryke/releases/tag/convert%400.6.29) (12/19/2025)
+
+### Updated Dependencies
+
+- Updated **type-checks** to **v0.5.14**
+- Updated **types** to **v0.10.28**
+
 ![Storm Software's logo banner](https://public.storm-cdn.com/storm-software/optimized/banner-1280x320.gif)
 
 # Changelog for Stryke - Convert
@@ -13,10 +24,6 @@
 
 - Updated **type-checks** to **v0.5.13**
 - Updated **types** to **v0.10.27**
-
-![Storm Software's logo banner](https://public.storm-cdn.com/storm-software/banner-1280x320.gif)
-
-# Changelog for Stryke - Convert
 
 ## [0.6.27](https://github.com/storm-software/stryke/releases/tag/convert%400.6.27) (12/18/2025)
 

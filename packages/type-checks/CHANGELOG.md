@@ -1,3 +1,13 @@
+![Storm Software's logo banner](https://public.storm-cdn.com/storm-software/banner-1280x320.gif)
+
+# Changelog for Stryke - Type Checks
+
+## [0.5.14](https://github.com/storm-software/stryke/releases/tag/type-checks%400.5.14) (12/19/2025)
+
+### Updated Dependencies
+
+- Updated **types** to **v0.10.28**
+
 ![Storm Software's logo banner](https://public.storm-cdn.com/storm-software/optimized/banner-1280x320.gif)
 
 # Changelog for Stryke - Type Checks
@@ -12,10 +22,6 @@
 ### Updated Dependencies
 
 - Updated **types** to **v0.10.27**
-
-![Storm Software's logo banner](https://public.storm-cdn.com/storm-software/banner-1280x320.gif)
-
-# Changelog for Stryke - Type Checks
 
 ## [0.5.12](https://github.com/storm-software/stryke/releases/tag/type-checks%400.5.12) (12/18/2025)
 

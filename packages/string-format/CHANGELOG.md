@@ -1,3 +1,14 @@
+![Storm Software's logo banner](https://public.storm-cdn.com/storm-software/banner-1280x320.gif)
+
+# Changelog for Stryke - String Format
+
+## [0.12.29](https://github.com/storm-software/stryke/releases/tag/string-format%400.12.29) (12/19/2025)
+
+### Updated Dependencies
+
+- Updated **helpers** to **v0.9.31**
+- Updated **types** to **v0.10.28**
+
 ![Storm Software's logo banner](https://public.storm-cdn.com/storm-software/optimized/banner-1280x320.gif)
 
 # Changelog for Stryke - String Format
@@ -13,10 +24,6 @@
 
 - Updated **helpers** to **v0.9.30**
 - Updated **types** to **v0.10.27**
-
-![Storm Software's logo banner](https://public.storm-cdn.com/storm-software/banner-1280x320.gif)
-
-# Changelog for Stryke - String Format
 
 ## [0.12.27](https://github.com/storm-software/stryke/releases/tag/string-format%400.12.27) (12/18/2025)
 
