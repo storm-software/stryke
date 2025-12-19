@@ -24,6 +24,10 @@
       "require": "./dist/asset-extensions.cjs",
       "import": "./dist/asset-extensions.mjs"
     },
+    "./common": {
+      "require": "./dist/common.cjs",
+      "import": "./dist/common.mjs"
+    },
     "./correct-path": {
       "require": "./dist/correct-path.cjs",
       "import": "./dist/correct-path.mjs"

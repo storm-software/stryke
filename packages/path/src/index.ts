@@ -27,6 +27,7 @@
 
 export * from "./append";
 export * from "./asset-extensions";
+export * from "./common";
 export * from "./correct-path";
 export * from "./cwd";
 export * from "./delimiter";

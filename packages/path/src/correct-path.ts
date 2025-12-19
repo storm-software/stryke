@@ -249,3 +249,15 @@ export function withTrailingSlash(path: string): string {
 
   return result.endsWith("/") ? result : `${result}/`;
 }
+
+/**
+ * Removes a trailing slash from a path if it has one.
+ *
+ * @param path - The path to modify.
+ * @returns The modified path without a trailing slash.
+ */
+export function withoutTrailingSlash(path: string): string {
+  const result = correctPath(path);
+
+  return result.endsWith("/") ? result.slice(0, -1) : result;
+}
