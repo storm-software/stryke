@@ -1,3 +1,13 @@
+![Storm Software's logo banner](https://public.storm-cdn.com/storm-software/banner-1280x320.gif)
+
+# Changelog for Stryke - Hooks
+
+## [0.4.40](https://github.com/storm-software/stryke/releases/tag/hooks%400.4.40) (12/18/2025)
+
+### Updated Dependencies
+
+- Updated **env** to **v0.20.42**
+
 ![Storm Software's logo banner](https://public.storm-cdn.com/storm-software/optimized/banner-1280x320.gif)
 
 # Changelog for Stryke - Hooks
@@ -15,10 +25,6 @@
 - Updated **helpers** to **v0.9.30**
 - Updated **types** to **v0.10.27**
 - Updated **env** to **v0.20.41**
-
-![Storm Software's logo banner](https://public.storm-cdn.com/storm-software/banner-1280x320.gif)
-
-# Changelog for Stryke - Hooks
 
 ## [0.4.38](https://github.com/storm-software/stryke/releases/tag/hooks%400.4.38) (12/18/2025)
 

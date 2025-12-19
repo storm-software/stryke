@@ -1,3 +1,14 @@
+![Storm Software's logo banner](https://public.storm-cdn.com/storm-software/banner-1280x320.gif)
+
+# Changelog for Stryke - Path
+
+## [0.23.2](https://github.com/storm-software/stryke/releases/tag/path%400.23.2) (12/18/2025)
+
+### Bug Fixes
+
+- **path:** Resolve issue with comparing paths in `isParentPath` helper function
+  ([545d053](https://github.com/storm-software/stryke/commit/545d053))
+
 ![Storm Software's logo banner](https://public.storm-cdn.com/storm-software/optimized/banner-1280x320.gif)
 
 # Changelog for Stryke - Path
@@ -14,10 +25,6 @@
 - Updated **type-checks** to **v0.5.13**
 - Updated **convert** to **v0.6.28**
 - Updated **types** to **v0.10.27**
-
-![Storm Software's logo banner](https://public.storm-cdn.com/storm-software/banner-1280x320.gif)
-
-# Changelog for Stryke - Path
 
 ## [0.23.0](https://github.com/storm-software/stryke/releases/tag/path%400.23.0) (12/18/2025)
 

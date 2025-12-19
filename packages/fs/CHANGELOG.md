@@ -1,3 +1,13 @@
+![Storm Software's logo banner](https://public.storm-cdn.com/storm-software/banner-1280x320.gif)
+
+# Changelog for Stryke - Fs
+
+## [0.33.25](https://github.com/storm-software/stryke/releases/tag/fs%400.33.25) (12/18/2025)
+
+### Updated Dependencies
+
+- Updated **path** to **v0.23.2**
+
 ![Storm Software's logo banner](https://public.storm-cdn.com/storm-software/optimized/banner-1280x320.gif)
 
 # Changelog for Stryke - Fs
@@ -18,10 +28,6 @@
 - Updated **types** to **v0.10.27**
 - Updated **json** to **v0.9.31**
 - Updated **path** to **v0.23.1**
-
-![Storm Software's logo banner](https://public.storm-cdn.com/storm-software/banner-1280x320.gif)
-
-# Changelog for Stryke - Fs
 
 ## [0.33.23](https://github.com/storm-software/stryke/releases/tag/fs%400.33.23) (12/18/2025)
 

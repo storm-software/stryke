@@ -1,3 +1,13 @@
+![Storm Software's logo banner](https://public.storm-cdn.com/storm-software/banner-1280x320.gif)
+
+# Changelog for Stryke - Unique ID
+
+## [0.3.36](https://github.com/storm-software/stryke/releases/tag/unique-id%400.3.36) (12/18/2025)
+
+### Updated Dependencies
+
+- Updated **hash** to **v0.12.31**
+
 ![Storm Software's logo banner](https://public.storm-cdn.com/storm-software/optimized/banner-1280x320.gif)
 
 # Changelog for Stryke - Unique ID
@@ -12,10 +22,6 @@
 ### Updated Dependencies
 
 - Updated **hash** to **v0.12.30**
-
-![Storm Software's logo banner](https://public.storm-cdn.com/storm-software/banner-1280x320.gif)
-
-# Changelog for Stryke - Unique ID
 
 ## [0.3.34](https://github.com/storm-software/stryke/releases/tag/unique-id%400.3.34) (12/18/2025)
 
