@@ -68,7 +68,7 @@ catalog:
   cross-spawn: ^7.0.6
   defu: ^6.1.4
   dts-bundle-generator: ^9.5.1
-  esbuild: ^0.25.12
+  esbuild: ^0.25.0
   eslint: ^9.39.2
   eslint-flat-config-utils: ^2.1.4
   execa: ^9.6.1
