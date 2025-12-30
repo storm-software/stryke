@@ -2,6 +2,20 @@
 
 # Changelog for Stryke - Capnp
 
+## [0.12.52](https://github.com/storm-software/stryke/releases/tag/capnp%400.12.52) (12/30/2025)
+
+### Documentation
+
+- **monorepo:** Update `README.md` markdown files
+  ([634a715](https://github.com/storm-software/stryke/commit/634a715))
+
+### Updated Dependencies
+
+- Updated **convert** to **v0.6.30**
+- Updated **types** to **v0.10.29**
+- Updated **path** to **v0.24.1**
+- Updated **fs** to **v0.33.27**
+
 ## [0.12.51](https://github.com/storm-software/stryke/releases/tag/capnp%400.12.51) (12/19/2025)
 
 ### Updated Dependencies

@@ -1,3 +1,19 @@
+![Storm Software's logo banner](https://public.storm-cdn.com/storm-software/banner-1280x320.gif)
+
+# Changelog for Stryke - Types
+
+## [0.10.29](https://github.com/storm-software/stryke/releases/tag/types%400.10.29) (12/30/2025)
+
+### Miscellaneous
+
+- **types:** Added the `ReplaceObjectProperties` utility type
+  ([a67c9b8](https://github.com/storm-software/stryke/commit/a67c9b8))
+
+### Documentation
+
+- **monorepo:** Update `README.md` markdown files
+  ([634a715](https://github.com/storm-software/stryke/commit/634a715))
+
 ![Storm Software's logo banner](https://public.storm-cdn.com/storm-software/optimized/banner-1280x320.gif)
 
 # Changelog for Stryke - Types
@@ -8,10 +24,6 @@
 
 - **monorepo:** Update CDN URLs for banner assets
   ([5aefe1b](https://github.com/storm-software/stryke/commit/5aefe1b))
-
-![Storm Software's logo banner](https://public.storm-cdn.com/storm-software/banner-1280x320.gif)
-
-# Changelog for Stryke - Types
 
 ## [0.10.26](https://github.com/storm-software/stryke/releases/tag/types%400.10.26) (12/18/2025)
 

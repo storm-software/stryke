@@ -2,6 +2,23 @@
 
 # Changelog for Stryke - Fs
 
+## [0.33.27](https://github.com/storm-software/stryke/releases/tag/fs%400.33.27) (12/30/2025)
+
+### Documentation
+
+- **monorepo:** Update `README.md` markdown files
+  ([634a715](https://github.com/storm-software/stryke/commit/634a715))
+
+### Updated Dependencies
+
+- Updated **string-format** to **v0.12.30**
+- Updated **type-checks** to **v0.5.15**
+- Updated **convert** to **v0.6.30**
+- Updated **helpers** to **v0.9.32**
+- Updated **types** to **v0.10.29**
+- Updated **json** to **v0.9.33**
+- Updated **path** to **v0.24.1**
+
 ## [0.33.26](https://github.com/storm-software/stryke/releases/tag/fs%400.33.26) (12/19/2025)
 
 ### Updated Dependencies

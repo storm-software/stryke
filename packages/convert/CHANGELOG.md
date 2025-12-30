@@ -2,6 +2,18 @@
 
 # Changelog for Stryke - Convert
 
+## [0.6.30](https://github.com/storm-software/stryke/releases/tag/convert%400.6.30) (12/30/2025)
+
+### Documentation
+
+- **monorepo:** Update `README.md` markdown files
+  ([634a715](https://github.com/storm-software/stryke/commit/634a715))
+
+### Updated Dependencies
+
+- Updated **type-checks** to **v0.5.15**
+- Updated **types** to **v0.10.29**
+
 ## [0.6.29](https://github.com/storm-software/stryke/releases/tag/convert%400.6.29) (12/19/2025)
 
 ### Updated Dependencies

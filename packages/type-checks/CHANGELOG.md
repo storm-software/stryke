@@ -2,6 +2,22 @@
 
 # Changelog for Stryke - Type Checks
 
+## [0.5.15](https://github.com/storm-software/stryke/releases/tag/type-checks%400.5.15) (12/30/2025)
+
+### Miscellaneous
+
+- **type-checks:** Added `Array.isArray` to `isSetArray` check to improve typing
+  ([cdf8253](https://github.com/storm-software/stryke/commit/cdf8253))
+
+### Documentation
+
+- **monorepo:** Update `README.md` markdown files
+  ([634a715](https://github.com/storm-software/stryke/commit/634a715))
+
+### Updated Dependencies
+
+- Updated **types** to **v0.10.29**
+
 ## [0.5.14](https://github.com/storm-software/stryke/releases/tag/type-checks%400.5.14) (12/19/2025)
 
 ### Updated Dependencies
