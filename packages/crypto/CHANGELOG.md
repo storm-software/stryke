@@ -1,3 +1,14 @@
+![Storm Software's logo banner](https://public.storm-cdn.com/storm-software/banner-1280x320.gif)
+
+# Changelog for Stryke - Crypto
+
+## [0.5.30](https://github.com/storm-software/stryke/releases/tag/crypto%400.5.30) (12/19/2025)
+
+### Updated Dependencies
+
+- Updated **type-checks** to **v0.5.14**
+- Updated **convert** to **v0.6.29**
+
 ![Storm Software's logo banner](https://public.storm-cdn.com/storm-software/optimized/banner-1280x320.gif)
 
 # Changelog for Stryke - Crypto
@@ -13,10 +24,6 @@
 
 - Updated **type-checks** to **v0.5.13**
 - Updated **convert** to **v0.6.28**
-
-![Storm Software's logo banner](https://public.storm-cdn.com/storm-software/banner-1280x320.gif)
-
-# Changelog for Stryke - Crypto
 
 ## [0.5.28](https://github.com/storm-software/stryke/releases/tag/crypto%400.5.28) (12/18/2025)
 

@@ -1,3 +1,15 @@
+![Storm Software's logo banner](https://public.storm-cdn.com/storm-software/banner-1280x320.gif)
+
+# Changelog for Stryke - Helpers
+
+## [0.9.31](https://github.com/storm-software/stryke/releases/tag/helpers%400.9.31) (12/19/2025)
+
+### Updated Dependencies
+
+- Updated **type-checks** to **v0.5.14**
+- Updated **convert** to **v0.6.29**
+- Updated **types** to **v0.10.28**
+
 ![Storm Software's logo banner](https://public.storm-cdn.com/storm-software/optimized/banner-1280x320.gif)
 
 # Changelog for Stryke - Helpers
@@ -14,10 +26,6 @@
 - Updated **type-checks** to **v0.5.13**
 - Updated **convert** to **v0.6.28**
 - Updated **types** to **v0.10.27**
-
-![Storm Software's logo banner](https://public.storm-cdn.com/storm-software/banner-1280x320.gif)
-
-# Changelog for Stryke - Helpers
 
 ## [0.9.29](https://github.com/storm-software/stryke/releases/tag/helpers%400.9.29) (12/18/2025)
 
