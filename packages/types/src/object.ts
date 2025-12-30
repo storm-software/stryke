@@ -769,3 +769,12 @@ export type NullableDeepValue<
   TObject extends Record<string, unknown>,
   TPath extends DeepKey<TObject>
 > = Nullable<GetWithPath<TObject, ToPath<TPath>>>;
+
+/**
+ * Recursively traverse an object type and replace all property types with `TProperty`.
+ */
+export type ReplaceObjectProperties<TObject, TProperty> = TObject extends object
+  ? {
+      [K in keyof TObject]: ReplaceObjectProperties<TObject[K], TProperty>;
+    }
+  : TProperty;
