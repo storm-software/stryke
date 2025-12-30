@@ -25,5 +25,5 @@ import { isArrayLike } from "./is-array-like";
  * @returns An indicator specifying if the object provided is a non-empty array-like object
  */
 export const isSetArray = (value: any): boolean => {
-  return isArrayLike(value) && value.length > 0;
+  return (Array.isArray(value) || isArrayLike(value)) && value.length > 0;
 };
