@@ -31,15 +31,36 @@ const htmlEscapes: Record<string, string> = {
  *
  * @example
  * ```ts
- * escape('This is a <div> element.'); // returns 'This is a &lt;div&gt; element.'
- * escape('This is a "quote"'); // returns 'This is a &quot;quote&quot;'
- * escape("This is a 'quote'"); // returns 'This is a &#39;quote&#39;'
- * escape('This is a & symbol'); // returns 'This is a &amp; symbol'
+ * escapeHtml('This is a <div> element.'); // returns 'This is a &lt;div&gt; element.'
+ * escapeHtml('This is a "quote"'); // returns 'This is a &quot;quote&quot;'
+ * escapeHtml("This is a 'quote'"); // returns 'This is a &#39;quote&#39;'
+ * escapeHtml('This is a & symbol'); // returns 'This is a &amp; symbol'
  * ```
  *
  * @param str - The string to escape.
  * @returns Returns the escaped string.
  */
-export function escape(str: string): string {
+export function escapeHtml(str: string): string {
   return str.replace(/["&'<>]/g, match => htmlEscapes[match] || "");
+}
+
+/**
+ * Escapes RegExp special characters in the given string.
+ *
+ * @example
+ * ```ts
+ * escapeRegExp('what'); // returns 'what'
+ * escapeRegExp('what?'); // returns 'what\?'
+ * escapeRegExp('Price is $5.00'); // returns 'Price is \$5\.00'
+ * escapeRegExp('Use * as a wildcard'); // returns 'Use \* as a wildcard'
+ * ```
+ *
+ * @param str - The string to escape.
+ * @returns Returns the escaped string.
+ */
+export function escapeRegExp(str: string) {
+  // Escape characters with special meaning either inside or outside character sets.
+  // Use a simple backslash escape when it’s always valid, and a `\xnn` escape when
+  // the simpler form would be disallowed by Unicode patterns’ stricter grammar.
+  return str.replace(/[|\\{}()[\]^$+*?.]/g, "\\$&").replace(/-/g, "\\x2d");
 }
