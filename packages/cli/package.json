@@ -88,6 +88,10 @@
       "require": "./dist/utils/strip-ansi.cjs",
       "import": "./dist/utils/strip-ansi.mjs"
     },
+    "./utils/tree": {
+      "require": "./dist/utils/tree.cjs",
+      "import": "./dist/utils/tree.mjs"
+    },
     "./*": "./*"
   },
   "types": "./dist/index.d.cts",
