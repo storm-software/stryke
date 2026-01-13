@@ -2,6 +2,26 @@
 
 # Changelog for Stryke - CLI
 
+## [0.13.0](https://github.com/storm-software/stryke/releases/tag/cli%400.13.0) (01/13/2026)
+
+### Miscellaneous
+
+- **cli:** Add `utils/tree` export to `package.json` file
+  ([a6a78acc](https://github.com/storm-software/stryke/commit/a6a78acc))
+
+### Features
+
+- **cli:** Added the `formatTree` helper function
+  ([8be59721](https://github.com/storm-software/stryke/commit/8be59721))
+
+### Updated Dependencies
+
+- Updated **string-format** to **v0.12.31**
+- Updated **type-checks** to **v0.5.16**
+- Updated **convert** to **v0.6.31**
+- Updated **types** to **v0.10.30**
+- Updated **env** to **v0.20.45**
+
 ## [0.12.37](https://github.com/storm-software/stryke/releases/tag/cli%400.12.37) (12/30/2025)
 
 ### Documentation
