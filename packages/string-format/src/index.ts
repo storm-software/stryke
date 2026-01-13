@@ -52,3 +52,4 @@ export * from "./strip-indents";
 export * from "./title-case";
 export * from "./unescape";
 export * from "./upper-case-first";
+export * from "./vowels";
