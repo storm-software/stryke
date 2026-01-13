@@ -2,6 +2,19 @@
 
 # Changelog for Stryke - Path
 
+## [0.24.1](https://github.com/storm-software/stryke/releases/tag/path%400.24.1) (12/30/2025)
+
+### Documentation
+
+- **monorepo:** Update `README.md` markdown files
+  ([634a715](https://github.com/storm-software/stryke/commit/634a715))
+
+### Updated Dependencies
+
+- Updated **type-checks** to **v0.5.15**
+- Updated **convert** to **v0.6.30**
+- Updated **types** to **v0.10.29**
+
 ## [0.24.0](https://github.com/storm-software/stryke/releases/tag/path%400.24.0) (12/19/2025)
 
 ### Features

@@ -2,6 +2,20 @@
 
 # Changelog for Stryke - Hooks
 
+## [0.4.42](https://github.com/storm-software/stryke/releases/tag/hooks%400.4.42) (12/30/2025)
+
+### Documentation
+
+- **monorepo:** Update `README.md` markdown files
+  ([634a715](https://github.com/storm-software/stryke/commit/634a715))
+
+### Updated Dependencies
+
+- Updated **type-checks** to **v0.5.15**
+- Updated **helpers** to **v0.9.32**
+- Updated **types** to **v0.10.29**
+- Updated **env** to **v0.20.44**
+
 ## [0.4.41](https://github.com/storm-software/stryke/releases/tag/hooks%400.4.41) (12/19/2025)
 
 ### Updated Dependencies

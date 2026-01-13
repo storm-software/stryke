@@ -2,6 +2,17 @@
 
 # Changelog for Stryke - Unique ID
 
+## [0.3.38](https://github.com/storm-software/stryke/releases/tag/unique-id%400.3.38) (12/30/2025)
+
+### Documentation
+
+- **monorepo:** Update `README.md` markdown files
+  ([634a715](https://github.com/storm-software/stryke/commit/634a715))
+
+### Updated Dependencies
+
+- Updated **hash** to **v0.12.33**
+
 ## [0.3.37](https://github.com/storm-software/stryke/releases/tag/unique-id%400.3.37) (12/19/2025)
 
 ### Updated Dependencies

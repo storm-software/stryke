@@ -2,6 +2,21 @@
 
 # Changelog for Stryke - CLI
 
+## [0.12.37](https://github.com/storm-software/stryke/releases/tag/cli%400.12.37) (12/30/2025)
+
+### Documentation
+
+- **monorepo:** Update `README.md` markdown files
+  ([634a715](https://github.com/storm-software/stryke/commit/634a715))
+
+### Updated Dependencies
+
+- Updated **string-format** to **v0.12.30**
+- Updated **type-checks** to **v0.5.15**
+- Updated **convert** to **v0.6.30**
+- Updated **types** to **v0.10.29**
+- Updated **env** to **v0.20.44**
+
 ## [0.12.36](https://github.com/storm-software/stryke/releases/tag/cli%400.12.36) (12/19/2025)
 
 ### Updated Dependencies

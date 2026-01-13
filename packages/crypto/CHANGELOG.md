@@ -2,6 +2,18 @@
 
 # Changelog for Stryke - Crypto
 
+## [0.5.31](https://github.com/storm-software/stryke/releases/tag/crypto%400.5.31) (12/30/2025)
+
+### Documentation
+
+- **monorepo:** Update `README.md` markdown files
+  ([634a715](https://github.com/storm-software/stryke/commit/634a715))
+
+### Updated Dependencies
+
+- Updated **type-checks** to **v0.5.15**
+- Updated **convert** to **v0.6.30**
+
 ## [0.5.30](https://github.com/storm-software/stryke/releases/tag/crypto%400.5.30) (12/19/2025)
 
 ### Updated Dependencies

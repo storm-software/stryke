@@ -2,6 +2,19 @@
 
 # Changelog for Stryke - URL
 
+## [0.3.22](https://github.com/storm-software/stryke/releases/tag/url%400.3.22) (12/30/2025)
+
+### Documentation
+
+- **monorepo:** Update `README.md` markdown files
+  ([634a715](https://github.com/storm-software/stryke/commit/634a715))
+
+### Updated Dependencies
+
+- Updated **type-checks** to **v0.5.15**
+- Updated **json** to **v0.9.33**
+- Updated **path** to **v0.24.1**
+
 ## [0.3.21](https://github.com/storm-software/stryke/releases/tag/url%400.3.21) (12/19/2025)
 
 ### Updated Dependencies

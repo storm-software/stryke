@@ -2,6 +2,18 @@
 
 # Changelog for Stryke - HTTP
 
+## [0.12.21](https://github.com/storm-software/stryke/releases/tag/http%400.12.21) (12/30/2025)
+
+### Documentation
+
+- **monorepo:** Update `README.md` markdown files
+  ([634a715](https://github.com/storm-software/stryke/commit/634a715))
+
+### Updated Dependencies
+
+- Updated **type-checks** to **v0.5.15**
+- Updated **url** to **v0.3.22**
+
 ## [0.12.20](https://github.com/storm-software/stryke/releases/tag/http%400.12.20) (12/19/2025)
 
 ### Updated Dependencies

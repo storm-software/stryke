@@ -2,6 +2,18 @@
 
 # Changelog for Stryke - String Format
 
+## [0.12.30](https://github.com/storm-software/stryke/releases/tag/string-format%400.12.30) (12/30/2025)
+
+### Documentation
+
+- **monorepo:** Update `README.md` markdown files
+  ([634a715](https://github.com/storm-software/stryke/commit/634a715))
+
+### Updated Dependencies
+
+- Updated **helpers** to **v0.9.32**
+- Updated **types** to **v0.10.29**
+
 ## [0.12.29](https://github.com/storm-software/stryke/releases/tag/string-format%400.12.29) (12/19/2025)
 
 ### Updated Dependencies

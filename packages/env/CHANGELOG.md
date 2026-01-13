@@ -2,6 +2,20 @@
 
 # Changelog for Stryke - Env
 
+## [0.20.44](https://github.com/storm-software/stryke/releases/tag/env%400.20.44) (12/30/2025)
+
+### Documentation
+
+- **monorepo:** Update `README.md` markdown files
+  ([634a715](https://github.com/storm-software/stryke/commit/634a715))
+
+### Updated Dependencies
+
+- Updated **string-format** to **v0.12.30**
+- Updated **convert** to **v0.6.30**
+- Updated **path** to **v0.24.1**
+- Updated **fs** to **v0.33.27**
+
 ## [0.20.43](https://github.com/storm-software/stryke/releases/tag/env%400.20.43) (12/19/2025)
 
 ### Updated Dependencies

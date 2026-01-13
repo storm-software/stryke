@@ -2,6 +2,19 @@
 
 # Changelog for Stryke - Helpers
 
+## [0.9.32](https://github.com/storm-software/stryke/releases/tag/helpers%400.9.32) (12/30/2025)
+
+### Documentation
+
+- **monorepo:** Update `README.md` markdown files
+  ([634a715](https://github.com/storm-software/stryke/commit/634a715))
+
+### Updated Dependencies
+
+- Updated **type-checks** to **v0.5.15**
+- Updated **convert** to **v0.6.30**
+- Updated **types** to **v0.10.29**
+
 ## [0.9.31](https://github.com/storm-software/stryke/releases/tag/helpers%400.9.31) (12/19/2025)
 
 ### Updated Dependencies

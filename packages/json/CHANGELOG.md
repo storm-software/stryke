@@ -2,6 +2,18 @@
 
 # Changelog for Stryke - JSON
 
+## [0.9.33](https://github.com/storm-software/stryke/releases/tag/json%400.9.33) (12/30/2025)
+
+### Documentation
+
+- **monorepo:** Update `README.md` markdown files
+  ([634a715](https://github.com/storm-software/stryke/commit/634a715))
+
+### Updated Dependencies
+
+- Updated **type-checks** to **v0.5.15**
+- Updated **types** to **v0.10.29**
+
 ## [0.9.32](https://github.com/storm-software/stryke/releases/tag/json%400.9.32) (12/19/2025)
 
 ### Updated Dependencies
