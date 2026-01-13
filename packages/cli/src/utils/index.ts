@@ -22,3 +22,4 @@ export * from "./color";
 export * from "./format";
 export * from "./link";
 export * from "./strip-ansi";
+export * from "./tree";
