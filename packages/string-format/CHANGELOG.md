@@ -2,6 +2,13 @@
 
 # Changelog for Stryke - String Format
 
+## [0.13.0](https://github.com/storm-software/stryke/releases/tag/string-format%400.13.0) (01/13/2026)
+
+### Features
+
+- **string-format:** Added the `isVowel` and `getIndefiniteArticle` helpers
+  ([6a7df78f](https://github.com/storm-software/stryke/commit/6a7df78f))
+
 ## [0.12.31](https://github.com/storm-software/stryke/releases/tag/string-format%400.12.31) (01/13/2026)
 
 ### Updated Dependencies

@@ -1,6 +1,6 @@
 {
   "name": "@stryke/string-format",
-  "version": "0.12.31",
+  "version": "0.13.0",
   "type": "module",
   "description": "A package containing utility functions to transform strings into various formats.",
   "repository": {
@@ -123,6 +123,10 @@
     "./upper-case-first": {
       "require": "./dist/upper-case-first.cjs",
       "import": "./dist/upper-case-first.mjs"
+    },
+    "./vowels": {
+      "require": "./dist/vowels.cjs",
+      "import": "./dist/vowels.mjs"
     },
     "./*": "./*"
   },
