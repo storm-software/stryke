@@ -22,28 +22,28 @@ catalog:
   '@prisma/generator-helper': ^6.19.1
   '@prisma/internals': ^6.19.1
   '@prisma/prisma-schema-wasm': ^6.6.0-41.9061db3b0058e3d3731c6fe68a1b77061bed4861
-  '@storm-software/build-tools': ^0.158.74
-  '@storm-software/config': ^1.134.74
-  '@storm-software/config-tools': ^1.188.74
-  '@storm-software/cspell': ^0.45.73
-  '@storm-software/esbuild': ^0.53.74
-  '@storm-software/eslint': ^0.169.75
-  '@storm-software/git-tools': ^2.124.57
-  '@storm-software/linting-tools': ^1.132.74
-  '@storm-software/markdownlint': ^0.30.73
-  '@storm-software/pnpm-tools': ^0.6.76
-  '@storm-software/prettier': ^0.57.73
-  '@storm-software/testing-tools': ^1.119.73
-  '@storm-software/tsconfig': ^0.47.73
-  '@storm-software/tsdoc': ^0.13.73
+  '@storm-software/build-tools': ^0.158.75
+  '@storm-software/config': ^1.134.75
+  '@storm-software/config-tools': ^1.188.75
+  '@storm-software/cspell': ^0.45.74
+  '@storm-software/esbuild': ^0.53.75
+  '@storm-software/eslint': ^0.169.76
+  '@storm-software/git-tools': ^2.124.58
+  '@storm-software/linting-tools': ^1.132.75
+  '@storm-software/markdownlint': ^0.30.74
+  '@storm-software/pnpm-tools': ^0.6.77
+  '@storm-software/prettier': ^0.57.74
+  '@storm-software/testing-tools': ^1.119.74
+  '@storm-software/tsconfig': ^0.47.74
+  '@storm-software/tsdoc': ^0.13.74
   '@storm-software/unbuild': ^0.57.71
-  '@storm-software/untyped': ^0.24.55
-  '@storm-software/workspace-tools': ^1.294.20
+  '@storm-software/untyped': ^0.24.56
+  '@storm-software/workspace-tools': ^1.294.21
   '@swc-node/register': ^1.11.1
   '@swc/core': ^1.15.8
   '@swc/helpers': ^0.5.18
   '@swc/wasm': ^1.10.14
-  '@tanstack/react-query': ^5.90.15
+  '@tanstack/react-query': ^5.90.16
   '@tanstack/react-query-devtools': ^5.70.0
   '@taplo/cli': ^0.7.0
   '@trpc/client': ^11.8.1
@@ -53,9 +53,9 @@ catalog:
   '@types/cross-spawn': ^6.0.6
   '@types/figlet': ^1.7.0
   '@types/jest': 30.0.0
-  '@types/node': ^24.10.4
+  '@types/node': ^24.10.7
   '@types/pluralize': ^0.0.33
-  '@types/react': ^19.2.7
+  '@types/react': ^19.2.8
   '@types/react-dom': ^19.2.3
   '@types/react-native': 0.72.8
   '@types/semver': ^7.7.1
@@ -63,7 +63,7 @@ catalog:
   capnp-es: ^0.0.11
   chalk: ^5.6.2
   commander: ^14.0.2
-  conventional-changelog-storm-software: ^0.3.74
+  conventional-changelog-storm-software: ^0.3.75
   copyfiles: ^2.4.1
   cross-spawn: ^7.0.6
   defu: ^6.1.4
@@ -113,13 +113,13 @@ catalog:
   tslib: ^2.8.1
   tsx: ^4.21.0
   typescript: ^5.9.3
-  ufo: ^1.6.1
+  ufo: ^1.6.2
   unbuild: ^3.3.1
-  undici: ^7.16.0
-  undici-types: ^7.16.0
+  undici: ^7.18.2
+  undici-types: ^7.18.2
   verdaccio: ^6.2.4
   yaml: ^2.8.2
-  zod: ^4.2.1
+  zod: ^4.3.5
   zx: ^8.8.5
 
 configDependencies:

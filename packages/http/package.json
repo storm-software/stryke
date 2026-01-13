@@ -55,12 +55,12 @@
     "@stryke/type-checks": "workspace:*",
     "@stryke/url": "workspace:*",
     "defu": "catalog:",
-    "undici": "^7.16.0"
+    "undici": "^7.18.2"
   },
   "devDependencies": {
     "@types/node": "catalog:",
     "tsdown": "catalog:",
-    "undici-types": "^7.16.0"
+    "undici-types": "^7.18.2"
   },
   "publishConfig": {
     "access": "public"
