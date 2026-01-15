@@ -124,6 +124,10 @@
       "require": "./dist/upper-case-first.cjs",
       "import": "./dist/upper-case-first.mjs"
     },
+    "./vowels": {
+      "require": "./dist/vowels.cjs",
+      "import": "./dist/vowels.mjs"
+    },
     "./*": "./*"
   },
   "types": "./dist/index.d.cts",
