@@ -29,7 +29,7 @@ function innerFormatTree(
   result: string
 ): string {
   let entityPrefix = isTail === true ? "└── " : "├── ";
-  let contentPrefix = isTail === true ? "    " : "|   ";
+  let contentPrefix = isTail === true ? "    " : "│   ";
   if (isHead === true) {
     entityPrefix = "";
     contentPrefix = "";
