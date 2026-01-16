@@ -109,18 +109,20 @@ export function stripStars(path?: string) {
 
   let found = false;
 
-  return path.split("/").reduce((ret, segment) => {
-    if (!segment?.trim()) {
-      return ret;
-    }
+  return `${path.startsWith("/") ? "/" : ""}${path
+    .split("/")
+    .reduce((ret, segment) => {
+      if (!segment?.trim()) {
+        return ret;
+      }
 
-    if (found || segment.includes("*")) {
-      found = true;
-      return ret;
-    }
+      if (found || segment.includes("*")) {
+        found = true;
+        return ret;
+      }
 
-    return ret + (ret ? `/${segment}` : segment);
-  }, "");
+      return ret + (ret ? `/${segment}` : segment);
+    }, "")}`;
 }
 
 /**
