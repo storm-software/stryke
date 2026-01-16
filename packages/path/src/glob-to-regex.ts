@@ -77,7 +77,7 @@ export function globToRegex(
   let regex = "";
   let inGroup = false;
   for (let i = 0; i < glob.length; i++) {
-    let starCount = 1;
+    let count = 1;
     switch (glob[i]) {
       case "/":
       case "$":
@@ -127,27 +127,26 @@ export function globToRegex(
         break;
 
       case "*":
-        starCount = 1;
         while (glob[i + 1] === "*") {
-          starCount++;
+          count++;
           i++;
         }
 
         if (options.globstar === false) {
           regex += ".*";
+        } else if (
+          count > 1 &&
+          i - count >= 0 &&
+          (glob[i - count] === "/" || glob[i - count] === undefined) &&
+          i + 1 < glob.length &&
+          (glob[i + 1] === "/" || glob[i + 1] === undefined)
+        ) {
+          regex += "((?:[^\/]*(?:\/|$))*)";
+          i++;
         } else {
-          const isGlobstar =
-            starCount > 1 &&
-            (glob[i - 1] === "/" || glob[i - 1] === undefined) &&
-            (glob[i + 1] === "/" || glob[i + 1] === undefined);
-
-          if (isGlobstar) {
-            regex += "((?:[^\/]*(?:\/|$))*)";
-            i++;
-          } else {
-            regex += "([^\/]*)";
-          }
+          regex += "([^\/]*)";
         }
+
         break;
 
       case undefined:
