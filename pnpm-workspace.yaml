@@ -36,7 +36,7 @@ catalog:
   '@storm-software/testing-tools': ^1.119.74
   '@storm-software/tsconfig': ^0.47.74
   '@storm-software/tsdoc': ^0.13.74
-  '@storm-software/unbuild': ^0.57.71
+  '@storm-software/unbuild': ^0.57.80
   '@storm-software/untyped': ^0.24.61
   '@storm-software/workspace-tools': ^1.294.26
   '@swc-node/register': ^1.11.1
