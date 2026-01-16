@@ -2,6 +2,21 @@
 
 # Changelog for Stryke - CLI
 
+## [0.13.2](https://github.com/storm-software/stryke/releases/tag/cli%400.13.2) (01/15/2026)
+
+### Bug Fixes
+
+- **cli:** Resolve incorrect usage of verticle line character in tree
+  ([eadfbc59](https://github.com/storm-software/stryke/commit/eadfbc59))
+
+### Updated Dependencies
+
+- Updated **string-format** to **v0.13.1**
+- Updated **type-checks** to **v0.5.17**
+- Updated **convert** to **v0.6.32**
+- Updated **types** to **v0.10.31**
+- Updated **env** to **v0.20.47**
+
 ## [0.13.1](https://github.com/storm-software/stryke/releases/tag/cli%400.13.1) (01/13/2026)
 
 ### Updated Dependencies
