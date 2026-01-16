@@ -48,6 +48,10 @@
       "require": "./dist/find.cjs",
       "import": "./dist/find.mjs"
     },
+    "./glob-to-regex": {
+      "require": "./dist/glob-to-regex.cjs",
+      "import": "./dist/glob-to-regex.mjs"
+    },
     "./is-parent-path": {
       "require": "./dist/is-parent-path.cjs",
       "import": "./dist/is-parent-path.mjs"

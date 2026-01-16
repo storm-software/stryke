@@ -32,6 +32,7 @@ export * from "./correct-path";
 export * from "./cwd";
 export * from "./delimiter";
 export * from "./file-path-fns";
+export * from "./glob-to-regex";
 export * from "./is-parent-path";
 export * from "./is-root-dir";
 export * from "./join-paths";
