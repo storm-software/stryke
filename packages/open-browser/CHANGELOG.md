@@ -2,6 +2,13 @@
 
 # Changelog for Stryke - Open Browser
 
+## [0.2.33](https://github.com/storm-software/stryke/releases/tag/open-browser%400.2.33) (01/16/2026)
+
+### Miscellaneous
+
+- **monorepo:** Update `@storm-software/unbuild` to v0.57.80
+  ([9b0b6fc1](https://github.com/storm-software/stryke/commit/9b0b6fc1))
+
 ## [0.2.31](https://github.com/storm-software/stryke/releases/tag/open-browser%400.2.31) (01/15/2026)
 
 ### Miscellaneous

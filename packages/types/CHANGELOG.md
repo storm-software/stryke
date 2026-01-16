@@ -2,6 +2,13 @@
 
 # Changelog for Stryke - Types
 
+## [0.10.33](https://github.com/storm-software/stryke/releases/tag/types%400.10.33) (01/16/2026)
+
+### Miscellaneous
+
+- **monorepo:** Update `@storm-software/unbuild` to v0.57.80
+  ([9b0b6fc1](https://github.com/storm-software/stryke/commit/9b0b6fc1))
+
 ## [0.10.31](https://github.com/storm-software/stryke/releases/tag/types%400.10.31) (01/15/2026)
 
 ### Miscellaneous

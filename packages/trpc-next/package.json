@@ -1,6 +1,6 @@
 {
   "name": "@stryke/trpc-next",
-  "version": "0.5.48",
+  "version": "0.5.49",
   "type": "module",
   "description": "A package to help in using tRPC in modern NextJs applications.",
   "repository": {
