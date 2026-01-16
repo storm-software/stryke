@@ -2,6 +2,13 @@
 
 # Changelog for Stryke - Hash
 
+## [0.12.37](https://github.com/storm-software/stryke/releases/tag/hash%400.12.37) (01/16/2026)
+
+### Updated Dependencies
+
+- Updated **convert** to **v0.6.33**
+- Updated **fs** to **v0.33.31**
+
 ## [0.12.36](https://github.com/storm-software/stryke/releases/tag/hash%400.12.36) (01/15/2026)
 
 ### Updated Dependencies
