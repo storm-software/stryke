@@ -2,6 +2,19 @@
 
 # Changelog for Stryke - Path
 
+## [0.24.4](https://github.com/storm-software/stryke/releases/tag/path%400.24.4) (01/16/2026)
+
+### Bug Fixes
+
+- **path:** Resolve issue with missing slash in `stripStars` result
+  ([04b17455](https://github.com/storm-software/stryke/commit/04b17455))
+
+### Updated Dependencies
+
+- Updated **type-checks** to **v0.5.18**
+- Updated **convert** to **v0.6.33**
+- Updated **types** to **v0.10.32**
+
 ## [0.24.3](https://github.com/storm-software/stryke/releases/tag/path%400.24.3) (01/15/2026)
 
 ### Updated Dependencies
