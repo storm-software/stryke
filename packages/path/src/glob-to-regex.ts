@@ -74,19 +74,11 @@ export function globToRegex(
     throw new TypeError("A string was not provided as a glob pattern.");
   }
 
-  const str = String(glob);
   let regex = "";
-
   let inGroup = false;
-  let char: string | undefined;
-  for (let i = 0, len = str.length; i < len; i++) {
-    char = str[i];
-
-    const prevChar = str[i - 1];
-    const nextChar = str[i + 1];
+  for (let i = 0; i < glob.length; i++) {
     let starCount = 1;
-
-    switch (char) {
+    switch (glob[i]) {
       case "/":
       case "$":
       case "^":
@@ -97,7 +89,7 @@ export function globToRegex(
       case "=":
       case "!":
       case "|":
-        regex += `\\${char}`;
+        regex += `\\${glob[i]}`;
         break;
 
       case "?":
@@ -109,7 +101,7 @@ export function globToRegex(
       case "[":
       case "]":
         if (options.extended !== false) {
-          regex += char;
+          regex += glob[i];
         }
         break;
 
@@ -131,12 +123,12 @@ export function globToRegex(
         if (inGroup) {
           regex += "|";
         }
-        regex += `\\${char}`;
+        regex += `\\${glob[i]}`;
         break;
 
       case "*":
         starCount = 1;
-        while (str[i + 1] === "*") {
+        while (glob[i + 1] === "*") {
           starCount++;
           i++;
         }
@@ -146,21 +138,21 @@ export function globToRegex(
         } else {
           const isGlobstar =
             starCount > 1 &&
-            (prevChar === "/" || prevChar === undefined) &&
-            (nextChar === "/" || nextChar === undefined);
+            (glob[i - 1] === "/" || glob[i - 1] === undefined) &&
+            (glob[i + 1] === "/" || glob[i + 1] === undefined);
 
           if (isGlobstar) {
-            regex += "((?:[^/]*(?:\/|$))*)?";
+            regex += "((?:[^\/]*(?:\/|$))*)";
             i++;
           } else {
-            regex += "([^/]*)";
+            regex += "([^\/]*)";
           }
         }
         break;
 
       case undefined:
       default:
-        regex += char;
+        regex += glob[i];
     }
   }
 
