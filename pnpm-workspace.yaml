@@ -43,7 +43,7 @@ catalog:
   '@swc/core': ^1.15.8
   '@swc/helpers': ^0.5.18
   '@swc/wasm': ^1.10.14
-  '@tanstack/react-query': ^5.90.17
+  '@tanstack/react-query': ^5.90.18
   '@tanstack/react-query-devtools': ^5.70.0
   '@taplo/cli': ^0.7.0
   '@trpc/client': ^11.8.1
@@ -53,7 +53,7 @@ catalog:
   '@types/cross-spawn': ^6.0.6
   '@types/figlet': ^1.7.0
   '@types/jest': 30.0.0
-  '@types/node': ^24.10.8
+  '@types/node': ^24.10.9
   '@types/pluralize': ^0.0.33
   '@types/react': ^19.2.8
   '@types/react-dom': ^19.2.3
