@@ -89,7 +89,11 @@ export const createNodesV2: CreateNodesV2<StrykePackageBuildPluginOptions> = [
 
               targets.build ??= {
                 cache: true,
-                inputs: ["typescript", "^production"],
+                inputs: [
+                  "typescript",
+                  "^production",
+                  "{workspaceRoot}/tools/config/tsdown.config.ts"
+                ],
                 outputs: ["{workspaceRoot}/dist/{projectRoot}"],
                 dependsOn: ["^build"],
                 command: `tsdown --config \"${
@@ -120,7 +124,11 @@ export const createNodesV2: CreateNodesV2<StrykePackageBuildPluginOptions> = [
 
               targets["build-base"] ??= {
                 cache: true,
-                inputs: ["typescript", "^production"],
+                inputs: [
+                  "typescript",
+                  "^production",
+                  "{workspaceRoot}/tools/config/tsdown.config.ts"
+                ],
                 outputs: ["{workspaceRoot}/dist/{projectRoot}"],
                 command: `tsdown \"src/**/*.ts\" --config \"../../tools/config/tsdown.config.ts\" --cwd \"${join(
                   context.workspaceRoot,

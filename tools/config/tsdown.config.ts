@@ -34,7 +34,7 @@ export const DEFAULT_OPTIONS: Omit<Partial<UserConfig>, "name"> = {
   sourcemap: false,
   platform: "node",
   tsconfig: "./tsconfig.json",
-  minify: true,
+  minify: false,
   dts: true,
   shims: true,
   fixedExtension: true,
