@@ -2,6 +2,13 @@
 
 # Changelog for Stryke - Open Browser
 
+## [0.2.34](https://github.com/storm-software/stryke/releases/tag/open-browser%400.2.34) (01/20/2026)
+
+### Miscellaneous
+
+- **monorepo:** Update workspace packages' dependencies
+  ([dd43b0d8](https://github.com/storm-software/stryke/commit/dd43b0d8))
+
 ## [0.2.33](https://github.com/storm-software/stryke/releases/tag/open-browser%400.2.33) (01/16/2026)
 
 ### Miscellaneous
