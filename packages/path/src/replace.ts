@@ -17,6 +17,7 @@
  ------------------------------------------------------------------- */
 
 import { cwd } from "./cwd";
+import type { FindFileExtensionOptions } from "./file-path-fns";
 import {
   findFileDotExtensionSafe,
   findFileExtensionSafe
@@ -61,11 +62,15 @@ export function replacePath(
  * @param replacement - The value (or an empty string) to replace the current extension with
  * @returns The path with the replaced extension
  */
-export function replaceExtension(path: string, replacement = ""): string {
+export function replaceExtension(
+  path: string,
+  replacement = "",
+  options?: FindFileExtensionOptions
+): string {
   return path.replace(
     !replacement || replacement.includes(".")
-      ? findFileDotExtensionSafe(path)
-      : findFileExtensionSafe(path),
+      ? findFileDotExtensionSafe(path, options)
+      : findFileExtensionSafe(path, options),
     replacement
   );
 }

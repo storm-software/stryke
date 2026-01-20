@@ -18,13 +18,18 @@
 
 import { isSetString } from "@stryke/type-checks/is-set-string";
 import { EMPTY_STRING } from "@stryke/types/base";
+import _path from "node:path";
 import { normalizeString, normalizeWindowsPath } from "./correct-path";
 import { cwd as currentDir } from "./cwd";
 import { isAbsolute, isAbsolutePath } from "./is-type";
 import { joinPaths } from "./join-paths";
-import { FILE_EXTENSION_REGEX, ROOT_FOLDER_REGEX } from "./regex";
+import {
+  FILE_EXTENSION_REGEX,
+  FULL_FILE_EXTENSION_REGEX,
+  ROOT_FOLDER_REGEX
+} from "./regex";
 
-export interface FindFileNameOptions {
+export interface FindFileNameOptions extends FindFileExtensionOptions {
   /**
    * Require the file extension to be present in the file name.
    *
@@ -69,7 +74,8 @@ export function findFileName(
 
   if (withExtension === false && result.includes(".")) {
     return (
-      result.replace(`.${findFileExtension(result) ?? ""}`, "") || EMPTY_STRING
+      result.replace(`.${findFileExtension(result, options) ?? ""}`, "") ||
+      EMPTY_STRING
     );
   }
 
@@ -80,7 +86,7 @@ export function findFileName(
  * Find the full file path's directories from a file path.
  *
  * @remarks
- * The functionality of this method is similar to the {@link path.dirname} function in Node's path module.
+ * The functionality of this method is similar to the {@link _path.dirname} function in Node's path module.
  *
  * @example
  * ```ts
@@ -112,7 +118,7 @@ export const dirname = findFilePath;
  * Find the top most folder containing the file from a file path.
  *
  * @remarks
- * The functionality of this method is similar to the {@link path.basename} function in Node's path module.
+ * The functionality of this method is similar to the {@link _path.basename} function in Node's path module.
  * If you're looking for the full path of the folder (for example: `C:\\Users\\user\\Documents` instead of just `Documents`) containing the file, use {@link findFilePath} instead.
  *
  * @example
@@ -150,6 +156,15 @@ export function findFolderName(
 
 export const basename = findFolderName;
 
+export interface FindFileExtensionOptions {
+  /**
+   * Return the full file extension including `.d` and `.map` if present.
+   *
+   * @defaultValue false
+   */
+  fullExtension?: boolean;
+}
+
 /**
  * Find the file extension from a file path.
  *
@@ -161,19 +176,29 @@ export const basename = findFolderName;
  *
  * @example
  * ```ts
- * findFileExtension("C:\\Users\\user\\Documents\\file.config.ts");
- * // Returns "ts"
+ * findFileExtension("C:\\Users\\user\\Documents\\file.config.ts"); // Returns "ts"
+ * findFileExtension("C:\\Users\\user\\Documents\\file.d.ts"); // Returns "ts"
+ * findFileExtension("C:\\Users\\user\\Documents\\file.d.ts", { fullExtension: true }); // Returns "d.ts"
+ * findFileExtension("C:\\Users\\user\\Documents\\file.ts.map"); // Returns "ts"
+ * findFileExtension("C:\\Users\\user\\Documents\\file.ts.map", { fullExtension: true }); // Returns "ts.map"
+ * findFileExtension("C:\\Users\\user\\Documents\\file"); // Returns undefined
  * ```
  *
  * @param filePath - The file path to process
+ * @param options - Options to control the file name extraction
  * @returns The file extension or undefined if no extension is found
  */
-export function findFileExtension(filePath: string): string | undefined {
+export function findFileExtension(
+  filePath: string,
+  options?: FindFileExtensionOptions
+): string | undefined {
   if (filePath.endsWith(".") || filePath.endsWith("/")) {
     return undefined;
   }
 
-  const match = FILE_EXTENSION_REGEX.exec(normalizeWindowsPath(filePath));
+  const match = (
+    options?.fullExtension ? FULL_FILE_EXTENSION_REGEX : FILE_EXTENSION_REGEX
+  ).exec(normalizeWindowsPath(filePath));
 
   return match && match.length > 0 && isSetString(match[0])
     ? match[0].replace(".", "")
@@ -191,10 +216,14 @@ export const extname = findFileExtension;
  * The returned extension **will** include the dot, for example `.txt` or `.js` instead of `txt` or `js`.
  *
  * @param filePath - The file path to process
+ * @param options - Options to control the file name extraction
  * @returns The file extension (including the `"."` prefix) or undefined if no extension is found
  */
-export function findFileDotExtension(filePath: string): string | undefined {
-  const ext = findFileExtension(filePath);
+export function findFileDotExtension(
+  filePath: string,
+  options?: FindFileExtensionOptions
+): string | undefined {
+  const ext = findFileExtension(filePath, options);
 
   return ext ? `.${ext}` : undefined;
 }
@@ -208,10 +237,14 @@ export function findFileDotExtension(filePath: string): string | undefined {
  * The returned extension **will not** include the dot, for example `txt` or `js` instead of `.txt` or `.js`.
  *
  * @param filePath - The file path to process
+ * @param options - Options to control the file name extraction
  * @returns The file extension or an empty string if no extension is found
  */
-export function findFileExtensionSafe(filePath: string): string {
-  return findFileExtension(filePath) ?? EMPTY_STRING;
+export function findFileExtensionSafe(
+  filePath: string,
+  options?: FindFileExtensionOptions
+): string {
+  return findFileExtension(filePath, options) ?? EMPTY_STRING;
 }
 
 /**
@@ -223,10 +256,14 @@ export function findFileExtensionSafe(filePath: string): string {
  * The returned extension **will** include the dot, for example `.txt` or `.js` instead of `txt` or `js`.
  *
  * @param filePath - The file path to process
+ * @param options - Options to control the file name extraction
  * @returns The file extension (including the `"."` prefix) or an empty string if no extension is found
  */
-export function findFileDotExtensionSafe(filePath: string): string {
-  const ext = findFileExtension(filePath);
+export function findFileDotExtensionSafe(
+  filePath: string,
+  options?: FindFileExtensionOptions
+): string {
+  const ext = findFileExtension(filePath, options);
 
   return ext ? `.${ext}` : "";
 }
@@ -265,10 +302,14 @@ export function hasFolderName(filePath: string): boolean {
  * Check if a file path has a file extension.
  *
  * @param filePath - The file path to process
+ * @param options - Options to control the file name extraction
  * @returns An indicator specifying if the file path has a file extension
  */
-export function hasFileExtension(filePath: string): boolean {
-  return Boolean(findFileExtension(filePath));
+export function hasFileExtension(
+  filePath: string,
+  options?: FindFileExtensionOptions
+): boolean {
+  return Boolean(findFileExtension(filePath, options));
 }
 
 /**
@@ -433,7 +474,7 @@ export function relativeToCurrentDir(filePath: string) {
  * @param path - The path to check
  * @returns An indicator specifying if the path is a relative path
  */
-export function parsePath(path: string) {
+export function parsePath(path: string, options?: FindFileNameOptions) {
   // The root of the path such as '/' or 'c:\'
   const root =
     /^[/\\]|^[a-z]:[/\\]/i.exec(path)?.[0]?.replace(/\\/g, "/") || "";
@@ -445,9 +486,9 @@ export function parsePath(path: string) {
     segments[0] += "/";
   }
 
-  const base = findFolderName(normalizedPath);
+  const base = findFolderName(normalizedPath, options);
   const dir = segments.join("/") || (isAbsolutePath(path) ? "/" : ".");
-  const ext = findFileExtensionSafe(path);
+  const ext = findFileExtensionSafe(path, options);
 
   return {
     root,
@@ -463,10 +504,15 @@ export function parsePath(path: string) {
  *
  * @param filePath - The current file path being processed
  * @param newFileName - The updated file name being processed
+ * @param options - Options to control the file name extraction
  * @returns The modified or unmodified file path.
  */
-export function renameFile(filePath: string, newFileName: string): string {
-  const file = parsePath(filePath);
+export function renameFile(
+  filePath: string,
+  newFileName: string,
+  options?: FindFileNameOptions
+): string {
+  const file = parsePath(filePath, options);
 
   return joinPaths(
     file.dir,

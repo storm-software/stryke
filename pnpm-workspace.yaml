@@ -40,10 +40,10 @@ catalog:
   '@storm-software/untyped': ^0.24.61
   '@storm-software/workspace-tools': ^1.294.26
   '@swc-node/register': ^1.11.1
-  '@swc/core': ^1.15.8
+  '@swc/core': ^1.15.10
   '@swc/helpers': ^0.5.18
   '@swc/wasm': ^1.10.14
-  '@tanstack/react-query': ^5.90.18
+  '@tanstack/react-query': ^5.90.19
   '@tanstack/react-query-devtools': ^5.70.0
   '@taplo/cli': ^0.7.0
   '@trpc/client': ^11.8.1
