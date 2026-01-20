@@ -2,6 +2,13 @@
 
 # Changelog for Stryke - Path
 
+## [0.25.3](https://github.com/storm-software/stryke/releases/tag/path%400.25.3) (01/16/2026)
+
+### Bug Fixes
+
+- **path:** Resolve issue checking previous character in `globToRegex` function
+  ([59d9e9ae](https://github.com/storm-software/stryke/commit/59d9e9ae))
+
 ## [0.25.2](https://github.com/storm-software/stryke/releases/tag/path%400.25.2) (01/16/2026)
 
 ### Bug Fixes
