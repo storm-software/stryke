@@ -23,13 +23,6 @@ import { isSetString } from "@stryke/type-checks/is-set-string";
  */
 export interface GlobToRegexOptions {
   /**
-   * Enables extended globbing features such as `?`, `+`, `@`, and `!`.
-   *
-   * @defaultValue true
-   */
-  extended?: boolean;
-
-  /**
    * Enables globstar support (`**`).
    *
    * @defaultValue true
@@ -93,30 +86,22 @@ export function globToRegex(
         break;
 
       case "?":
-        if (options.extended !== false) {
-          regex += ".";
-        }
+        regex += ".";
         break;
 
       case "[":
       case "]":
-        if (options.extended !== false) {
-          regex += glob[i];
-        }
+        regex += glob[i];
         break;
 
       case "{":
-        if (options.extended !== false) {
-          inGroup = true;
-          regex += "(";
-        }
+        inGroup = true;
+        regex += "(";
         break;
 
       case "}":
-        if (options.extended !== false) {
-          inGroup = false;
-          regex += ")";
-        }
+        inGroup = false;
+        regex += ")";
         break;
 
       case ",":
