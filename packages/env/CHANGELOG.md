@@ -2,6 +2,15 @@
 
 # Changelog for Stryke - Env
 
+## [0.20.53](https://github.com/storm-software/stryke/releases/tag/env%400.20.53) (01/20/2026)
+
+### Updated Dependencies
+
+- Updated **string-format** to **v0.13.4**
+- Updated **convert** to **v0.6.35**
+- Updated **path** to **v0.26.0**
+- Updated **fs** to **v0.33.36**
+
 ## [0.20.52](https://github.com/storm-software/stryke/releases/tag/env%400.20.52) (01/16/2026)
 
 ### Updated Dependencies

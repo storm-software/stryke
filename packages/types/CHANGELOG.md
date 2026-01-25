@@ -2,6 +2,13 @@
 
 # Changelog for Stryke - Types
 
+## [0.10.34](https://github.com/storm-software/stryke/releases/tag/types%400.10.34) (01/20/2026)
+
+### Miscellaneous
+
+- **monorepo:** Update workspace packages' dependencies
+  ([dd43b0d8](https://github.com/storm-software/stryke/commit/dd43b0d8))
+
 ## [0.10.33](https://github.com/storm-software/stryke/releases/tag/types%400.10.33) (01/16/2026)
 
 ### Miscellaneous
