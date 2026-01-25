@@ -1,6 +1,6 @@
 {
   "name": "@stryke/convert",
-  "version": "0.6.35",
+  "version": "0.6.36",
   "type": "module",
   "description": "A utility package that helps convert between different data types.",
   "repository": {

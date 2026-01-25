@@ -2,6 +2,18 @@
 
 # Changelog for Stryke - HTTP
 
+## [0.12.30](https://github.com/storm-software/stryke/releases/tag/http%400.12.30) (01/25/2026)
+
+### Miscellaneous
+
+- **monorepo:** Update workspace packages' dependencies
+  ([c3c2154b](https://github.com/storm-software/stryke/commit/c3c2154b))
+
+### Updated Dependencies
+
+- Updated **type-checks** to **v0.5.21**
+- Updated **url** to **v0.3.31**
+
 ## [0.12.29](https://github.com/storm-software/stryke/releases/tag/http%400.12.29) (01/20/2026)
 
 ### Updated Dependencies

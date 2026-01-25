@@ -2,6 +2,19 @@
 
 # Changelog for Stryke - Path
 
+## [0.26.1](https://github.com/storm-software/stryke/releases/tag/path%400.26.1) (01/25/2026)
+
+### Miscellaneous
+
+- **path:** Remove `extended` option to `globToRegex` function
+  ([b5d975f1](https://github.com/storm-software/stryke/commit/b5d975f1))
+
+### Updated Dependencies
+
+- Updated **type-checks** to **v0.5.21**
+- Updated **convert** to **v0.6.36**
+- Updated **types** to **v0.10.35**
+
 ## [0.26.0](https://github.com/storm-software/stryke/releases/tag/path%400.26.0) (01/20/2026)
 
 ### Features
