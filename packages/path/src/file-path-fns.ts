@@ -105,7 +105,9 @@ export function findFilePath(
   const normalizedPath = normalizeWindowsPath(filePath);
 
   const result = normalizedPath.replace(
-    findFileName(normalizedPath, { requireExtension: false, ...options }),
+    new RegExp(
+      `\/${findFileName(normalizedPath, { requireExtension: false, ...options })}$`
+    ),
     ""
   );
 
