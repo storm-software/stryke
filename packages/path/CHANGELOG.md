@@ -2,6 +2,13 @@
 
 # Changelog for Stryke - Path
 
+## [0.26.3](https://github.com/storm-software/stryke/releases/tag/path%400.26.3) (01/27/2026)
+
+### Bug Fixes
+
+- **path:** Resolve issue when file name is duplicated in the file path
+  ([aa0c1974](https://github.com/storm-software/stryke/commit/aa0c1974))
+
 ## [0.26.2](https://github.com/storm-software/stryke/releases/tag/path%400.26.2) (01/26/2026)
 
 ### Bug Fixes
