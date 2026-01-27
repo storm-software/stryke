@@ -107,8 +107,10 @@ export function globToRegex(
       case ",":
         if (inGroup) {
           regex += "|";
+        } else {
+          regex += `\\${glob[i]}`;
         }
-        regex += `\\${glob[i]}`;
+
         break;
 
       case "*":
