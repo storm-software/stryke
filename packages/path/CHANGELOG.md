@@ -2,6 +2,19 @@
 
 # Changelog for Stryke - Path
 
+## [0.26.2](https://github.com/storm-software/stryke/releases/tag/path%400.26.2) (01/26/2026)
+
+### Bug Fixes
+
+- **path:** Resolve issue with or statements in `globToRegex` function
+  ([87ab0d6f](https://github.com/storm-software/stryke/commit/87ab0d6f))
+
+### Updated Dependencies
+
+- Updated **type-checks** to **v0.5.22**
+- Updated **convert** to **v0.6.37**
+- Updated **types** to **v0.10.36**
+
 ## [0.26.1](https://github.com/storm-software/stryke/releases/tag/path%400.26.1) (01/25/2026)
 
 ### Miscellaneous
