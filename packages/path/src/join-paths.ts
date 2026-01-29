@@ -102,7 +102,7 @@ export function joinPaths(...segments: string[]): string {
   let result = "";
   for (const segment of segments) {
     if (segment && slash(segment).replaceAll(/\//g, "") !== ".") {
-      if (result.length > 0) {
+      if (result) {
         if (slash(segment).replaceAll(/\//g, "") === "..") {
           result = slash(result)
             .replace(/\/+$/, "")
