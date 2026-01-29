@@ -22,6 +22,7 @@ import {
   DRIVE_LETTER_START_REGEX,
   UNC_REGEX
 } from "./regex";
+import { slash } from "./slash";
 
 // Util to normalize windows paths to posix
 function normalizeWindowsPath(input = "") {
@@ -80,21 +81,26 @@ function correctPaths(path?: string) {
  */
 export function joinPaths(...segments: string[]): string {
   let path = "";
-
   for (const seg of segments) {
     if (!seg) {
       continue;
     }
     if (path.length > 0) {
-      const pathTrailing = path[path.length - 1] === "/";
-      const segLeading = seg[0] === "/";
-      const both = pathTrailing && segLeading;
-      if (both) {
-        path += seg.slice(1);
+      if (slash(seg).replaceAll(/\//g, "") === "..") {
+        path = slash(path)
+          .replace(/\/+$/, "")
+          .replace(/\/*[^/]+$/, "");
       } else {
-        path += pathTrailing || segLeading ? seg : `/${seg}`;
+        const pathTrailing = path[path.length - 1] === "/";
+        const segLeading = seg[0] === "/";
+        const both = pathTrailing && segLeading;
+        if (both) {
+          path += seg.slice(1);
+        } else {
+          path += pathTrailing || segLeading ? seg : `/${seg}`;
+        }
       }
-    } else {
+    } else if (slash(seg).replaceAll(/\//g, "") !== "..") {
       path += seg;
     }
   }
