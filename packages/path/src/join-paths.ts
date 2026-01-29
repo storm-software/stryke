@@ -101,7 +101,7 @@ function correctPaths(path?: string) {
 export function joinPaths(...segments: string[]): string {
   let result = "";
   for (const segment of segments) {
-    if (segment) {
+    if (segment && slash(segment).replaceAll(/\//g, "") !== ".") {
       if (result.length > 0) {
         if (slash(segment).replaceAll(/\//g, "") === "..") {
           result = slash(result)
