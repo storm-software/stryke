@@ -74,38 +74,51 @@ function correctPaths(path?: string) {
 
 /**
  * Joins all given path segments together using the platform-specific separator as a delimiter.
- * The resulting path is normalized to remove any redundant or unnecessary segments.
+ *
+ * @remarks
+ * Multiple segments can be provided as separate arguments. The resulting path is normalized to remove any redundant or unnecessary segments.
+ *
+ * @example
+ * ```ts
+ * import { joinPaths } from 'stryke/path';
+ *
+ * const fullPath = joinPaths('folder1', 'folder2', '..', 'folder3', 'file.txt');
+ * console.log(fullPath); // Output: 'folder1/folder3/file.txt'
+ *
+ * const absolutePath = joinPaths('/root', 'folder', '.', 'subfolder', 'file.txt');
+ * console.log(absolutePath); // Output: '/root/folder/subfolder/file.txt'
+ *
+ * const windowsPath = joinPaths('C:\\', 'Users', 'Public', '..', 'Documents', 'file.txt');
+ * console.log(windowsPath); // Output: 'C:/Users/Documents/file.txt'
+ *
+ * const uncPath = joinPaths('\\\\Server\\Share', 'Folder', 'File.txt');
+ * console.log(uncPath); // Output: '//Server/Share/Folder/File.txt'
+ * ```
  *
  * @param segments - The path segments to join.
  * @returns The joined and normalized path string.
  */
 export function joinPaths(...segments: string[]): string {
-  let path = "";
-  for (const seg of segments) {
-    if (!seg) {
-      continue;
-    }
-    if (path.length > 0) {
-      if (slash(seg).replaceAll(/\//g, "") === "..") {
-        path = slash(path)
-          .replace(/\/+$/, "")
-          .replace(/\/*[^/]+$/, "");
-      } else {
-        const pathTrailing = path[path.length - 1] === "/";
-        const segLeading = seg[0] === "/";
-        const both = pathTrailing && segLeading;
-        if (both) {
-          path += seg.slice(1);
+  let result = "";
+  for (const segment of segments) {
+    if (segment) {
+      if (result.length > 0) {
+        if (slash(segment).replaceAll(/\//g, "") === "..") {
+          result = slash(result)
+            .replace(/\/+$/, "")
+            .replace(/\/*[^/]+$/, "");
         } else {
-          path += pathTrailing || segLeading ? seg : `/${seg}`;
+          result = `${slash(result).replace(/\/+$/, "")}/${slash(
+            segment
+          ).replace(/^\/+/, "")}`;
         }
+      } else if (slash(segment).replaceAll(/\//g, "") !== "..") {
+        result = segment;
       }
-    } else if (slash(seg).replaceAll(/\//g, "") !== "..") {
-      path += seg;
     }
   }
 
-  return correctPaths(path);
+  return correctPaths(result);
 }
 
 export const join = joinPaths;
