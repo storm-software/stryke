@@ -72,6 +72,10 @@
       "require": "./dist/normalize-email.cjs",
       "import": "./dist/normalize-email.mjs"
     },
+    "./ordinals": {
+      "require": "./dist/ordinals.cjs",
+      "import": "./dist/ordinals.mjs"
+    },
     "./package": {
       "require": "./dist/package.cjs",
       "import": "./dist/package.mjs"

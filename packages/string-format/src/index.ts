@@ -39,6 +39,7 @@ export * from "./get-words";
 export * from "./kebab-case";
 export * from "./lower-case-first";
 export * from "./normalize-email";
+export * from "./ordinals";
 export * from "./package";
 export * from "./pad";
 export * from "./pascal-case";
