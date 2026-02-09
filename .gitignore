@@ -9,6 +9,7 @@ tmp
 /out-tsc
 out
 .nx
+.rolldown
 
 # capnproto
 packages/capnp/src/vendor/_capnp/*.ts

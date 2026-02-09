@@ -33,9 +33,10 @@ try {
     );
   }
 
-  proc = $`rm -rf ./.nx/cache ./.nx/workspace-data ./dist ./tmp`.timeout(
-    `${5 * 60}s`
-  );
+  proc =
+    $`rm -rf ./.nx/cache ./.nx/workspace-data ./dist ./tmp ./.rolldown`.timeout(
+      `${5 * 60}s`
+    );
   proc.stdout.on("data", data => {
     echo`${data}`;
   });
@@ -46,7 +47,9 @@ try {
     );
   }
 
-  proc = $`rm -rf ./packages/*/dist`.timeout(`${5 * 60}s`);
+  proc = $`rm -rf ./packages/*/dist ./packages/*/.rolldown`.timeout(
+    `${5 * 60}s`
+  );
   proc.stdout.on("data", data => {
     echo`${data}`;
   });
