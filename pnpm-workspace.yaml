@@ -10,14 +10,14 @@ catalog:
   '@ls-lint/ls-lint': ^2.3.1
   '@ltd/j-toml': ^1.38.0
   '@microsoft/api-extractor': ^7.49.2
-  '@nx/devkit': ^22.4.3
-  '@nx/eslint': ^22.4.3
-  '@nx/eslint-plugin': ^22.4.3
-  '@nx/jest': ^22.4.3
-  '@nx/js': ^22.4.3
-  '@nx/plugin': ^22.4.3
+  '@nx/devkit': ^22.4.5
+  '@nx/eslint': ^22.4.5
+  '@nx/eslint-plugin': ^22.4.5
+  '@nx/jest': ^22.4.5
+  '@nx/js': ^22.4.5
+  '@nx/plugin': ^22.4.5
   '@nx/react': ^22.1.3
-  '@nx/workspace': ^22.4.3
+  '@nx/workspace': ^22.4.5
   '@prisma/client': ^6.5.0
   '@prisma/generator-helper': ^6.19.2
   '@prisma/internals': ^6.19.2
@@ -53,16 +53,16 @@ catalog:
   '@types/cross-spawn': ^6.0.6
   '@types/figlet': ^1.7.0
   '@types/jest': 30.0.0
-  '@types/node': ^24.10.9
+  '@types/node': ^24.10.12
   '@types/pluralize': ^0.0.33
-  '@types/react': ^19.2.10
+  '@types/react': ^19.2.13
   '@types/react-dom': ^19.2.3
   '@types/react-native': 0.72.8
   '@types/semver': ^7.7.1
   buffer: 6.0.3
   capnp-es: ^0.0.11
   chalk: ^5.6.2
-  commander: ^14.0.2
+  commander: ^14.0.3
   conventional-changelog-storm-software: ^0.3.81
   copyfiles: ^2.4.1
   cross-spawn: ^7.0.6
@@ -90,7 +90,7 @@ catalog:
   markdownlint-cli2: ^0.17.2
   mlly: 1.7.4
   nanotar: ^0.2.0
-  nx: ^22.4.3
+  nx: ^22.4.5
   ohash: ^2.0.11
   parenthesis: ^3.1.8
   pluralize: ^8.0.0
@@ -115,9 +115,9 @@ catalog:
   typescript: ^5.9.3
   ufo: ^1.6.3
   unbuild: ^3.3.1
-  undici: ^7.19.2
-  undici-types: ^7.19.2
-  verdaccio: ^6.2.4
+  undici: ^7.21.0
+  undici-types: ^7.21.0
+  verdaccio: ^6.2.5
   yaml: ^2.8.2
   zod: ^4.3.6
   zx: ^8.8.5
