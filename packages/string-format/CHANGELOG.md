@@ -2,6 +2,17 @@
 
 # Changelog for Stryke - String Format
 
+## [0.14.1](https://github.com/storm-software/stryke/releases/tag/string-format%400.14.1) (02/09/2026)
+
+### Features
+
+- **string-format:** Added the `toOrdinal` helper utility ([eb7aea68](https://github.com/storm-software/stryke/commit/eb7aea68))
+
+### Updated Dependencies
+
+- Updated **helpers** to **v0.9.42**
+- Updated **types** to **v0.10.39**
+
 ## [0.14.0](https://github.com/storm-software/stryke/releases/tag/string-format%400.14.0) (02/09/2026)
 
 ### Features
