@@ -2,6 +2,24 @@
 
 # Changelog for Stryke - Path
 
+## [0.26.4](https://github.com/storm-software/stryke/releases/tag/path%400.26.4) (01/29/2026)
+
+### Miscellaneous
+
+- **path:** Simplify conditional in `joinPaths` utility ([00fae661](https://github.com/storm-software/stryke/commit/00fae661))
+- **path:** Clean up the logic of the `joinPaths` utility function ([82306d70](https://github.com/storm-software/stryke/commit/82306d70))
+
+### Bug Fixes
+
+- **path:** Update `joinPaths` utility to handle `.` segments ([ba7e0681](https://github.com/storm-software/stryke/commit/ba7e0681))
+- **path:** Resolve issue with `..` parameter in `joinPaths` utility ([5ef0cdfc](https://github.com/storm-software/stryke/commit/5ef0cdfc))
+
+### Updated Dependencies
+
+- Updated **type-checks** to **v0.5.23**
+- Updated **convert** to **v0.6.38**
+- Updated **types** to **v0.10.37**
+
 ## [0.26.3](https://github.com/storm-software/stryke/releases/tag/path%400.26.3) (01/27/2026)
 
 ### Bug Fixes
