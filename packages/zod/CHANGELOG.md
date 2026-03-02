@@ -2,6 +2,12 @@
 
 # Changelog for Stryke - Zod
 
+## [0.2.0](https://github.com/storm-software/stryke/releases/tag/zod%400.2.0) (03/02/2026)
+
+### Features
+
+- **zod:** Added the `extractJsonSchema7` convenience wrapper function ([7307bb68](https://github.com/storm-software/stryke/commit/7307bb68))
+
 ## [0.1.1](https://github.com/storm-software/stryke/releases/tag/zod%400.1.1) (03/02/2026)
 
 ### Miscellaneous
