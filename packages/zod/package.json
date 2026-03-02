@@ -33,20 +33,74 @@
   "types": "./dist/index.d.cts",
   "exports": {
     ".": {
-      "require": "./dist/index.cjs",
-      "import": "./dist/index.mjs"
+      "require": {
+        "type": "./dist/index.d.cts",
+        "default": "./dist/index.cjs"
+      },
+      "import": {
+        "type": "./dist/index.d.mts",
+        "default": "./dist/index.mjs"
+      },
+      "default": {
+        "type": "./dist/index.d.mts",
+        "default": "./dist/index.mjs"
+      }
+    },
+    "./index": {
+      "require": {
+        "type": "./dist/index.d.cts",
+        "default": "./dist/index.cjs"
+      },
+      "import": {
+        "type": "./dist/index.d.mts",
+        "default": "./dist/index.mjs"
+      },
+      "default": {
+        "type": "./dist/index.d.mts",
+        "default": "./dist/index.mjs"
+      }
     },
     "./is-zod-type": {
-      "require": "./dist/is-zod-type.cjs",
-      "import": "./dist/is-zod-type.mjs"
+      "require": {
+        "type": "./dist/is-zod-type.d.cts",
+        "default": "./dist/is-zod-type.cjs"
+      },
+      "import": {
+        "type": "./dist/is-zod-type.d.mts",
+        "default": "./dist/is-zod-type.mjs"
+      },
+      "default": {
+        "type": "./dist/is-zod-type.d.mts",
+        "default": "./dist/is-zod-type.mjs"
+      }
     },
     "./schema": {
-      "require": "./dist/schema.cjs",
-      "import": "./dist/schema.mjs"
+      "require": {
+        "type": "./dist/schema.d.cts",
+        "default": "./dist/schema.cjs"
+      },
+      "import": {
+        "type": "./dist/schema.d.mts",
+        "default": "./dist/schema.mjs"
+      },
+      "default": {
+        "type": "./dist/schema.d.mts",
+        "default": "./dist/schema.mjs"
+      }
     },
     "./types": {
-      "require": "./dist/types.cjs",
-      "import": "./dist/types.mjs"
+      "require": {
+        "type": "./dist/types.d.cts",
+        "default": "./dist/types.cjs"
+      },
+      "import": {
+        "type": "./dist/types.d.mts",
+        "default": "./dist/types.mjs"
+      },
+      "default": {
+        "type": "./dist/types.d.mts",
+        "default": "./dist/types.mjs"
+      }
     },
     "./*": "./*"
   }
