@@ -2,6 +2,12 @@
 
 # Changelog for Stryke - TRPC Next
 
+## [0.5.61](https://github.com/storm-software/stryke/releases/tag/trpc-next%400.5.61) (03/02/2026)
+
+### Bug Fixes
+
+- **zod:** Resolve issue with bundled project code ([d7c1e067](https://github.com/storm-software/stryke/commit/d7c1e067))
+
 ## [0.5.60](https://github.com/storm-software/stryke/releases/tag/trpc-next%400.5.60) (03/02/2026)
 
 ### Updated Dependencies
