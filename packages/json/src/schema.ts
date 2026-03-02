@@ -16,17 +16,15 @@
 
  ------------------------------------------------------------------- */
 
-/**
- * The JSON library used by Storm Software for building TypeScript applications.
- *
- * @remarks
- * A package containing JSON parsing/stringify utilities used by Storm Software
- *
- * @packageDocumentation
- */
+import type {
+  JsonSchema7AllOfType,
+  JsonSchema7StringType,
+  JsonSchema7Type
+} from "./types";
 
-export * from "./pointer";
-export * from "./schema";
-export * from "./storm-json";
-export * from "./types";
-export * from "./utils";
+export const isJsonSchema7AllOfType = (
+  type: JsonSchema7Type | JsonSchema7StringType
+): type is JsonSchema7AllOfType => {
+  if ("type" in type && type.type === "string") return false;
+  return "allOf" in type;
+};

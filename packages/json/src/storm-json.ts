@@ -82,12 +82,12 @@ export class StormJSON extends SuperJSON {
    * By default the JSON string is formatted with a 2 space indentation to be easy readable.
    *
    * @param value - Object which should be serialized to JSON
-   * @param _options - JSON serialize options
+   * @param options - JSON serialize options
    * @returns the formatted JSON representation of the object
    */
   public static override stringify<T>(
     value: T,
-    _options?: JsonSerializeOptions
+    options?: JsonSerializeOptions
   ): string {
     const customTransformer =
       StormJSON.instance.customTransformerRegistry.findApplicable(value);
@@ -97,7 +97,7 @@ export class StormJSON extends SuperJSON {
       result = customTransformer.serialize(result) as T;
     }
 
-    return stringifyValue(result);
+    return stringifyValue(result, options?.spaces ?? 2);
   }
 
   /**
@@ -191,7 +191,8 @@ export class StormJSON extends SuperJSON {
 
 StormJSON.instance.registerCustom<Buffer, string>(
   {
-    isApplicable: (v): v is Buffer => Buffer.isBuffer(v),
+    isApplicable: (v): v is Buffer =>
+      typeof Buffer.isBuffer === "function" && Buffer.isBuffer(v),
     serialize: v => v.toString("base64"),
     deserialize: v => Buffer.from(v, "base64")
   },

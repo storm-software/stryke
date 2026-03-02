@@ -20,33 +20,3 @@ import type * as z3 from "zod/v3";
 import type * as z4 from "zod/v4/core";
 
 export type ZodType = z3.ZodTypeAny | z4.$ZodType;
-
-export type ZodTypeKind =
-  | "string"
-  | "number"
-  | "bigint"
-  | "boolean"
-  | "symbol"
-  | "undefined"
-  | "object"
-  | "function"
-  | "date"
-  | "array"
-  | "null"
-  | "void"
-  | "any"
-  | "unknown"
-  | "union"
-  | "intersection";
-
-/**
- * Extracted metadata from a Zod schema.
- */
-export interface ZodTypeInfo {
-  kind: ZodTypeKind;
-  optional: boolean;
-  defaultValue?: unknown;
-  description?: string;
-  variadic: boolean;
-  choices?: (string | number)[];
-}

@@ -9,28 +9,8 @@
     "directory": "packages/zod"
   },
   "private": false,
-  "peerDependencies": {
-    "zod": "^3.25.0 || ^4.0.0"
-  },
-  "peerDependenciesMeta": {
-    "zod": {
-      "optional": true
-    }
-  },
-  "dependencies": {
-    "@stryke/type-checks": "workspace:*",
-    "zod-to-json-schema": "catalog:"
-  },
-  "devDependencies": {
-    "tsdown": "catalog:",
-    "zod": "catalog:"
-  },
-  "publishConfig": {
-    "access": "public"
-  },
   "main": "./dist/index.cjs",
   "module": "./dist/index.mjs",
-  "types": "./dist/index.d.cts",
   "exports": {
     ".": {
       "require": {
@@ -103,5 +83,26 @@
       }
     },
     "./*": "./*"
+  },
+  "types": "./dist/index.d.cts",
+  "peerDependencies": {
+    "zod": "^3.25.0 || ^4.0.0"
+  },
+  "peerDependenciesMeta": {
+    "zod": {
+      "optional": true
+    }
+  },
+  "dependencies": {
+    "@stryke/type-checks": "workspace:*",
+    "zod-to-json-schema": "catalog:"
+  },
+  "devDependencies": {
+    "@stryke/json": "workspace:*",
+    "tsdown": "catalog:",
+    "zod": "catalog:"
+  },
+  "publishConfig": {
+    "access": "public"
   }
 }

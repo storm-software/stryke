@@ -16,7 +16,7 @@
 
  ------------------------------------------------------------------- */
 
-import type { JsonSchema7Type } from "zod-to-json-schema";
+import type { JsonSchema7Type } from "@stryke/json";
 import { zodToJsonSchema } from "zod-to-json-schema";
 import * as z4 from "zod/v4/core";
 import { isZod3Type, isZod4Type } from "./is-zod-type";

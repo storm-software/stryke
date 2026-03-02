@@ -26,7 +26,7 @@ import { codeFrameColumns } from "./code-frames";
  *
  * @param input - JSON content as string
  * @param parseError - jsonc ParseError
- * @returns
+ * @returns Formatted error message with context
  */
 export function formatParseError(input: string, parseError: ParseError) {
   const { error, offset, length } = parseError;

@@ -28,6 +28,10 @@
       "require": "./dist/pointer/parse.cjs",
       "import": "./dist/pointer/parse.mjs"
     },
+    "./schema": {
+      "require": "./dist/schema.cjs",
+      "import": "./dist/schema.mjs"
+    },
     "./storm-json": {
       "require": "./dist/storm-json.cjs",
       "import": "./dist/storm-json.mjs"
@@ -65,6 +69,7 @@
   "types": "./dist/index.d.cts",
   "dependencies": {
     "buffer": "catalog:",
+    "jsonc-parser": "catalog:",
     "lines-and-columns": "catalog:",
     "superjson": "catalog:"
   },

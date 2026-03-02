@@ -16,17 +16,18 @@
 
  ------------------------------------------------------------------- */
 
-/**
- * The JSON library used by Storm Software for building TypeScript applications.
- *
- * @remarks
- * A package containing JSON parsing/stringify utilities used by Storm Software
- *
- * @packageDocumentation
- */
+import { defineTSDownConfig } from "@stryke/tools-config/tsdown.config";
 
-export * from "./pointer";
-export * from "./schema";
-export * from "./storm-json";
-export * from "./types";
-export * from "./utils";
+export default defineTSDownConfig([
+  {
+    name: "json",
+    target: "esnext",
+    platform: "neutral",
+    entry: ["src/**/*.ts", "src/pointer/index.ts", "src/utils/index.ts"],
+    tsconfig: "tsconfig.json",
+    unbundle: false,
+    dts: true,
+    clean: true,
+    skipNodeModulesBundle: true
+  }
+]);
