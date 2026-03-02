@@ -61,7 +61,9 @@
       "@stryke/tools-nx": ["tools/nx/src/index.ts"],
       "@stryke/tools-nx/*": ["tools/nx/src/*"],
       "@stryke/tools-scripts": ["tools/scripts/src/index.ts"],
-      "@stryke/tools-scripts/*": ["tools/scripts/src/*"]
+      "@stryke/tools-scripts/*": ["tools/scripts/src/*"],
+      "@stryke/zod": ["packages/zod/src/index.ts"],
+      "@stryke/zod/*": ["packages/zod/src/*"]
     }
   }
 }

@@ -1,0 +1,53 @@
+{
+  "name": "@stryke/zod",
+  "version": "0.0.1",
+  "type": "module",
+  "description": "A package containing helper utilities for working with zod schemas.",
+  "repository": {
+    "type": "github",
+    "url": "https://github.com/storm-software/stryke.git",
+    "directory": "packages/zod"
+  },
+  "private": false,
+  "peerDependencies": {
+    "zod": "^3.25.0 || ^4.0.0"
+  },
+  "peerDependenciesMeta": {
+    "zod": {
+      "optional": true
+    }
+  },
+  "dependencies": {
+    "@stryke/type-checks": "workspace:*",
+    "zod-to-json-schema": "catalog:"
+  },
+  "devDependencies": {
+    "tsdown": "catalog:",
+    "zod": "catalog:"
+  },
+  "publishConfig": {
+    "access": "public"
+  },
+  "main": "./dist/index.cjs",
+  "module": "./dist/index.mjs",
+  "types": "./dist/index.d.cts",
+  "exports": {
+    ".": {
+      "require": "./dist/index.cjs",
+      "import": "./dist/index.mjs"
+    },
+    "./is-zod-type": {
+      "require": "./dist/is-zod-type.cjs",
+      "import": "./dist/is-zod-type.mjs"
+    },
+    "./schema": {
+      "require": "./dist/schema.cjs",
+      "import": "./dist/schema.mjs"
+    },
+    "./types": {
+      "require": "./dist/types.cjs",
+      "import": "./dist/types.mjs"
+    },
+    "./*": "./*"
+  }
+}

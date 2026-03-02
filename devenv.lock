@@ -3,10 +3,10 @@
     "devenv": {
       "locked": {
         "dir": "src/modules",
-        "lastModified": 1770666213,
+        "lastModified": 1772451846,
         "owner": "cachix",
         "repo": "devenv",
-        "rev": "d4ffee46c9088df6e000470b998a2d2c16517f62",
+        "rev": "6adac0968c8a597799966875a4c6ffd1b3c4eb0f",
         "type": "github"
       },
       "original": {
@@ -40,10 +40,10 @@
         ]
       },
       "locked": {
-        "lastModified": 1769939035,
+        "lastModified": 1772024342,
         "owner": "cachix",
         "repo": "git-hooks.nix",
-        "rev": "a8ca480175326551d6c4121498316261cbb5b260",
+        "rev": "6e34e97ed9788b17796ee43ccdbaf871a5c2b476",
         "type": "github"
       },
       "original": {
@@ -109,10 +109,10 @@
     },
     "nixpkgs-unstable": {
       "locked": {
-        "lastModified": 1770537093,
+        "lastModified": 1772419343,
         "owner": "nixos",
         "repo": "nixpkgs",
-        "rev": "fef9403a3e4d31b0a23f0bacebbec52c248fbb51",
+        "rev": "93178f6a00c22fcdee1c6f5f9ab92f2072072ea9",
         "type": "github"
       },
       "original": {
@@ -137,10 +137,10 @@
     "storm-ops": {
       "flake": false,
       "locked": {
-        "lastModified": 1769633664,
+        "lastModified": 1772457176,
         "owner": "storm-software",
         "repo": "storm-ops",
-        "rev": "b8dda3ee79d573adbc8ba54fb0d32a14d03bebc1",
+        "rev": "40715cbda09a797da7bc13cb85359c2f626dec20",
         "type": "github"
       },
       "original": {
