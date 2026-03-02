@@ -2,6 +2,17 @@
 
 # Changelog for Stryke - Zod
 
+## [0.2.1](https://github.com/storm-software/stryke/releases/tag/zod%400.2.1) (03/02/2026)
+
+### Features
+
+- **json:** Added `JsonSchema7` type defintions and helpers ([677e7c39](https://github.com/storm-software/stryke/commit/677e7c39))
+
+### Updated Dependencies
+
+- Updated **type-checks** to **v0.5.27**
+- Updated **json** to **v0.10.0**
+
 ## [0.2.0](https://github.com/storm-software/stryke/releases/tag/zod%400.2.0) (03/02/2026)
 
 ### Features

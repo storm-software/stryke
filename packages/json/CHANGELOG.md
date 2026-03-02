@@ -2,6 +2,21 @@
 
 # Changelog for Stryke - JSON
 
+## [0.10.0](https://github.com/storm-software/stryke/releases/tag/json%400.10.0) (03/02/2026)
+
+### Miscellaneous
+
+- **json:** Added `$defs` to JSON schema meta definition ([7808fbd0](https://github.com/storm-software/stryke/commit/7808fbd0))
+
+### Features
+
+- **json:** Added `JsonSchema7` type defintions and helpers ([677e7c39](https://github.com/storm-software/stryke/commit/677e7c39))
+
+### Updated Dependencies
+
+- Updated **type-checks** to **v0.5.27**
+- Updated **types** to **v0.10.41**
+
 ## [0.9.44](https://github.com/storm-software/stryke/releases/tag/json%400.9.44) (03/02/2026)
 
 ### Updated Dependencies

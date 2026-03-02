@@ -2,6 +2,12 @@
 
 # Changelog for Stryke - Types
 
+## [0.10.41](https://github.com/storm-software/stryke/releases/tag/types%400.10.41) (03/02/2026)
+
+### Features
+
+- **json:** Added `JsonSchema7` type defintions and helpers ([677e7c39](https://github.com/storm-software/stryke/commit/677e7c39))
+
 ## [0.10.34](https://github.com/storm-software/stryke/releases/tag/types%400.10.34) (01/20/2026)
 
 ### Miscellaneous
