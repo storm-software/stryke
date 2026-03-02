@@ -314,10 +314,23 @@ export interface JsonSchema7RefType {
 }
 
 export interface JsonSchema7Meta {
+  $id?: string;
+  $ref?: string;
+  $schema?: string;
+  $comment?: string;
+
   title?: string;
   default?: any;
   description?: string;
   markdownDescription?: string;
+
+  /**
+   * @see https://datatracker.ietf.org/doc/html/draft-bhutton-json-schema-00#section-8.2.4
+   * @see https://datatracker.ietf.org/doc/html/draft-bhutton-json-schema-validation-00#appendix-A
+   */
+  $defs?: {
+    [key: string]: JsonSchema7Type;
+  };
 }
 
 export type JsonSchema7TypeUnion =
@@ -346,4 +359,8 @@ export type JsonSchema7TypeUnion =
   | JsonSchema7UnknownType
   | JsonSchema7SetType;
 
+/**
+ * JSON Schema v7
+ * @see https://tools.ietf.org/html/draft-handrews-json-schema-validation-01
+ */
 export type JsonSchema7Type = JsonSchema7TypeUnion & JsonSchema7Meta;
