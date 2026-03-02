@@ -16,6 +16,7 @@
 
  ------------------------------------------------------------------- */
 
+import type { JsonSchema7Type } from "zod-to-json-schema";
 import { zodToJsonSchema } from "zod-to-json-schema";
 import * as z4 from "zod/v4/core";
 import { isZod3Type, isZod4Type } from "./is-zod-type";
@@ -53,4 +54,17 @@ export function extractJsonSchema(
   } else {
     throw new Error("Unsupported Zod schema version");
   }
+}
+
+/**
+ * Extracts a JSON Schema (draft-07) from a given Zod schema, supporting both version 3 and version 4 of Zod.
+ *
+ * @remarks
+ * This function is a convenience wrapper around `extractJsonSchema` that defaults to targeting the JSON Schema draft-07 specification.
+ *
+ * @param type - The Zod schema to extract the JSON Schema from. Can be either a Zod v3 or v4 schema.
+ * @returns The extracted JSON Schema.
+ */
+export function extractJsonSchema7(type: ZodType) {
+  return extractJsonSchema(type, "draft-07") as JsonSchema7Type;
 }
