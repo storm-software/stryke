@@ -2,6 +2,17 @@
 
 # Changelog for Stryke - JSON
 
+## [0.13.0](https://github.com/storm-software/stryke/releases/tag/json%400.13.0) (03/03/2026)
+
+### Features
+
+- **json:** Added `isJsonSchema7TupleType` type-check helper function ([85270ac5](https://github.com/storm-software/stryke/commit/85270ac5))
+
+### Updated Dependencies
+
+- Updated **type-checks** to **v0.5.30**
+- Updated **types** to **v0.10.44**
+
 ## [0.12.0](https://github.com/storm-software/stryke/releases/tag/json%400.12.0) (03/03/2026)
 
 ### Features
