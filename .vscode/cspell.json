@@ -1,3 +1,12 @@
 {
-  "import": ["@storm-software/cspell/cspell-minimal.json"]
+  "$schema": "https://raw.githubusercontent.com/streetsidesoftware/cspell/main/cspell.schema.json",
+  "import": ["@storm-software/cspell/cspell-minimal.json"],
+  "dictionaryDefinitions": [
+    {
+      "name": "misc",
+      "path": "../tools/cspell/misc.txt",
+      "addWords": true
+    }
+  ],
+  "dictionaries": ["misc"]
 }

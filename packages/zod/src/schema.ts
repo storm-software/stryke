@@ -50,7 +50,6 @@ export function extractJsonSchema(
   } else if (isZod4Type(type)) {
     return z4.toJSONSchema(type, {
       target: target === "draft-07" ? "draft-07" : "draft-2020-12",
-      // eslint-disable-next-line @cspell/spellchecker
       unrepresentable: "any",
       reused: "ref"
     });

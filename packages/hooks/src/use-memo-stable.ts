@@ -18,10 +18,7 @@
 
 import { useEffect, useMemo, useRef, useState } from "react";
 
-/* eslint-disable @cspell/spellchecker */
-
 /**
-
  * Forked from use-memo-one by Alex Reardon
  */
 

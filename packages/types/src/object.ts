@@ -16,8 +16,6 @@
 
  ------------------------------------------------------------------- */
 
-/* eslint-disable @cspell/spellchecker */
-
 import type {
   StaticPartOfArray,
   UnknownArray,
