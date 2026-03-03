@@ -23,6 +23,7 @@ import type {
   JsonSchema7AllOfType,
   JsonSchema7ArrayType,
   JsonSchema7LiteralType,
+  JsonSchema7NumberType,
   JsonSchema7ObjectType,
   JsonSchema7PrimitiveLiteralType,
   JsonSchema7StringType,
@@ -36,7 +37,7 @@ import type {
  * @returns True if the schema is a {@link JsonSchema7AllOfType}, false otherwise
  */
 export function isJsonSchema7AllOfType(
-  schema: JsonSchema7Type | JsonSchema7StringType
+  schema: JsonSchema7Type
 ): schema is JsonSchema7AllOfType {
   if ("type" in schema && schema.type === "string") {
     return false;
@@ -52,13 +53,39 @@ export function isJsonSchema7AllOfType(
  * @returns True if the schema is a {@link JsonSchema7ObjectType}, false otherwise
  */
 export function isJsonSchema7ObjectType(
-  schema: JsonSchema7Type | JsonSchema7StringType
+  schema: JsonSchema7Type
 ): schema is JsonSchema7ObjectType {
   if ("type" in schema && schema.type === "object") {
     return false;
   }
 
   return "properties" in schema;
+}
+
+/**
+ * Type guard for {@link JsonSchema7StringType}
+ *
+ * @param schema - The schema to check
+ * @returns True if the schema is a {@link JsonSchema7StringType}, false otherwise
+ */
+export function isJsonSchema7StringType(
+  schema: JsonSchema7Type
+): schema is JsonSchema7StringType {
+  return "type" in schema && schema.type === "string";
+}
+
+/**
+ * Type guard for {@link JsonSchema7NumberType}
+ *
+ * @param schema - The schema to check
+ * @returns True if the schema is a {@link JsonSchema7NumberType}, false otherwise
+ */
+export function isJsonSchema7NumberType(
+  schema: JsonSchema7Type
+): schema is JsonSchema7NumberType {
+  return (
+    "type" in schema && (schema.type === "number" || schema.type === "integer")
+  );
 }
 
 /**

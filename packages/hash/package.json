@@ -71,9 +71,9 @@
   },
   "types": "./dist/index.d.cts",
   "dependencies": {
+    "@stryke/fs": "workspace:*",
     "@stryke/json": "workspace:*",
     "@stryke/type-checks": "workspace:*",
-    "@stryke/fs": "workspace:*",
     "js-xxhash": "catalog:",
     "ohash": "catalog:"
   },
