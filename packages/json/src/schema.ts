@@ -57,11 +57,7 @@ export function isJsonSchema7AllOfType(
 export function isJsonSchema7ObjectType(
   schema: JsonSchema7Type
 ): schema is JsonSchema7ObjectType {
-  if ("type" in schema && schema.type === "object") {
-    return false;
-  }
-
-  return "properties" in schema;
+  return "type" in schema && schema.type === "object";
 }
 
 /**

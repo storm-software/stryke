@@ -6229,8 +6229,8 @@ packages:
   caniuse-api@3.0.0:
     resolution: {integrity: sha512-bsTwuIg/BZZK/vreVTYYbSWoe2F+71P7K5QGEX+pT250DZbfU1MQ5prOKpPR+LL6uWKK3KMwMCAS74QB3Um1uw==}
 
-  caniuse-lite@1.0.30001775:
-    resolution: {integrity: sha512-s3Qv7Lht9zbVKE9XoTyRG6wVDCKdtOFIjBGg3+Yhn6JaytuNKPIjBMTMIY1AnOH3seL5mvF+x33oGAyK3hVt3A==}
+  caniuse-lite@1.0.30001776:
+    resolution: {integrity: sha512-sg01JDPzZ9jGshqKSckOQthXnYwOEP50jeVFhaSFbZcOy05TiuuaffDOfcwtCisJ9kNQuLBFibYywv2Bgm9osw==}
 
   capnp-es@0.0.11:
     resolution: {integrity: sha512-/M2sGcTIjA2UQC6mnqidCUcfGdVmXGV8DDmNRXMU0ZdiK7TmALjxzJwlLc0UQb/YNy3/xu5OgKktLede69fsnw==}
@@ -6467,8 +6467,8 @@ packages:
     resolution: {integrity: sha512-OkTL9umf+He2DZkUq8f8J9of7yL6RJKI24dVITBmNfZBmri9zYZQrKkuXiKhyfPSu8tUhnVBB1iKXevvnlR4Ww==}
     engines: {node: '>= 12'}
 
-  comment-json@4.6.1:
-    resolution: {integrity: sha512-kdBIsBGqD/sAeqvzeOhBvO/bhtpbfbIU/2lw7bp182FV1cVlY7gr1Jf3Q1I+NOsCk8e4gF5Sl9iYH5cNvVmx5w==}
+  comment-json@4.6.2:
+    resolution: {integrity: sha512-R2rze/hDX30uul4NZoIZ76ImSJLFxn/1/ZxtKC1L77y2X1k+yYu1joKbAtMA2Fg3hZrTOiw0I5mwVMo0cf250w==}
     engines: {node: '>= 6'}
 
   comment-parser@1.4.1:
@@ -6986,8 +6986,8 @@ packages:
     engines: {node: '>=0.10.0'}
     hasBin: true
 
-  electron-to-chromium@1.5.302:
-    resolution: {integrity: sha512-sM6HAN2LyK82IyPBpznDRqlTQAtuSaO+ShzFiWTvoMJLHyZ+Y39r8VMfHzwbU8MVBzQ4Wdn85+wlZl2TLGIlwg==}
+  electron-to-chromium@1.5.307:
+    resolution: {integrity: sha512-5z3uFKBWjiNR44nFcYdkcXjKMbg5KXNdciu7mhTPo9tB7NbqSNP2sSnGR+fqknZSCwKkBN+oxiiajWs4dT6ORg==}
 
   emittery@0.13.1:
     resolution: {integrity: sha512-DeWwawk6r5yR9jFgnDKYt4sLS0LmHJJi3ZOnb5/JdbYwj3nW+FxQnHIjhBKz8YLC7oRNPVM9NQ47I3CVx34eqQ==}
@@ -18015,7 +18015,7 @@ snapshots:
   autoprefixer@10.4.27(postcss@8.5.8):
     dependencies:
       browserslist: 4.28.1
-      caniuse-lite: 1.0.30001775
+      caniuse-lite: 1.0.30001776
       fraction.js: 5.3.4
       picocolors: 1.1.1
       postcss: 8.5.8
@@ -18308,8 +18308,8 @@ snapshots:
   browserslist@4.28.1:
     dependencies:
       baseline-browser-mapping: 2.10.0
-      caniuse-lite: 1.0.30001775
-      electron-to-chromium: 1.5.302
+      caniuse-lite: 1.0.30001776
+      electron-to-chromium: 1.5.307
       node-releases: 2.0.27
       update-browserslist-db: 1.2.3(browserslist@4.28.1)
 
@@ -18436,11 +18436,11 @@ snapshots:
   caniuse-api@3.0.0:
     dependencies:
       browserslist: 4.28.1
-      caniuse-lite: 1.0.30001775
+      caniuse-lite: 1.0.30001776
       lodash.memoize: 4.1.2
       lodash.uniq: 4.5.0
 
-  caniuse-lite@1.0.30001775: {}
+  caniuse-lite@1.0.30001776: {}
 
   capnp-es@0.0.11(patch_hash=503a440bd2bef41c0cb22819bc4ced5a7f04993fb999f0d944e284220f14916b)(typescript@5.9.3):
     optionalDependencies:
@@ -18655,10 +18655,9 @@ snapshots:
 
   commander@8.3.0: {}
 
-  comment-json@4.6.1:
+  comment-json@4.6.2:
     dependencies:
       array-timsort: 1.0.3
-      core-util-is: 1.0.3
       esprima: 4.0.1
 
   comment-parser@1.4.1: {}
@@ -18828,13 +18827,13 @@ snapshots:
   cspell-config-lib@8.17.5:
     dependencies:
       '@cspell/cspell-types': 8.17.5
-      comment-json: 4.6.1
+      comment-json: 4.6.2
       yaml: 2.8.2
 
   cspell-config-lib@8.19.4:
     dependencies:
       '@cspell/cspell-types': 8.19.4
-      comment-json: 4.6.1
+      comment-json: 4.6.2
       yaml: 2.8.2
 
   cspell-dictionary@8.17.5:
@@ -18901,7 +18900,7 @@ snapshots:
       '@cspell/strong-weak-map': 8.17.5
       '@cspell/url': 8.17.5
       clear-module: 4.1.2
-      comment-json: 4.6.1
+      comment-json: 4.6.2
       cspell-config-lib: 8.17.5
       cspell-dictionary: 8.17.5
       cspell-glob: 8.17.5
@@ -18928,7 +18927,7 @@ snapshots:
       '@cspell/strong-weak-map': 8.19.4
       '@cspell/url': 8.19.4
       clear-module: 4.1.2
-      comment-json: 4.6.1
+      comment-json: 4.6.2
       cspell-config-lib: 8.19.4
       cspell-dictionary: 8.19.4
       cspell-glob: 8.19.4
@@ -19289,7 +19288,7 @@ snapshots:
     dependencies:
       jake: 10.9.4
 
-  electron-to-chromium@1.5.302: {}
+  electron-to-chromium@1.5.307: {}
 
   emittery@0.13.1: {}
 
@@ -19811,7 +19810,7 @@ snapshots:
 
   eslint-plugin-paths@1.1.0:
     dependencies:
-      comment-json: 4.6.1
+      comment-json: 4.6.2
 
   eslint-plugin-perfectionist@4.15.1(@types/eslint@9.6.1)(eslint@9.39.3(@types/eslint@9.6.1)(jiti@2.4.2))(typescript@5.9.3):
     dependencies:
@@ -23746,7 +23745,7 @@ snapshots:
       '@types/react': 19.2.14
       '@types/react-dom': 19.2.3(@types/react@19.2.14)
       busboy: 1.6.0
-      caniuse-lite: 1.0.30001775
+      caniuse-lite: 1.0.30001776
       postcss: 8.5.8
       react: 19.2.4
       react-dom: 19.2.4(react@19.2.4)
@@ -26056,7 +26055,7 @@ snapshots:
       '@samchon/openapi': 2.5.3
       '@types/inquirer': 8.2.12
       commander: 10.0.1
-      comment-json: 4.6.1
+      comment-json: 4.6.2
       inquirer: 8.2.7(@types/node@24.11.0)
       package-manager-detector: 0.2.11
       randexp: 0.5.3
