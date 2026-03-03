@@ -2,6 +2,15 @@
 
 # Changelog for Stryke - TRPC Next
 
+## [0.5.66](https://github.com/storm-software/stryke/releases/tag/trpc-next%400.5.66) (03/03/2026)
+
+### Updated Dependencies
+
+- Updated **types** to **v0.10.45**
+- Updated **path** to **v0.26.12**
+- Updated **env** to **v0.20.66**
+- Updated **url** to **v0.4.2**
+
 ## [0.5.65](https://github.com/storm-software/stryke/releases/tag/trpc-next%400.5.65) (03/03/2026)
 
 ### Updated Dependencies

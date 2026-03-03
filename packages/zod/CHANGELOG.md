@@ -2,6 +2,17 @@
 
 # Changelog for Stryke - Zod
 
+## [0.3.0](https://github.com/storm-software/stryke/releases/tag/zod%400.3.0) (03/03/2026)
+
+### Features
+
+- **zod:** Added `io` option to `extractJsonSchema` function ([172dab78](https://github.com/storm-software/stryke/commit/172dab78))
+
+### Updated Dependencies
+
+- Updated **type-checks** to **v0.5.31**
+- Updated **json** to **v0.13.1**
+
 ## [0.2.4](https://github.com/storm-software/stryke/releases/tag/zod%400.2.4) (03/03/2026)
 
 ### Updated Dependencies

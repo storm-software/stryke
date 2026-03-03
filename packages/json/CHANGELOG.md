@@ -2,6 +2,17 @@
 
 # Changelog for Stryke - JSON
 
+## [0.13.1](https://github.com/storm-software/stryke/releases/tag/json%400.13.1) (03/03/2026)
+
+### Bug Fixes
+
+- **json:** Resolve issue in Object JSON schema type-checker ([819f4c9a](https://github.com/storm-software/stryke/commit/819f4c9a))
+
+### Updated Dependencies
+
+- Updated **type-checks** to **v0.5.31**
+- Updated **types** to **v0.10.45**
+
 ## [0.13.0](https://github.com/storm-software/stryke/releases/tag/json%400.13.0) (03/03/2026)
 
 ### Features
