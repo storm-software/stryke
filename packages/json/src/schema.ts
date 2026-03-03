@@ -22,6 +22,7 @@ import { isSetObject } from "@stryke/type-checks/is-set-object";
 import type {
   JsonSchema7AllOfType,
   JsonSchema7ArrayType,
+  JsonSchema7BooleanType,
   JsonSchema7LiteralType,
   JsonSchema7NumberType,
   JsonSchema7ObjectType,
@@ -86,6 +87,18 @@ export function isJsonSchema7NumberType(
   return (
     "type" in schema && (schema.type === "number" || schema.type === "integer")
   );
+}
+
+/**
+ * Type guard for {@link JsonSchema7BooleanType}
+ *
+ * @param schema - The schema to check
+ * @returns True if the schema is a {@link JsonSchema7BooleanType}, false otherwise
+ */
+export function isJsonSchema7BooleanType(
+  schema: JsonSchema7Type
+): schema is JsonSchema7BooleanType {
+  return "type" in schema && schema.type === "boolean";
 }
 
 /**
