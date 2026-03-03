@@ -74,6 +74,7 @@
     "superjson": "catalog:"
   },
   "devDependencies": {
+    "@standard-schema/spec": "catalog:",
     "@types/node": "catalog:",
     "tsdown": "catalog:"
   },

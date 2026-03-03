@@ -324,7 +324,6 @@ export interface JsonSchema7Meta {
   title?: string;
   default?: any;
   description?: string;
-  markdownDescription?: string;
 
   /**
    * @see https://datatracker.ietf.org/doc/html/draft-bhutton-json-schema-00#section-8.2.4

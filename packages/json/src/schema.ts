@@ -16,6 +16,9 @@
 
  ------------------------------------------------------------------- */
 
+import type { StandardJSONSchemaV1 } from "@standard-schema/spec";
+import { isFunction } from "@stryke/type-checks/is-function";
+import { isSetObject } from "@stryke/type-checks/is-set-object";
 import type {
   JsonSchema7AllOfType,
   JsonSchema7ArrayType,
@@ -112,4 +115,31 @@ export function isJsonSchema7LiteralType(
   }
 
   return schema.type === "object" || schema.type === "array";
+}
+
+/**
+ * Type guard to check if a value is a {@link StandardJSONSchemaV1 | Standard JSON Schema}.
+ *
+ * @remarks
+ * This function checks if the value has the structure of a Standard JSON Schema, which includes a `~standard` property with a `jsonSchema` object that has `input` and `output` functions.
+ *
+ * @see https://standardschema.dev/json-schema
+ *
+ * @param value - The value to check.
+ * @returns True if the value is a {@link StandardJSONSchemaV1 | Standard JSON Schema}, false otherwise.
+ */
+export function isStandardJsonSchema<Input = unknown, Output = Input>(
+  value: any
+): value is StandardJSONSchemaV1<Input, Output> {
+  return (
+    isSetObject(value) &&
+    "~standard" in value &&
+    isSetObject(value["~standard"]) &&
+    "jsonSchema" in value["~standard"] &&
+    isSetObject(value["~standard"].jsonSchema) &&
+    "input" in value["~standard"].jsonSchema &&
+    isFunction(value["~standard"].jsonSchema.input) &&
+    "output" in value["~standard"].jsonSchema &&
+    isFunction(value["~standard"].jsonSchema.output)
+  );
 }

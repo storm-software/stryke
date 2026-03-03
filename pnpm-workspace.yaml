@@ -22,6 +22,7 @@ catalog:
   '@prisma/generator-helper': ^6.19.2
   '@prisma/internals': ^6.19.2
   '@prisma/prisma-schema-wasm': ^6.6.0-41.9061db3b0058e3d3731c6fe68a1b77061bed4861
+  '@standard-schema/spec': ^1.1.0
   '@storm-software/build-tools': ^0.158.92
   '@storm-software/config': ^1.135.12
   '@storm-software/config-tools': ^1.189.11
