@@ -1,0 +1,58 @@
+/* -------------------------------------------------------------------
+
+                       ⚡ Storm Software - Stryke
+
+ This code was released as part of the Stryke project. Stryke
+ is maintained by Storm Software under the Apache-2.0 license, and is
+ free for commercial and private use. For more information, please visit
+ our licensing page at https://stormsoftware.com/licenses/projects/stryke.
+
+ Website:                  https://stormsoftware.com
+ Repository:               https://github.com/storm-software/stryke
+ Documentation:            https://docs.stormsoftware.com/projects/stryke
+ Contact:                  https://stormsoftware.com/contact
+
+ SPDX-License-Identifier:  Apache-2.0
+
+ ------------------------------------------------------------------- */
+
+import { defineTSDownConfig } from "@stryke/tools-config/tsdown.config";
+
+export default defineTSDownConfig([
+  {
+    name: "crypto-neutral",
+    target: "esnext",
+    platform: "neutral",
+    entry: ["src/index.ts", "src/neutral.ts"],
+    tsconfig: "tsconfig.json",
+    unbundle: false,
+    exports: false,
+    dts: true,
+    clean: false,
+    skipNodeModulesBundle: true
+  },
+  {
+    name: "crypto-node",
+    target: "esnext",
+    platform: "node",
+    entry: ["src/node.ts"],
+    tsconfig: "tsconfig.node.json",
+    unbundle: false,
+    exports: false,
+    dts: true,
+    clean: false,
+    skipNodeModulesBundle: true
+  },
+  {
+    name: "crypto-cloudflare",
+    target: "esnext",
+    platform: "neutral",
+    entry: ["src/cloudflare.ts"],
+    tsconfig: "tsconfig.cloudflare.json",
+    unbundle: false,
+    exports: false,
+    dts: true,
+    clean: false,
+    skipNodeModulesBundle: true
+  }
+]);

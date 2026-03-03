@@ -13,37 +13,84 @@
   "module": "./dist/index.mjs",
   "exports": {
     ".": {
-      "require": "./dist/index.cjs",
-      "import": "./dist/index.mjs"
+      "require": {
+        "type": "./dist/index.d.cts",
+        "default": "./dist/index.cjs"
+      },
+      "import": {
+        "type": "./dist/index.d.mts",
+        "default": "./dist/index.mjs"
+      },
+      "default": {
+        "type": "./dist/index.d.mts",
+        "default": "./dist/index.mjs"
+      }
     },
-    "./base-64": {
-      "require": "./dist/base-64.cjs",
-      "import": "./dist/base-64.mjs"
-    },
-    "./encryption": {
-      "require": "./dist/encryption.cjs",
-      "import": "./dist/encryption.mjs"
-    },
-    "./encryption.node": {
-      "require": "./dist/encryption.node.cjs",
-      "import": "./dist/encryption.node.mjs"
-    },
-    "./hex": {
-      "require": "./dist/hex.cjs",
-      "import": "./dist/hex.mjs"
+    "./index": {
+      "require": {
+        "type": "./dist/index.d.cts",
+        "default": "./dist/index.cjs"
+      },
+      "import": {
+        "type": "./dist/index.d.mts",
+        "default": "./dist/index.mjs"
+      },
+      "default": {
+        "type": "./dist/index.d.mts",
+        "default": "./dist/index.mjs"
+      }
     },
     "./neutral": {
-      "require": "./dist/neutral.cjs",
-      "import": "./dist/neutral.mjs"
+      "require": {
+        "type": "./dist/neutral.d.cts",
+        "default": "./dist/neutral.cjs"
+      },
+      "import": {
+        "type": "./dist/neutral.d.mts",
+        "default": "./dist/neutral.mjs"
+      },
+      "default": {
+        "type": "./dist/neutral.d.mts",
+        "default": "./dist/neutral.mjs"
+      }
     },
-    "./*": "./*"
+    "./node": {
+      "require": {
+        "type": "./dist/node.d.cts",
+        "default": "./dist/node.cjs"
+      },
+      "import": {
+        "type": "./dist/node.d.mts",
+        "default": "./dist/node.mjs"
+      },
+      "default": {
+        "type": "./dist/node.d.mts",
+        "default": "./dist/node.mjs"
+      }
+    },
+    "./cloudflare": {
+      "require": {
+        "type": "./dist/cloudflare.d.cts",
+        "default": "./dist/cloudflare.cjs"
+      },
+      "import": {
+        "type": "./dist/cloudflare.d.mts",
+        "default": "./dist/cloudflare.mjs"
+      },
+      "default": {
+        "type": "./dist/cloudflare.d.mts",
+        "default": "./dist/cloudflare.mjs"
+      }
+    }
   },
   "types": "./dist/index.d.cts",
   "dependencies": {
     "@stryke/convert": "workspace:*",
+    "@stryke/json": "workspace:*",
     "@stryke/type-checks": "workspace:*"
   },
   "devDependencies": {
+    "@cloudflare/workers-types": "catalog:",
     "@types/node": "catalog:",
     "tsdown": "catalog:"
   },

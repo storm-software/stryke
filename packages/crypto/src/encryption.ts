@@ -102,7 +102,7 @@ export async function encrypt(
   const encrypted = await crypto.subtle.encrypt(
     {
       name: "AES-GCM",
-      iv: iv as Uint8Array<ArrayBuffer>
+      iv
     },
     key,
     stringToUtf8Array(plaintext) as BufferSource

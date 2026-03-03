@@ -25,10 +25,7 @@
 export function arrayBufferToString(
   buffer: ArrayBuffer | ArrayBufferLike | Uint8Array
 ): string {
-  const bytes =
-    buffer instanceof Uint8Array
-      ? buffer
-      : new Uint8Array(buffer as ArrayBufferLike);
+  const bytes = buffer instanceof Uint8Array ? buffer : new Uint8Array(buffer);
   const len = bytes.byteLength;
   if (len < 65535) {
     return String.fromCharCode.apply(null, bytes as unknown as number[]);

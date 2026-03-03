@@ -16,7 +16,5 @@
 
  ------------------------------------------------------------------- */
 
-export * from "./base-64";
-export * from "./encryption";
-export * from "./hex";
-export * from "./random";
+export * from "./ed25519";
+export * from "./neutral";

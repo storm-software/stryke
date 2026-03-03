@@ -199,8 +199,11 @@ export function decodeBase64(input: Uint8Array | string): Uint8Array {
  * @param base64 - The Base64 encoded string to convert.
  * @returns The Base64url encoded string.
  */
-export function base64ToBase64url(base64: string): string {
-  return base64.replace(/\+/g, "-").replace(/\//g, "_").replace(/=+$/g, "");
+export function base64UrlEncode(base64: Uint8Array): string {
+  return btoa(String.fromCharCode(...base64))
+    .replace(/\+/g, "-")
+    .replace(/\//g, "_")
+    .replace(/=/g, "");
 }
 
 /**
@@ -211,9 +214,12 @@ export function base64ToBase64url(base64: string): string {
  * @param base64url - The Base64url encoded string to convert.
  * @returns The Base64 encoded string.
  */
-export function base64FromBase64url(base64url: string): string {
-  return (
-    base64url.replace(/-/g, "+").replace(/_/g, "/") +
-    "=".repeat((4 - (base64url.length % 4)) % 4)
+export function base64UrlDecode(base64url: string): Uint8Array {
+  const base64 = base64url.replace(/-/g, "+").replace(/_/g, "/");
+
+  return new Uint8Array(
+    [...atob(base64 + "=".repeat((4 - (base64.length % 4)) % 4))].map(c =>
+      c.charCodeAt(0)
+    )
   );
 }
