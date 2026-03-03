@@ -2,6 +2,18 @@
 
 # Changelog for Stryke - Crypto
 
+## [0.6.0](https://github.com/storm-software/stryke/releases/tag/crypto%400.6.0) (03/03/2026)
+
+### Features
+
+- **crypto:** Added `ed25519` helpers and updated package exports ([d238387e](https://github.com/storm-software/stryke/commit/d238387e))
+
+### Updated Dependencies
+
+- Updated **type-checks** to **v0.5.29**
+- Updated **convert** to **v0.6.44**
+- Updated **json** to **v0.12.0**
+
 ## [0.5.44](https://github.com/storm-software/stryke/releases/tag/crypto%400.5.44) (03/02/2026)
 
 ### Updated Dependencies

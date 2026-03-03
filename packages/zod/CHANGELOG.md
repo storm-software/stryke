@@ -2,6 +2,17 @@
 
 # Changelog for Stryke - Zod
 
+## [0.2.3](https://github.com/storm-software/stryke/releases/tag/zod%400.2.3) (03/03/2026)
+
+### Miscellaneous
+
+- **monorepo:** Added custom `cspell` dictionary for workspace ([74548631](https://github.com/storm-software/stryke/commit/74548631))
+
+### Updated Dependencies
+
+- Updated **type-checks** to **v0.5.29**
+- Updated **json** to **v0.12.0**
+
 ## [0.2.2](https://github.com/storm-software/stryke/releases/tag/zod%400.2.2) (03/02/2026)
 
 ### Miscellaneous

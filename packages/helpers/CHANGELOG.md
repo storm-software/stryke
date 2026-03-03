@@ -2,6 +2,18 @@
 
 # Changelog for Stryke - Helpers
 
+## [0.9.46](https://github.com/storm-software/stryke/releases/tag/helpers%400.9.46) (03/03/2026)
+
+### Miscellaneous
+
+- **monorepo:** Added custom `cspell` dictionary for workspace ([74548631](https://github.com/storm-software/stryke/commit/74548631))
+
+### Updated Dependencies
+
+- Updated **type-checks** to **v0.5.29**
+- Updated **convert** to **v0.6.44**
+- Updated **types** to **v0.10.43**
+
 ## [0.9.45](https://github.com/storm-software/stryke/releases/tag/helpers%400.9.45) (03/02/2026)
 
 ### Updated Dependencies

@@ -2,6 +2,17 @@
 
 # Changelog for Stryke - Convert
 
+## [0.6.44](https://github.com/storm-software/stryke/releases/tag/convert%400.6.44) (03/03/2026)
+
+### Features
+
+- **crypto:** Added `ed25519` helpers and updated package exports ([d238387e](https://github.com/storm-software/stryke/commit/d238387e))
+
+### Updated Dependencies
+
+- Updated **type-checks** to **v0.5.29**
+- Updated **types** to **v0.10.43**
+
 ## [0.6.43](https://github.com/storm-software/stryke/releases/tag/convert%400.6.43) (03/02/2026)
 
 ### Updated Dependencies

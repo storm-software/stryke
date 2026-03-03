@@ -2,6 +2,12 @@
 
 # Changelog for Stryke - Types
 
+## [0.10.43](https://github.com/storm-software/stryke/releases/tag/types%400.10.43) (03/03/2026)
+
+### Miscellaneous
+
+- **monorepo:** Added custom `cspell` dictionary for workspace ([74548631](https://github.com/storm-software/stryke/commit/74548631))
+
 ## [0.10.41](https://github.com/storm-software/stryke/releases/tag/types%400.10.41) (03/02/2026)
 
 ### Features

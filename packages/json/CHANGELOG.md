@@ -2,6 +2,19 @@
 
 # Changelog for Stryke - JSON
 
+## [0.12.0](https://github.com/storm-software/stryke/releases/tag/json%400.12.0) (03/03/2026)
+
+### Features
+
+- **json:** Added `isJsonSchema7BooleanType` type-check function ([9ad702e0](https://github.com/storm-software/stryke/commit/9ad702e0))
+- **json:** Added additional fields to schema type checks ([4f49866a](https://github.com/storm-software/stryke/commit/4f49866a))
+- **json:** Added the `canonicalJson` helper function ([8d21e027](https://github.com/storm-software/stryke/commit/8d21e027))
+
+### Updated Dependencies
+
+- Updated **type-checks** to **v0.5.29**
+- Updated **types** to **v0.10.43**
+
 ## [0.11.0](https://github.com/storm-software/stryke/releases/tag/json%400.11.0) (03/02/2026)
 
 ### Features

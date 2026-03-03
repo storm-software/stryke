@@ -2,6 +2,18 @@
 
 # Changelog for Stryke - URL
 
+## [0.4.0](https://github.com/storm-software/stryke/releases/tag/url%400.4.0) (03/03/2026)
+
+### Features
+
+- **url:** Added the `validate` utility functions module ([0f544774](https://github.com/storm-software/stryke/commit/0f544774))
+
+### Updated Dependencies
+
+- Updated **type-checks** to **v0.5.29**
+- Updated **json** to **v0.12.0**
+- Updated **path** to **v0.26.10**
+
 ## [0.3.39](https://github.com/storm-software/stryke/releases/tag/url%400.3.39) (03/02/2026)
 
 ### Updated Dependencies

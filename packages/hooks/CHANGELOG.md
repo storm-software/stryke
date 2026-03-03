@@ -2,6 +2,19 @@
 
 # Changelog for Stryke - Hooks
 
+## [0.4.62](https://github.com/storm-software/stryke/releases/tag/hooks%400.4.62) (03/03/2026)
+
+### Miscellaneous
+
+- **monorepo:** Added custom `cspell` dictionary for workspace ([74548631](https://github.com/storm-software/stryke/commit/74548631))
+
+### Updated Dependencies
+
+- Updated **type-checks** to **v0.5.29**
+- Updated **helpers** to **v0.9.46**
+- Updated **types** to **v0.10.43**
+- Updated **env** to **v0.20.64**
+
 ## [0.4.61](https://github.com/storm-software/stryke/releases/tag/hooks%400.4.61) (03/02/2026)
 
 ### Updated Dependencies
