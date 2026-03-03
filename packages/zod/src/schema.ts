@@ -22,17 +22,33 @@ import * as z4 from "zod/v4/core";
 import { isZod3Type, isZod4Type } from "./is-zod-type";
 import type { ZodType } from "./types";
 
+export interface ExtractJsonSchemaOptions {
+  /**
+   * The JSON Schema draft version to target. Defaults to "draft-07".
+   */
+  target?: "draft-07" | "draft-2020-12";
+
+  /**
+   * Whether to include the input or output schema for Zod schemas.
+   *
+   * @remarks
+   */
+  io?: "input" | "output";
+}
+
 /**
  * Extracts a JSON Schema from a given Zod schema, supporting both version 3 and version 4 of Zod.
  *
  * @param type - The Zod schema to extract the JSON Schema from. Can be either a Zod v3 or v4 schema.
- * @param target - The JSON Schema draft version to target. Defaults to "draft-07".
+ * @param options - Options for extracting the JSON Schema, including the target draft version and input/output selection.
  * @returns The extracted JSON Schema.
  */
 export function extractJsonSchema(
   type: ZodType,
-  target: "draft-07" | "draft-2020-12" = "draft-07"
+  options: ExtractJsonSchemaOptions = {}
 ) {
+  const { target = "draft-07", io = "input" } = options;
+
   if (isZod3Type(type)) {
     const result = zodToJsonSchema(type, {
       $refStrategy: "root",
@@ -40,7 +56,8 @@ export function extractJsonSchema(
       target: target === "draft-07" ? "jsonSchema7" : "jsonSchema2019-09",
       mapStrategy: "entries",
       errorMessages: false,
-      markdownDescription: false
+      markdownDescription: false,
+      pipeStrategy: io
     });
     if (!result) {
       throw new Error("Failed to extract JSON Schema from Zod v3 schema");
@@ -68,5 +85,5 @@ export function extractJsonSchema(
  * @returns The extracted JSON Schema.
  */
 export function extractJsonSchema7(type: ZodType) {
-  return extractJsonSchema(type, "draft-07") as JsonSchema7Type;
+  return extractJsonSchema(type, { target: "draft-07" }) as JsonSchema7Type;
 }
