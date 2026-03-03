@@ -2,6 +2,17 @@
 
 # Changelog for Stryke - Zod
 
+## [0.2.2](https://github.com/storm-software/stryke/releases/tag/zod%400.2.2) (03/02/2026)
+
+### Miscellaneous
+
+- **zod:** Update `zodToJsonSchema` for consistency ([ae5bae49](https://github.com/storm-software/stryke/commit/ae5bae49))
+
+### Updated Dependencies
+
+- Updated **type-checks** to **v0.5.28**
+- Updated **json** to **v0.11.0**
+
 ## [0.2.1](https://github.com/storm-software/stryke/releases/tag/zod%400.2.1) (03/02/2026)
 
 ### Features

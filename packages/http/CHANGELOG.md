@@ -2,6 +2,13 @@
 
 # Changelog for Stryke - HTTP
 
+## [0.12.38](https://github.com/storm-software/stryke/releases/tag/http%400.12.38) (03/02/2026)
+
+### Updated Dependencies
+
+- Updated **type-checks** to **v0.5.28**
+- Updated **url** to **v0.3.39**
+
 ## [0.12.37](https://github.com/storm-software/stryke/releases/tag/http%400.12.37) (03/02/2026)
 
 ### Updated Dependencies
