@@ -37,7 +37,10 @@ export function extractJsonSchema(
     const result = zodToJsonSchema(type, {
       $refStrategy: "root",
       definitionPath: "$defs",
-      target: target === "draft-07" ? "jsonSchema7" : "jsonSchema2019-09"
+      target: target === "draft-07" ? "jsonSchema7" : "jsonSchema2019-09",
+      mapStrategy: "entries",
+      errorMessages: false,
+      markdownDescription: false
     });
     if (!result) {
       throw new Error("Failed to extract JSON Schema from Zod v3 schema");
