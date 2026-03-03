@@ -28,8 +28,7 @@ import type {
   JsonSchema7ObjectType,
   JsonSchema7PrimitiveLiteralType,
   JsonSchema7StringType,
-  JsonSchema7TupleType,
-  JsonSchema7Type
+  JsonSchema7TupleType
 } from "./types";
 
 /**
@@ -39,7 +38,7 @@ import type {
  * @returns True if the schema is a {@link JsonSchema7AllOfType}, false otherwise
  */
 export function isJsonSchema7AllOfType(
-  schema: JsonSchema7Type
+  schema: any
 ): schema is JsonSchema7AllOfType {
   if ("type" in schema && schema.type === "string") {
     return false;
@@ -55,7 +54,7 @@ export function isJsonSchema7AllOfType(
  * @returns True if the schema is a {@link JsonSchema7ObjectType}, false otherwise
  */
 export function isJsonSchema7ObjectType(
-  schema: JsonSchema7Type
+  schema: any
 ): schema is JsonSchema7ObjectType {
   return "type" in schema && schema.type === "object";
 }
@@ -67,7 +66,7 @@ export function isJsonSchema7ObjectType(
  * @returns True if the schema is a {@link JsonSchema7StringType}, false otherwise
  */
 export function isJsonSchema7StringType(
-  schema: JsonSchema7Type
+  schema: any
 ): schema is JsonSchema7StringType {
   return "type" in schema && schema.type === "string";
 }
@@ -79,7 +78,7 @@ export function isJsonSchema7StringType(
  * @returns True if the schema is a {@link JsonSchema7NumberType}, false otherwise
  */
 export function isJsonSchema7NumberType(
-  schema: JsonSchema7Type
+  schema: any
 ): schema is JsonSchema7NumberType {
   return (
     "type" in schema && (schema.type === "number" || schema.type === "integer")
@@ -93,7 +92,7 @@ export function isJsonSchema7NumberType(
  * @returns True if the schema is a {@link JsonSchema7BooleanType}, false otherwise
  */
 export function isJsonSchema7BooleanType(
-  schema: JsonSchema7Type
+  schema: any
 ): schema is JsonSchema7BooleanType {
   return "type" in schema && schema.type === "boolean";
 }
@@ -105,7 +104,7 @@ export function isJsonSchema7BooleanType(
  * @returns True if the schema is a {@link JsonSchema7ArrayType}, false otherwise
  */
 export function isJsonSchema7ArrayType(
-  schema: JsonSchema7Type
+  schema: any
 ): schema is JsonSchema7ArrayType {
   return "type" in schema && schema.type === "array" && "items" in schema;
 }
@@ -117,7 +116,7 @@ export function isJsonSchema7ArrayType(
  * @returns True if the schema is a {@link JsonSchema7TupleType}, false otherwise
  */
 export function isJsonSchema7TupleType(
-  schema: JsonSchema7Type
+  schema: any
 ): schema is JsonSchema7TupleType {
   return (
     "type" in schema &&
@@ -134,7 +133,7 @@ export function isJsonSchema7TupleType(
  * @returns True if the schema is a {@link JsonSchema7PrimitiveLiteralType}, false otherwise
  */
 export function isJsonSchema7PrimitiveLiteralType(
-  schema: JsonSchema7Type
+  schema: any
 ): schema is JsonSchema7PrimitiveLiteralType {
   if (!("type" in schema)) {
     return false;
@@ -158,7 +157,7 @@ export function isJsonSchema7PrimitiveLiteralType(
  * @returns True if the schema is a {@link JsonSchema7LiteralType}, false otherwise
  */
 export function isJsonSchema7LiteralType(
-  schema: JsonSchema7Type
+  schema: any
 ): schema is JsonSchema7LiteralType {
   if (isJsonSchema7PrimitiveLiteralType(schema)) {
     return true;
