@@ -2,6 +2,18 @@
 
 # Changelog for Stryke - JSON
 
+## [0.11.0](https://github.com/storm-software/stryke/releases/tag/json%400.11.0) (03/02/2026)
+
+### Features
+
+- **json:** Added `isStandardJsonSchema` helper function ([7d5e8fac](https://github.com/storm-software/stryke/commit/7d5e8fac))
+- **json:** Added various type-checks to ensure JSON schema typings ([f772306f](https://github.com/storm-software/stryke/commit/f772306f))
+
+### Updated Dependencies
+
+- Updated **type-checks** to **v0.5.28**
+- Updated **types** to **v0.10.42**
+
 ## [0.10.0](https://github.com/storm-software/stryke/releases/tag/json%400.10.0) (03/02/2026)
 
 ### Miscellaneous
