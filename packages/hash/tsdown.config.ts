@@ -16,13 +16,31 @@
 
  ------------------------------------------------------------------- */
 
-/**
- * The hashing library used by Storm Software for building TypeScript applications.
- *
- * @remarks
- * A package containing utility functions that hash data using various algorithms.
- *
- * @packageDocumentation
- */
+import { defineTSDownConfig } from "@stryke/tools-config/tsdown.config";
 
-export * from "./neutral";
+export default defineTSDownConfig([
+  {
+    name: "hash-neutral",
+    target: "esnext",
+    platform: "neutral",
+    entry: ["src/index.ts", "src/neutral.ts"],
+    tsconfig: "tsconfig.json",
+    unbundle: false,
+    exports: false,
+    dts: true,
+    clean: false,
+    skipNodeModulesBundle: true
+  },
+  {
+    name: "hash-node",
+    target: "esnext",
+    platform: "node",
+    entry: ["src/node.ts"],
+    tsconfig: "tsconfig.node.json",
+    unbundle: false,
+    exports: false,
+    dts: true,
+    clean: false,
+    skipNodeModulesBundle: true
+  }
+]);

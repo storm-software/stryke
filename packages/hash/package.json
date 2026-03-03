@@ -13,45 +13,72 @@
   "module": "./dist/index.mjs",
   "exports": {
     ".": {
-      "require": "./dist/index.cjs",
-      "import": "./dist/index.mjs"
+      "require": {
+        "type": "./dist/index.d.cts",
+        "default": "./dist/index.cjs"
+      },
+      "import": {
+        "type": "./dist/index.d.mts",
+        "default": "./dist/index.mjs"
+      },
+      "default": {
+        "type": "./dist/index.d.mts",
+        "default": "./dist/index.mjs"
+      }
     },
-    "./digest": {
-      "require": "./dist/digest.cjs",
-      "import": "./dist/digest.mjs"
-    },
-    "./etag": {
-      "require": "./dist/etag.cjs",
-      "import": "./dist/etag.mjs"
-    },
-    "./hash-files": {
-      "require": "./dist/hash-files.cjs",
-      "import": "./dist/hash-files.mjs"
-    },
-    "./md5": {
-      "require": "./dist/md5.cjs",
-      "import": "./dist/md5.mjs"
-    },
-    "./murmurhash": {
-      "require": "./dist/murmurhash.cjs",
-      "import": "./dist/murmurhash.mjs"
+    "./index": {
+      "require": {
+        "type": "./dist/index.d.cts",
+        "default": "./dist/index.cjs"
+      },
+      "import": {
+        "type": "./dist/index.d.mts",
+        "default": "./dist/index.mjs"
+      },
+      "default": {
+        "type": "./dist/index.d.mts",
+        "default": "./dist/index.mjs"
+      }
     },
     "./neutral": {
-      "require": "./dist/neutral.cjs",
-      "import": "./dist/neutral.mjs"
+      "require": {
+        "type": "./dist/neutral.d.cts",
+        "default": "./dist/neutral.cjs"
+      },
+      "import": {
+        "type": "./dist/neutral.d.mts",
+        "default": "./dist/neutral.mjs"
+      },
+      "default": {
+        "type": "./dist/neutral.d.mts",
+        "default": "./dist/neutral.mjs"
+      }
     },
-    "./xx-hash": {
-      "require": "./dist/xx-hash.cjs",
-      "import": "./dist/xx-hash.mjs"
-    },
-    "./*": "./*"
+    "./node": {
+      "require": {
+        "type": "./dist/node.d.cts",
+        "default": "./dist/node.cjs"
+      },
+      "import": {
+        "type": "./dist/node.d.mts",
+        "default": "./dist/node.mjs"
+      },
+      "default": {
+        "type": "./dist/node.d.mts",
+        "default": "./dist/node.mjs"
+      }
+    }
   },
   "types": "./dist/index.d.cts",
   "dependencies": {
+    "@stryke/json": "workspace:*",
+    "@stryke/type-checks": "workspace:*",
+    "@stryke/fs": "workspace:*",
     "js-xxhash": "catalog:",
     "ohash": "catalog:"
   },
   "devDependencies": {
+    "@types/node": "catalog:",
     "tsdown": "catalog:"
   },
   "publishConfig": {

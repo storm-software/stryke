@@ -16,13 +16,11 @@
 
  ------------------------------------------------------------------- */
 
-/**
- * The hashing library used by Storm Software for building TypeScript applications.
- *
- * @remarks
- * A package containing utility functions that hash data using various algorithms.
- *
- * @packageDocumentation
- */
-
-export * from "./neutral";
+export * from "./digest";
+export * from "./etag";
+export * from "./hash-content";
+export * from "./hash-files";
+export * from "./md5";
+export * from "./murmurhash";
+export * from "./pbkdf2";
+export * from "./xx-hash";

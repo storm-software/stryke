@@ -16,10 +16,7 @@
 
  ------------------------------------------------------------------- */
 
-import {
-  arrayBufferToString,
-  stringToUint8Array
-} from "@stryke/convert/neutral";
+import { isSetString } from "@stryke/type-checks";
 
 export type AlgorithmIdentifier = "SHA-256" | "SHA-384" | "SHA-512";
 
@@ -46,18 +43,52 @@ export function createHasher(algorithm: AlgorithmIdentifier): Hasher {
  * @returns A hash string representation of the `data` parameter.
  */
 export async function digest(
-  data: string,
+  data: string | Uint8Array,
   algorithm: AlgorithmIdentifier = "SHA-512"
 ): Promise<string> {
+  const encoder = new TextEncoder();
   const arrayBuffer = await globalThis.crypto.subtle.digest(
     algorithm,
-    stringToUint8Array(data) as BufferSource
+    (isSetString(data) ? encoder.encode(data) : data) as BufferSource
   );
 
-  return arrayBufferToString(arrayBuffer);
+  return btoa(String.fromCharCode(...new Uint8Array(arrayBuffer)))
+    .replace(/\+/g, "-")
+    .replace(/\//g, "_")
+    .replace(/=/g, "");
 }
 
+/**
+ * Alias for {@link digest}.
+ */
 export const hash = digest;
+
+/**
+ * Hash a string or Uint8Array using SHA-256 and return the result as a base64url-encoded string.
+ *
+ * @param data - The data to hash.
+ * @returns A hash string representation of the `data` parameter.
+ */
+export const sha256 = async (data: string | Uint8Array) =>
+  digest(data, "SHA-256");
+
+/**
+ * Hash a string or Uint8Array using SHA-384 and return the result as a base64url-encoded string.
+ *
+ * @param data - The data to hash.
+ * @returns A hash string representation of the `data` parameter.
+ */
+export const sha384 = async (data: string | Uint8Array) =>
+  digest(data, "SHA-384");
+
+/**
+ * Hash a string or Uint8Array using SHA-512 and return the result as a base64url-encoded string.
+ *
+ * @param data - The data to hash.
+ * @returns A hash string representation of the `data` parameter.
+ */
+export const sha512 = async (data: string | Uint8Array) =>
+  digest(data, "SHA-512");
 
 export class Hasher {
   #chunks: Uint8Array[] = [];

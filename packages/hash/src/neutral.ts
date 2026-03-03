@@ -17,6 +17,9 @@
  ------------------------------------------------------------------- */
 
 export * from "./digest";
+export * from "./etag";
+export * from "./hash-content";
 export * from "./hash-files";
 export * from "./murmurhash";
+export * from "./pbkdf2";
 export * from "./xx-hash";
