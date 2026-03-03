@@ -28,6 +28,10 @@
       "require": "./dist/types.cjs",
       "import": "./dist/types.mjs"
     },
+    "./validate": {
+      "require": "./dist/validate.cjs",
+      "import": "./dist/validate.mjs"
+    },
     "./*": "./*"
   },
   "types": "./dist/index.d.cts",

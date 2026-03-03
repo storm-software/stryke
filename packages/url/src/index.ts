@@ -16,5 +16,7 @@
 
  ------------------------------------------------------------------- */
 
+export * from "./helpers";
 export * from "./storm-url";
 export * from "./types";
+export * from "./validate";
