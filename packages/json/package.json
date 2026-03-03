@@ -16,6 +16,10 @@
       "require": "./dist/index.cjs",
       "import": "./dist/index.mjs"
     },
+    "./canonical": {
+      "require": "./dist/canonical.cjs",
+      "import": "./dist/canonical.mjs"
+    },
     "./pointer": {
       "require": "./dist/pointer/index.cjs",
       "import": "./dist/pointer/index.mjs"

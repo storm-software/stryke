@@ -25,6 +25,7 @@
  * @packageDocumentation
  */
 
+export * from "./canonical";
 export * from "./pointer";
 export * from "./schema";
 export * from "./storm-json";
