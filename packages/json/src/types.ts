@@ -172,11 +172,13 @@ export interface JsonSchema7AllOfType {
   unevaluatedProperties?: boolean;
 }
 
+export interface JsonSchema7PrimitiveLiteralType {
+  type: "string" | "number" | "integer" | "boolean";
+  const: string | number | boolean;
+}
+
 export type JsonSchema7LiteralType =
-  | {
-      type: "string" | "number" | "integer" | "boolean";
-      const: string | number | boolean;
-    }
+  | JsonSchema7PrimitiveLiteralType
   | {
       type: "object" | "array";
     };
