@@ -28,6 +28,7 @@ import type {
   JsonSchema7ObjectType,
   JsonSchema7PrimitiveLiteralType,
   JsonSchema7StringType,
+  JsonSchema7TupleType,
   JsonSchema7Type
 } from "./types";
 
@@ -111,6 +112,23 @@ export function isJsonSchema7ArrayType(
   schema: JsonSchema7Type
 ): schema is JsonSchema7ArrayType {
   return "type" in schema && schema.type === "array" && "items" in schema;
+}
+
+/**
+ * Type guard for {@link JsonSchema7TupleType}
+ *
+ * @param schema - The schema to check
+ * @returns True if the schema is a {@link JsonSchema7TupleType}, false otherwise
+ */
+export function isJsonSchema7TupleType(
+  schema: JsonSchema7Type
+): schema is JsonSchema7TupleType {
+  return (
+    "type" in schema &&
+    schema.type === "array" &&
+    "items" in schema &&
+    Array.isArray(schema.items)
+  );
 }
 
 /**

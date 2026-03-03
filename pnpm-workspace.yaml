@@ -34,11 +34,11 @@ catalog:
   '@storm-software/linting-tools': ^1.132.98
   '@storm-software/markdownlint': ^0.30.86
   '@storm-software/pnpm-tools': ^0.6.95
-  '@storm-software/prettier': ^0.57.80
+  '@storm-software/prettier': ^0.58.10
   '@storm-software/testing-tools': ^1.119.86
   '@storm-software/tsconfig': ^0.47.86
   '@storm-software/tsdoc': ^0.13.86
-  '@storm-software/unbuild': ^0.57.80
+  '@storm-software/unbuild': ^0.57.93
   '@storm-software/untyped': ^0.24.74
   '@storm-software/workspace-tools': ^1.294.44
   '@stryke/type-checks': workspa

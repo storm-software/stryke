@@ -88,8 +88,8 @@ catalogs:
       specifier: ^0.6.95
       version: 0.6.95
     '@storm-software/prettier':
-      specifier: ^0.57.80
-      version: 0.57.80
+      specifier: ^0.58.10
+      version: 0.58.10
     '@storm-software/testing-tools':
       specifier: ^1.119.86
       version: 1.119.86
@@ -454,7 +454,7 @@ importers:
         version: 0.6.95
       '@storm-software/prettier':
         specifier: 'catalog:'
-        version: 0.57.80(prettier-plugin-astro@0.14.1)(prettier-plugin-organize-imports@4.1.0(prettier@3.8.1)(typescript@5.9.3))(prettier-plugin-pkg@0.18.1(prettier@3.8.1))(prettier-plugin-prisma@5.0.0(prettier@3.8.1))(prettier-plugin-sh@0.15.0(prettier@3.8.1))(prettier-plugin-toml@2.0.4(prettier@3.8.1))(prettier@3.8.1)
+        version: 0.58.10(prettier-plugin-astro@0.14.1)(prettier-plugin-organize-imports@4.1.0(prettier@3.8.1)(typescript@5.9.3))(prettier-plugin-packagejson@3.0.0(prettier@3.8.1))(prettier-plugin-prisma@5.0.0(prettier@3.8.1))(prettier-plugin-sh@0.15.0(prettier@3.8.1))(prettier-plugin-toml@2.0.4(prettier@3.8.1))(prettier@3.8.1)
       '@storm-software/testing-tools':
         specifier: 'catalog:'
         version: 1.119.86(@nx/jest@22.5.3(@babel/traverse@7.29.0)(@swc-node/register@1.11.1(@swc/core@1.15.18(@swc/helpers@0.5.19))(@swc/types@0.1.25)(typescript@5.9.3))(@swc/core@1.15.18(@swc/helpers@0.5.19))(@types/babel-plugin-macros@3.1.3)(@types/node-notifier@8.0.5)(@types/node@24.11.0)(babel-plugin-macros@3.1.0)(esbuild-register@3.6.0(esbuild@0.25.12))(nx@22.5.3(@swc-node/register@1.11.1(@swc/core@1.15.18(@swc/helpers@0.5.19))(@swc/types@0.1.25)(typescript@5.9.3))(@swc/core@1.15.18(@swc/helpers@0.5.19)))(ts-node@10.9.2(@swc/core@1.15.18(@swc/helpers@0.5.19))(@types/node@24.11.0)(typescript@5.9.3))(typescript@5.9.3)(verdaccio@6.2.9(typanion@3.14.0)))(jest@30.0.5(@types/babel-plugin-macros@3.1.3)(@types/node-notifier@8.0.5)(@types/node@24.11.0)(babel-plugin-macros@3.1.0)(esbuild-register@3.6.0(esbuild@0.25.12))(ts-node@10.9.2(@swc/core@1.15.18(@swc/helpers@0.5.19))(@types/node@24.11.0)(typescript@5.9.3)))
@@ -4487,26 +4487,6 @@ packages:
   '@storm-software/pnpm-tools@0.6.95':
     resolution: {integrity: sha512-JdiE4NqcOTRfolvx7xt9hHGR5nG+6l/mItTsVNtdoCzsv2EeevFrOT/AFH3xst1tneyY3YNEQ+tfORi28fQcfg==}
     hasBin: true
-
-  '@storm-software/prettier@0.57.80':
-    resolution: {integrity: sha512-2/LTUkeT9OfPuJYkTs55QO1IcnppZqLR4tI5TVI9f5MNcb0+8yLoViM5HWoubsF1p2xt8lABR5ktJYy1S/jKOQ==}
-    peerDependencies:
-      prettier: ^3.7.4
-      prettier-plugin-astro: ^0.14.1
-      prettier-plugin-organize-imports: ^4.0.0
-      prettier-plugin-pkg: ^0.18.1
-      prettier-plugin-prisma: ^5.0.0
-      prettier-plugin-sh: ^0.15.0
-      prettier-plugin-solidity: 1.3.1
-      prettier-plugin-tailwindcss: 0.6.5
-      prettier-plugin-toml: ^2.0.4
-    peerDependenciesMeta:
-      prettier-plugin-astro:
-        optional: true
-      prettier-plugin-solidity:
-        optional: true
-      prettier-plugin-tailwindcss:
-        optional: true
 
   '@storm-software/prettier@0.58.10':
     resolution: {integrity: sha512-eUnzg+awp4CyQoU4tnppmseijY4csEvVJVkozEOzvaiZEFbMxWrquVitO1Dbx6Uo0CjZ6V4UzgSbC693pNijbg==}
@@ -10504,12 +10484,6 @@ packages:
       prettier:
         optional: true
 
-  prettier-plugin-pkg@0.18.1:
-    resolution: {integrity: sha512-FuUxvsYZR/8rsLH8s/jbPQmgYvv0yxW8LoIHCy6+Q7p4FBjjdP3DNKx8fMTOsc0SlEB1skB4o1LcahRceIh87A==}
-    engines: {node: ^14.18.0 || >=16.0.0}
-    peerDependencies:
-      prettier: ^3.0.3
-
   prettier-plugin-prisma@5.0.0:
     resolution: {integrity: sha512-jTJV04D9+yF7ziOOMs7CJe4ijgAH7DEGjt0SAWAToGNRy1H6BEhvcKA2UQH6gC6KVW5zeeOSAvsoiDDTt9oKXg==}
     engines: {node: '>=14', npm: '>=8'}
@@ -16423,20 +16397,6 @@ snapshots:
       yaml: 2.8.2
     transitivePeerDependencies:
       - magicast
-
-  '@storm-software/prettier@0.57.80(prettier-plugin-astro@0.14.1)(prettier-plugin-organize-imports@4.1.0(prettier@3.8.1)(typescript@5.9.3))(prettier-plugin-pkg@0.18.1(prettier@3.8.1))(prettier-plugin-prisma@5.0.0(prettier@3.8.1))(prettier-plugin-sh@0.15.0(prettier@3.8.1))(prettier-plugin-toml@2.0.4(prettier@3.8.1))(prettier@3.8.1)':
-    dependencies:
-      prettier: 3.8.1
-      prettier-plugin-jsdoc: 1.8.0(prettier@3.8.1)
-      prettier-plugin-organize-imports: 4.1.0(prettier@3.8.1)(typescript@5.9.3)
-      prettier-plugin-pkg: 0.18.1(prettier@3.8.1)
-      prettier-plugin-prisma: 5.0.0(prettier@3.8.1)
-      prettier-plugin-sh: 0.15.0(prettier@3.8.1)
-      prettier-plugin-toml: 2.0.4(prettier@3.8.1)
-    optionalDependencies:
-      prettier-plugin-astro: 0.14.1
-    transitivePeerDependencies:
-      - supports-color
 
   '@storm-software/prettier@0.58.10(prettier-plugin-astro@0.14.1)(prettier-plugin-organize-imports@4.1.0(prettier@3.8.1)(typescript@5.9.3))(prettier-plugin-packagejson@3.0.0(prettier@3.8.1))(prettier-plugin-prisma@5.0.0(prettier@3.8.1))(prettier-plugin-sh@0.15.0(prettier@3.8.1))(prettier-plugin-toml@2.0.4(prettier@3.8.1))(prettier@3.8.1)':
     dependencies:
@@ -24540,10 +24500,6 @@ snapshots:
     dependencies:
       sort-package-json: 3.6.0
     optionalDependencies:
-      prettier: 3.8.1
-
-  prettier-plugin-pkg@0.18.1(prettier@3.8.1):
-    dependencies:
       prettier: 3.8.1
 
   prettier-plugin-prisma@5.0.0(prettier@3.8.1):
