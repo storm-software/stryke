@@ -2,6 +2,12 @@
 
 # Changelog for Stryke - JSON
 
+## [0.14.0](https://github.com/storm-software/stryke/releases/tag/json%400.14.0) (03/03/2026)
+
+### Features
+
+- **json:** Added new JSON Schema metadata fields ([b267a780](https://github.com/storm-software/stryke/commit/b267a780))
+
 ## [0.13.1](https://github.com/storm-software/stryke/releases/tag/json%400.13.1) (03/03/2026)
 
 ### Bug Fixes
