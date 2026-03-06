@@ -55,7 +55,7 @@
   "markdownlint.config": {
     "extends": "./node_modules/@storm-software/markdownlint/config/base.markdownlint-cli2.jsonc"
   },
-  "eslint.debug": true,
+  "eslint.debug": false,
   "eslint.codeAction.disableRuleComment": {
     "enable": true,
     "location": "separateLine"
