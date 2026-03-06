@@ -64,6 +64,10 @@
       "require": "./dist/kebab-case.cjs",
       "import": "./dist/kebab-case.mjs"
     },
+    "./list": {
+      "require": "./dist/list.cjs",
+      "import": "./dist/list.mjs"
+    },
     "./lower-case-first": {
       "require": "./dist/lower-case-first.cjs",
       "import": "./dist/lower-case-first.mjs"
@@ -99,6 +103,10 @@
     "./pretty-bytes": {
       "require": "./dist/pretty-bytes.cjs",
       "import": "./dist/pretty-bytes.mjs"
+    },
+    "./pretty-path": {
+      "require": "./dist/pretty-path.cjs",
+      "import": "./dist/pretty-path.mjs"
     },
     "./snake-case": {
       "require": "./dist/snake-case.cjs",
