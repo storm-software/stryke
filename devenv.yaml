@@ -7,6 +7,8 @@ inputs:
     url: github:cachix/devenv-nixpkgs/rolling
   nixpkgs-unstable:
     url: github:nixos/nixpkgs/nixpkgs-unstable
+  git-hooks:
+    url: github:cachix/git-hooks.nix
 imports:
   - storm-ops/devenv-modules/base
   - storm-ops/devenv-modules/core
