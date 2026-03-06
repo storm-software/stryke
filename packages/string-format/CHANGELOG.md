@@ -2,6 +2,22 @@
 
 # Changelog for Stryke - String Format
 
+## [0.15.0](https://github.com/storm-software/stryke/releases/tag/string-format%400.15.0) (03/06/2026)
+
+### Bug Fixes
+
+- **string-format:** Added misssing `exports` to package ([8972efdc](https://github.com/storm-software/stryke/commit/8972efdc))
+
+### Features
+
+- **string-format:** Added `list` and `prettyPath` helper functions ([c9071abc](https://github.com/storm-software/stryke/commit/c9071abc))
+
+### Updated Dependencies
+
+- Updated **helpers** to **v0.9.49**
+- Updated **types** to **v0.10.46**
+- Updated **path** to **v0.26.13**
+
 ## [0.14.8](https://github.com/storm-software/stryke/releases/tag/string-format%400.14.8) (03/03/2026)
 
 ### Updated Dependencies
