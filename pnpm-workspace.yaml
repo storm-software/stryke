@@ -5,42 +5,42 @@ packages:
 catalog:
   '@antfu/install-pkg': ^1.1.0
   '@antfu/ni': ^23.3.1
-  '@cloudflare/workers-types': ^4.20260305.0
+  '@cloudflare/workers-types': ^4.20260305.1
   '@dotenvx/dotenvx': 1.35.0
   '@js-temporal/polyfill': ^0.5.1
   '@ls-lint/ls-lint': ^2.3.1
   '@ltd/j-toml': ^1.38.0
   '@microsoft/api-extractor': ^7.49.2
-  '@nx/devkit': ^22.5.3
-  '@nx/eslint': ^22.5.3
-  '@nx/eslint-plugin': ^22.5.3
-  '@nx/jest': ^22.5.3
-  '@nx/js': ^22.5.3
-  '@nx/plugin': ^22.5.3
+  '@nx/devkit': ^22.5.4
+  '@nx/eslint': ^22.5.4
+  '@nx/eslint-plugin': ^22.5.4
+  '@nx/jest': ^22.5.4
+  '@nx/js': ^22.5.4
+  '@nx/plugin': ^22.5.4
   '@nx/react': ^22.1.3
-  '@nx/workspace': ^22.5.3
+  '@nx/workspace': ^22.5.4
   '@prisma/client': ^6.5.0
   '@prisma/generator-helper': ^6.19.2
   '@prisma/internals': ^6.19.2
   '@prisma/prisma-schema-wasm': ^6.6.0-41.9061db3b0058e3d3731c6fe68a1b77061bed4861
   '@standard-schema/spec': ^1.1.0
-  '@storm-software/build-tools': ^0.158.92
-  '@storm-software/config': ^1.135.12
-  '@storm-software/config-tools': ^1.189.11
+  '@storm-software/build-tools': ^0.158.94
+  '@storm-software/config': ^1.135.14
+  '@storm-software/config-tools': ^1.189.13
   '@storm-software/cspell': ^0.45.91
-  '@storm-software/esbuild': ^0.53.93
-  '@storm-software/eslint': ^0.169.99
-  '@storm-software/git-tools': ^2.124.78
-  '@storm-software/linting-tools': ^1.132.98
-  '@storm-software/markdownlint': ^0.30.86
-  '@storm-software/pnpm-tools': ^0.6.95
-  '@storm-software/prettier': ^0.58.10
-  '@storm-software/testing-tools': ^1.119.86
+  '@storm-software/esbuild': ^0.53.95
+  '@storm-software/eslint': ^0.169.101
+  '@storm-software/git-tools': ^2.124.80
+  '@storm-software/linting-tools': ^1.132.102
+  '@storm-software/markdownlint': ^0.30.88
+  '@storm-software/pnpm-tools': ^0.6.97
+  '@storm-software/prettier': ^0.58.12
+  '@storm-software/testing-tools': ^1.119.88
   '@storm-software/tsconfig': ^0.47.86
-  '@storm-software/tsdoc': ^0.13.86
+  '@storm-software/tsdoc': ^0.13.88
   '@storm-software/unbuild': ^0.57.93
-  '@storm-software/untyped': ^0.24.74
-  '@storm-software/workspace-tools': ^1.294.44
+  '@storm-software/untyped': ^0.24.76
+  '@storm-software/workspace-tools': ^1.294.46
   '@stryke/type-checks': workspa
   '@swc-node/register': ^1.11.1
   '@swc/core': ^1.15.18
@@ -49,14 +49,14 @@ catalog:
   '@tanstack/react-query': ^5.90.21
   '@tanstack/react-query-devtools': ^5.70.0
   '@taplo/cli': ^0.7.0
-  '@trpc/client': ^11.11.0
-  '@trpc/next': ^11.11.0
-  '@trpc/server': ^11.11.0
-  '@trpc/tanstack-react-query': ^11.11.0
+  '@trpc/client': ^11.12.0
+  '@trpc/next': ^11.12.0
+  '@trpc/server': ^11.12.0
+  '@trpc/tanstack-react-query': ^11.12.0
   '@types/cross-spawn': ^6.0.6
   '@types/figlet': ^1.7.0
   '@types/jest': 30.0.0
-  '@types/node': ^24.11.0
+  '@types/node': ^24.12.0
   '@types/pluralize': ^0.0.33
   '@types/react': ^19.2.14
   '@types/react-dom': ^19.2.3
@@ -66,7 +66,7 @@ catalog:
   capnp-es: ^0.0.11
   chalk: ^5.6.2
   commander: ^14.0.3
-  conventional-changelog-storm-software: ^0.3.92
+  conventional-changelog-storm-software: ^0.3.94
   copyfiles: ^2.4.1
   cross-spawn: ^7.0.6
   defu: ^6.1.4
@@ -93,7 +93,7 @@ catalog:
   markdownlint-cli2: ^0.17.2
   mlly: 1.7.4
   nanotar: ^0.2.1
-  nx: ^22.5.3
+  nx: ^22.5.4
   ohash: ^2.0.11
   parenthesis: ^3.1.8
   pluralize: ^8.0.0
