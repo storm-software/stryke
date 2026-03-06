@@ -135,6 +135,9 @@
     "./*": "./*"
   },
   "types": "./dist/index.d.cts",
+  "dependencies": {
+    "@stryke/path": "workspace:*"
+  },
   "devDependencies": {
     "tsdown": "catalog:"
   },
