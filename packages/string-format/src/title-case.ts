@@ -16,11 +16,24 @@
 
  ------------------------------------------------------------------- */
 
+import { ACRONYMS } from "./acronyms";
 import { combine } from "./combine";
 import { decamelize } from "./decamelize";
 import type { FormatSpecialCasesOptions } from "./format-special-cases";
 import { formatSpecialCases } from "./format-special-cases";
 import { upperCaseFirst } from "./upper-case-first";
+
+export interface TitleCaseOptions extends FormatSpecialCasesOptions {
+  /**
+   * Whether to expand acronyms in the input string.
+   *
+   * @remarks
+   * If true, acronyms will be expanded to their full form before being converted to title case. For example, "NASA" would be expanded to "National Aeronautics and Space Administration".
+   *
+   * @defaultValue false
+   */
+  expandAcronyms?: boolean;
+}
 
 /**
  * Convert a string to title case.
@@ -31,7 +44,7 @@ import { upperCaseFirst } from "./upper-case-first";
  */
 export function titleCase<T extends string | undefined>(
   input: T,
-  options?: FormatSpecialCasesOptions
+  options?: TitleCaseOptions
 ): T {
   return input
     ?.split(/\s+-\s+/)
@@ -39,6 +52,11 @@ export function titleCase<T extends string | undefined>(
       decamelize(segment)
         .split(/[\s\-_]/)
         .map(upperCaseFirst)
+        .map(value =>
+          options?.expandAcronyms
+            ? ACRONYMS[value]?.description || value
+            : value
+        )
         .map((value: string, index: number, array: string[]) =>
           formatSpecialCases(value, index, array, options)
         )
