@@ -1,6 +1,6 @@
 {
   "$schema": "https://json.schemastore.org/tsconfig",
-  "extends": "@storm-software/tsconfig/core.json",
+  "extends": "@storm-software/tsconfig/recommended.json",
   "display": "Storm Software - Stryke",
   "compilerOptions": {
     "baseUrl": ".",

@@ -1,6 +1,6 @@
 {
   "$schema": "https://raw.githubusercontent.com/streetsidesoftware/cspell/main/cspell.schema.json",
-  "import": ["@storm-software/cspell/cspell-minimal.json"],
+  "import": ["@storm-software/cspell/cspell-recommended.json"],
   "dictionaryDefinitions": [
     {
       "name": "misc",
