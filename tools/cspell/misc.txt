@@ -4,6 +4,7 @@ qualityassurance
 strictify
 localdomain
 unrepresentable
+unflatten
 
 # Names
 Dodds

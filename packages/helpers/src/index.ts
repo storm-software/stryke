@@ -35,6 +35,7 @@ export * from "./mutex";
 export * from "./noop";
 export * from "./omit";
 export * from "./once";
+export * from "./parallel";
 export * from "./pick";
 export * from "./remove-accents";
 export * from "./remove-empty-items";

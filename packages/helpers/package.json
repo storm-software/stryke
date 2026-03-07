@@ -96,6 +96,10 @@
       "require": "./dist/once.cjs",
       "import": "./dist/once.mjs"
     },
+    "./parallel": {
+      "require": "./dist/parallel.cjs",
+      "import": "./dist/parallel.mjs"
+    },
     "./pick": {
       "require": "./dist/pick.cjs",
       "import": "./dist/pick.mjs"
