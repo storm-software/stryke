@@ -3,11 +3,11 @@
     "devenv": {
       "locked": {
         "dir": "src/modules",
-        "lastModified": 1772811749,
-        "narHash": "sha256-JTNJuWVWglq5gxU9Ij2VbH9Lw27qiEG417CakriUOII=",
+        "lastModified": 1772840537,
+        "narHash": "sha256-Axb80AW0e6Xd/UmtjFnTTPOqxzkI4tzGa8ykk8nKQoo=",
         "owner": "cachix",
         "repo": "devenv",
-        "rev": "07cd36d7b2bb7a271496eb0500c8d321e28eae2a",
+        "rev": "b6208f517a7359d6046c89b5ac0de20cfca3b4c0",
         "type": "github"
       },
       "original": {
@@ -154,11 +154,11 @@
     "storm-ops": {
       "flake": false,
       "locked": {
-        "lastModified": 1772815055,
-        "narHash": "sha256-2T/l8K/kzECl6ak35XmunwQw1oKnctePR3syoP7G5lg=",
+        "lastModified": 1772819714,
+        "narHash": "sha256-lYQWv+mi2bWBzPqWLGmrUjTMqn4dnKLLpZ8LYWrNkko=",
         "owner": "storm-software",
         "repo": "storm-ops",
-        "rev": "082d71d3d16ea8d29abe946dc2f87d08c26d7012",
+        "rev": "badc379b0b7e2e40df9d290bcd267f6d8fb136f6",
         "type": "github"
       },
       "original": {
