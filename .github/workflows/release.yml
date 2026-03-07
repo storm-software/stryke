@@ -98,7 +98,7 @@ jobs:
           error-on-no-successful-workflow: true
 
       - name: Release repository updates
-        run: devenv shell release ${{ steps.setSHAs.outputs.base }} ${{ steps.setSHAs.outputs.head }}
+        run: devenv --profile release shell release ${{ steps.setSHAs.outputs.base }} ${{ steps.setSHAs.outputs.head }}
         env:
           NX_BASE: ${{ steps.setSHAs.outputs.base }}
           NX_HEAD: ${{ steps.setSHAs.outputs.head }}

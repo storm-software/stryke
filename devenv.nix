@@ -3,7 +3,10 @@
   name = "storm-software/stryke";
 
   dotenv.enable = true;
-  dotenv.filename = [".env" ".env.local"];
+  dotenv.filename = [
+    ".env"
+    ".env.local"
+  ];
   dotenv.disableHint = true;
 
   # https://devenv.sh/basics/
@@ -15,4 +18,3 @@
     pkgs.capnproto
   ];
 }
-
