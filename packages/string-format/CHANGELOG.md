@@ -2,6 +2,18 @@
 
 # Changelog for Stryke - String Format
 
+## [0.16.0](https://github.com/storm-software/stryke/releases/tag/string-format%400.16.0) (03/06/2026)
+
+### Features
+
+- **string-format:** Added the `expandAcronyms` option to `titleCase` helper ([e2fef657](https://github.com/storm-software/stryke/commit/e2fef657))
+
+### Updated Dependencies
+
+- Updated **helpers** to **v0.9.51**
+- Updated **types** to **v0.10.48**
+- Updated **path** to **v0.26.15**
+
 ## [0.15.1](https://github.com/storm-software/stryke/releases/tag/string-format%400.15.1) (03/06/2026)
 
 ### Updated Dependencies
