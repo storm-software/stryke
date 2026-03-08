@@ -5,7 +5,7 @@ packages:
 catalog:
   '@antfu/install-pkg': ^1.1.0
   '@antfu/ni': ^23.3.1
-  '@cloudflare/workers-types': ^4.20260306.1
+  '@cloudflare/workers-types': ^4.20260307.1
   '@dotenvx/dotenvx': 1.35.0
   '@js-temporal/polyfill': ^0.5.1
   '@ls-lint/ls-lint': ^2.3.1
@@ -24,23 +24,23 @@ catalog:
   '@prisma/internals': ^6.19.2
   '@prisma/prisma-schema-wasm': ^6.6.0-41.9061db3b0058e3d3731c6fe68a1b77061bed4861
   '@standard-schema/spec': ^1.1.0
-  '@storm-software/build-tools': ^0.158.98
-  '@storm-software/config': ^1.135.18
-  '@storm-software/config-tools': ^1.189.17
-  '@storm-software/cspell': ^0.46.7
-  '@storm-software/esbuild': ^0.53.99
-  '@storm-software/eslint': ^0.169.105
-  '@storm-software/git-tools': ^2.124.84
-  '@storm-software/linting-tools': ^1.132.106
-  '@storm-software/markdownlint': ^0.30.92
-  '@storm-software/pnpm-tools': ^0.6.101
-  '@storm-software/prettier': ^0.58.16
-  '@storm-software/testing-tools': ^1.119.92
-  '@storm-software/tsconfig': ^0.48.6
-  '@storm-software/tsdoc': ^0.13.92
+  '@storm-software/build-tools': ^0.158.102
+  '@storm-software/config': ^1.135.22
+  '@storm-software/config-tools': ^1.189.21
+  '@storm-software/cspell': ^0.46.11
+  '@storm-software/esbuild': ^0.53.103
+  '@storm-software/eslint': ^0.169.109
+  '@storm-software/git-tools': ^2.125.1
+  '@storm-software/linting-tools': ^1.132.110
+  '@storm-software/markdownlint': ^0.30.96
+  '@storm-software/pnpm-tools': ^0.6.105
+  '@storm-software/prettier': ^0.58.20
+  '@storm-software/testing-tools': ^1.119.96
+  '@storm-software/tsconfig': ^0.48.10
+  '@storm-software/tsdoc': ^0.13.96
   '@storm-software/unbuild': ^0.57.99
-  '@storm-software/untyped': ^0.24.80
-  '@storm-software/workspace-tools': ^1.294.50
+  '@storm-software/untyped': ^0.24.84
+  '@storm-software/workspace-tools': ^1.294.54
   '@swc-node/register': ^1.11.1
   '@swc/core': ^1.15.18
   '@swc/helpers': ^0.5.19
@@ -65,7 +65,7 @@ catalog:
   capnp-es: ^0.0.11
   chalk: ^5.6.2
   commander: ^14.0.3
-  conventional-changelog-storm-software: ^0.3.98
+  conventional-changelog-storm-software: ^0.3.102
   copyfiles: ^2.4.1
   cross-spawn: ^7.0.6
   defu: ^6.1.4
