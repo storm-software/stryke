@@ -16,6 +16,15 @@
 
  ------------------------------------------------------------------- */
 
+export interface ListOptions {
+  /**
+   * The conjunction to use when joining the last two items in the list.
+   *
+   * @defaultValue "and"
+   */
+  conjunction?: string;
+}
+
 /**
  * Convert an array of strings into a human-readable list string.
  *
@@ -28,7 +37,12 @@
  * @param strings - The array of strings or a single string to convert into a list.
  * @returns The converted list string.
  */
-export function list(strings: string | string[]): string {
+export function list(
+  strings: string | string[],
+  options: ListOptions = {}
+): string {
+  const { conjunction = "and" } = options;
+
   if (typeof strings === "string") {
     return strings;
   }
@@ -42,10 +56,10 @@ export function list(strings: string | string[]): string {
   }
 
   if (strings.length === 2) {
-    return `${strings[0]} and ${strings[1]}`;
+    return `${strings[0]} ${conjunction} ${strings[1]}`;
   }
 
   const last = strings.pop();
 
-  return `${strings.join(", ")}, and ${last}`;
+  return `${strings.join(", ")}, ${conjunction} ${last}`;
 }
