@@ -5,10 +5,6 @@ rules:
   dangerous-triggers:
     ignore:
       - greetings.yml:3:1
-  use-trusted-publishing:
-    ignore:
-      # ignore line 12, column 10 on pypi.yml
-      # - pypi.yml:12:10
   unpinned-uses:
     ignore:
       - release.yml
@@ -18,6 +14,9 @@ rules:
       - gitguardian.yml
       - contributors.yml
       - codeql.yml
+      - security.yml
+      - greetings.yml
+      - schedule-stale.yml
   excessive-permissions:
     ignore:
       - release.yml
