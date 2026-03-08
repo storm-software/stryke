@@ -2,6 +2,18 @@
 
 # Changelog for Stryke - Helpers
 
+## [0.10.0](https://github.com/storm-software/stryke/releases/tag/helpers%400.10.0) (03/08/2026)
+
+### Features
+
+- **helpers:** Added the `runParallel` helper function ([e833fa16](https://github.com/storm-software/stryke/commit/e833fa16))
+
+### Updated Dependencies
+
+- Updated **type-checks** to **v0.5.35**
+- Updated **convert** to **v0.6.50**
+- Updated **types** to **v0.10.49**
+
 ## [0.9.51](https://github.com/storm-software/stryke/releases/tag/helpers%400.9.51) (03/06/2026)
 
 ### Updated Dependencies
