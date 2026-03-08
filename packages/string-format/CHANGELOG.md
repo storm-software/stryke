@@ -2,6 +2,18 @@
 
 # Changelog for Stryke - String Format
 
+## [0.17.0](https://github.com/storm-software/stryke/releases/tag/string-format%400.17.0) (03/08/2026)
+
+### Features
+
+- **string-format:** Added the conjuction option to `list` helper ([058de0bc](https://github.com/storm-software/stryke/commit/058de0bc))
+
+### Updated Dependencies
+
+- Updated **helpers** to **v0.10.0**
+- Updated **types** to **v0.10.49**
+- Updated **path** to **v0.26.16**
+
 ## [0.16.0](https://github.com/storm-software/stryke/releases/tag/string-format%400.16.0) (03/06/2026)
 
 ### Features
