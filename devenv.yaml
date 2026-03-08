@@ -12,3 +12,5 @@ inputs:
 imports:
   - storm-ops/devenv-modules/base
   - storm-ops/devenv-modules/core
+
+profile: development
