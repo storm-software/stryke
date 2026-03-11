@@ -134,16 +134,27 @@ const compileAction =
     });
   };
 
+/**
+ * Creates and configures the Cap'n Proto compiler CLI program.
+ *
+ * @returns The configured Command instance for the Cap'n Proto compiler CLI.
+ */
 export function createProgram() {
   writeInfo(`${brandIcon()} Running Storm Cap'n Proto Compiler Tools`, {
     logLevel: "all"
   });
 
-  const root = findWorkspaceRootSafe(process.cwd());
-  process.env.STORM_WORKSPACE_ROOT ??= root;
-  process.env.NX_WORKSPACE_ROOT_PATH ??= root;
-  if (root) {
-    process.chdir(root);
+  const workspaceRoot = findWorkspaceRootSafe(process.cwd());
+  process.env.STORM_WORKSPACE_ROOT ??= workspaceRoot;
+  process.env.NX_WORKSPACE_ROOT_PATH ??= workspaceRoot;
+
+  let projectRoot: string | undefined;
+  if (
+    workspaceRoot !== process.cwd() &&
+    (existsSync(joinPaths(process.cwd(), "package.json")) ||
+      existsSync(joinPaths(process.cwd(), "project.json")))
+  ) {
+    projectRoot = process.cwd();
   }
 
   const program = new Command();
@@ -156,7 +167,8 @@ export function createProgram() {
     .command("compile", { isDefault: true })
     .option(
       "-p --project-root <path>",
-      "The path to the project root directory"
+      "The path to the project root directory",
+      projectRoot
     )
     .option(
       "-s --schema <path>",
@@ -188,10 +200,10 @@ export function createProgram() {
     .option(
       "-w --workspace-root <path>",
       "The path to the workspace root directory",
-      root || process.cwd()
+      workspaceRoot || process.cwd()
     )
     .option("--tty", "An indicator to enable TTY mode for the compiler")
-    .action(compileAction(root!));
+    .action(compileAction(workspaceRoot!));
 
   return program;
 }
