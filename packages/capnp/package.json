@@ -1,18 +1,32 @@
 {
   "name": "@stryke/capnp",
   "version": "0.12.80",
-  "type": "module",
+  "private": false,
   "description": "A package to assist in running the Cap'n Proto compiler and creating Cap'n Proto serialization protocol schemas.",
-  "repository": {
-    "type": "github",
-    "url": "https://github.com/storm-software/stryke",
-    "directory": "packages/capnp"
-  },
+  "keywords": [
+    "capnp",
+    "capnproto",
+    "serialization",
+    "protocol",
+    "compiler",
+    "storm-software",
+    "stryke"
+  ],
   "homepage": "https://stormsoftware.com",
   "bugs": {
     "url": "https://stormsoftware.com/support",
     "email": "support@stormsoftware.com"
   },
+  "repository": {
+    "type": "github",
+    "url": "https://github.com/storm-software/stryke",
+    "directory": "packages/capnp"
+  },
+  "funding": {
+    "type": "github",
+    "url": "https://github.com/sponsors/storm-software"
+  },
+  "license": "Apache-2.0",
   "author": {
     "name": "Storm Software",
     "email": "contact@stormsoftware.com",
@@ -32,19 +46,7 @@
       "url": "https://stormsoftware.com"
     }
   ],
-  "funding": {
-    "type": "github",
-    "url": "https://github.com/sponsors/storm-software"
-  },
-  "license": "Apache-2.0",
-  "private": false,
-  "bin": {
-    "storm-capnpc": "bin/capnpc.mjs",
-    "storm-capnpc-cjs": "bin/capnpc.cjs",
-    "storm-capnpc-esm": "bin/capnpc.mjs"
-  },
-  "main": "./dist/index.cjs",
-  "module": "./dist/index.mjs",
+  "type": "module",
   "exports": {
     ".": {
       "import": {
@@ -116,25 +118,15 @@
     },
     "./*": "./dist/*"
   },
+  "main": "./dist/index.cjs",
+  "module": "./dist/index.mjs",
   "types": "./dts/index.d.ts",
+  "bin": {
+    "storm-capnpc": "bin/capnpc.mjs",
+    "storm-capnpc-cjs": "bin/capnpc.cjs",
+    "storm-capnpc-esm": "bin/capnpc.mjs"
+  },
   "files": ["bin/**/*", "dist/**/*", "dts/**/*", "schemas/**/*", "vendor/**/*"],
-  "keywords": [
-    "capnp",
-    "capnproto",
-    "serialization",
-    "protocol",
-    "compiler",
-    "storm-software",
-    "stryke"
-  ],
-  "peerDependencies": {
-    "typescript": ">=4.0.0"
-  },
-  "peerDependenciesMeta": {
-    "typescript": {
-      "optional": false
-    }
-  },
   "dependencies": {
     "@stryke/fs": "workspace:*",
     "@stryke/path": "workspace:*",
@@ -146,14 +138,22 @@
     "@storm-software/config": "catalog:",
     "@storm-software/config-tools": "catalog:",
     "@storm-software/testing-tools": "catalog:",
-    "@types/semver": "catalog:",
     "@types/node": "catalog:",
+    "@types/semver": "catalog:",
     "capnp-es": "catalog:",
     "chalk": "catalog:",
     "commander": "catalog:",
     "dts-bundle-generator": "catalog:",
     "tsdown": "catalog:",
     "tsx": "catalog:"
+  },
+  "peerDependencies": {
+    "typescript": ">=4.0.0"
+  },
+  "peerDependenciesMeta": {
+    "typescript": {
+      "optional": false
+    }
   },
   "publishConfig": {
     "access": "public"
