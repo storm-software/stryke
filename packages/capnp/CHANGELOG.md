@@ -2,6 +2,25 @@
 
 # Changelog for Stryke - Capnp
 
+## [0.12.81](https://github.com/storm-software/stryke/releases/tag/capnp%400.12.81) (03/11/2026)
+
+### Miscellaneous
+
+- **capnp:** Add better option parsing/resolution logic ([1f59761b](https://github.com/storm-software/stryke/commit/1f59761b))
+
+### Bug Fixes
+
+- **capnp:** Sort package.json file dependencies ([80a86063](https://github.com/storm-software/stryke/commit/80a86063))
+- **capnp:** Resolve issue with missing `createTarGzip` and `createTar` type definitions ([4ad169cf](https://github.com/storm-software/stryke/commit/4ad169cf))
+- **fs:** Resolve issue with missing release type constants ([a8d64b01](https://github.com/storm-software/stryke/commit/a8d64b01))
+
+### Updated Dependencies
+
+- Updated **convert** to **v0.6.52**
+- Updated **types** to **v0.10.51**
+- Updated **path** to **v0.26.18**
+- Updated **fs** to **v0.33.56**
+
 ## [0.12.80](https://github.com/storm-software/stryke/releases/tag/capnp%400.12.80) (03/08/2026)
 
 ### Updated Dependencies

@@ -2,6 +2,22 @@
 
 # Changelog for Stryke - Fs
 
+## [0.33.56](https://github.com/storm-software/stryke/releases/tag/fs%400.33.56) (03/11/2026)
+
+### Bug Fixes
+
+- **fs:** Resolve issue with missing release type constants ([a8d64b01](https://github.com/storm-software/stryke/commit/a8d64b01))
+
+### Updated Dependencies
+
+- Updated **string-format** to **v0.17.2**
+- Updated **type-checks** to **v0.5.37**
+- Updated **convert** to **v0.6.52**
+- Updated **helpers** to **v0.10.2**
+- Updated **types** to **v0.10.51**
+- Updated **json** to **v0.14.6**
+- Updated **path** to **v0.26.18**
+
 ## [0.33.55](https://github.com/storm-software/stryke/releases/tag/fs%400.33.55) (03/08/2026)
 
 ### Updated Dependencies
