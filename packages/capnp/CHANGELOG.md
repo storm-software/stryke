@@ -2,6 +2,12 @@
 
 # Changelog for Stryke - Capnp
 
+## [0.12.82](https://github.com/storm-software/stryke/releases/tag/capnp%400.12.82) (03/11/2026)
+
+### Miscellaneous
+
+- **capnp:** Added logic to default `project-root` if not provided ([1b7028e5](https://github.com/storm-software/stryke/commit/1b7028e5))
+
 ## [0.12.81](https://github.com/storm-software/stryke/releases/tag/capnp%400.12.81) (03/11/2026)
 
 ### Miscellaneous
