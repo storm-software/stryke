@@ -2,6 +2,20 @@
 
 # Changelog for Stryke - TRPC Next
 
+## [0.5.74](https://github.com/storm-software/stryke/releases/tag/trpc-next%400.5.74) (03/11/2026)
+
+### Miscellaneous
+
+- **monorepo:** Run prettier on workspace packages' files ([dfe7ab3e](https://github.com/storm-software/stryke/commit/dfe7ab3e))
+- **monorepo:** Format workspace source files ([a97707ea](https://github.com/storm-software/stryke/commit/a97707ea))
+
+### Updated Dependencies
+
+- Updated **types** to **v0.10.52**
+- Updated **path** to **v0.26.19**
+- Updated **env** to **v0.20.74**
+- Updated **url** to **v0.4.10**
+
 ## [0.5.73](https://github.com/storm-software/stryke/releases/tag/trpc-next%400.5.73) (03/11/2026)
 
 ### Updated Dependencies

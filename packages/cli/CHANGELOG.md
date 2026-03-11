@@ -2,6 +2,21 @@
 
 # Changelog for Stryke - CLI
 
+## [0.13.29](https://github.com/storm-software/stryke/releases/tag/cli%400.13.29) (03/11/2026)
+
+### Miscellaneous
+
+- **monorepo:** Run prettier on workspace packages' files ([dfe7ab3e](https://github.com/storm-software/stryke/commit/dfe7ab3e))
+- **monorepo:** Format workspace source files ([a97707ea](https://github.com/storm-software/stryke/commit/a97707ea))
+
+### Updated Dependencies
+
+- Updated **string-format** to **v0.17.3**
+- Updated **type-checks** to **v0.5.38**
+- Updated **convert** to **v0.6.53**
+- Updated **types** to **v0.10.52**
+- Updated **env** to **v0.20.74**
+
 ## [0.13.28](https://github.com/storm-software/stryke/releases/tag/cli%400.13.28) (03/11/2026)
 
 ### Updated Dependencies

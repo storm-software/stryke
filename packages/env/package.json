@@ -1,6 +1,6 @@
 {
   "name": "@stryke/env",
-  "version": "0.20.73",
+  "version": "0.20.74",
   "private": false,
   "description": "A package containing utility functions to handle environment specific processes",
   "repository": {

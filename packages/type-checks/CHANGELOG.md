@@ -2,6 +2,17 @@
 
 # Changelog for Stryke - Type Checks
 
+## [0.5.38](https://github.com/storm-software/stryke/releases/tag/type-checks%400.5.38) (03/11/2026)
+
+### Miscellaneous
+
+- **monorepo:** Run prettier on workspace packages' files ([dfe7ab3e](https://github.com/storm-software/stryke/commit/dfe7ab3e))
+- **monorepo:** Format workspace source files ([a97707ea](https://github.com/storm-software/stryke/commit/a97707ea))
+
+### Updated Dependencies
+
+- Updated **types** to **v0.10.52**
+
 ## [0.5.37](https://github.com/storm-software/stryke/releases/tag/type-checks%400.5.37) (03/11/2026)
 
 ### Updated Dependencies

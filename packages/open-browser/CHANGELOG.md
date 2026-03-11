@@ -2,6 +2,13 @@
 
 # Changelog for Stryke - Open Browser
 
+## [0.2.52](https://github.com/storm-software/stryke/releases/tag/open-browser%400.2.52) (03/11/2026)
+
+### Miscellaneous
+
+- **monorepo:** Run prettier on workspace packages' files ([dfe7ab3e](https://github.com/storm-software/stryke/commit/dfe7ab3e))
+- **monorepo:** Format workspace source files ([a97707ea](https://github.com/storm-software/stryke/commit/a97707ea))
+
 ## [0.2.34](https://github.com/storm-software/stryke/releases/tag/open-browser%400.2.34) (01/20/2026)
 
 ### Miscellaneous

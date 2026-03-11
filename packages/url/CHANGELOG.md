@@ -2,6 +2,19 @@
 
 # Changelog for Stryke - URL
 
+## [0.4.10](https://github.com/storm-software/stryke/releases/tag/url%400.4.10) (03/11/2026)
+
+### Miscellaneous
+
+- **monorepo:** Run prettier on workspace packages' files ([dfe7ab3e](https://github.com/storm-software/stryke/commit/dfe7ab3e))
+- **monorepo:** Format workspace source files ([a97707ea](https://github.com/storm-software/stryke/commit/a97707ea))
+
+### Updated Dependencies
+
+- Updated **type-checks** to **v0.5.38**
+- Updated **json** to **v0.14.7**
+- Updated **path** to **v0.26.19**
+
 ## [0.4.9](https://github.com/storm-software/stryke/releases/tag/url%400.4.9) (03/11/2026)
 
 ### Updated Dependencies

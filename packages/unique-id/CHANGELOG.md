@@ -2,6 +2,17 @@
 
 # Changelog for Stryke - Unique ID
 
+## [0.3.68](https://github.com/storm-software/stryke/releases/tag/unique-id%400.3.68) (03/11/2026)
+
+### Miscellaneous
+
+- **monorepo:** Run prettier on workspace packages' files ([dfe7ab3e](https://github.com/storm-software/stryke/commit/dfe7ab3e))
+- **monorepo:** Format workspace source files ([a97707ea](https://github.com/storm-software/stryke/commit/a97707ea))
+
+### Updated Dependencies
+
+- Updated **hash** to **v0.13.10**
+
 ## [0.3.67](https://github.com/storm-software/stryke/releases/tag/unique-id%400.3.67) (03/11/2026)
 
 ### Updated Dependencies

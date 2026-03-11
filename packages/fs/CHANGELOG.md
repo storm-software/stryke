@@ -2,6 +2,23 @@
 
 # Changelog for Stryke - Fs
 
+## [0.33.57](https://github.com/storm-software/stryke/releases/tag/fs%400.33.57) (03/11/2026)
+
+### Miscellaneous
+
+- **monorepo:** Run prettier on workspace packages' files ([dfe7ab3e](https://github.com/storm-software/stryke/commit/dfe7ab3e))
+- **monorepo:** Format workspace source files ([a97707ea](https://github.com/storm-software/stryke/commit/a97707ea))
+
+### Updated Dependencies
+
+- Updated **string-format** to **v0.17.3**
+- Updated **type-checks** to **v0.5.38**
+- Updated **convert** to **v0.6.53**
+- Updated **helpers** to **v0.10.3**
+- Updated **types** to **v0.10.52**
+- Updated **json** to **v0.14.7**
+- Updated **path** to **v0.26.19**
+
 ## [0.33.56](https://github.com/storm-software/stryke/releases/tag/fs%400.33.56) (03/11/2026)
 
 ### Bug Fixes

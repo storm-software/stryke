@@ -2,6 +2,19 @@
 
 # Changelog for Stryke - Crypto
 
+## [0.6.10](https://github.com/storm-software/stryke/releases/tag/crypto%400.6.10) (03/11/2026)
+
+### Miscellaneous
+
+- **monorepo:** Run prettier on workspace packages' files ([dfe7ab3e](https://github.com/storm-software/stryke/commit/dfe7ab3e))
+- **monorepo:** Format workspace source files ([a97707ea](https://github.com/storm-software/stryke/commit/a97707ea))
+
+### Updated Dependencies
+
+- Updated **type-checks** to **v0.5.38**
+- Updated **convert** to **v0.6.53**
+- Updated **json** to **v0.14.7**
+
 ## [0.6.9](https://github.com/storm-software/stryke/releases/tag/crypto%400.6.9) (03/11/2026)
 
 ### Updated Dependencies

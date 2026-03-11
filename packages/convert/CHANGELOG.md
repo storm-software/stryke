@@ -2,6 +2,18 @@
 
 # Changelog for Stryke - Convert
 
+## [0.6.53](https://github.com/storm-software/stryke/releases/tag/convert%400.6.53) (03/11/2026)
+
+### Miscellaneous
+
+- **monorepo:** Run prettier on workspace packages' files ([dfe7ab3e](https://github.com/storm-software/stryke/commit/dfe7ab3e))
+- **monorepo:** Format workspace source files ([a97707ea](https://github.com/storm-software/stryke/commit/a97707ea))
+
+### Updated Dependencies
+
+- Updated **type-checks** to **v0.5.38**
+- Updated **types** to **v0.10.52**
+
 ## [0.6.52](https://github.com/storm-software/stryke/releases/tag/convert%400.6.52) (03/11/2026)
 
 ### Updated Dependencies

@@ -2,6 +2,18 @@
 
 # Changelog for Stryke - Cookie
 
+## [0.1.54](https://github.com/storm-software/stryke/releases/tag/cookie%400.1.54) (03/11/2026)
+
+### Miscellaneous
+
+- **monorepo:** Run prettier on workspace packages' files ([dfe7ab3e](https://github.com/storm-software/stryke/commit/dfe7ab3e))
+- **monorepo:** Format workspace source files ([a97707ea](https://github.com/storm-software/stryke/commit/a97707ea))
+
+### Updated Dependencies
+
+- Updated **type-checks** to **v0.5.38**
+- Updated **convert** to **v0.6.53**
+
 ## [0.1.53](https://github.com/storm-software/stryke/releases/tag/cookie%400.1.53) (03/11/2026)
 
 ### Updated Dependencies

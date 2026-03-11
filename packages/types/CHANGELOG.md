@@ -2,6 +2,13 @@
 
 # Changelog for Stryke - Types
 
+## [0.10.52](https://github.com/storm-software/stryke/releases/tag/types%400.10.52) (03/11/2026)
+
+### Miscellaneous
+
+- **monorepo:** Run prettier on workspace packages' files ([dfe7ab3e](https://github.com/storm-software/stryke/commit/dfe7ab3e))
+- **monorepo:** Format workspace source files ([a97707ea](https://github.com/storm-software/stryke/commit/a97707ea))
+
 ## [0.10.43](https://github.com/storm-software/stryke/releases/tag/types%400.10.43) (03/03/2026)
 
 ### Miscellaneous

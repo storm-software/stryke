@@ -2,6 +2,25 @@
 
 # Changelog for Stryke - Capnp
 
+## [0.12.83](https://github.com/storm-software/stryke/releases/tag/capnp%400.12.83) (03/11/2026)
+
+### Miscellaneous
+
+- **capnp:** Clean up console logging ([477f1e7e](https://github.com/storm-software/stryke/commit/477f1e7e))
+- **monorepo:** Run prettier on workspace packages' files ([dfe7ab3e](https://github.com/storm-software/stryke/commit/dfe7ab3e))
+- **monorepo:** Format workspace source files ([a97707ea](https://github.com/storm-software/stryke/commit/a97707ea))
+
+### Bug Fixes
+
+- **capnp:** Moved the `projectRoot` option validation logic ([68e4064d](https://github.com/storm-software/stryke/commit/68e4064d))
+
+### Updated Dependencies
+
+- Updated **convert** to **v0.6.53**
+- Updated **types** to **v0.10.52**
+- Updated **path** to **v0.26.19**
+- Updated **fs** to **v0.33.57**
+
 ## [0.12.82](https://github.com/storm-software/stryke/releases/tag/capnp%400.12.82) (03/11/2026)
 
 ### Miscellaneous
