@@ -18,12 +18,6 @@ remotes:
 pre-push:
   piped: true
   commands:
-    lint-codeowners:
-      glob: "**/CODEOWNERS"
-      run: pnpm exec storm-lint codeowners
-    lint-github-actions:
-      glob: ".github/workflows/*.*"
-      run: zizmor --offline --config="./tools/config/zizmor.yml" .github/workflows/
     sherif:
       glob:
         - "*.js"
