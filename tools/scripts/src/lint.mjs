@@ -22,27 +22,28 @@ import { $, chalk, echo } from "zx";
 try {
   await echo`${chalk.whiteBright("📋  Linting the monorepo...")}`;
 
-  let proc =
-    $`pnpm nx run-many --target=lint --all --exclude="@stryke/monorepo" --parallel=5`.timeout(
+  // let proc =
+  //   $`pnpm nx run-many --target=lint --all --exclude="@stryke/monorepo" --parallel=5`.timeout(
+  //     `${30 * 60}s`
+  //   );
+  // proc.stdout.on("data", data => {
+  //   echo`${data}`;
+  // });
+  // let result = await proc;
+  // if (!result.ok) {
+  //   throw new Error(
+  //     `An error occured while linting the monorepo: \n\n${result.message}\n`
+  //   );
+  // }
+
+  const proc =
+    $`pnpm exec storm-lint all --skip-cspell --skip-circular-deps`.timeout(
       `${30 * 60}s`
     );
   proc.stdout.on("data", data => {
     echo`${data}`;
   });
-  let result = await proc;
-  if (!result.ok) {
-    throw new Error(
-      `An error occured while linting the monorepo: \n\n${result.message}\n`
-    );
-  }
-
-  proc = $`pnpm exec storm-lint all --skip-cspell --skip-circular-deps`.timeout(
-    `${30 * 60}s`
-  );
-  proc.stdout.on("data", data => {
-    echo`${data}`;
-  });
-  result = await proc;
+  const result = await proc;
   if (!result.ok) {
     throw new Error(
       `An error occured while running \`storm-lint\` on the monorepo: \n\n${result.message}\n`
