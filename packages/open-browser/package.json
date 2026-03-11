@@ -1,14 +1,28 @@
 {
   "name": "@stryke/open-browser",
   "version": "0.2.51",
-  "type": "module",
+  "private": false,
   "description": "A package containing helper function to open URLs in the default browser",
   "repository": {
     "type": "github",
     "url": "https://github.com/storm-software/stryke.git",
     "directory": "packages/open-browser"
   },
-  "private": false,
+  "type": "module",
+  "exports": {
+    ".": {
+      "require": "./dist/index.cjs",
+      "import": "./dist/index.mjs"
+    },
+    "./open": {
+      "require": "./dist/open.cjs",
+      "import": "./dist/open.mjs"
+    },
+    "./*": "./*"
+  },
+  "main": "./dist/index.cjs",
+  "module": "./dist/index.mjs",
+  "types": "./dist/index.d.cts",
   "files": ["openChrome.applescript"],
   "dependencies": {
     "cross-spawn": "catalog:"
@@ -20,19 +34,5 @@
   },
   "publishConfig": {
     "access": "public"
-  },
-  "main": "./dist/index.cjs",
-  "module": "./dist/index.mjs",
-  "types": "./dist/index.d.cts",
-  "exports": {
-    ".": {
-      "require": "./dist/index.cjs",
-      "import": "./dist/index.mjs"
-    },
-    "./open": {
-      "require": "./dist/open.cjs",
-      "import": "./dist/open.mjs"
-    },
-    "./*": "./*"
   }
 }

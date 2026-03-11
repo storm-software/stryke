@@ -1,28 +1,8 @@
 {
   "name": "@stryke/tools-nx",
   "version": "0.0.1",
-  "description": "Tools for managing the Stryke workspace, including various Nx generators and executors for common development tasks.",
-  "repository": {
-    "type": "github",
-    "url": "https://github.com/storm-software/stryke",
-    "directory": "tools/nx"
-  },
-  "homepage": "https://stormsoftware.com",
-  "bugs": "https://github.com/storm-software/stryke/issues",
-  "author": {
-    "name": "Storm Software",
-    "email": "contact@stormsoftware.com",
-    "url": "https://stormsoftware.com"
-  },
-  "license": "Apache-2.0",
   "private": true,
-  "main": "dist/index.js",
-  "module": "dist/index.mjs",
-  "exports": {
-    "./package.json": "./package.json",
-    "./plugins/package-build": "./dist/src/plugins/package-build.js"
-  },
-  "typings": "dist/index.d.ts",
+  "description": "Tools for managing the Stryke workspace, including various Nx generators and executors for common development tasks.",
   "keywords": [
     "monorepo",
     "nx",
@@ -31,6 +11,26 @@
     "storm",
     "sullivanpj"
   ],
+  "homepage": "https://stormsoftware.com",
+  "bugs": "https://github.com/storm-software/stryke/issues",
+  "repository": {
+    "type": "github",
+    "url": "https://github.com/storm-software/stryke",
+    "directory": "tools/nx"
+  },
+  "license": "Apache-2.0",
+  "author": {
+    "name": "Storm Software",
+    "email": "contact@stormsoftware.com",
+    "url": "https://stormsoftware.com"
+  },
+  "exports": {
+    "./package.json": "./package.json",
+    "./plugins/package-build": "./dist/src/plugins/package-build.js"
+  },
+  "main": "dist/index.js",
+  "module": "dist/index.mjs",
+  "typings": "dist/index.d.ts",
   "dependencies": {
     "@nx/devkit": "catalog:",
     "@storm-software/workspace-tools": "catalog:",

@@ -1,8 +1,8 @@
 {
   "name": "@stryke/tools-scripts",
   "version": "0.0.1",
-  "type": "module",
   "private": true,
+  "type": "module",
   "dependencies": {
     "esbuild": "catalog:"
   },
