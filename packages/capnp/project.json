@@ -27,7 +27,7 @@
       "executor": "nx:run-commands",
       "dependsOn": ["build-bin"],
       "options": {
-        "command": "node ./{projectRoot}/dist/bin/capnpc.mjs --project-root packages/capnp --schema ./{projectRoot}/schemas --no-dts"
+        "command": "node ./{projectRoot}/dist/bin/capnpc.mjs --project-root packages/capnp --schema {projectRoot}/schemas --no-dts"
       }
     },
     "build-base": {

@@ -18,9 +18,8 @@
 
 import { isObject } from "@stryke/type-checks/is-object";
 import { isString } from "@stryke/type-checks/is-string";
-import type { CoerceOptions, Range, ReleaseType, SemVer } from "semver";
+import type { CoerceOptions, Range, SemVer } from "semver";
 import {
-  RELEASE_TYPES,
   coerce,
   inc,
   parse,
@@ -28,6 +27,19 @@ import {
   valid,
   validRange
 } from "semver";
+
+export type ReleaseType = "major" | "premajor" | "minor" | "preminor" | "patch" | "prepatch" | "prerelease" | "release";
+
+export const RELEASE_TYPES: ReleaseType[] = [
+  "major",
+  "premajor",
+  "minor",
+  "preminor",
+  "patch",
+  "prepatch",
+  "prerelease",
+  "release"
+];
 
 /**
  * Parse a semver string into a SemVer object
