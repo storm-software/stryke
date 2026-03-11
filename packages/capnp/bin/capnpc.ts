@@ -153,7 +153,7 @@ const compileAction =
  * @returns The configured Command instance for the Cap'n Proto compiler CLI.
  */
 export function createProgram() {
-  writeInfo(`${brandIcon()} Running Storm Cap'n Proto Compiler Tools`, {
+  writeInfo(`${brandIcon()}  Running Storm Cap'n Proto Compiler Tools`, {
     logLevel: "all"
   });
 
