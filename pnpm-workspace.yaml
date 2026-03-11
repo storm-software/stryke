@@ -29,18 +29,18 @@ catalog:
   '@storm-software/config-tools': ^1.189.24
   '@storm-software/cspell': ^0.46.14
   '@storm-software/esbuild': ^0.53.106
-  '@storm-software/eslint': ^0.169.112
-  '@storm-software/git-tools': ^2.125.4
+  '@storm-software/eslint': ^0.169.113
+  '@storm-software/git-tools': ^2.125.5
   '@storm-software/linting-tools': ^1.132.113
   '@storm-software/markdownlint': ^0.30.99
   '@storm-software/pnpm-tools': ^0.6.108
-  '@storm-software/prettier': ^0.58.23
+  '@storm-software/prettier': ^0.58.24
   '@storm-software/testing-tools': ^1.119.99
   '@storm-software/tsconfig': ^0.48.13
   '@storm-software/tsdoc': ^0.13.99
   '@storm-software/unbuild': ^0.57.106
   '@storm-software/untyped': ^0.24.87
-  '@storm-software/workspace-tools': ^1.294.57
+  '@storm-software/workspace-tools': ^1.294.58
   '@swc-node/register': ^1.11.1
   '@swc/core': ^1.15.18
   '@swc/helpers': ^0.5.19

@@ -1,18 +1,34 @@
 {
   "name": "@stryke/prisma-better-auth-generator",
   "version": "0.14.73",
-  "type": "module",
+  "private": false,
   "description": "A package containing a Prisma v6 generator for Better-Auth authentication.",
-  "repository": {
-    "type": "github",
-    "url": "https://github.com/storm-software/stryke.git",
-    "directory": "packages/prisma-better-auth-generator"
-  },
+  "keywords": [
+    "stryke",
+    "typescript",
+    "utilities",
+    "storm-software",
+    "storm",
+    "storm-ops",
+    "cyclone-ui",
+    "sullivanpj",
+    "monorepo"
+  ],
   "homepage": "https://stormsoftware.com",
   "bugs": {
     "url": "https://stormsoftware.com/support",
     "email": "support@stormsoftware.com"
   },
+  "repository": {
+    "type": "github",
+    "url": "https://github.com/storm-software/stryke.git",
+    "directory": "packages/prisma-better-auth-generator"
+  },
+  "funding": {
+    "type": "github",
+    "url": "https://github.com/sponsors/storm-software"
+  },
+  "license": "Apache-2.0",
   "author": {
     "name": "Storm Software",
     "email": "contact@stormsoftware.com",
@@ -32,19 +48,7 @@
       "url": "https://stormsoftware.com"
     }
   ],
-  "funding": {
-    "type": "github",
-    "url": "https://github.com/sponsors/storm-software"
-  },
-  "license": "Apache-2.0",
-  "private": false,
-  "bin": {
-    "prisma-better-auth-generator": "dist/generator.js",
-    "prisma-better-auth-generator-cjs": "dist/generator.cjs",
-    "prisma-better-auth-generator-mjs": "dist/generator.js"
-  },
-  "main": "./dist/index.cjs",
-  "module": "./dist/index.js",
+  "type": "module",
   "exports": {
     ".": {
       "import": {
@@ -90,19 +94,15 @@
     },
     "./package.json": "./package.json"
   },
+  "main": "./dist/index.cjs",
+  "module": "./dist/index.js",
   "types": "./dist/index.d.ts",
+  "bin": {
+    "prisma-better-auth-generator": "dist/generator.js",
+    "prisma-better-auth-generator-cjs": "dist/generator.cjs",
+    "prisma-better-auth-generator-mjs": "dist/generator.js"
+  },
   "files": ["dist/**/*"],
-  "keywords": [
-    "stryke",
-    "typescript",
-    "utilities",
-    "storm-software",
-    "storm",
-    "storm-ops",
-    "cyclone-ui",
-    "sullivanpj",
-    "monorepo"
-  ],
   "dependencies": {
     "@prisma/generator-helper": "catalog:",
     "@prisma/internals": "catalog:",

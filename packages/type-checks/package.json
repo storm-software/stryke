@@ -1,16 +1,14 @@
 {
   "name": "@stryke/type-checks",
   "version": "0.5.37",
-  "type": "module",
+  "private": false,
   "description": "A package containing various type-check functions to validate TypeScript values.",
   "repository": {
     "type": "github",
     "url": "https://github.com/storm-software/stryke.git",
     "directory": "packages/type-checks"
   },
-  "private": false,
-  "main": "./dist/index.cjs",
-  "module": "./dist/index.mjs",
+  "type": "module",
   "exports": {
     ".": {
       "require": "./dist/index.cjs",
@@ -194,6 +192,8 @@
     },
     "./*": "./*"
   },
+  "main": "./dist/index.cjs",
+  "module": "./dist/index.mjs",
   "types": "./dist/index.d.cts",
   "devDependencies": {
     "tsdown": "catalog:"

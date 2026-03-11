@@ -1,16 +1,14 @@
 {
   "name": "@stryke/url",
   "version": "0.4.9",
-  "type": "module",
+  "private": false,
   "description": "A package containing the `StormURL` class, which is used to parse and manipulate URLs.",
   "repository": {
     "type": "github",
     "url": "https://github.com/storm-software/stryke.git",
     "directory": "packages/url"
   },
-  "private": false,
-  "main": "./dist/index.cjs",
-  "module": "./dist/index.mjs",
+  "type": "module",
   "exports": {
     ".": {
       "require": "./dist/index.cjs",
@@ -34,6 +32,8 @@
     },
     "./*": "./*"
   },
+  "main": "./dist/index.cjs",
+  "module": "./dist/index.mjs",
   "types": "./dist/index.d.cts",
   "dependencies": {
     "ufo": "catalog:"

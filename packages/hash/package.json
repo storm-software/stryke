@@ -1,16 +1,14 @@
 {
   "name": "@stryke/hash",
   "version": "0.13.9",
-  "type": "module",
+  "private": false,
   "description": "A package containing utility functions that hash data using various algorithms.",
   "repository": {
     "type": "github",
     "url": "https://github.com/storm-software/stryke.git",
     "directory": "packages/hash"
   },
-  "private": false,
-  "main": "./dist/index.cjs",
-  "module": "./dist/index.mjs",
+  "type": "module",
   "exports": {
     ".": {
       "require": {
@@ -69,6 +67,8 @@
       }
     }
   },
+  "main": "./dist/index.cjs",
+  "module": "./dist/index.mjs",
   "types": "./dist/index.d.cts",
   "dependencies": {
     "@stryke/fs": "workspace:*",

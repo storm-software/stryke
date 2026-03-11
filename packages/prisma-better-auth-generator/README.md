@@ -51,6 +51,7 @@ A package containing a Prisma v6 generator for Better-Auth authentication
 
 <!-- START doctoc -->
 <!-- DON'T EDIT THIS SECTION, INSTEAD RE-RUN doctoc TO UPDATE -->
+
 ## Table of Contents
 
 - [Installing](#installing)

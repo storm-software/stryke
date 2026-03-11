@@ -1,16 +1,14 @@
 {
   "name": "@stryke/hooks",
   "version": "0.4.71",
-  "type": "module",
+  "private": false,
   "description": "A package containing shared hooks that can be used in any React UI project",
   "repository": {
     "type": "github",
     "url": "https://github.com/storm-software/stryke.git",
     "directory": "packages/hooks"
   },
-  "private": false,
-  "main": "./dist/index.cjs",
-  "module": "./dist/index.mjs",
+  "type": "module",
   "exports": {
     ".": {
       "require": "./dist/index.cjs",
@@ -86,7 +84,20 @@
     },
     "./*": "./*"
   },
+  "main": "./dist/index.cjs",
+  "module": "./dist/index.mjs",
   "types": "./dist/index.d.cts",
+  "dependencies": {
+    "react": "catalog:",
+    "react-dom": "catalog:",
+    "react-native": "catalog:"
+  },
+  "devDependencies": {
+    "@types/react": "catalog:",
+    "@types/react-dom": "catalog:",
+    "@types/react-native": "catalog:",
+    "tsdown": "catalog:"
+  },
   "peerDependencies": {
     "react": "catalog:",
     "react-dom": "catalog:",
@@ -102,17 +113,6 @@
     "react-native": {
       "optional": true
     }
-  },
-  "dependencies": {
-    "react": "catalog:",
-    "react-dom": "catalog:",
-    "react-native": "catalog:"
-  },
-  "devDependencies": {
-    "@types/react": "catalog:",
-    "@types/react-dom": "catalog:",
-    "@types/react-native": "catalog:",
-    "tsdown": "catalog:"
   },
   "publishConfig": {
     "access": "public"

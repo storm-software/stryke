@@ -52,6 +52,7 @@ compiler and creating Cap'n Proto serialization protocol schemas.
 
 <!-- START doctoc -->
 <!-- DON'T EDIT THIS SECTION, INSTEAD RE-RUN doctoc TO UPDATE -->
+
 ## Table of Contents
 
 - [Installing](#installing)

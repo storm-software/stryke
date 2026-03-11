@@ -19,16 +19,17 @@
 import { isObject } from "@stryke/type-checks/is-object";
 import { isString } from "@stryke/type-checks/is-string";
 import type { CoerceOptions, Range, SemVer } from "semver";
-import {
-  coerce,
-  inc,
-  parse,
-  satisfies,
-  valid,
-  validRange
-} from "semver";
+import { coerce, inc, parse, satisfies, valid, validRange } from "semver";
 
-export type ReleaseType = "major" | "premajor" | "minor" | "preminor" | "patch" | "prepatch" | "prerelease" | "release";
+export type ReleaseType =
+  | "major"
+  | "premajor"
+  | "minor"
+  | "preminor"
+  | "patch"
+  | "prepatch"
+  | "prerelease"
+  | "release";
 
 export const RELEASE_TYPES: ReleaseType[] = [
   "major",

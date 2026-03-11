@@ -1,18 +1,31 @@
 {
   "name": "@stryke/prisma-trpc-generator",
   "version": "0.13.73",
-  "type": "module",
+  "private": false,
   "description": "A fork of the prisma-trpc-generator code to work in ESM with Prisma v6.",
-  "repository": {
-    "type": "github",
-    "url": "https://github.com/storm-software/stryke.git",
-    "directory": "packages/prisma-trpc-generator"
-  },
+  "keywords": [
+    "stryke",
+    "typescript",
+    "utilities",
+    "storm-software",
+    "storm",
+    "sullivanpj"
+  ],
   "homepage": "https://stormsoftware.com",
   "bugs": {
     "url": "https://stormsoftware.com/support",
     "email": "support@stormsoftware.com"
   },
+  "repository": {
+    "type": "github",
+    "url": "https://github.com/storm-software/stryke.git",
+    "directory": "packages/prisma-trpc-generator"
+  },
+  "funding": {
+    "type": "github",
+    "url": "https://github.com/sponsors/storm-software"
+  },
+  "license": "Apache-2.0",
   "author": {
     "name": "Storm Software",
     "email": "contact@stormsoftware.com",
@@ -32,19 +45,7 @@
       "url": "https://stormsoftware.com"
     }
   ],
-  "funding": {
-    "type": "github",
-    "url": "https://github.com/sponsors/storm-software"
-  },
-  "license": "Apache-2.0",
-  "private": false,
-  "bin": {
-    "prisma-trpc-generator": "dist/generator.js",
-    "prisma-trpc-generator-cjs": "dist/generator.cjs",
-    "prisma-trpc-generator-mjs": "dist/generator.js"
-  },
-  "main": "./dist/index.cjs",
-  "module": "./dist/index.mjs",
+  "type": "module",
   "exports": {
     ".": {
       "require": "./dist/index.cjs",
@@ -56,18 +57,15 @@
     },
     "./*": "./*"
   },
+  "main": "./dist/index.cjs",
+  "module": "./dist/index.mjs",
   "types": "./dist/index.d.cts",
-  "files": [
-    "dist/**/*"
-  ],
-  "keywords": [
-    "stryke",
-    "typescript",
-    "utilities",
-    "storm-software",
-    "storm",
-    "sullivanpj"
-  ],
+  "bin": {
+    "prisma-trpc-generator": "dist/generator.js",
+    "prisma-trpc-generator-cjs": "dist/generator.cjs",
+    "prisma-trpc-generator-mjs": "dist/generator.js"
+  },
+  "files": ["dist/**/*"],
   "dependencies": {
     "@prisma/generator-helper": "catalog:",
     "@prisma/internals": "catalog:",

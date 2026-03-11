@@ -1,16 +1,14 @@
 {
   "name": "@stryke/helpers",
   "version": "0.10.2",
-  "type": "module",
+  "private": false,
   "description": "A package containing miscellaneous helper functions that are used across many different Storm Software projects.",
   "repository": {
     "type": "github",
     "url": "https://github.com/storm-software/stryke.git",
     "directory": "packages/helpers"
   },
-  "private": false,
-  "main": "./dist/index.cjs",
-  "module": "./dist/index.mjs",
+  "type": "module",
   "exports": {
     ".": {
       "require": "./dist/index.cjs",
@@ -150,6 +148,8 @@
     },
     "./*": "./*"
   },
+  "main": "./dist/index.cjs",
+  "module": "./dist/index.mjs",
   "types": "./dist/index.d.cts",
   "devDependencies": {
     "tsdown": "catalog:"

@@ -1,16 +1,14 @@
 {
   "name": "@stryke/crypto",
   "version": "0.6.9",
-  "type": "module",
+  "private": false,
   "description": "A package containing cryptographic utilities used by Storm Software.",
   "repository": {
     "type": "github",
     "url": "https://github.com/storm-software/stryke.git",
     "directory": "packages/crypto"
   },
-  "private": false,
-  "main": "./dist/index.cjs",
-  "module": "./dist/index.mjs",
+  "type": "module",
   "exports": {
     ".": {
       "require": {
@@ -83,6 +81,8 @@
       }
     }
   },
+  "main": "./dist/index.cjs",
+  "module": "./dist/index.mjs",
   "types": "./dist/index.d.cts",
   "dependencies": {
     "@stryke/convert": "workspace:*",
