@@ -1,6 +1,6 @@
 {
   "name": "@stryke/zod",
-  "version": "0.3.5",
+  "version": "0.3.6",
   "type": "module",
   "description": "A package containing helper utilities for working with zod schemas.",
   "repository": {

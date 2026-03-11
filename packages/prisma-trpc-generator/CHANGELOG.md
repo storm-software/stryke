@@ -2,6 +2,16 @@
 
 # Changelog for Stryke - Prisma TRPC Generator
 
+## [0.13.72](https://github.com/storm-software/stryke/releases/tag/prisma-trpc-generator%400.13.72) (03/08/2026)
+
+### Updated Dependencies
+
+- Updated **string-format** to **v0.17.1**
+- Updated **types** to **v0.10.50**
+- Updated **path** to **v0.26.17**
+- Updated **env** to **v0.20.72**
+- Updated **fs** to **v0.33.55**
+
 ## [0.13.71](https://github.com/storm-software/stryke/releases/tag/prisma-trpc-generator%400.13.71) (03/08/2026)
 
 ### Updated Dependencies
