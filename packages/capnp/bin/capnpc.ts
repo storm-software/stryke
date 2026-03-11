@@ -18,6 +18,7 @@
  ------------------------------------------------------------------- */
 
 import {
+  brandIcon,
   writeFatal,
   writeInfo,
   writeSuccess,
@@ -62,7 +63,7 @@ const compileAction =
     }
 
     writeInfo(
-      `📦  Storm Cap'n Proto Compiler will output ${
+      `Storm Cap'n Proto Compiler will output ${
         resolvedOptions.ts ? "TypeScript code" : ""
       }${
         resolvedOptions.js
@@ -90,16 +91,13 @@ const compileAction =
 
     const result = await capnpc(resolvedOptions);
     if (result.files.size === 0) {
-      writeWarning(
-        "⚠️  No files were generated. Please check your schema files.",
-        {
-          logLevel: "all"
-        }
-      );
+      writeWarning("No files were generated. Please check your schema files.", {
+        logLevel: "all"
+      });
       return;
     }
 
-    writeInfo(`📋  Writing ${result.files.size} generated files to disk...`, {
+    writeInfo(`Writing ${result.files.size} generated files to disk...`, {
       logLevel: "all"
     });
 
@@ -131,13 +129,15 @@ const compileAction =
       );
     }
 
-    writeSuccess("⚡  Storm Cap'n Proto Compiler completed successfully.", {
+    writeSuccess(`✔ Storm Cap'n Proto Compiler completed successfully.`, {
       logLevel: "all"
     });
   };
 
 export function createProgram() {
-  writeInfo("⚡ Running Storm Cap'n Proto Compiler Tools", { logLevel: "all" });
+  writeInfo(`${brandIcon()} Running Storm Cap'n Proto Compiler Tools`, {
+    logLevel: "all"
+  });
 
   const root = findWorkspaceRootSafe(process.cwd());
   process.env.STORM_WORKSPACE_ROOT ??= root;
@@ -207,7 +207,13 @@ void (async () => {
   } catch (error) {
     writeFatal(
       `✖ A fatal error occurred while running the Storm Cap'n Proto compiler tool:
-${(error as Error)?.message ? ((error as Error)?.name ? `[${(error as Error).name}]: ${(error as Error).message}` : (error as Error).message) : JSON.stringify(error)}${
+${
+  (error as Error)?.message
+    ? (error as Error)?.name
+      ? `[${(error as Error).name}]: ${(error as Error).message}`
+      : (error as Error).message
+    : JSON.stringify(error)
+}${
         (error as Error)?.stack
           ? `
 

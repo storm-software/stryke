@@ -18,12 +18,14 @@
 
 import {
   writeFatal,
+  writeInfo,
   writeWarning
 } from "@storm-software/config-tools/logger/console";
 import { toArray } from "@stryke/convert/to-array";
+import { createDirectory, isFile } from "@stryke/fs";
 import { existsSync } from "@stryke/fs/exists";
 import { readJsonFile } from "@stryke/fs/json";
-import { listFiles } from "@stryke/fs/list-files";
+import { listFiles, listSync } from "@stryke/fs/list-files";
 import { findFilePath, relativePath } from "@stryke/path/file-path-fns";
 import { joinPaths } from "@stryke/path/join-paths";
 import type { TsConfigJson } from "@stryke/types/tsconfig";
@@ -46,25 +48,75 @@ export async function resolveOptions(
         .replace("{projectRoot}", options.projectRoot)
         .replace("{workspaceRoot}", options.workspaceRoot)
     : joinPaths(options.projectRoot, "tsconfig.json");
-  const schemas = toArray(
-    options.schemas
-      ? options.schemas
-      : joinPaths(options.projectRoot, "schemas/**/*.capnp")
-  )
-    .filter(Boolean)
-    .map(schema =>
-      schema
-        .replace("{projectRoot}", options.projectRoot)
-        .replace("{workspaceRoot}", options.workspaceRoot)
+
+  const schemas = [] as string[];
+  if (options.schemas) {
+    schemas.push(
+      ...toArray(options.schemas)
+        .filter(Boolean)
+        .map(schema =>
+          schema
+            .replace("{projectRoot}", options.projectRoot)
+            .replace("{workspaceRoot}", options.workspaceRoot)
+        )
+        .map(schema =>
+          schema.includes("*") ||
+          schema.endsWith(".capnp") ||
+          (existsSync(schema) &&
+            listSync(joinPaths(schema, "**/*.capnp")).length > 0)
+            ? schema
+            : existsSync(joinPaths(options.projectRoot, schema)) &&
+                listSync(joinPaths(options.projectRoot, schema, "**/*.capnp"))
+                  .length > 0
+              ? joinPaths(options.projectRoot, schema, "**/*.capnp")
+              : existsSync(joinPaths(options.workspaceRoot, schema)) &&
+                  listSync(
+                    joinPaths(options.workspaceRoot, schema, "**/*.capnp")
+                  ).length > 0
+                ? joinPaths(options.workspaceRoot, schema, "**/*.capnp")
+                : schema
+        )
     );
+  } else {
+    schemas.push(
+      existsSync(joinPaths(options.projectRoot, "schemas/**/*.capnp")) &&
+        listSync(joinPaths(options.projectRoot, "schemas/**/*.capnp")).length >
+          0
+        ? joinPaths(options.projectRoot, "schemas/**/*.capnp")
+        : existsSync(joinPaths(options.workspaceRoot, "schemas/**/*.capnp")) &&
+            listSync(joinPaths(options.workspaceRoot, "schemas/**/*.capnp"))
+              .length > 0
+          ? joinPaths(options.workspaceRoot, "schemas/**/*.capnp")
+          : "schemas/**/*.capnp"
+    );
+  }
 
   let resolvedTsconfig!: ParsedCommandLine;
   if (options.tsconfig) {
     resolvedTsconfig = options.tsconfig;
   } else {
-    if (!tsconfigPath || !existsSync(tsconfigPath)) {
+    let resolvedTsconfigPath = tsconfigPath;
+    if (!existsSync(resolvedTsconfigPath)) {
+      const found = [
+        joinPaths(options.projectRoot, "tsconfig.json"),
+        joinPaths(options.projectRoot, "tsconfig.lib.json"),
+        joinPaths(options.projectRoot, "tsconfig.app.json"),
+        joinPaths(options.projectRoot, "tsconfig.capnp.json"),
+        joinPaths(options.workspaceRoot, "tsconfig.json"),
+        joinPaths(options.workspaceRoot, "tsconfig.lib.json"),
+        joinPaths(options.workspaceRoot, "tsconfig.app.json"),
+        joinPaths(options.workspaceRoot, "tsconfig.capnp.json")
+      ].find(path => existsSync(path));
+      if (found) {
+        resolvedTsconfigPath = found;
+      }
+    }
+
+    if (!resolvedTsconfigPath || !existsSync(resolvedTsconfigPath)) {
       const errorMessage = tsconfigPath
-        ? `✖ The specified TypeScript configuration file "${tsconfigPath}" does not exist. Please provide a valid path.`
+        ? `✖ The specified TypeScript configuration file "${
+            tsconfigPath
+          }" does not exist. Please provide a valid path.`
         : "✖ The specified TypeScript configuration file does not exist. Please provide a valid path.";
       writeFatal(errorMessage, { logLevel: "all" });
 
@@ -127,6 +179,24 @@ export async function resolveOptions(
           )
         )
       );
+  if (!existsSync(output)) {
+    if (isFile(output)) {
+      const errorMessage = `✖ The specified output path "${output}" is a file. Please provide a valid directory path.`;
+      writeFatal(errorMessage, { logLevel: "all" });
+
+      throw new Error(errorMessage);
+    }
+
+    writeInfo(
+      `Output directory "${output}" does not exist. It will be created automatically.`,
+      {
+        logLevel: "all"
+      }
+    );
+
+    await createDirectory(output);
+  }
+
   resolvedTsconfig.options.outDir = output;
 
   return {
