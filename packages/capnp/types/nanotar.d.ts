@@ -45,4 +45,22 @@ declare module "nanotar" {
    * @returns An array of file items contained in the TAR file.
    */
   function parseTar(data: ArrayBuffer | Uint8Array, opts?: any): any[];
+
+  /**
+   * Creates a TAR file from an array of file items and returns it as a Uint8Array.
+   *
+   * @param items - An array of file items to be included in the TAR file.
+   * @param opts - Optional settings for TAR file creation.
+   * @returns A Promise that resolves to a Uint8Array containing the TAR file data.
+   */
+  function createTarGzip(items: any[], opts?: any): Promise<Uint8Array>;
+
+  /**
+   * Creates a TAR file from an array of file items and returns it as a Uint8Array.
+   *
+   * @param items - An array of file items to be included in the TAR file.
+   * @param opts - Optional settings for TAR file creation.
+   * @returns A Uint8Array containing the TAR file data.
+   */
+  function createTar(items: any[], opts?: any): Uint8Array;
 }
