@@ -41,15 +41,28 @@ import type { CapnpcCLIOptions } from "../src/types.js";
 
 const compileAction =
   (workspaceRoot: string) => async (options: CapnpcCLIOptions) => {
-    if (!options.projectRoot) {
+    let projectRoot = options.projectRoot;
+    if (
+      !projectRoot &&
+      workspaceRoot !== process.cwd() &&
+      (existsSync(joinPaths(process.cwd(), "package.json")) ||
+        existsSync(joinPaths(process.cwd(), "project.json")))
+    ) {
+      projectRoot = process.cwd();
+    }
+
+    if (!projectRoot) {
       throw new Error(
-        "✖ The project root directory must be specified using the -p or --project-root option."
+        `✖ The project root directory must be specified using the -p or --project-root option. \n\nCurrent directories: \nWorkspace Root: ${
+          workspaceRoot
+        } \nCurrent Working Directory: ${process.cwd()}`
       );
     }
 
     const resolvedOptions = await resolveOptions({
       workspaceRoot,
       ...options,
+      projectRoot,
       tsconfig: undefined,
       tsconfigPath: options.tsconfig,
       schemas: options.schema
@@ -148,15 +161,6 @@ export function createProgram() {
   process.env.STORM_WORKSPACE_ROOT ??= workspaceRoot;
   process.env.NX_WORKSPACE_ROOT_PATH ??= workspaceRoot;
 
-  let projectRoot: string | undefined;
-  if (
-    workspaceRoot !== process.cwd() &&
-    (existsSync(joinPaths(process.cwd(), "package.json")) ||
-      existsSync(joinPaths(process.cwd(), "project.json")))
-  ) {
-    projectRoot = process.cwd();
-  }
-
   const program = new Command();
   program
     .name("storm-capnpc")
@@ -167,8 +171,7 @@ export function createProgram() {
     .command("compile", { isDefault: true })
     .option(
       "-p --project-root <path>",
-      "The path to the project root directory",
-      projectRoot
+      "The path to the project root directory"
     )
     .option(
       "-s --schema <path>",
@@ -200,7 +203,7 @@ export function createProgram() {
     .option(
       "-w --workspace-root <path>",
       "The path to the workspace root directory",
-      workspaceRoot || process.cwd()
+      workspaceRoot
     )
     .option("--tty", "An indicator to enable TTY mode for the compiler")
     .action(compileAction(workspaceRoot!));
