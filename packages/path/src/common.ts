@@ -16,7 +16,9 @@
 
  ------------------------------------------------------------------- */
 
-import { correctPath, withoutTrailingSlash } from "./normalize";
+// eslint-disable-next-line @nx/enforce-module-boundaries
+import { isSetString } from "@stryke/type-checks/is-set-string";
+import { correctPath, stripStars, withoutTrailingSlash } from "./normalize";
 import { slash } from "./slash";
 
 /**
@@ -60,4 +62,40 @@ export function commonPath(paths: string[]): string {
   }
 
   return withoutTrailingSlash(first.split("/").slice(0, endOfPrefix).join("/"));
+}
+
+export const findCommonPath = commonPath;
+
+/**
+ * Find the base path from a string path/glob or an array of string paths/globs. If a string is provided, it is returned as the base path. If an array of strings is provided, the common path among them is returned. If the input is invalid or empty, "/" is returned.
+ *
+ * @example
+ * ```ts
+ * findBasePath('/foo/bar/baz');
+ * // returns '/foo/bar/baz'
+ *
+ * findBasePath(['/foo/bar/baz', '/foo/bar/qux', '/foo/bar/baz/quux']);
+ * // returns '/foo/bar'
+ *
+ * findBasePath(['C:/foo/bar/baz', 'C:/foo/bar/qux', 'C:/foo/bar/baz/quux']);
+ * // returns 'C:/foo/bar'
+ *
+ * findBasePath(['foo/bar/**\/baz', 'foo/bar/qux/*', 'foo/bar/baz/quux']);
+ * // returns 'foo/bar'
+ *
+ * findBasePath([]);
+ * // returns '/'
+ * ```
+ *
+ * @param paths - The string or array of strings to find the base path from
+ * @returns The base path
+ */
+export function findBasePath(paths: string | string[]): string {
+  if (isSetString(paths)) {
+    return paths;
+  } else if (Array.isArray(paths) && paths.length > 0) {
+    return commonPath(paths.map(path => stripStars(path)));
+  }
+
+  return "/";
 }
