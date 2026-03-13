@@ -16,7 +16,6 @@
 
  ------------------------------------------------------------------- */
 
-// eslint-disable-next-line @nx/enforce-module-boundaries
 import { isSetString } from "@stryke/type-checks/is-set-string";
 import { correctPath, stripStars, withoutTrailingSlash } from "./normalize";
 import { slash } from "./slash";
