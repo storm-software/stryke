@@ -45,6 +45,16 @@ try {
     );
   }
 
+  // 3) Install git hooks to ensure that the correct versions of the CLI and other tools are used when running git commands
+  proc = $`pnpm exec storm-git prepare`.timeout(`${8 * 60}s`);
+  proc.stdout.on("data", data => echo`${data}`);
+  result = await proc;
+  if (result.exitCode !== 0) {
+    throw new Error(
+      `An error occurred while installing git hooks:\n\n${result.message}\n`
+    );
+  }
+
   echo`${chalk.green(" ✔ Successfully updated Storm Software package dependencies and re-linked workspace packages")}\n\n`;
 } catch (error) {
   echo`${chalk.red(

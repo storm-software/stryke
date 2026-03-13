@@ -3,15 +3,16 @@
                        ⚡ Storm Software - Stryke
 
  This code was released as part of the Stryke project. Stryke
- is maintained by Storm Software under the Apache-2.0 License, and is
+ is maintained by Storm Software under the Apache-2.0 license, and is
  free for commercial and private use. For more information, please visit
- our licensing page.
+ our licensing page at https://stormsoftware.com/licenses/projects/stryke.
 
- Website:         https://stormsoftware.com
- Repository:      https://github.com/storm-software/stryke
- Documentation:   https://stormsoftware.com/projects/stryke/docs
- Contact:         https://stormsoftware.com/contact
- License:         https://stormsoftware.com/projects/stryke/license
+ Website:                  https://stormsoftware.com
+ Repository:               https://github.com/storm-software/stryke
+ Documentation:            https://docs.stormsoftware.com/projects/stryke
+ Contact:                  https://stormsoftware.com/contact
+
+ SPDX-License-Identifier:  Apache-2.0
 
  ------------------------------------------------------------------- */
 
@@ -64,12 +65,14 @@ export async function generate(options: GeneratorOptions) {
 
   consoleLog("Finding Prisma Client generator");
 
-  const prismaClientProvider = options.otherGenerators.find(
-    it => internals.parseEnvValue(it.provider) === "prisma-client-js"
+  const prismaClientProvider = options.otherGenerators.find(it =>
+    ["prisma-client", "prisma-client-js", "prisma-client-ts"].includes(
+      internals.parseEnvValue(it.provider)
+    )
   );
   if (!prismaClientProvider) {
     throw new Error(
-      "No Prisma Client generator found. Please add `prisma-client-js` to your generator list."
+      "No Prisma Client generator found. Please add `prisma-client` to your generator list."
     );
   }
 
