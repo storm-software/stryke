@@ -2,6 +2,19 @@
 
 # Changelog for Stryke - Capnp
 
+## [0.12.84](https://github.com/storm-software/stryke/releases/tag/capnp%400.12.84) (03/13/2026)
+
+### Miscellaneous
+
+- **capnp:** Format generated typescript files ([e8427121](https://github.com/storm-software/stryke/commit/e8427121))
+
+### Updated Dependencies
+
+- Updated **convert** to **v0.6.54**
+- Updated **types** to **v0.10.53**
+- Updated **path** to **v0.27.0**
+- Updated **fs** to **v0.33.58**
+
 ## [0.12.83](https://github.com/storm-software/stryke/releases/tag/capnp%400.12.83) (03/11/2026)
 
 ### Miscellaneous

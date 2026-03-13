@@ -2,6 +2,22 @@
 
 # Changelog for Stryke - Path
 
+## [0.27.0](https://github.com/storm-software/stryke/releases/tag/path%400.27.0) (03/13/2026)
+
+### Bug Fixes
+
+- **monorepo:** Resolve issue with devenv profiles ([4a9cf7db](https://github.com/storm-software/stryke/commit/4a9cf7db))
+
+### Features
+
+- **path:** Added the `findBasePath` helper utility ([12e6cd08](https://github.com/storm-software/stryke/commit/12e6cd08))
+
+### Updated Dependencies
+
+- Updated **type-checks** to **v0.5.39**
+- Updated **convert** to **v0.6.54**
+- Updated **types** to **v0.10.53**
+
 ## [0.26.19](https://github.com/storm-software/stryke/releases/tag/path%400.26.19) (03/11/2026)
 
 ### Miscellaneous
