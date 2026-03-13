@@ -6,24 +6,24 @@ import * as $ from "@stryke/capnp";
 export const _capnpFileId = BigInt("0xa184c7885cdaf2a1");
 export const Side = {
   /**
-   * The object lives on the "server" or "supervisor" end of the connection. Only the
-   * server/supervisor knows how to interpret the ref; to the client, it is opaque.
-   *
-   * Note that containers intending to implement strong confinement should rewrite SturdyRefs
-   * received from the external network before passing them on to the confined app. The confined
-   * app thus does not ever receive the raw bits of the SturdyRef (which it could perhaps
-   * maliciously leak), but instead receives only a thing that it can pass back to the container
-   * later to restore the ref. See:
-   * http://www.erights.org/elib/capability/dist-confine.html
-   *
-   */
+* The object lives on the "server" or "supervisor" end of the connection. Only the
+* server/supervisor knows how to interpret the ref; to the client, it is opaque.
+*
+* Note that containers intending to implement strong confinement should rewrite SturdyRefs
+* received from the external network before passing them on to the confined app. The confined
+* app thus does not ever receive the raw bits of the SturdyRef (which it could perhaps
+* maliciously leak), but instead receives only a thing that it can pass back to the container
+* later to restore the ref. See:
+* http://www.erights.org/elib/capability/dist-confine.html
+*
+*/
   SERVER: 0,
   /**
-   * The object lives on the "client" or "confined app" end of the connection. Only the client
-   * knows how to interpret the ref; to the server/supervisor, it is opaque. Most clients do not
-   * actually know how to persist capabilities at all, so use of this is unusual.
-   *
-   */
+* The object lives on the "client" or "confined app" end of the connection. Only the client
+* knows how to interpret the ref; to the server/supervisor, it is opaque. Most clients do not
+* actually know how to persist capabilities at all, so use of this is unusual.
+*
+*/
   CLIENT: 1
 } as const;
 export type Side = (typeof Side)[keyof typeof Side];
@@ -31,7 +31,7 @@ export class VatId extends $.Struct {
   public static override readonly _capnp = {
     displayName: "VatId",
     id: "d20b909fee733a8e",
-    size: new $.ObjectSize(8, 0)
+    size: new $.ObjectSize(8, 0),
   };
   get side(): Side {
     return $.utils.getUint16(0, this) as Side;
@@ -39,106 +39,98 @@ export class VatId extends $.Struct {
   set side(value: Side) {
     $.utils.setUint16(0, value, this);
   }
-  public override toString(): string {
-    return "VatId_" + super.toString();
-  }
+  public override toString(): string { return "VatId_" + super.toString(); }
 }
 /**
- * Only used for joins, since three-way introductions never happen on a two-party network.
- *
- */
+* Only used for joins, since three-way introductions never happen on a two-party network.
+*
+*/
 export class ProvisionId extends $.Struct {
   public static override readonly _capnp = {
     displayName: "ProvisionId",
     id: "b88d09a9c5f39817",
-    size: new $.ObjectSize(8, 0)
+    size: new $.ObjectSize(8, 0),
   };
   /**
-   * The ID from `JoinKeyPart`.
-   *
-   */
+* The ID from `JoinKeyPart`.
+*
+*/
   get joinId(): number {
     return $.utils.getUint32(0, this);
   }
   set joinId(value: number) {
     $.utils.setUint32(0, value, this);
   }
-  public override toString(): string {
-    return "ProvisionId_" + super.toString();
-  }
+  public override toString(): string { return "ProvisionId_" + super.toString(); }
 }
 /**
- * Never used, because there are only two parties.
- *
- */
+* Never used, because there are only two parties.
+*
+*/
 export class RecipientId extends $.Struct {
   public static override readonly _capnp = {
     displayName: "RecipientId",
     id: "89f389b6fd4082c1",
-    size: new $.ObjectSize(0, 0)
+    size: new $.ObjectSize(0, 0),
   };
-  public override toString(): string {
-    return "RecipientId_" + super.toString();
-  }
+  public override toString(): string { return "RecipientId_" + super.toString(); }
 }
 /**
- * Never used, because there is no third party.
- *
- */
+* Never used, because there is no third party.
+*
+*/
 export class ThirdPartyCapId extends $.Struct {
   public static override readonly _capnp = {
     displayName: "ThirdPartyCapId",
     id: "b47f4979672cb59d",
-    size: new $.ObjectSize(0, 0)
+    size: new $.ObjectSize(0, 0),
   };
-  public override toString(): string {
-    return "ThirdPartyCapId_" + super.toString();
-  }
+  public override toString(): string { return "ThirdPartyCapId_" + super.toString(); }
 }
 /**
- * Joins in the two-party case are simplified by a few observations.
- *
- * First, on a two-party network, a Join only ever makes sense if the receiving end is also
- * connected to other networks.  A vat which is not connected to any other network can safely
- * reject all joins.
- *
- * Second, since a two-party connection bisects the network -- there can be no other connections
- * between the networks at either end of the connection -- if one part of a join crosses the
- * connection, then _all_ parts must cross it.  Therefore, a vat which is receiving a Join request
- * off some other network which needs to be forwarded across the two-party connection can
- * collect all the parts on its end and only forward them across the two-party connection when all
- * have been received.
- *
- * For example, imagine that Alice and Bob are vats connected over a two-party connection, and
- * each is also connected to other networks.  At some point, Alice receives one part of a Join
- * request off her network.  The request is addressed to a capability that Alice received from
- * Bob and is proxying to her other network.  Alice goes ahead and responds to the Join part as
- * if she hosted the capability locally (this is important so that if not all the Join parts end
- * up at Alice, the original sender can detect the failed Join without hanging).  As other parts
- * trickle in, Alice verifies that each part is addressed to a capability from Bob and continues
- * to respond to each one.  Once the complete set of join parts is received, Alice checks if they
- * were all for the exact same capability.  If so, she doesn't need to send anything to Bob at
- * all.  Otherwise, she collects the set of capabilities (from Bob) to which the join parts were
- * addressed and essentially initiates a _new_ Join request on those capabilities to Bob.  Alice
- * does not forward the Join parts she received herself, but essentially forwards the Join as a
- * whole.
- *
- * On Bob's end, since he knows that Alice will always send all parts of a Join together, he
- * simply waits until he's received them all, then performs a join on the respective capabilities
- * as if it had been requested locally.
- *
- */
+* Joins in the two-party case are simplified by a few observations.
+*
+* First, on a two-party network, a Join only ever makes sense if the receiving end is also
+* connected to other networks.  A vat which is not connected to any other network can safely
+* reject all joins.
+*
+* Second, since a two-party connection bisects the network -- there can be no other connections
+* between the networks at either end of the connection -- if one part of a join crosses the
+* connection, then _all_ parts must cross it.  Therefore, a vat which is receiving a Join request
+* off some other network which needs to be forwarded across the two-party connection can
+* collect all the parts on its end and only forward them across the two-party connection when all
+* have been received.
+*
+* For example, imagine that Alice and Bob are vats connected over a two-party connection, and
+* each is also connected to other networks.  At some point, Alice receives one part of a Join
+* request off her network.  The request is addressed to a capability that Alice received from
+* Bob and is proxying to her other network.  Alice goes ahead and responds to the Join part as
+* if she hosted the capability locally (this is important so that if not all the Join parts end
+* up at Alice, the original sender can detect the failed Join without hanging).  As other parts
+* trickle in, Alice verifies that each part is addressed to a capability from Bob and continues
+* to respond to each one.  Once the complete set of join parts is received, Alice checks if they
+* were all for the exact same capability.  If so, she doesn't need to send anything to Bob at
+* all.  Otherwise, she collects the set of capabilities (from Bob) to which the join parts were
+* addressed and essentially initiates a _new_ Join request on those capabilities to Bob.  Alice
+* does not forward the Join parts she received herself, but essentially forwards the Join as a
+* whole.
+*
+* On Bob's end, since he knows that Alice will always send all parts of a Join together, he
+* simply waits until he's received them all, then performs a join on the respective capabilities
+* as if it had been requested locally.
+*
+*/
 export class JoinKeyPart extends $.Struct {
   public static override readonly _capnp = {
     displayName: "JoinKeyPart",
     id: "95b29059097fca83",
-    size: new $.ObjectSize(8, 0)
+    size: new $.ObjectSize(8, 0),
   };
   /**
-   * A number identifying this join, chosen by the sender.  May be reused once `Finish` messages are
-   * sent corresponding to all of the `Join` messages.
-   *
-   */
+* A number identifying this join, chosen by the sender.  May be reused once `Finish` messages are
+* sent corresponding to all of the `Join` messages.
+*
+*/
   get joinId(): number {
     return $.utils.getUint32(0, this);
   }
@@ -146,9 +138,9 @@ export class JoinKeyPart extends $.Struct {
     $.utils.setUint32(0, value, this);
   }
   /**
-   * The number of capabilities to be joined.
-   *
-   */
+* The number of capabilities to be joined.
+*
+*/
   get partCount(): number {
     return $.utils.getUint16(4, this);
   }
@@ -156,29 +148,27 @@ export class JoinKeyPart extends $.Struct {
     $.utils.setUint16(4, value, this);
   }
   /**
-   * Which part this request targets -- a number in the range [0, partCount).
-   *
-   */
+* Which part this request targets -- a number in the range [0, partCount).
+*
+*/
   get partNum(): number {
     return $.utils.getUint16(6, this);
   }
   set partNum(value: number) {
     $.utils.setUint16(6, value, this);
   }
-  public override toString(): string {
-    return "JoinKeyPart_" + super.toString();
-  }
+  public override toString(): string { return "JoinKeyPart_" + super.toString(); }
 }
 export class JoinResult extends $.Struct {
   public static override readonly _capnp = {
     displayName: "JoinResult",
     id: "9d263a3630b7ebee",
-    size: new $.ObjectSize(8, 1)
+    size: new $.ObjectSize(8, 1),
   };
   /**
-   * Matches `JoinKeyPart`.
-   *
-   */
+* Matches `JoinKeyPart`.
+*
+*/
   get joinId(): number {
     return $.utils.getUint32(0, this);
   }
@@ -186,11 +176,11 @@ export class JoinResult extends $.Struct {
     $.utils.setUint32(0, value, this);
   }
   /**
-   * All JoinResults in the set will have the same value for `succeeded`.  The receiver actually
-   * implements the join by waiting for all the `JoinKeyParts` and then performing its own join on
-   * them, then going back and answering all the join requests afterwards.
-   *
-   */
+* All JoinResults in the set will have the same value for `succeeded`.  The receiver actually
+* implements the join by waiting for all the `JoinKeyParts` and then performing its own join on
+* them, then going back and answering all the join requests afterwards.
+*
+*/
   get succeeded(): boolean {
     return $.utils.getBit(32, this);
   }
@@ -204,9 +194,9 @@ export class JoinResult extends $.Struct {
     return $.utils.disown(this.cap);
   }
   /**
-   * One of the JoinResults will have a non-null `cap` which is the joined capability.
-   *
-   */
+* One of the JoinResults will have a non-null `cap` which is the joined capability.
+*
+*/
   get cap(): $.Pointer {
     return $.utils.getPointer(0, this);
   }
@@ -216,7 +206,5 @@ export class JoinResult extends $.Struct {
   set cap(value: $.Pointer) {
     $.utils.copyFrom(value, $.utils.getPointer(0, this));
   }
-  public override toString(): string {
-    return "JoinResult_" + super.toString();
-  }
+  public override toString(): string { return "JoinResult_" + super.toString(); }
 }
