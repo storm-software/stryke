@@ -2,6 +2,12 @@
 
 # Changelog for Stryke - Fs
 
+## [0.33.60](https://github.com/storm-software/stryke/releases/tag/fs%400.33.60) (03/14/2026)
+
+### Bug Fixes
+
+- **fs:** Resolve issue finding resolution path combinations ([55f30c0d](https://github.com/storm-software/stryke/commit/55f30c0d))
+
 ## [0.33.59](https://github.com/storm-software/stryke/releases/tag/fs%400.33.59) (03/14/2026)
 
 ### Bug Fixes
