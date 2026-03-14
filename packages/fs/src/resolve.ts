@@ -137,7 +137,7 @@ export function getNodeModulesPaths(paths: string[] = []) {
  * @param options - The options containing resolution paths.
  * @returns An array of unique, corrected resolution paths.
  */
-function innerGetResolutionCombinations(
+export function getResolutionCombinations(
   path: string,
   options: ResolveOptions = {}
 ) {
@@ -147,8 +147,6 @@ function innerGetResolutionCombinations(
   } else {
     paths.push(...getNodeModulesPaths(paths));
   }
-
-  const extensions = options.extensions ?? DEFAULT_EXTENSIONS;
 
   let combinations = paths.map(base => joinPaths(base, path));
   if (findFileName(path, { withExtension: false }) !== "index") {
@@ -161,6 +159,8 @@ function innerGetResolutionCombinations(
   }
 
   if (!hasFileExtension(path)) {
+    const extensions = options.extensions ?? DEFAULT_EXTENSIONS;
+
     combinations = combinations.reduce((ret, combination) => {
       ret.push(combination);
       extensions.forEach(ext => {
@@ -169,33 +169,13 @@ function innerGetResolutionCombinations(
 
       return ret;
     }, [] as string[]);
-  }
 
-  return combinations;
-}
-
-/**
- * Get all combinations of resolution paths for a given path and options.
- *
- * @param path - The base path to combine with resolution paths.
- * @param options - The options containing resolution paths.
- * @returns An array of unique, corrected resolution paths.
- */
-export function getResolutionCombinations(
-  path: string,
-  options: ResolveOptions = {}
-) {
-  const combinations = innerGetResolutionCombinations(path, options);
-  if (!hasFileExtension(path)) {
     combinations.push(
-      ...combinations.map(combination => joinPaths(combination, "index"))
-    );
-    combinations.push(
-      ...combinations.flatMap(combination => {
-        return options.extensions
-          ? options.extensions.map(ext => appendExtension(combination, ext))
-          : DEFAULT_EXTENSIONS.map(ext => appendExtension(combination, ext));
-      })
+      ...extensions
+        .map(ext =>
+          getResolutionCombinations(appendExtension(path, ext), options)
+        )
+        .flat()
     );
   }
 
