@@ -21,10 +21,10 @@ import { appendExtension } from "@stryke/path";
 import { correctPath, toAbsolutePath } from "@stryke/path/correct-path";
 import { cwd } from "@stryke/path/cwd";
 import {
-  findFileExtension,
   findFileName,
   findFilePath,
-  findFolderName
+  findFolderName,
+  hasFileExtension
 } from "@stryke/path/file-path-fns";
 import { isAbsolutePath, isNpmScopedPackage } from "@stryke/path/is-type";
 import { joinPaths } from "@stryke/path/join-paths";
@@ -137,7 +137,7 @@ export function getNodeModulesPaths(paths: string[] = []) {
  * @param options - The options containing resolution paths.
  * @returns An array of unique, corrected resolution paths.
  */
-export function getResolutionCombinations(
+function innerGetResolutionCombinations(
   path: string,
   options: ResolveOptions = {}
 ) {
@@ -160,7 +160,7 @@ export function getResolutionCombinations(
     }, [] as string[]);
   }
 
-  if (!findFileExtension(path)) {
+  if (!hasFileExtension(path)) {
     combinations = combinations.reduce((ret, combination) => {
       ret.push(combination);
       extensions.forEach(ext => {
@@ -169,6 +169,34 @@ export function getResolutionCombinations(
 
       return ret;
     }, [] as string[]);
+  }
+
+  return combinations;
+}
+
+/**
+ * Get all combinations of resolution paths for a given path and options.
+ *
+ * @param path - The base path to combine with resolution paths.
+ * @param options - The options containing resolution paths.
+ * @returns An array of unique, corrected resolution paths.
+ */
+export function getResolutionCombinations(
+  path: string,
+  options: ResolveOptions = {}
+) {
+  const combinations = innerGetResolutionCombinations(path, options);
+  if (!hasFileExtension(path)) {
+    combinations.push(
+      ...combinations.map(combination => joinPaths(combination, "index"))
+    );
+    combinations.push(
+      ...combinations.flatMap(combination => {
+        return options.extensions
+          ? options.extensions.map(ext => appendExtension(combination, ext))
+          : DEFAULT_EXTENSIONS.map(ext => appendExtension(combination, ext));
+      })
+    );
   }
 
   return getUnique(combinations.filter(Boolean)).map(p => correctPath(p));
