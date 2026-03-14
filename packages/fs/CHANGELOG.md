@@ -2,6 +2,12 @@
 
 # Changelog for Stryke - Fs
 
+## [0.33.59](https://github.com/storm-software/stryke/releases/tag/fs%400.33.59) (03/14/2026)
+
+### Bug Fixes
+
+- **fs:** Added logic to handle resolution paths without extensions ([1b970819](https://github.com/storm-software/stryke/commit/1b970819))
+
 ## [0.33.58](https://github.com/storm-software/stryke/releases/tag/fs%400.33.58) (03/13/2026)
 
 ### Updated Dependencies
