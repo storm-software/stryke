@@ -2,6 +2,12 @@
 
 # Changelog for Stryke - Fs
 
+## [0.33.61](https://github.com/storm-software/stryke/releases/tag/fs%400.33.61) (03/15/2026)
+
+### Miscellaneous
+
+- **fs:** Ensure we check paths provided with file extensions ([cf0b1ede](https://github.com/storm-software/stryke/commit/cf0b1ede))
+
 ## [0.33.60](https://github.com/storm-software/stryke/releases/tag/fs%400.33.60) (03/14/2026)
 
 ### Bug Fixes
