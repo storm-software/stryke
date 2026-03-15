@@ -130,6 +130,15 @@ export function getNodeModulesPaths(paths: string[] = []) {
   );
 }
 
+export interface ResolutionCombinationOptions extends ResolveOptions {
+  /**
+   * Whether to include additional paths (like node_modules) in the resolution combinations. If set to false, only the provided paths will be used for generating combinations. This can be useful for scenarios where you want to limit the resolution to specific directories without considering the default node_modules paths.
+   *
+   * @defaultValue true
+   */
+  useAdditionalPaths?: boolean;
+}
+
 /**
  * Get all combinations of resolution paths for a given path and options.
  *
@@ -139,9 +148,11 @@ export function getNodeModulesPaths(paths: string[] = []) {
  */
 export function getResolutionCombinations(
   path: string,
-  options: ResolveOptions = {}
+  options: ResolutionCombinationOptions = {}
 ) {
-  let paths = getResolutionPaths(options.paths);
+  let paths = options.useAdditionalPaths
+    ? getResolutionPaths(options.paths)
+    : (options.paths ?? []);
   if (isNpmScopedPackage(path)) {
     paths = getNodeModulesPaths(paths);
   } else {
@@ -178,6 +189,18 @@ export function getResolutionCombinations(
         .flat()
     );
   }
+
+  paths.map(p => {
+    if (hasFileExtension(p)) {
+      combinations.push(
+        ...getResolutionCombinations(path, {
+          ...options,
+          useAdditionalPaths: false,
+          paths: [findFilePath(p)]
+        })
+      );
+    }
+  });
 
   return getUnique(combinations.filter(Boolean)).map(p => correctPath(p));
 }
