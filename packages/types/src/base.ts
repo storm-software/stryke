@@ -294,28 +294,21 @@ export type Simplify<T> = { [KeyType in keyof T]: T[KeyType] } & {};
  * @remarks
  * Use-case: You want to define a single model where the only thing that changes is whether or not some of the keys are required.
  */
-export type SetRequired<
-  BaseType,
-  Keys extends keyof BaseType
-> = BaseType extends unknown // type](https://www.typescriptlang.org/docs/handbook/release-notes/typescript-2-8.html#distributive-conditional-types). // union into a [distributive conditional // `extends unknown` is always going to be the case and is used to convert any
-  ? Simplify<
-      // Pick just the keys that are optional from the base type.
-      Except<BaseType, Keys> &
-        // Pick the keys that should be required from the base type and make them required.
-        Required<Pick<BaseType, Keys>>
-    >
-  : never;
+export type RequiredKeys<BaseType, Keys extends keyof BaseType> = Required<
+  Pick<BaseType, Keys>
+> &
+  Omit<BaseType, Keys>;
 
 /**
- * Create a type that makes the given keys required. The remaining keys are kept as is..
+ * Create a type that makes the given keys optional. The remaining keys are kept as is.
  *
  * @remarks
- * Use-case: You want to define a single model where the only thing that changes is whether or not some of the keys are required.
+ * Use-case: You want to define a single model where the only thing that changes is whether or not some of the keys are optional.
  */
-export type RequiredKeys<BaseType, Keys extends keyof BaseType> = SetRequired<
-  BaseType,
-  Keys
->;
+export type PartialKeys<BaseType, Keys extends keyof BaseType> = Partial<
+  Pick<BaseType, Keys>
+> &
+  Omit<BaseType, Keys>;
 
 export const $NestedValue: unique symbol = Symbol("NestedValue");
 
