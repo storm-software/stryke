@@ -289,7 +289,7 @@ export type Except<
 export type Simplify<T> = { [KeyType in keyof T]: T[KeyType] } & {};
 
 /**
- * Create a type that makes the given keys required. The remaining keys are kept as is. The sister of the `SetOptional` type.
+ * Create a type that makes the given keys required. The remaining keys are kept as is.
  *
  * @remarks
  * Use-case: You want to define a single model where the only thing that changes is whether or not some of the keys are required.
@@ -305,6 +305,17 @@ export type SetRequired<
         Required<Pick<BaseType, Keys>>
     >
   : never;
+
+/**
+ * Create a type that makes the given keys required. The remaining keys are kept as is..
+ *
+ * @remarks
+ * Use-case: You want to define a single model where the only thing that changes is whether or not some of the keys are required.
+ */
+export type RequiredKeys<BaseType, Keys extends keyof BaseType> = SetRequired<
+  BaseType,
+  Keys
+>;
 
 export const $NestedValue: unique symbol = Symbol("NestedValue");
 
