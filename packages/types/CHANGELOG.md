@@ -2,6 +2,13 @@
 
 # Changelog for Stryke - Types
 
+## [0.11.0](https://github.com/storm-software/stryke/releases/tag/types%400.11.0) (03/16/2026)
+
+### Features
+
+- **types:** Added `PartialKeys` and `RequiredKeys` type utilities ([470a6d7c](https://github.com/storm-software/stryke/commit/470a6d7c))
+- **types:** Added `RequiredKeys` type utility ([b014fa35](https://github.com/storm-software/stryke/commit/b014fa35))
+
 ## [0.10.52](https://github.com/storm-software/stryke/releases/tag/types%400.10.52) (03/11/2026)
 
 ### Miscellaneous
