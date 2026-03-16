@@ -133,7 +133,9 @@ export async function resolveOptions(
       findFilePath(tsconfigPath)
     );
     if (!resolvedTsconfig) {
-      const errorMessage = `✖ The specified TypeScript configuration file "${tsconfigPath}" is invalid. Please provide a valid configuration.`;
+      const errorMessage = `✖ The specified TypeScript configuration file "${
+        tsconfigPath
+      }" is invalid. Please provide a valid configuration.`;
       writeFatal(errorMessage, { logLevel: "all" });
 
       throw new Error(errorMessage);
@@ -173,25 +175,29 @@ export async function resolveOptions(
     : appendPath(
         relativePath(
           tsconfigPath ? findFilePath(tsconfigPath) : options.projectRoot,
-          joinPaths(
-            options.workspaceRoot,
+          appendPath(
             resolvedSchemas[0].endsWith(".capnp")
               ? findFilePath(resolvedSchemas[0])
-              : resolvedSchemas[0]
+              : resolvedSchemas[0],
+            options.workspaceRoot
           )
         ),
         options.projectRoot
       );
   if (!existsSync(output)) {
     if (isFile(output)) {
-      const errorMessage = `✖ The specified output path "${output}" is a file. Please provide a valid directory path.`;
+      const errorMessage = `✖ The specified output path "${
+        output
+      }" is a file. Please provide a valid directory path.`;
       writeFatal(errorMessage, { logLevel: "all" });
 
       throw new Error(errorMessage);
     }
 
     writeInfo(
-      `Output directory "${output}" does not exist. It will be created automatically.`,
+      `Output directory "${
+        output
+      }" does not exist. It will be created automatically.`,
       {
         logLevel: "all"
       }
