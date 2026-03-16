@@ -2,6 +2,22 @@
 
 # Changelog for Stryke - Fs
 
+## [0.33.63](https://github.com/storm-software/stryke/releases/tag/fs%400.33.63) (03/16/2026)
+
+### Miscellaneous
+
+- **monorepo:** Added `README.md` workspace files ([515dc333](https://github.com/storm-software/stryke/commit/515dc333))
+
+### Updated Dependencies
+
+- Updated **string-format** to **v0.17.6**
+- Updated **type-checks** to **v0.5.41**
+- Updated **convert** to **v0.6.56**
+- Updated **helpers** to **v0.10.6**
+- Updated **types** to **v0.11.1**
+- Updated **json** to **v0.14.10**
+- Updated **path** to **v0.27.2**
+
 ## [0.33.62](https://github.com/storm-software/stryke/releases/tag/fs%400.33.62) (03/16/2026)
 
 ### Updated Dependencies

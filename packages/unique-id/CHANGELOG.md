@@ -2,6 +2,16 @@
 
 # Changelog for Stryke - Unique ID
 
+## [0.3.74](https://github.com/storm-software/stryke/releases/tag/unique-id%400.3.74) (03/16/2026)
+
+### Miscellaneous
+
+- **monorepo:** Added `README.md` workspace files ([515dc333](https://github.com/storm-software/stryke/commit/515dc333))
+
+### Updated Dependencies
+
+- Updated **hash** to **v0.13.16**
+
 ## [0.3.73](https://github.com/storm-software/stryke/releases/tag/unique-id%400.3.73) (03/16/2026)
 
 ### Updated Dependencies

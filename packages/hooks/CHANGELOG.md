@@ -2,6 +2,19 @@
 
 # Changelog for Stryke - Hooks
 
+## [0.4.78](https://github.com/storm-software/stryke/releases/tag/hooks%400.4.78) (03/16/2026)
+
+### Miscellaneous
+
+- **monorepo:** Added `README.md` workspace files ([515dc333](https://github.com/storm-software/stryke/commit/515dc333))
+
+### Updated Dependencies
+
+- Updated **type-checks** to **v0.5.41**
+- Updated **helpers** to **v0.10.6**
+- Updated **types** to **v0.11.1**
+- Updated **env** to **v0.20.80**
+
 ## [0.4.77](https://github.com/storm-software/stryke/releases/tag/hooks%400.4.77) (03/16/2026)
 
 ### Updated Dependencies

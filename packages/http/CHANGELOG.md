@@ -2,6 +2,17 @@
 
 # Changelog for Stryke - HTTP
 
+## [0.12.52](https://github.com/storm-software/stryke/releases/tag/http%400.12.52) (03/16/2026)
+
+### Miscellaneous
+
+- **monorepo:** Added `README.md` workspace files ([515dc333](https://github.com/storm-software/stryke/commit/515dc333))
+
+### Updated Dependencies
+
+- Updated **type-checks** to **v0.5.41**
+- Updated **url** to **v0.4.13**
+
 ## [0.12.51](https://github.com/storm-software/stryke/releases/tag/http%400.12.51) (03/16/2026)
 
 ### Updated Dependencies

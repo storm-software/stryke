@@ -1,6 +1,6 @@
 {
   "name": "@stryke/cookie",
-  "version": "0.1.56",
+  "version": "0.1.57",
   "private": false,
   "description": "A package containing HTTP Cookie utilities used by Storm Software.",
   "repository": {

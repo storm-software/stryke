@@ -2,6 +2,12 @@
 
 # Changelog for Stryke - Types
 
+## [0.11.1](https://github.com/storm-software/stryke/releases/tag/types%400.11.1) (03/16/2026)
+
+### Miscellaneous
+
+- **monorepo:** Added `README.md` workspace files ([515dc333](https://github.com/storm-software/stryke/commit/515dc333))
+
 ## [0.11.0](https://github.com/storm-software/stryke/releases/tag/types%400.11.0) (03/16/2026)
 
 ### Features

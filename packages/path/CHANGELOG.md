@@ -2,6 +2,18 @@
 
 # Changelog for Stryke - Path
 
+## [0.27.2](https://github.com/storm-software/stryke/releases/tag/path%400.27.2) (03/16/2026)
+
+### Miscellaneous
+
+- **monorepo:** Added `README.md` workspace files ([515dc333](https://github.com/storm-software/stryke/commit/515dc333))
+
+### Updated Dependencies
+
+- Updated **type-checks** to **v0.5.41**
+- Updated **convert** to **v0.6.56**
+- Updated **types** to **v0.11.1**
+
 ## [0.27.1](https://github.com/storm-software/stryke/releases/tag/path%400.27.1) (03/16/2026)
 
 ### Updated Dependencies

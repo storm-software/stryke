@@ -2,6 +2,12 @@
 
 # Changelog for Stryke - Open Browser
 
+## [0.2.55](https://github.com/storm-software/stryke/releases/tag/open-browser%400.2.55) (03/16/2026)
+
+### Miscellaneous
+
+- **monorepo:** Added `README.md` workspace files ([515dc333](https://github.com/storm-software/stryke/commit/515dc333))
+
 ## [0.2.52](https://github.com/storm-software/stryke/releases/tag/open-browser%400.2.52) (03/11/2026)
 
 ### Miscellaneous
