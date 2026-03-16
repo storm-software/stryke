@@ -2,6 +2,19 @@
 
 # Changelog for Stryke - Capnp
 
+## [0.12.88](https://github.com/storm-software/stryke/releases/tag/capnp%400.12.88) (03/16/2026)
+
+### Bug Fixes
+
+- **capnp:** Resolve issue finding output directory for CLI ([b77b97f9](https://github.com/storm-software/stryke/commit/b77b97f9))
+
+### Updated Dependencies
+
+- Updated **convert** to **v0.6.55**
+- Updated **types** to **v0.11.0**
+- Updated **path** to **v0.27.1**
+- Updated **fs** to **v0.33.62**
+
 ## [0.12.87](https://github.com/storm-software/stryke/releases/tag/capnp%400.12.87) (03/15/2026)
 
 ### Updated Dependencies
