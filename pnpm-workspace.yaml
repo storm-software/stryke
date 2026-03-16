@@ -5,7 +5,7 @@ packages:
 catalog:
   '@antfu/install-pkg': ^1.1.0
   '@antfu/ni': ^23.3.1
-  '@cloudflare/workers-types': ^4.20260313.1
+  '@cloudflare/workers-types': ^4.20260316.1
   '@dotenvx/dotenvx': 1.35.0
   '@js-temporal/polyfill': ^0.5.1
   '@ls-lint/ls-lint': ^2.3.1
@@ -24,23 +24,23 @@ catalog:
   '@prisma/internals': ^6.19.2
   '@prisma/prisma-schema-wasm': ^6.6.0-41.9061db3b0058e3d3731c6fe68a1b77061bed4861
   '@standard-schema/spec': ^1.1.0
-  '@storm-software/build-tools': ^0.158.109
-  '@storm-software/config': ^1.135.29
-  '@storm-software/config-tools': ^1.189.28
-  '@storm-software/cspell': ^0.46.18
-  '@storm-software/esbuild': ^0.53.110
-  '@storm-software/eslint': ^0.169.117
-  '@storm-software/git-tools': ^2.127.4
-  '@storm-software/linting-tools': ^1.132.117
-  '@storm-software/markdownlint': ^0.30.103
-  '@storm-software/pnpm-tools': ^0.6.112
-  '@storm-software/prettier': ^0.59.2
-  '@storm-software/testing-tools': ^1.119.103
-  '@storm-software/tsconfig': ^0.48.17
-  '@storm-software/tsdoc': ^0.13.103
-  '@storm-software/unbuild': ^0.57.110
-  '@storm-software/untyped': ^0.24.91
-  '@storm-software/workspace-tools': ^1.295.3
+  '@storm-software/build-tools': ^0.158.113
+  '@storm-software/config': ^1.135.33
+  '@storm-software/config-tools': ^1.189.32
+  '@storm-software/cspell': ^0.46.22
+  '@storm-software/esbuild': ^0.53.114
+  '@storm-software/eslint': ^0.169.121
+  '@storm-software/git-tools': ^2.127.8
+  '@storm-software/linting-tools': ^1.132.121
+  '@storm-software/markdownlint': ^0.30.107
+  '@storm-software/pnpm-tools': ^0.6.117
+  '@storm-software/prettier': ^0.59.6
+  '@storm-software/testing-tools': ^1.119.107
+  '@storm-software/tsconfig': ^0.48.21
+  '@storm-software/tsdoc': ^0.13.107
+  '@storm-software/unbuild': ^0.57.114
+  '@storm-software/untyped': ^0.24.95
+  '@storm-software/workspace-tools': ^1.295.8
   '@swc-node/register': ^1.11.1
   '@swc/core': ^1.15.18
   '@swc/helpers': ^0.5.19
@@ -48,10 +48,10 @@ catalog:
   '@tanstack/react-query': ^5.90.21
   '@tanstack/react-query-devtools': ^5.70.0
   '@taplo/cli': ^0.7.0
-  '@trpc/client': ^11.12.0
-  '@trpc/next': ^11.12.0
-  '@trpc/server': ^11.12.0
-  '@trpc/tanstack-react-query': ^11.12.0
+  '@trpc/client': ^11.13.4
+  '@trpc/next': ^11.13.4
+  '@trpc/server': ^11.13.4
+  '@trpc/tanstack-react-query': ^11.13.4
   '@types/cross-spawn': ^6.0.6
   '@types/figlet': ^1.7.0
   '@types/jest': 30.0.0
@@ -65,7 +65,7 @@ catalog:
   capnp-es: ^0.0.11
   chalk: ^5.6.2
   commander: ^14.0.3
-  conventional-changelog-storm-software: ^0.3.109
+  conventional-changelog-storm-software: ^0.3.113
   copyfiles: ^2.4.1
   cross-spawn: ^7.0.6
   defu: ^6.1.4
@@ -117,9 +117,9 @@ catalog:
   typescript: ^5.9.3
   ufo: ^1.6.3
   unbuild: ^3.3.1
-  undici: ^7.24.0
-  undici-types: ^7.24.0
-  verdaccio: ^6.3.1
+  undici: ^7.24.3
+  undici-types: ^7.24.3
+  verdaccio: ^6.3.2
   yaml: ^2.8.2
   zod: ^4.3.6
   zod-to-json-schema: ^3.25.1
