@@ -26,6 +26,7 @@ import { createDirectory, isFile } from "@stryke/fs";
 import { existsSync } from "@stryke/fs/exists";
 import { readJsonFile } from "@stryke/fs/json";
 import { listFiles, listSync } from "@stryke/fs/list-files";
+import { appendPath } from "@stryke/path/append";
 import { findFilePath, relativePath } from "@stryke/path/file-path-fns";
 import { joinPaths } from "@stryke/path/join-paths";
 import type { TsConfigJson } from "@stryke/types/tsconfig";
@@ -102,10 +103,12 @@ export async function resolveOptions(
         joinPaths(options.projectRoot, "tsconfig.lib.json"),
         joinPaths(options.projectRoot, "tsconfig.app.json"),
         joinPaths(options.projectRoot, "tsconfig.capnp.json"),
+        joinPaths(options.projectRoot, "tsconfig.schema.json"),
         joinPaths(options.workspaceRoot, "tsconfig.json"),
         joinPaths(options.workspaceRoot, "tsconfig.lib.json"),
         joinPaths(options.workspaceRoot, "tsconfig.app.json"),
-        joinPaths(options.workspaceRoot, "tsconfig.capnp.json")
+        joinPaths(options.workspaceRoot, "tsconfig.capnp.json"),
+        joinPaths(options.workspaceRoot, "tsconfig.schema.json")
       ].find(path => existsSync(path));
       if (found) {
         resolvedTsconfigPath = found;
@@ -167,8 +170,7 @@ export async function resolveOptions(
     ? options.output
         .replace("{projectRoot}", options.projectRoot)
         .replace("{workspaceRoot}", options.workspaceRoot)
-    : joinPaths(
-        options.projectRoot,
+    : appendPath(
         relativePath(
           tsconfigPath ? findFilePath(tsconfigPath) : options.projectRoot,
           joinPaths(
@@ -177,7 +179,8 @@ export async function resolveOptions(
               ? findFilePath(resolvedSchemas[0])
               : resolvedSchemas[0]
           )
-        )
+        ),
+        options.projectRoot
       );
   if (!existsSync(output)) {
     if (isFile(output)) {
