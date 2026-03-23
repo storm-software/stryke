@@ -16,7 +16,7 @@
 
  ------------------------------------------------------------------- */
 
-import type { DeepKey } from "@stryke/types/object";
+import type { DeepKey } from "@stryke/types";
 
 /**
  * Checks if a given key is a deep key.
@@ -42,6 +42,14 @@ export function isDeepKey(key: PropertyKey): key is DeepKey<any> {
     }
     case "string": {
       return key.includes(".") || key.includes("[") || key.includes("]");
+    }
+    case "bigint":
+    case "boolean":
+    case "function":
+    case "object":
+    case "undefined":
+    default: {
+      return false;
     }
   }
 }
@@ -72,6 +80,14 @@ export function isKeyOrDeepKey(key: PropertyKey): key is DeepKey<any> {
     }
     case "string": {
       return true;
+    }
+    case "bigint":
+    case "boolean":
+    case "function":
+    case "object":
+    case "undefined":
+    default: {
+      return false;
     }
   }
 }

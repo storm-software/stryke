@@ -16,8 +16,7 @@
 
  ------------------------------------------------------------------- */
 
-import { isPrimitive } from "@stryke/type-checks/is-primitive";
-import { isTypedArray } from "@stryke/type-checks/is-typed-array";
+import { isPrimitive, isTypedArray } from "@stryke/type-checks";
 
 export type Resolved<T> =
   Equal<T, ResolvedMain<T>> extends true ? T : ResolvedMain<T>;
@@ -193,9 +192,9 @@ export function deepClone<T>(obj: T): Resolved<T> {
   if (isTypedArray(obj)) {
     // eslint-disable-next-line ts/no-unsafe-call
     const result = new (Object.getPrototypeOf(obj).constructor)(obj.length);
-    // eslint-disable-next-line ts/naming-convention
-    for (const [i, element_] of obj.entries()) {
-      result[i] = deepClone(element_);
+
+    for (const [i, element] of obj.entries()) {
+      result[i] = deepClone(element);
     }
     return result as Resolved<T>;
   }

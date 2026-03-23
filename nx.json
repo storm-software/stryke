@@ -27,5 +27,6 @@
         "projectLinks": "alias"
       }
     }
-  ]
+  ],
+  "analytics": false
 }

@@ -3,15 +3,16 @@
                        ⚡ Storm Software - Stryke
 
  This code was released as part of the Stryke project. Stryke
- is maintained by Storm Software under the Apache-2.0 License, and is
+ is maintained by Storm Software under the Apache-2.0 license, and is
  free for commercial and private use. For more information, please visit
- our licensing page.
+ our licensing page at https://stormsoftware.com/licenses/projects/stryke.
 
- Website:         https://stormsoftware.com
- Repository:      https://github.com/storm-software/stryke
- Documentation:   https://stormsoftware.com/projects/stryke/docs
- Contact:         https://stormsoftware.com/contact
- License:         https://stormsoftware.com/projects/stryke/license
+ Website:                  https://stormsoftware.com
+ Repository:               https://github.com/storm-software/stryke
+ Documentation:            https://docs.stormsoftware.com/projects/stryke
+ Contact:                  https://stormsoftware.com/contact
+
+ SPDX-License-Identifier:  Apache-2.0
 
  ------------------------------------------------------------------- */
 
@@ -417,9 +418,6 @@ export const characterMap: Record<string, string> = {
   z̧: "z"
 };
 
-const chars = Object.keys(characterMap).join("|");
-const allAccents = new RegExp(chars, "g");
-
 /**
  * Removes accents from a string.
  *
@@ -427,4 +425,8 @@ const allAccents = new RegExp(chars, "g");
  * @returns The string without accents
  */
 export const removeAccents = (str: string) =>
-  str.replace(allAccents, match => characterMap[match]!);
+  str.replace(
+    // eslint-disable-next-line regexp/no-dupe-disjunctions, regexp/prefer-character-class
+    new RegExp(Object.keys(characterMap).join("|"), "g"),
+    match => characterMap[match]!
+  );

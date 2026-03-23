@@ -3,20 +3,21 @@
                        ⚡ Storm Software - Stryke
 
  This code was released as part of the Stryke project. Stryke
- is maintained by Storm Software under the Apache-2.0 License, and is
+ is maintained by Storm Software under the Apache-2.0 license, and is
  free for commercial and private use. For more information, please visit
- our licensing page.
+ our licensing page at https://stormsoftware.com/licenses/projects/stryke.
 
- Website:         https://stormsoftware.com
- Repository:      https://github.com/storm-software/stryke
- Documentation:   https://stormsoftware.com/projects/stryke/docs
- Contact:         https://stormsoftware.com/contact
- License:         https://stormsoftware.com/projects/stryke/license
+ Website:                  https://stormsoftware.com
+ Repository:               https://github.com/storm-software/stryke
+ Documentation:            https://docs.stormsoftware.com/projects/stryke
+ Contact:                  https://stormsoftware.com/contact
+
+ SPDX-License-Identifier:  Apache-2.0
 
  ------------------------------------------------------------------- */
 
-import { isPlainObject } from "@stryke/type-checks/is-plain-object";
-import type { DeepKey, DeepValue } from "@stryke/types/object";
+import { isPlainObject } from "@stryke/type-checks";
+import type { DeepKey, DeepValue } from "@stryke/types";
 
 /**
  * Flattens a nested object into a single level object with dot-separated keys.
@@ -74,9 +75,9 @@ function flattenObjectImpl<
         flattenObjectImpl<typeof value>(value, prefixedKey)
       );
     } else if (Array.isArray(value)) {
-      for (const [index, element_] of value.entries()) {
+      for (const [index, element] of value.entries()) {
         (result as any)[`${prefixedKey}.${index}` as DeepKey<TObject>] =
-          element_;
+          element;
       }
     } else {
       (result as any)[prefixedKey as DeepKey<TObject>] = value;

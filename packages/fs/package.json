@@ -117,7 +117,6 @@
   "types": "./dist/index.d.cts",
   "dependencies": {
     "@antfu/install-pkg": "catalog:",
-    "@ltd/j-toml": "catalog:",
     "@storm-software/config-tools": "catalog:",
     "@stryke/convert": "workspace:*",
     "@stryke/helpers": "workspace:*",
@@ -129,6 +128,7 @@
     "mlly": "catalog:",
     "nanotar": "catalog:",
     "semver": "catalog:",
+    "smol-toml": "catalog:",
     "yaml": "catalog:"
   },
   "devDependencies": {

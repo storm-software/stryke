@@ -16,11 +16,11 @@
 
  ------------------------------------------------------------------- */
 
+import { getEnvPaths } from "@stryke/env";
+import { getWorkspaceRoot } from "@stryke/fs";
+import { joinPaths } from "@stryke/path";
 import type { Jiti } from "jiti";
 import { createJiti } from "jiti";
-import { getEnvPaths } from "../../../env/src/get-env-paths";
-import { getWorkspaceRoot } from "../../../fs/src/get-workspace-root";
-import { joinPaths } from "../../../path/src/join-paths";
 
 let jiti!: Jiti;
 

@@ -86,9 +86,11 @@ export const createQueryClient = (
           shouldDehydrateQuery: (query: any) =>
             defaultShouldDehydrateQuery(query) ||
             query.state.status === "pending",
+          // eslint-disable-next-line ts/unbound-method
           serializeData: transformer.serialize
         },
         hydrate: {
+          // eslint-disable-next-line ts/unbound-method
           deserializeData: transformer.deserialize
         }
       }

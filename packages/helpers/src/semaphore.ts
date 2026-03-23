@@ -3,15 +3,16 @@
                        ⚡ Storm Software - Stryke
 
  This code was released as part of the Stryke project. Stryke
- is maintained by Storm Software under the Apache-2.0 License, and is
+ is maintained by Storm Software under the Apache-2.0 license, and is
  free for commercial and private use. For more information, please visit
- our licensing page.
+ our licensing page at https://stormsoftware.com/licenses/projects/stryke.
 
- Website:         https://stormsoftware.com
- Repository:      https://github.com/storm-software/stryke
- Documentation:   https://stormsoftware.com/projects/stryke/docs
- Contact:         https://stormsoftware.com/contact
- License:         https://stormsoftware.com/projects/stryke/license
+ Website:                  https://stormsoftware.com
+ Repository:               https://github.com/storm-software/stryke
+ Documentation:            https://docs.stormsoftware.com/projects/stryke
+ Contact:                  https://stormsoftware.com/contact
+
+ SPDX-License-Identifier:  Apache-2.0
 
  ------------------------------------------------------------------- */
 
@@ -27,14 +28,14 @@
  * @example
  * const sema = new Semaphore(2);
  *
- * async function task() {
+ * async function task() \{
  *   await sema.acquire();
- *   try {
+ *   try \{
  *     // This code can only be executed by two tasks at the same time
- *   } finally {
+ *   \} finally \{
  *     sema.release();
- *   }
- * }
+ *   \}
+ * \}
  *
  * task();
  * task();
@@ -103,14 +104,14 @@ export class Semaphore {
    * @example
    * const sema = new Semaphore(1);
    *
-   * async function task() {
+   * async function task() \{
    *   await sema.acquire();
-   *   try {
+   *   try \{
    *     // This code can only be executed by two tasks at the same time
-   *   } finally {
+   *   \} finally \{
    *     sema.release(); // Allows another waiting task to proceed.
-   *   }
-   * }
+   *   \}
+   * \}
    */
   release(): void {
     const deferredTask = this.deferredTasks.shift();

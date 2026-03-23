@@ -41,8 +41,8 @@ import { getObjectTag } from "./get-object-tag";
  * @param value - The value to check.
  * @returns Returns `true` if `value` is object-like, else `false`.
  */
-export const isObjectLike = (obj: unknown) => {
-  return typeof obj === "object" && obj !== null;
+export const isObjectLike = (value: unknown) => {
+  return typeof value === "object" && value !== null;
 };
 
 /**

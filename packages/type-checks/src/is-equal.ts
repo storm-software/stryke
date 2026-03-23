@@ -32,12 +32,13 @@ export const isEqual = <TType>(x: TType, y: TType): boolean => {
   ) {
     return false;
   }
+
   const keysX = Reflect.ownKeys(x as unknown as object) as (keyof typeof x)[];
-  const keysY = Reflect.ownKeys(y as unknown as object);
+  const keysY = Reflect.ownKeys(y as unknown as object) as (keyof typeof y)[];
   if (keysX.length !== keysY.length) return false;
-  for (const element_ of keysX) {
-    if (!Reflect.has(y as unknown as object, element_)) return false;
-    if (!isEqual(x[element_], y[element_])) return false;
+  for (const element of keysX) {
+    if (!Reflect.has(y as unknown as object, element)) return false;
+    if (!isEqual(x[element], y[element])) return false;
   }
   return true;
 };

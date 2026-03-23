@@ -50,9 +50,9 @@ export function isProductionMode(mode: string) {
     "prd",
     "prod",
     "production",
-    // eslint-disable-next-line @cspell/spellchecker
+
     "preprod",
-    // eslint-disable-next-line @cspell/spellchecker
+
     "preproduction",
     "uat"
   ].includes(mode?.toLowerCase()?.replace(/[\s\-_]/g, ""));
@@ -76,7 +76,7 @@ export function isTestMode(mode: string) {
     "stage",
     "staging",
     "qa",
-    // eslint-disable-next-line @cspell/spellchecker
+
     "qualityassurance"
   ].includes(mode?.toLowerCase()?.replace(/[\s\-_]/g, ""));
 }

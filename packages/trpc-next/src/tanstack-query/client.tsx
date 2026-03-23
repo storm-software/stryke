@@ -18,8 +18,8 @@
 
 "use client";
 
-import { isDevelopment } from "@stryke/env/environment-checks";
-import type { StormURLInterface } from "@stryke/url/types";
+import { isDevelopment } from "@stryke/env";
+import type { StormURLInterface } from "@stryke/url";
 import type { QueryClient } from "@tanstack/react-query";
 import { QueryClientProvider } from "@tanstack/react-query";
 import {

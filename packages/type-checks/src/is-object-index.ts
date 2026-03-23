@@ -39,5 +39,13 @@ export function isObjectIndex(
     case "string": {
       return IS_UNSIGNED_INTEGER.test(value);
     }
+    case "bigint":
+    case "boolean":
+    case "function":
+    case "object":
+    case "undefined":
+    default: {
+      return false;
+    }
   }
 }

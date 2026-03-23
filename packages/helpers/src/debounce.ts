@@ -3,15 +3,16 @@
                        ⚡ Storm Software - Stryke
 
  This code was released as part of the Stryke project. Stryke
- is maintained by Storm Software under the Apache-2.0 License, and is
+ is maintained by Storm Software under the Apache-2.0 license, and is
  free for commercial and private use. For more information, please visit
- our licensing page.
+ our licensing page at https://stormsoftware.com/licenses/projects/stryke.
 
- Website:         https://stormsoftware.com
- Repository:      https://github.com/storm-software/stryke
- Documentation:   https://stormsoftware.com/projects/stryke/docs
- Contact:         https://stormsoftware.com/contact
- License:         https://stormsoftware.com/projects/stryke/license
+ Website:                  https://stormsoftware.com
+ Repository:               https://github.com/storm-software/stryke
+ Documentation:            https://docs.stormsoftware.com/projects/stryke
+ Contact:                  https://stormsoftware.com/contact
+
+ SPDX-License-Identifier:  Apache-2.0
 
  ------------------------------------------------------------------- */
 
@@ -49,17 +50,18 @@ export interface DebounceOptions {
  * controller.abort();
  * ```
  *
- * @param func - The function to debounce.
- * @param debounceMs - The number of milliseconds to delay.
- * @param options - The options object.
+ * @param func - The function to debounce
+ * @param debounceMs - The number of milliseconds to delay
+ * @param options - Optional configuration for the debounced function, including an AbortSignal to cancel the debounce
  * @returns A new debounced function with a `cancel` method.
  */
 export function debounce<F extends (...args: any[]) => void>(
   func: F,
   debounceMs: number,
-  { signal }: DebounceOptions = {}
+  options: DebounceOptions = {}
 ): F & { cancel: () => void } {
   let timeoutId: ReturnType<typeof setTimeout> | null = null;
+  const { signal } = options;
 
   const debounced = ((...args: Parameters<F>) => {
     if (timeoutId !== null) {

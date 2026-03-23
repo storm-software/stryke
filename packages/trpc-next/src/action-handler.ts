@@ -31,6 +31,7 @@ import type { BaseContext } from "./types";
 /**
  * This client invokes procedures directly on the server without fetching over HTTP.
  *
+ * @param cookies - A function that returns the cookies to be passed to the API
  * @param t - The tRPC instance
  * @param createContext - An optional function to generate a context
  */

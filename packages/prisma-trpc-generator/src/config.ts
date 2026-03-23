@@ -16,28 +16,28 @@
 
  ------------------------------------------------------------------- */
 
-import { z } from "zod";
+import * as z from "zod";
 
 export enum ModelAction {
-  findUnique = "findUnique",
-  findUniqueOrThrow = "findUniqueOrThrow",
-  findFirst = "findFirst",
-  findFirstOrThrow = "findFirstOrThrow",
-  findMany = "findMany",
-  create = "create",
-  createMany = "createMany",
-  createManyAndReturn = "createManyAndReturn",
-  update = "update",
-  updateMany = "updateMany",
-  updateManyAndReturn = "updateManyAndReturn",
-  upsert = "upsert",
-  delete = "delete",
-  deleteMany = "deleteMany",
-  groupBy = "groupBy",
-  count = "count", // TODO: count does not actually exist, why?
-  aggregate = "aggregate",
-  findRaw = "findRaw",
-  aggregateRaw = "aggregateRaw"
+  FIND_UNIQUE = "findUnique",
+  FIND_UNIQUE_OR_THROW = "findUniqueOrThrow",
+  FIND_FIRST = "findFirst",
+  FIND_FIRST_OR_THROW = "findFirstOrThrow",
+  FIND_MANY = "findMany",
+  CREATE = "create",
+  CREATE_MANY = "createMany",
+  CREATE_MANY_AND_RETURN = "createManyAndReturn",
+  UPDATE = "update",
+  UPDATE_MANY = "updateMany",
+  UPDATE_MANY_AND_RETURN = "updateManyAndReturn",
+  UPSERT = "upsert",
+  DELETE = "delete",
+  DELETE_MANY = "deleteMany",
+  GROUP_BY = "groupBy",
+  COUNT = "count", // TODO: count does not actually exist, why?
+  AGGREGATE = "aggregate",
+  FIND_RAW = "findRaw",
+  AGGREGATE_RAW = "aggregateRaw"
 }
 
 const modelActionEnum = z.nativeEnum(ModelAction);

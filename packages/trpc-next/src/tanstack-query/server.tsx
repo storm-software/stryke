@@ -30,10 +30,32 @@ import { createQueryClient } from "../shared";
 /**
  * Create a TRPC Tanstack Query server.
  *
- * @param router - The TRPC router
- * @param createContext - The context creator function
- * @param queryClientConfig - The query client config
- * @returns The TRPC Tanstack Query server
+ * @example
+ * ```tsx title="app/api/trpc/route.tsx"
+ * import { createTRPCTanstackQueryServer } from "@trpc-next/tanstack-query/server";
+ * import { z } from "zod";
+ * import { createRouter } from "@trpc/server";
+ *
+ * const router = createRouter().query("hello", {
+ *   input: z.object({
+ *     name: z.string()
+ *   }),
+ *   resolve({ input }) {
+ *     return `Hello, ${input.name}!`;
+ *   }
+ * });
+ *
+ * const { trpc, HydrateClient } = createTRPCTanstackQueryServer({
+ *   router,
+ *   headers: async () => new Headers()
+ * });
+ * ```
+ *
+ * @param headers - A function that returns the headers for the TRPC context.
+ * @param router - The TRPC router to use for the server.
+ * @param createContext - A function that creates the context for the TRPC server.
+ * @param queryClientConfig - Optional configuration for the Tanstack Query client.
+ * @returns An object containing the TRPC context and a component to hydrate the client state.
  */
 export function createTRPCTanstackQueryServer<
   TRouter extends AnyTRPCRouter,

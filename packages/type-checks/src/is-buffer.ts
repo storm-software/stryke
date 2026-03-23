@@ -16,6 +16,8 @@
 
  ------------------------------------------------------------------- */
 
+import { Buffer } from "node:buffer";
+
 export const isBufferExists = typeof Buffer !== "undefined";
 
 /**

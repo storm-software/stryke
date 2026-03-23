@@ -18,11 +18,11 @@
 
 import { isBuffer } from "./is-buffer";
 
-const globalObject = (Obj => {
+const globalObject = (obj => {
   if (typeof globalThis === "object") {
     return globalThis;
   }
-  Object.defineProperty(Obj, "typeDetectGlobalObject", {
+  Object.defineProperty(obj, "typeDetectGlobalObject", {
     get() {
       return this;
     },
@@ -33,7 +33,7 @@ const globalObject = (Obj => {
   // const global = typeDetectGlobalObject;
 
   // // biome-ignore lint/performance/noDelete: <explanation>
-  // delete Obj.typeDetectGlobalObject;
+  // delete obj.typeDetectGlobalObject;
   return globalThis;
 })(Object.prototype);
 

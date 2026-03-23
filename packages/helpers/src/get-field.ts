@@ -3,21 +3,21 @@
                        ⚡ Storm Software - Stryke
 
  This code was released as part of the Stryke project. Stryke
- is maintained by Storm Software under the Apache-2.0 License, and is
+ is maintained by Storm Software under the Apache-2.0 license, and is
  free for commercial and private use. For more information, please visit
- our licensing page.
+ our licensing page at https://stormsoftware.com/licenses/projects/stryke.
 
- Website:         https://stormsoftware.com
- Repository:      https://github.com/storm-software/stryke
- Documentation:   https://stormsoftware.com/projects/stryke/docs
- Contact:         https://stormsoftware.com/contact
- License:         https://stormsoftware.com/projects/stryke/license
+ Website:                  https://stormsoftware.com
+ Repository:               https://github.com/storm-software/stryke
+ Documentation:            https://docs.stormsoftware.com/projects/stryke
+ Contact:                  https://stormsoftware.com/contact
+
+ SPDX-License-Identifier:  Apache-2.0
 
  ------------------------------------------------------------------- */
 
-import { toStringKey } from "@stryke/convert/to-string-key";
-import { isDeepKey } from "@stryke/type-checks/is-deep-key";
-import { isNumber } from "@stryke/type-checks/is-number";
+import { toStringKey } from "@stryke/convert";
+import { isDeepKey, isNumber } from "@stryke/type-checks";
 import { toPath } from "./to-path";
 
 /**
@@ -67,13 +67,12 @@ export type GetField<T, P> = P extends `${infer Left}.${infer Right}`
 /**
  * Retrieves the value at a given path from an object. If the resolved value is undefined, the defaultValue is returned instead.
  *
- * @template T - The type of the object.
- * @template K - The type of the key in the object.
- * @template D - The type of the default value.
+ * @typeParam T - The type of the object.
+ * @typeParam K - The type of the key in the object.
  *
- * @param {T} object - The object to query.
- * @param {K | [K]} path - The path of the property to get.
- * @returns {T[K]} - Returns the resolved value.
+ * @param object - The object to query.
+ * @param path - The path of the property to get.
+ * @returns The resolved value.
  */
 export function getField<T extends object, K extends keyof T>(
   object: T,
@@ -82,12 +81,12 @@ export function getField<T extends object, K extends keyof T>(
 /**
  * Retrieves the value at a given path from an object. If the resolved value is undefined, the defaultValue is returned instead.
  *
- * @template T - The type of the object.
- * @template K - The type of the key in the object.
+ * @typeParam T - The type of the object.
+ * @typeParam K - The type of the key in the object.
  *
- * @param {T | null | undefined} object - The object to query.
- * @param {K | [K]} path - The path of the property to get.
- * @returns {T[K] | undefined} - Returns the resolved value.
+ * @param object - The object to query.
+ * @param path - The path of the property to get.
+ * @returns The resolved value or undefined.
  */
 export function getField<T extends object, K extends keyof T>(
   object: T | null | undefined,
@@ -96,14 +95,14 @@ export function getField<T extends object, K extends keyof T>(
 /**
  * Retrieves the value at a given path from an object. If the resolved value is undefined, the defaultValue is returned instead.
  *
- * @template T - The type of the object.
- * @template K - The type of the key in the object.
- * @template D - The type of the default value.
+ * @typeParam T - The type of the object.
+ * @typeParam K - The type of the key in the object.
+ * @typeParam D - The type of the default value.
  *
- * @param {T | null | undefined} object - The object to query.
- * @param {K | [K]} path - The path of the property to get.
- * @param {D} defaultValue - The value returned if the resolved value is undefined.
- * @returns {Exclude<T[K], undefined> | D} - Returns the resolved value.
+ * @param object - The object to query.
+ * @param path - The path of the property to get.
+ * @param defaultValue - The value returned if the resolved value is undefined.
+ * @returns The resolved value or default value.
  */
 export function getField<T extends object, K extends keyof T, D>(
   object: T | null | undefined,
@@ -113,13 +112,13 @@ export function getField<T extends object, K extends keyof T, D>(
 /**
  * Retrieves the value at a given path from an object. If the resolved value is undefined, the defaultValue is returned instead.
  *
- * @template T - The type of the object.
- * @template K1 - The type of the first key in the object.
- * @template K2 - The type of the second key in the object.
+ * @typeParam T - The type of the object.
+ * @typeParam K1 - The type of the first key in the object.
+ * @typeParam K2 - The type of the second key in the object.
  *
- * @param {T} object - The object to query.
- * @param {[K1, K2]} path - The path of the property to get.
- * @returns {T[K1][K2]} - Returns the resolved value.
+ * @param object - The object to query.
+ * @param path - The path of the property to get.
+ * @returns The resolved value.
  */
 export function getField<
   T extends object,
@@ -129,13 +128,13 @@ export function getField<
 /**
  * Retrieves the value at a given path from an object. If the resolved value is undefined, the defaultValue is returned instead.
  *
- * @template T - The type of the object.
- * @template K1 - The type of the first key in the object.
- * @template K2 - The type of the second key in the object.
+ * @typeParam T - The type of the object.
+ * @typeParam K1 - The type of the first key in the object.
+ * @typeParam K2 - The type of the second key in the object.
  *
- * @param {T | null | undefined} object - The object to query.
- * @param {[K1, K2]} path - The path of the property to get.
- * @returns {T[K1][K2] | undefined} - Returns the resolved value.
+ * @param object - The object to query.
+ * @param path - The path of the property to get.
+ * @returns The resolved value or undefined.
  */
 export function getField<
   T extends object,
@@ -145,15 +144,15 @@ export function getField<
 /**
  * Retrieves the value at a given path from an object. If the resolved value is undefined, the defaultValue is returned instead.
  *
- * @template T - The type of the object.
- * @template K1 - The type of the first key in the object.
- * @template K2 - The type of the second key in the object.
- * @template D - The type of the default value.
+ * @typeParam T - The type of the object.
+ * @typeParam K1 - The type of the first key in the object.
+ * @typeParam K2 - The type of the second key in the object.
+ * @typeParam D - The type of the default value.
  *
- * @param {T | null | undefined} object - The object to query.
- * @param {[K1, K2]} path - The path of the property to get.
- * @param {D} defaultValue - The value returned if the resolved value is undefined.
- * @returns {Exclude<T[K1][K2], undefined> | D} - Returns the resolved value.
+ * @param object - The object to query.
+ * @param path - The path of the property to get.
+ * @param defaultValue - The value returned if the resolved value is undefined.
+ * @returns The resolved value or default value.
  */
 export function getField<
   T extends object,
@@ -168,14 +167,14 @@ export function getField<
 /**
  * Retrieves the value at a given path from an object. If the resolved value is undefined, the defaultValue is returned instead.
  *
- * @template T - The type of the object.
- * @template K1 - The type of the first key in the object.
- * @template K2 - The type of the second key in the object.
- * @template K3 - The type of the third key in the object.
+ * @typeParam T - The type of the object.
+ * @typeParam K1 - The type of the first key in the object.
+ * @typeParam K2 - The type of the second key in the object.
+ * @typeParam K3 - The type of the third key in the object.
  *
- * @param {T} object - The object to query.
- * @param {[K1, K2, K3]} path - The path of the property to get.
- * @returns {T[K1][K2][K3]} - Returns the resolved value.
+ * @param object - The object to query.
+ * @param path - The path of the property to get.
+ * @returns The resolved value.
  */
 export function getField<
   T extends object,
@@ -186,14 +185,14 @@ export function getField<
 /**
  * Retrieves the value at a given path from an object. If the resolved value is undefined, the defaultValue is returned instead.
  *
- * @template T - The type of the object.
- * @template K1 - The type of the first key in the object.
- * @template K2 - The type of the second key in the object.
- * @template K3 - The type of the third key in the object.
+ * @typeParam T - The type of the object.
+ * @typeParam K1 - The type of the first key in the object.
+ * @typeParam K2 - The type of the second key in the object.
+ * @typeParam K3 - The type of the third key in the object.
  *
- * @param {T | null | undefined} object - The object to query.
- * @param {[K1, K2, K3]} path - The path of the property to get.
- * @returns {T[K1][K2][K3] | undefined} - Returns the resolved value.
+ * @param object - The object to query.
+ * @param path - The path of the property to get.
+ * @returns The resolved value or undefined.
  */
 export function getField<
   T extends object,
@@ -207,16 +206,16 @@ export function getField<
 /**
  * Retrieves the value at a given path from an object. If the resolved value is undefined, the defaultValue is returned instead.
  *
- * @template T - The type of the object.
- * @template K1 - The type of the first key in the object.
- * @template K2 - The type of the second key in the object.
- * @template K3 - The type of the third key in the object.
- * @template D - The type of the default value.
+ * @typeParam T - The type of the object.
+ * @typeParam K1 - The type of the first key in the object.
+ * @typeParam K2 - The type of the second key in the object.
+ * @typeParam K3 - The type of the third key in the object.
+ * @typeParam D - The type of the default value.
  *
- * @param {T | null | undefined} object - The object to query.
- * @param {[K1, K2, K3]} path - The path of the property to get.
- * @param {D} defaultValue - The value returned if the resolved value is undefined.
- * @returns {Exclude<T[K1][K2][K3], undefined> | D} - Returns the resolved value.
+ * @param object - The object to query.
+ * @param path - The path of the property to get.
+ * @param defaultValue - The value returned if the resolved value is undefined.
+ * @returns The resolved value or default value.
  */
 export function getField<
   T extends object,
@@ -232,15 +231,15 @@ export function getField<
 /**
  * Retrieves the value at a given path from an object. If the resolved value is undefined, the defaultValue is returned instead.
  *
- * @template T - The type of the object.
- * @template K1 - The type of the first key in the object.
- * @template K2 - The type of the second key in the object.
- * @template K3 - The type of the third key in the object.
- * @template K4 - The type of the fourth key in the object.
+ * @typeParam T - The type of the object.
+ * @typeParam K1 - The type of the first key in the object.
+ * @typeParam K2 - The type of the second key in the object.
+ * @typeParam K3 - The type of the third key in the object.
+ * @typeParam K4 - The type of the fourth key in the object.
  *
- * @param {T} object - The object to query.
- * @param {[K1, K2, K3, K4]} path - The path of the property to get.
- * @returns {T[K1][K2][K3][K4]} - Returns the resolved value.
+ * @param object - The object to query.
+ * @param path - The path of the property to get.
+ * @returns The resolved value.
  */
 export function getField<
   T extends object,
@@ -252,15 +251,15 @@ export function getField<
 /**
  * Retrieves the value at a given path from an object. If the resolved value is undefined, the defaultValue is returned instead.
  *
- * @template T - The type of the object.
- * @template K1 - The type of the first key in the object.
- * @template K2 - The type of the second key in the object.
- * @template K3 - The type of the third key in the object.
- * @template K4 - The type of the fourth key in the object.
+ * @typeParam T - The type of the object.
+ * @typeParam K1 - The type of the first key in the object.
+ * @typeParam K2 - The type of the second key in the object.
+ * @typeParam K3 - The type of the third key in the object.
+ * @typeParam K4 - The type of the fourth key in the object.
  *
- * @param {T | null | undefined} object - The object to query.
- * @param {[K1, K2, K3, K4]} path - The path of the property to get.
- * @returns {T[K1][K2][K3][K4] | undefined} - Returns the resolved value.
+ * @param object - The object to query.
+ * @param path - The path of the property to get.
+ * @returns The resolved value or undefined.
  */
 export function getField<
   T extends object,
@@ -275,17 +274,17 @@ export function getField<
 /**
  * Retrieves the value at a given path from an object. If the resolved value is undefined, the defaultValue is returned instead.
  *
- * @template T - The type of the object.
- * @template K1 - The type of the first key in the object.
- * @template K2 - The type of the second key in the object.
- * @template K3 - The type of the third key in the object.
- * @template K4 - The type of the fourth key in the object.
- * @template D - The type of the default value.
+ * @typeParam T - The type of the object.
+ * @typeParam K1 - The type of the first key in the object.
+ * @typeParam K2 - The type of the second key in the object.
+ * @typeParam K3 - The type of the third key in the object.
+ * @typeParam K4 - The type of the fourth key in the object.
+ * @typeParam D - The type of the default value.
  *
- * @param {T | null | undefined} object - The object to query.
- * @param {[K1, K2, K3, K4]} path - The path of the property to get.
- * @param {D} defaultValue - The value returned if the resolved value is undefined.
- * @returns {Exclude<T[K1][K2][K3][K4], undefined> | D} - Returns the resolved value.
+ * @param object - The object to query.
+ * @param path - The path of the property to get.
+ * @param defaultValue - The value returned if the resolved value is undefined.
+ * @returns The resolved value or default value.
  */
 export function getField<
   T extends object,
@@ -302,21 +301,21 @@ export function getField<
 /**
  * Retrieves the value at a given path from an object with numeric keys. If the resolved value is undefined, the defaultValue is returned instead.
  *
- * @template T - The type of the value.
+ * @typeParam T - The type of the value.
  *
- * @param {Record<number, T>} object - The object to query.
- * @param {number} path - The path of the property to get.
- * @returns {T} - Returns the resolved value.
+ * @param object - The object to query.
+ * @param path - The path of the property to get.
+ * @returns The resolved value.
  */
 export function getField<T>(object: Record<number, T>, path: number): T;
 /**
  * Retrieves the value at a given path from an object with numeric keys. If the resolved value is undefined, the defaultValue is returned instead.
  *
- * @template T - The type of the value.
+ * @typeParam T - The type of the value.
  *
- * @param {Record<number, T> | null | undefined} object - The object to query.
- * @param {number} path - The path of the property to get.
- * @returns {T | undefined} - Returns the resolved value.
+ * @param object - The object to query.
+ * @param path - The path of the property to get.
+ * @returns The resolved value or undefined.
  */
 export function getField<T>(
   object: Record<number, T> | null | undefined,
@@ -325,13 +324,13 @@ export function getField<T>(
 /**
  * Retrieves the value at a given path from an object with numeric keys. If the resolved value is undefined, the defaultValue is returned instead.
  *
- * @template T - The type of the value.
- * @template D - The type of the default value.
+ * @typeParam T - The type of the value.
+ * @typeParam D - The type of the default value.
  *
- * @param {Record<number, T> | null | undefined} object - The object to query.
- * @param {number} path - The path of the property to get.
- * @param {D} defaultValue - The value returned if the resolved value is undefined.
- * @returns {T | D} - Returns the resolved value.
+ * @param object - The object to query.
+ * @param path - The path of the property to get.
+ * @param defaultValue - The value returned if the resolved value is undefined.
+ * @returns The resolved value or default value.
  */
 export function getField<T, D>(
   object: Record<number, T> | null | undefined,
@@ -341,38 +340,39 @@ export function getField<T, D>(
 /**
  * Retrieves the value at a given path from a null or undefined object, returning the default value.
  *
- * @template D - The type of the default value.
+ * @typeParam D - The type of the default value.
  *
- * @param {null | undefined} object - The object to query.
- * @param {PropertyKey} path - The path of the property to get.
- * @param {D} defaultValue - The value returned if the resolved value is undefined.
- * @returns {D} - Returns the default value.
+ * @param object - The object to query.
+ * @param path - The path of the property to get.
+ * @param defaultValue - The value returned if the resolved value is undefined.
+ * @returns The default value.
  */
 export function getField<D>(
   object: null | undefined,
   path: PropertyKey,
   defaultValue: D
 ): D;
+
 /**
  * Retrieves the value at a given path from a null or undefined object, returning undefined.
  *
- * @param {null | undefined} object - The object to query.
- * @param {PropertyKey} path - The path of the property to get.
- * @returns {undefined} - Returns undefined.
+ * @param object - The object to query.
+ * @param path - The path of the property to get.
  */
 export function getField(
   object: null | undefined,
   path: PropertyKey
 ): undefined;
+
 /**
  * Retrieves the value at a given path from a string-keyed object. If the resolved value is undefined, the defaultValue is returned instead.
  *
- * @template T - The type of the object.
- * @template P - The type of the path.
+ * @typeParam T - The type of the object.
+ * @typeParam P - The type of the path.
  *
- * @param {T} data - The object to query.
- * @param {P} path - The path of the property to get.
- * @returns {string extends P ? any : GetField<T, P>} - Returns the resolved value.
+ * @param data - The object to query.
+ * @param path - The path of the property to get.
+ * @returns The resolved value, or any if path is a general string.
  */
 export function getField<T, P extends string>(
   data: T,
@@ -381,14 +381,14 @@ export function getField<T, P extends string>(
 /**
  * Retrieves the value at a given path from a string-keyed object. If the resolved value is undefined, the defaultValue is returned instead.
  *
- * @template T - The type of the object.
- * @template P - The type of the path.
- * @template D - The type of the default value.
+ * @typeParam T - The type of the object.
+ * @typeParam P - The type of the path.
+ * @typeParam D - The type of the default value.
  *
- * @param {T} data - The object to query.
- * @param {P} path - The path of the property to get.
- * @param {D} defaultValue - The value returned if the resolved value is undefined.
- * @returns {Exclude<GetField<T, P>, null | undefined> | D} - Returns the resolved value.
+ * @param data - The object to query.
+ * @param path - The path of the property to get.
+ * @param defaultValue - The value returned if the resolved value is undefined.
+ * @returns The resolved value or default value.
  */
 export function getField<T, P extends string, D = GetField<T, P>>(
   data: T,
@@ -398,10 +398,10 @@ export function getField<T, P extends string, D = GetField<T, P>>(
 /**
  * Retrieves the value at a given path from an object. If the resolved value is undefined, the defaultValue is returned instead.
  *
- * @param {unknown} object - The object to query.
- * @param {PropertyKey | readonly PropertyKey[]} path - The path of the property to get.
- * @param {unknown} [defaultValue] - The value returned if the resolved value is undefined.
- * @returns {any} - Returns the resolved value.
+ * @param object - The object to query.
+ * @param path - The path of the property to get.
+ * @param defaultValue - The value returned if the resolved value is undefined.
+ * @returns The resolved value.
  */
 export function getField(
   object: unknown,
@@ -411,10 +411,10 @@ export function getField(
 /**
  * Retrieves the value at a given path from an object. If the resolved value is undefined, the defaultValue is returned instead.
  *
- * @param {unknown} object - The object to query.
- * @param {PropertyKey | readonly PropertyKey[]} path - The path of the property to get.
- * @param {unknown} [defaultValue] - The value returned if the resolved value is undefined.
- * @returns {any} - Returns the resolved value.
+ * @param object - The object to query.
+ * @param path - The path of the property to get.
+ * @param defaultValue - The value returned if the resolved value is undefined.
+ * @returns The resolved value.
  */
 export function getField(
   object: any,
@@ -453,6 +453,11 @@ export function getField(
 
       return result;
     }
+    case "bigint":
+    case "boolean":
+    case "undefined":
+    case "object":
+    case "function":
     default: {
       if (Array.isArray(path)) {
         return getWithPath(object, path, defaultValue);
@@ -482,12 +487,12 @@ function getWithPath(
 
   let current = object;
 
-  for (const element_ of path) {
+  for (const element of path) {
     if (current === null) {
       return defaultValue;
     }
 
-    current = current[element_];
+    current = current[element];
   }
 
   if (current === undefined) {

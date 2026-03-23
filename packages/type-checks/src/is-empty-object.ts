@@ -16,6 +16,8 @@
 
  ------------------------------------------------------------------- */
 
+/* eslint-disable ts/no-empty-object-type */
+
 import { isEmpty } from "./is-empty";
 
 /**

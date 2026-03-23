@@ -38,10 +38,7 @@ export async function readFileBuffer(filePath: string): Promise<ArrayBuffer> {
 
   const b = await readFile(filePath);
 
-  return b.buffer.slice(
-    b.byteOffset,
-    b.byteOffset + b.byteLength
-  ) as ArrayBuffer;
+  return b.buffer.slice(b.byteOffset, b.byteOffset + b.byteLength);
 }
 
 /**

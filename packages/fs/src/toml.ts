@@ -16,45 +16,10 @@
 
  ------------------------------------------------------------------- */
 
-import { parse as parseToml, stringify as stringifyToml } from "@ltd/j-toml";
-import defu from "defu";
+import TOML from "smol-toml";
 import { readFile, readFileSync } from "./read-file";
 import { writeFile, writeFileSync } from "./write-file";
 
-export type XOptions = null | {
-  readonly keys?: null | RegExp;
-  readonly order?: boolean;
-  readonly exact?: boolean;
-  readonly multi?: boolean;
-  readonly longer?: boolean;
-  readonly string?: boolean;
-  readonly comment?: boolean;
-  readonly literal?: boolean;
-  readonly null?: boolean;
-  readonly tag?:
-    | null
-    | (<
-        Table extends object & { [key: string | symbol]: any },
-        Key extends string | symbol,
-        Array extends any[],
-        Index extends number,
-        Tag extends string
-      >(
-        this: void,
-        each:
-          | { table: Table; key: Key; tag: Tag }
-          | { array: Array; index: Index; tag: Tag }
-          | { table: Table; key: Key; array: Array; index: Index; tag: Tag }
-      ) => void);
-};
-
-export interface TomlReadOptions {
-  specificationVersion?: 1.0 | 0.5 | 0.4 | 0.3 | 0.2 | 0.1;
-  multilineStringJoiner?: string;
-  useBigInt?: boolean | number;
-  xOptions?: XOptions;
-}
-
 /**
  * Reads a TOML file and returns the object the TOML content represents.
  *
@@ -62,23 +27,13 @@ export interface TomlReadOptions {
  * @param options - TOML parse options
  * @returns Object the TOML content of the file represents
  */
-export function readTomlFileSync<T extends object = any>(
+export function readTomlFileSync(
   path: string,
-  options?: TomlReadOptions
-): T {
+  options?: Parameters<typeof TOML.parse>[1]
+) {
   const content = readFileSync(path);
 
-  return (
-    options?.specificationVersion
-      ? parseToml(
-          content,
-          options.specificationVersion,
-          options?.multilineStringJoiner,
-          options?.useBigInt,
-          options?.xOptions
-        )
-      : parseToml(content)
-  ) as T;
+  return TOML.parse(content, options);
 }
 
 /**
@@ -88,35 +43,13 @@ export function readTomlFileSync<T extends object = any>(
  * @param options - TOML parse options
  * @returns Object the TOML content of the file represents
  */
-export async function readTomlFile<T extends object = any>(
+export async function readTomlFile(
   path: string,
-  options?: TomlReadOptions
-): Promise<T> {
+  options?: Parameters<typeof TOML.parse>[1]
+) {
   const content = await readFile(path);
 
-  return (
-    options?.specificationVersion
-      ? parseToml(
-          content,
-          options.specificationVersion,
-          options?.multilineStringJoiner,
-          options?.useBigInt,
-          options?.xOptions
-        )
-      : parseToml(content)
-  ) as T;
-}
-
-export interface TomlWriteOptions {
-  integer?: number;
-  newline?: "\n" | "\r\n";
-  newlineAround?: "document" | "section" | "header" | "pairs" | "pair";
-  indent?: string | number;
-  T?: "T" | "t" | " ";
-  Z?: "Z" | "z";
-  xNull?: boolean;
-  xBeforeNewlineInMultilineTable?: "," | "";
-  forceInlineArraySpacing?: 0 | 1 | 2 | 3;
+  return TOML.parse(content, options);
 }
 
 /**
@@ -126,23 +59,12 @@ export interface TomlWriteOptions {
  * @param data - data which should be serialized/formatted to TOML and written to the file
  * @param options - TOML parse options
  */
-export function writeTomlFileSync<T extends object = any>(
+export function writeTomlFileSync(
   path: string,
-  data: T,
-  options?: TomlWriteOptions
+  data: object,
+  options?: Parameters<typeof TOML.stringify>[1]
 ): void {
-  return writeFileSync(
-    path,
-    stringifyToml(
-      data as any,
-      defu(options ?? {}, {
-        newline: "\n",
-        newlineAround: "pairs",
-        indent: 4,
-        forceInlineArraySpacing: 1
-      }) as TomlWriteOptions
-    )
-  );
+  return writeFileSync(path, TOML.stringify(data, options));
 }
 
 /**
@@ -152,21 +74,10 @@ export function writeTomlFileSync<T extends object = any>(
  * @param data - data which should be serialized/formatted to TOML and written to the file
  * @param options - TOML parse options
  */
-export async function writeTomlFile<T extends object = any>(
+export async function writeTomlFile(
   path: string,
-  data: T,
-  options?: TomlWriteOptions
+  data: object,
+  options?: Parameters<typeof TOML.stringify>[1]
 ): Promise<void> {
-  return writeFile(
-    path,
-    stringifyToml(
-      data as any,
-      defu(options ?? {}, {
-        newline: "\n",
-        newlineAround: "pairs",
-        indent: 4,
-        forceInlineArraySpacing: 1
-      }) as TomlWriteOptions
-    )
-  );
+  return writeFile(path, TOML.stringify(data, options));
 }

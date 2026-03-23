@@ -57,8 +57,10 @@ interface DelayOptions {
  */
 export async function delay(
   ms: number,
-  { signal }: DelayOptions = {}
+  options: DelayOptions = {}
 ): Promise<void> {
+  const { signal } = options;
+
   return new Promise((resolve, reject) => {
     const abortError = () => {
       reject(new AbortError());

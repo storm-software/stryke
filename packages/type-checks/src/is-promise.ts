@@ -26,6 +26,7 @@ import { isObject } from "./is-object";
  * @returns An indicator specifying if the object provided is of type a promise
  */
 export const isPromise = (value: unknown): value is Promise<unknown> => {
+  // eslint-disable-next-line ts/unbound-method
   return isObject(value) && isFunction((value as Promise<unknown>)?.then);
 };
 

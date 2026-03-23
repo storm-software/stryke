@@ -21,18 +21,11 @@ import type {
   JsonParseOptions,
   JsonSerializeOptions
 } from "@stryke/json/types";
+import { findFileExtension } from "@stryke/path";
+import { isSetString } from "@stryke/type-checks";
 import { isError } from "@stryke/type-checks/is-error";
 import { readFile, readFileSync } from "./read-file";
 import { writeFile, writeFileSync } from "./write-file";
-
-export interface JsonReadOptions extends JsonParseOptions {
-  /**
-   * mutable field recording whether JSON ends with new line
-   *
-   * @defaultValue false
-   */
-  endsWithNewline?: boolean;
-}
 
 /**
  * Reads a JSON file and returns the object the JSON content represents.
@@ -43,15 +36,15 @@ export interface JsonReadOptions extends JsonParseOptions {
  */
 export function readJsonFileSync<T extends object = any>(
   path: string,
-  options?: JsonReadOptions
+  options?: JsonParseOptions
 ): T {
   const content = readFileSync(path);
-  if (options) {
-    options.endsWithNewline = content.codePointAt(content.length - 1) === 10;
-  }
 
   try {
-    return StormJSON.parseJson<T>(content, options);
+    return StormJSON.parse<T>(isSetString(content) ? content.trim() : "{}", {
+      expectComments: findFileExtension(path) === "jsonc",
+      ...options
+    });
   } catch (error) {
     if (isError(error)) {
       error.message = error.message.replace("JSON", path);
@@ -71,15 +64,15 @@ export function readJsonFileSync<T extends object = any>(
  */
 export async function readJsonFile<T extends object = any>(
   path: string,
-  options?: JsonReadOptions
+  options: JsonParseOptions = {}
 ): Promise<T> {
   const content = await readFile(path);
-  if (options) {
-    options.endsWithNewline = content.codePointAt(content.length - 1) === 10;
-  }
 
   try {
-    return StormJSON.parseJson<T>(content, options);
+    return StormJSON.parse<T>(isSetString(content) ? content.trim() : "{}", {
+      expectComments: findFileExtension(path) === "jsonc",
+      ...options
+    });
   } catch (error) {
     if (isError(error)) {
       error.message = error.message.replace("JSON", path);
@@ -109,9 +102,9 @@ export interface JsonWriteOptions extends JsonSerializeOptions {
 export function writeJsonFileSync<T extends object = object>(
   path: string,
   data: T,
-  options?: JsonWriteOptions
+  options: JsonWriteOptions = {}
 ): void {
-  const serializedJson = StormJSON.stringify(data, options);
+  const serializedJson = StormJSON.stringify(data, { spaces: 2, ...options });
 
   return writeFileSync(
     path,
@@ -129,9 +122,9 @@ export function writeJsonFileSync<T extends object = object>(
 export async function writeJsonFile<T extends object = object>(
   path: string,
   data: T,
-  options?: JsonWriteOptions
+  options: JsonWriteOptions = {}
 ): Promise<void> {
-  const serializedJson = StormJSON.stringify(data);
+  const serializedJson = StormJSON.stringify(data, { spaces: 2, ...options });
 
   return writeFile(
     path,

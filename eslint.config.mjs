@@ -22,7 +22,7 @@ Error.stackTraceLimit = Number.POSITIVE_INFINITY;
 
 const config = defineConfig({
   name: "stryke",
-  ignores: ["packages/capnp/schemas/**"]
+  ignores: ["packages/capnp/schemas/**", "packages/capnp/tests/**"]
 });
 
 export default config;

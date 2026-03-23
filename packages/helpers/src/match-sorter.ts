@@ -371,12 +371,12 @@ function sortRankedValues<ItemType>(
  */
 function prepareValueForComparison<ItemType>(
   value: string,
-  { keepDiacritics }: MatchSorterOptions<ItemType>
+  options: MatchSorterOptions<ItemType>
 ): string {
   // value might not actually be a string at this point (we don't get to choose)
   // so part of preparing the value for comparison is ensure that it is a string
   value = `${value}`; // toString
-  if (!keepDiacritics) {
+  if (!options.keepDiacritics) {
     value = removeAccents(value);
   }
   return value;
