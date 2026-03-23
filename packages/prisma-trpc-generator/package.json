@@ -65,7 +65,9 @@
     "prisma-trpc-generator-cjs": "dist/generator.cjs",
     "prisma-trpc-generator-mjs": "dist/generator.js"
   },
-  "files": ["dist/**/*"],
+  "files": [
+    "dist/**/*"
+  ],
   "dependencies": {
     "@prisma/generator-helper": "catalog:",
     "@prisma/internals": "catalog:",

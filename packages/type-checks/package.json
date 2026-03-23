@@ -54,6 +54,10 @@
       "require": "./dist/is-empty.cjs",
       "import": "./dist/is-empty.mjs"
     },
+    "./is-empty-array": {
+      "require": "./dist/is-empty-array.cjs",
+      "import": "./dist/is-empty-array.mjs"
+    },
     "./is-empty-object": {
       "require": "./dist/is-empty-object.cjs",
       "import": "./dist/is-empty-object.mjs"
