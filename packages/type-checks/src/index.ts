@@ -35,6 +35,7 @@ export * from "./is-collection";
 export * from "./is-date";
 export * from "./is-deep-key";
 export * from "./is-empty";
+export * from "./is-empty-array";
 export * from "./is-empty-object";
 export * from "./is-empty-string";
 export * from "./is-equal";
