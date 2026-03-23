@@ -2,6 +2,17 @@
 
 # Changelog for Stryke - Zod
 
+## [0.3.11](https://github.com/storm-software/stryke/releases/tag/zod%400.3.11) (03/16/2026)
+
+### Miscellaneous
+
+- **monorepo:** Added `README.md` workspace files ([515dc333](https://github.com/storm-software/stryke/commit/515dc333))
+
+### Updated Dependencies
+
+- Updated **type-checks** to **v0.5.41**
+- Updated **json** to **v0.14.10**
+
 ## [0.3.10](https://github.com/storm-software/stryke/releases/tag/zod%400.3.10) (03/16/2026)
 
 ### Updated Dependencies

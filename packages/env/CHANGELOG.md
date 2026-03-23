@@ -2,6 +2,19 @@
 
 # Changelog for Stryke - Env
 
+## [0.20.80](https://github.com/storm-software/stryke/releases/tag/env%400.20.80) (03/16/2026)
+
+### Miscellaneous
+
+- **monorepo:** Added `README.md` workspace files ([515dc333](https://github.com/storm-software/stryke/commit/515dc333))
+
+### Updated Dependencies
+
+- Updated **string-format** to **v0.17.6**
+- Updated **convert** to **v0.6.56**
+- Updated **path** to **v0.27.2**
+- Updated **fs** to **v0.33.63**
+
 ## [0.20.79](https://github.com/storm-software/stryke/releases/tag/env%400.20.79) (03/16/2026)
 
 ### Updated Dependencies

@@ -2,6 +2,16 @@
 
 # Changelog for Stryke - Type Checks
 
+## [0.5.41](https://github.com/storm-software/stryke/releases/tag/type-checks%400.5.41) (03/16/2026)
+
+### Miscellaneous
+
+- **monorepo:** Added `README.md` workspace files ([515dc333](https://github.com/storm-software/stryke/commit/515dc333))
+
+### Updated Dependencies
+
+- Updated **types** to **v0.11.1**
+
 ## [0.5.40](https://github.com/storm-software/stryke/releases/tag/type-checks%400.5.40) (03/16/2026)
 
 ### Updated Dependencies

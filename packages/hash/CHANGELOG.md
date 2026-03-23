@@ -2,6 +2,18 @@
 
 # Changelog for Stryke - Hash
 
+## [0.13.16](https://github.com/storm-software/stryke/releases/tag/hash%400.13.16) (03/16/2026)
+
+### Miscellaneous
+
+- **monorepo:** Added `README.md` workspace files ([515dc333](https://github.com/storm-software/stryke/commit/515dc333))
+
+### Updated Dependencies
+
+- Updated **type-checks** to **v0.5.41**
+- Updated **json** to **v0.14.10**
+- Updated **fs** to **v0.33.63**
+
 ## [0.13.15](https://github.com/storm-software/stryke/releases/tag/hash%400.13.15) (03/16/2026)
 
 ### Updated Dependencies

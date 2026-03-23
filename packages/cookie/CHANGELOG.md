@@ -2,6 +2,17 @@
 
 # Changelog for Stryke - Cookie
 
+## [0.1.57](https://github.com/storm-software/stryke/releases/tag/cookie%400.1.57) (03/16/2026)
+
+### Miscellaneous
+
+- **monorepo:** Added `README.md` workspace files ([515dc333](https://github.com/storm-software/stryke/commit/515dc333))
+
+### Updated Dependencies
+
+- Updated **type-checks** to **v0.5.41**
+- Updated **convert** to **v0.6.56**
+
 ## [0.1.56](https://github.com/storm-software/stryke/releases/tag/cookie%400.1.56) (03/16/2026)
 
 ### Updated Dependencies
