@@ -2,6 +2,16 @@
 
 # Changelog for Stryke - Unique ID
 
+## [0.3.75](https://github.com/storm-software/stryke/releases/tag/unique-id%400.3.75) (03/23/2026)
+
+### Bug Fixes
+
+- **monorepo:** Update all repository projects to resolve linting failures ([e9fb597b](https://github.com/storm-software/stryke/commit/e9fb597b))
+
+### Updated Dependencies
+
+- Updated **hash** to **v0.13.17**
+
 ## [0.3.74](https://github.com/storm-software/stryke/releases/tag/unique-id%400.3.74) (03/16/2026)
 
 ### Miscellaneous

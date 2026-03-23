@@ -2,6 +2,19 @@
 
 # Changelog for Stryke - Env
 
+## [0.20.81](https://github.com/storm-software/stryke/releases/tag/env%400.20.81) (03/23/2026)
+
+### Bug Fixes
+
+- **monorepo:** Update all repository projects to resolve linting failures ([e9fb597b](https://github.com/storm-software/stryke/commit/e9fb597b))
+
+### Updated Dependencies
+
+- Updated **string-format** to **v0.17.7**
+- Updated **convert** to **v0.6.57**
+- Updated **path** to **v0.27.3**
+- Updated **fs** to **v0.33.64**
+
 ## [0.20.80](https://github.com/storm-software/stryke/releases/tag/env%400.20.80) (03/16/2026)
 
 ### Miscellaneous

@@ -2,6 +2,20 @@
 
 # Changelog for Stryke - CLI
 
+## [0.13.36](https://github.com/storm-software/stryke/releases/tag/cli%400.13.36) (03/23/2026)
+
+### Bug Fixes
+
+- **monorepo:** Update all repository projects to resolve linting failures ([e9fb597b](https://github.com/storm-software/stryke/commit/e9fb597b))
+
+### Updated Dependencies
+
+- Updated **string-format** to **v0.17.7**
+- Updated **type-checks** to **v0.6.0**
+- Updated **convert** to **v0.6.57**
+- Updated **types** to **v0.11.2**
+- Updated **env** to **v0.20.81**
+
 ## [0.13.35](https://github.com/storm-software/stryke/releases/tag/cli%400.13.35) (03/16/2026)
 
 ### Miscellaneous

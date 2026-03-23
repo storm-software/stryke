@@ -2,6 +2,18 @@
 
 # Changelog for Stryke - Hash
 
+## [0.13.17](https://github.com/storm-software/stryke/releases/tag/hash%400.13.17) (03/23/2026)
+
+### Bug Fixes
+
+- **monorepo:** Update all repository projects to resolve linting failures ([e9fb597b](https://github.com/storm-software/stryke/commit/e9fb597b))
+
+### Updated Dependencies
+
+- Updated **type-checks** to **v0.6.0**
+- Updated **json** to **v0.14.11**
+- Updated **fs** to **v0.33.64**
+
 ## [0.13.16](https://github.com/storm-software/stryke/releases/tag/hash%400.13.16) (03/16/2026)
 
 ### Miscellaneous

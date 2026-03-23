@@ -2,6 +2,18 @@
 
 # Changelog for Stryke - JSON
 
+## [0.14.11](https://github.com/storm-software/stryke/releases/tag/json%400.14.11) (03/23/2026)
+
+### Bug Fixes
+
+- **monorepo:** Update all repository projects to resolve linting failures ([e9fb597b](https://github.com/storm-software/stryke/commit/e9fb597b))
+- **json:** Update `StormJSON` to use `jsonc` parser ([b6c95905](https://github.com/storm-software/stryke/commit/b6c95905))
+
+### Updated Dependencies
+
+- Updated **type-checks** to **v0.6.0**
+- Updated **types** to **v0.11.2**
+
 ## [0.14.10](https://github.com/storm-software/stryke/releases/tag/json%400.14.10) (03/16/2026)
 
 ### Miscellaneous

@@ -2,6 +2,24 @@
 
 # Changelog for Stryke - Type Checks
 
+## [0.6.0](https://github.com/storm-software/stryke/releases/tag/type-checks%400.6.0) (03/23/2026)
+
+### Miscellaneous
+
+- **monorepo:** Update `package.json` files ([fb0e0711](https://github.com/storm-software/stryke/commit/fb0e0711))
+
+### Bug Fixes
+
+- **monorepo:** Update all repository projects to resolve linting failures ([e9fb597b](https://github.com/storm-software/stryke/commit/e9fb597b))
+
+### Features
+
+- **type-checks:** Added `isEmptyArray` type-checker function ([22706388](https://github.com/storm-software/stryke/commit/22706388))
+
+### Updated Dependencies
+
+- Updated **types** to **v0.11.2**
+
 ## [0.5.41](https://github.com/storm-software/stryke/releases/tag/type-checks%400.5.41) (03/16/2026)
 
 ### Miscellaneous

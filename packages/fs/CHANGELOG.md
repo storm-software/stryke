@@ -2,6 +2,22 @@
 
 # Changelog for Stryke - Fs
 
+## [0.33.64](https://github.com/storm-software/stryke/releases/tag/fs%400.33.64) (03/23/2026)
+
+### Bug Fixes
+
+- **monorepo:** Update all repository projects to resolve linting failures ([e9fb597b](https://github.com/storm-software/stryke/commit/e9fb597b))
+
+### Updated Dependencies
+
+- Updated **string-format** to **v0.17.7**
+- Updated **type-checks** to **v0.6.0**
+- Updated **convert** to **v0.6.57**
+- Updated **helpers** to **v0.10.7**
+- Updated **types** to **v0.11.2**
+- Updated **json** to **v0.14.11**
+- Updated **path** to **v0.27.3**
+
 ## [0.33.63](https://github.com/storm-software/stryke/releases/tag/fs%400.33.63) (03/16/2026)
 
 ### Miscellaneous
