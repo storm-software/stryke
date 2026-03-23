@@ -110,8 +110,7 @@ export const stringify = (
 
       return `{${space}${keys
         .map(
-          key =>
-            `${invalidKeyChars.some(invalidKeyChar => key.includes(invalidKeyChar)) ? `"${key}"` : key}: ${space}${stringify((value as any)[key], space)}`
+          key => `"${key}": ${space}${stringify((value as any)[key], space)}`
         )
         .join(`,${space}`)}${space}}`;
     }

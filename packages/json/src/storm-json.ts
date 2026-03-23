@@ -73,8 +73,30 @@ export class StormJSON extends SuperJSON {
    * @param value - The string value to parse
    * @returns The parsed data
    */
-  public static override parse<TData = unknown>(value: string): TData {
-    return parseValue(value);
+  public static override parse<TData = unknown>(
+    value: string,
+    options: JsonParseOptions = {}
+  ): TData {
+    try {
+      if (options.expectComments === false) {
+        return parseValue<TData>(value);
+      }
+    } catch {
+      // Do nothing
+    }
+
+    const errors: ParseError[] = [];
+    const opts = {
+      allowTrailingComma: true,
+      ...options
+    };
+    const result = parse(value, errors, opts) as TData;
+
+    if (errors.length > 0 && errors[0]) {
+      throw new Error(formatParseError(value, errors[0]));
+    }
+
+    return result;
   }
 
   /**
@@ -98,40 +120,6 @@ export class StormJSON extends SuperJSON {
     }
 
     return stringifyValue(result, options?.spaces ?? 2);
-  }
-
-  /**
-   * Parses the given JSON string and returns the object the JSON content represents.
-   * By default javascript-style comments and trailing commas are allowed.
-   *
-   * @param strData - JSON content as string
-   * @param options - JSON parse options
-   * @returns Object the JSON content represents
-   */
-  public static parseJson<TData = unknown>(
-    strData: string,
-    options?: JsonParseOptions
-  ): TData {
-    try {
-      if (options?.expectComments === false) {
-        return StormJSON.instance.parse(strData);
-      }
-    } catch {
-      // Do nothing
-    }
-
-    const errors: ParseError[] = [];
-    const opts = {
-      allowTrailingComma: true,
-      ...options
-    };
-    const result = parse(strData, errors, opts) as TData;
-
-    if (errors.length > 0 && errors[0]) {
-      throw new Error(formatParseError(strData, errors[0]));
-    }
-
-    return result;
   }
 
   /**
