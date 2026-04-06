@@ -16,7 +16,7 @@ remotes:
       - packages/git-tools/src/lefthook/recommended.yml
 
 pre-push:
-  piped: true
+  parallel: true
   commands:
     sherif:
       glob:
