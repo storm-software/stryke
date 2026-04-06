@@ -1,6 +1,6 @@
 {
   "name": "@stryke/open-browser",
-  "version": "0.2.55",
+  "version": "0.2.56",
   "private": false,
   "description": "A package containing helper function to open URLs in the default browser",
   "repository": {
@@ -23,9 +23,7 @@
   "main": "./dist/index.cjs",
   "module": "./dist/index.mjs",
   "types": "./dist/index.d.cts",
-  "files": [
-    "openChrome.applescript"
-  ],
+  "files": ["openChrome.applescript"],
   "dependencies": {
     "cross-spawn": "catalog:"
   },

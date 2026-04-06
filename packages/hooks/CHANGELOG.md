@@ -2,6 +2,19 @@
 
 # Changelog for Stryke - Hooks
 
+## [0.4.79](https://github.com/storm-software/stryke/releases/tag/hooks%400.4.79) (03/23/2026)
+
+### Bug Fixes
+
+- **monorepo:** Update all repository projects to resolve linting failures ([e9fb597b](https://github.com/storm-software/stryke/commit/e9fb597b))
+
+### Updated Dependencies
+
+- Updated **type-checks** to **v0.6.0**
+- Updated **helpers** to **v0.10.7**
+- Updated **types** to **v0.11.2**
+- Updated **env** to **v0.20.81**
+
 ## [0.4.78](https://github.com/storm-software/stryke/releases/tag/hooks%400.4.78) (03/16/2026)
 
 ### Miscellaneous

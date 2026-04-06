@@ -2,6 +2,12 @@
 
 # Changelog for Stryke - Open Browser
 
+## [0.2.56](https://github.com/storm-software/stryke/releases/tag/open-browser%400.2.56) (03/23/2026)
+
+### Miscellaneous
+
+- **monorepo:** Update `package.json` files ([fb0e0711](https://github.com/storm-software/stryke/commit/fb0e0711))
+
 ## [0.2.55](https://github.com/storm-software/stryke/releases/tag/open-browser%400.2.55) (03/16/2026)
 
 ### Miscellaneous

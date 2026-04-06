@@ -2,6 +2,17 @@
 
 # Changelog for Stryke - HTTP
 
+## [0.12.53](https://github.com/storm-software/stryke/releases/tag/http%400.12.53) (03/23/2026)
+
+### Bug Fixes
+
+- **monorepo:** Update all repository projects to resolve linting failures ([e9fb597b](https://github.com/storm-software/stryke/commit/e9fb597b))
+
+### Updated Dependencies
+
+- Updated **type-checks** to **v0.6.0**
+- Updated **url** to **v0.4.14**
+
 ## [0.12.52](https://github.com/storm-software/stryke/releases/tag/http%400.12.52) (03/16/2026)
 
 ### Miscellaneous
