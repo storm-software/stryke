@@ -346,6 +346,7 @@ export const ACRONYMS: Record<
   TOTP: { description: "Time-based One-Time Password" },
   TRPC: { description: "TypeScript Remote Procedure Call" },
   TSA: { description: "Transportation Security Administration" },
+  TSC: { description: "TypeScript Compiler" },
   TTL: { description: "Time To Live" },
   UDP: { description: "User Datagram Protocol" },
   UI: { description: "User Interface" },

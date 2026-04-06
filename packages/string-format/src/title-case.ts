@@ -47,7 +47,9 @@ export function titleCase<T extends string | undefined>(
   options?: TitleCaseOptions
 ): T {
   return input
-    ?.split(/(\s+-\s+|\s*:\s*)/)
+    ?.replaceAll(":", " - ")
+    ?.replaceAll("+", " + ")
+    ?.split(/\s+-\s+/)
     .map(segment =>
       decamelize(segment)
         .split(/[\s\-_]/)
