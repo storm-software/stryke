@@ -2,6 +2,19 @@
 
 # Changelog for Stryke - TRPC Next
 
+## [0.5.82](https://github.com/storm-software/stryke/releases/tag/trpc-next%400.5.82) (04/06/2026)
+
+### Miscellaneous
+
+- **trpc-next:** Resolve linting issues ([cbe85aee](https://github.com/storm-software/stryke/commit/cbe85aee))
+
+### Updated Dependencies
+
+- Updated **types** to **v0.11.3**
+- Updated **path** to **v0.27.4**
+- Updated **env** to **v0.20.82**
+- Updated **url** to **v0.4.15**
+
 ## [0.5.81](https://github.com/storm-software/stryke/releases/tag/trpc-next%400.5.81) (03/23/2026)
 
 ### Bug Fixes

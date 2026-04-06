@@ -2,6 +2,18 @@
 
 # Changelog for Stryke - String Format
 
+## [0.17.8](https://github.com/storm-software/stryke/releases/tag/string-format%400.17.8) (04/06/2026)
+
+### Miscellaneous
+
+- **string-format:** Added better handling for ":" in string titles ([bed75262](https://github.com/storm-software/stryke/commit/bed75262))
+
+### Updated Dependencies
+
+- Updated **helpers** to **v0.10.8**
+- Updated **types** to **v0.11.3**
+- Updated **path** to **v0.27.4**
+
 ## [0.17.7](https://github.com/storm-software/stryke/releases/tag/string-format%400.17.7) (03/23/2026)
 
 ### Updated Dependencies
