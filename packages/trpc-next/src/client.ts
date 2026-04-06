@@ -18,8 +18,6 @@
 
 "use client";
 
-/* eslint-disable camelcase */
-
 import { loggerLink } from "@trpc/client";
 import type { UseTRPCActionResult } from "@trpc/next/app-dir/client";
 import {

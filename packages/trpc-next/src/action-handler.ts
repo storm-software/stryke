@@ -16,8 +16,6 @@
 
  ------------------------------------------------------------------- */
 
-/* eslint-disable camelcase */
-
 import type { MaybePromise } from "@stryke/types";
 import { experimental_createServerActionHandler } from "@trpc/next/app-dir/server";
 import type {
