@@ -2,6 +2,12 @@
 
 # Changelog for Stryke - String Format
 
+## [0.17.9](https://github.com/storm-software/stryke/releases/tag/string-format%400.17.9) (04/06/2026)
+
+### Bug Fixes
+
+- **string-format:** Resolve issue splitting title strings ([be8abd9f](https://github.com/storm-software/stryke/commit/be8abd9f))
+
 ## [0.17.8](https://github.com/storm-software/stryke/releases/tag/string-format%400.17.8) (04/06/2026)
 
 ### Miscellaneous
