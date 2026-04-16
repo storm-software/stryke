@@ -167,7 +167,7 @@ overrides:
   '@stryke/zod': workspace:*
   cookie: '>=0.7.0'
   debug: '>=4.4.0'
-  follow-redirects: '>=1.15.9'
+  follow-redirects: '>=1.16.0'
   got: '>=14.4.5'
   ip: '>=2.0.1'
   loader-utils: '>=3.3.1'
