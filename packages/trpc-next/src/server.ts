@@ -109,7 +109,10 @@ export function createTRPCServer<
   cookies: () => Promise<ReadonlyRequestCookies>,
   router: TRouter,
   createContext: () => MaybePromise<TContext> = () => ({}) as TContext
-) {
+): NextAppDirDecorateRouterRecord<
+  TRouter["_def"]["_config"]["$types"],
+  TRouter["_def"]["record"]
+> {
   return experimental_createTRPCNextAppDirServer<TRouter>({
     config() {
       return {
