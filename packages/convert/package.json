@@ -46,6 +46,10 @@
       "require": "./dist/to-array.cjs",
       "import": "./dist/to-array.mjs"
     },
+    "./to-bool": {
+      "require": "./dist/to-bool.cjs",
+      "import": "./dist/to-bool.mjs"
+    },
     "./to-string-key": {
       "require": "./dist/to-string-key.cjs",
       "import": "./dist/to-string-key.mjs"
