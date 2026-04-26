@@ -2,6 +2,19 @@
 
 # Changelog for Stryke - Hooks
 
+## [0.4.84](https://github.com/storm-software/stryke/releases/tag/hooks%400.4.84) (04/26/2026)
+
+### Miscellaneous
+
+- **monorepo:** Update Nx packages to v22.7.0 ([08918e3c](https://github.com/storm-software/stryke/commit/08918e3c))
+
+### Updated Dependencies
+
+- Updated **type-checks** to **v0.6.4**
+- Updated **async** to **v0.1.0**
+- Updated **types** to **v0.11.6**
+- Updated **env** to **v0.20.86**
+
 ## [0.4.83](https://github.com/storm-software/stryke/releases/tag/hooks%400.4.83) (04/26/2026)
 
 ### Updated Dependencies
