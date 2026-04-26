@@ -16,26 +16,4 @@
 
  ------------------------------------------------------------------- */
 
-export * from "./arg-identity";
-export * from "./deep-clone";
-export * from "./deep-merge";
-export * from "./filter-empty";
-export * from "./flatten-object";
-export * from "./get-field";
-export * from "./get-ordered-by";
-export * from "./get-unique";
-export * from "./identity";
-export * from "./is-equal";
-export * from "./lru-cache";
-export * from "./match-sorter";
-export * from "./memoize";
-export * from "./noop";
-export * from "./omit";
-export * from "./pick";
-export * from "./remove-accents";
-export * from "./remove-empty-items";
-export * from "./set-field";
-export * from "./to-deep-key";
-export * from "./to-path";
-export * from "./unflatten-object";
-export * from "./union";
+export { default as PQueue } from "p-queue";

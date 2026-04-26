@@ -16,26 +16,31 @@
 
  ------------------------------------------------------------------- */
 
-export * from "./arg-identity";
-export * from "./deep-clone";
-export * from "./deep-merge";
-export * from "./filter-empty";
-export * from "./flatten-object";
-export * from "./get-field";
-export * from "./get-ordered-by";
-export * from "./get-unique";
-export * from "./identity";
-export * from "./is-equal";
-export * from "./lru-cache";
-export * from "./match-sorter";
-export * from "./memoize";
-export * from "./noop";
-export * from "./omit";
-export * from "./pick";
-export * from "./remove-accents";
-export * from "./remove-empty-items";
-export * from "./set-field";
-export * from "./to-deep-key";
-export * from "./to-path";
-export * from "./unflatten-object";
-export * from "./union";
+import { defineTSDownConfig } from "@stryke/tools-config/tsdown.config";
+
+export default defineTSDownConfig([
+  {
+    name: "async-neutral",
+    target: "esnext",
+    platform: "neutral",
+    entry: ["src/index.ts", "src/neutral.ts"],
+    tsconfig: "tsconfig.json",
+    unbundle: false,
+    exports: false,
+    dts: true,
+    clean: false,
+    skipNodeModulesBundle: true
+  },
+  {
+    name: "async-node",
+    target: "esnext",
+    platform: "node",
+    entry: ["src/node.ts"],
+    tsconfig: "tsconfig.node.json",
+    unbundle: false,
+    exports: false,
+    dts: true,
+    clean: false,
+    skipNodeModulesBundle: true
+  }
+]);

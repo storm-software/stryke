@@ -18,10 +18,6 @@
       "require": "./dist/arg-identity.cjs",
       "import": "./dist/arg-identity.mjs"
     },
-    "./debounce": {
-      "require": "./dist/debounce.cjs",
-      "import": "./dist/debounce.mjs"
-    },
     "./deep-clone": {
       "require": "./dist/deep-clone.cjs",
       "import": "./dist/deep-clone.mjs"
@@ -29,14 +25,6 @@
     "./deep-merge": {
       "require": "./dist/deep-merge.cjs",
       "import": "./dist/deep-merge.mjs"
-    },
-    "./delay": {
-      "require": "./dist/delay.cjs",
-      "import": "./dist/delay.mjs"
-    },
-    "./errors": {
-      "require": "./dist/errors.cjs",
-      "import": "./dist/errors.mjs"
     },
     "./filter-empty": {
       "require": "./dist/filter-empty.cjs",
@@ -78,10 +66,6 @@
       "require": "./dist/memoize.cjs",
       "import": "./dist/memoize.mjs"
     },
-    "./mutex": {
-      "require": "./dist/mutex.cjs",
-      "import": "./dist/mutex.mjs"
-    },
     "./noop": {
       "require": "./dist/noop.cjs",
       "import": "./dist/noop.mjs"
@@ -89,14 +73,6 @@
     "./omit": {
       "require": "./dist/omit.cjs",
       "import": "./dist/omit.mjs"
-    },
-    "./once": {
-      "require": "./dist/once.cjs",
-      "import": "./dist/once.mjs"
-    },
-    "./parallel": {
-      "require": "./dist/parallel.cjs",
-      "import": "./dist/parallel.mjs"
     },
     "./pick": {
       "require": "./dist/pick.cjs",
@@ -110,21 +86,9 @@
       "require": "./dist/remove-empty-items.cjs",
       "import": "./dist/remove-empty-items.mjs"
     },
-    "./semaphore": {
-      "require": "./dist/semaphore.cjs",
-      "import": "./dist/semaphore.mjs"
-    },
     "./set-field": {
       "require": "./dist/set-field.cjs",
       "import": "./dist/set-field.mjs"
-    },
-    "./throttle": {
-      "require": "./dist/throttle.cjs",
-      "import": "./dist/throttle.mjs"
-    },
-    "./timeout": {
-      "require": "./dist/timeout.cjs",
-      "import": "./dist/timeout.mjs"
     },
     "./to-deep-key": {
       "require": "./dist/to-deep-key.cjs",
@@ -141,10 +105,6 @@
     "./union": {
       "require": "./dist/union.cjs",
       "import": "./dist/union.mjs"
-    },
-    "./with-timeout": {
-      "require": "./dist/with-timeout.cjs",
-      "import": "./dist/with-timeout.mjs"
     },
     "./*": "./*"
   },

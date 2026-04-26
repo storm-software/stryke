@@ -1,0 +1,83 @@
+{
+  "name": "@stryke/async",
+  "version": "0.0.1",
+  "private": false,
+  "description": "A package containing asynchronous utilities used by Storm Software.",
+  "repository": {
+    "type": "github",
+    "url": "https://github.com/storm-software/stryke.git",
+    "directory": "packages/async"
+  },
+  "type": "module",
+  "exports": {
+    ".": {
+      "require": {
+        "type": "./dist/index.d.cts",
+        "default": "./dist/index.cjs"
+      },
+      "import": {
+        "type": "./dist/index.d.mts",
+        "default": "./dist/index.mjs"
+      },
+      "default": {
+        "type": "./dist/index.d.mts",
+        "default": "./dist/index.mjs"
+      }
+    },
+    "./index": {
+      "require": {
+        "type": "./dist/index.d.cts",
+        "default": "./dist/index.cjs"
+      },
+      "import": {
+        "type": "./dist/index.d.mts",
+        "default": "./dist/index.mjs"
+      },
+      "default": {
+        "type": "./dist/index.d.mts",
+        "default": "./dist/index.mjs"
+      }
+    },
+    "./neutral": {
+      "require": {
+        "type": "./dist/neutral.d.cts",
+        "default": "./dist/neutral.cjs"
+      },
+      "import": {
+        "type": "./dist/neutral.d.mts",
+        "default": "./dist/neutral.mjs"
+      },
+      "default": {
+        "type": "./dist/neutral.d.mts",
+        "default": "./dist/neutral.mjs"
+      }
+    },
+    "./node": {
+      "require": {
+        "type": "./dist/node.d.cts",
+        "default": "./dist/node.cjs"
+      },
+      "import": {
+        "type": "./dist/node.d.mts",
+        "default": "./dist/node.mjs"
+      },
+      "default": {
+        "type": "./dist/node.d.mts",
+        "default": "./dist/node.mjs"
+      }
+    }
+  },
+  "main": "./dist/index.cjs",
+  "module": "./dist/index.mjs",
+  "types": "./dist/index.d.cts",
+  "devDependencies": {
+    "@types/node": "catalog:",
+    "tsdown": "catalog:"
+  },
+  "publishConfig": {
+    "access": "public"
+  },
+  "dependencies": {
+    "p-queue": "catalog:"
+  }
+}

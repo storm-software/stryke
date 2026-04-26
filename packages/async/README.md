@@ -28,7 +28,7 @@ This package is part of Storm Software's **🌩️ Stryke** monorepo. Stryke pac
 
 <h3 align="center">💻 Visit <a href="https://stormsoftware.com" target="_blank">stormsoftware.com</a> to stay up to date with this developer</h3><br />
 
-[![Version](https://img.shields.io/badge/version-0.10.5-1fb2a6.svg?style=for-the-badge&color=1fb2a6)](https://github.com/storm-software/stryke)&nbsp;[![Commitizen friendly](https://img.shields.io/badge/commitizen-friendly-brightgreen.svg?style=for-the-badge&logo=commitlint&color=1fb2a6)](http://commitizen.github.io/cz-cli/)&nbsp;![semantic-release](https://img.shields.io/badge/%20%20%F0%9F%93%A6%F0%9F%9A%80-semantic--release-e10079.svg?style=for-the-badge&color=1fb2a6)&nbsp;![GitHub Workflow Status (with event)](https://img.shields.io/github/actions/workflow/status/storm-software/stryke/release.yml?style=for-the-badge&logo=github-actions&color=1fb2a6)
+[![Version](https://img.shields.io/badge/version-0.12.51-1fb2a6.svg?style=for-the-badge&color=1fb2a6)](https://github.com/storm-software/stryke)&nbsp;[![Commitizen friendly](https://img.shields.io/badge/commitizen-friendly-brightgreen.svg?style=for-the-badge&logo=commitlint&color=1fb2a6)](http://commitizen.github.io/cz-cli/)&nbsp;![semantic-release](https://img.shields.io/badge/%20%20%F0%9F%93%A6%F0%9F%9A%80-semantic--release-e10079.svg?style=for-the-badge&color=1fb2a6)&nbsp;![GitHub Workflow Status (with event)](https://img.shields.io/github/actions/workflow/status/storm-software/stryke/release.yml?style=for-the-badge&logo=github-actions&color=1fb2a6)
 
 > [!IMPORTANT] Important
 > This repository, and the apps, libraries, and tools contained within, is still in it's initial development phase. As a result, bugs and issues are expected with it's usage. When the main development phase completes, a proper release will be performed, the packages will be available through NPM (and other distributions), and this message will be removed. However, in the meantime, please feel free to report any issues you may come across.
@@ -45,20 +45,31 @@ This package is part of Storm Software's **🌩️ Stryke** monorepo. Stryke pac
 
 <!-- END header -->
 
-# Stryke - Helper Functions
+# Stryke - Async Helpers
 
-A package containing miscellaneous helper functions that are used across many
-different Storm Software projects. This package is not meant to depend on any
-other Stryke projects.
+The following modules are available in this package:
+
+- **debounce**: Provides a function to debounce another function, delaying its
+  execution.
+- **delay**: Provides a function to delay execution for a specified amount of
+  time.
+- **once**: Provides a function that executes another function only once.
+- **throttle**: Provides a function to throttle another function, limiting its
+  execution rate.
+- **timeout**: Provides a function to execute another function with a timeout.
+- **semaphore**: Create a semaphore instance.
+- **mutex**: Create a mutex instance.
+- **with-timeout**: Provides a function to execute another function with a
+  timeout.
+- **parallel**: Provides a function to execute multiple functions in parallel.
 
 <!-- START doctoc -->
 <!-- DON'T EDIT THIS SECTION, INSTEAD RE-RUN doctoc TO UPDATE -->
 
 ## Table of Contents
 
-- [Stryke - Helper Functions](#stryke---helper-functions)
+- [Stryke - Async Helpers](#stryke---async-helpers)
   - [Table of Contents](#table-of-contents)
-  - [Quick Features](#quick-features)
   - [Installing](#installing)
   - [Reduced Package Size](#reduced-package-size)
   - [Development](#development)
@@ -75,49 +86,21 @@ other Stryke projects.
 
 <!-- END doctoc -->
 
-## Quick Features
-
-The following modules are available in this package:
-
-- **arg-identity**: Provides a function that returns its argument.
-- **deep-clone**: Provides a function to create a deep clone of an object.
-- **deep-copy**: Provides a function to create a deep copy of an object.
-- **deep-merge**: Provides a function to deeply merge two objects.
-- **flatten-object**: Provides a function to flatten a nested object into a
-  single level object.
-- **get-field**: Provides a function to get the value of a field from an object.
-- **get-ordered-by**: Provides a function to order an array of objects by a
-  specified field.
-- **get-unique**: Provides a function to get unique values from an array.
-- **identity**: Provides a function that returns its argument.
-- **is-equal**: Provides a function to check if two values are deeply equal.
-- **match-sorter**: Provides a function to sort an array based on a search
-  query.
-- **noop**: Provides a no-operation function.
-- **memoize**: Provides a function that memoizes the result of another function.
-- **remove-accents**: Provides a function to remove accents from a string.
-- **remove-empty-items**: Provides a function to remove empty items from an
-  array.
-- **set-field**: Provides a function to set the value of a field in an object.
-- **to-deep-key**: Provides a function to convert a path to a deep key.
-- **to-path**: Provides a function to convert a deep key to a path.
-- **unflatten-object**: Provides a function to unflatten a single level object
-  into a nested object.
-- **union**: Provides a function to create a union of two arrays.
+<br />
 
 ## Installing
 
 Using [pnpm](http://pnpm.io):
 
 ```bash
-pnpm add -D @stryke/helpers
+pnpm add -D @stryke/async
 ```
 
 <details>
   <summary>Using npm</summary>
 
 ```bash
-npm install -D @stryke/helpers
+npm install -D @stryke/async
 ```
 
 </details>
@@ -126,7 +109,7 @@ npm install -D @stryke/helpers
   <summary>Using yarn</summary>
 
 ```bash
-yarn add -D @stryke/helpers
+yarn add -D @stryke/async
 ```
 
 </details>
@@ -145,15 +128,15 @@ commands are available to assist in development.
 
 ### Building
 
-Run `nx build helpers` to build the library.
+Run `nx build async` to build the library.
 
 ### Running unit tests
 
-Run `nx test helpers` to execute the unit tests via [Jest](https://jestjs.io).
+Run `nx test async` to execute the unit tests via [Jest](https://jestjs.io).
 
 ### Linting
 
-Run `nx lint helpers` to run [ESLint](https://eslint.org/) on the package.
+Run `nx lint async` to run [ESLint](https://eslint.org/) on the package.
 
 <!-- START footer -->
 <!-- prettier-ignore-start -->
