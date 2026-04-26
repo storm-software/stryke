@@ -32,6 +32,7 @@ export * from "./string-to-buffer";
 export * from "./string-to-uint8-array";
 export * from "./string-to-utf8-array";
 export * from "./to-array";
+export * from "./to-bool";
 export * from "./to-string-key";
 export * from "./uint8-array-to-stream";
 export * from "./uint8-array-to-string.node";
