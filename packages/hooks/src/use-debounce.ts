@@ -16,8 +16,8 @@
 
  ------------------------------------------------------------------- */
 
-import type { DebounceOptions } from "@stryke/helpers/debounce";
-import { debounce } from "@stryke/helpers/debounce";
+import type { DebounceOptions } from "@stryke/async";
+import { debounce } from "@stryke/async";
 import { useEffect, useMemo, useRef, useState } from "react";
 
 // export function debounce<A extends Function>(
@@ -68,7 +68,7 @@ export function useDebounce<
   }, []);
 
   return useMemo(() => {
-    dbEffect.current = debounce(fn, wait, options) as unknown as DebouncedFn;
+    dbEffect.current = debounce(fn, wait, options) as DebouncedFn;
     return dbEffect.current;
   }, [fn, options, wait]);
 }

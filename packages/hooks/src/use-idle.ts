@@ -16,7 +16,7 @@
 
  ------------------------------------------------------------------- */
 
-import { throttle } from "@stryke/helpers/throttle";
+import { throttle } from "@stryke/async";
 import { useEffect, useState } from "react";
 
 /**

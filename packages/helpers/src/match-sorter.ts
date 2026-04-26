@@ -178,7 +178,7 @@ function getHighestRanking<ItemType>(
         newRank = maxRanking;
       }
       if (newRank > rank) {
-        rank = newRank;
+        rank = newRank as 0;
         keyIndex = i;
         keyThreshold = threshold;
         newRankedValue = itemValue;

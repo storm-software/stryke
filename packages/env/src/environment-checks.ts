@@ -100,6 +100,24 @@ export function isDevelopmentMode(mode: string) {
 /** Detect if `NODE_ENV` environment variable is `dev` or `development` */
 export const isDevelopment = isDevelopmentMode(mode) || isDebug;
 
+/**
+ * Convert a mode string to a standardized mode value of "production", "development", or "test".
+ *
+ * @param mode - The mode string to convert.
+ * @returns The standardized mode value.
+ */
+export function toMode(mode: string): "production" | "development" | "test" {
+  if (isProductionMode(mode)) {
+    return "production";
+  } else if (isTestMode(mode)) {
+    return "test";
+  } else if (isDevelopmentMode(mode)) {
+    return "development";
+  }
+
+  return "production";
+}
+
 /** Detect if MINIMAL environment variable is set, running in CI or test or TTY is unavailable */
 export const isMinimal =
   Boolean(process.env.MINIMAL) || isCI() || isTest || !hasTTY;
