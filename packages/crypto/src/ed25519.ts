@@ -55,11 +55,11 @@ export async function generateSigningKeyPair(): Promise<{
   keyId: string;
 }> {
   // Generate Ed25519 key pair using Cloudflare Workers' native support
-  const keyPair = (await crypto.subtle.generateKey(
+  const keyPair = await crypto.subtle.generateKey(
     { name: "NODE-ED25519", namedCurve: "NODE-ED25519" } as Ed25519Params,
     true, // extractable
     ["sign", "verify"]
-  )) as Ed25519KeyPair;
+  );
 
   // Export the public key as JWK to get the raw key bytes
   const publicKeyJwk = await crypto.subtle.exportKey("jwk", keyPair.publicKey);
@@ -156,7 +156,7 @@ export async function signJson(
   const privateKey = await crypto.subtle.importKey(
     "jwk",
     jwk,
-    { name: "NODE-ED25519", namedCurve: "NODE-ED25519" } as Ed25519Params,
+    { name: "NODE-ED25519", namedCurve: "NODE-ED25519" },
     false,
     ["sign"]
   );
@@ -235,7 +235,7 @@ export async function verifySignature(
     const publicKey = await crypto.subtle.importKey(
       "raw",
       publicKeyBytes as BufferSource,
-      { name: "NODE-ED25519", namedCurve: "NODE-ED25519" } as Ed25519Params,
+      { name: "NODE-ED25519", namedCurve: "NODE-ED25519" },
       false,
       ["verify"]
     );

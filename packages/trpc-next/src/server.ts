@@ -135,10 +135,7 @@ export function createTRPCServer<
         ]
       };
     }
-  }) as NextAppDirDecorateRouterRecord<
-    TRouter["_def"]["_config"]["$types"],
-    TRouter["_def"]["record"]
-  >;
+  });
 }
 
 export {

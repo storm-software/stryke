@@ -171,7 +171,7 @@ export async function loadEnv(
   // these are typically provided inline and should be prioritized
   for (const key in process.env) {
     if (prefixes.some(prefix => key.startsWith(prefix))) {
-      env[key] = process.env[key] as string;
+      env[key] = process.env[key];
     }
   }
 

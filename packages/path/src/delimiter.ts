@@ -29,9 +29,6 @@ export const delimiter: ";" | ":" = /* @__PURE__ */ (() =>
 const platforms = {
   posix: undefined,
   win32: undefined
-} as unknown as {
-  posix: any;
-  win32: any;
 };
 
 const mix = (del: ";" | ":" = delimiter) => {

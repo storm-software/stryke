@@ -46,5 +46,5 @@ export function omit<T extends Record<string, any>, K extends keyof T>(
     }
   }
 
-  return result as Omit<T, K>;
+  return result;
 }

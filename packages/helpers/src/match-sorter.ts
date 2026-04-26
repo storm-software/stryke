@@ -192,7 +192,7 @@ function getHighestRanking<ItemType>(
     },
     {
       rankedValue: item as unknown as string,
-      rank: rankings.NO_MATCH as Ranking,
+      rank: rankings.NO_MATCH,
       keyIndex: -1,
       keyThreshold: options.threshold
     }
