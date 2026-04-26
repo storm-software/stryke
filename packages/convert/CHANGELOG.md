@@ -2,6 +2,21 @@
 
 # Changelog for Stryke - Convert
 
+## [0.7.0](https://github.com/storm-software/stryke/releases/tag/convert%400.7.0) (04/26/2026)
+
+### Bug Fixes
+
+- **convert:** Added missing `to-bool` export ([c148dae6](https://github.com/storm-software/stryke/commit/c148dae6))
+
+### Features
+
+- **convert:** Added the `toBool` helper function ([5cc5b7fe](https://github.com/storm-software/stryke/commit/5cc5b7fe))
+
+### Updated Dependencies
+
+- Updated **type-checks** to **v0.6.2**
+- Updated **types** to **v0.11.4**
+
 ## [0.6.58](https://github.com/storm-software/stryke/releases/tag/convert%400.6.58) (04/06/2026)
 
 ### Updated Dependencies

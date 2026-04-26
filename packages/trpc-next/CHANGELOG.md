@@ -2,6 +2,20 @@
 
 # Changelog for Stryke - TRPC Next
 
+## [0.5.84](https://github.com/storm-software/stryke/releases/tag/trpc-next%400.5.84) (04/26/2026)
+
+### Miscellaneous
+
+- **trpc-next:** Resolve linting issues ([b8117bf2](https://github.com/storm-software/stryke/commit/b8117bf2))
+- **monorepo:** Lint workspace packages ([925dbac1](https://github.com/storm-software/stryke/commit/925dbac1))
+
+### Updated Dependencies
+
+- Updated **types** to **v0.11.4**
+- Updated **path** to **v0.27.5**
+- Updated **env** to **v0.20.84**
+- Updated **url** to **v0.4.16**
+
 ## [0.5.83](https://github.com/storm-software/stryke/releases/tag/trpc-next%400.5.83) (04/06/2026)
 
 ### Updated Dependencies

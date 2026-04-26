@@ -2,6 +2,18 @@
 
 # Changelog for Stryke - Crypto
 
+## [0.6.16](https://github.com/storm-software/stryke/releases/tag/crypto%400.6.16) (04/26/2026)
+
+### Miscellaneous
+
+- **monorepo:** Lint workspace packages ([925dbac1](https://github.com/storm-software/stryke/commit/925dbac1))
+
+### Updated Dependencies
+
+- Updated **type-checks** to **v0.6.2**
+- Updated **convert** to **v0.7.0**
+- Updated **json** to **v0.14.13**
+
 ## [0.6.15](https://github.com/storm-software/stryke/releases/tag/crypto%400.6.15) (04/06/2026)
 
 ### Updated Dependencies

@@ -2,6 +2,18 @@
 
 # Changelog for Stryke - Helpers
 
+## [0.10.9](https://github.com/storm-software/stryke/releases/tag/helpers%400.10.9) (04/26/2026)
+
+### Miscellaneous
+
+- **monorepo:** Lint workspace packages ([925dbac1](https://github.com/storm-software/stryke/commit/925dbac1))
+
+### Updated Dependencies
+
+- Updated **type-checks** to **v0.6.2**
+- Updated **convert** to **v0.7.0**
+- Updated **types** to **v0.11.4**
+
 ## [0.10.8](https://github.com/storm-software/stryke/releases/tag/helpers%400.10.8) (04/06/2026)
 
 ### Updated Dependencies

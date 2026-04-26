@@ -2,6 +2,14 @@
 
 # Changelog for Stryke - URL
 
+## [0.4.16](https://github.com/storm-software/stryke/releases/tag/url%400.4.16) (04/26/2026)
+
+### Updated Dependencies
+
+- Updated **type-checks** to **v0.6.2**
+- Updated **json** to **v0.14.13**
+- Updated **path** to **v0.27.5**
+
 ## [0.4.15](https://github.com/storm-software/stryke/releases/tag/url%400.4.15) (04/06/2026)
 
 ### Updated Dependencies

@@ -2,6 +2,19 @@
 
 # Changelog for Stryke - Env
 
+## [0.20.84](https://github.com/storm-software/stryke/releases/tag/env%400.20.84) (04/26/2026)
+
+### Miscellaneous
+
+- **monorepo:** Lint workspace packages ([925dbac1](https://github.com/storm-software/stryke/commit/925dbac1))
+
+### Updated Dependencies
+
+- Updated **string-format** to **v0.17.10**
+- Updated **convert** to **v0.7.0**
+- Updated **path** to **v0.27.5**
+- Updated **fs** to **v0.33.67**
+
 ## [0.20.83](https://github.com/storm-software/stryke/releases/tag/env%400.20.83) (04/06/2026)
 
 ### Updated Dependencies
