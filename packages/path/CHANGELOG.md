@@ -2,6 +2,18 @@
 
 # Changelog for Stryke - Path
 
+## [0.28.0](https://github.com/storm-software/stryke/releases/tag/path%400.28.0) (04/26/2026)
+
+### Features
+
+- **path:** Added the `isEqual` helper function ([787b8228](https://github.com/storm-software/stryke/commit/787b8228))
+
+### Updated Dependencies
+
+- Updated **type-checks** to **v0.6.3**
+- Updated **convert** to **v0.7.1**
+- Updated **types** to **v0.11.5**
+
 ## [0.27.5](https://github.com/storm-software/stryke/releases/tag/path%400.27.5) (04/26/2026)
 
 ### Miscellaneous
