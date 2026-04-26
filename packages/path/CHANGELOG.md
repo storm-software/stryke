@@ -2,6 +2,18 @@
 
 # Changelog for Stryke - Path
 
+## [0.27.5](https://github.com/storm-software/stryke/releases/tag/path%400.27.5) (04/26/2026)
+
+### Miscellaneous
+
+- **monorepo:** Lint workspace packages ([925dbac1](https://github.com/storm-software/stryke/commit/925dbac1))
+
+### Updated Dependencies
+
+- Updated **type-checks** to **v0.6.2**
+- Updated **convert** to **v0.7.0**
+- Updated **types** to **v0.11.4**
+
 ## [0.27.4](https://github.com/storm-software/stryke/releases/tag/path%400.27.4) (04/06/2026)
 
 ### Updated Dependencies

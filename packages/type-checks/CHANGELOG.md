@@ -2,6 +2,16 @@
 
 # Changelog for Stryke - Type Checks
 
+## [0.6.2](https://github.com/storm-software/stryke/releases/tag/type-checks%400.6.2) (04/26/2026)
+
+### Bug Fixes
+
+- **types:** Resolve depth threashold issue with `DeepPartial` type ([7e2baead](https://github.com/storm-software/stryke/commit/7e2baead))
+
+### Updated Dependencies
+
+- Updated **types** to **v0.11.4**
+
 ## [0.6.1](https://github.com/storm-software/stryke/releases/tag/type-checks%400.6.1) (04/06/2026)
 
 ### Updated Dependencies

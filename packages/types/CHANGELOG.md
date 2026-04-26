@@ -2,6 +2,12 @@
 
 # Changelog for Stryke - Types
 
+## [0.11.4](https://github.com/storm-software/stryke/releases/tag/types%400.11.4) (04/26/2026)
+
+### Bug Fixes
+
+- **types:** Resolve depth threashold issue with `DeepPartial` type ([7e2baead](https://github.com/storm-software/stryke/commit/7e2baead))
+
 ## [0.11.1](https://github.com/storm-software/stryke/releases/tag/types%400.11.1) (03/16/2026)
 
 ### Miscellaneous
