@@ -1,6 +1,6 @@
 {
   "name": "@stryke/string-format",
-  "version": "0.17.8",
+  "version": "0.17.9",
   "private": false,
   "description": "A package containing utility functions to transform strings into various formats.",
   "repository": {
