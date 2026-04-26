@@ -195,11 +195,17 @@ export type NonUndefined<T> = T extends undefined ? never : T;
 
 export type BrowserNativeObject = Date | File;
 
-export type DeepPartial<T> = T extends BrowserNativeObject | NestedValue
+type Depth = [never, 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
+
+export type DeepPartial<T, D extends number = 10> = D extends 0
   ? T
-  : {
-      [K in keyof T]?: DeepPartial<T[K]>;
-    };
+  : T extends BrowserNativeObject | NestedValue
+    ? T
+    : {
+        [K in keyof T]?: T[K] extends object
+          ? DeepPartial<T[K], Depth[D]>
+          : T[K];
+      };
 
 export type Rollback = Record<
   string,
