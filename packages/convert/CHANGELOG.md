@@ -2,6 +2,17 @@
 
 # Changelog for Stryke - Convert
 
+## [0.7.3](https://github.com/storm-software/stryke/releases/tag/convert%400.7.3) (05/01/2026)
+
+### Bug Fixes
+
+- **convert:** Resolve issue with invalid import paths ([75869989](https://github.com/storm-software/stryke/commit/75869989))
+
+### Updated Dependencies
+
+- Updated **type-checks** to **v0.6.5**
+- Updated **types** to **v0.12.0**
+
 ## [0.7.2](https://github.com/storm-software/stryke/releases/tag/convert%400.7.2) (04/26/2026)
 
 ### Updated Dependencies
