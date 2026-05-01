@@ -17,7 +17,7 @@
  ------------------------------------------------------------------- */
 
 import type { Arrayable } from "@stryke/types/array";
-import type { Nullable } from "@stryke/types/utilities";
+import type { Nullable } from "@stryke/types/base";
 
 /**
  * Convert `Arrayable<T>` to `Array<T>`
