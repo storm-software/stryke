@@ -18,7 +18,7 @@
 
 import type { ListOptions } from "@stryke/fs/list-files";
 import { listFiles } from "@stryke/fs/list-files";
-import { readFile } from "@stryke/fs/read-file";
+import { readFileIfExisting } from "@stryke/fs/read-file";
 import type { HashOptions } from "./murmurhash";
 import { murmurhash } from "./murmurhash";
 
@@ -36,7 +36,7 @@ export async function hashFiles(
   const result = {} as Record<string, string>;
   await Promise.all(
     files.map(async file => {
-      result[file] = await readFile(file);
+      result[file] = await readFileIfExisting(file);
     })
   );
 
@@ -47,7 +47,7 @@ export async function hashFiles(
  * Hash a folder path into a string based on the file content
  *
  * @param directoryPath - The folder path to hash
- * @param  options - Hashing options. By default, the `node_modules`, `.git`, `.nx`, `.cache`, and `tmp` folders is ignored.
+ * @param  options - Hashing options. By default, the `node_modules`, `.git`, `.nx`, `.rolldown`, `.vite`, `.next`, `.cache`, `.powerlines`, `.shell-shock`, `.earthquake`, and `tmp` folders are ignored.
  * @returns A hashed string value
  */
 export async function hashDirectory(
@@ -56,11 +56,17 @@ export async function hashDirectory(
 ): Promise<string> {
   options.ignore = options.ignore ?? [
     "**/node_modules/**",
+    "**/dist/**",
+    "**/tmp/**",
     "**/.git/**",
     "**/.nx/**",
+    "**/.rolldown/**",
+    "**/.vite/**",
+    "**/.next/**",
     "**/.cache/**",
-    "**/.storm/**",
-    "**/tmp/**"
+    "**/.powerlines/**",
+    "**/.shell-shock/**",
+    "**/.earthquake/**"
   ];
 
   return hashFiles(await listFiles(directoryPath, options), options);
