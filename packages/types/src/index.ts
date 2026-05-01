@@ -42,5 +42,4 @@ export * from "./string";
 export * from "./system";
 export * from "./tsconfig";
 export * from "./user";
-export * from "./utilities";
 export * from "./validations";

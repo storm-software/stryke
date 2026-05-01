@@ -123,10 +123,6 @@
       "require": "./dist/user.cjs",
       "import": "./dist/user.mjs"
     },
-    "./utilities": {
-      "require": "./dist/utilities.cjs",
-      "import": "./dist/utilities.mjs"
-    },
     "./validations": {
       "require": "./dist/validations.cjs",
       "import": "./dist/validations.mjs"
