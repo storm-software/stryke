@@ -24,10 +24,12 @@ import type {
 import type {
   BuildTuple,
   EmptyObject,
+  Index40,
   IsAny,
   IsNever,
   IsPrimitive,
   NonRecursiveType,
+  Nullable,
   Nullish,
   Primitive,
   Simplify
@@ -36,7 +38,6 @@ import type { StringKeyOf } from "./json";
 import type { IsNotFalse, LessThan, Sum } from "./logic";
 import type { Numeric } from "./number";
 import type { StringDigit } from "./string";
-import type { Index40, Nullable } from "./utilities";
 
 /**
  * Returns a boolean for whether the given type is an empty object.

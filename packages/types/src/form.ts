@@ -16,7 +16,7 @@
 
  ------------------------------------------------------------------- */
 
-import type { NameValuePair } from "./utilities";
+import type { NameValuePair } from "./base";
 
 export type SelectOptionValue = string | number | boolean | null;
 
