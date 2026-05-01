@@ -18,6 +18,12 @@
 
 import type { TypedArray } from "./array";
 
+/**
+ * Matches any value that can be serialized to JSON.
+ *
+ * @remarks
+ * This includes all primitive types except `symbol`, which cannot be serialized.
+ */
 export type SerializablePrimitive =
   | null
   | undefined
@@ -25,6 +31,19 @@ export type SerializablePrimitive =
   | number
   | boolean
   | bigint;
+
+/**
+ * Matches any primitive JavaScript value.
+ *
+ * @remarks
+ * Includes `SerializablePrimitive` types plus `symbol`, which cannot be serialized to JSON.
+ *
+ * @example
+ * ```ts
+ * type test = Primitive;
+ * // null | undefined | string | number | boolean | bigint | symbol
+ * ```
+ */
 export type Primitive = SerializablePrimitive | symbol;
 
 /**
@@ -39,6 +58,17 @@ export type BuiltIns = Primitive | void | Date | RegExp;
 export type AtomicObject = Function | Promise<any> | Date | RegExp;
 
 /** Determines if the passed value is of a specific type */
+/**
+ * A function that tests whether a value matches a specific type.
+ *
+ * @param value - The value to test
+ * @returns `true` if the value matches the type, `false` otherwise
+ *
+ * @example
+ * ```ts
+ * const isString: TypeTester = (value) => typeof value === 'string';
+ * ```
+ */
 export type TypeTester = (value: any) => boolean;
 
 /**
@@ -46,6 +76,24 @@ export type TypeTester = (value: any) => boolean;
  * export * The key represents the name of the type. The function represents the {@link TypeTester | test method}.
  * The map should be ordered by testing preference, with more specific tests first.
  * If a test returns true, it is selected, and the key is returned as the type.
+ */
+/**
+ * A mapping of type names to type testing functions.
+ *
+ * @remarks
+ * The map should be ordered by testing preference, with more specific tests first. When a test returns `true`, it is selected and the corresponding key is returned as the type name.
+ *
+ * @see {@link TypeTester}
+ * @see {@link getType}
+ *
+ * @example
+ * ```ts
+ * const typeMap: TypeMap = {
+ *   string: (v) => typeof v === 'string',
+ *   number: (v) => typeof v === 'number',
+ *   array: (v) => Array.isArray(v),
+ * };
+ * ```
  */
 export type TypeMap = Record<string, TypeTester>;
 
@@ -89,18 +137,52 @@ export type Nullish = undefined | null;
 export type Nullishable<T> = T | Nullish;
 export type NonNullishObject = object; // not null/undefined which are Object
 export type NativeClass = abstract new (...args: any) => any;
+/**
+ * Matches any number type.
+ */
 export type AnyNumber = number | number;
+
+/**
+ * Matches any string type.
+ */
 export type AnyString = string | string;
+
+/**
+ * Matches any boolean type.
+ */
 export type AnyBoolean = boolean | boolean;
+/**
+ * Matches an array of any type.
+ */
 export type AnyArray = any[];
-export type PlainObject = Record<any, object>; // https://stackoverflow.com/a/75052315/130638
+
+/**
+ * Matches a plain object (POJO) with any key-value pairs.
+ *
+ * @see https://stackoverflow.com/a/75052315/130638
+ */
+export type PlainObject = Record<any, object>;
+
+/**
+ * Matches a `Map` with any key and value types.
+ */
 export type AnyMap = Map<any, any>;
+
+/**
+ * Matches a `WeakMap` with any key and value types.
+ */
 export type AnyWeakMap = WeakMap<WeakKey, any>;
+/**
+ * Matches an empty array type.
+ */
 export type EmptyArray = [];
 export interface EmptyObject {
   [emptyObjectSymbol]?: never;
 }
 
+/**
+ * Matches any JavaScript value, including primitives and objects.
+ */
 export type Any =
   | boolean
   | number
@@ -152,6 +234,18 @@ export const EMPTY_STRING = "";
 export const NEWLINE_STRING = "\r\n";
 export const EMPTY_OBJECT = {};
 
+/**
+ * Matches a string type where each character can be either uppercase or lowercase.
+ *
+ * @remarks
+ * This is useful for creating case-insensitive string literal unions.
+ *
+ * @example
+ * ```ts
+ * type CaseInsensitive = AnyCase<'hello'>;
+ * // 'hello' | 'Hello' | 'hEllo' | 'HEllo' | ...
+ * ```
+ */
 export type AnyCase<T extends IndexType> = string extends T
   ? string
   : T extends `${infer F1}${infer F2}${infer R}`
@@ -160,18 +254,62 @@ export type AnyCase<T extends IndexType> = string extends T
       ? `${Uppercase<F> | Lowercase<F>}${AnyCase<R>}`
       : typeof EMPTY_STRING;
 
+/**
+ * Matches a constructor function that returns an instance of type `T`.
+ *
+ * @example
+ * ```ts
+ * class MyClass {}
+ * type MyClassConstructor = Newable<MyClass>;
+ * ```
+ */
 export type Newable<T> = new (..._args: never[]) => T;
 
+/**
+ * Matches an abstract class with the given prototype.
+ *
+ * @example
+ * ```ts
+ * abstract class Base {}
+ * type BaseAbstract = Abstract<Base>;
+ * ```
+ */
 export interface Abstract<T> {
   prototype: T;
 }
 
+/**
+ * Matches an object that has a `clone()` method returning a copy of itself.
+ */
 export interface Clonable<T> {
   clone: () => T;
 }
 
+/**
+ * Matches a value that is either of type `T` or a promise that resolves to `T`.
+ *
+ * @example
+ * ```ts
+ * type Result = MaybePromise<string>;
+ * // string | Promise<string>
+ * ```
+ */
 export type MaybePromise<T> = T | Promise<T>;
 
+/**
+ * Matches a reducer function that takes the current state and an action, returning the next state.
+ *
+ * @remarks
+ * This is the function signature used in state management libraries like Redux.
+ *
+ * @example
+ * ```ts
+ * type CounterReducer = ReducerFunction<number, { type: 'increment' | 'decrement' }>;
+ * const reducer: CounterReducer = (state, action) => {
+ *   return action.type === 'increment' ? state + 1 : state - 1;
+ * };
+ * ```
+ */
 export type ReducerFunction<TState, TAction> = (
   state: TState,
   action: TAction
@@ -184,6 +322,9 @@ export const TYPE_OBJECT = "Object";
 export const TYPE_MAP = "Map";
 export const TYPE_SET = "Set";
 
+/**
+ * Matches any collection type including arrays, maps, sets, and plain objects.
+ */
 export type Collection =
   | IArguments
   | unknown[]
@@ -191,12 +332,31 @@ export type Collection =
   | Record<string | number | symbol, unknown>
   | Set<unknown>;
 
+/**
+ * Removes `undefined` from a union type.
+ *
+ * @example
+ * ```ts
+ * type test = NonUndefined<string | undefined>;
+ * // string
+ * ```
+ */
 export type NonUndefined<T> = T extends undefined ? never : T;
 
+/**
+ * Matches browser native object types that should not be recursively transformed.
+ */
 export type BrowserNativeObject = Date | File;
 
 type Depth = [never, 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
 
+/**
+ * Recursively makes all properties of an object type optional, except for properties that are of a primitive type or a browser native object type. The `D` parameter is used to limit the depth of the recursion to prevent infinite recursion in case of circular references. By default, the depth is set to 10, which should be sufficient for most use cases.
+ *
+ * @remarks
+ * - This type is useful when you want to create a new type that has the same structure as an existing type, but with all properties being optional. For example, when you want to create a type for a partial update of an object.
+ * - The properties that are of a primitive type or a browser native object type are not made optional because they are already immutable and do not have nested properties that can be made optional.
+ */
 export type DeepPartial<T, D extends number = 10> = D extends 0
   ? T
   : T extends BrowserNativeObject | NestedValue
@@ -207,6 +367,143 @@ export type DeepPartial<T, D extends number = 10> = D extends 0
           : T[K];
       };
 
+/**
+ * Recursively makes all properties of an object type required.
+ *
+ * @remarks
+ * - Properties that are primitives or browser native objects are left as-is.
+ * - The `D` parameter controls recursion depth (default: 10) to prevent infinite recursion with circular references.
+ * - More strict than `Required<T>` as it recursively applies to nested objects.
+ *
+ * @example
+ * ```ts
+ * type User = { name?: string; address?: { street?: string } };
+ * type RequiredUser = DeepRequired<User>;
+ * // { name: string; address: { street: string } }
+ * ```
+ */
+export type DeepRequired<T, D extends number = 10> = D extends 0
+  ? T
+  : T extends BrowserNativeObject | NestedValue
+    ? T
+    : {
+        [K in keyof T]-?: T[K] extends object
+          ? DeepRequired<T[K], Depth[D]>
+          : T[K];
+      };
+
+/**
+ * Recursively removes `null` and `undefined` from all properties of an object type.
+ *
+ * @remarks
+ * - Properties that are primitives or browser native objects have their null/undefined removed.
+ * - The `D` parameter controls recursion depth (default: 10) to prevent infinite recursion with circular references.
+ * - More strict than `NonNullable<T>` as it recursively applies to nested objects.
+ *
+ * @example
+ * ```ts
+ * type User = { name: string | null; address: { street: string | null } | null };
+ * type NonNullableUser = DeepNonNullable<User>;
+ * // { name: string; address: { street: string } }
+ * ```
+ */
+export type DeepNonNullable<T, D extends number = 10> = D extends 0
+  ? T
+  : T extends BrowserNativeObject | NestedValue
+    ? T
+    : {
+        [K in keyof T]: T[K] extends object
+          ? DeepNonNullable<T[K], Depth[D]>
+          : NonNullable<T[K]>;
+      };
+
+/**
+ * Recursively makes all properties of an object type readonly.
+ *
+ * @remarks
+ * - Properties that are primitives or browser native objects are marked readonly.
+ * - The `D` parameter controls recursion depth (default: 10) to prevent infinite recursion with circular references.
+ * - More strict than `Readonly<T>` as it recursively applies to nested objects.
+ *
+ * @example
+ * ```ts
+ * type User = { name: string; address: { street: string } };
+ * type ReadonlyUser = DeepReadonly<User>;
+ * // { readonly name: string; readonly address: { readonly street: string } }
+ * ```
+ */
+export type DeepReadonly<T, D extends number = 10> = D extends 0
+  ? T
+  : T extends BrowserNativeObject | NestedValue
+    ? T
+    : {
+        readonly [K in keyof T]: T[K] extends object
+          ? DeepReadonly<T[K], Depth[D]>
+          : T[K];
+      };
+
+/**
+ * Recursively makes all properties of an object type readonly and removes `null`/`undefined`.
+ *
+ * @remarks
+ * - Combines the effects of `DeepReadonly` and `DeepNonNullable`.
+ * - The `D` parameter controls recursion depth (default: 10) to prevent infinite recursion with circular references.
+ *
+ * @example
+ * ```ts
+ * type User = { name?: string | null; address?: { street?: string | null } };
+ * type ReadonlyUser = DeepReadonlyNonNullable<User>;
+ * // { readonly name: string; readonly address: { readonly street: string } }
+ * ```
+ */
+export type DeepReadonlyNonNullable<T, D extends number = 10> = D extends 0
+  ? T
+  : T extends BrowserNativeObject | NestedValue
+    ? T
+    : {
+        readonly [K in keyof T]: T[K] extends object
+          ? DeepReadonlyNonNullable<T[K], Depth[D]>
+          : NonNullable<T[K]>;
+      };
+
+/**
+ * Recursively makes all properties of an object type readonly and explicitly nullable.
+ *
+ * @remarks
+ * - Similar to `DeepReadonly`, but ensures all leaf properties are `| null`.
+ * - The `D` parameter controls recursion depth (default: 10) to prevent infinite recursion with circular references.
+ *
+ * @example
+ * ```ts
+ * type User = { name: string; address: { street: string } };
+ * type ReadonlyUser = DeepReadonlyNullable<User>;
+ * // { readonly name: string | null; readonly address: { readonly street: string | null } }
+ * ```
+ */
+export type DeepReadonlyNullable<T, D extends number = 10> = D extends 0
+  ? T
+  : T extends BrowserNativeObject | NestedValue
+    ? T
+    : {
+        readonly [K in keyof T]: T[K] extends object
+          ? DeepReadonlyNullable<T[K], Depth[D]>
+          : T[K] | null;
+      };
+
+/**
+ * A mapping of property names to rollback functions.
+ *
+ * @remarks
+ * Each rollback function takes the initial value and current value, and returns the value to rollback to.
+ *
+ * @example
+ * ```ts
+ * const rollbacks: Rollback = {
+ *   count: (initial, current) => initial,
+ *   timestamp: (initial, current) => Date.now(),
+ * };
+ * ```
+ */
 export type Rollback = Record<
   string,
   (initialValue: any, currentValue: any) => any
@@ -241,6 +538,18 @@ export type IsEqual<A, B> =
     ? true
     : false;
 
+/**
+ * Filters out a specific type from a union.
+ *
+ * @remarks
+ * Removes `ExcludeType` from `KeyType` if they are equal or if `KeyType` extends `ExcludeType`.
+ *
+ * @example
+ * ```ts
+ * type test = Filter<'a' | 'b' | 'c', 'b'>;
+ * // 'a' | 'c'
+ * ```
+ */
 export type Filter<KeyType, ExcludeType> =
   IsEqual<KeyType, ExcludeType> extends true
     ? never
@@ -318,18 +627,69 @@ export type PartialKeys<BaseType, Keys extends keyof BaseType> = Partial<
 
 export const $NestedValue: unique symbol = Symbol("NestedValue");
 
+/**
+ * Marks an object as a nested value that should not be recursively transformed.
+ *
+ * @remarks
+ * Used internally by deep utility types to prevent recursion on certain values.
+ *
+ * @example
+ * ```ts
+ * type Special = NestedValue<{ custom: unknown }>;
+ * ```
+ */
 export type NestedValue<TValue extends object = object> = {
   [$NestedValue]: never;
 } & TValue;
 
+/**
+ * A mutable reference object that holds a current value.
+ *
+ * @remarks
+ * Commonly used in React for holding mutable values that persist across renders.
+ *
+ * @example
+ * ```ts
+ * type InputRef = RefObject<HTMLInputElement>;
+ * const inputRef: RefObject<HTMLInputElement> = { current: null };
+ * ```
+ */
 export interface RefObject<T> {
   current: T;
 }
 
+/**
+ * Matches an object that has an `id` property of type `T`.
+ *
+ * @remarks
+ * By default, the `id` property is of type `string`.
+ *
+ * @example
+ * ```ts
+ * interface User extends Identity<number> {
+ *   name: string;
+ * }
+ * // { id: number; name: string }
+ * ```
+ */
 export interface Identity<T = string> {
   id: T;
 }
 
+/**
+ * Matches an object that has a `version` property.
+ *
+ * @remarks
+ * Useful for tracking or managing different versions of data or entities.
+ *
+ * @example
+ * ```ts
+ * interface Document extends Versioned {
+ *   content: string;
+ * }
+ * // { version: number; content: string }
+ * ```
+ */
 export interface Versioned {
   version: number;
 }
@@ -341,6 +701,20 @@ export interface Sequenced {
   sequence: number;
 }
 
+/**
+ * Matches an object that declares its type via a `__type` property.
+ *
+ * @remarks
+ * Useful for runtime type discrimination and serialization.
+ *
+ * @example
+ * ```ts
+ * interface Animal extends Typed {
+ *   name: string;
+ * }
+ * const dog: Animal = { __type: 'dog', name: 'Fido' };
+ * ```
+ */
 export interface Typed {
   /**
    * The type of the record
@@ -348,6 +722,22 @@ export interface Typed {
   __type: string;
 }
 
+/**
+ * Matches a class or object that can perform type checking on values.
+ *
+ * @remarks
+ * Extends `Typed` to include a type guard function for runtime type checking.
+ *
+ * @example
+ * ```ts
+ * class User implements ClassTypeCheckable<User> {
+ *   __type = 'user';
+ *   isTypeOf(value: unknown): value is User {
+ *     return value instanceof User;
+ *   }
+ * }
+ * ```
+ */
 export interface ClassTypeCheckable<T> extends Typed {
   /**
    * Run type check on the given value
@@ -366,17 +756,54 @@ export type NonRecursiveType =
   | Function
   | (new (...arguments_: any[]) => unknown);
 
+/**
+ * Returns `true` if type `T` is a primitive type, `false` otherwise.
+ *
+ * @example
+ * ```ts
+ * type test1 = IsPrimitive<string>; // true
+ * type test2 = IsPrimitive<object>; // false
+ * ```
+ */
 export type IsPrimitive<T> = [T] extends [Primitive] ? true : false;
+
+/**
+ * Returns `true` if type `T` is `never`, `false` otherwise.
+ */
 export type IsNever<T> = [T] extends [never] ? true : false;
+
+/**
+ * Returns `true` if type `T` is `any`, `false` otherwise.
+ */
 export type IsAny<T> = 0 extends 1 & T ? true : false;
+
+/**
+ * Returns `true` if type `T` is `null`, `false` otherwise.
+ */
 export type IsNull<T> = [T] extends [null] ? true : false;
+
+/**
+ * Returns `true` if type `T` is `undefined`, `false` otherwise.
+ */
 export type IsUndefined<T> = T extends undefined ? true : false;
-export type IsUnknown<T> = unknown extends T // `T` can be `unknown` or `any`
-  ? IsNull<T> extends false // `any` can be `null`, but `unknown` can't be
+
+/**
+ * Returns `true` if type `T` is `unknown`, `false` otherwise.
+ */
+export type IsUnknown<T> = unknown extends T
+  ? IsNull<T> extends false
     ? true
     : false
   : false;
+
+/**
+ * Returns `true` if type `T` is `null | undefined`, `false` otherwise.
+ */
 export type IsNullish<T> = IsNull<T> & IsUndefined<T>;
+
+/**
+ * Returns `true` if type `T` is a function type, `false` otherwise.
+ */
 export type IsFunction<T> = T extends AnyFunction ? true : false;
 
 /**
