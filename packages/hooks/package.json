@@ -11,76 +11,108 @@
   "type": "module",
   "exports": {
     ".": {
-      "require": "./dist/index.cjs",
-      "import": "./dist/index.mjs"
+      "import": "./dist/index.mjs",
+      "require": "./dist/index.cjs"
+    },
+    "./async/src": {
+      "import": "./dist/async/src/index.mjs",
+      "require": "./dist/async/src/index.cjs"
+    },
+    "./async/src/debounce": {
+      "import": "./dist/async/src/debounce.mjs",
+      "require": "./dist/async/src/debounce.cjs"
+    },
+    "./async/src/p-queue": {
+      "import": "./dist/async/src/p-queue.mjs",
+      "require": "./dist/async/src/p-queue.cjs"
+    },
+    "./async/src/throttle": {
+      "import": "./dist/async/src/throttle.mjs",
+      "require": "./dist/async/src/throttle.cjs"
+    },
+    "./env/src/runtime-checks": {
+      "import": "./dist/env/src/runtime-checks.mjs",
+      "require": "./dist/env/src/runtime-checks.cjs"
+    },
+    "./type-checks/src/get-object-tag": {
+      "import": "./dist/type-checks/src/get-object-tag.mjs",
+      "require": "./dist/type-checks/src/get-object-tag.cjs"
+    },
+    "./type-checks/src/is-equal": {
+      "import": "./dist/type-checks/src/is-equal.mjs",
+      "require": "./dist/type-checks/src/is-equal.cjs"
+    },
+    "./type-checks/src/is-function": {
+      "import": "./dist/type-checks/src/is-function.mjs",
+      "require": "./dist/type-checks/src/is-function.cjs"
     },
     "./use-battery": {
-      "require": "./dist/use-battery.cjs",
-      "import": "./dist/use-battery.mjs"
+      "import": "./dist/use-battery.mjs",
+      "require": "./dist/use-battery.cjs"
     },
     "./use-callback-ref": {
-      "require": "./dist/use-callback-ref.cjs",
-      "import": "./dist/use-callback-ref.mjs"
+      "import": "./dist/use-callback-ref.mjs",
+      "require": "./dist/use-callback-ref.cjs"
     },
     "./use-callback-stable": {
-      "require": "./dist/use-callback-stable.cjs",
-      "import": "./dist/use-callback-stable.mjs"
+      "import": "./dist/use-callback-stable.mjs",
+      "require": "./dist/use-callback-stable.cjs"
     },
     "./use-click-away": {
-      "require": "./dist/use-click-away.cjs",
-      "import": "./dist/use-click-away.mjs"
+      "import": "./dist/use-click-away.mjs",
+      "require": "./dist/use-click-away.cjs"
     },
     "./use-compose-refs": {
-      "require": "./dist/use-compose-refs.cjs",
-      "import": "./dist/use-compose-refs.mjs"
+      "import": "./dist/use-compose-refs.mjs",
+      "require": "./dist/use-compose-refs.cjs"
     },
     "./use-copy-to-clipboard": {
-      "require": "./dist/use-copy-to-clipboard.cjs",
-      "import": "./dist/use-copy-to-clipboard.mjs"
+      "import": "./dist/use-copy-to-clipboard.mjs",
+      "require": "./dist/use-copy-to-clipboard.cjs"
     },
     "./use-debounce": {
-      "require": "./dist/use-debounce.cjs",
-      "import": "./dist/use-debounce.mjs"
+      "import": "./dist/use-debounce.mjs",
+      "require": "./dist/use-debounce.cjs"
     },
     "./use-did-finish-ssr": {
-      "require": "./dist/use-did-finish-ssr.cjs",
-      "import": "./dist/use-did-finish-ssr.mjs"
+      "import": "./dist/use-did-finish-ssr.mjs",
+      "require": "./dist/use-did-finish-ssr.cjs"
     },
     "./use-escape-keydown": {
-      "require": "./dist/use-escape-keydown.cjs",
-      "import": "./dist/use-escape-keydown.mjs"
+      "import": "./dist/use-escape-keydown.mjs",
+      "require": "./dist/use-escape-keydown.cjs"
     },
     "./use-event": {
-      "require": "./dist/use-event.cjs",
-      "import": "./dist/use-event.mjs"
+      "import": "./dist/use-event.mjs",
+      "require": "./dist/use-event.cjs"
     },
     "./use-hover": {
-      "require": "./dist/use-hover.cjs",
-      "import": "./dist/use-hover.mjs"
+      "import": "./dist/use-hover.mjs",
+      "require": "./dist/use-hover.cjs"
     },
     "./use-idle": {
-      "require": "./dist/use-idle.cjs",
-      "import": "./dist/use-idle.mjs"
+      "import": "./dist/use-idle.mjs",
+      "require": "./dist/use-idle.cjs"
     },
     "./use-isomorphic-layout-effect": {
-      "require": "./dist/use-isomorphic-layout-effect.cjs",
-      "import": "./dist/use-isomorphic-layout-effect.mjs"
+      "import": "./dist/use-isomorphic-layout-effect.mjs",
+      "require": "./dist/use-isomorphic-layout-effect.cjs"
     },
     "./use-keyboard-visible": {
-      "require": "./dist/use-keyboard-visible.cjs",
-      "import": "./dist/use-keyboard-visible.mjs"
+      "import": "./dist/use-keyboard-visible.mjs",
+      "require": "./dist/use-keyboard-visible.cjs"
     },
     "./use-memo-stable": {
-      "require": "./dist/use-memo-stable.cjs",
-      "import": "./dist/use-memo-stable.mjs"
+      "import": "./dist/use-memo-stable.mjs",
+      "require": "./dist/use-memo-stable.cjs"
     },
     "./use-network-state": {
-      "require": "./dist/use-network-state.cjs",
-      "import": "./dist/use-network-state.mjs"
+      "import": "./dist/use-network-state.mjs",
+      "require": "./dist/use-network-state.cjs"
     },
     "./use-previous": {
-      "require": "./dist/use-previous.cjs",
-      "import": "./dist/use-previous.mjs"
+      "import": "./dist/use-previous.mjs",
+      "require": "./dist/use-previous.cjs"
     },
     "./*": "./*"
   },

@@ -28,11 +28,13 @@ import type {
 import { isObject } from "@stryke/type-checks/is-object";
 import { isString } from "@stryke/type-checks/is-string";
 import { parse } from "jsonc-parser";
-import { Buffer } from "node:buffer";
 import SuperJSON from "superjson";
 import { parse as parseValue } from "./utils/parse";
 import { formatParseError } from "./utils/parse-error";
 import { stringify as stringifyValue } from "./utils/stringify";
+
+// eslint-disable-next-line unicorn/prefer-node-protocol
+import { Buffer } from "buffer";
 
 /**
  * A static JSON parser class used by Storm Software to serialize and deserialize JSON data

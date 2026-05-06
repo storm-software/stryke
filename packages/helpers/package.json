@@ -11,100 +11,216 @@
   "type": "module",
   "exports": {
     ".": {
-      "require": "./dist/index.cjs",
-      "import": "./dist/index.mjs"
+      "import": "./dist/index.mjs",
+      "require": "./dist/index.cjs"
     },
     "./arg-identity": {
-      "require": "./dist/arg-identity.cjs",
-      "import": "./dist/arg-identity.mjs"
+      "import": "./dist/arg-identity.mjs",
+      "require": "./dist/arg-identity.cjs"
+    },
+    "./convert/src": {
+      "import": "./dist/convert/src/index.mjs",
+      "require": "./dist/convert/src/index.cjs"
+    },
+    "./convert/src/parse-type-definition": {
+      "import": "./dist/convert/src/parse-type-definition.mjs",
+      "require": "./dist/convert/src/parse-type-definition.cjs"
+    },
+    "./convert/src/string-to-utf8-array": {
+      "import": "./dist/convert/src/string-to-utf8-array.mjs",
+      "require": "./dist/convert/src/string-to-utf8-array.cjs"
+    },
+    "./convert/src/to-bool": {
+      "import": "./dist/convert/src/to-bool.mjs",
+      "require": "./dist/convert/src/to-bool.cjs"
+    },
+    "./convert/src/to-string-key": {
+      "import": "./dist/convert/src/to-string-key.mjs",
+      "require": "./dist/convert/src/to-string-key.cjs"
+    },
+    "./convert/src/utf8-array-to-string": {
+      "import": "./dist/convert/src/utf8-array-to-string.mjs",
+      "require": "./dist/convert/src/utf8-array-to-string.cjs"
     },
     "./deep-clone": {
-      "require": "./dist/deep-clone.cjs",
-      "import": "./dist/deep-clone.mjs"
+      "import": "./dist/deep-clone.mjs",
+      "require": "./dist/deep-clone.cjs"
     },
     "./deep-merge": {
-      "require": "./dist/deep-merge.cjs",
-      "import": "./dist/deep-merge.mjs"
+      "import": "./dist/deep-merge.mjs",
+      "require": "./dist/deep-merge.cjs"
     },
     "./filter-empty": {
-      "require": "./dist/filter-empty.cjs",
-      "import": "./dist/filter-empty.mjs"
+      "import": "./dist/filter-empty.mjs",
+      "require": "./dist/filter-empty.cjs"
     },
     "./flatten-object": {
-      "require": "./dist/flatten-object.cjs",
-      "import": "./dist/flatten-object.mjs"
+      "import": "./dist/flatten-object.mjs",
+      "require": "./dist/flatten-object.cjs"
     },
     "./get-field": {
-      "require": "./dist/get-field.cjs",
-      "import": "./dist/get-field.mjs"
+      "import": "./dist/get-field.mjs",
+      "require": "./dist/get-field.cjs"
     },
     "./get-ordered-by": {
-      "require": "./dist/get-ordered-by.cjs",
-      "import": "./dist/get-ordered-by.mjs"
+      "import": "./dist/get-ordered-by.mjs",
+      "require": "./dist/get-ordered-by.cjs"
     },
     "./get-unique": {
-      "require": "./dist/get-unique.cjs",
-      "import": "./dist/get-unique.mjs"
+      "import": "./dist/get-unique.mjs",
+      "require": "./dist/get-unique.cjs"
     },
     "./identity": {
-      "require": "./dist/identity.cjs",
-      "import": "./dist/identity.mjs"
+      "import": "./dist/identity.mjs",
+      "require": "./dist/identity.cjs"
     },
     "./is-equal": {
-      "require": "./dist/is-equal.cjs",
-      "import": "./dist/is-equal.mjs"
+      "import": "./dist/is-equal.mjs",
+      "require": "./dist/is-equal.cjs"
     },
     "./lru-cache": {
-      "require": "./dist/lru-cache.cjs",
-      "import": "./dist/lru-cache.mjs"
+      "import": "./dist/lru-cache.mjs",
+      "require": "./dist/lru-cache.cjs"
     },
     "./match-sorter": {
-      "require": "./dist/match-sorter.cjs",
-      "import": "./dist/match-sorter.mjs"
+      "import": "./dist/match-sorter.mjs",
+      "require": "./dist/match-sorter.cjs"
     },
     "./memoize": {
-      "require": "./dist/memoize.cjs",
-      "import": "./dist/memoize.mjs"
+      "import": "./dist/memoize.mjs",
+      "require": "./dist/memoize.cjs"
     },
     "./noop": {
-      "require": "./dist/noop.cjs",
-      "import": "./dist/noop.mjs"
+      "import": "./dist/noop.mjs",
+      "require": "./dist/noop.cjs"
     },
     "./omit": {
-      "require": "./dist/omit.cjs",
-      "import": "./dist/omit.mjs"
+      "import": "./dist/omit.mjs",
+      "require": "./dist/omit.cjs"
     },
     "./pick": {
-      "require": "./dist/pick.cjs",
-      "import": "./dist/pick.mjs"
+      "import": "./dist/pick.mjs",
+      "require": "./dist/pick.cjs"
     },
     "./remove-accents": {
-      "require": "./dist/remove-accents.cjs",
-      "import": "./dist/remove-accents.mjs"
+      "import": "./dist/remove-accents.mjs",
+      "require": "./dist/remove-accents.cjs"
     },
     "./remove-empty-items": {
-      "require": "./dist/remove-empty-items.cjs",
-      "import": "./dist/remove-empty-items.mjs"
+      "import": "./dist/remove-empty-items.mjs",
+      "require": "./dist/remove-empty-items.cjs"
     },
     "./set-field": {
-      "require": "./dist/set-field.cjs",
-      "import": "./dist/set-field.mjs"
+      "import": "./dist/set-field.mjs",
+      "require": "./dist/set-field.cjs"
     },
     "./to-deep-key": {
-      "require": "./dist/to-deep-key.cjs",
-      "import": "./dist/to-deep-key.mjs"
+      "import": "./dist/to-deep-key.mjs",
+      "require": "./dist/to-deep-key.cjs"
     },
     "./to-path": {
-      "require": "./dist/to-path.cjs",
-      "import": "./dist/to-path.mjs"
+      "import": "./dist/to-path.mjs",
+      "require": "./dist/to-path.cjs"
+    },
+    "./type-checks/src": {
+      "import": "./dist/type-checks/src/index.mjs",
+      "require": "./dist/type-checks/src/index.cjs"
+    },
+    "./type-checks/src/get-object-tag": {
+      "import": "./dist/type-checks/src/get-object-tag.mjs",
+      "require": "./dist/type-checks/src/get-object-tag.cjs"
+    },
+    "./type-checks/src/is-buffer": {
+      "import": "./dist/type-checks/src/is-buffer.mjs",
+      "require": "./dist/type-checks/src/is-buffer.cjs"
+    },
+    "./type-checks/src/is-collection": {
+      "import": "./dist/type-checks/src/is-collection.mjs",
+      "require": "./dist/type-checks/src/is-collection.cjs"
+    },
+    "./type-checks/src/is-deep-key": {
+      "import": "./dist/type-checks/src/is-deep-key.mjs",
+      "require": "./dist/type-checks/src/is-deep-key.cjs"
+    },
+    "./type-checks/src/is-empty": {
+      "import": "./dist/type-checks/src/is-empty.mjs",
+      "require": "./dist/type-checks/src/is-empty.cjs"
+    },
+    "./type-checks/src/is-function": {
+      "import": "./dist/type-checks/src/is-function.mjs",
+      "require": "./dist/type-checks/src/is-function.cjs"
+    },
+    "./type-checks/src/is-mergeable-object": {
+      "import": "./dist/type-checks/src/is-mergeable-object.mjs",
+      "require": "./dist/type-checks/src/is-mergeable-object.cjs"
+    },
+    "./type-checks/src/is-non-null-object": {
+      "import": "./dist/type-checks/src/is-non-null-object.mjs",
+      "require": "./dist/type-checks/src/is-non-null-object.cjs"
+    },
+    "./type-checks/src/is-null": {
+      "import": "./dist/type-checks/src/is-null.mjs",
+      "require": "./dist/type-checks/src/is-null.cjs"
+    },
+    "./type-checks/src/is-number": {
+      "import": "./dist/type-checks/src/is-number.mjs",
+      "require": "./dist/type-checks/src/is-number.cjs"
+    },
+    "./type-checks/src/is-object": {
+      "import": "./dist/type-checks/src/is-object.mjs",
+      "require": "./dist/type-checks/src/is-object.cjs"
+    },
+    "./type-checks/src/is-object-index": {
+      "import": "./dist/type-checks/src/is-object-index.mjs",
+      "require": "./dist/type-checks/src/is-object-index.cjs"
+    },
+    "./type-checks/src/is-plain-object": {
+      "import": "./dist/type-checks/src/is-plain-object.mjs",
+      "require": "./dist/type-checks/src/is-plain-object.cjs"
+    },
+    "./type-checks/src/is-primitive": {
+      "import": "./dist/type-checks/src/is-primitive.mjs",
+      "require": "./dist/type-checks/src/is-primitive.cjs"
+    },
+    "./type-checks/src/is-react-element": {
+      "import": "./dist/type-checks/src/is-react-element.mjs",
+      "require": "./dist/type-checks/src/is-react-element.cjs"
+    },
+    "./type-checks/src/is-set": {
+      "import": "./dist/type-checks/src/is-set.mjs",
+      "require": "./dist/type-checks/src/is-set.cjs"
+    },
+    "./type-checks/src/is-set-string": {
+      "import": "./dist/type-checks/src/is-set-string.mjs",
+      "require": "./dist/type-checks/src/is-set-string.cjs"
+    },
+    "./type-checks/src/is-string": {
+      "import": "./dist/type-checks/src/is-string.mjs",
+      "require": "./dist/type-checks/src/is-string.cjs"
+    },
+    "./type-checks/src/is-typed-array": {
+      "import": "./dist/type-checks/src/is-typed-array.mjs",
+      "require": "./dist/type-checks/src/is-typed-array.cjs"
+    },
+    "./type-checks/src/is-undefined": {
+      "import": "./dist/type-checks/src/is-undefined.mjs",
+      "require": "./dist/type-checks/src/is-undefined.cjs"
+    },
+    "./type-checks/src/property-exists": {
+      "import": "./dist/type-checks/src/property-exists.mjs",
+      "require": "./dist/type-checks/src/property-exists.cjs"
+    },
+    "./type-checks/src/type-detect": {
+      "import": "./dist/type-checks/src/type-detect.mjs",
+      "require": "./dist/type-checks/src/type-detect.cjs"
     },
     "./unflatten-object": {
-      "require": "./dist/unflatten-object.cjs",
-      "import": "./dist/unflatten-object.mjs"
+      "import": "./dist/unflatten-object.mjs",
+      "require": "./dist/unflatten-object.cjs"
     },
     "./union": {
-      "require": "./dist/union.cjs",
-      "import": "./dist/union.mjs"
+      "import": "./dist/union.mjs",
+      "require": "./dist/union.cjs"
     },
     "./*": "./*"
   },

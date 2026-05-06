@@ -11,36 +11,36 @@
   "type": "module",
   "exports": {
     ".": {
-      "require": "./dist/index.cjs",
-      "import": "./dist/index.mjs"
+      "import": "./dist/index.mjs",
+      "require": "./dist/index.cjs"
     },
     "./ci-checks": {
-      "require": "./dist/ci-checks.cjs",
-      "import": "./dist/ci-checks.mjs"
+      "import": "./dist/ci-checks.mjs",
+      "require": "./dist/ci-checks.cjs"
     },
     "./environment-checks": {
-      "require": "./dist/environment-checks.cjs",
-      "import": "./dist/environment-checks.mjs"
+      "import": "./dist/environment-checks.mjs",
+      "require": "./dist/environment-checks.cjs"
     },
     "./get-env-paths": {
-      "require": "./dist/get-env-paths.cjs",
-      "import": "./dist/get-env-paths.mjs"
+      "import": "./dist/get-env-paths.mjs",
+      "require": "./dist/get-env-paths.cjs"
     },
     "./load-env": {
-      "require": "./dist/load-env.cjs",
-      "import": "./dist/load-env.mjs"
+      "import": "./dist/load-env.mjs",
+      "require": "./dist/load-env.cjs"
     },
     "./providers": {
-      "require": "./dist/providers.cjs",
-      "import": "./dist/providers.mjs"
+      "import": "./dist/providers.mjs",
+      "require": "./dist/providers.cjs"
     },
     "./runtime-checks": {
-      "require": "./dist/runtime-checks.cjs",
-      "import": "./dist/runtime-checks.mjs"
+      "import": "./dist/runtime-checks.mjs",
+      "require": "./dist/runtime-checks.cjs"
     },
     "./types": {
-      "require": "./dist/types.cjs",
-      "import": "./dist/types.mjs"
+      "import": "./dist/types.mjs",
+      "require": "./dist/types.cjs"
     },
     "./*": "./*"
   },

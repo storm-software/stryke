@@ -11,99 +11,101 @@
   "type": "module",
   "exports": {
     ".": {
-      "require": "./dist/index.cjs",
-      "import": "./dist/index.mjs"
+      "import": "./dist/index.mjs",
+      "require": "./dist/index.cjs"
     },
     "./append": {
-      "require": "./dist/append.cjs",
-      "import": "./dist/append.mjs"
+      "import": "./dist/append.mjs",
+      "require": "./dist/append.cjs"
     },
     "./asset-extensions": {
-      "require": "./dist/asset-extensions.cjs",
-      "import": "./dist/asset-extensions.mjs"
+      "import": "./dist/asset-extensions.mjs",
+      "require": "./dist/asset-extensions.cjs"
     },
     "./common": {
-      "require": "./dist/common.cjs",
-      "import": "./dist/common.mjs"
+      "import": "./dist/common.mjs",
+      "require": "./dist/common.cjs"
     },
     "./correct-path": {
-      "require": "./dist/correct-path.cjs",
-      "import": "./dist/correct-path.mjs"
+      "import": "./dist/correct-path.mjs",
+      "require": "./dist/correct-path.cjs"
     },
     "./cwd": {
-      "require": "./dist/cwd.cjs",
-      "import": "./dist/cwd.mjs"
+      "import": "./dist/cwd.mjs",
+      "require": "./dist/cwd.cjs"
     },
     "./delimiter": {
-      "require": "./dist/delimiter.cjs",
-      "import": "./dist/delimiter.mjs"
+      "import": "./dist/delimiter.mjs",
+      "require": "./dist/delimiter.cjs"
     },
     "./file-path-fns": {
-      "require": "./dist/file-path-fns.cjs",
-      "import": "./dist/file-path-fns.mjs"
+      "import": "./dist/file-path-fns.mjs",
+      "require": "./dist/file-path-fns.cjs"
     },
     "./find": {
-      "require": "./dist/find.cjs",
-      "import": "./dist/find.mjs"
+      "import": "./dist/find.mjs",
+      "require": "./dist/find.cjs"
     },
     "./glob-to-regex": {
-      "require": "./dist/glob-to-regex.cjs",
-      "import": "./dist/glob-to-regex.mjs"
+      "import": "./dist/glob-to-regex.mjs",
+      "require": "./dist/glob-to-regex.cjs"
     },
     "./is-equal": {
-      "require": "./dist/is-equal.cjs",
-      "import": "./dist/is-equal.mjs"
+      "import": "./dist/is-equal.mjs",
+      "require": "./dist/is-equal.cjs"
     },
     "./is-parent-path": {
-      "require": "./dist/is-parent-path.cjs",
-      "import": "./dist/is-parent-path.mjs"
+      "import": "./dist/is-parent-path.mjs",
+      "require": "./dist/is-parent-path.cjs"
     },
     "./is-root-dir": {
-      "require": "./dist/is-root-dir.cjs",
-      "import": "./dist/is-root-dir.mjs"
+      "import": "./dist/is-root-dir.mjs",
+      "require": "./dist/is-root-dir.cjs"
     },
     "./is-type": {
-      "require": "./dist/is-type.cjs",
-      "import": "./dist/is-type.mjs"
+      "import": "./dist/is-type.mjs",
+      "require": "./dist/is-type.cjs"
     },
     "./join": {
-      "require": "./dist/join.cjs",
-      "import": "./dist/join.mjs"
+      "import": "./dist/join.mjs",
+      "require": "./dist/join.cjs"
     },
     "./join-paths": {
-      "require": "./dist/join-paths.cjs",
-      "import": "./dist/join-paths.mjs"
+      "import": "./dist/join-paths.mjs",
+      "require": "./dist/join-paths.cjs"
     },
     "./normalize": {
-      "require": "./dist/normalize.cjs",
-      "import": "./dist/normalize.mjs"
+      "import": "./dist/normalize.mjs",
+      "require": "./dist/normalize.cjs"
     },
     "./regex": {
-      "require": "./dist/regex.cjs",
-      "import": "./dist/regex.mjs"
+      "import": "./dist/regex.mjs",
+      "require": "./dist/regex.cjs"
     },
     "./replace": {
-      "require": "./dist/replace.cjs",
-      "import": "./dist/replace.mjs"
+      "import": "./dist/replace.mjs",
+      "require": "./dist/replace.cjs"
     },
     "./resolve-parent-path": {
-      "require": "./dist/resolve-parent-path.cjs",
-      "import": "./dist/resolve-parent-path.mjs"
+      "import": "./dist/resolve-parent-path.mjs",
+      "require": "./dist/resolve-parent-path.cjs"
     },
     "./slash": {
-      "require": "./dist/slash.cjs",
-      "import": "./dist/slash.mjs"
+      "import": "./dist/slash.mjs",
+      "require": "./dist/slash.cjs"
     },
     "./*": "./*"
   },
   "main": "./dist/index.cjs",
   "module": "./dist/index.mjs",
   "types": "./dist/index.d.cts",
-  "devDependencies": {
+  "dependencies": {
     "@storm-software/testing-tools": "catalog:",
     "@stryke/convert": "workspace:*",
     "@stryke/type-checks": "workspace:*",
-    "@stryke/types": "workspace:*",
+    "@stryke/types": "workspace:*"
+  },
+  "devDependencies": {
     "tsdown": "catalog:"
   },
   "publishConfig": {

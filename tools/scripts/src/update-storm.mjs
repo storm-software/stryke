@@ -24,9 +24,7 @@ try {
 
   // 1) Update @storm-software/* and @stryke/* packages to the latest version
   await echo`${chalk.whiteBright("Checking for @storm-software/* updates...")}`;
-  let proc = $`pnpm exec storm-pnpm update @storm-software/ --install`.timeout(
-    `${8 * 60}s`
-  );
+  let proc = $`pnpm exec storm-pnpm update --all`.timeout(`${8 * 60}s`);
   proc.stdout.on("data", data => echo`${data}`);
   let result = await proc;
   if (result.exitCode !== 0) {

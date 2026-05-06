@@ -11,19 +11,21 @@
   "type": "module",
   "exports": {
     ".": {
-      "require": "./dist/index.cjs",
-      "import": "./dist/index.mjs"
+      "import": "./dist/index.mjs",
+      "require": "./dist/index.cjs"
     },
     "./open": {
-      "require": "./dist/open.cjs",
-      "import": "./dist/open.mjs"
+      "import": "./dist/open.mjs",
+      "require": "./dist/open.cjs"
     },
     "./*": "./*"
   },
   "main": "./dist/index.cjs",
   "module": "./dist/index.mjs",
   "types": "./dist/index.d.cts",
-  "files": ["openChrome.applescript"],
+  "files": [
+    "openChrome.applescript"
+  ],
   "dependencies": {
     "cross-spawn": "catalog:"
   },

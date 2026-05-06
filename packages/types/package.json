@@ -48,84 +48,84 @@
   "type": "module",
   "exports": {
     ".": {
-      "require": "./dist/index.cjs",
-      "import": "./dist/index.mjs"
+      "import": "./dist/index.mjs",
+      "require": "./dist/index.cjs"
     },
     "./array": {
-      "require": "./dist/array.cjs",
-      "import": "./dist/array.mjs"
+      "import": "./dist/array.mjs",
+      "require": "./dist/array.cjs"
     },
     "./async": {
-      "require": "./dist/async.cjs",
-      "import": "./dist/async.mjs"
+      "import": "./dist/async.mjs",
+      "require": "./dist/async.cjs"
     },
     "./base": {
-      "require": "./dist/base.cjs",
-      "import": "./dist/base.mjs"
+      "import": "./dist/base.mjs",
+      "require": "./dist/base.cjs"
     },
     "./configuration": {
-      "require": "./dist/configuration.cjs",
-      "import": "./dist/configuration.mjs"
+      "import": "./dist/configuration.mjs",
+      "require": "./dist/configuration.cjs"
     },
     "./file": {
-      "require": "./dist/file.cjs",
-      "import": "./dist/file.mjs"
+      "import": "./dist/file.mjs",
+      "require": "./dist/file.cjs"
     },
     "./form": {
-      "require": "./dist/form.cjs",
-      "import": "./dist/form.mjs"
+      "import": "./dist/form.mjs",
+      "require": "./dist/form.cjs"
     },
     "./json": {
-      "require": "./dist/json.cjs",
-      "import": "./dist/json.mjs"
+      "import": "./dist/json.mjs",
+      "require": "./dist/json.cjs"
     },
     "./logic": {
-      "require": "./dist/logic.cjs",
-      "import": "./dist/logic.mjs"
+      "import": "./dist/logic.mjs",
+      "require": "./dist/logic.cjs"
     },
     "./messages": {
-      "require": "./dist/messages.cjs",
-      "import": "./dist/messages.mjs"
+      "import": "./dist/messages.mjs",
+      "require": "./dist/messages.cjs"
     },
     "./navigator": {
-      "require": "./dist/navigator.cjs",
-      "import": "./dist/navigator.mjs"
+      "import": "./dist/navigator.mjs",
+      "require": "./dist/navigator.cjs"
     },
     "./number": {
-      "require": "./dist/number.cjs",
-      "import": "./dist/number.mjs"
+      "import": "./dist/number.mjs",
+      "require": "./dist/number.cjs"
     },
     "./object": {
-      "require": "./dist/object.cjs",
-      "import": "./dist/object.mjs"
+      "import": "./dist/object.mjs",
+      "require": "./dist/object.cjs"
     },
     "./package-json": {
-      "require": "./dist/package-json.cjs",
-      "import": "./dist/package-json.mjs"
+      "import": "./dist/package-json.mjs",
+      "require": "./dist/package-json.cjs"
     },
     "./package-manager": {
-      "require": "./dist/package-manager.cjs",
-      "import": "./dist/package-manager.mjs"
+      "import": "./dist/package-manager.mjs",
+      "require": "./dist/package-manager.cjs"
     },
     "./string": {
-      "require": "./dist/string.cjs",
-      "import": "./dist/string.mjs"
+      "import": "./dist/string.mjs",
+      "require": "./dist/string.cjs"
     },
     "./system": {
-      "require": "./dist/system.cjs",
-      "import": "./dist/system.mjs"
+      "import": "./dist/system.mjs",
+      "require": "./dist/system.cjs"
     },
     "./tsconfig": {
-      "require": "./dist/tsconfig.cjs",
-      "import": "./dist/tsconfig.mjs"
+      "import": "./dist/tsconfig.mjs",
+      "require": "./dist/tsconfig.cjs"
     },
     "./user": {
-      "require": "./dist/user.cjs",
-      "import": "./dist/user.mjs"
+      "import": "./dist/user.mjs",
+      "require": "./dist/user.cjs"
     },
     "./validations": {
-      "require": "./dist/validations.cjs",
-      "import": "./dist/validations.mjs"
+      "import": "./dist/validations.mjs",
+      "require": "./dist/validations.cjs"
     },
     "./*": "./*"
   },

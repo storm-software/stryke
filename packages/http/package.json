@@ -11,40 +11,40 @@
   "type": "module",
   "exports": {
     ".": {
-      "require": "./dist/index.cjs",
-      "import": "./dist/index.mjs"
+      "import": "./dist/index.mjs",
+      "require": "./dist/index.cjs"
     },
     "./agent": {
-      "require": "./dist/agent.cjs",
-      "import": "./dist/agent.mjs"
+      "import": "./dist/agent.mjs",
+      "require": "./dist/agent.cjs"
     },
     "./fetch": {
-      "require": "./dist/fetch.cjs",
-      "import": "./dist/fetch.mjs"
+      "import": "./dist/fetch.mjs",
+      "require": "./dist/fetch.cjs"
     },
     "./format-data-uri": {
-      "require": "./dist/format-data-uri.cjs",
-      "import": "./dist/format-data-uri.mjs"
+      "import": "./dist/format-data-uri.mjs",
+      "require": "./dist/format-data-uri.cjs"
     },
     "./get-free-port": {
-      "require": "./dist/get-free-port.cjs",
-      "import": "./dist/get-free-port.mjs"
+      "import": "./dist/get-free-port.mjs",
+      "require": "./dist/get-free-port.cjs"
     },
     "./http-proxy": {
-      "require": "./dist/http-proxy.cjs",
-      "import": "./dist/http-proxy.mjs"
+      "import": "./dist/http-proxy.mjs",
+      "require": "./dist/http-proxy.cjs"
     },
     "./https-proxy": {
-      "require": "./dist/https-proxy.cjs",
-      "import": "./dist/https-proxy.mjs"
+      "import": "./dist/https-proxy.mjs",
+      "require": "./dist/https-proxy.cjs"
     },
     "./parse-response": {
-      "require": "./dist/parse-response.cjs",
-      "import": "./dist/parse-response.mjs"
+      "import": "./dist/parse-response.mjs",
+      "require": "./dist/parse-response.cjs"
     },
     "./proxy-agent": {
-      "require": "./dist/proxy-agent.cjs",
-      "import": "./dist/proxy-agent.mjs"
+      "import": "./dist/proxy-agent.mjs",
+      "require": "./dist/proxy-agent.cjs"
     },
     "./*": "./*"
   },

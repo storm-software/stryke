@@ -11,104 +11,188 @@
   "type": "module",
   "exports": {
     ".": {
-      "require": "./dist/index.cjs",
-      "import": "./dist/index.mjs"
+      "import": "./dist/index.mjs",
+      "require": "./dist/index.cjs"
     },
     "./buffer": {
-      "require": "./dist/buffer.cjs",
-      "import": "./dist/buffer.mjs"
+      "import": "./dist/buffer.mjs",
+      "require": "./dist/buffer.cjs"
     },
     "./chmod-x": {
-      "require": "./dist/chmod-x.cjs",
-      "import": "./dist/chmod-x.mjs"
+      "import": "./dist/chmod-x.mjs",
+      "require": "./dist/chmod-x.cjs"
     },
     "./command-exists": {
-      "require": "./dist/command-exists.cjs",
-      "import": "./dist/command-exists.mjs"
+      "import": "./dist/command-exists.mjs",
+      "require": "./dist/command-exists.cjs"
     },
     "./compress": {
-      "require": "./dist/compress.cjs",
-      "import": "./dist/compress.mjs"
+      "import": "./dist/compress.mjs",
+      "require": "./dist/compress.cjs"
     },
     "./constants": {
-      "require": "./dist/constants.cjs",
-      "import": "./dist/constants.mjs"
+      "import": "./dist/constants.mjs",
+      "require": "./dist/constants.cjs"
     },
     "./copy-file": {
-      "require": "./dist/copy-file.cjs",
-      "import": "./dist/copy-file.mjs"
+      "import": "./dist/copy-file.mjs",
+      "require": "./dist/copy-file.cjs"
     },
     "./exists": {
-      "require": "./dist/exists.cjs",
-      "import": "./dist/exists.mjs"
+      "import": "./dist/exists.mjs",
+      "require": "./dist/exists.cjs"
     },
     "./get-parent-path": {
-      "require": "./dist/get-parent-path.cjs",
-      "import": "./dist/get-parent-path.mjs"
+      "import": "./dist/get-parent-path.mjs",
+      "require": "./dist/get-parent-path.cjs"
     },
     "./get-workspace-root": {
-      "require": "./dist/get-workspace-root.cjs",
-      "import": "./dist/get-workspace-root.mjs"
+      "import": "./dist/get-workspace-root.mjs",
+      "require": "./dist/get-workspace-root.cjs"
     },
     "./helpers": {
-      "require": "./dist/helpers.cjs",
-      "import": "./dist/helpers.mjs"
+      "import": "./dist/helpers.mjs",
+      "require": "./dist/helpers.cjs"
     },
     "./install": {
-      "require": "./dist/install.cjs",
-      "import": "./dist/install.mjs"
+      "import": "./dist/install.mjs",
+      "require": "./dist/install.cjs"
     },
     "./is-file": {
-      "require": "./dist/is-file.cjs",
-      "import": "./dist/is-file.mjs"
+      "import": "./dist/is-file.mjs",
+      "require": "./dist/is-file.cjs"
     },
     "./json": {
-      "require": "./dist/json.cjs",
-      "import": "./dist/json.mjs"
+      "import": "./dist/json.mjs",
+      "require": "./dist/json.cjs"
+    },
+    "./json/src/storm-json": {
+      "import": "./dist/json/src/storm-json.mjs",
+      "require": "./dist/json/src/storm-json.cjs"
+    },
+    "./json/src/utils/code-frames": {
+      "import": "./dist/json/src/utils/code-frames.mjs",
+      "require": "./dist/json/src/utils/code-frames.cjs"
+    },
+    "./json/src/utils/parse": {
+      "import": "./dist/json/src/utils/parse.mjs",
+      "require": "./dist/json/src/utils/parse.cjs"
+    },
+    "./json/src/utils/parse-error": {
+      "import": "./dist/json/src/utils/parse-error.mjs",
+      "require": "./dist/json/src/utils/parse-error.cjs"
+    },
+    "./json/src/utils/stringify": {
+      "import": "./dist/json/src/utils/stringify.mjs",
+      "require": "./dist/json/src/utils/stringify.cjs"
+    },
+    "./json/src/utils/strip-comments": {
+      "import": "./dist/json/src/utils/strip-comments.mjs",
+      "require": "./dist/json/src/utils/strip-comments.cjs"
     },
     "./list-files": {
-      "require": "./dist/list-files.cjs",
-      "import": "./dist/list-files.mjs"
+      "import": "./dist/list-files.mjs",
+      "require": "./dist/list-files.cjs"
     },
     "./package-fns": {
-      "require": "./dist/package-fns.cjs",
-      "import": "./dist/package-fns.mjs"
+      "import": "./dist/package-fns.mjs",
+      "require": "./dist/package-fns.cjs"
     },
     "./read-file": {
-      "require": "./dist/read-file.cjs",
-      "import": "./dist/read-file.mjs"
+      "import": "./dist/read-file.mjs",
+      "require": "./dist/read-file.cjs"
     },
     "./registry": {
-      "require": "./dist/registry.cjs",
-      "import": "./dist/registry.mjs"
+      "import": "./dist/registry.mjs",
+      "require": "./dist/registry.cjs"
     },
     "./remove-file": {
-      "require": "./dist/remove-file.cjs",
-      "import": "./dist/remove-file.mjs"
+      "import": "./dist/remove-file.mjs",
+      "require": "./dist/remove-file.cjs"
     },
     "./resolve": {
-      "require": "./dist/resolve.cjs",
-      "import": "./dist/resolve.mjs"
+      "import": "./dist/resolve.mjs",
+      "require": "./dist/resolve.cjs"
     },
     "./semver-fns": {
-      "require": "./dist/semver-fns.cjs",
-      "import": "./dist/semver-fns.mjs"
+      "import": "./dist/semver-fns.mjs",
+      "require": "./dist/semver-fns.cjs"
     },
     "./toml": {
-      "require": "./dist/toml.cjs",
-      "import": "./dist/toml.mjs"
+      "import": "./dist/toml.mjs",
+      "require": "./dist/toml.cjs"
     },
     "./tsconfig": {
-      "require": "./dist/tsconfig.cjs",
-      "import": "./dist/tsconfig.mjs"
+      "import": "./dist/tsconfig.mjs",
+      "require": "./dist/tsconfig.cjs"
+    },
+    "./type-checks/src": {
+      "import": "./dist/type-checks/src/index.mjs",
+      "require": "./dist/type-checks/src/index.cjs"
+    },
+    "./type-checks/src/get-object-tag": {
+      "import": "./dist/type-checks/src/get-object-tag.mjs",
+      "require": "./dist/type-checks/src/get-object-tag.cjs"
+    },
+    "./type-checks/src/is-buffer": {
+      "import": "./dist/type-checks/src/is-buffer.mjs",
+      "require": "./dist/type-checks/src/is-buffer.cjs"
+    },
+    "./type-checks/src/is-collection": {
+      "import": "./dist/type-checks/src/is-collection.mjs",
+      "require": "./dist/type-checks/src/is-collection.cjs"
+    },
+    "./type-checks/src/is-empty": {
+      "import": "./dist/type-checks/src/is-empty.mjs",
+      "require": "./dist/type-checks/src/is-empty.cjs"
+    },
+    "./type-checks/src/is-error": {
+      "import": "./dist/type-checks/src/is-error.mjs",
+      "require": "./dist/type-checks/src/is-error.cjs"
+    },
+    "./type-checks/src/is-null": {
+      "import": "./dist/type-checks/src/is-null.mjs",
+      "require": "./dist/type-checks/src/is-null.cjs"
+    },
+    "./type-checks/src/is-number": {
+      "import": "./dist/type-checks/src/is-number.mjs",
+      "require": "./dist/type-checks/src/is-number.cjs"
+    },
+    "./type-checks/src/is-object": {
+      "import": "./dist/type-checks/src/is-object.mjs",
+      "require": "./dist/type-checks/src/is-object.cjs"
+    },
+    "./type-checks/src/is-plain-object": {
+      "import": "./dist/type-checks/src/is-plain-object.mjs",
+      "require": "./dist/type-checks/src/is-plain-object.cjs"
+    },
+    "./type-checks/src/is-set": {
+      "import": "./dist/type-checks/src/is-set.mjs",
+      "require": "./dist/type-checks/src/is-set.cjs"
+    },
+    "./type-checks/src/is-set-string": {
+      "import": "./dist/type-checks/src/is-set-string.mjs",
+      "require": "./dist/type-checks/src/is-set-string.cjs"
+    },
+    "./type-checks/src/is-string": {
+      "import": "./dist/type-checks/src/is-string.mjs",
+      "require": "./dist/type-checks/src/is-string.cjs"
+    },
+    "./type-checks/src/is-undefined": {
+      "import": "./dist/type-checks/src/is-undefined.mjs",
+      "require": "./dist/type-checks/src/is-undefined.cjs"
+    },
+    "./type-checks/src/type-detect": {
+      "import": "./dist/type-checks/src/type-detect.mjs",
+      "require": "./dist/type-checks/src/type-detect.cjs"
     },
     "./write-file": {
-      "require": "./dist/write-file.cjs",
-      "import": "./dist/write-file.mjs"
+      "import": "./dist/write-file.mjs",
+      "require": "./dist/write-file.cjs"
     },
     "./yaml": {
-      "require": "./dist/yaml.cjs",
-      "import": "./dist/yaml.mjs"
+      "import": "./dist/yaml.mjs",
+      "require": "./dist/yaml.cjs"
     },
     "./*": "./*"
   },
@@ -116,6 +200,7 @@
   "module": "./dist/index.mjs",
   "types": "./dist/index.d.cts",
   "dependencies": {
+    "tinyexec": "catalog:",
     "@antfu/install-pkg": "catalog:",
     "@storm-software/config-tools": "catalog:",
     "@stryke/convert": "workspace:*",
@@ -134,17 +219,7 @@
   "devDependencies": {
     "@types/node": "catalog:",
     "@types/semver": "catalog:",
-    "nx": "catalog:",
-    "tinyexec": "catalog:",
     "tsdown": "catalog:"
-  },
-  "peerDependencies": {
-    "nx": "catalog:"
-  },
-  "peerDependenciesMeta": {
-    "nx": {
-      "optional": true
-    }
   },
   "publishConfig": {
     "access": "public"

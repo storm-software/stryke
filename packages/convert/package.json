@@ -11,64 +11,120 @@
   "type": "module",
   "exports": {
     ".": {
-      "require": "./dist/index.cjs",
-      "import": "./dist/index.mjs"
+      "import": "./dist/index.mjs",
+      "require": "./dist/index.cjs"
     },
     "./array-buffer-to-string": {
-      "require": "./dist/array-buffer-to-string.cjs",
-      "import": "./dist/array-buffer-to-string.mjs"
+      "import": "./dist/array-buffer-to-string.mjs",
+      "require": "./dist/array-buffer-to-string.cjs"
     },
     "./buffer-to-string": {
-      "require": "./dist/buffer-to-string.cjs",
-      "import": "./dist/buffer-to-string.mjs"
+      "import": "./dist/buffer-to-string.mjs",
+      "require": "./dist/buffer-to-string.cjs"
     },
     "./neutral": {
-      "require": "./dist/neutral.cjs",
-      "import": "./dist/neutral.mjs"
+      "import": "./dist/neutral.mjs",
+      "require": "./dist/neutral.cjs"
     },
     "./parse-type-definition": {
-      "require": "./dist/parse-type-definition.cjs",
-      "import": "./dist/parse-type-definition.mjs"
+      "import": "./dist/parse-type-definition.mjs",
+      "require": "./dist/parse-type-definition.cjs"
     },
     "./string-to-buffer": {
-      "require": "./dist/string-to-buffer.cjs",
-      "import": "./dist/string-to-buffer.mjs"
+      "import": "./dist/string-to-buffer.mjs",
+      "require": "./dist/string-to-buffer.cjs"
     },
     "./string-to-uint8-array": {
-      "require": "./dist/string-to-uint8-array.cjs",
-      "import": "./dist/string-to-uint8-array.mjs"
+      "import": "./dist/string-to-uint8-array.mjs",
+      "require": "./dist/string-to-uint8-array.cjs"
     },
     "./string-to-utf8-array": {
-      "require": "./dist/string-to-utf8-array.cjs",
-      "import": "./dist/string-to-utf8-array.mjs"
+      "import": "./dist/string-to-utf8-array.mjs",
+      "require": "./dist/string-to-utf8-array.cjs"
     },
     "./to-array": {
-      "require": "./dist/to-array.cjs",
-      "import": "./dist/to-array.mjs"
+      "import": "./dist/to-array.mjs",
+      "require": "./dist/to-array.cjs"
     },
     "./to-bool": {
-      "require": "./dist/to-bool.cjs",
-      "import": "./dist/to-bool.mjs"
+      "import": "./dist/to-bool.mjs",
+      "require": "./dist/to-bool.cjs"
     },
     "./to-string-key": {
-      "require": "./dist/to-string-key.cjs",
-      "import": "./dist/to-string-key.mjs"
+      "import": "./dist/to-string-key.mjs",
+      "require": "./dist/to-string-key.cjs"
+    },
+    "./type-checks/src": {
+      "import": "./dist/type-checks/src/index.mjs",
+      "require": "./dist/type-checks/src/index.cjs"
+    },
+    "./type-checks/src/get-object-tag": {
+      "import": "./dist/type-checks/src/get-object-tag.mjs",
+      "require": "./dist/type-checks/src/get-object-tag.cjs"
+    },
+    "./type-checks/src/is-boolean": {
+      "import": "./dist/type-checks/src/is-boolean.mjs",
+      "require": "./dist/type-checks/src/is-boolean.cjs"
+    },
+    "./type-checks/src/is-buffer": {
+      "import": "./dist/type-checks/src/is-buffer.mjs",
+      "require": "./dist/type-checks/src/is-buffer.cjs"
+    },
+    "./type-checks/src/is-collection": {
+      "import": "./dist/type-checks/src/is-collection.mjs",
+      "require": "./dist/type-checks/src/is-collection.cjs"
+    },
+    "./type-checks/src/is-empty": {
+      "import": "./dist/type-checks/src/is-empty.mjs",
+      "require": "./dist/type-checks/src/is-empty.cjs"
+    },
+    "./type-checks/src/is-null": {
+      "import": "./dist/type-checks/src/is-null.mjs",
+      "require": "./dist/type-checks/src/is-null.cjs"
+    },
+    "./type-checks/src/is-object": {
+      "import": "./dist/type-checks/src/is-object.mjs",
+      "require": "./dist/type-checks/src/is-object.cjs"
+    },
+    "./type-checks/src/is-plain-object": {
+      "import": "./dist/type-checks/src/is-plain-object.mjs",
+      "require": "./dist/type-checks/src/is-plain-object.cjs"
+    },
+    "./type-checks/src/is-set": {
+      "import": "./dist/type-checks/src/is-set.mjs",
+      "require": "./dist/type-checks/src/is-set.cjs"
+    },
+    "./type-checks/src/is-set-string": {
+      "import": "./dist/type-checks/src/is-set-string.mjs",
+      "require": "./dist/type-checks/src/is-set-string.cjs"
+    },
+    "./type-checks/src/is-string": {
+      "import": "./dist/type-checks/src/is-string.mjs",
+      "require": "./dist/type-checks/src/is-string.cjs"
+    },
+    "./type-checks/src/is-undefined": {
+      "import": "./dist/type-checks/src/is-undefined.mjs",
+      "require": "./dist/type-checks/src/is-undefined.cjs"
+    },
+    "./type-checks/src/type-detect": {
+      "import": "./dist/type-checks/src/type-detect.mjs",
+      "require": "./dist/type-checks/src/type-detect.cjs"
     },
     "./uint8-array-to-stream": {
-      "require": "./dist/uint8-array-to-stream.cjs",
-      "import": "./dist/uint8-array-to-stream.mjs"
+      "import": "./dist/uint8-array-to-stream.mjs",
+      "require": "./dist/uint8-array-to-stream.cjs"
     },
     "./uint8-array-to-string": {
-      "require": "./dist/uint8-array-to-string.cjs",
-      "import": "./dist/uint8-array-to-string.mjs"
+      "import": "./dist/uint8-array-to-string.mjs",
+      "require": "./dist/uint8-array-to-string.cjs"
     },
     "./uint8-array-to-string.node": {
-      "require": "./dist/uint8-array-to-string.node.cjs",
-      "import": "./dist/uint8-array-to-string.node.mjs"
+      "import": "./dist/uint8-array-to-string.node.mjs",
+      "require": "./dist/uint8-array-to-string.node.cjs"
     },
     "./utf8-array-to-string": {
-      "require": "./dist/utf8-array-to-string.cjs",
-      "import": "./dist/utf8-array-to-string.mjs"
+      "import": "./dist/utf8-array-to-string.mjs",
+      "require": "./dist/utf8-array-to-string.cjs"
     },
     "./*": "./*"
   },

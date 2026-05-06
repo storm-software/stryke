@@ -11,24 +11,108 @@
   "type": "module",
   "exports": {
     ".": {
-      "require": "./dist/index.cjs",
-      "import": "./dist/index.mjs"
+      "import": "./dist/index.mjs",
+      "require": "./dist/index.cjs"
     },
     "./helpers": {
-      "require": "./dist/helpers.cjs",
-      "import": "./dist/helpers.mjs"
+      "import": "./dist/helpers.mjs",
+      "require": "./dist/helpers.cjs"
+    },
+    "./json/src/storm-json": {
+      "import": "./dist/json/src/storm-json.mjs",
+      "require": "./dist/json/src/storm-json.cjs"
+    },
+    "./json/src/utils/code-frames": {
+      "import": "./dist/json/src/utils/code-frames.mjs",
+      "require": "./dist/json/src/utils/code-frames.cjs"
+    },
+    "./json/src/utils/parse": {
+      "import": "./dist/json/src/utils/parse.mjs",
+      "require": "./dist/json/src/utils/parse.cjs"
+    },
+    "./json/src/utils/parse-error": {
+      "import": "./dist/json/src/utils/parse-error.mjs",
+      "require": "./dist/json/src/utils/parse-error.cjs"
+    },
+    "./json/src/utils/stringify": {
+      "import": "./dist/json/src/utils/stringify.mjs",
+      "require": "./dist/json/src/utils/stringify.cjs"
+    },
+    "./json/src/utils/strip-comments": {
+      "import": "./dist/json/src/utils/strip-comments.mjs",
+      "require": "./dist/json/src/utils/strip-comments.cjs"
+    },
+    "./path/src/is-type": {
+      "import": "./dist/path/src/is-type.mjs",
+      "require": "./dist/path/src/is-type.cjs"
+    },
+    "./path/src/join-paths": {
+      "import": "./dist/path/src/join-paths.mjs",
+      "require": "./dist/path/src/join-paths.cjs"
+    },
+    "./path/src/regex": {
+      "import": "./dist/path/src/regex.mjs",
+      "require": "./dist/path/src/regex.cjs"
+    },
+    "./path/src/slash": {
+      "import": "./dist/path/src/slash.mjs",
+      "require": "./dist/path/src/slash.cjs"
     },
     "./storm-url": {
-      "require": "./dist/storm-url.cjs",
-      "import": "./dist/storm-url.mjs"
+      "import": "./dist/storm-url.mjs",
+      "require": "./dist/storm-url.cjs"
+    },
+    "./type-checks/src/get-object-tag": {
+      "import": "./dist/type-checks/src/get-object-tag.mjs",
+      "require": "./dist/type-checks/src/get-object-tag.cjs"
+    },
+    "./type-checks/src/is-empty": {
+      "import": "./dist/type-checks/src/is-empty.mjs",
+      "require": "./dist/type-checks/src/is-empty.cjs"
+    },
+    "./type-checks/src/is-integer": {
+      "import": "./dist/type-checks/src/is-integer.mjs",
+      "require": "./dist/type-checks/src/is-integer.cjs"
+    },
+    "./type-checks/src/is-null": {
+      "import": "./dist/type-checks/src/is-null.mjs",
+      "require": "./dist/type-checks/src/is-null.cjs"
+    },
+    "./type-checks/src/is-number": {
+      "import": "./dist/type-checks/src/is-number.mjs",
+      "require": "./dist/type-checks/src/is-number.cjs"
+    },
+    "./type-checks/src/is-object": {
+      "import": "./dist/type-checks/src/is-object.mjs",
+      "require": "./dist/type-checks/src/is-object.cjs"
+    },
+    "./type-checks/src/is-plain-object": {
+      "import": "./dist/type-checks/src/is-plain-object.mjs",
+      "require": "./dist/type-checks/src/is-plain-object.cjs"
+    },
+    "./type-checks/src/is-set": {
+      "import": "./dist/type-checks/src/is-set.mjs",
+      "require": "./dist/type-checks/src/is-set.cjs"
+    },
+    "./type-checks/src/is-set-string": {
+      "import": "./dist/type-checks/src/is-set-string.mjs",
+      "require": "./dist/type-checks/src/is-set-string.cjs"
+    },
+    "./type-checks/src/is-string": {
+      "import": "./dist/type-checks/src/is-string.mjs",
+      "require": "./dist/type-checks/src/is-string.cjs"
+    },
+    "./type-checks/src/is-undefined": {
+      "import": "./dist/type-checks/src/is-undefined.mjs",
+      "require": "./dist/type-checks/src/is-undefined.cjs"
     },
     "./types": {
-      "require": "./dist/types.cjs",
-      "import": "./dist/types.mjs"
+      "import": "./dist/types.mjs",
+      "require": "./dist/types.cjs"
     },
     "./validate": {
-      "require": "./dist/validate.cjs",
-      "import": "./dist/validate.mjs"
+      "import": "./dist/validate.mjs",
+      "require": "./dist/validate.cjs"
     },
     "./*": "./*"
   },

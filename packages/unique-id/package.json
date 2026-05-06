@@ -11,28 +11,80 @@
   "type": "module",
   "exports": {
     ".": {
-      "require": "./dist/index.cjs",
-      "import": "./dist/index.mjs"
+      "import": "./dist/index.mjs",
+      "require": "./dist/index.cjs"
     },
     "./cuid": {
-      "require": "./dist/cuid.cjs",
-      "import": "./dist/cuid.mjs"
+      "import": "./dist/cuid.mjs",
+      "require": "./dist/cuid.cjs"
+    },
+    "./fs/src/list-files": {
+      "import": "./dist/fs/src/list-files.mjs",
+      "require": "./dist/fs/src/list-files.cjs"
+    },
+    "./hash/src/digest": {
+      "import": "./dist/hash/src/digest.mjs",
+      "require": "./dist/hash/src/digest.cjs"
+    },
+    "./hash/src/hash-content": {
+      "import": "./dist/hash/src/hash-content.mjs",
+      "require": "./dist/hash/src/hash-content.cjs"
+    },
+    "./hash/src/hash-files": {
+      "import": "./dist/hash/src/hash-files.mjs",
+      "require": "./dist/hash/src/hash-files.cjs"
+    },
+    "./hash/src/murmurhash": {
+      "import": "./dist/hash/src/murmurhash.mjs",
+      "require": "./dist/hash/src/murmurhash.cjs"
+    },
+    "./hash/src/neutral": {
+      "import": "./dist/hash/src/neutral.mjs",
+      "require": "./dist/hash/src/neutral.cjs"
+    },
+    "./hash/src/xx-hash": {
+      "import": "./dist/hash/src/xx-hash.mjs",
+      "require": "./dist/hash/src/xx-hash.cjs"
     },
     "./nanoid-client": {
-      "require": "./dist/nanoid-client.cjs",
-      "import": "./dist/nanoid-client.mjs"
+      "import": "./dist/nanoid-client.mjs",
+      "require": "./dist/nanoid-client.cjs"
+    },
+    "./path/src": {
+      "import": "./dist/path/src/index.mjs",
+      "require": "./dist/path/src/index.cjs"
+    },
+    "./path/src/delimiter": {
+      "import": "./dist/path/src/delimiter.mjs",
+      "require": "./dist/path/src/delimiter.cjs"
     },
     "./random": {
-      "require": "./dist/random.cjs",
-      "import": "./dist/random.mjs"
+      "import": "./dist/random.mjs",
+      "require": "./dist/random.cjs"
     },
     "./snowflake": {
-      "require": "./dist/snowflake.cjs",
-      "import": "./dist/snowflake.mjs"
+      "import": "./dist/snowflake.mjs",
+      "require": "./dist/snowflake.cjs"
+    },
+    "./type-checks/src": {
+      "import": "./dist/type-checks/src/index.mjs",
+      "require": "./dist/type-checks/src/index.cjs"
+    },
+    "./type-checks/src/is-buffer": {
+      "import": "./dist/type-checks/src/is-buffer.mjs",
+      "require": "./dist/type-checks/src/is-buffer.cjs"
+    },
+    "./type-checks/src/is-collection": {
+      "import": "./dist/type-checks/src/is-collection.mjs",
+      "require": "./dist/type-checks/src/is-collection.cjs"
+    },
+    "./type-checks/src/type-detect": {
+      "import": "./dist/type-checks/src/type-detect.mjs",
+      "require": "./dist/type-checks/src/type-detect.cjs"
     },
     "./uuid": {
-      "require": "./dist/uuid.cjs",
-      "import": "./dist/uuid.mjs"
+      "import": "./dist/uuid.mjs",
+      "require": "./dist/uuid.cjs"
     },
     "./*": "./*"
   },

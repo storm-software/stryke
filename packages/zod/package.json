@@ -86,11 +86,11 @@
   "module": "./dist/index.mjs",
   "types": "./dist/index.d.cts",
   "dependencies": {
+    "@stryke/json": "workspace:*",
     "@stryke/type-checks": "workspace:*",
     "zod-to-json-schema": "catalog:"
   },
   "devDependencies": {
-    "@stryke/json": "workspace:*",
     "tsdown": "catalog:",
     "zod": "catalog:"
   },

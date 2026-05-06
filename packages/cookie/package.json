@@ -11,24 +11,24 @@
   "type": "module",
   "exports": {
     ".": {
-      "require": "./dist/index.cjs",
-      "import": "./dist/index.mjs"
+      "import": "./dist/index.mjs",
+      "require": "./dist/index.cjs"
     },
     "./parse": {
-      "require": "./dist/parse.cjs",
-      "import": "./dist/parse.mjs"
+      "import": "./dist/parse.mjs",
+      "require": "./dist/parse.cjs"
     },
     "./split": {
-      "require": "./dist/split.cjs",
-      "import": "./dist/split.mjs"
+      "import": "./dist/split.mjs",
+      "require": "./dist/split.cjs"
     },
     "./stringify": {
-      "require": "./dist/stringify.cjs",
-      "import": "./dist/stringify.mjs"
+      "import": "./dist/stringify.mjs",
+      "require": "./dist/stringify.cjs"
     },
     "./types": {
-      "require": "./dist/types.cjs",
-      "import": "./dist/types.mjs"
+      "import": "./dist/types.mjs",
+      "require": "./dist/types.cjs"
     },
     "./*": "./*"
   },

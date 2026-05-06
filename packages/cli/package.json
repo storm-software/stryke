@@ -11,84 +11,168 @@
   "type": "module",
   "exports": {
     ".": {
-      "require": "./dist/index.cjs",
-      "import": "./dist/index.mjs"
+      "import": "./dist/index.mjs",
+      "require": "./dist/index.cjs"
+    },
+    "./convert/src/to-array": {
+      "import": "./dist/convert/src/to-array.mjs",
+      "require": "./dist/convert/src/to-array.cjs"
     },
     "./create-options": {
-      "require": "./dist/create-options.cjs",
-      "import": "./dist/create-options.mjs"
+      "import": "./dist/create-options.mjs",
+      "require": "./dist/create-options.cjs"
     },
     "./define-command": {
-      "require": "./dist/define-command.cjs",
-      "import": "./dist/define-command.mjs"
+      "import": "./dist/define-command.mjs",
+      "require": "./dist/define-command.cjs"
+    },
+    "./env/src/ci-checks": {
+      "import": "./dist/env/src/ci-checks.mjs",
+      "require": "./dist/env/src/ci-checks.cjs"
+    },
+    "./env/src/environment-checks": {
+      "import": "./dist/env/src/environment-checks.mjs",
+      "require": "./dist/env/src/environment-checks.cjs"
     },
     "./execute": {
-      "require": "./dist/execute.cjs",
-      "import": "./dist/execute.mjs"
+      "import": "./dist/execute.mjs",
+      "require": "./dist/execute.cjs"
     },
     "./get-command": {
-      "require": "./dist/get-command.cjs",
-      "import": "./dist/get-command.mjs"
+      "import": "./dist/get-command.mjs",
+      "require": "./dist/get-command.cjs"
     },
     "./meta": {
-      "require": "./dist/meta.cjs",
-      "import": "./dist/meta.mjs"
+      "import": "./dist/meta.mjs",
+      "require": "./dist/meta.cjs"
     },
     "./parse": {
-      "require": "./dist/parse.cjs",
-      "import": "./dist/parse.mjs"
+      "import": "./dist/parse.mjs",
+      "require": "./dist/parse.cjs"
     },
     "./run": {
-      "require": "./dist/run.cjs",
-      "import": "./dist/run.mjs"
+      "import": "./dist/run.mjs",
+      "require": "./dist/run.cjs"
     },
     "./shutdown": {
-      "require": "./dist/shutdown.cjs",
-      "import": "./dist/shutdown.mjs"
+      "import": "./dist/shutdown.mjs",
+      "require": "./dist/shutdown.cjs"
+    },
+    "./string-format/src/acronyms": {
+      "import": "./dist/string-format/src/acronyms.mjs",
+      "require": "./dist/string-format/src/acronyms.cjs"
+    },
+    "./string-format/src/articles": {
+      "import": "./dist/string-format/src/articles.mjs",
+      "require": "./dist/string-format/src/articles.cjs"
+    },
+    "./string-format/src/camel-case": {
+      "import": "./dist/string-format/src/camel-case.mjs",
+      "require": "./dist/string-format/src/camel-case.cjs"
+    },
+    "./string-format/src/combine": {
+      "import": "./dist/string-format/src/combine.mjs",
+      "require": "./dist/string-format/src/combine.cjs"
+    },
+    "./string-format/src/conjunctions": {
+      "import": "./dist/string-format/src/conjunctions.mjs",
+      "require": "./dist/string-format/src/conjunctions.cjs"
+    },
+    "./string-format/src/constant-case": {
+      "import": "./dist/string-format/src/constant-case.mjs",
+      "require": "./dist/string-format/src/constant-case.cjs"
+    },
+    "./string-format/src/decamelize": {
+      "import": "./dist/string-format/src/decamelize.mjs",
+      "require": "./dist/string-format/src/decamelize.cjs"
+    },
+    "./string-format/src/format-special-cases": {
+      "import": "./dist/string-format/src/format-special-cases.mjs",
+      "require": "./dist/string-format/src/format-special-cases.cjs"
+    },
+    "./string-format/src/get-words": {
+      "import": "./dist/string-format/src/get-words.mjs",
+      "require": "./dist/string-format/src/get-words.cjs"
+    },
+    "./string-format/src/kebab-case": {
+      "import": "./dist/string-format/src/kebab-case.mjs",
+      "require": "./dist/string-format/src/kebab-case.cjs"
+    },
+    "./string-format/src/prepositions": {
+      "import": "./dist/string-format/src/prepositions.mjs",
+      "require": "./dist/string-format/src/prepositions.cjs"
+    },
+    "./string-format/src/snake-case": {
+      "import": "./dist/string-format/src/snake-case.mjs",
+      "require": "./dist/string-format/src/snake-case.cjs"
+    },
+    "./string-format/src/special-cases": {
+      "import": "./dist/string-format/src/special-cases.mjs",
+      "require": "./dist/string-format/src/special-cases.cjs"
+    },
+    "./string-format/src/title-case": {
+      "import": "./dist/string-format/src/title-case.mjs",
+      "require": "./dist/string-format/src/title-case.cjs"
+    },
+    "./string-format/src/upper-case-first": {
+      "import": "./dist/string-format/src/upper-case-first.mjs",
+      "require": "./dist/string-format/src/upper-case-first.cjs"
+    },
+    "./type-checks/src/get-object-tag": {
+      "import": "./dist/type-checks/src/get-object-tag.mjs",
+      "require": "./dist/type-checks/src/get-object-tag.cjs"
+    },
+    "./type-checks/src/is-boolean": {
+      "import": "./dist/type-checks/src/is-boolean.mjs",
+      "require": "./dist/type-checks/src/is-boolean.cjs"
+    },
+    "./type-checks/src/is-function": {
+      "import": "./dist/type-checks/src/is-function.mjs",
+      "require": "./dist/type-checks/src/is-function.cjs"
     },
     "./types": {
-      "require": "./dist/types.cjs",
-      "import": "./dist/types.mjs"
+      "import": "./dist/types.mjs",
+      "require": "./dist/types.cjs"
     },
     "./usage": {
-      "require": "./dist/usage.cjs",
-      "import": "./dist/usage.mjs"
+      "import": "./dist/usage.mjs",
+      "require": "./dist/usage.cjs"
     },
     "./utils": {
-      "require": "./dist/utils/index.cjs",
-      "import": "./dist/utils/index.mjs"
+      "import": "./dist/utils/index.mjs",
+      "require": "./dist/utils/index.cjs"
     },
     "./utils/align-text": {
-      "require": "./dist/utils/align-text.cjs",
-      "import": "./dist/utils/align-text.mjs"
+      "import": "./dist/utils/align-text.mjs",
+      "require": "./dist/utils/align-text.cjs"
     },
     "./utils/box": {
-      "require": "./dist/utils/box.cjs",
-      "import": "./dist/utils/box.mjs"
+      "import": "./dist/utils/box.mjs",
+      "require": "./dist/utils/box.cjs"
     },
     "./utils/color": {
-      "require": "./dist/utils/color.cjs",
-      "import": "./dist/utils/color.mjs"
+      "import": "./dist/utils/color.mjs",
+      "require": "./dist/utils/color.cjs"
     },
     "./utils/format": {
-      "require": "./dist/utils/format.cjs",
-      "import": "./dist/utils/format.mjs"
+      "import": "./dist/utils/format.mjs",
+      "require": "./dist/utils/format.cjs"
     },
     "./utils/format-columns": {
-      "require": "./dist/utils/format-columns.cjs",
-      "import": "./dist/utils/format-columns.mjs"
+      "import": "./dist/utils/format-columns.mjs",
+      "require": "./dist/utils/format-columns.cjs"
     },
     "./utils/link": {
-      "require": "./dist/utils/link.cjs",
-      "import": "./dist/utils/link.mjs"
+      "import": "./dist/utils/link.mjs",
+      "require": "./dist/utils/link.cjs"
     },
     "./utils/strip-ansi": {
-      "require": "./dist/utils/strip-ansi.cjs",
-      "import": "./dist/utils/strip-ansi.mjs"
+      "import": "./dist/utils/strip-ansi.mjs",
+      "require": "./dist/utils/strip-ansi.cjs"
     },
     "./utils/tree": {
-      "require": "./dist/utils/tree.cjs",
-      "import": "./dist/utils/tree.mjs"
+      "import": "./dist/utils/tree.mjs",
+      "require": "./dist/utils/tree.cjs"
     },
     "./*": "./*"
   },

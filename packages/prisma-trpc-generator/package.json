@@ -48,12 +48,140 @@
   "type": "module",
   "exports": {
     ".": {
-      "require": "./dist/index.cjs",
-      "import": "./dist/index.mjs"
+      "import": "./dist/index.mjs",
+      "require": "./dist/index.cjs"
+    },
+    "./config": {
+      "import": "./dist/config.mjs",
+      "require": "./dist/config.cjs"
     },
     "./generator": {
-      "require": "./dist/generator.cjs",
-      "import": "./dist/generator.mjs"
+      "import": "./dist/generator.mjs",
+      "require": "./dist/generator.cjs"
+    },
+    "./helpers": {
+      "import": "./dist/helpers.mjs",
+      "require": "./dist/helpers.cjs"
+    },
+    "./packages/env/src/get-env-paths": {
+      "import": "./dist/packages/env/src/get-env-paths.mjs",
+      "require": "./dist/packages/env/src/get-env-paths.cjs"
+    },
+    "./packages/string-format/src/acronyms": {
+      "import": "./dist/packages/string-format/src/acronyms.mjs",
+      "require": "./dist/packages/string-format/src/acronyms.cjs"
+    },
+    "./packages/string-format/src/articles": {
+      "import": "./dist/packages/string-format/src/articles.mjs",
+      "require": "./dist/packages/string-format/src/articles.cjs"
+    },
+    "./packages/string-format/src/combine": {
+      "import": "./dist/packages/string-format/src/combine.mjs",
+      "require": "./dist/packages/string-format/src/combine.cjs"
+    },
+    "./packages/string-format/src/conjunctions": {
+      "import": "./dist/packages/string-format/src/conjunctions.mjs",
+      "require": "./dist/packages/string-format/src/conjunctions.cjs"
+    },
+    "./packages/string-format/src/decamelize": {
+      "import": "./dist/packages/string-format/src/decamelize.mjs",
+      "require": "./dist/packages/string-format/src/decamelize.cjs"
+    },
+    "./packages/string-format/src/format-special-cases": {
+      "import": "./dist/packages/string-format/src/format-special-cases.mjs",
+      "require": "./dist/packages/string-format/src/format-special-cases.cjs"
+    },
+    "./packages/string-format/src/lower-case-first": {
+      "import": "./dist/packages/string-format/src/lower-case-first.mjs",
+      "require": "./dist/packages/string-format/src/lower-case-first.cjs"
+    },
+    "./packages/string-format/src/prepositions": {
+      "import": "./dist/packages/string-format/src/prepositions.mjs",
+      "require": "./dist/packages/string-format/src/prepositions.cjs"
+    },
+    "./packages/string-format/src/special-cases": {
+      "import": "./dist/packages/string-format/src/special-cases.mjs",
+      "require": "./dist/packages/string-format/src/special-cases.cjs"
+    },
+    "./packages/string-format/src/title-case": {
+      "import": "./dist/packages/string-format/src/title-case.mjs",
+      "require": "./dist/packages/string-format/src/title-case.cjs"
+    },
+    "./packages/string-format/src/upper-case-first": {
+      "import": "./dist/packages/string-format/src/upper-case-first.mjs",
+      "require": "./dist/packages/string-format/src/upper-case-first.cjs"
+    },
+    "./prisma-generator": {
+      "import": "./dist/prisma-generator.mjs",
+      "require": "./dist/prisma-generator.cjs"
+    },
+    "./project": {
+      "import": "./dist/project.mjs",
+      "require": "./dist/project.cjs"
+    },
+    "./utils/format-file": {
+      "import": "./dist/utils/format-file.mjs",
+      "require": "./dist/utils/format-file.cjs"
+    },
+    "./utils/get-jiti": {
+      "import": "./dist/utils/get-jiti.mjs",
+      "require": "./dist/utils/get-jiti.cjs"
+    },
+    "./utils/get-prisma-internals": {
+      "import": "./dist/utils/get-prisma-internals.mjs",
+      "require": "./dist/utils/get-prisma-internals.cjs"
+    },
+    "./utils/write-file-safely": {
+      "import": "./dist/utils/write-file-safely.mjs",
+      "require": "./dist/utils/write-file-safely.cjs"
+    },
+    "./zod/aggregate-helpers": {
+      "import": "./dist/zod/aggregate-helpers.mjs",
+      "require": "./dist/zod/aggregate-helpers.cjs"
+    },
+    "./zod/comments-helpers": {
+      "import": "./dist/zod/comments-helpers.mjs",
+      "require": "./dist/zod/comments-helpers.cjs"
+    },
+    "./zod/docs-helpers": {
+      "import": "./dist/zod/docs-helpers.mjs",
+      "require": "./dist/zod/docs-helpers.cjs"
+    },
+    "./zod/generator-helpers": {
+      "import": "./dist/zod/generator-helpers.mjs",
+      "require": "./dist/zod/generator-helpers.cjs"
+    },
+    "./zod/helpers": {
+      "import": "./dist/zod/helpers.mjs",
+      "require": "./dist/zod/helpers.cjs"
+    },
+    "./zod/include-helpers": {
+      "import": "./dist/zod/include-helpers.mjs",
+      "require": "./dist/zod/include-helpers.cjs"
+    },
+    "./zod/model-helpers": {
+      "import": "./dist/zod/model-helpers.mjs",
+      "require": "./dist/zod/model-helpers.cjs"
+    },
+    "./zod/modelArgs-helpers": {
+      "import": "./dist/zod/modelArgs-helpers.mjs",
+      "require": "./dist/zod/modelArgs-helpers.cjs"
+    },
+    "./zod/mongodb-helpers": {
+      "import": "./dist/zod/mongodb-helpers.mjs",
+      "require": "./dist/zod/mongodb-helpers.cjs"
+    },
+    "./zod/select-helpers": {
+      "import": "./dist/zod/select-helpers.mjs",
+      "require": "./dist/zod/select-helpers.cjs"
+    },
+    "./zod/transformer": {
+      "import": "./dist/zod/transformer.mjs",
+      "require": "./dist/zod/transformer.cjs"
+    },
+    "./zod/whereUniqueInput-helpers": {
+      "import": "./dist/zod/whereUniqueInput-helpers.mjs",
+      "require": "./dist/zod/whereUniqueInput-helpers.cjs"
     },
     "./*": "./*"
   },
@@ -65,7 +193,9 @@
     "prisma-trpc-generator-cjs": "dist/generator.cjs",
     "prisma-trpc-generator-mjs": "dist/generator.js"
   },
-  "files": ["dist/**/*"],
+  "files": [
+    "dist/**/*"
+  ],
   "dependencies": {
     "@prisma/generator-helper": "catalog:",
     "@prisma/internals": "catalog:",
@@ -85,5 +215,8 @@
   },
   "publishConfig": {
     "access": "public"
+  },
+  "inlinedDependencies": {
+    "pluralize": "8.0.0"
   }
 }

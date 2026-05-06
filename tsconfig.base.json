@@ -5,7 +5,6 @@
   "compilerOptions": {
     "baseUrl": ".",
     "rootDir": ".",
-    "ignoreDeprecations": "6.0",
     "paths": {
       "@stryke/async": ["packages/async/src/index.ts"],
       "@stryke/async/*": ["packages/async/src/*"],

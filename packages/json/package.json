@@ -11,60 +11,71 @@
   "type": "module",
   "exports": {
     ".": {
-      "require": "./dist/index.cjs",
-      "import": "./dist/index.mjs"
+      "import": "./dist/index.mjs",
+      "require": "./dist/index.cjs"
     },
     "./canonical": {
-      "require": "./dist/canonical.cjs",
-      "import": "./dist/canonical.mjs"
+      "import": "./dist/canonical.mjs",
+      "require": "./dist/canonical.cjs"
     },
+    "./is-number-85SqgL4j": "./dist/is-number-85SqgL4j.mjs",
+    "./is-number-BmLP29QR": "./dist/is-number-BmLP29QR.cjs",
+    "./is-object-BRDNi05f": "./dist/is-object-BRDNi05f.cjs",
+    "./is-object-VZK1OB8Y": "./dist/is-object-VZK1OB8Y.mjs",
+    "./is-set-object-C8a2SjJ8": "./dist/is-set-object-C8a2SjJ8.mjs",
+    "./is-set-object-DQwSpVKJ": "./dist/is-set-object-DQwSpVKJ.cjs",
+    "./is-string-DYU047p2": "./dist/is-string-DYU047p2.mjs",
+    "./is-string-N_HXayb5": "./dist/is-string-N_HXayb5.cjs",
+    "./is-undefined-DpBpIVmC": "./dist/is-undefined-DpBpIVmC.mjs",
+    "./is-undefined-jJ_MajQx": "./dist/is-undefined-jJ_MajQx.cjs",
     "./pointer": {
-      "require": "./dist/pointer/index.cjs",
-      "import": "./dist/pointer/index.mjs"
+      "import": "./dist/pointer/index.mjs",
+      "require": "./dist/pointer/index.cjs"
     },
     "./pointer/find-reference": {
-      "require": "./dist/pointer/find-reference.cjs",
-      "import": "./dist/pointer/find-reference.mjs"
+      "import": "./dist/pointer/find-reference.mjs",
+      "require": "./dist/pointer/find-reference.cjs"
     },
     "./pointer/parse": {
-      "require": "./dist/pointer/parse.cjs",
-      "import": "./dist/pointer/parse.mjs"
+      "import": "./dist/pointer/parse.mjs",
+      "require": "./dist/pointer/parse.cjs"
     },
     "./schema": {
-      "require": "./dist/schema.cjs",
-      "import": "./dist/schema.mjs"
+      "import": "./dist/schema.mjs",
+      "require": "./dist/schema.cjs"
     },
     "./storm-json": {
-      "require": "./dist/storm-json.cjs",
-      "import": "./dist/storm-json.mjs"
+      "import": "./dist/storm-json.mjs",
+      "require": "./dist/storm-json.cjs"
     },
+    "./storm-json-Dp5MvaH9": "./dist/storm-json-Dp5MvaH9.cjs",
     "./types": {
-      "require": "./dist/types.cjs",
-      "import": "./dist/types.mjs"
+      "import": "./dist/types.mjs",
+      "require": "./dist/types.cjs"
     },
     "./utils": {
-      "require": "./dist/utils/index.cjs",
-      "import": "./dist/utils/index.mjs"
+      "import": "./dist/utils/index.mjs",
+      "require": "./dist/utils/index.cjs"
     },
     "./utils/code-frames": {
-      "require": "./dist/utils/code-frames.cjs",
-      "import": "./dist/utils/code-frames.mjs"
+      "import": "./dist/utils/code-frames.mjs",
+      "require": "./dist/utils/code-frames.cjs"
     },
     "./utils/parse": {
-      "require": "./dist/utils/parse.cjs",
-      "import": "./dist/utils/parse.mjs"
+      "import": "./dist/utils/parse.mjs",
+      "require": "./dist/utils/parse.cjs"
     },
     "./utils/parse-error": {
-      "require": "./dist/utils/parse-error.cjs",
-      "import": "./dist/utils/parse-error.mjs"
+      "import": "./dist/utils/parse-error.mjs",
+      "require": "./dist/utils/parse-error.cjs"
     },
     "./utils/stringify": {
-      "require": "./dist/utils/stringify.cjs",
-      "import": "./dist/utils/stringify.mjs"
+      "import": "./dist/utils/stringify.mjs",
+      "require": "./dist/utils/stringify.cjs"
     },
     "./utils/strip-comments": {
-      "require": "./dist/utils/strip-comments.cjs",
-      "import": "./dist/utils/strip-comments.mjs"
+      "import": "./dist/utils/strip-comments.mjs",
+      "require": "./dist/utils/strip-comments.cjs"
     },
     "./*": "./*"
   },

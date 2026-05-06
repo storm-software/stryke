@@ -11,188 +11,188 @@
   "type": "module",
   "exports": {
     ".": {
-      "require": "./dist/index.cjs",
-      "import": "./dist/index.mjs"
+      "import": "./dist/index.mjs",
+      "require": "./dist/index.cjs"
     },
     "./get-object-tag": {
-      "require": "./dist/get-object-tag.cjs",
-      "import": "./dist/get-object-tag.mjs"
+      "import": "./dist/get-object-tag.mjs",
+      "require": "./dist/get-object-tag.cjs"
     },
     "./is-array-like": {
-      "require": "./dist/is-array-like.cjs",
-      "import": "./dist/is-array-like.mjs"
+      "import": "./dist/is-array-like.mjs",
+      "require": "./dist/is-array-like.cjs"
     },
     "./is-async-iterable": {
-      "require": "./dist/is-async-iterable.cjs",
-      "import": "./dist/is-async-iterable.mjs"
+      "import": "./dist/is-async-iterable.mjs",
+      "require": "./dist/is-async-iterable.cjs"
     },
     "./is-bigint": {
-      "require": "./dist/is-bigint.cjs",
-      "import": "./dist/is-bigint.mjs"
+      "import": "./dist/is-bigint.mjs",
+      "require": "./dist/is-bigint.cjs"
     },
     "./is-boolean": {
-      "require": "./dist/is-boolean.cjs",
-      "import": "./dist/is-boolean.mjs"
+      "import": "./dist/is-boolean.mjs",
+      "require": "./dist/is-boolean.cjs"
     },
     "./is-buffer": {
-      "require": "./dist/is-buffer.cjs",
-      "import": "./dist/is-buffer.mjs"
+      "import": "./dist/is-buffer.mjs",
+      "require": "./dist/is-buffer.cjs"
     },
     "./is-collection": {
-      "require": "./dist/is-collection.cjs",
-      "import": "./dist/is-collection.mjs"
+      "import": "./dist/is-collection.mjs",
+      "require": "./dist/is-collection.cjs"
     },
     "./is-date": {
-      "require": "./dist/is-date.cjs",
-      "import": "./dist/is-date.mjs"
+      "import": "./dist/is-date.mjs",
+      "require": "./dist/is-date.cjs"
     },
     "./is-deep-key": {
-      "require": "./dist/is-deep-key.cjs",
-      "import": "./dist/is-deep-key.mjs"
+      "import": "./dist/is-deep-key.mjs",
+      "require": "./dist/is-deep-key.cjs"
     },
     "./is-empty": {
-      "require": "./dist/is-empty.cjs",
-      "import": "./dist/is-empty.mjs"
+      "import": "./dist/is-empty.mjs",
+      "require": "./dist/is-empty.cjs"
     },
     "./is-empty-array": {
-      "require": "./dist/is-empty-array.cjs",
-      "import": "./dist/is-empty-array.mjs"
+      "import": "./dist/is-empty-array.mjs",
+      "require": "./dist/is-empty-array.cjs"
     },
     "./is-empty-object": {
-      "require": "./dist/is-empty-object.cjs",
-      "import": "./dist/is-empty-object.mjs"
+      "import": "./dist/is-empty-object.mjs",
+      "require": "./dist/is-empty-object.cjs"
     },
     "./is-empty-string": {
-      "require": "./dist/is-empty-string.cjs",
-      "import": "./dist/is-empty-string.mjs"
+      "import": "./dist/is-empty-string.mjs",
+      "require": "./dist/is-empty-string.cjs"
     },
     "./is-equal": {
-      "require": "./dist/is-equal.cjs",
-      "import": "./dist/is-equal.mjs"
+      "import": "./dist/is-equal.mjs",
+      "require": "./dist/is-equal.cjs"
     },
     "./is-error": {
-      "require": "./dist/is-error.cjs",
-      "import": "./dist/is-error.mjs"
+      "import": "./dist/is-error.mjs",
+      "require": "./dist/is-error.cjs"
     },
     "./is-file-result": {
-      "require": "./dist/is-file-result.cjs",
-      "import": "./dist/is-file-result.mjs"
+      "import": "./dist/is-file-result.mjs",
+      "require": "./dist/is-file-result.cjs"
     },
     "./is-float": {
-      "require": "./dist/is-float.cjs",
-      "import": "./dist/is-float.mjs"
+      "import": "./dist/is-float.mjs",
+      "require": "./dist/is-float.cjs"
     },
     "./is-function": {
-      "require": "./dist/is-function.cjs",
-      "import": "./dist/is-function.mjs"
+      "import": "./dist/is-function.mjs",
+      "require": "./dist/is-function.cjs"
     },
     "./is-integer": {
-      "require": "./dist/is-integer.cjs",
-      "import": "./dist/is-integer.mjs"
+      "import": "./dist/is-integer.mjs",
+      "require": "./dist/is-integer.cjs"
     },
     "./is-mergeable-object": {
-      "require": "./dist/is-mergeable-object.cjs",
-      "import": "./dist/is-mergeable-object.mjs"
+      "import": "./dist/is-mergeable-object.mjs",
+      "require": "./dist/is-mergeable-object.cjs"
     },
     "./is-non-null-object": {
-      "require": "./dist/is-non-null-object.cjs",
-      "import": "./dist/is-non-null-object.mjs"
+      "import": "./dist/is-non-null-object.mjs",
+      "require": "./dist/is-non-null-object.cjs"
     },
     "./is-not-empty": {
-      "require": "./dist/is-not-empty.cjs",
-      "import": "./dist/is-not-empty.mjs"
+      "import": "./dist/is-not-empty.mjs",
+      "require": "./dist/is-not-empty.cjs"
     },
     "./is-null": {
-      "require": "./dist/is-null.cjs",
-      "import": "./dist/is-null.mjs"
+      "import": "./dist/is-null.mjs",
+      "require": "./dist/is-null.cjs"
     },
     "./is-number": {
-      "require": "./dist/is-number.cjs",
-      "import": "./dist/is-number.mjs"
+      "import": "./dist/is-number.mjs",
+      "require": "./dist/is-number.cjs"
     },
     "./is-object": {
-      "require": "./dist/is-object.cjs",
-      "import": "./dist/is-object.mjs"
+      "import": "./dist/is-object.mjs",
+      "require": "./dist/is-object.cjs"
     },
     "./is-object-index": {
-      "require": "./dist/is-object-index.cjs",
-      "import": "./dist/is-object-index.mjs"
+      "import": "./dist/is-object-index.mjs",
+      "require": "./dist/is-object-index.cjs"
     },
     "./is-plain-object": {
-      "require": "./dist/is-plain-object.cjs",
-      "import": "./dist/is-plain-object.mjs"
+      "import": "./dist/is-plain-object.mjs",
+      "require": "./dist/is-plain-object.cjs"
     },
     "./is-primitive": {
-      "require": "./dist/is-primitive.cjs",
-      "import": "./dist/is-primitive.mjs"
+      "import": "./dist/is-primitive.mjs",
+      "require": "./dist/is-primitive.cjs"
     },
     "./is-promise": {
-      "require": "./dist/is-promise.cjs",
-      "import": "./dist/is-promise.mjs"
+      "import": "./dist/is-promise.mjs",
+      "require": "./dist/is-promise.cjs"
     },
     "./is-react-element": {
-      "require": "./dist/is-react-element.cjs",
-      "import": "./dist/is-react-element.mjs"
+      "import": "./dist/is-react-element.mjs",
+      "require": "./dist/is-react-element.cjs"
     },
     "./is-ref": {
-      "require": "./dist/is-ref.cjs",
-      "import": "./dist/is-ref.mjs"
+      "import": "./dist/is-ref.mjs",
+      "require": "./dist/is-ref.cjs"
     },
     "./is-regexp": {
-      "require": "./dist/is-regexp.cjs",
-      "import": "./dist/is-regexp.mjs"
+      "import": "./dist/is-regexp.mjs",
+      "require": "./dist/is-regexp.cjs"
     },
     "./is-select-option": {
-      "require": "./dist/is-select-option.cjs",
-      "import": "./dist/is-select-option.mjs"
+      "import": "./dist/is-select-option.mjs",
+      "require": "./dist/is-select-option.cjs"
     },
     "./is-set": {
-      "require": "./dist/is-set.cjs",
-      "import": "./dist/is-set.mjs"
+      "import": "./dist/is-set.mjs",
+      "require": "./dist/is-set.cjs"
     },
     "./is-set-array": {
-      "require": "./dist/is-set-array.cjs",
-      "import": "./dist/is-set-array.mjs"
+      "import": "./dist/is-set-array.mjs",
+      "require": "./dist/is-set-array.cjs"
     },
     "./is-set-object": {
-      "require": "./dist/is-set-object.cjs",
-      "import": "./dist/is-set-object.mjs"
+      "import": "./dist/is-set-object.mjs",
+      "require": "./dist/is-set-object.cjs"
     },
     "./is-set-string": {
-      "require": "./dist/is-set-string.cjs",
-      "import": "./dist/is-set-string.mjs"
+      "import": "./dist/is-set-string.mjs",
+      "require": "./dist/is-set-string.cjs"
     },
     "./is-string": {
-      "require": "./dist/is-string.cjs",
-      "import": "./dist/is-string.mjs"
+      "import": "./dist/is-string.mjs",
+      "require": "./dist/is-string.cjs"
     },
     "./is-symbol": {
-      "require": "./dist/is-symbol.cjs",
-      "import": "./dist/is-symbol.mjs"
+      "import": "./dist/is-symbol.mjs",
+      "require": "./dist/is-symbol.cjs"
     },
     "./is-typed": {
-      "require": "./dist/is-typed.cjs",
-      "import": "./dist/is-typed.mjs"
+      "import": "./dist/is-typed.mjs",
+      "require": "./dist/is-typed.cjs"
     },
     "./is-typed-array": {
-      "require": "./dist/is-typed-array.cjs",
-      "import": "./dist/is-typed-array.mjs"
+      "import": "./dist/is-typed-array.mjs",
+      "require": "./dist/is-typed-array.cjs"
     },
     "./is-undefined": {
-      "require": "./dist/is-undefined.cjs",
-      "import": "./dist/is-undefined.mjs"
+      "import": "./dist/is-undefined.mjs",
+      "require": "./dist/is-undefined.cjs"
     },
     "./is-url": {
-      "require": "./dist/is-url.cjs",
-      "import": "./dist/is-url.mjs"
+      "import": "./dist/is-url.mjs",
+      "require": "./dist/is-url.cjs"
     },
     "./property-exists": {
-      "require": "./dist/property-exists.cjs",
-      "import": "./dist/property-exists.mjs"
+      "import": "./dist/property-exists.mjs",
+      "require": "./dist/property-exists.cjs"
     },
     "./type-detect": {
-      "require": "./dist/type-detect.cjs",
-      "import": "./dist/type-detect.mjs"
+      "import": "./dist/type-detect.mjs",
+      "require": "./dist/type-detect.cjs"
     },
     "./*": "./*"
   },

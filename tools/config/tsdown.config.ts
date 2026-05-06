@@ -23,7 +23,7 @@ export type TSDownOptions = Partial<UserConfig> & Pick<UserConfig, "name">;
 
 export const DEFAULT_OPTIONS: Omit<Partial<UserConfig>, "name"> = {
   silent: true,
-  target: "node22",
+  target: "esnext",
   outDir: "dist",
   format: ["cjs", "esm"],
   cjsDefault: true,

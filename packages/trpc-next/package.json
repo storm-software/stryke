@@ -11,68 +11,126 @@
   "type": "module",
   "exports": {
     ".": {
-      "require": "./dist/index.cjs",
-      "import": "./dist/index.mjs"
+      "import": "./dist/index.mjs",
+      "require": "./dist/index.cjs"
     },
     "./action-handler": {
-      "require": "./dist/action-handler.cjs",
-      "import": "./dist/action-handler.mjs"
+      "import": "./dist/action-handler.mjs",
+      "require": "./dist/action-handler.cjs"
     },
     "./client": {
-      "require": "./dist/client.cjs",
-      "import": "./dist/client.mjs"
+      "import": "./dist/client.mjs",
+      "require": "./dist/client.cjs"
+    },
+    "./env/src": {
+      "import": "./dist/env/src/index.mjs",
+      "require": "./dist/env/src/index.cjs"
+    },
+    "./env/src/ci-checks": {
+      "import": "./dist/env/src/ci-checks.mjs",
+      "require": "./dist/env/src/ci-checks.cjs"
+    },
+    "./env/src/environment-checks": {
+      "import": "./dist/env/src/environment-checks.mjs",
+      "require": "./dist/env/src/environment-checks.cjs"
+    },
+    "./env/src/get-env-paths": {
+      "import": "./dist/env/src/get-env-paths.mjs",
+      "require": "./dist/env/src/get-env-paths.cjs"
+    },
+    "./env/src/load-env": {
+      "import": "./dist/env/src/load-env.mjs",
+      "require": "./dist/env/src/load-env.cjs"
+    },
+    "./env/src/providers": {
+      "import": "./dist/env/src/providers.mjs",
+      "require": "./dist/env/src/providers.cjs"
+    },
+    "./env/src/runtime-checks": {
+      "import": "./dist/env/src/runtime-checks.mjs",
+      "require": "./dist/env/src/runtime-checks.cjs"
+    },
+    "./fs/src/exists": "./dist/fs/src/exists.mjs",
+    "./fs/src/read-file": "./dist/fs/src/read-file.mjs",
+    "./path/src/is-type": {
+      "import": "./dist/path/src/is-type.mjs",
+      "require": "./dist/path/src/is-type.cjs"
+    },
+    "./path/src/join-paths": {
+      "import": "./dist/path/src/join-paths.mjs",
+      "require": "./dist/path/src/join-paths.cjs"
+    },
+    "./path/src/regex": {
+      "import": "./dist/path/src/regex.mjs",
+      "require": "./dist/path/src/regex.cjs"
+    },
+    "./path/src/slash": {
+      "import": "./dist/path/src/slash.mjs",
+      "require": "./dist/path/src/slash.cjs"
     },
     "./server": {
-      "require": "./dist/server.cjs",
-      "import": "./dist/server.mjs"
+      "import": "./dist/server.mjs",
+      "require": "./dist/server.cjs"
     },
     "./shared": {
-      "require": "./dist/shared.cjs",
-      "import": "./dist/shared.mjs"
+      "import": "./dist/shared.mjs",
+      "require": "./dist/shared.cjs"
     },
     "./shield": {
-      "require": "./dist/shield/index.cjs",
-      "import": "./dist/shield/index.mjs"
+      "import": "./dist/shield/index.mjs",
+      "require": "./dist/shield/index.cjs"
     },
     "./shield/constructors": {
-      "require": "./dist/shield/constructors.cjs",
-      "import": "./dist/shield/constructors.mjs"
+      "import": "./dist/shield/constructors.mjs",
+      "require": "./dist/shield/constructors.cjs"
     },
     "./shield/generator": {
-      "require": "./dist/shield/generator.cjs",
-      "import": "./dist/shield/generator.mjs"
+      "import": "./dist/shield/generator.mjs",
+      "require": "./dist/shield/generator.cjs"
     },
     "./shield/rules": {
-      "require": "./dist/shield/rules.cjs",
-      "import": "./dist/shield/rules.mjs"
+      "import": "./dist/shield/rules.mjs",
+      "require": "./dist/shield/rules.cjs"
     },
     "./shield/shield": {
-      "require": "./dist/shield/shield.cjs",
-      "import": "./dist/shield/shield.mjs"
+      "import": "./dist/shield/shield.mjs",
+      "require": "./dist/shield/shield.cjs"
     },
     "./shield/types": {
-      "require": "./dist/shield/types.cjs",
-      "import": "./dist/shield/types.mjs"
+      "import": "./dist/shield/types.mjs",
+      "require": "./dist/shield/types.cjs"
     },
     "./shield/utils": {
-      "require": "./dist/shield/utils.cjs",
-      "import": "./dist/shield/utils.mjs"
+      "import": "./dist/shield/utils.mjs",
+      "require": "./dist/shield/utils.cjs"
     },
     "./shield/validation": {
-      "require": "./dist/shield/validation.cjs",
-      "import": "./dist/shield/validation.mjs"
+      "import": "./dist/shield/validation.mjs",
+      "require": "./dist/shield/validation.cjs"
+    },
+    "./string-format/src/acronyms": {
+      "import": "./dist/string-format/src/acronyms.mjs",
+      "require": "./dist/string-format/src/acronyms.cjs"
+    },
+    "./string-format/src/format-special-cases": {
+      "import": "./dist/string-format/src/format-special-cases.mjs",
+      "require": "./dist/string-format/src/format-special-cases.cjs"
+    },
+    "./string-format/src/title-case": {
+      "import": "./dist/string-format/src/title-case.mjs",
+      "require": "./dist/string-format/src/title-case.cjs"
     },
     "./tanstack-query/client": {
-      "require": "./dist/tanstack-query/client.cjs",
-      "import": "./dist/tanstack-query/client.mjs"
+      "import": "./dist/tanstack-query/client.mjs",
+      "require": "./dist/tanstack-query/client.cjs"
     },
     "./tanstack-query/server": {
-      "require": "./dist/tanstack-query/server.cjs",
-      "import": "./dist/tanstack-query/server.mjs"
+      "import": "./dist/tanstack-query/server.mjs",
+      "require": "./dist/tanstack-query/server.cjs"
     },
     "./types": {
-      "require": "./dist/types.cjs",
-      "import": "./dist/types.mjs"
+      "import": "./dist/types.mjs",
+      "require": "./dist/types.cjs"
     },
     "./*": "./*"
   },
