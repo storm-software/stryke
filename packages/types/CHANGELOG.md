@@ -2,6 +2,20 @@
 
 # Changelog for Stryke - Types
 
+## [0.12.0](https://github.com/storm-software/stryke/releases/tag/types%400.12.0) (05/01/2026)
+
+### Miscellaneous
+
+- **types:** Cleaned up reusable type modules ([068fd6ef](https://github.com/storm-software/stryke/commit/068fd6ef))
+
+### Bug Fixes
+
+- **types:** Resolve issue with invalid import path ([c3f70c98](https://github.com/storm-software/stryke/commit/c3f70c98))
+
+### Features
+
+- **types:** Added various deep nested reusable types ([a4813c15](https://github.com/storm-software/stryke/commit/a4813c15))
+
 ## [0.11.4](https://github.com/storm-software/stryke/releases/tag/types%400.11.4) (04/26/2026)
 
 ### Bug Fixes

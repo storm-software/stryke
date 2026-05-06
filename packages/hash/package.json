@@ -1,6 +1,6 @@
 {
   "name": "@stryke/hash",
-  "version": "0.13.22",
+  "version": "0.13.23",
   "private": false,
   "description": "A package containing utility functions that hash data using various algorithms.",
   "repository": {

@@ -2,6 +2,18 @@
 
 # Changelog for Stryke - Hash
 
+## [0.13.23](https://github.com/storm-software/stryke/releases/tag/hash%400.13.23) (05/01/2026)
+
+### Bug Fixes
+
+- **hash:** Clean up directory hashing logic ([25092100](https://github.com/storm-software/stryke/commit/25092100))
+
+### Updated Dependencies
+
+- Updated **type-checks** to **v0.6.5**
+- Updated **json** to **v0.14.16**
+- Updated **fs** to **v0.33.70**
+
 ## [0.13.22](https://github.com/storm-software/stryke/releases/tag/hash%400.13.22) (04/26/2026)
 
 ### Updated Dependencies
