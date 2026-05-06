@@ -16,6 +16,10 @@
 
  ------------------------------------------------------------------- */
 
+import {
+  fileURLToPath as _fileURLToPath,
+  pathToFileURL as _pathToFileURL
+} from "node:url";
 import { appendPath } from "./append";
 import { cwd as currentDir } from "./cwd";
 import { isAbsolutePath } from "./is-type";
@@ -262,4 +266,64 @@ export function withoutTrailingSlash(path: string): string {
   const result = correctPath(path);
 
   return result.endsWith("/") ? result.slice(0, -1) : result;
+}
+
+/**
+ * Converts a file URL to a local file system path with normalized slashes.
+ *
+ * @example
+ * ```ts
+ * let filePath = fileURLToPath("file:///C:/Users/user/Documents/file.txt");
+ * // filePath = "C:/Users/user/Documents/file.txt"
+ *
+ * filePath = fileURLToPath(new URL("file:///C:/Users/user/Documents/file.txt"));
+ * // filePath = "C:/Users/user/Documents/file.txt"
+ * ```
+ *
+ * @param id - The file URL or local path to convert.
+ * @returns A normalized file system path.
+ */
+export function fileURLToPath(id: string | URL): string {
+  if (typeof id === "string" && !id.startsWith("file://")) {
+    return correctPath(id);
+  }
+  return correctPath(_fileURLToPath(id));
+}
+
+/**
+ * Converts a local file system path to a file URL.
+ *
+ * @example
+ * ```ts
+ * let fileUrl = pathToFileURL("C:/Users/user/Documents/file.txt");
+ * // fileUrl = new URL("file:///C:/Users/user/Documents/file.txt")
+ *
+ * fileUrl = pathToFileURL(new URL("C:/Users/user/Documents/file.txt"));
+ * // fileUrl = new URL("file:///C:/Users/user/Documents/file.txt")
+ * ```
+ *
+ * @param id - The file system path to convert.
+ * @returns The resulting file URL as a URL object.
+ */
+export function pathToFileURL(id: string | URL): URL {
+  return _pathToFileURL(fileURLToPath(id));
+}
+
+/**
+ * Converts a local file system path to a file URL string.
+ *
+ * @example
+ * ```ts
+ * let fileUrl = pathToFileURLString("C:/Users/user/Documents/file.txt");
+ * // fileUrl = "file:///C:/Users/user/Documents/file.txt"
+ *
+ * fileUrl = pathToFileURLString(new URL("C:/Users/user/Documents/file.txt"));
+ * // fileUrl = "file:///C:/Users/user/Documents/file.txt"
+ * ```
+ *
+ * @param id - The file system path to convert.
+ * @returns The resulting file URL as a string.
+ */
+export function pathToFileURLString(id: string | URL): string {
+  return pathToFileURL(id).toString();
 }
