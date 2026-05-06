@@ -200,7 +200,6 @@
   "module": "./dist/index.mjs",
   "types": "./dist/index.d.cts",
   "dependencies": {
-    "tinyexec": "catalog:",
     "@antfu/install-pkg": "catalog:",
     "@storm-software/config-tools": "catalog:",
     "@stryke/convert": "workspace:*",
@@ -214,6 +213,7 @@
     "nanotar": "catalog:",
     "semver": "catalog:",
     "smol-toml": "catalog:",
+    "tinyexec": "catalog:",
     "yaml": "catalog:"
   },
   "devDependencies": {
