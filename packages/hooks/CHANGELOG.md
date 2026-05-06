@@ -2,6 +2,19 @@
 
 # Changelog for Stryke - Hooks
 
+## [0.4.86](https://github.com/storm-software/stryke/releases/tag/hooks%400.4.86) (05/06/2026)
+
+### Miscellaneous
+
+- **monorepo:** Resolve issues with workspace packages' build configuration ([f4a3941f](https://github.com/storm-software/stryke/commit/f4a3941f))
+
+### Updated Dependencies
+
+- Updated **type-checks** to **v0.6.6**
+- Updated **async** to **v0.1.2**
+- Updated **types** to **v0.12.1**
+- Updated **env** to **v0.20.88**
+
 ## [0.4.85](https://github.com/storm-software/stryke/releases/tag/hooks%400.4.85) (05/01/2026)
 
 ### Updated Dependencies

@@ -2,6 +2,23 @@
 
 # Changelog for Stryke - Fs
 
+## [0.33.71](https://github.com/storm-software/stryke/releases/tag/fs%400.33.71) (05/06/2026)
+
+### Miscellaneous
+
+- **fs:** Resolve `sherif` linting failures ([9ef6665d](https://github.com/storm-software/stryke/commit/9ef6665d))
+- **monorepo:** Resolve issues with workspace packages' build configuration ([f4a3941f](https://github.com/storm-software/stryke/commit/f4a3941f))
+
+### Updated Dependencies
+
+- Updated **string-format** to **v0.17.14**
+- Updated **type-checks** to **v0.6.6**
+- Updated **convert** to **v0.7.4**
+- Updated **helpers** to **v0.10.13**
+- Updated **types** to **v0.12.1**
+- Updated **json** to **v0.14.17**
+- Updated **path** to **v0.28.3**
+
 ## [0.33.70](https://github.com/storm-software/stryke/releases/tag/fs%400.33.70) (05/01/2026)
 
 ### Updated Dependencies

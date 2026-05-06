@@ -2,6 +2,18 @@
 
 # Changelog for Stryke - Helpers
 
+## [0.10.13](https://github.com/storm-software/stryke/releases/tag/helpers%400.10.13) (05/06/2026)
+
+### Miscellaneous
+
+- **monorepo:** Resolve issues with workspace packages' build configuration ([f4a3941f](https://github.com/storm-software/stryke/commit/f4a3941f))
+
+### Updated Dependencies
+
+- Updated **type-checks** to **v0.6.6**
+- Updated **convert** to **v0.7.4**
+- Updated **types** to **v0.12.1**
+
 ## [0.10.12](https://github.com/storm-software/stryke/releases/tag/helpers%400.10.12) (05/01/2026)
 
 ### Updated Dependencies

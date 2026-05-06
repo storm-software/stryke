@@ -2,6 +2,18 @@
 
 # Changelog for Stryke - URL
 
+## [0.4.20](https://github.com/storm-software/stryke/releases/tag/url%400.4.20) (05/06/2026)
+
+### Miscellaneous
+
+- **monorepo:** Resolve issues with workspace packages' build configuration ([f4a3941f](https://github.com/storm-software/stryke/commit/f4a3941f))
+
+### Updated Dependencies
+
+- Updated **type-checks** to **v0.6.6**
+- Updated **json** to **v0.14.17**
+- Updated **path** to **v0.28.3**
+
 ## [0.4.19](https://github.com/storm-software/stryke/releases/tag/url%400.4.19) (05/01/2026)
 
 ### Updated Dependencies

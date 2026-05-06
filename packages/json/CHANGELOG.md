@@ -2,6 +2,18 @@
 
 # Changelog for Stryke - JSON
 
+## [0.14.17](https://github.com/storm-software/stryke/releases/tag/json%400.14.17) (05/06/2026)
+
+### Miscellaneous
+
+- **monorepo:** Update workspace's `tsconfig.json` to ignore TS v6.0 deprecations ([6dc97ed2](https://github.com/storm-software/stryke/commit/6dc97ed2))
+- **monorepo:** Resolve issues with workspace packages' build configuration ([f4a3941f](https://github.com/storm-software/stryke/commit/f4a3941f))
+
+### Updated Dependencies
+
+- Updated **type-checks** to **v0.6.6**
+- Updated **types** to **v0.12.1**
+
 ## [0.14.16](https://github.com/storm-software/stryke/releases/tag/json%400.14.16) (05/01/2026)
 
 ### Updated Dependencies

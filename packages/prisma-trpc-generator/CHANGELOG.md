@@ -2,6 +2,20 @@
 
 # Changelog for Stryke - Prisma TRPC Generator
 
+## [0.13.88](https://github.com/storm-software/stryke/releases/tag/prisma-trpc-generator%400.13.88) (05/06/2026)
+
+### Miscellaneous
+
+- **monorepo:** Resolve issues with workspace packages' build configuration ([f4a3941f](https://github.com/storm-software/stryke/commit/f4a3941f))
+
+### Updated Dependencies
+
+- Updated **string-format** to **v0.17.14**
+- Updated **types** to **v0.12.1**
+- Updated **path** to **v0.28.3**
+- Updated **env** to **v0.20.88**
+- Updated **fs** to **v0.33.71**
+
 ## [0.13.87](https://github.com/storm-software/stryke/releases/tag/prisma-trpc-generator%400.13.87) (05/01/2026)
 
 ### Updated Dependencies

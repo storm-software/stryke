@@ -2,6 +2,16 @@
 
 # Changelog for Stryke - Unique ID
 
+## [0.3.82](https://github.com/storm-software/stryke/releases/tag/unique-id%400.3.82) (05/06/2026)
+
+### Miscellaneous
+
+- **monorepo:** Resolve issues with workspace packages' build configuration ([f4a3941f](https://github.com/storm-software/stryke/commit/f4a3941f))
+
+### Updated Dependencies
+
+- Updated **hash** to **v0.13.24**
+
 ## [0.3.81](https://github.com/storm-software/stryke/releases/tag/unique-id%400.3.81) (05/01/2026)
 
 ### Updated Dependencies
