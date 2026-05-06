@@ -48,7 +48,7 @@
       "import": "./dist/storm-json.mjs",
       "require": "./dist/storm-json.cjs"
     },
-    "./storm-json-Dp5MvaH9": "./dist/storm-json-Dp5MvaH9.cjs",
+    "./storm-json-RQVTItJa": "./dist/storm-json-RQVTItJa.cjs",
     "./types": {
       "import": "./dist/types.mjs",
       "require": "./dist/types.cjs"
