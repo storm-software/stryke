@@ -2,6 +2,17 @@
 
 # Changelog for Stryke - JSON
 
+## [0.14.20](https://github.com/storm-software/stryke/releases/tag/json%400.14.20) (05/08/2026)
+
+### Miscellaneous
+
+- **json:** Resolve issue with missing workspace dependencies ([3077a6d5](https://github.com/storm-software/stryke/commit/3077a6d5))
+
+### Updated Dependencies
+
+- Updated **type-checks** to **v0.6.8**
+- Updated **types** to **v0.12.3**
+
 ## [0.14.19](https://github.com/storm-software/stryke/releases/tag/json%400.14.19) (05/08/2026)
 
 ### Bug Fixes
