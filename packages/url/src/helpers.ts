@@ -43,7 +43,7 @@ export function formatLocalePath(locale: string) {
  * @returns `true` if the string is a valid URL, otherwise `false`.
  */
 export function isValidURL(str: string): boolean {
-  return /(?:https?:\/\/.)?(?:www\.)?[-\w@:%.+~#=]{2,256}\.[a-z]{2,6}\b[-\w@:%+.~#?&/=]*/.test(
+  return /(?:(?:https?|wss?|s?ftp):\/\/.)?(?:(?:www\.)?[-\w@:%.+~#=]{2,256}\.[a-z]{2,6}|localhost)\b[-\w@:%+.~#?&/=]*/.test(
     str
   );
 }
