@@ -2,6 +2,12 @@
 
 # Changelog for Stryke - JSON
 
+## [0.14.19](https://github.com/storm-software/stryke/releases/tag/json%400.14.19) (05/08/2026)
+
+### Bug Fixes
+
+- **json:** Resolve issue with `SuperJSON` import ([a523d853](https://github.com/storm-software/stryke/commit/a523d853))
+
 ## [0.14.18](https://github.com/storm-software/stryke/releases/tag/json%400.14.18) (05/07/2026)
 
 ### Bug Fixes
