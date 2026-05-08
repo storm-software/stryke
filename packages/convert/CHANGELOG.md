@@ -2,6 +2,17 @@
 
 # Changelog for Stryke - Convert
 
+## [0.7.5](https://github.com/storm-software/stryke/releases/tag/convert%400.7.5) (05/07/2026)
+
+### Bug Fixes
+
+- **monorepo:** Resolve inter-package dependency issues ([e83c91bc](https://github.com/storm-software/stryke/commit/e83c91bc))
+
+### Updated Dependencies
+
+- Updated **type-checks** to **v0.6.7**
+- Updated **types** to **v0.12.2**
+
 ## [0.7.4](https://github.com/storm-software/stryke/releases/tag/convert%400.7.4) (05/06/2026)
 
 ### Miscellaneous

@@ -2,6 +2,23 @@
 
 # Changelog for Stryke - Unique ID
 
+## [0.3.84](https://github.com/storm-software/stryke/releases/tag/unique-id%400.3.84) (05/07/2026)
+
+### Miscellaneous
+
+- **monorepo:** Resolve `sherif` linting failures ([2cf6fc70](https://github.com/storm-software/stryke/commit/2cf6fc70))
+
+### Bug Fixes
+
+- **monorepo:** Resolve inter-package dependency issues ([e83c91bc](https://github.com/storm-software/stryke/commit/e83c91bc))
+
+### Updated Dependencies
+
+- Updated **type-checks** to **v0.6.7**
+- Updated **hash** to **v0.13.26**
+- Updated **path** to **v0.29.1**
+- Updated **fs** to **v0.33.73**
+
 ## [0.3.83](https://github.com/storm-software/stryke/releases/tag/unique-id%400.3.83) (05/06/2026)
 
 ### Updated Dependencies

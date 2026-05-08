@@ -2,6 +2,17 @@
 
 # Changelog for Stryke - JSON
 
+## [0.14.18](https://github.com/storm-software/stryke/releases/tag/json%400.14.18) (05/07/2026)
+
+### Bug Fixes
+
+- **monorepo:** Resolve inter-package dependency issues ([e83c91bc](https://github.com/storm-software/stryke/commit/e83c91bc))
+
+### Updated Dependencies
+
+- Updated **type-checks** to **v0.6.7**
+- Updated **types** to **v0.12.2**
+
 ## [0.14.17](https://github.com/storm-software/stryke/releases/tag/json%400.14.17) (05/06/2026)
 
 ### Miscellaneous

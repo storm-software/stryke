@@ -2,6 +2,22 @@
 
 # Changelog for Stryke - URL
 
+## [0.4.22](https://github.com/storm-software/stryke/releases/tag/url%400.4.22) (05/07/2026)
+
+### Miscellaneous
+
+- **monorepo:** Resolve `sherif` linting failures ([2cf6fc70](https://github.com/storm-software/stryke/commit/2cf6fc70))
+
+### Bug Fixes
+
+- **monorepo:** Resolve inter-package dependency issues ([e83c91bc](https://github.com/storm-software/stryke/commit/e83c91bc))
+
+### Updated Dependencies
+
+- Updated **type-checks** to **v0.6.7**
+- Updated **json** to **v0.14.18**
+- Updated **path** to **v0.29.1**
+
 ## [0.4.21](https://github.com/storm-software/stryke/releases/tag/url%400.4.21) (05/06/2026)
 
 ### Updated Dependencies

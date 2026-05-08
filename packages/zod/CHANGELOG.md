@@ -2,6 +2,17 @@
 
 # Changelog for Stryke - Zod
 
+## [0.3.19](https://github.com/storm-software/stryke/releases/tag/zod%400.3.19) (05/07/2026)
+
+### Bug Fixes
+
+- **monorepo:** Resolve inter-package dependency issues ([e83c91bc](https://github.com/storm-software/stryke/commit/e83c91bc))
+
+### Updated Dependencies
+
+- Updated **type-checks** to **v0.6.7**
+- Updated **json** to **v0.14.18**
+
 ## [0.3.18](https://github.com/storm-software/stryke/releases/tag/zod%400.3.18) (05/06/2026)
 
 ### Miscellaneous

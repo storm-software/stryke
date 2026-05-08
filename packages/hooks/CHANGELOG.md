@@ -2,6 +2,23 @@
 
 # Changelog for Stryke - Hooks
 
+## [0.4.88](https://github.com/storm-software/stryke/releases/tag/hooks%400.4.88) (05/07/2026)
+
+### Miscellaneous
+
+- **monorepo:** Resolve `sherif` linting failures ([2cf6fc70](https://github.com/storm-software/stryke/commit/2cf6fc70))
+
+### Bug Fixes
+
+- **monorepo:** Resolve inter-package dependency issues ([e83c91bc](https://github.com/storm-software/stryke/commit/e83c91bc))
+
+### Updated Dependencies
+
+- Updated **type-checks** to **v0.6.7**
+- Updated **async** to **v0.1.3**
+- Updated **types** to **v0.12.2**
+- Updated **env** to **v0.20.90**
+
 ## [0.4.87](https://github.com/storm-software/stryke/releases/tag/hooks%400.4.87) (05/06/2026)
 
 ### Updated Dependencies

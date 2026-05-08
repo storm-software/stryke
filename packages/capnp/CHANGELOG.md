@@ -2,6 +2,19 @@
 
 # Changelog for Stryke - Capnp
 
+## [0.12.99](https://github.com/storm-software/stryke/releases/tag/capnp%400.12.99) (05/07/2026)
+
+### Bug Fixes
+
+- **monorepo:** Resolve inter-package dependency issues ([e83c91bc](https://github.com/storm-software/stryke/commit/e83c91bc))
+
+### Updated Dependencies
+
+- Updated **convert** to **v0.7.5**
+- Updated **types** to **v0.12.2**
+- Updated **path** to **v0.29.1**
+- Updated **fs** to **v0.33.73**
+
 ## [0.12.98](https://github.com/storm-software/stryke/releases/tag/capnp%400.12.98) (05/06/2026)
 
 ### Updated Dependencies
