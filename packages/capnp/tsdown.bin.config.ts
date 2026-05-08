@@ -24,8 +24,10 @@ export default defineTSDownConfig({
   outDir: "dist/bin",
   clean: false,
   exports: false,
-  external: ["typescript"],
-  noExternal: ["capnp-es"],
-  skipNodeModulesBundle: false,
-  unbundle: false
+  unbundle: false,
+  deps: {
+    neverBundle: ["typescript"],
+    alwaysBundle: ["capnp-es"],
+    skipNodeModulesBundle: false
+  }
 });

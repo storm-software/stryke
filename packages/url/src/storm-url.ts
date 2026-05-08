@@ -303,7 +303,7 @@ export class StormURL implements StormURLInterface, URL {
   }
 
   public get isNonEmptyURL(): boolean {
-    return isNonEmptyURL(this.toString());
+    return Boolean(isNonEmptyURL(this.toString()));
   }
 
   // eslint-disable-next-line ts/naming-convention

@@ -18,30 +18,6 @@
       "import": "./dist/arg-identity.mjs",
       "require": "./dist/arg-identity.cjs"
     },
-    "./convert/src": {
-      "import": "./dist/convert/src/index.mjs",
-      "require": "./dist/convert/src/index.cjs"
-    },
-    "./convert/src/parse-type-definition": {
-      "import": "./dist/convert/src/parse-type-definition.mjs",
-      "require": "./dist/convert/src/parse-type-definition.cjs"
-    },
-    "./convert/src/string-to-utf8-array": {
-      "import": "./dist/convert/src/string-to-utf8-array.mjs",
-      "require": "./dist/convert/src/string-to-utf8-array.cjs"
-    },
-    "./convert/src/to-bool": {
-      "import": "./dist/convert/src/to-bool.mjs",
-      "require": "./dist/convert/src/to-bool.cjs"
-    },
-    "./convert/src/to-string-key": {
-      "import": "./dist/convert/src/to-string-key.mjs",
-      "require": "./dist/convert/src/to-string-key.cjs"
-    },
-    "./convert/src/utf8-array-to-string": {
-      "import": "./dist/convert/src/utf8-array-to-string.mjs",
-      "require": "./dist/convert/src/utf8-array-to-string.cjs"
-    },
     "./deep-clone": {
       "import": "./dist/deep-clone.mjs",
       "require": "./dist/deep-clone.cjs"
@@ -122,98 +98,6 @@
       "import": "./dist/to-path.mjs",
       "require": "./dist/to-path.cjs"
     },
-    "./type-checks/src": {
-      "import": "./dist/type-checks/src/index.mjs",
-      "require": "./dist/type-checks/src/index.cjs"
-    },
-    "./type-checks/src/get-object-tag": {
-      "import": "./dist/type-checks/src/get-object-tag.mjs",
-      "require": "./dist/type-checks/src/get-object-tag.cjs"
-    },
-    "./type-checks/src/is-buffer": {
-      "import": "./dist/type-checks/src/is-buffer.mjs",
-      "require": "./dist/type-checks/src/is-buffer.cjs"
-    },
-    "./type-checks/src/is-collection": {
-      "import": "./dist/type-checks/src/is-collection.mjs",
-      "require": "./dist/type-checks/src/is-collection.cjs"
-    },
-    "./type-checks/src/is-deep-key": {
-      "import": "./dist/type-checks/src/is-deep-key.mjs",
-      "require": "./dist/type-checks/src/is-deep-key.cjs"
-    },
-    "./type-checks/src/is-empty": {
-      "import": "./dist/type-checks/src/is-empty.mjs",
-      "require": "./dist/type-checks/src/is-empty.cjs"
-    },
-    "./type-checks/src/is-function": {
-      "import": "./dist/type-checks/src/is-function.mjs",
-      "require": "./dist/type-checks/src/is-function.cjs"
-    },
-    "./type-checks/src/is-mergeable-object": {
-      "import": "./dist/type-checks/src/is-mergeable-object.mjs",
-      "require": "./dist/type-checks/src/is-mergeable-object.cjs"
-    },
-    "./type-checks/src/is-non-null-object": {
-      "import": "./dist/type-checks/src/is-non-null-object.mjs",
-      "require": "./dist/type-checks/src/is-non-null-object.cjs"
-    },
-    "./type-checks/src/is-null": {
-      "import": "./dist/type-checks/src/is-null.mjs",
-      "require": "./dist/type-checks/src/is-null.cjs"
-    },
-    "./type-checks/src/is-number": {
-      "import": "./dist/type-checks/src/is-number.mjs",
-      "require": "./dist/type-checks/src/is-number.cjs"
-    },
-    "./type-checks/src/is-object": {
-      "import": "./dist/type-checks/src/is-object.mjs",
-      "require": "./dist/type-checks/src/is-object.cjs"
-    },
-    "./type-checks/src/is-object-index": {
-      "import": "./dist/type-checks/src/is-object-index.mjs",
-      "require": "./dist/type-checks/src/is-object-index.cjs"
-    },
-    "./type-checks/src/is-plain-object": {
-      "import": "./dist/type-checks/src/is-plain-object.mjs",
-      "require": "./dist/type-checks/src/is-plain-object.cjs"
-    },
-    "./type-checks/src/is-primitive": {
-      "import": "./dist/type-checks/src/is-primitive.mjs",
-      "require": "./dist/type-checks/src/is-primitive.cjs"
-    },
-    "./type-checks/src/is-react-element": {
-      "import": "./dist/type-checks/src/is-react-element.mjs",
-      "require": "./dist/type-checks/src/is-react-element.cjs"
-    },
-    "./type-checks/src/is-set": {
-      "import": "./dist/type-checks/src/is-set.mjs",
-      "require": "./dist/type-checks/src/is-set.cjs"
-    },
-    "./type-checks/src/is-set-string": {
-      "import": "./dist/type-checks/src/is-set-string.mjs",
-      "require": "./dist/type-checks/src/is-set-string.cjs"
-    },
-    "./type-checks/src/is-string": {
-      "import": "./dist/type-checks/src/is-string.mjs",
-      "require": "./dist/type-checks/src/is-string.cjs"
-    },
-    "./type-checks/src/is-typed-array": {
-      "import": "./dist/type-checks/src/is-typed-array.mjs",
-      "require": "./dist/type-checks/src/is-typed-array.cjs"
-    },
-    "./type-checks/src/is-undefined": {
-      "import": "./dist/type-checks/src/is-undefined.mjs",
-      "require": "./dist/type-checks/src/is-undefined.cjs"
-    },
-    "./type-checks/src/property-exists": {
-      "import": "./dist/type-checks/src/property-exists.mjs",
-      "require": "./dist/type-checks/src/property-exists.cjs"
-    },
-    "./type-checks/src/type-detect": {
-      "import": "./dist/type-checks/src/type-detect.mjs",
-      "require": "./dist/type-checks/src/type-detect.cjs"
-    },
     "./unflatten-object": {
       "import": "./dist/unflatten-object.mjs",
       "require": "./dist/unflatten-object.cjs"
@@ -227,6 +111,11 @@
   "main": "./dist/index.cjs",
   "module": "./dist/index.mjs",
   "types": "./dist/index.d.cts",
+  "dependencies": {
+    "@stryke/convert": "workspace:*",
+    "@stryke/type-checks": "workspace:*",
+    "@stryke/types": "workspace:*"
+  },
   "devDependencies": {
     "tsdown": "catalog:"
   },

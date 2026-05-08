@@ -50,10 +50,10 @@ export async function loadTsConfig(
   }
 
   let config = await readJsonFile<TsConfigJson>(tsconfigFilePath);
-  if (config?.compilerOptions?.baseUrl) {
-    config.compilerOptions.baseUrl = joinPaths(
+  if (config?.compilerOptions?.rootDir) {
+    config.compilerOptions.rootDir = joinPaths(
       findFilePath(tsconfigFilePath),
-      config.compilerOptions.baseUrl
+      config.compilerOptions.rootDir
     );
   }
 

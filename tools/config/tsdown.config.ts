@@ -22,7 +22,6 @@ import { defineConfig } from "tsdown";
 export type TSDownOptions = Partial<UserConfig> & Pick<UserConfig, "name">;
 
 export const DEFAULT_OPTIONS: Omit<Partial<UserConfig>, "name"> = {
-  silent: true,
   target: "esnext",
   outDir: "dist",
   format: ["cjs", "esm"],
@@ -41,7 +40,9 @@ export const DEFAULT_OPTIONS: Omit<Partial<UserConfig>, "name"> = {
   fixedExtension: true,
   nodeProtocol: true,
   unbundle: true,
-  skipNodeModulesBundle: true
+  deps: {
+    skipNodeModulesBundle: true
+  }
 };
 
 export default DEFAULT_OPTIONS;

@@ -18,45 +18,9 @@
       "import": "./dist/cuid.mjs",
       "require": "./dist/cuid.cjs"
     },
-    "./fs/src/list-files": {
-      "import": "./dist/fs/src/list-files.mjs",
-      "require": "./dist/fs/src/list-files.cjs"
-    },
-    "./hash/src/digest": {
-      "import": "./dist/hash/src/digest.mjs",
-      "require": "./dist/hash/src/digest.cjs"
-    },
-    "./hash/src/hash-content": {
-      "import": "./dist/hash/src/hash-content.mjs",
-      "require": "./dist/hash/src/hash-content.cjs"
-    },
-    "./hash/src/hash-files": {
-      "import": "./dist/hash/src/hash-files.mjs",
-      "require": "./dist/hash/src/hash-files.cjs"
-    },
-    "./hash/src/murmurhash": {
-      "import": "./dist/hash/src/murmurhash.mjs",
-      "require": "./dist/hash/src/murmurhash.cjs"
-    },
-    "./hash/src/neutral": {
-      "import": "./dist/hash/src/neutral.mjs",
-      "require": "./dist/hash/src/neutral.cjs"
-    },
-    "./hash/src/xx-hash": {
-      "import": "./dist/hash/src/xx-hash.mjs",
-      "require": "./dist/hash/src/xx-hash.cjs"
-    },
     "./nanoid-client": {
       "import": "./dist/nanoid-client.mjs",
       "require": "./dist/nanoid-client.cjs"
-    },
-    "./path/src": {
-      "import": "./dist/path/src/index.mjs",
-      "require": "./dist/path/src/index.cjs"
-    },
-    "./path/src/delimiter": {
-      "import": "./dist/path/src/delimiter.mjs",
-      "require": "./dist/path/src/delimiter.cjs"
     },
     "./random": {
       "import": "./dist/random.mjs",
@@ -65,22 +29,6 @@
     "./snowflake": {
       "import": "./dist/snowflake.mjs",
       "require": "./dist/snowflake.cjs"
-    },
-    "./type-checks/src": {
-      "import": "./dist/type-checks/src/index.mjs",
-      "require": "./dist/type-checks/src/index.cjs"
-    },
-    "./type-checks/src/is-buffer": {
-      "import": "./dist/type-checks/src/is-buffer.mjs",
-      "require": "./dist/type-checks/src/is-buffer.cjs"
-    },
-    "./type-checks/src/is-collection": {
-      "import": "./dist/type-checks/src/is-collection.mjs",
-      "require": "./dist/type-checks/src/is-collection.cjs"
-    },
-    "./type-checks/src/type-detect": {
-      "import": "./dist/type-checks/src/type-detect.mjs",
-      "require": "./dist/type-checks/src/type-detect.cjs"
     },
     "./uuid": {
       "import": "./dist/uuid.mjs",
@@ -91,6 +39,12 @@
   "main": "./dist/index.cjs",
   "module": "./dist/index.mjs",
   "types": "./dist/index.d.cts",
+  "dependencies": {
+    "@stryke/hash": "workspace:*",
+    "@stryke/fs": "workspace:*",
+    "@stryke/path": "workspace:*",
+    "@stryke/type-checks": "workspace:*"
+  },
   "devDependencies": {
     "tsdown": "catalog:"
   },

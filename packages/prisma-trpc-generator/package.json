@@ -55,6 +55,10 @@
       "import": "./dist/config.mjs",
       "require": "./dist/config.cjs"
     },
+    "./env/src/get-env-paths": {
+      "import": "./dist/env/src/get-env-paths.mjs",
+      "require": "./dist/env/src/get-env-paths.cjs"
+    },
     "./generator": {
       "import": "./dist/generator.mjs",
       "require": "./dist/generator.cjs"
@@ -63,54 +67,6 @@
       "import": "./dist/helpers.mjs",
       "require": "./dist/helpers.cjs"
     },
-    "./packages/env/src/get-env-paths": {
-      "import": "./dist/packages/env/src/get-env-paths.mjs",
-      "require": "./dist/packages/env/src/get-env-paths.cjs"
-    },
-    "./packages/string-format/src/acronyms": {
-      "import": "./dist/packages/string-format/src/acronyms.mjs",
-      "require": "./dist/packages/string-format/src/acronyms.cjs"
-    },
-    "./packages/string-format/src/articles": {
-      "import": "./dist/packages/string-format/src/articles.mjs",
-      "require": "./dist/packages/string-format/src/articles.cjs"
-    },
-    "./packages/string-format/src/combine": {
-      "import": "./dist/packages/string-format/src/combine.mjs",
-      "require": "./dist/packages/string-format/src/combine.cjs"
-    },
-    "./packages/string-format/src/conjunctions": {
-      "import": "./dist/packages/string-format/src/conjunctions.mjs",
-      "require": "./dist/packages/string-format/src/conjunctions.cjs"
-    },
-    "./packages/string-format/src/decamelize": {
-      "import": "./dist/packages/string-format/src/decamelize.mjs",
-      "require": "./dist/packages/string-format/src/decamelize.cjs"
-    },
-    "./packages/string-format/src/format-special-cases": {
-      "import": "./dist/packages/string-format/src/format-special-cases.mjs",
-      "require": "./dist/packages/string-format/src/format-special-cases.cjs"
-    },
-    "./packages/string-format/src/lower-case-first": {
-      "import": "./dist/packages/string-format/src/lower-case-first.mjs",
-      "require": "./dist/packages/string-format/src/lower-case-first.cjs"
-    },
-    "./packages/string-format/src/prepositions": {
-      "import": "./dist/packages/string-format/src/prepositions.mjs",
-      "require": "./dist/packages/string-format/src/prepositions.cjs"
-    },
-    "./packages/string-format/src/special-cases": {
-      "import": "./dist/packages/string-format/src/special-cases.mjs",
-      "require": "./dist/packages/string-format/src/special-cases.cjs"
-    },
-    "./packages/string-format/src/title-case": {
-      "import": "./dist/packages/string-format/src/title-case.mjs",
-      "require": "./dist/packages/string-format/src/title-case.cjs"
-    },
-    "./packages/string-format/src/upper-case-first": {
-      "import": "./dist/packages/string-format/src/upper-case-first.mjs",
-      "require": "./dist/packages/string-format/src/upper-case-first.cjs"
-    },
     "./prisma-generator": {
       "import": "./dist/prisma-generator.mjs",
       "require": "./dist/prisma-generator.cjs"
@@ -118,6 +74,50 @@
     "./project": {
       "import": "./dist/project.mjs",
       "require": "./dist/project.cjs"
+    },
+    "./string-format/src/acronyms": {
+      "import": "./dist/string-format/src/acronyms.mjs",
+      "require": "./dist/string-format/src/acronyms.cjs"
+    },
+    "./string-format/src/articles": {
+      "import": "./dist/string-format/src/articles.mjs",
+      "require": "./dist/string-format/src/articles.cjs"
+    },
+    "./string-format/src/combine": {
+      "import": "./dist/string-format/src/combine.mjs",
+      "require": "./dist/string-format/src/combine.cjs"
+    },
+    "./string-format/src/conjunctions": {
+      "import": "./dist/string-format/src/conjunctions.mjs",
+      "require": "./dist/string-format/src/conjunctions.cjs"
+    },
+    "./string-format/src/decamelize": {
+      "import": "./dist/string-format/src/decamelize.mjs",
+      "require": "./dist/string-format/src/decamelize.cjs"
+    },
+    "./string-format/src/format-special-cases": {
+      "import": "./dist/string-format/src/format-special-cases.mjs",
+      "require": "./dist/string-format/src/format-special-cases.cjs"
+    },
+    "./string-format/src/lower-case-first": {
+      "import": "./dist/string-format/src/lower-case-first.mjs",
+      "require": "./dist/string-format/src/lower-case-first.cjs"
+    },
+    "./string-format/src/prepositions": {
+      "import": "./dist/string-format/src/prepositions.mjs",
+      "require": "./dist/string-format/src/prepositions.cjs"
+    },
+    "./string-format/src/special-cases": {
+      "import": "./dist/string-format/src/special-cases.mjs",
+      "require": "./dist/string-format/src/special-cases.cjs"
+    },
+    "./string-format/src/title-case": {
+      "import": "./dist/string-format/src/title-case.mjs",
+      "require": "./dist/string-format/src/title-case.cjs"
+    },
+    "./string-format/src/upper-case-first": {
+      "import": "./dist/string-format/src/upper-case-first.mjs",
+      "require": "./dist/string-format/src/upper-case-first.cjs"
     },
     "./utils/format-file": {
       "import": "./dist/utils/format-file.mjs",
@@ -193,7 +193,9 @@
     "prisma-trpc-generator-cjs": "dist/generator.cjs",
     "prisma-trpc-generator-mjs": "dist/generator.js"
   },
-  "files": ["dist/**/*"],
+  "files": [
+    "dist/**/*"
+  ],
   "dependencies": {
     "@prisma/generator-helper": "catalog:",
     "@prisma/internals": "catalog:",
@@ -213,8 +215,5 @@
   },
   "publishConfig": {
     "access": "public"
-  },
-  "inlinedDependencies": {
-    "pluralize": "8.0.0"
   }
 }

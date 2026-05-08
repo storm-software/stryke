@@ -58,10 +58,6 @@
       "import": "./dist/get-words.mjs",
       "require": "./dist/get-words.cjs"
     },
-    "./helpers/src/remove-accents": {
-      "import": "./dist/helpers/src/remove-accents.mjs",
-      "require": "./dist/helpers/src/remove-accents.cjs"
-    },
     "./kebab-case": {
       "import": "./dist/kebab-case.mjs",
       "require": "./dist/kebab-case.cjs"
@@ -148,6 +144,7 @@
   "module": "./dist/index.mjs",
   "types": "./dist/index.d.cts",
   "dependencies": {
+    "@stryke/helpers": "workspace:*",
     "@stryke/path": "workspace:*"
   },
   "devDependencies": {

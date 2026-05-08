@@ -14,10 +14,6 @@
       "import": "./dist/index.mjs",
       "require": "./dist/index.cjs"
     },
-    "./convert/src/to-array": {
-      "import": "./dist/convert/src/to-array.mjs",
-      "require": "./dist/convert/src/to-array.cjs"
-    },
     "./create-options": {
       "import": "./dist/create-options.mjs",
       "require": "./dist/create-options.cjs"
@@ -25,14 +21,6 @@
     "./define-command": {
       "import": "./dist/define-command.mjs",
       "require": "./dist/define-command.cjs"
-    },
-    "./env/src/ci-checks": {
-      "import": "./dist/env/src/ci-checks.mjs",
-      "require": "./dist/env/src/ci-checks.cjs"
-    },
-    "./env/src/environment-checks": {
-      "import": "./dist/env/src/environment-checks.mjs",
-      "require": "./dist/env/src/environment-checks.cjs"
     },
     "./execute": {
       "import": "./dist/execute.mjs",
@@ -57,78 +45,6 @@
     "./shutdown": {
       "import": "./dist/shutdown.mjs",
       "require": "./dist/shutdown.cjs"
-    },
-    "./string-format/src/acronyms": {
-      "import": "./dist/string-format/src/acronyms.mjs",
-      "require": "./dist/string-format/src/acronyms.cjs"
-    },
-    "./string-format/src/articles": {
-      "import": "./dist/string-format/src/articles.mjs",
-      "require": "./dist/string-format/src/articles.cjs"
-    },
-    "./string-format/src/camel-case": {
-      "import": "./dist/string-format/src/camel-case.mjs",
-      "require": "./dist/string-format/src/camel-case.cjs"
-    },
-    "./string-format/src/combine": {
-      "import": "./dist/string-format/src/combine.mjs",
-      "require": "./dist/string-format/src/combine.cjs"
-    },
-    "./string-format/src/conjunctions": {
-      "import": "./dist/string-format/src/conjunctions.mjs",
-      "require": "./dist/string-format/src/conjunctions.cjs"
-    },
-    "./string-format/src/constant-case": {
-      "import": "./dist/string-format/src/constant-case.mjs",
-      "require": "./dist/string-format/src/constant-case.cjs"
-    },
-    "./string-format/src/decamelize": {
-      "import": "./dist/string-format/src/decamelize.mjs",
-      "require": "./dist/string-format/src/decamelize.cjs"
-    },
-    "./string-format/src/format-special-cases": {
-      "import": "./dist/string-format/src/format-special-cases.mjs",
-      "require": "./dist/string-format/src/format-special-cases.cjs"
-    },
-    "./string-format/src/get-words": {
-      "import": "./dist/string-format/src/get-words.mjs",
-      "require": "./dist/string-format/src/get-words.cjs"
-    },
-    "./string-format/src/kebab-case": {
-      "import": "./dist/string-format/src/kebab-case.mjs",
-      "require": "./dist/string-format/src/kebab-case.cjs"
-    },
-    "./string-format/src/prepositions": {
-      "import": "./dist/string-format/src/prepositions.mjs",
-      "require": "./dist/string-format/src/prepositions.cjs"
-    },
-    "./string-format/src/snake-case": {
-      "import": "./dist/string-format/src/snake-case.mjs",
-      "require": "./dist/string-format/src/snake-case.cjs"
-    },
-    "./string-format/src/special-cases": {
-      "import": "./dist/string-format/src/special-cases.mjs",
-      "require": "./dist/string-format/src/special-cases.cjs"
-    },
-    "./string-format/src/title-case": {
-      "import": "./dist/string-format/src/title-case.mjs",
-      "require": "./dist/string-format/src/title-case.cjs"
-    },
-    "./string-format/src/upper-case-first": {
-      "import": "./dist/string-format/src/upper-case-first.mjs",
-      "require": "./dist/string-format/src/upper-case-first.cjs"
-    },
-    "./type-checks/src/get-object-tag": {
-      "import": "./dist/type-checks/src/get-object-tag.mjs",
-      "require": "./dist/type-checks/src/get-object-tag.cjs"
-    },
-    "./type-checks/src/is-boolean": {
-      "import": "./dist/type-checks/src/is-boolean.mjs",
-      "require": "./dist/type-checks/src/is-boolean.cjs"
-    },
-    "./type-checks/src/is-function": {
-      "import": "./dist/type-checks/src/is-function.mjs",
-      "require": "./dist/type-checks/src/is-function.cjs"
     },
     "./types": {
       "import": "./dist/types.mjs",
@@ -181,6 +97,11 @@
   "types": "./dist/index.d.cts",
   "dependencies": {
     "@antfu/ni": "catalog:",
+    "@stryke/convert": "workspace:*",
+    "@stryke/env": "workspace:*",
+    "@stryke/string-format": "workspace:*",
+    "@stryke/type-checks": "workspace:*",
+    "@stryke/types": "workspace:*",
     "defu": "catalog:",
     "execa": "catalog:",
     "figlet": "catalog:",

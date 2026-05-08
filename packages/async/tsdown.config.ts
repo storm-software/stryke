@@ -29,7 +29,9 @@ export default defineTSDownConfig([
     exports: false,
     dts: true,
     clean: false,
-    skipNodeModulesBundle: true
+    deps: {
+      skipNodeModulesBundle: true
+    }
   },
   {
     name: "async-node",
@@ -41,6 +43,8 @@ export default defineTSDownConfig([
     exports: false,
     dts: true,
     clean: false,
-    skipNodeModulesBundle: true
+    deps: {
+      skipNodeModulesBundle: true
+    }
   }
 ]);

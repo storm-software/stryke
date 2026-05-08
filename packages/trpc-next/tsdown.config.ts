@@ -28,6 +28,9 @@ export default defineTSDownConfig([
     dts: {
       parallel: true,
       newContext: true
+    },
+    deps: {
+      skipNodeModulesBundle: true
     }
   }
 ]);

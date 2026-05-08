@@ -199,6 +199,9 @@
   "main": "./dist/index.cjs",
   "module": "./dist/index.mjs",
   "types": "./dist/index.d.cts",
+  "dependencies": {
+    "@stryke/types": "workspace:*"
+  },
   "devDependencies": {
     "tsdown": "catalog:"
   },

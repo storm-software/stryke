@@ -28,6 +28,8 @@ export default defineTSDownConfig([
     unbundle: false,
     dts: true,
     clean: true,
-    skipNodeModulesBundle: true
+    deps: {
+      skipNodeModulesBundle: true
+    }
   }
 ]);

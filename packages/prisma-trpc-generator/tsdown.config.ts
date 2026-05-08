@@ -22,7 +22,8 @@ export default defineTSDownConfig([
   {
     name: "prisma-trpc-generator",
     entry: ["src/index.ts", "src/generator.ts"],
-    skipNodeModulesBundle: false,
-    external: ["esbuild", "typescript"]
+    deps: {
+      skipNodeModulesBundle: true
+    }
   }
 ]);

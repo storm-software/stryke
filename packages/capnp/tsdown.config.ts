@@ -26,10 +26,12 @@ export default defineTSDownConfig([
     outDir: "dist/src",
     clean: false,
     exports: false,
-    external: ["typescript"],
-    noExternal: ["capnp-es"],
-    skipNodeModulesBundle: false,
-    unbundle: false
+    unbundle: false,
+    deps: {
+      neverBundle: ["typescript"],
+      alwaysBundle: ["capnp-es"],
+      skipNodeModulesBundle: false
+    }
   },
   {
     name: "capnp-schemas",
@@ -37,12 +39,14 @@ export default defineTSDownConfig([
     outDir: "dist/schemas",
     clean: false,
     exports: false,
-    external: ["typescript"],
-    noExternal: ["capnp-es"],
-    skipNodeModulesBundle: false,
     unbundle: false,
     alias: {
       "@stryke/capnp": fileURLToPath(new URL("src/index.ts", import.meta.url))
+    },
+    deps: {
+      neverBundle: ["typescript"],
+      alwaysBundle: ["capnp-es"],
+      skipNodeModulesBundle: false
     }
   }
 ]);

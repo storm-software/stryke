@@ -14,38 +14,6 @@
       "import": "./dist/index.mjs",
       "require": "./dist/index.cjs"
     },
-    "./async/src": {
-      "import": "./dist/async/src/index.mjs",
-      "require": "./dist/async/src/index.cjs"
-    },
-    "./async/src/debounce": {
-      "import": "./dist/async/src/debounce.mjs",
-      "require": "./dist/async/src/debounce.cjs"
-    },
-    "./async/src/p-queue": {
-      "import": "./dist/async/src/p-queue.mjs",
-      "require": "./dist/async/src/p-queue.cjs"
-    },
-    "./async/src/throttle": {
-      "import": "./dist/async/src/throttle.mjs",
-      "require": "./dist/async/src/throttle.cjs"
-    },
-    "./env/src/runtime-checks": {
-      "import": "./dist/env/src/runtime-checks.mjs",
-      "require": "./dist/env/src/runtime-checks.cjs"
-    },
-    "./type-checks/src/get-object-tag": {
-      "import": "./dist/type-checks/src/get-object-tag.mjs",
-      "require": "./dist/type-checks/src/get-object-tag.cjs"
-    },
-    "./type-checks/src/is-equal": {
-      "import": "./dist/type-checks/src/is-equal.mjs",
-      "require": "./dist/type-checks/src/is-equal.cjs"
-    },
-    "./type-checks/src/is-function": {
-      "import": "./dist/type-checks/src/is-function.mjs",
-      "require": "./dist/type-checks/src/is-function.cjs"
-    },
     "./use-battery": {
       "import": "./dist/use-battery.mjs",
       "require": "./dist/use-battery.cjs"
@@ -122,7 +90,11 @@
   "dependencies": {
     "react": "catalog:",
     "react-dom": "catalog:",
-    "react-native": "catalog:"
+    "react-native": "catalog:",
+    "@stryke/async": "workspace:*",
+    "@stryke/env": "workspace:*",
+    "@stryke/type-checks": "workspace:*",
+    "@stryke/types": "workspace:*"
   },
   "devDependencies": {
     "@types/react": "catalog:",

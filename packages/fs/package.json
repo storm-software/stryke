@@ -66,30 +66,6 @@
       "import": "./dist/json.mjs",
       "require": "./dist/json.cjs"
     },
-    "./json/src/storm-json": {
-      "import": "./dist/json/src/storm-json.mjs",
-      "require": "./dist/json/src/storm-json.cjs"
-    },
-    "./json/src/utils/code-frames": {
-      "import": "./dist/json/src/utils/code-frames.mjs",
-      "require": "./dist/json/src/utils/code-frames.cjs"
-    },
-    "./json/src/utils/parse": {
-      "import": "./dist/json/src/utils/parse.mjs",
-      "require": "./dist/json/src/utils/parse.cjs"
-    },
-    "./json/src/utils/parse-error": {
-      "import": "./dist/json/src/utils/parse-error.mjs",
-      "require": "./dist/json/src/utils/parse-error.cjs"
-    },
-    "./json/src/utils/stringify": {
-      "import": "./dist/json/src/utils/stringify.mjs",
-      "require": "./dist/json/src/utils/stringify.cjs"
-    },
-    "./json/src/utils/strip-comments": {
-      "import": "./dist/json/src/utils/strip-comments.mjs",
-      "require": "./dist/json/src/utils/strip-comments.cjs"
-    },
     "./list-files": {
       "import": "./dist/list-files.mjs",
       "require": "./dist/list-files.cjs"
@@ -126,66 +102,6 @@
       "import": "./dist/tsconfig.mjs",
       "require": "./dist/tsconfig.cjs"
     },
-    "./type-checks/src": {
-      "import": "./dist/type-checks/src/index.mjs",
-      "require": "./dist/type-checks/src/index.cjs"
-    },
-    "./type-checks/src/get-object-tag": {
-      "import": "./dist/type-checks/src/get-object-tag.mjs",
-      "require": "./dist/type-checks/src/get-object-tag.cjs"
-    },
-    "./type-checks/src/is-buffer": {
-      "import": "./dist/type-checks/src/is-buffer.mjs",
-      "require": "./dist/type-checks/src/is-buffer.cjs"
-    },
-    "./type-checks/src/is-collection": {
-      "import": "./dist/type-checks/src/is-collection.mjs",
-      "require": "./dist/type-checks/src/is-collection.cjs"
-    },
-    "./type-checks/src/is-empty": {
-      "import": "./dist/type-checks/src/is-empty.mjs",
-      "require": "./dist/type-checks/src/is-empty.cjs"
-    },
-    "./type-checks/src/is-error": {
-      "import": "./dist/type-checks/src/is-error.mjs",
-      "require": "./dist/type-checks/src/is-error.cjs"
-    },
-    "./type-checks/src/is-null": {
-      "import": "./dist/type-checks/src/is-null.mjs",
-      "require": "./dist/type-checks/src/is-null.cjs"
-    },
-    "./type-checks/src/is-number": {
-      "import": "./dist/type-checks/src/is-number.mjs",
-      "require": "./dist/type-checks/src/is-number.cjs"
-    },
-    "./type-checks/src/is-object": {
-      "import": "./dist/type-checks/src/is-object.mjs",
-      "require": "./dist/type-checks/src/is-object.cjs"
-    },
-    "./type-checks/src/is-plain-object": {
-      "import": "./dist/type-checks/src/is-plain-object.mjs",
-      "require": "./dist/type-checks/src/is-plain-object.cjs"
-    },
-    "./type-checks/src/is-set": {
-      "import": "./dist/type-checks/src/is-set.mjs",
-      "require": "./dist/type-checks/src/is-set.cjs"
-    },
-    "./type-checks/src/is-set-string": {
-      "import": "./dist/type-checks/src/is-set-string.mjs",
-      "require": "./dist/type-checks/src/is-set-string.cjs"
-    },
-    "./type-checks/src/is-string": {
-      "import": "./dist/type-checks/src/is-string.mjs",
-      "require": "./dist/type-checks/src/is-string.cjs"
-    },
-    "./type-checks/src/is-undefined": {
-      "import": "./dist/type-checks/src/is-undefined.mjs",
-      "require": "./dist/type-checks/src/is-undefined.cjs"
-    },
-    "./type-checks/src/type-detect": {
-      "import": "./dist/type-checks/src/type-detect.mjs",
-      "require": "./dist/type-checks/src/type-detect.cjs"
-    },
     "./write-file": {
       "import": "./dist/write-file.mjs",
       "require": "./dist/write-file.cjs"
@@ -204,8 +120,11 @@
     "@storm-software/config-tools": "catalog:",
     "@stryke/convert": "workspace:*",
     "@stryke/helpers": "workspace:*",
+    "@stryke/json": "workspace:*",
     "@stryke/path": "workspace:*",
     "@stryke/string-format": "workspace:*",
+    "@stryke/type-checks": "workspace:*",
+    "@stryke/types": "workspace:*",
     "chalk": "catalog:",
     "defu": "catalog:",
     "glob": "catalog:",

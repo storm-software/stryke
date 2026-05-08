@@ -29,7 +29,9 @@ export default defineTSDownConfig([
     exports: false,
     dts: true,
     clean: false,
-    skipNodeModulesBundle: true
+    deps: {
+      skipNodeModulesBundle: true
+    }
   },
   {
     name: "crypto-node",
@@ -41,7 +43,9 @@ export default defineTSDownConfig([
     exports: false,
     dts: true,
     clean: false,
-    skipNodeModulesBundle: true
+    deps: {
+      skipNodeModulesBundle: true
+    }
   },
   {
     name: "crypto-cloudflare",
@@ -53,6 +57,8 @@ export default defineTSDownConfig([
     exports: false,
     dts: true,
     clean: false,
-    skipNodeModulesBundle: true
+    deps: {
+      skipNodeModulesBundle: true
+    }
   }
 ]);
