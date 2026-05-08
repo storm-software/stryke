@@ -18,16 +18,6 @@
       "import": "./dist/canonical.mjs",
       "require": "./dist/canonical.cjs"
     },
-    "./is-number-85SqgL4j": "./dist/is-number-85SqgL4j.mjs",
-    "./is-number-BmLP29QR": "./dist/is-number-BmLP29QR.cjs",
-    "./is-object-BRDNi05f": "./dist/is-object-BRDNi05f.cjs",
-    "./is-object-VZK1OB8Y": "./dist/is-object-VZK1OB8Y.mjs",
-    "./is-set-object-C8a2SjJ8": "./dist/is-set-object-C8a2SjJ8.mjs",
-    "./is-set-object-DQwSpVKJ": "./dist/is-set-object-DQwSpVKJ.cjs",
-    "./is-string-DYU047p2": "./dist/is-string-DYU047p2.mjs",
-    "./is-string-N_HXayb5": "./dist/is-string-N_HXayb5.cjs",
-    "./is-undefined-DpBpIVmC": "./dist/is-undefined-DpBpIVmC.mjs",
-    "./is-undefined-jJ_MajQx": "./dist/is-undefined-jJ_MajQx.cjs",
     "./pointer": {
       "import": "./dist/pointer/index.mjs",
       "require": "./dist/pointer/index.cjs"
@@ -48,7 +38,6 @@
       "import": "./dist/storm-json.mjs",
       "require": "./dist/storm-json.cjs"
     },
-    "./storm-json-RQVTItJa": "./dist/storm-json-RQVTItJa.cjs",
     "./types": {
       "import": "./dist/types.mjs",
       "require": "./dist/types.cjs"
@@ -83,6 +72,8 @@
   "module": "./dist/index.mjs",
   "types": "./dist/index.d.cts",
   "dependencies": {
+    "@stryke/type-checks": "workspace:*",
+    "@stryke/types": "workspace:*",
     "buffer": "catalog:",
     "jsonc-parser": "catalog:",
     "lines-and-columns": "catalog:",

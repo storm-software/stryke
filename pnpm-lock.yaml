@@ -930,6 +930,12 @@ importers:
 
   packages/json:
     dependencies:
+      '@stryke/type-checks':
+        specifier: workspace:*
+        version: link:../type-checks
+      '@stryke/types':
+        specifier: workspace:*
+        version: link:../types
       buffer:
         specifier: 'catalog:'
         version: 6.0.3
