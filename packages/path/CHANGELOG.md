@@ -2,6 +2,12 @@
 
 # Changelog for Stryke - Path
 
+## [0.29.0](https://github.com/storm-software/stryke/releases/tag/path%400.29.0) (05/06/2026)
+
+### Features
+
+- **path:** Added `fileURLToPath`, `pathToFileURL`, and `pathToFileURLString` helper functions ([01ffb822](https://github.com/storm-software/stryke/commit/01ffb822))
+
 ## [0.28.3](https://github.com/storm-software/stryke/releases/tag/path%400.28.3) (05/06/2026)
 
 ### Miscellaneous
