@@ -2,6 +2,12 @@
 
 # Changelog for Stryke - URL
 
+## [0.4.24](https://github.com/storm-software/stryke/releases/tag/url%400.4.24) (05/08/2026)
+
+### Miscellaneous
+
+- **url:** Enhance the URL validation RegExp ([db934c43](https://github.com/storm-software/stryke/commit/db934c43))
+
 ## [0.4.23](https://github.com/storm-software/stryke/releases/tag/url%400.4.23) (05/08/2026)
 
 ### Bug Fixes
