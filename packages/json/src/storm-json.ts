@@ -28,7 +28,7 @@ import type {
 import { isObject } from "@stryke/type-checks/is-object";
 import { isString } from "@stryke/type-checks/is-string";
 import { parse } from "jsonc-parser";
-import SuperJSON from "superjson";
+import { SuperJSON } from "superjson";
 import { parse as parseValue } from "./utils/parse";
 import { formatParseError } from "./utils/parse-error";
 import { stringify as stringifyValue } from "./utils/stringify";
