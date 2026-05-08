@@ -36,10 +36,10 @@
   "module": "./dist/index.mjs",
   "types": "./dist/index.d.cts",
   "dependencies": {
-    "ufo": "catalog:",
     "@stryke/json": "workspace:*",
     "@stryke/path": "workspace:*",
-    "@stryke/type-checks": "workspace:*"
+    "@stryke/type-checks": "workspace:*",
+    "ufo": "catalog:"
   },
   "devDependencies": {
     "@types/node": "catalog:",

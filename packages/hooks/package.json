@@ -88,13 +88,13 @@
   "module": "./dist/index.mjs",
   "types": "./dist/index.d.cts",
   "dependencies": {
-    "react": "catalog:",
-    "react-dom": "catalog:",
-    "react-native": "catalog:",
     "@stryke/async": "workspace:*",
     "@stryke/env": "workspace:*",
     "@stryke/type-checks": "workspace:*",
-    "@stryke/types": "workspace:*"
+    "@stryke/types": "workspace:*",
+    "react": "catalog:",
+    "react-dom": "catalog:",
+    "react-native": "catalog:"
   },
   "devDependencies": {
     "@types/react": "catalog:",

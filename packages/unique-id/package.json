@@ -40,8 +40,8 @@
   "module": "./dist/index.mjs",
   "types": "./dist/index.d.cts",
   "dependencies": {
-    "@stryke/hash": "workspace:*",
     "@stryke/fs": "workspace:*",
+    "@stryke/hash": "workspace:*",
     "@stryke/path": "workspace:*",
     "@stryke/type-checks": "workspace:*"
   },
