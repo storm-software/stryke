@@ -16,7 +16,7 @@
 
  ------------------------------------------------------------------- */
 
-import type { JsonSchema7Type } from "@stryke/json";
+import type { JsonSchemaType } from "@stryke/json";
 import { zodToJsonSchema } from "zod-to-json-schema";
 import * as z4 from "zod/v4/core";
 import { isZod3Type, isZod4Type } from "./is-zod-type";
@@ -24,7 +24,7 @@ import type { ZodType } from "./types";
 
 export interface ExtractJsonSchemaOptions {
   /**
-   * The JSON Schema draft version to target. Defaults to "draft-07".
+   * The JSON Schema draft version to target. Defaults to "draft-2020-12".
    */
   target?: "draft-07" | "draft-2020-12";
 
@@ -37,7 +37,9 @@ export interface ExtractJsonSchemaOptions {
 }
 
 /**
- * Extracts a JSON Schema from a given Zod schema, supporting both version 3 and version 4 of Zod.
+ * Extracts a [JSON Schema](https://json-schema.org/draft/2020-12) from a given Zod schema, supporting both version 3 and version 4 of Zod.
+ *
+ * @see https://json-schema.org/draft/2020-12
  *
  * @param type - The Zod schema to extract the JSON Schema from. Can be either a Zod v3 or v4 schema.
  * @param options - Options for extracting the JSON Schema, including the target draft version and input/output selection.
@@ -47,7 +49,7 @@ export function extractJsonSchema(
   type: ZodType,
   options: ExtractJsonSchemaOptions = {}
 ) {
-  const { target = "draft-07", io = "input" } = options;
+  const { target = "draft-2020-12", io = "input" } = options;
 
   if (isZod3Type(type)) {
     const result = zodToJsonSchema(type, {
@@ -76,7 +78,9 @@ export function extractJsonSchema(
 }
 
 /**
- * Extracts a JSON Schema (draft-07) from a given Zod schema, supporting both version 3 and version 4 of Zod.
+ * Extracts a [JSON Schema (draft-07)](https://json-schema.org/draft-07) from a given Zod schema, supporting both version 3 and version 4 of Zod.
+ *
+ * @see https://json-schema.org/draft-07
  *
  * @remarks
  * This function is a convenience wrapper around `extractJsonSchema` that defaults to targeting the JSON Schema draft-07 specification.
@@ -85,5 +89,22 @@ export function extractJsonSchema(
  * @returns The extracted JSON Schema.
  */
 export function extractJsonSchema7(type: ZodType) {
-  return extractJsonSchema(type, { target: "draft-07" }) as JsonSchema7Type;
+  return extractJsonSchema(type, { target: "draft-07" }) as JsonSchemaType;
+}
+
+/**
+ * Extracts a [JSON Schema (draft-2020-12)](https://json-schema.org/draft/2020-12) from a given Zod schema, supporting both version 3 and version 4 of Zod.
+ *
+ * @see https://json-schema.org/draft/2020-12
+ *
+ * @remarks
+ * This function is a convenience wrapper around `extractJsonSchema` that defaults to targeting the JSON Schema draft-2020-12 specification.
+ *
+ * @param type - The Zod schema to extract the JSON Schema from. Can be either a Zod v3 or v4 schema.
+ * @returns The extracted JSON Schema.
+ */
+export function extractJsonSchema2020(type: ZodType) {
+  return extractJsonSchema(type, {
+    target: "draft-2020-12"
+  }) as JsonSchemaType;
 }

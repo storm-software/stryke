@@ -18,107 +18,135 @@
 
 import type { StandardJSONSchemaV1 } from "@standard-schema/spec";
 import { isFunction } from "@stryke/type-checks/is-function";
+import { isObject } from "@stryke/type-checks/is-object";
 import { isSetObject } from "@stryke/type-checks/is-set-object";
+import { isString } from "@stryke/type-checks/is-string";
 import type {
-  JsonSchema7AllOfType,
-  JsonSchema7ArrayType,
-  JsonSchema7BooleanType,
-  JsonSchema7LiteralType,
-  JsonSchema7NumberType,
-  JsonSchema7ObjectType,
-  JsonSchema7PrimitiveLiteralType,
-  JsonSchema7StringType,
-  JsonSchema7TupleType
+  JsonSchemaAllOfType,
+  JsonSchemaAnyOfType,
+  JsonSchemaArrayType,
+  JsonSchemaBooleanType,
+  JsonSchemaLiteralType,
+  JsonSchemaMetadata,
+  JsonSchemaNumberType,
+  JsonSchemaObjectType,
+  JsonSchemaPrimitiveLiteralType,
+  JsonSchemaRecordType,
+  JsonSchemaStringType,
+  JsonSchemaTupleType,
+  JsonSchemaType
 } from "./types";
 
 /**
- * Type guard for {@link JsonSchema7AllOfType}
+ * Type guard for {@link JsonSchemaAllOfType}
  *
  * @param schema - The schema to check
- * @returns True if the schema is a {@link JsonSchema7AllOfType}, false otherwise
+ * @returns True if the schema is a {@link JsonSchemaAllOfType}, false otherwise
  */
-export function isJsonSchema7AllOfType(
+export function isJsonSchemaAllOfType(
   schema: any
-): schema is JsonSchema7AllOfType {
-  if ("type" in schema && schema.type === "string") {
+): schema is JsonSchemaAllOfType {
+  if (isSetObject(schema) && "type" in schema && schema.type === "string") {
     return false;
   }
 
-  return "allOf" in schema;
+  return isSetObject(schema) && "allOf" in schema;
 }
 
 /**
- * Type guard for {@link JsonSchema7ObjectType}
+ * Type guard for {@link JsonSchemaAnyOfType}
  *
  * @param schema - The schema to check
- * @returns True if the schema is a {@link JsonSchema7ObjectType}, false otherwise
+ * @returns True if the schema is a {@link JsonSchemaAnyOfType}, false otherwise
  */
-export function isJsonSchema7ObjectType(
+export function isJsonSchemaAnyOfType(
   schema: any
-): schema is JsonSchema7ObjectType {
-  return "type" in schema && schema.type === "object";
-}
-
-/**
- * Type guard for {@link JsonSchema7StringType}
- *
- * @param schema - The schema to check
- * @returns True if the schema is a {@link JsonSchema7StringType}, false otherwise
- */
-export function isJsonSchema7StringType(
-  schema: any
-): schema is JsonSchema7StringType {
-  return "type" in schema && schema.type === "string";
-}
-
-/**
- * Type guard for {@link JsonSchema7NumberType}
- *
- * @param schema - The schema to check
- * @returns True if the schema is a {@link JsonSchema7NumberType}, false otherwise
- */
-export function isJsonSchema7NumberType(
-  schema: any
-): schema is JsonSchema7NumberType {
+): schema is JsonSchemaAnyOfType {
   return (
-    "type" in schema && (schema.type === "number" || schema.type === "integer")
+    isSetObject(schema) && "anyOf" in schema && Array.isArray(schema.anyOf)
   );
 }
 
 /**
- * Type guard for {@link JsonSchema7BooleanType}
+ * Type guard for {@link JsonSchemaObjectType}
  *
  * @param schema - The schema to check
- * @returns True if the schema is a {@link JsonSchema7BooleanType}, false otherwise
+ * @returns True if the schema is a {@link JsonSchemaObjectType}, false otherwise
  */
-export function isJsonSchema7BooleanType(
+export function isJsonSchemaObjectType(
   schema: any
-): schema is JsonSchema7BooleanType {
-  return "type" in schema && schema.type === "boolean";
+): schema is JsonSchemaObjectType {
+  return isSetObject(schema) && "type" in schema && schema.type === "object";
 }
 
 /**
- * Type guard for {@link JsonSchema7ArrayType}
+ * Type guard for {@link JsonSchemaStringType}
  *
  * @param schema - The schema to check
- * @returns True if the schema is a {@link JsonSchema7ArrayType}, false otherwise
+ * @returns True if the schema is a {@link JsonSchemaStringType}, false otherwise
  */
-export function isJsonSchema7ArrayType(
+export function isJsonSchemaStringType(
   schema: any
-): schema is JsonSchema7ArrayType {
-  return "type" in schema && schema.type === "array" && "items" in schema;
+): schema is JsonSchemaStringType {
+  return isSetObject(schema) && "type" in schema && schema.type === "string";
 }
 
 /**
- * Type guard for {@link JsonSchema7TupleType}
+ * Type guard for {@link JsonSchemaNumberType}
  *
  * @param schema - The schema to check
- * @returns True if the schema is a {@link JsonSchema7TupleType}, false otherwise
+ * @returns True if the schema is a {@link JsonSchemaNumberType}, false otherwise
  */
-export function isJsonSchema7TupleType(
+export function isJsonSchemaNumberType(
   schema: any
-): schema is JsonSchema7TupleType {
+): schema is JsonSchemaNumberType {
   return (
+    isSetObject(schema) &&
+    "type" in schema &&
+    (schema.type === "number" || schema.type === "integer")
+  );
+}
+
+/**
+ * Type guard for {@link JsonSchemaBooleanType}
+ *
+ * @param schema - The schema to check
+ * @returns True if the schema is a {@link JsonSchemaBooleanType}, false otherwise
+ */
+export function isJsonSchemaBooleanType(
+  schema: any
+): schema is JsonSchemaBooleanType {
+  return isSetObject(schema) && "type" in schema && schema.type === "boolean";
+}
+
+/**
+ * Type guard for {@link JsonSchemaArrayType}
+ *
+ * @param schema - The schema to check
+ * @returns True if the schema is a {@link JsonSchemaArrayType}, false otherwise
+ */
+export function isJsonSchemaArrayType(
+  schema: any
+): schema is JsonSchemaArrayType {
+  return (
+    isSetObject(schema) &&
+    "type" in schema &&
+    schema.type === "array" &&
+    "items" in schema
+  );
+}
+
+/**
+ * Type guard for {@link JsonSchemaTupleType}
+ *
+ * @param schema - The schema to check
+ * @returns True if the schema is a {@link JsonSchemaTupleType}, false otherwise
+ */
+export function isJsonSchemaTupleType(
+  schema: any
+): schema is JsonSchemaTupleType {
+  return (
+    isSetObject(schema) &&
     "type" in schema &&
     schema.type === "array" &&
     "items" in schema &&
@@ -127,15 +155,15 @@ export function isJsonSchema7TupleType(
 }
 
 /**
- * Type guard for {@link JsonSchema7PrimitiveLiteralType}
+ * Type guard for {@link JsonSchemaPrimitiveLiteralType}
  *
  * @param schema - The schema to check
- * @returns True if the schema is a {@link JsonSchema7PrimitiveLiteralType}, false otherwise
+ * @returns True if the schema is a {@link JsonSchemaPrimitiveLiteralType}, false otherwise
  */
-export function isJsonSchema7PrimitiveLiteralType(
+export function isJsonSchemaPrimitiveLiteralType(
   schema: any
-): schema is JsonSchema7PrimitiveLiteralType {
-  if (!("type" in schema)) {
+): schema is JsonSchemaPrimitiveLiteralType {
+  if (!isSetObject(schema) || !("type" in schema)) {
     return false;
   }
 
@@ -151,23 +179,57 @@ export function isJsonSchema7PrimitiveLiteralType(
 }
 
 /**
- * Type guard for {@link JsonSchema7LiteralType}
+ * Type guard for {@link JsonSchemaLiteralType}
  *
  * @param schema - The schema to check
- * @returns True if the schema is a {@link JsonSchema7LiteralType}, false otherwise
+ * @returns True if the schema is a {@link JsonSchemaLiteralType}, false otherwise
  */
-export function isJsonSchema7LiteralType(
+export function isJsonSchemaLiteralType(
   schema: any
-): schema is JsonSchema7LiteralType {
-  if (isJsonSchema7PrimitiveLiteralType(schema)) {
+): schema is JsonSchemaLiteralType {
+  if (isJsonSchemaPrimitiveLiteralType(schema)) {
     return true;
   }
 
-  if (!("type" in schema)) {
+  if (!isSetObject(schema) || !("type" in schema)) {
     return false;
   }
 
   return schema.type === "object" || schema.type === "array";
+}
+
+export function isJsonSchemaRecordType(
+  schema: any
+): schema is JsonSchemaRecordType {
+  return (
+    isSetObject(schema) &&
+    "type" in schema &&
+    schema.type === "object" &&
+    "additionalProperties" in schema &&
+    isSetObject(schema.additionalProperties) &&
+    "propertyNames" in schema &&
+    isSetObject(schema.propertyNames)
+  );
+}
+
+export function isJsonSchemaMetadata(
+  schema: any
+): schema is JsonSchemaMetadata {
+  return (
+    isSetObject(schema) &&
+    (!("$id" in schema) || isString(schema.$id)) &&
+    (!("$schema" in schema) || isString(schema.$schema)) &&
+    (!("$comment" in schema) || isString(schema.$comment)) &&
+    (!("$defs" in schema) || isObject(schema.$defs)) &&
+    (!("$dynamicRef" in schema) || isString(schema.$dynamicRef)) &&
+    (!("$dynamicAnchor" in schema) || isString(schema.$dynamicAnchor)) &&
+    (!("name" in schema) || isString(schema.name)) &&
+    (!("title" in schema) || isString(schema.title)) &&
+    (!("description" in schema) || isString(schema.description)) &&
+    (!("alias" in schema) ||
+      isString(schema.alias) ||
+      (Array.isArray(schema.alias) && schema.alias.every(isString)))
+  );
 }
 
 /**
@@ -195,4 +257,223 @@ export function isStandardJsonSchema<Input = unknown, Output = Input>(
     "output" in value["~standard"].jsonSchema &&
     isFunction(value["~standard"].jsonSchema.output)
   );
+}
+
+/**
+ * Merges multiple {@link JsonSchemaMetadata} objects into a single object, combining their properties. If there are conflicting properties, the last one will take precedence.
+ *
+ * @param schemas - The schemas to merge
+ * @returns The merged {@link JsonSchemaMetadata} object, or undefined if no valid schemas are provided
+ */
+export function mergeMetadataSchemaSafe(
+  ...schemas: JsonSchemaMetadata[]
+): JsonSchemaMetadata | undefined {
+  const filtered = schemas.filter(isJsonSchemaMetadata);
+  if (filtered.length === 0) {
+    return undefined;
+  }
+
+  let result = {} as JsonSchemaMetadata;
+  for (const schema of filtered) {
+    result = {
+      ...result,
+      ...schema,
+      $defs: {
+        ...result.$defs,
+        ...schema.$defs
+      }
+    };
+  }
+
+  return result;
+}
+
+/**
+ * Merges multiple {@link JsonSchemaMetadata} objects into a single object, combining their properties. If there are conflicting properties, the last one will take precedence.
+ *
+ * @remarks
+ * If any of the provided schemas are not valid {@link JsonSchemaMetadata} objects, or if no valid schemas are provided for merging, this function will throw an error. Use {@link mergeMetadataSchemaSafe} if you want to ignore invalid schemas instead.
+ *
+ * @param schemas - The schemas to merge
+ * @returns The merged {@link JsonSchemaMetadata} object
+ * @throws Error if any of the provided schemas are not valid {@link JsonSchemaMetadata} objects, or if no valid schemas are provided for merging. Use {@link mergeMetadataSchemaSafe} if you want to ignore invalid schemas instead.
+ */
+export function mergeMetadataSchemaStrict(
+  ...schemas: JsonSchemaMetadata[]
+): JsonSchemaMetadata {
+  const filtered = schemas.filter(isJsonSchemaMetadata);
+  if (filtered.length !== schemas.length) {
+    throw new Error(
+      `All schemas must be of type JsonSchemaMetadata - found ${
+        schemas.length - filtered.length
+      } invalid schema types`
+    );
+  }
+
+  return mergeMetadataSchemaSafe(...schemas)!;
+}
+
+/**
+ * Merges multiple {@link JsonSchemaObjectType} schemas into a single schema, combining their properties and required fields. If there are no valid object type schemas, throws an error.
+ *
+ * @remarks If there are overlapping properties, the last schema's property definition will take precedence. Required fields from all schemas will be combined, and duplicates will be removed. If all of the provided schemas are not valid {@link JsonSchemaObjectType} objects, or if no valid object type schemas are provided for merging, this function will throw an error. Use {@link mergeObjectTypeSchemaSafe} if you want to ignore invalid schemas instead.
+ *
+ * @param schemas - The schemas to merge
+ * @returns The merged {@link JsonSchemaMetadata} object
+ * @throws Error if all of the provided schemas are not valid {@link JsonSchemaObjectType} objects, or if no valid object type schemas are provided for merging. Use {@link mergeObjectTypeSchemaSafe} if you want to ignore invalid schemas instead.
+ */
+export function mergeMetadataSchema(
+  ...schemas: JsonSchemaMetadata[]
+): JsonSchemaMetadata {
+  const merged = mergeMetadataSchemaSafe(...schemas);
+  if (!merged) {
+    throw new Error("No valid JsonSchemaMetadata objects provided for merge");
+  }
+
+  return merged;
+}
+
+/**
+ * Merges multiple {@link JsonSchemaMetadata} objects into a single object, combining their properties. If there are conflicting properties, the last one will take precedence.
+ *
+ * @param schemas - The schemas to merge
+ * @returns The merged {@link JsonSchemaMetadata} object, or undefined if no valid schemas are provided
+ */
+export function mergeObjectTypeSchemaSafe(
+  ...schemas: JsonSchemaObjectType[]
+): JsonSchemaObjectType | undefined {
+  const filtered = schemas.filter(isJsonSchemaObjectType);
+  if (filtered.length === 0) {
+    return undefined;
+  }
+
+  const mergedProperties: Record<string, JsonSchemaType> = {};
+  const mergedRequired: Set<string> = new Set();
+
+  for (const schema of filtered) {
+    Object.assign(mergedProperties, schema.properties);
+    if (schema.required) {
+      for (const prop of schema.required) {
+        mergedRequired.add(prop);
+      }
+    }
+  }
+
+  return {
+    ...mergeObjectTypeSchemaSafe(...schemas),
+    type: "object",
+    properties: mergedProperties,
+    required: Array.from(mergedRequired)
+  };
+}
+
+/**
+ * Merges multiple {@link JsonSchemaObjectType} objects into a single object, combining their properties. If there are conflicting properties, the last one will take precedence.
+ *
+ * @remarks
+ * If any of the provided schemas are not valid {@link JsonSchemaObjectType} objects, or if no valid schemas are provided for merging, this function will throw an error. Use {@link mergeObjectTypeSchemaSafe} if you want to ignore invalid schemas instead.
+ *
+ * @param schemas - The schemas to merge
+ * @returns The merged {@link JsonSchemaObjectType} object
+ * @throws Error if any of the provided schemas are not valid {@link JsonSchemaObjectType} objects, or if no valid schemas are provided for merging. Use {@link mergeObjectTypeSchemaSafe} if you want to ignore invalid schemas instead.
+ */
+export function mergeObjectTypeSchemaStrict(
+  ...schemas: JsonSchemaObjectType[]
+): JsonSchemaObjectType {
+  const filtered = schemas.filter(isJsonSchemaObjectType);
+  if (filtered.length !== schemas.length) {
+    throw new Error(
+      `All schemas must be of type JsonSchemaObjectType - found ${
+        schemas.length - filtered.length
+      } invalid schema types`
+    );
+  }
+
+  return mergeObjectTypeSchemaSafe(...schemas)!;
+}
+
+/**
+ * Merges multiple {@link JsonSchemaObjectType} schemas into a single schema, combining their properties and required fields. If there are no valid object type schemas, throws an error.
+ *
+ * @remarks If there are overlapping properties, the last schema's property definition will take precedence. Required fields from all schemas will be combined, and duplicates will be removed. If all of the provided schemas are not valid {@link JsonSchemaObjectType} objects, or if no valid object type schemas are provided for merging, this function will throw an error. Use {@link mergeObjectTypeSchemaSafe} if you want to ignore invalid schemas instead.
+ *
+ * @param schemas - The schemas to merge
+ * @returns The merged {@link JsonSchemaObjectType} object
+ * @throws Error if all of the provided schemas are not valid {@link JsonSchemaObjectType} objects, or if no valid object type schemas are provided for merging. Use {@link mergeObjectTypeSchemaSafe} if you want to ignore invalid schemas instead.
+ */
+export function mergeObjectTypeSchema(
+  ...schemas: JsonSchemaObjectType[]
+): JsonSchemaObjectType {
+  const merged = mergeObjectTypeSchemaSafe(...schemas);
+  if (!merged) {
+    throw new Error("No valid JsonSchemaObjectType objects provided for merge");
+  }
+
+  return merged;
+}
+
+/**
+ * Extracts a {@link JsonSchemaObjectType} from a given {@link JsonSchemaType}, if it exists.
+ *
+ * @param schema - The schema to extract the object type from
+ * @returns The extracted {@link JsonSchemaObjectType}, or undefined if it does not exist
+ */
+export function extractObjectTypeSchema(
+  schema: JsonSchemaType
+): JsonSchemaObjectType | undefined {
+  if (isJsonSchemaObjectType(schema)) {
+    return schema;
+  }
+
+  if (isJsonSchemaAllOfType(schema)) {
+    const extracted = schema.allOf
+      .map(extractObjectTypeSchema)
+      .filter((s): s is JsonSchemaObjectType => s !== undefined);
+    if (extracted.length === 0) {
+      return undefined;
+    }
+
+    return mergeObjectTypeSchemaSafe(...extracted);
+  }
+
+  if (isJsonSchemaAnyOfType(schema)) {
+    const extracted = schema.anyOf
+      .map(extractObjectTypeSchema)
+      .filter((s): s is JsonSchemaObjectType => s !== undefined);
+    if (extracted.length === 0 || extracted.length !== schema.anyOf.length) {
+      return undefined;
+    }
+
+    const [first, ...rest] = extracted as [
+      JsonSchemaObjectType,
+      ...JsonSchemaObjectType[]
+    ];
+    const commonProperties: Record<string, JsonSchemaType> = {};
+    for (const [key, value] of Object.entries(first.properties)) {
+      if (rest.every(s => s.properties && key in s.properties)) {
+        commonProperties[key] = value;
+      }
+    }
+
+    const commonRequired = (first.required ?? []).filter(prop =>
+      rest.every(s => s.required?.includes(prop))
+    );
+
+    return {
+      type: "object",
+      properties: commonProperties,
+      required: commonRequired
+    };
+  }
+
+  if (isJsonSchemaRecordType(schema)) {
+    return {
+      type: "object",
+      properties: {},
+      additionalProperties: schema.additionalProperties,
+      required: []
+    };
+  }
+
+  return undefined;
 }

@@ -126,7 +126,7 @@ export interface JsonParserInterface {
   ) => void;
 }
 
-export interface JsonSchema7Metadata {
+export interface JsonSchemaMetadata {
   /**
    * The `$id` keyword is used to identify a schema and can be used for referencing the schema within other schemas. It is a URI that serves as a unique identifier for the schema.
    *
@@ -156,8 +156,24 @@ export interface JsonSchema7Metadata {
    * @see https://datatracker.ietf.org/doc/html/draft-bhutton-json-schema-validation-00#appendix-A
    */
   $defs?: {
-    [key: string]: JsonSchema7Type;
+    [key: string]: JsonSchemaType;
   };
+
+  /**
+   * The `$dynamicRef` keyword is used to reference a dynamic anchor defined in a JSON Schema. It allows you to reference a sub-schema that is determined at runtime based on the context of the validation. The value of `$dynamicRef` is a URI that points to the dynamic anchor defined using the `$dynamicAnchor` keyword.
+   *
+   * @see https://datatracker.ietf.org/doc/html/draft-handrews-json-schema-validation-01#section-8.2.6
+   * @see https://datatracker.ietf.org/doc/html/draft-handrews-json-schema-validation-01#section-8.2.7
+   */
+  $dynamicRef?: string;
+
+  /**
+   * The `$dynamicAnchor` keyword is used to define a dynamic anchor within a JSON Schema. A dynamic anchor is a placeholder that can be referenced using the `$dynamicRef` keyword. It allows for more flexible referencing of sub-schemas, as the actual schema that the dynamic anchor points to can be determined at runtime based on the context of the validation.
+   *
+   * @see https://datatracker.ietf.org/doc/html/draft-handrews-json-schema-validation-01#section-8.2.6
+   * @see https://datatracker.ietf.org/doc/html/draft-handrews-json-schema-validation-01#section-8.2.7
+   */
+  $dynamicAnchor?: string;
 
   /**
    * The `name` keyword is a custom metadata property that can be used to provide a human-readable name for the schema. It is not part of the official JSON Schema specification but can be useful for documentation and identification purposes.
@@ -187,18 +203,18 @@ export interface JsonSchema7Metadata {
   alias?: string | string[];
 }
 
-export interface JsonSchema7AnyType extends JsonSchema7Metadata {
+export interface JsonSchemaAnyType extends JsonSchemaMetadata {
   $ref?: string;
 }
 
-export interface JsonSchema7ArrayType extends JsonSchema7Metadata {
+export interface JsonSchemaArrayType extends JsonSchemaMetadata {
   type: "array";
-  items?: JsonSchema7Type;
+  items?: JsonSchemaType;
   minItems?: number;
   maxItems?: number;
 }
 
-export interface JsonSchema7BigintType extends JsonSchema7Metadata {
+export interface JsonSchemaBigintType extends JsonSchemaMetadata {
   type: "integer";
   format: "int64";
   minimum?: bigint;
@@ -208,11 +224,11 @@ export interface JsonSchema7BigintType extends JsonSchema7Metadata {
   multipleOf?: bigint;
 }
 
-export interface JsonSchema7BooleanType extends JsonSchema7Metadata {
+export interface JsonSchemaBooleanType extends JsonSchemaMetadata {
   type: "boolean";
 }
 
-export type JsonSchema7DateType = JsonSchema7Metadata &
+export type JsonSchemaDateType = JsonSchemaMetadata &
   (
     | {
         type: "integer" | "string";
@@ -221,68 +237,68 @@ export type JsonSchema7DateType = JsonSchema7Metadata &
         maximum?: number;
       }
     | {
-        anyOf: JsonSchema7DateType[];
+        anyOf: JsonSchemaDateType[];
       }
   );
 
-export interface JsonSchema7EnumType extends JsonSchema7Metadata {
+export interface JsonSchemaEnumType extends JsonSchemaMetadata {
   type: "string";
   enum: string[];
 }
 
-export interface JsonSchema7AllOfType extends JsonSchema7Metadata {
-  allOf: JsonSchema7Type[];
+export interface JsonSchemaAllOfType extends JsonSchemaMetadata {
+  allOf: JsonSchemaType[];
   unevaluatedProperties?: boolean;
 }
 
-export interface JsonSchema7PrimitiveLiteralType extends JsonSchema7Metadata {
+export interface JsonSchemaPrimitiveLiteralType extends JsonSchemaMetadata {
   type: "string" | "number" | "integer" | "boolean";
   const: string | number | boolean;
 }
 
-export type JsonSchema7LiteralType = JsonSchema7Metadata &
+export type JsonSchemaLiteralType = JsonSchemaMetadata &
   (
-    | JsonSchema7PrimitiveLiteralType
+    | JsonSchemaPrimitiveLiteralType
     | {
         type: "object" | "array";
       }
   );
 
-export interface JsonSchema7MapType extends JsonSchema7Metadata {
+export interface JsonSchemaMapType extends JsonSchemaMetadata {
   type: "array";
   maxItems: 125;
   items: {
     type: "array";
-    items: [JsonSchema7Type, JsonSchema7Type];
+    items: [JsonSchemaType, JsonSchemaType];
     minItems: 2;
     maxItems: 2;
   };
 }
 
-export interface JsonSchema7NativeEnumType extends JsonSchema7Metadata {
+export interface JsonSchemaNativeEnumType extends JsonSchemaMetadata {
   type: "string" | "number" | ["string", "number"];
   enum: (string | number)[];
 }
 
-export interface JsonSchema7NeverType extends JsonSchema7Metadata {
-  not: JsonSchema7AnyType;
+export interface JsonSchemaNeverType extends JsonSchemaMetadata {
+  not: JsonSchemaAnyType;
 }
 
-export interface JsonSchema7NullType extends JsonSchema7Metadata {
+export interface JsonSchemaNullType extends JsonSchemaMetadata {
   type: "null";
 }
 
-export type JsonSchema7NullableType = JsonSchema7Metadata &
+export type JsonSchemaNullableType = JsonSchemaMetadata &
   (
     | {
-        anyOf: [JsonSchema7Type, JsonSchema7NullType];
+        anyOf: [JsonSchemaType, JsonSchemaNullType];
       }
     | {
         type: [string, "null"];
       }
   );
 
-export interface JsonSchema7NumberType extends JsonSchema7Metadata {
+export interface JsonSchemaNumberType extends JsonSchemaMetadata {
   type: "number" | "integer";
   minimum?: number;
   exclusiveMinimum?: number;
@@ -291,14 +307,14 @@ export interface JsonSchema7NumberType extends JsonSchema7Metadata {
   multipleOf?: number;
 }
 
-export interface JsonSchema7ObjectType extends JsonSchema7Metadata {
+export interface JsonSchemaObjectType extends JsonSchemaMetadata {
   type: "object";
-  properties: Record<string, JsonSchema7Type>;
-  additionalProperties?: boolean | JsonSchema7Type;
+  properties: Record<string, JsonSchemaType>;
+  additionalProperties?: boolean | JsonSchemaType;
   required?: string[];
 }
 
-export interface JsonSchema7StringType extends JsonSchema7Metadata {
+export interface JsonSchemaStringType extends JsonSchemaMetadata {
   type: "string";
   minLength?: number;
   maxLength?: number;
@@ -317,99 +333,101 @@ export interface JsonSchema7StringType extends JsonSchema7Metadata {
   contentEncoding?: string;
 }
 
-export interface JsonSchema7SetType extends JsonSchema7Metadata {
+export interface JsonSchemaSetType extends JsonSchemaMetadata {
   type: "array";
   uniqueItems: true;
-  items?: JsonSchema7Type;
+  items?: JsonSchemaType;
   minItems?: number;
   maxItems?: number;
 }
 
-export type JsonSchema7RecordPropertyNamesType = JsonSchema7Metadata &
-  (Omit<JsonSchema7StringType, "type"> | Omit<JsonSchema7EnumType, "type">);
+export type JsonSchemaRecordPropertyNamesType = JsonSchemaMetadata &
+  (Omit<JsonSchemaStringType, "type"> | Omit<JsonSchemaEnumType, "type">);
 
-export interface JsonSchema7RecordType extends JsonSchema7Metadata {
+export interface JsonSchemaRecordType extends JsonSchemaMetadata {
   type: "object";
-  additionalProperties?: JsonSchema7Type | true;
-  propertyNames?: JsonSchema7RecordPropertyNamesType;
+  additionalProperties?: JsonSchemaType | true;
+  propertyNames?: JsonSchemaRecordPropertyNamesType;
 }
 
-export type JsonSchema7TupleType = JsonSchema7Metadata & {
+export type JsonSchemaTupleType = JsonSchemaMetadata & {
   type: "array";
   minItems: number;
-  items: JsonSchema7Type[];
+  items: JsonSchemaType[];
 } & (
     | {
         maxItems: number;
       }
     | {
-        additionalItems?: JsonSchema7Type;
+        additionalItems?: JsonSchemaType;
       }
   );
 
-export interface JsonSchema7UndefinedType extends JsonSchema7Metadata {
-  not: JsonSchema7AnyType;
+export interface JsonSchemaUndefinedType extends JsonSchemaMetadata {
+  not: JsonSchemaAnyType;
 }
 
-export type JsonSchema7Primitive =
+export type JsonSchemaPrimitive =
   | "string"
   | "number"
   | "integer"
   | "boolean"
   | "null";
 
-export type JsonSchema7UnionType = JsonSchema7Metadata &
-  (JsonSchema7PrimitiveUnionType | JsonSchema7AnyOfType);
+export type JsonSchemaUnionType = JsonSchemaMetadata &
+  (JsonSchemaPrimitiveUnionType | JsonSchemaAnyOfType);
 
-export type JsonSchema7PrimitiveUnionType = JsonSchema7Metadata &
+export type JsonSchemaPrimitiveUnionType = JsonSchemaMetadata &
   (
     | {
-        type: JsonSchema7Primitive | JsonSchema7Primitive[];
+        type: JsonSchemaPrimitive | JsonSchemaPrimitive[];
       }
     | {
-        type: JsonSchema7Primitive | JsonSchema7Primitive[];
+        type: JsonSchemaPrimitive | JsonSchemaPrimitive[];
         enum: (string | number | bigint | boolean | null)[];
       }
   );
 
-export type JsonSchema7UnknownType = JsonSchema7Metadata & JsonSchema7AnyType;
+export type JsonSchemaUnknownType = JsonSchemaMetadata & JsonSchemaAnyType;
 
-export interface JsonSchema7AnyOfType extends JsonSchema7Metadata {
-  anyOf: JsonSchema7Type[];
+export interface JsonSchemaAnyOfType extends JsonSchemaMetadata {
+  anyOf: JsonSchemaType[];
 }
 
-export interface JsonSchema7RefType extends JsonSchema7Metadata {
+export interface JsonSchemaRefType extends JsonSchemaMetadata {
   $ref: string;
 }
 
-export type JsonSchema7TypeUnion =
-  | JsonSchema7StringType
-  | JsonSchema7ArrayType
-  | JsonSchema7NumberType
-  | JsonSchema7BigintType
-  | JsonSchema7BooleanType
-  | JsonSchema7DateType
-  | JsonSchema7EnumType
-  | JsonSchema7LiteralType
-  | JsonSchema7NativeEnumType
-  | JsonSchema7NullType
-  | JsonSchema7NumberType
-  | JsonSchema7ObjectType
-  | JsonSchema7RecordType
-  | JsonSchema7TupleType
-  | JsonSchema7UnionType
-  | JsonSchema7UndefinedType
-  | JsonSchema7RefType
-  | JsonSchema7NeverType
-  | JsonSchema7MapType
-  | JsonSchema7AnyType
-  | JsonSchema7NullableType
-  | JsonSchema7AllOfType
-  | JsonSchema7UnknownType
-  | JsonSchema7SetType;
+export type JsonSchemaTypeUnion =
+  | JsonSchemaStringType
+  | JsonSchemaArrayType
+  | JsonSchemaNumberType
+  | JsonSchemaBigintType
+  | JsonSchemaBooleanType
+  | JsonSchemaDateType
+  | JsonSchemaEnumType
+  | JsonSchemaLiteralType
+  | JsonSchemaNativeEnumType
+  | JsonSchemaNullType
+  | JsonSchemaNumberType
+  | JsonSchemaObjectType
+  | JsonSchemaRecordType
+  | JsonSchemaTupleType
+  | JsonSchemaUnionType
+  | JsonSchemaUndefinedType
+  | JsonSchemaRefType
+  | JsonSchemaNeverType
+  | JsonSchemaMapType
+  | JsonSchemaAnyType
+  | JsonSchemaNullableType
+  | JsonSchemaAllOfType
+  | JsonSchemaUnknownType
+  | JsonSchemaSetType;
 
 /**
- * JSON Schema v7
+ * JSON Schema (draft 2020-12) type that can be used to validate JSON data. It is a union of all the specific JSON Schema types, as well as the metadata properties that can be included in any JSON Schema.
+ *
+ * @see https://json-schema.org/draft/2020-12
  * @see https://tools.ietf.org/html/draft-handrews-json-schema-validation-01
  */
-export type JsonSchema7Type = JsonSchema7TypeUnion & JsonSchema7Metadata;
+export type JsonSchemaType = JsonSchemaTypeUnion & JsonSchemaMetadata;
