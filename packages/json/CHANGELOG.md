@@ -2,6 +2,17 @@
 
 # Changelog for Stryke - JSON
 
+## [0.15.0](https://github.com/storm-software/stryke/releases/tag/json%400.15.0) (05/14/2026)
+
+### Features
+
+- **json:** Rename JsonSchema types and added various utility functions ([a569dc21](https://github.com/storm-software/stryke/commit/a569dc21))
+
+### Updated Dependencies
+
+- Updated **type-checks** to **v0.6.9**
+- Updated **types** to **v0.12.4**
+
 ## [0.14.20](https://github.com/storm-software/stryke/releases/tag/json%400.14.20) (05/08/2026)
 
 ### Miscellaneous

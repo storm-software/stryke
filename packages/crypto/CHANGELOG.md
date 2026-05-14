@@ -2,6 +2,14 @@
 
 # Changelog for Stryke - Crypto
 
+## [0.6.24](https://github.com/storm-software/stryke/releases/tag/crypto%400.6.24) (05/14/2026)
+
+### Updated Dependencies
+
+- Updated **type-checks** to **v0.6.9**
+- Updated **convert** to **v0.7.7**
+- Updated **json** to **v0.15.0**
+
 ## [0.6.23](https://github.com/storm-software/stryke/releases/tag/crypto%400.6.23) (05/08/2026)
 
 ### Updated Dependencies
