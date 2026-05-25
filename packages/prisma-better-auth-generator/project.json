@@ -7,12 +7,12 @@
     "build": {
       "executor": "@storm-software/workspace-tools:unbuild",
       "outputs": ["{options.outputPath}"],
+      "defaultConfiguration": "production",
       "options": {
         "entry": ["packages/prisma-better-auth-generator/src/index.ts"],
         "outputPath": "dist/packages/prisma-better-auth-generator",
         "tsconfig": "packages/prisma-better-auth-generator/tsconfig.json",
         "project": "packages/prisma-better-auth-generator/package.json",
-        "defaultConfiguration": "production",
         "platform": "node",
         "assets": [
           {
