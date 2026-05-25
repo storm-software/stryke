@@ -18,6 +18,14 @@
       "import": "./dist/cuid.mjs",
       "require": "./dist/cuid.cjs"
     },
+    "./human-id": {
+      "import": "./dist/human-id.mjs",
+      "require": "./dist/human-id.cjs"
+    },
+    "./nanoid": {
+      "import": "./dist/nanoid.mjs",
+      "require": "./dist/nanoid.cjs"
+    },
     "./nanoid-client": {
       "import": "./dist/nanoid-client.mjs",
       "require": "./dist/nanoid-client.cjs"
@@ -40,10 +48,8 @@
   "module": "./dist/index.mjs",
   "types": "./dist/index.d.cts",
   "dependencies": {
-    "@stryke/fs": "workspace:*",
     "@stryke/hash": "workspace:*",
-    "@stryke/path": "workspace:*",
-    "@stryke/type-checks": "workspace:*"
+    "human-id": "catalog:"
   },
   "devDependencies": {
     "tsdown": "catalog:"
