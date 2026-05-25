@@ -2,6 +2,17 @@
 
 # Changelog for Stryke - Zod
 
+## [0.3.22](https://github.com/storm-software/stryke/releases/tag/zod%400.3.22) (05/14/2026)
+
+### Features
+
+- **json:** Rename JsonSchema types and added various utility functions ([a569dc21](https://github.com/storm-software/stryke/commit/a569dc21))
+
+### Updated Dependencies
+
+- Updated **type-checks** to **v0.6.9**
+- Updated **json** to **v0.15.0**
+
 ## [0.3.21](https://github.com/storm-software/stryke/releases/tag/zod%400.3.21) (05/08/2026)
 
 ### Updated Dependencies
