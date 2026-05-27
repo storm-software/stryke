@@ -2,6 +2,18 @@
 
 # Changelog for Stryke - Convert
 
+## [0.7.9](https://github.com/storm-software/stryke/releases/tag/convert%400.7.9) (05/27/2026)
+
+### Miscellaneous
+
+- **convert:** Update `extractFileReference` function to handle new types ([332db607](https://github.com/storm-software/stryke/commit/332db607))
+- **types:** Rename `TypeDefinition` to `FileReference` and extend functionality ([7e8b05c1](https://github.com/storm-software/stryke/commit/7e8b05c1))
+
+### Updated Dependencies
+
+- Updated **type-checks** to **v0.6.11**
+- Updated **types** to **v0.12.6**
+
 ## [0.7.8](https://github.com/storm-software/stryke/releases/tag/convert%400.7.8) (05/25/2026)
 
 ### Updated Dependencies

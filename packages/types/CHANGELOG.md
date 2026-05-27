@@ -2,6 +2,12 @@
 
 # Changelog for Stryke - Types
 
+## [0.12.6](https://github.com/storm-software/stryke/releases/tag/types%400.12.6) (05/27/2026)
+
+### Miscellaneous
+
+- **types:** Rename `TypeDefinition` to `FileReference` and extend functionality ([7e8b05c1](https://github.com/storm-software/stryke/commit/7e8b05c1))
+
 ## [0.12.1](https://github.com/storm-software/stryke/releases/tag/types%400.12.1) (05/06/2026)
 
 ### Miscellaneous
