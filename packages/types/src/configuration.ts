@@ -38,13 +38,13 @@ export interface FileReference {
  * Configuration parameter for the {@link FileReference} utility type
  *
  * @remarks
- * When provided as a string, this value can include both a path to the typescript file and the name of the type definition to use separated by a `":"`, `"#"`, `";"`, or `"@"` character. For example: `"./src/types/env.ts#EnvConfiguration"`.
+ * When provided as a string, this value can include both a path to the typescript file and the name of the type definition to use separated by a `":"`, `"#"`, or `";"` character. For example: `"./src/types/env.ts#EnvConfiguration"`.
  */
 export type FileReferenceInput = FileReference | string;
 
 export interface DotenvFileReference {
   /**
-   * A path to the type definition for the expected env configuration parameters. This value can include both a path to the typescript file and the name of the type definition to use separated by a `":"`, `"#"`, `";"`, or `"@"` character. For example: `"./src/types/env.ts#Variables"`.
+   * A path to the type definition for the expected env configuration parameters. This value can include both a path to the typescript file and the name of the type definition to use separated by a `":"`, `"#"`, `";"` character. For example: `"./src/types/env.ts#Variables"`.
    *
    * @remarks
    * If a value is not provided for this option, the plugin will attempt to infer the type definition from the `storm.dotenv.types.config` object in the project's `package.json` file.
@@ -52,7 +52,7 @@ export interface DotenvFileReference {
   variables?: FileReferenceInput;
 
   /**
-   * A path to the type definition for the expected env secret parameters. This value can include both a path to the typescript file and the name of the type definition to use separated by a `":"`, `"#"`, `";"`, or `"@"` character. For example: `"./src/types/env.ts#Secrets"`.
+   * A path to the type definition for the expected env secret parameters. This value can include both a path to the typescript file and the name of the type definition to use separated by a `":"`, `"#"`, `";"` character. For example: `"./src/types/env.ts#Secrets"`.
    *
    * @remarks
    * If a value is not provided for this option, the plugin will attempt to infer the type definition from the `storm.dotenv.types.secrets` object in the project's `package.json` file.

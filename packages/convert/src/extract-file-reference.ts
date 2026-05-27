@@ -44,13 +44,8 @@ export function extractFileReference(
   input: FileReferenceInput
 ): FileReference | undefined {
   if (isSetString(input)) {
-    if (
-      input.includes(":") ||
-      input.includes("#") ||
-      input.includes(";") ||
-      input.includes("@")
-    ) {
-      const params = input.split(/[:#;@]/);
+    if (input.includes(":") || input.includes("#") || input.includes(";")) {
+      const params = input.split(/[:#;]/);
       if (params.length > 1 && params[0]) {
         return {
           file: params[0],
