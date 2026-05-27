@@ -2,6 +2,12 @@
 
 # Changelog for Stryke - Types
 
+## [0.12.7](https://github.com/storm-software/stryke/releases/tag/types%400.12.7) (05/27/2026)
+
+### Bug Fixes
+
+- **types:** Remove `@` character from file reference ([e7b710bd](https://github.com/storm-software/stryke/commit/e7b710bd))
+
 ## [0.12.6](https://github.com/storm-software/stryke/releases/tag/types%400.12.6) (05/27/2026)
 
 ### Miscellaneous
