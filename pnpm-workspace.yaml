@@ -11,14 +11,14 @@ catalog:
   '@ls-lint/ls-lint': ^2.3.1
   '@ltd/j-toml': ^1.38.0
   '@microsoft/api-extractor': ^7.49.2
-  '@nx/devkit': 22.7.1
-  '@nx/eslint': 22.7.1
-  '@nx/eslint-plugin': 22.7.1
-  '@nx/jest': 22.7.1
-  '@nx/js': 22.7.1
-  '@nx/plugin': 22.7.1
+  '@nx/devkit': ^22.7.4
+  '@nx/eslint': 22.7.4
+  '@nx/eslint-plugin': 22.7.4
+  '@nx/jest': 22.7.4
+  '@nx/js': 22.7.4
+  '@nx/plugin': 22.7.4
   '@nx/react': ^22.5.4
-  '@nx/workspace': 22.7.1
+  '@nx/workspace': 22.7.4
   '@prisma/client': ^6.5.0
   '@prisma/generator-helper': ^6.19.3
   '@prisma/internals': ^6.19.3
@@ -43,7 +43,7 @@ catalog:
   '@storm-software/workspace-tools': ^1.296.11
   '@swc-node/register': ^1.11.1
   '@swc/core': ^1.15.40
-  '@swc/helpers': ^0.5.22
+  '@swc/helpers': ^0.5.23
   '@swc/wasm': ^1.10.14
   '@tanstack/react-query': ^5.100.14
   '@tanstack/react-query-devtools': ^5.70.0
@@ -93,7 +93,7 @@ catalog:
   markdownlint-cli2: ^0.17.2
   mlly: 1.7.4
   nanotar: ^0.2.1
-  nx: 22.7.1
+  nx: 22.7.4
   ohash: ^2.0.11
   p-queue: ^9.3.0
   parenthesis: ^3.1.8
