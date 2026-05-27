@@ -22,13 +22,13 @@
       "import": "./dist/buffer-to-string.mjs",
       "require": "./dist/buffer-to-string.cjs"
     },
+    "./extract-file-reference": {
+      "import": "./dist/extract-file-reference.mjs",
+      "require": "./dist/extract-file-reference.cjs"
+    },
     "./neutral": {
       "import": "./dist/neutral.mjs",
       "require": "./dist/neutral.cjs"
-    },
-    "./parse-type-definition": {
-      "import": "./dist/parse-type-definition.mjs",
-      "require": "./dist/parse-type-definition.cjs"
     },
     "./string-to-buffer": {
       "import": "./dist/string-to-buffer.mjs",
