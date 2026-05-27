@@ -2,6 +2,16 @@
 
 # Changelog for Stryke - Unique ID
 
+## [0.3.88](https://github.com/storm-software/stryke/releases/tag/unique-id%400.3.88) (05/25/2026)
+
+### Features
+
+- **unique-id:** Added `human-id` package export ([a97f9eb9](https://github.com/storm-software/stryke/commit/a97f9eb9))
+
+### Updated Dependencies
+
+- Updated **hash** to **v0.13.30**
+
 ## [0.3.87](https://github.com/storm-software/stryke/releases/tag/unique-id%400.3.87) (05/14/2026)
 
 ### Updated Dependencies
