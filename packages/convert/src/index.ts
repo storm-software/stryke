@@ -27,7 +27,7 @@
 
 export * from "./array-buffer-to-string";
 export * from "./buffer-to-string";
-export * from "./parse-type-definition";
+export * from "./extract-file-reference";
 export * from "./string-to-buffer";
 export * from "./string-to-uint8-array";
 export * from "./string-to-utf8-array";
