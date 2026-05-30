@@ -79,22 +79,6 @@
         "command": "node ./{projectRoot}/dist/bin/capnpc.mjs --project-root packages/capnp --schema ./{projectRoot}/tests/schemas --no-dts"
       }
     },
-    "test": {
-      "cache": true,
-      "inputs": ["testing", "typescript"],
-      "outputs": ["{projectRoot}/tests/**/*.js"],
-      "dependsOn": ["test-schema"],
-      "executor": "@nx/jest:jest",
-      "options": {
-        "jestConfig": "packages/capnp/jest.config.ts",
-        "passWithNoTests": true
-      },
-      "configurations": {
-        "ci": {
-          "ci": true
-        }
-      }
-    },
     "nx-release-publish": {
       "executor": "@storm-software/workspace-tools:npm-publish"
     }
