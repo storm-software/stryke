@@ -178,7 +178,7 @@
       "import": "./dist/slash.test.mjs",
       "require": "./dist/slash.test.cjs"
     },
-    "./*": "./*"
+    "./package.json": "./package.json"
   },
   "main": "./dist/index.cjs",
   "module": "./dist/index.mjs",

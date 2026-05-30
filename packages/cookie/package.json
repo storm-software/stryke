@@ -50,7 +50,7 @@
       "import": "./dist/types.test.mjs",
       "require": "./dist/types.test.cjs"
     },
-    "./*": "./*"
+    "./package.json": "./package.json"
   },
   "main": "./dist/index.cjs",
   "module": "./dist/index.mjs",

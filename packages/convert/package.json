@@ -130,7 +130,7 @@
       "import": "./dist/utf8-array-to-string.test.mjs",
       "require": "./dist/utf8-array-to-string.test.cjs"
     },
-    "./*": "./*"
+    "./package.json": "./package.json"
   },
   "main": "./dist/index.cjs",
   "module": "./dist/index.mjs",

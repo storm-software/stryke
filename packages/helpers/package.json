@@ -202,7 +202,7 @@
       "import": "./dist/union.test.mjs",
       "require": "./dist/union.test.cjs"
     },
-    "./*": "./*"
+    "./package.json": "./package.json"
   },
   "main": "./dist/index.cjs",
   "module": "./dist/index.mjs",

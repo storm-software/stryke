@@ -18,16 +18,6 @@
       "import": "./dist/canonical.mjs",
       "require": "./dist/canonical.cjs"
     },
-    "./canonical.test": {
-      "import": "./dist/canonical.test.mjs",
-      "require": "./dist/canonical.test.cjs"
-    },
-    "./chunk-DQk6qfdC": "./dist/chunk-DQk6qfdC.mjs",
-    "./chunk-DtCrPtnG": "./dist/chunk-DtCrPtnG.cjs",
-    "./index.test": {
-      "import": "./dist/index.test.mjs",
-      "require": "./dist/index.test.cjs"
-    },
     "./pointer": {
       "import": "./dist/pointer/index.mjs",
       "require": "./dist/pointer/index.cjs"
@@ -36,45 +26,21 @@
       "import": "./dist/pointer/find-reference.mjs",
       "require": "./dist/pointer/find-reference.cjs"
     },
-    "./pointer/find-reference.test": {
-      "import": "./dist/pointer/find-reference.test.mjs",
-      "require": "./dist/pointer/find-reference.test.cjs"
-    },
-    "./pointer/index.test": {
-      "import": "./dist/pointer/index.test.mjs",
-      "require": "./dist/pointer/index.test.cjs"
-    },
     "./pointer/parse": {
       "import": "./dist/pointer/parse.mjs",
       "require": "./dist/pointer/parse.cjs"
-    },
-    "./pointer/parse.test": {
-      "import": "./dist/pointer/parse.test.mjs",
-      "require": "./dist/pointer/parse.test.cjs"
     },
     "./schema": {
       "import": "./dist/schema.mjs",
       "require": "./dist/schema.cjs"
     },
-    "./schema.test": {
-      "import": "./dist/schema.test.mjs",
-      "require": "./dist/schema.test.cjs"
-    },
     "./storm-json": {
       "import": "./dist/storm-json.mjs",
       "require": "./dist/storm-json.cjs"
     },
-    "./storm-json.test": {
-      "import": "./dist/storm-json.test.mjs",
-      "require": "./dist/storm-json.test.cjs"
-    },
     "./types": {
       "import": "./dist/types.mjs",
       "require": "./dist/types.cjs"
-    },
-    "./types.test": {
-      "import": "./dist/types.test.mjs",
-      "require": "./dist/types.test.cjs"
     },
     "./utils": {
       "import": "./dist/utils/index.mjs",
@@ -84,14 +50,6 @@
       "import": "./dist/utils/code-frames.mjs",
       "require": "./dist/utils/code-frames.cjs"
     },
-    "./utils/code-frames.test": {
-      "import": "./dist/utils/code-frames.test.mjs",
-      "require": "./dist/utils/code-frames.test.cjs"
-    },
-    "./utils/index.test": {
-      "import": "./dist/utils/index.test.mjs",
-      "require": "./dist/utils/index.test.cjs"
-    },
     "./utils/parse": {
       "import": "./dist/utils/parse.mjs",
       "require": "./dist/utils/parse.cjs"
@@ -100,31 +58,15 @@
       "import": "./dist/utils/parse-error.mjs",
       "require": "./dist/utils/parse-error.cjs"
     },
-    "./utils/parse-error.test": {
-      "import": "./dist/utils/parse-error.test.mjs",
-      "require": "./dist/utils/parse-error.test.cjs"
-    },
-    "./utils/parse.test": {
-      "import": "./dist/utils/parse.test.mjs",
-      "require": "./dist/utils/parse.test.cjs"
-    },
     "./utils/stringify": {
       "import": "./dist/utils/stringify.mjs",
       "require": "./dist/utils/stringify.cjs"
-    },
-    "./utils/stringify.test": {
-      "import": "./dist/utils/stringify.test.mjs",
-      "require": "./dist/utils/stringify.test.cjs"
     },
     "./utils/strip-comments": {
       "import": "./dist/utils/strip-comments.mjs",
       "require": "./dist/utils/strip-comments.cjs"
     },
-    "./utils/strip-comments.test": {
-      "import": "./dist/utils/strip-comments.test.mjs",
-      "require": "./dist/utils/strip-comments.test.cjs"
-    },
-    "./*": "./*"
+    "./package.json": "./package.json"
   },
   "main": "./dist/index.cjs",
   "module": "./dist/index.mjs",

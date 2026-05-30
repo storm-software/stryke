@@ -63,6 +63,7 @@
     "@nx/eslint-plugin": "catalog:",
     "@nx/js": "catalog:",
     "@nx/plugin": "catalog:",
+    "@nx/vite": "catalog:",
     "@nx/vitest": "catalog:",
     "@nx/workspace": "catalog:",
     "@storm-software/build-tools": "catalog:",

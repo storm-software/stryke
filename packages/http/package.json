@@ -82,7 +82,7 @@
       "import": "./dist/proxy-agent.test.mjs",
       "require": "./dist/proxy-agent.test.cjs"
     },
-    "./*": "./*"
+    "./package.json": "./package.json"
   },
   "main": "./dist/index.cjs",
   "module": "./dist/index.mjs",

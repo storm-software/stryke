@@ -266,7 +266,7 @@
       "import": "./dist/vowels.test.mjs",
       "require": "./dist/vowels.test.cjs"
     },
-    "./*": "./*"
+    "./package.json": "./package.json"
   },
   "main": "./dist/index.cjs",
   "module": "./dist/index.mjs",

@@ -170,7 +170,7 @@
       "import": "./dist/utils/tree.test.mjs",
       "require": "./dist/utils/tree.test.cjs"
     },
-    "./*": "./*"
+    "./package.json": "./package.json"
   },
   "main": "./dist/index.cjs",
   "module": "./dist/index.mjs",

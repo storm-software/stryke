@@ -207,7 +207,7 @@
       "import": "./dist/validations.test.mjs",
       "require": "./dist/validations.test.cjs"
     },
-    "./*": "./*"
+    "./package.json": "./package.json"
   },
   "main": "./dist/index.cjs",
   "module": "./dist/index.mjs",

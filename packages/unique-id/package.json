@@ -74,7 +74,7 @@
       "import": "./dist/uuid.test.mjs",
       "require": "./dist/uuid.test.cjs"
     },
-    "./*": "./*"
+    "./package.json": "./package.json"
   },
   "main": "./dist/index.cjs",
   "module": "./dist/index.mjs",
