@@ -18,17 +18,37 @@
       "import": "./dist/action-handler.mjs",
       "require": "./dist/action-handler.cjs"
     },
+    "./action-handler.test": {
+      "import": "./dist/action-handler.test.mjs",
+      "require": "./dist/action-handler.test.cjs"
+    },
     "./client": {
       "import": "./dist/client.mjs",
       "require": "./dist/client.cjs"
+    },
+    "./client.test": {
+      "import": "./dist/client.test.mjs",
+      "require": "./dist/client.test.cjs"
+    },
+    "./index.test": {
+      "import": "./dist/index.test.mjs",
+      "require": "./dist/index.test.cjs"
     },
     "./server": {
       "import": "./dist/server.mjs",
       "require": "./dist/server.cjs"
     },
+    "./server.test": {
+      "import": "./dist/server.test.mjs",
+      "require": "./dist/server.test.cjs"
+    },
     "./shared": {
       "import": "./dist/shared.mjs",
       "require": "./dist/shared.cjs"
+    },
+    "./shared.test": {
+      "import": "./dist/shared.test.mjs",
+      "require": "./dist/shared.test.cjs"
     },
     "./shield": {
       "import": "./dist/shield/index.mjs",
@@ -38,29 +58,61 @@
       "import": "./dist/shield/constructors.mjs",
       "require": "./dist/shield/constructors.cjs"
     },
+    "./shield/constructors.test": {
+      "import": "./dist/shield/constructors.test.mjs",
+      "require": "./dist/shield/constructors.test.cjs"
+    },
     "./shield/generator": {
       "import": "./dist/shield/generator.mjs",
       "require": "./dist/shield/generator.cjs"
+    },
+    "./shield/generator.test": {
+      "import": "./dist/shield/generator.test.mjs",
+      "require": "./dist/shield/generator.test.cjs"
+    },
+    "./shield/index.test": {
+      "import": "./dist/shield/index.test.mjs",
+      "require": "./dist/shield/index.test.cjs"
     },
     "./shield/rules": {
       "import": "./dist/shield/rules.mjs",
       "require": "./dist/shield/rules.cjs"
     },
+    "./shield/rules.test": {
+      "import": "./dist/shield/rules.test.mjs",
+      "require": "./dist/shield/rules.test.cjs"
+    },
     "./shield/shield": {
       "import": "./dist/shield/shield.mjs",
       "require": "./dist/shield/shield.cjs"
+    },
+    "./shield/shield.test": {
+      "import": "./dist/shield/shield.test.mjs",
+      "require": "./dist/shield/shield.test.cjs"
     },
     "./shield/types": {
       "import": "./dist/shield/types.mjs",
       "require": "./dist/shield/types.cjs"
     },
+    "./shield/types.test": {
+      "import": "./dist/shield/types.test.mjs",
+      "require": "./dist/shield/types.test.cjs"
+    },
     "./shield/utils": {
       "import": "./dist/shield/utils.mjs",
       "require": "./dist/shield/utils.cjs"
     },
+    "./shield/utils.test": {
+      "import": "./dist/shield/utils.test.mjs",
+      "require": "./dist/shield/utils.test.cjs"
+    },
     "./shield/validation": {
       "import": "./dist/shield/validation.mjs",
       "require": "./dist/shield/validation.cjs"
+    },
+    "./shield/validation.test": {
+      "import": "./dist/shield/validation.test.mjs",
+      "require": "./dist/shield/validation.test.cjs"
     },
     "./tanstack-query/client": {
       "import": "./dist/tanstack-query/client.mjs",
@@ -73,6 +125,10 @@
     "./types": {
       "import": "./dist/types.mjs",
       "require": "./dist/types.cjs"
+    },
+    "./types.test": {
+      "import": "./dist/types.test.mjs",
+      "require": "./dist/types.test.cjs"
     },
     "./*": "./*"
   },

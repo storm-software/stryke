@@ -14,16 +14,26 @@
       "import": "./dist/index.mjs",
       "require": "./dist/index.cjs"
     },
+    "./index.test": {
+      "import": "./dist/index.test.mjs",
+      "require": "./dist/index.test.cjs"
+    },
     "./open": {
       "import": "./dist/open.mjs",
       "require": "./dist/open.cjs"
+    },
+    "./open.test": {
+      "import": "./dist/open.test.mjs",
+      "require": "./dist/open.test.cjs"
     },
     "./*": "./*"
   },
   "main": "./dist/index.cjs",
   "module": "./dist/index.mjs",
   "types": "./dist/index.d.cts",
-  "files": ["openChrome.applescript"],
+  "files": [
+    "openChrome.applescript"
+  ],
   "dependencies": {
     "cross-spawn": "catalog:"
   },

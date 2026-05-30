@@ -5,7 +5,7 @@
     "outDir": "../../dist/out-tsc"
   },
   "include": [
-    "jest.config.ts",
+    "vitest.config.ts",
     "tests/**/*.ts",
     "tests/**/*.spec.ts",
     "tests/**/*.d.ts"

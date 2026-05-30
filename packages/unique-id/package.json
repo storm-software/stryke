@@ -18,9 +18,21 @@
       "import": "./dist/cuid.mjs",
       "require": "./dist/cuid.cjs"
     },
+    "./cuid.test": {
+      "import": "./dist/cuid.test.mjs",
+      "require": "./dist/cuid.test.cjs"
+    },
     "./human-id": {
       "import": "./dist/human-id.mjs",
       "require": "./dist/human-id.cjs"
+    },
+    "./human-id.test": {
+      "import": "./dist/human-id.test.mjs",
+      "require": "./dist/human-id.test.cjs"
+    },
+    "./index.test": {
+      "import": "./dist/index.test.mjs",
+      "require": "./dist/index.test.cjs"
     },
     "./nanoid": {
       "import": "./dist/nanoid.mjs",
@@ -30,17 +42,37 @@
       "import": "./dist/nanoid-client.mjs",
       "require": "./dist/nanoid-client.cjs"
     },
+    "./nanoid-client.test": {
+      "import": "./dist/nanoid-client.test.mjs",
+      "require": "./dist/nanoid-client.test.cjs"
+    },
+    "./nanoid.test": {
+      "import": "./dist/nanoid.test.mjs",
+      "require": "./dist/nanoid.test.cjs"
+    },
     "./random": {
       "import": "./dist/random.mjs",
       "require": "./dist/random.cjs"
+    },
+    "./random.test": {
+      "import": "./dist/random.test.mjs",
+      "require": "./dist/random.test.cjs"
     },
     "./snowflake": {
       "import": "./dist/snowflake.mjs",
       "require": "./dist/snowflake.cjs"
     },
+    "./snowflake.test": {
+      "import": "./dist/snowflake.test.mjs",
+      "require": "./dist/snowflake.test.cjs"
+    },
     "./uuid": {
       "import": "./dist/uuid.mjs",
       "require": "./dist/uuid.cjs"
+    },
+    "./uuid.test": {
+      "import": "./dist/uuid.test.mjs",
+      "require": "./dist/uuid.test.cjs"
     },
     "./*": "./*"
   },

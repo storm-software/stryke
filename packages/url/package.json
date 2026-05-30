@@ -18,17 +18,37 @@
       "import": "./dist/helpers.mjs",
       "require": "./dist/helpers.cjs"
     },
+    "./helpers.test": {
+      "import": "./dist/helpers.test.mjs",
+      "require": "./dist/helpers.test.cjs"
+    },
+    "./index.test": {
+      "import": "./dist/index.test.mjs",
+      "require": "./dist/index.test.cjs"
+    },
     "./storm-url": {
       "import": "./dist/storm-url.mjs",
       "require": "./dist/storm-url.cjs"
+    },
+    "./storm-url.test": {
+      "import": "./dist/storm-url.test.mjs",
+      "require": "./dist/storm-url.test.cjs"
     },
     "./types": {
       "import": "./dist/types.mjs",
       "require": "./dist/types.cjs"
     },
+    "./types.test": {
+      "import": "./dist/types.test.mjs",
+      "require": "./dist/types.test.cjs"
+    },
     "./validate": {
       "import": "./dist/validate.mjs",
       "require": "./dist/validate.cjs"
+    },
+    "./validate.test": {
+      "import": "./dist/validate.test.mjs",
+      "require": "./dist/validate.test.cjs"
     },
     "./*": "./*"
   },

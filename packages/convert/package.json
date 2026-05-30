@@ -18,45 +18,93 @@
       "import": "./dist/array-buffer-to-string.mjs",
       "require": "./dist/array-buffer-to-string.cjs"
     },
+    "./array-buffer-to-string.test": {
+      "import": "./dist/array-buffer-to-string.test.mjs",
+      "require": "./dist/array-buffer-to-string.test.cjs"
+    },
     "./buffer-to-string": {
       "import": "./dist/buffer-to-string.mjs",
       "require": "./dist/buffer-to-string.cjs"
+    },
+    "./buffer-to-string.test": {
+      "import": "./dist/buffer-to-string.test.mjs",
+      "require": "./dist/buffer-to-string.test.cjs"
     },
     "./extract-file-reference": {
       "import": "./dist/extract-file-reference.mjs",
       "require": "./dist/extract-file-reference.cjs"
     },
+    "./extract-file-reference.test": {
+      "import": "./dist/extract-file-reference.test.mjs",
+      "require": "./dist/extract-file-reference.test.cjs"
+    },
+    "./index.test": {
+      "import": "./dist/index.test.mjs",
+      "require": "./dist/index.test.cjs"
+    },
     "./neutral": {
       "import": "./dist/neutral.mjs",
       "require": "./dist/neutral.cjs"
+    },
+    "./neutral.test": {
+      "import": "./dist/neutral.test.mjs",
+      "require": "./dist/neutral.test.cjs"
     },
     "./string-to-buffer": {
       "import": "./dist/string-to-buffer.mjs",
       "require": "./dist/string-to-buffer.cjs"
     },
+    "./string-to-buffer.test": {
+      "import": "./dist/string-to-buffer.test.mjs",
+      "require": "./dist/string-to-buffer.test.cjs"
+    },
     "./string-to-uint8-array": {
       "import": "./dist/string-to-uint8-array.mjs",
       "require": "./dist/string-to-uint8-array.cjs"
+    },
+    "./string-to-uint8-array.test": {
+      "import": "./dist/string-to-uint8-array.test.mjs",
+      "require": "./dist/string-to-uint8-array.test.cjs"
     },
     "./string-to-utf8-array": {
       "import": "./dist/string-to-utf8-array.mjs",
       "require": "./dist/string-to-utf8-array.cjs"
     },
+    "./string-to-utf8-array.test": {
+      "import": "./dist/string-to-utf8-array.test.mjs",
+      "require": "./dist/string-to-utf8-array.test.cjs"
+    },
     "./to-array": {
       "import": "./dist/to-array.mjs",
       "require": "./dist/to-array.cjs"
+    },
+    "./to-array.test": {
+      "import": "./dist/to-array.test.mjs",
+      "require": "./dist/to-array.test.cjs"
     },
     "./to-bool": {
       "import": "./dist/to-bool.mjs",
       "require": "./dist/to-bool.cjs"
     },
+    "./to-bool.test": {
+      "import": "./dist/to-bool.test.mjs",
+      "require": "./dist/to-bool.test.cjs"
+    },
     "./to-string-key": {
       "import": "./dist/to-string-key.mjs",
       "require": "./dist/to-string-key.cjs"
     },
+    "./to-string-key.test": {
+      "import": "./dist/to-string-key.test.mjs",
+      "require": "./dist/to-string-key.test.cjs"
+    },
     "./uint8-array-to-stream": {
       "import": "./dist/uint8-array-to-stream.mjs",
       "require": "./dist/uint8-array-to-stream.cjs"
+    },
+    "./uint8-array-to-stream.test": {
+      "import": "./dist/uint8-array-to-stream.test.mjs",
+      "require": "./dist/uint8-array-to-stream.test.cjs"
     },
     "./uint8-array-to-string": {
       "import": "./dist/uint8-array-to-string.mjs",
@@ -66,9 +114,21 @@
       "import": "./dist/uint8-array-to-string.node.mjs",
       "require": "./dist/uint8-array-to-string.node.cjs"
     },
+    "./uint8-array-to-string.node.test": {
+      "import": "./dist/uint8-array-to-string.node.test.mjs",
+      "require": "./dist/uint8-array-to-string.node.test.cjs"
+    },
+    "./uint8-array-to-string.test": {
+      "import": "./dist/uint8-array-to-string.test.mjs",
+      "require": "./dist/uint8-array-to-string.test.cjs"
+    },
     "./utf8-array-to-string": {
       "import": "./dist/utf8-array-to-string.mjs",
       "require": "./dist/utf8-array-to-string.cjs"
+    },
+    "./utf8-array-to-string.test": {
+      "import": "./dist/utf8-array-to-string.test.mjs",
+      "require": "./dist/utf8-array-to-string.test.cjs"
     },
     "./*": "./*"
   },

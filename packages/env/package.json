@@ -18,29 +18,61 @@
       "import": "./dist/ci-checks.mjs",
       "require": "./dist/ci-checks.cjs"
     },
+    "./ci-checks.test": {
+      "import": "./dist/ci-checks.test.mjs",
+      "require": "./dist/ci-checks.test.cjs"
+    },
     "./environment-checks": {
       "import": "./dist/environment-checks.mjs",
       "require": "./dist/environment-checks.cjs"
+    },
+    "./environment-checks.test": {
+      "import": "./dist/environment-checks.test.mjs",
+      "require": "./dist/environment-checks.test.cjs"
     },
     "./get-env-paths": {
       "import": "./dist/get-env-paths.mjs",
       "require": "./dist/get-env-paths.cjs"
     },
+    "./get-env-paths.test": {
+      "import": "./dist/get-env-paths.test.mjs",
+      "require": "./dist/get-env-paths.test.cjs"
+    },
+    "./index.test": {
+      "import": "./dist/index.test.mjs",
+      "require": "./dist/index.test.cjs"
+    },
     "./load-env": {
       "import": "./dist/load-env.mjs",
       "require": "./dist/load-env.cjs"
+    },
+    "./load-env.test": {
+      "import": "./dist/load-env.test.mjs",
+      "require": "./dist/load-env.test.cjs"
     },
     "./providers": {
       "import": "./dist/providers.mjs",
       "require": "./dist/providers.cjs"
     },
+    "./providers.test": {
+      "import": "./dist/providers.test.mjs",
+      "require": "./dist/providers.test.cjs"
+    },
     "./runtime-checks": {
       "import": "./dist/runtime-checks.mjs",
       "require": "./dist/runtime-checks.cjs"
     },
+    "./runtime-checks.test": {
+      "import": "./dist/runtime-checks.test.mjs",
+      "require": "./dist/runtime-checks.test.cjs"
+    },
     "./types": {
       "import": "./dist/types.mjs",
       "require": "./dist/types.cjs"
+    },
+    "./types.test": {
+      "import": "./dist/types.test.mjs",
+      "require": "./dist/types.test.cjs"
     },
     "./*": "./*"
   },

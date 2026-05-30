@@ -15,7 +15,7 @@
     "tsup.config.ts"
   ],
   "exclude": [
-    "jest.config.ts",
+    "vitest.config.ts",
     "src/generators/**/files/**/*",
     "src/**/untyped.ts",
     "src/**/*.spec.ts",
