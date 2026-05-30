@@ -1,0 +1,1 @@
+/nix/store/qyb9fdgd92bgnwpal50gjbinbsqq52wa-claude-agents-architecture-designer.md

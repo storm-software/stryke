@@ -1,0 +1,1 @@
+/nix/store/1shd2vbjhc98vaqjs6w1pwfb42bywc68-claude-agents-documentation-writer.md

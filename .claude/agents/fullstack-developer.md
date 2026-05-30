@@ -1,0 +1,1 @@
+/nix/store/cmdnhqkdidmlfpy2pbckvar7icl14wrb-claude-agents-fullstack-developer.md
