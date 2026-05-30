@@ -63,7 +63,7 @@
     "@nx/eslint-plugin": "catalog:",
     "@nx/js": "catalog:",
     "@nx/plugin": "catalog:",
-    "@nx/vitest": "22.7.5",
+    "@nx/vitest": "catalog:",
     "@nx/workspace": "catalog:",
     "@storm-software/build-tools": "catalog:",
     "@storm-software/config": "catalog:",
@@ -102,8 +102,8 @@
     "tslib": "catalog:",
     "typescript": "^6.0.3",
     "verdaccio": "catalog:",
-    "vite": "^8.0.14",
-    "vitest": "~4.1.7",
+    "vite": "catalog:",
+    "vitest": "catalog:",
     "zx": "catalog:"
   },
   "manypkg": {

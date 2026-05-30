@@ -16,16 +16,7 @@
 
  ------------------------------------------------------------------- */
 
-import { defineConfig } from "@storm-software/eslint";
-
-Error.stackTraceLimit = Number.POSITIVE_INFINITY;
-
-const config = defineConfig({
-  name: "stryke",
-  nx: {
-    moduleBoundaries: false
-  },
-  ignores: ["packages/capnp/schemas/**", "**/*.{spec,test}.ts"]
-});
-
-export default config;
+export default [
+  "**/vite.config.{mjs,js,ts,mts}",
+  "**/vitest.config.{mjs,js,ts,mts}"
+];
