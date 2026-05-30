@@ -2,6 +2,21 @@
 
 # Changelog for Stryke - Cookie
 
+## [0.1.72](https://github.com/storm-software/stryke/releases/tag/cookie%400.1.72) (05/30/2026)
+
+### Miscellaneous
+
+- **monorepo:** Remove remaining `jest` configuration ([1fd3d7d2](https://github.com/storm-software/stryke/commit/1fd3d7d2))
+
+### Bug Fixes
+
+- **monorepo:** Resolve issue with `.test.ts` exports in `package.json` file ([31d85e19](https://github.com/storm-software/stryke/commit/31d85e19))
+
+### Updated Dependencies
+
+- Updated **convert** to **v0.7.12**
+- Updated **type-checks** to **v0.6.14**
+
 ## [0.1.71](https://github.com/storm-software/stryke/releases/tag/cookie%400.1.71) (05/30/2026)
 
 ### Miscellaneous

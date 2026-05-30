@@ -2,6 +2,20 @@
 
 # Changelog for Stryke - Unique ID
 
+## [0.3.92](https://github.com/storm-software/stryke/releases/tag/unique-id%400.3.92) (05/30/2026)
+
+### Miscellaneous
+
+- **monorepo:** Remove remaining `jest` configuration ([1fd3d7d2](https://github.com/storm-software/stryke/commit/1fd3d7d2))
+
+### Bug Fixes
+
+- **monorepo:** Resolve issue with `.test.ts` exports in `package.json` file ([31d85e19](https://github.com/storm-software/stryke/commit/31d85e19))
+
+### Updated Dependencies
+
+- Updated **hash** to **v0.13.34**
+
 ## [0.3.91](https://github.com/storm-software/stryke/releases/tag/unique-id%400.3.91) (05/30/2026)
 
 ### Miscellaneous

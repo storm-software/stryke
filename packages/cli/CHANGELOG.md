@@ -2,6 +2,24 @@
 
 # Changelog for Stryke - CLI
 
+## [0.13.53](https://github.com/storm-software/stryke/releases/tag/cli%400.13.53) (05/30/2026)
+
+### Miscellaneous
+
+- **monorepo:** Remove remaining `jest` configuration ([1fd3d7d2](https://github.com/storm-software/stryke/commit/1fd3d7d2))
+
+### Bug Fixes
+
+- **monorepo:** Resolve issue with `.test.ts` exports in `package.json` file ([31d85e19](https://github.com/storm-software/stryke/commit/31d85e19))
+
+### Updated Dependencies
+
+- Updated **convert** to **v0.7.12**
+- Updated **env** to **v0.20.98**
+- Updated **string-format** to **v0.17.23**
+- Updated **type-checks** to **v0.6.14**
+- Updated **types** to **v0.12.9**
+
 ## [0.13.52](https://github.com/storm-software/stryke/releases/tag/cli%400.13.52) (05/30/2026)
 
 ### Miscellaneous

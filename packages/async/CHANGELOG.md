@@ -2,6 +2,12 @@
 
 # Changelog for Stryke - Async
 
+## [0.1.9](https://github.com/storm-software/stryke/releases/tag/async%400.1.9) (05/30/2026)
+
+### Miscellaneous
+
+- **monorepo:** Remove remaining `jest` configuration ([1fd3d7d2](https://github.com/storm-software/stryke/commit/1fd3d7d2))
+
 ## [0.1.8](https://github.com/storm-software/stryke/releases/tag/async%400.1.8) (05/30/2026)
 
 ### Miscellaneous

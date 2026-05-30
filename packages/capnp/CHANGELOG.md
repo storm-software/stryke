@@ -2,6 +2,19 @@
 
 # Changelog for Stryke - Capnp
 
+## [0.12.107](https://github.com/storm-software/stryke/releases/tag/capnp%400.12.107) (05/30/2026)
+
+### Miscellaneous
+
+- **monorepo:** Remove remaining `jest` configuration ([1fd3d7d2](https://github.com/storm-software/stryke/commit/1fd3d7d2))
+
+### Updated Dependencies
+
+- Updated **convert** to **v0.7.12**
+- Updated **fs** to **v0.33.81**
+- Updated **path** to **v0.29.8**
+- Updated **types** to **v0.12.9**
+
 ## [0.12.106](https://github.com/storm-software/stryke/releases/tag/capnp%400.12.106) (05/30/2026)
 
 ### Miscellaneous
