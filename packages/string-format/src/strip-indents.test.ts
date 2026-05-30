@@ -1,9 +1,12 @@
 import { describe, expect, it } from "vitest";
-import * as moduleExports from "./strip-indents.ts";
+import { stripIndents } from "./strip-indents.ts";
 
-describe("strip-indents.ts exports", () => {
-  it("loads module exports", () => {
-    expect(moduleExports).toBeDefined();
-    expect(typeof moduleExports).toBe("object");
+describe("strip-indents.ts", () => {
+  it("trims indentation from template literals", () => {
+    expect(stripIndents`
+      Options:
+      - one
+      - two
+    `).toBe("Options:\n- one\n- two");
   });
 });

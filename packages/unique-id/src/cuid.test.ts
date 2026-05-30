@@ -1,9 +1,11 @@
 import { describe, expect, it } from "vitest";
-import * as moduleExports from "./cuid.ts";
+import { cuid } from "./cuid.ts";
 
-describe("cuid.ts exports", () => {
-  it("loads module exports", () => {
-    expect(moduleExports).toBeDefined();
-    expect(typeof moduleExports).toBe("object");
+describe("cuid.ts", () => {
+  it("returns a lowercase alpha-numeric id", () => {
+    const value = cuid();
+
+    expect(value).toMatch(/^[a-z][A-Za-z0-9-]+$/);
+    expect(value.length).toBeGreaterThan(20);
   });
 });

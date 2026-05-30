@@ -105,9 +105,16 @@ export function removePackageVersion(value: string) {
  * @returns The package name without the scope
  */
 export function getPackageName(value: string) {
-  return /^[^\n\r/\u2028\u2029]*\/.[^\n\r/\u2028\u2029]*\/.*$/.test(value)
-    ? value.substring(0, value.lastIndexOf("/"))
-    : removePackageVersion(value);
+  const withoutVersion = removePackageVersion(value);
+
+  if (withoutVersion.startsWith("@")) {
+    const parts = withoutVersion.split("/");
+    return parts.length > 2 ? parts.slice(0, 2).join("/") : withoutVersion;
+  }
+
+  return withoutVersion.includes("/")
+    ? withoutVersion.substring(0, withoutVersion.indexOf("/"))
+    : withoutVersion;
 }
 
 /**

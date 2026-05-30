@@ -1,9 +1,14 @@
 import { describe, expect, it } from "vitest";
-import * as moduleExports from "./vowels.ts";
+import { getIndefiniteArticle, isVowel } from "./vowels.ts";
 
-describe("vowels.ts exports", () => {
-  it("loads module exports", () => {
-    expect(moduleExports).toBeDefined();
-    expect(typeof moduleExports).toBe("object");
+describe("vowels.ts", () => {
+  it("detects vowel-starting strings", () => {
+    expect(isVowel("apple")).toBe(true);
+    expect(isVowel("banana")).toBe(false);
+  });
+
+  it("returns the correct indefinite article", () => {
+    expect(getIndefiniteArticle("orange")).toBe("an");
+    expect(getIndefiniteArticle("grape")).toBe("a");
   });
 });

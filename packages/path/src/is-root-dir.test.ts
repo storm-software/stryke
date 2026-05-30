@@ -1,9 +1,17 @@
 import { describe, expect, it } from "vitest";
-import * as moduleExports from "./is-root-dir.ts";
+import { isSystemRoot } from "./is-root-dir.ts";
 
-describe("is-root-dir.ts exports", () => {
-  it("loads module exports", () => {
-    expect(moduleExports).toBeDefined();
-    expect(typeof moduleExports).toBe("object");
+describe("is-root-dir.ts", () => {
+  it("returns true for the POSIX root directory", () => {
+    expect(isSystemRoot("/")).toBe(true);
+  });
+
+  it("returns true for Windows root directories", () => {
+    expect(isSystemRoot("C:\\")).toBe(true);
+    expect(isSystemRoot("c:\\")).toBe(true);
+  });
+
+  it("returns false for non-root directories", () => {
+    expect(isSystemRoot("/home/user")).toBe(false);
   });
 });

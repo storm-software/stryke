@@ -1,9 +1,10 @@
 import { describe, expect, it } from "vitest";
-import * as moduleExports from "./index.ts";
+import { camelCase, prettyBytes, titleCase } from "./index.ts";
 
-describe("index.ts exports", () => {
-  it("loads module exports", () => {
-    expect(moduleExports).toBeDefined();
-    expect(typeof moduleExports).toBe("object");
+describe("index.ts", () => {
+  it("re-exports representative formatting helpers", () => {
+    expect(camelCase("Hello world")).toBe("helloWorld");
+    expect(titleCase("hello world")).toBe("Hello World");
+    expect(prettyBytes(1337)).toBe("1.34 kB");
   });
 });

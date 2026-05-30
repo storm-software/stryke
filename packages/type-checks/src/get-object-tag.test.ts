@@ -1,9 +1,10 @@
 import { describe, expect, it } from "vitest";
-import * as moduleExports from "./get-object-tag.ts";
+import { getObjectTag } from "./get-object-tag.ts";
 
-describe("get-object-tag.ts exports", () => {
-  it("loads module exports", () => {
-    expect(moduleExports).toBeDefined();
-    expect(typeof moduleExports).toBe("object");
+describe("get-object-tag.ts", () => {
+  it("returns object tags for values", () => {
+    expect(getObjectTag(undefined)).toBe("[object Undefined]");
+    expect(getObjectTag(null)).toBe("[object Null]");
+    expect(getObjectTag([])).toBe("[object Array]");
   });
 });

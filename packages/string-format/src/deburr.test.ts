@@ -1,9 +1,9 @@
 import { describe, expect, it } from "vitest";
-import * as moduleExports from "./deburr.ts";
+import { deburr } from "./deburr.ts";
 
-describe("deburr.ts exports", () => {
-  it("loads module exports", () => {
-    expect(moduleExports).toBeDefined();
-    expect(typeof moduleExports).toBe("object");
+describe("deburr.ts", () => {
+  it("removes accents from strings", () => {
+    expect(deburr("Crème brûlée")).toBe("Creme brulee");
+    expect(deburr("München")).toBe("Munchen");
   });
 });

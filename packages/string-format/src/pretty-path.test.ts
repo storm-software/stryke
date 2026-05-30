@@ -1,9 +1,12 @@
 import { describe, expect, it } from "vitest";
-import * as moduleExports from "./pretty-path.ts";
+import { prettyPath } from "./pretty-path.ts";
 
-describe("pretty-path.ts exports", () => {
-  it("loads module exports", () => {
-    expect(moduleExports).toBeDefined();
-    expect(typeof moduleExports).toBe("object");
+describe("pretty-path.ts", () => {
+  it("removes the file URI prefix", () => {
+    expect(prettyPath("file:///home/user/project/src/index.ts")).toBe("/home/user/project/src/index.ts");
+  });
+
+  it("can return a relative path", () => {
+    expect(prettyPath("file:///home/user/project/src/index.ts", { relative: true, cwd: "/home/user/project" })).toBe("home/user/project/src/index.ts");
   });
 });

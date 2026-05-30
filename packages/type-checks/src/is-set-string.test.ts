@@ -1,9 +1,10 @@
 import { describe, expect, it } from "vitest";
-import * as moduleExports from "./is-set-string.ts";
+import { isSetString } from "./is-set-string.ts";
 
-describe("is-set-string.ts exports", () => {
-  it("loads module exports", () => {
-    expect(moduleExports).toBeDefined();
-    expect(typeof moduleExports).toBe("object");
+describe("is-set-string.ts", () => {
+  it("detects non-empty strings", () => {
+    expect(isSetString("hello")).toBe(true);
+    expect(isSetString("")).toBe(false);
+    expect(isSetString(undefined)).toBe(false);
   });
 });

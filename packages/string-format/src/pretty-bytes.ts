@@ -185,7 +185,7 @@ export const toLocaleString = (
   let _locale = locale;
   if (typeof _locale === "string") {
     if (!_locale) {
-      _locale = process.env.STORM_LOCALE || "en-US";
+      _locale = "en-US";
     }
     if (Array.isArray(_locale)) {
       result = number?.toLocaleString(_locale, options);
@@ -199,8 +199,6 @@ export const toLocaleString = (
 
 /**
  * Convert bytes to a human readable string: `1337` → `1.34 kB`.
- *
- * @param number - The number to format.
  *
  * @example
  * ```ts
@@ -221,12 +219,12 @@ export const toLocaleString = (
  * //=> '1,34 kB'
  * ```
  *
- * @param number - The number to format.
- * @param options - The options to use.
+ * @param size - The number of bytes to format.
+ * @param options - The options to use for formatting the number.
  * @returns The formatted string.
  */
-export function prettyBytes(number: number, options?: Options): string {
-  let _number: string | number = number;
+export function prettyBytes(size: number, options?: Options): string {
+  let _number: string | number = size;
   if (!Number.isFinite(_number)) {
     throw new TypeError(
       `Expected a finite number, got ${typeof _number}: ${_number}`

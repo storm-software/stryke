@@ -38,5 +38,5 @@ import { removeAccents } from "@stryke/helpers/remove-accents";
  * deburr('Crème brûlée') // returns 'Creme brulee'
  */
 export function deburr(str: string): string {
-  return removeAccents(str.normalize("NFD"));
+  return removeAccents(str.normalize("NFD")).replace(/[\u0300-\u036f]/g, "");
 }

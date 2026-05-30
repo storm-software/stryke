@@ -1,9 +1,9 @@
 import { describe, expect, it } from "vitest";
-import * as moduleExports from "./is-string.ts";
+import { isString } from "./is-string.ts";
 
-describe("is-string.ts exports", () => {
-  it("loads module exports", () => {
-    expect(moduleExports).toBeDefined();
-    expect(typeof moduleExports).toBe("object");
+describe("is-string.ts", () => {
+  it("detects strings", () => {
+    expect(isString("hello")).toBe(true);
+    expect(isString(123)).toBe(false);
   });
 });

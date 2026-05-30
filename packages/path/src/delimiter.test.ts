@@ -1,9 +1,13 @@
 import { describe, expect, it } from "vitest";
-import * as moduleExports from "./delimiter.ts";
+import { delimiter, posix, win32 } from "./delimiter.ts";
 
-describe("delimiter.ts exports", () => {
-  it("loads module exports", () => {
-    expect(moduleExports).toBeDefined();
-    expect(typeof moduleExports).toBe("object");
+describe("delimiter.ts", () => {
+  it("exports the current platform delimiter", () => {
+    expect(delimiter).toBe(":");
+  });
+
+  it("exposes platform proxies with fixed delimiters", () => {
+    expect(posix.delimiter).toBe(":");
+    expect(win32.delimiter).toBe(";");
   });
 });

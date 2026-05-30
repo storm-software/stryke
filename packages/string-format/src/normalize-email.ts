@@ -34,12 +34,12 @@ const DOT_REG = /\./g;
  *
  */
 export const normalizeEmail = (email: string) => {
-  if (!email.includes("@") && !email.includes("+")) {
+  if (!email.includes("@")) {
     throw new Error("invalid_email_format");
   }
 
   const split = email.split("@").filter(Boolean);
-  if (split.length > 1) {
+  if (split.length !== 2) {
     throw new Error("invalid_email_format");
   }
 

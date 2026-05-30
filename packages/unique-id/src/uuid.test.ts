@@ -1,9 +1,14 @@
-import { describe, expect, it } from "vitest";
-import * as moduleExports from "./uuid.ts";
+import { afterEach, describe, expect, it, vi } from "vitest";
+import { uuid } from "./uuid.ts";
 
-describe("uuid.ts exports", () => {
-  it("loads module exports", () => {
-    expect(moduleExports).toBeDefined();
-    expect(typeof moduleExports).toBe("object");
+describe("uuid.ts", () => {
+  afterEach(() => {
+    vi.restoreAllMocks();
+  });
+
+  it("generates a UUID v4-like string when randomness is stubbed", () => {
+    vi.spyOn(Math, "random").mockReturnValue(0);
+
+    expect(uuid()).toBe("00000000-0000-4000-8000-000000000000");
   });
 });

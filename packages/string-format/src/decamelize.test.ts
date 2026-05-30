@@ -1,9 +1,14 @@
 import { describe, expect, it } from "vitest";
-import * as moduleExports from "./decamelize.ts";
+import { decamelize } from "./decamelize.ts";
 
-describe("decamelize.ts exports", () => {
-  it("loads module exports", () => {
-    expect(moduleExports).toBeDefined();
-    expect(typeof moduleExports).toBe("object");
+describe("decamelize", () => {
+  it.each([
+    ["camelCase", "camel_case"],
+    ["PascalCase", "pascal_case"],
+    ["HTTPServerValue", "http_server_value"],
+    ["already_snake", "already_snake"],
+    ["version2Value", "version2_value"]
+  ])("formats %s to %s", (input, expected) => {
+    expect(decamelize(input)).toBe(expected);
   });
 });

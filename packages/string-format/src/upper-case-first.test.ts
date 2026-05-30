@@ -1,9 +1,17 @@
 import { describe, expect, it } from "vitest";
-import * as moduleExports from "./upper-case-first.ts";
+import { upperCaseFirst } from "./upper-case-first.ts";
 
-describe("upper-case-first.ts exports", () => {
-  it("loads module exports", () => {
-    expect(moduleExports).toBeDefined();
-    expect(typeof moduleExports).toBe("object");
+describe("upperCaseFirst", () => {
+  it.each([
+    ["hello", "Hello"],
+    ["hELLO", "HELLO"],
+    ["Hello", "Hello"],
+    ["1value", "1value"]
+  ])("formats %s to %s", (input, expected) => {
+    expect(upperCaseFirst(input)).toBe(expected);
+  });
+
+  it("returns undefined when input is undefined", () => {
+    expect(upperCaseFirst(undefined)).toBeUndefined();
   });
 });

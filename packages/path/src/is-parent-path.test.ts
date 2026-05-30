@@ -1,9 +1,20 @@
 import { describe, expect, it } from "vitest";
-import * as moduleExports from "./is-parent-path.ts";
+import { isParentPath } from "./is-parent-path.ts";
 
-describe("is-parent-path.ts exports", () => {
-  it("loads module exports", () => {
-    expect(moduleExports).toBeDefined();
-    expect(typeof moduleExports).toBe("object");
+describe("is-parent-path.ts", () => {
+  it("detects a direct parent path", () => {
+    expect(isParentPath("/home/user/project/src/index.ts", "/home/user/project/src")).toBe(true);
+  });
+
+  it("detects a higher parent path", () => {
+    expect(isParentPath("/home/user/project/src/index.ts", "/home/user/project")).toBe(true);
+  });
+
+  it("returns false for unrelated paths", () => {
+    expect(isParentPath("/home/user/project/src/index.ts", "/home/user/other")).toBe(false);
+  });
+
+  it("returns false for the same path", () => {
+    expect(isParentPath("/home/user/project/src/index.ts", "/home/user/project/src/index.ts")).toBe(false);
   });
 });

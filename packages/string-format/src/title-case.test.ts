@@ -1,9 +1,19 @@
 import { describe, expect, it } from "vitest";
-import * as moduleExports from "./title-case.ts";
+import { titleCase } from "./title-case.ts";
 
-describe("title-case.ts exports", () => {
-  it("loads module exports", () => {
-    expect(moduleExports).toBeDefined();
-    expect(typeof moduleExports).toBe("object");
+describe("titleCase", () => {
+  it.each([
+    ["hello world", "Hello World"],
+    ["hello-world", "Hello World"],
+    ["hello_world", "Hello World"],
+    ["helloWorld", "Hello World"],
+    ["hello:world", "Hello - World"],
+    ["c++ developer", "C +  +  Developer"]
+  ])("formats %s to %s", (input, expected) => {
+    expect(titleCase(input)).toBe(expected);
+  });
+
+  it("returns undefined when input is undefined", () => {
+    expect(titleCase(undefined)).toBeUndefined();
   });
 });

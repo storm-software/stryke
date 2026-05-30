@@ -1,9 +1,10 @@
 import { describe, expect, it } from "vitest";
-import * as moduleExports from "./special-cases.ts";
+import { SPECIAL_CASES } from "./special-cases.ts";
 
-describe("special-cases.ts exports", () => {
-  it("loads module exports", () => {
-    expect(moduleExports).toBeDefined();
-    expect(typeof moduleExports).toBe("object");
+describe("special-cases.ts", () => {
+  it("contains common special-case strings", () => {
+    expect(SPECIAL_CASES).toContain("GitHub");
+    expect(SPECIAL_CASES).toContain("OpenAI");
+    expect(SPECIAL_CASES).toContain("YouTube");
   });
 });

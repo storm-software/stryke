@@ -1,9 +1,14 @@
-import { describe, expect, it } from "vitest";
-import * as moduleExports from "./nanoid.ts";
+import { afterEach, describe, expect, it, vi } from "vitest";
+import { nanoid } from "./nanoid.ts";
 
-describe("nanoid.ts exports", () => {
-  it("loads module exports", () => {
-    expect(moduleExports).toBeDefined();
-    expect(typeof moduleExports).toBe("object");
+describe("nanoid.ts", () => {
+  afterEach(() => {
+    vi.restoreAllMocks();
+  });
+
+  it("generates a stable id shape when randomness is stubbed", () => {
+    vi.spyOn(Math, "random").mockReturnValue(0);
+
+    expect(nanoid(5)).toBe("00000");
   });
 });

@@ -1,9 +1,17 @@
-import { describe, expect, it } from "vitest";
-import * as moduleExports from "./index.ts";
+import { afterEach, describe, expect, it, vi } from "vitest";
+import { nanoid, randomInteger, snowflake, uuid } from "./index.ts";
 
-describe("index.ts exports", () => {
-  it("loads module exports", () => {
-    expect(moduleExports).toBeDefined();
-    expect(typeof moduleExports).toBe("object");
+describe("index.ts", () => {
+  afterEach(() => {
+    vi.restoreAllMocks();
+  });
+
+  it("re-exports representative unique-id helpers", () => {
+    vi.spyOn(Math, "random").mockReturnValue(0);
+
+    expect(uuid()).toBe("00000000-0000-4000-8000-000000000000");
+    expect(nanoid(4)).toBe("0000");
+    expect(randomInteger(10)).toBe(0);
+    expect(typeof snowflake()).toBe("string");
   });
 });

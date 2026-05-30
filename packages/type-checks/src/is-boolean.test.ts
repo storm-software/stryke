@@ -1,9 +1,10 @@
 import { describe, expect, it } from "vitest";
-import * as moduleExports from "./is-boolean.ts";
+import { isBoolean } from "./is-boolean.ts";
 
-describe("is-boolean.ts exports", () => {
-  it("loads module exports", () => {
-    expect(moduleExports).toBeDefined();
-    expect(typeof moduleExports).toBe("object");
+describe("is-boolean.ts", () => {
+  it("detects booleans and Boolean objects", () => {
+    expect(isBoolean(true)).toBe(true);
+    expect(isBoolean(new Boolean(false))).toBe(true);
+    expect(isBoolean(1)).toBe(false);
   });
 });

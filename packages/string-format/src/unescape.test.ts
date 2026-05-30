@@ -1,9 +1,8 @@
 import { describe, expect, it } from "vitest";
-import * as moduleExports from "./unescape.ts";
+import { unescape } from "./unescape.ts";
 
-describe("unescape.ts exports", () => {
-  it("loads module exports", () => {
-    expect(moduleExports).toBeDefined();
-    expect(typeof moduleExports).toBe("object");
+describe("unescape.ts", () => {
+  it("unescapes HTML entities", () => {
+    expect(unescape("This is a &lt;div&gt; &amp; &quot;quote&quot;")).toBe('This is a <div> & "quote"');
   });
 });

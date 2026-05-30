@@ -1,9 +1,11 @@
 import { describe, expect, it } from "vitest";
-import * as moduleExports from "./ordinals.ts";
+import { toOrdinal } from "./ordinals.ts";
 
-describe("ordinals.ts exports", () => {
-  it("loads module exports", () => {
-    expect(moduleExports).toBeDefined();
-    expect(typeof moduleExports).toBe("object");
+describe("ordinals.ts", () => {
+  it("formats common ordinal suffixes", () => {
+    expect(toOrdinal(1)).toBe("1st");
+    expect(toOrdinal(2)).toBe("2nd");
+    expect(toOrdinal(3)).toBe("3rd");
+    expect(toOrdinal(11)).toBe("11th");
   });
 });

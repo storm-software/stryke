@@ -1,9 +1,17 @@
 import { describe, expect, it } from "vitest";
-import * as moduleExports from "./lower-case-first.ts";
+import { lowerCaseFirst } from "./lower-case-first.ts";
 
-describe("lower-case-first.ts exports", () => {
-  it("loads module exports", () => {
-    expect(moduleExports).toBeDefined();
-    expect(typeof moduleExports).toBe("object");
+describe("lowerCaseFirst", () => {
+  it.each([
+    ["Hello", "hello"],
+    ["HELLO", "hELLO"],
+    ["hello", "hello"],
+    ["1value", "1value"]
+  ])("formats %s to %s", (input, expected) => {
+    expect(lowerCaseFirst(input)).toBe(expected);
+  });
+
+  it("returns undefined when input is undefined", () => {
+    expect(lowerCaseFirst(undefined)).toBeUndefined();
   });
 });

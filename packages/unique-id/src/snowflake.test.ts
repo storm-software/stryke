@@ -1,9 +1,11 @@
 import { describe, expect, it } from "vitest";
-import * as moduleExports from "./snowflake.ts";
+import { deconstructSnowflake, isValidSnowflake, snowflake } from "./snowflake.ts";
 
-describe("snowflake.ts exports", () => {
-  it("loads module exports", () => {
-    expect(moduleExports).toBeDefined();
-    expect(typeof moduleExports).toBe("object");
+describe("snowflake.ts", () => {
+  it("generates a valid snowflake id with custom options", () => {
+    const value = snowflake({ shardId: 3, timestamp: new Date("2021-01-01T00:00:00.000Z"), epoch: 0 });
+
+    expect(isValidSnowflake(value)).toBe(true);
+    expect(deconstructSnowflake(value).shard_id).toBe(3);
   });
 });
