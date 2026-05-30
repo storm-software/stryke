@@ -2,6 +2,18 @@
 
 # Changelog for Stryke - Path
 
+## [0.29.7](https://github.com/storm-software/stryke/releases/tag/path%400.29.7) (05/30/2026)
+
+### Miscellaneous
+
+- **monorepo:** Update config file specified in `tsconfig.json` exludes ([359c616a](https://github.com/storm-software/stryke/commit/359c616a))
+
+### Updated Dependencies
+
+- Updated **convert** to **v0.7.11**
+- Updated **type-checks** to **v0.6.13**
+- Updated **types** to **v0.12.8**
+
 ## [0.29.6](https://github.com/storm-software/stryke/releases/tag/path%400.29.6) (05/27/2026)
 
 ### Updated Dependencies

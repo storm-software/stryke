@@ -2,6 +2,16 @@
 
 # Changelog for Stryke - Type Checks
 
+## [0.6.13](https://github.com/storm-software/stryke/releases/tag/type-checks%400.6.13) (05/30/2026)
+
+### Miscellaneous
+
+- **monorepo:** Update config file specified in `tsconfig.json` exludes ([359c616a](https://github.com/storm-software/stryke/commit/359c616a))
+
+### Updated Dependencies
+
+- Updated **types** to **v0.12.8**
+
 ## [0.6.12](https://github.com/storm-software/stryke/releases/tag/type-checks%400.6.12) (05/27/2026)
 
 ### Updated Dependencies

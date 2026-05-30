@@ -2,6 +2,19 @@
 
 # Changelog for Stryke - Capnp
 
+## [0.12.106](https://github.com/storm-software/stryke/releases/tag/capnp%400.12.106) (05/30/2026)
+
+### Miscellaneous
+
+- **monorepo:** Update config file specified in `tsconfig.json` exludes ([359c616a](https://github.com/storm-software/stryke/commit/359c616a))
+
+### Updated Dependencies
+
+- Updated **convert** to **v0.7.11**
+- Updated **fs** to **v0.33.80**
+- Updated **path** to **v0.29.7**
+- Updated **types** to **v0.12.8**
+
 ## [0.12.105](https://github.com/storm-software/stryke/releases/tag/capnp%400.12.105) (05/27/2026)
 
 ### Updated Dependencies

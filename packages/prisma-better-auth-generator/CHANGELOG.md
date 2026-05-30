@@ -2,6 +2,19 @@
 
 # Changelog for Stryke - Prisma Better Auth Generator
 
+## [0.14.97](https://github.com/storm-software/stryke/releases/tag/prisma-better-auth-generator%400.14.97) (05/30/2026)
+
+### Miscellaneous
+
+- **monorepo:** Update config file specified in `tsconfig.json` exludes ([359c616a](https://github.com/storm-software/stryke/commit/359c616a))
+
+### Updated Dependencies
+
+- Updated **env** to **v0.20.97**
+- Updated **fs** to **v0.33.80**
+- Updated **path** to **v0.29.7**
+- Updated **string-format** to **v0.17.22**
+
 ## [0.14.96](https://github.com/storm-software/stryke/releases/tag/prisma-better-auth-generator%400.14.96) (05/27/2026)
 
 ### Updated Dependencies

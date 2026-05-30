@@ -2,6 +2,18 @@
 
 # Changelog for Stryke - String Format
 
+## [0.17.22](https://github.com/storm-software/stryke/releases/tag/string-format%400.17.22) (05/30/2026)
+
+### Miscellaneous
+
+- **monorepo:** Update config file specified in `tsconfig.json` exludes ([359c616a](https://github.com/storm-software/stryke/commit/359c616a))
+
+### Updated Dependencies
+
+- Updated **helpers** to **v0.10.20**
+- Updated **path** to **v0.29.7**
+- Updated **types** to **v0.12.8**
+
 ## [0.17.21](https://github.com/storm-software/stryke/releases/tag/string-format%400.17.21) (05/27/2026)
 
 ### Updated Dependencies

@@ -2,6 +2,18 @@
 
 # Changelog for Stryke - Crypto
 
+## [0.6.28](https://github.com/storm-software/stryke/releases/tag/crypto%400.6.28) (05/30/2026)
+
+### Miscellaneous
+
+- **monorepo:** Update config file specified in `tsconfig.json` exludes ([359c616a](https://github.com/storm-software/stryke/commit/359c616a))
+
+### Updated Dependencies
+
+- Updated **convert** to **v0.7.11**
+- Updated **json** to **v0.15.4**
+- Updated **type-checks** to **v0.6.13**
+
 ## [0.6.27](https://github.com/storm-software/stryke/releases/tag/crypto%400.6.27) (05/27/2026)
 
 ### Updated Dependencies

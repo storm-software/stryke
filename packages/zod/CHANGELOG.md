@@ -2,6 +2,17 @@
 
 # Changelog for Stryke - Zod
 
+## [0.3.26](https://github.com/storm-software/stryke/releases/tag/zod%400.3.26) (05/30/2026)
+
+### Miscellaneous
+
+- **monorepo:** Update config file specified in `tsconfig.json` exludes ([359c616a](https://github.com/storm-software/stryke/commit/359c616a))
+
+### Updated Dependencies
+
+- Updated **json** to **v0.15.4**
+- Updated **type-checks** to **v0.6.13**
+
 ## [0.3.25](https://github.com/storm-software/stryke/releases/tag/zod%400.3.25) (05/27/2026)
 
 ### Updated Dependencies

@@ -2,6 +2,19 @@
 
 # Changelog for Stryke - Hooks
 
+## [0.4.95](https://github.com/storm-software/stryke/releases/tag/hooks%400.4.95) (05/30/2026)
+
+### Miscellaneous
+
+- **monorepo:** Update config file specified in `tsconfig.json` exludes ([359c616a](https://github.com/storm-software/stryke/commit/359c616a))
+
+### Updated Dependencies
+
+- Updated **async** to **v0.1.8**
+- Updated **env** to **v0.20.97**
+- Updated **type-checks** to **v0.6.13**
+- Updated **types** to **v0.12.8**
+
 ## [0.4.94](https://github.com/storm-software/stryke/releases/tag/hooks%400.4.94) (05/27/2026)
 
 ### Updated Dependencies

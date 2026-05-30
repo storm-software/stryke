@@ -2,6 +2,12 @@
 
 # Changelog for Stryke - Open Browser
 
+## [0.2.68](https://github.com/storm-software/stryke/releases/tag/open-browser%400.2.68) (05/30/2026)
+
+### Miscellaneous
+
+- **monorepo:** Update config file specified in `tsconfig.json` exludes ([359c616a](https://github.com/storm-software/stryke/commit/359c616a))
+
 ## [0.2.62](https://github.com/storm-software/stryke/releases/tag/open-browser%400.2.62) (05/06/2026)
 
 ### Miscellaneous

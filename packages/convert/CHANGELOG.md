@@ -2,6 +2,17 @@
 
 # Changelog for Stryke - Convert
 
+## [0.7.11](https://github.com/storm-software/stryke/releases/tag/convert%400.7.11) (05/30/2026)
+
+### Miscellaneous
+
+- **monorepo:** Update config file specified in `tsconfig.json` exludes ([359c616a](https://github.com/storm-software/stryke/commit/359c616a))
+
+### Updated Dependencies
+
+- Updated **type-checks** to **v0.6.13**
+- Updated **types** to **v0.12.8**
+
 ## [0.7.10](https://github.com/storm-software/stryke/releases/tag/convert%400.7.10) (05/27/2026)
 
 ### Bug Fixes

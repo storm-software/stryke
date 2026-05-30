@@ -2,6 +2,16 @@
 
 # Changelog for Stryke - Unique ID
 
+## [0.3.91](https://github.com/storm-software/stryke/releases/tag/unique-id%400.3.91) (05/30/2026)
+
+### Miscellaneous
+
+- **monorepo:** Update config file specified in `tsconfig.json` exludes ([359c616a](https://github.com/storm-software/stryke/commit/359c616a))
+
+### Updated Dependencies
+
+- Updated **hash** to **v0.13.33**
+
 ## [0.3.90](https://github.com/storm-software/stryke/releases/tag/unique-id%400.3.90) (05/27/2026)
 
 ### Updated Dependencies
