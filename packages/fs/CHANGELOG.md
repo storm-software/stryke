@@ -2,6 +2,22 @@
 
 # Changelog for Stryke - Fs
 
+## [0.33.80](https://github.com/storm-software/stryke/releases/tag/fs%400.33.80) (05/30/2026)
+
+### Miscellaneous
+
+- **monorepo:** Update config file specified in `tsconfig.json` exludes ([359c616a](https://github.com/storm-software/stryke/commit/359c616a))
+
+### Updated Dependencies
+
+- Updated **convert** to **v0.7.11**
+- Updated **helpers** to **v0.10.20**
+- Updated **json** to **v0.15.4**
+- Updated **path** to **v0.29.7**
+- Updated **string-format** to **v0.17.22**
+- Updated **type-checks** to **v0.6.13**
+- Updated **types** to **v0.12.8**
+
 ## [0.33.79](https://github.com/storm-software/stryke/releases/tag/fs%400.33.79) (05/27/2026)
 
 ### Updated Dependencies

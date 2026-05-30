@@ -2,6 +2,19 @@
 
 # Changelog for Stryke - Env
 
+## [0.20.97](https://github.com/storm-software/stryke/releases/tag/env%400.20.97) (05/30/2026)
+
+### Miscellaneous
+
+- **monorepo:** Update config file specified in `tsconfig.json` exludes ([359c616a](https://github.com/storm-software/stryke/commit/359c616a))
+
+### Updated Dependencies
+
+- Updated **convert** to **v0.7.11**
+- Updated **fs** to **v0.33.80**
+- Updated **path** to **v0.29.7**
+- Updated **string-format** to **v0.17.22**
+
 ## [0.20.96](https://github.com/storm-software/stryke/releases/tag/env%400.20.96) (05/27/2026)
 
 ### Updated Dependencies

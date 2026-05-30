@@ -2,6 +2,12 @@
 
 # Changelog for Stryke - Async
 
+## [0.1.8](https://github.com/storm-software/stryke/releases/tag/async%400.1.8) (05/30/2026)
+
+### Miscellaneous
+
+- **monorepo:** Update config file specified in `tsconfig.json` exludes ([359c616a](https://github.com/storm-software/stryke/commit/359c616a))
+
 ## [0.1.3](https://github.com/storm-software/stryke/releases/tag/async%400.1.3) (05/07/2026)
 
 ### Bug Fixes

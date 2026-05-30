@@ -2,6 +2,12 @@
 
 # Changelog for Stryke - Types
 
+## [0.12.8](https://github.com/storm-software/stryke/releases/tag/types%400.12.8) (05/30/2026)
+
+### Miscellaneous
+
+- **monorepo:** Update config file specified in `tsconfig.json` exludes ([359c616a](https://github.com/storm-software/stryke/commit/359c616a))
+
 ## [0.12.7](https://github.com/storm-software/stryke/releases/tag/types%400.12.7) (05/27/2026)
 
 ### Bug Fixes

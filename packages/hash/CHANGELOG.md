@@ -2,6 +2,18 @@
 
 # Changelog for Stryke - Hash
 
+## [0.13.33](https://github.com/storm-software/stryke/releases/tag/hash%400.13.33) (05/30/2026)
+
+### Miscellaneous
+
+- **monorepo:** Update config file specified in `tsconfig.json` exludes ([359c616a](https://github.com/storm-software/stryke/commit/359c616a))
+
+### Updated Dependencies
+
+- Updated **fs** to **v0.33.80**
+- Updated **json** to **v0.15.4**
+- Updated **type-checks** to **v0.6.13**
+
 ## [0.13.32](https://github.com/storm-software/stryke/releases/tag/hash%400.13.32) (05/27/2026)
 
 ### Updated Dependencies
