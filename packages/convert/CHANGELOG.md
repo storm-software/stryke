@@ -2,6 +2,17 @@
 
 # Changelog for Stryke - Convert
 
+## [0.7.10](https://github.com/storm-software/stryke/releases/tag/convert%400.7.10) (05/27/2026)
+
+### Bug Fixes
+
+- **types:** Remove `@` character from file reference ([e7b710bd](https://github.com/storm-software/stryke/commit/e7b710bd))
+
+### Updated Dependencies
+
+- Updated **type-checks** to **v0.6.12**
+- Updated **types** to **v0.12.7**
+
 ## [0.7.9](https://github.com/storm-software/stryke/releases/tag/convert%400.7.9) (05/27/2026)
 
 ### Miscellaneous
