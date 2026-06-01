@@ -7,7 +7,7 @@ export default defineConfig(() => ({
   cacheDir: '../../node_modules/.vite/packages/http',
   plugins: [nxViteTsPaths(), nxCopyAssetsPlugin(['*.md'])],
   test: {
-    name: 'plugin-nodejs',
+    name: 'http',
     watch: false,
     globals: true,
     environment: 'node',

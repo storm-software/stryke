@@ -7,7 +7,7 @@ export default defineConfig(() => ({
   cacheDir: '../../node_modules/.vite/packages/zod',
   plugins: [nxViteTsPaths(), nxCopyAssetsPlugin(['*.md'])],
   test: {
-    name: 'plugin-nodejs',
+    name: 'zod',
     watch: false,
     globals: true,
     environment: 'node',
