@@ -2,6 +2,22 @@
 
 # Changelog for Stryke - Fs
 
+## [0.33.84](https://github.com/storm-software/stryke/releases/tag/fs%400.33.84) (06/01/2026)
+
+### Bug Fixes
+
+- **monorepo:** Resolve issue causing `.test.ts` files to be included in package ([6fe5e79d](https://github.com/storm-software/stryke/commit/6fe5e79d))
+
+### Updated Dependencies
+
+- Updated **convert** to **v0.7.14**
+- Updated **helpers** to **v0.10.23**
+- Updated **json** to **v0.15.7**
+- Updated **path** to **v0.29.10**
+- Updated **string-format** to **v0.17.25**
+- Updated **type-checks** to **v0.6.16**
+- Updated **types** to **v0.12.11**
+
 ## [0.33.83](https://github.com/storm-software/stryke/releases/tag/fs%400.33.83) (06/01/2026)
 
 ### Bug Fixes

@@ -2,6 +2,18 @@
 
 # Changelog for Stryke - Path
 
+## [0.29.10](https://github.com/storm-software/stryke/releases/tag/path%400.29.10) (06/01/2026)
+
+### Bug Fixes
+
+- **monorepo:** Resolve issue causing `.test.ts` files to be included in package ([6fe5e79d](https://github.com/storm-software/stryke/commit/6fe5e79d))
+
+### Updated Dependencies
+
+- Updated **convert** to **v0.7.14**
+- Updated **type-checks** to **v0.6.16**
+- Updated **types** to **v0.12.11**
+
 ## [0.29.9](https://github.com/storm-software/stryke/releases/tag/path%400.29.9) (06/01/2026)
 
 ### Miscellaneous

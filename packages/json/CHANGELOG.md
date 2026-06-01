@@ -2,6 +2,17 @@
 
 # Changelog for Stryke - JSON
 
+## [0.15.7](https://github.com/storm-software/stryke/releases/tag/json%400.15.7) (06/01/2026)
+
+### Bug Fixes
+
+- **monorepo:** Resolve issue causing `.test.ts` files to be included in package ([6fe5e79d](https://github.com/storm-software/stryke/commit/6fe5e79d))
+
+### Updated Dependencies
+
+- Updated **type-checks** to **v0.6.16**
+- Updated **types** to **v0.12.11**
+
 ## [0.15.6](https://github.com/storm-software/stryke/releases/tag/json%400.15.6) (06/01/2026)
 
 ### Miscellaneous

@@ -2,6 +2,17 @@
 
 # Changelog for Stryke - HTTP
 
+## [0.12.73](https://github.com/storm-software/stryke/releases/tag/http%400.12.73) (06/01/2026)
+
+### Bug Fixes
+
+- **monorepo:** Resolve issue causing `.test.ts` files to be included in package ([6fe5e79d](https://github.com/storm-software/stryke/commit/6fe5e79d))
+
+### Updated Dependencies
+
+- Updated **type-checks** to **v0.6.16**
+- Updated **url** to **v0.4.34**
+
 ## [0.12.72](https://github.com/storm-software/stryke/releases/tag/http%400.12.72) (06/01/2026)
 
 ### Miscellaneous

@@ -2,6 +2,18 @@
 
 # Changelog for Stryke - String Format
 
+## [0.17.25](https://github.com/storm-software/stryke/releases/tag/string-format%400.17.25) (06/01/2026)
+
+### Bug Fixes
+
+- **monorepo:** Resolve issue causing `.test.ts` files to be included in package ([6fe5e79d](https://github.com/storm-software/stryke/commit/6fe5e79d))
+
+### Updated Dependencies
+
+- Updated **helpers** to **v0.10.23**
+- Updated **path** to **v0.29.10**
+- Updated **types** to **v0.12.11**
+
 ## [0.17.24](https://github.com/storm-software/stryke/releases/tag/string-format%400.17.24) (06/01/2026)
 
 ### Miscellaneous

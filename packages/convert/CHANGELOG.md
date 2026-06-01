@@ -2,6 +2,17 @@
 
 # Changelog for Stryke - Convert
 
+## [0.7.14](https://github.com/storm-software/stryke/releases/tag/convert%400.7.14) (06/01/2026)
+
+### Bug Fixes
+
+- **monorepo:** Resolve issue causing `.test.ts` files to be included in package ([6fe5e79d](https://github.com/storm-software/stryke/commit/6fe5e79d))
+
+### Updated Dependencies
+
+- Updated **type-checks** to **v0.6.16**
+- Updated **types** to **v0.12.11**
+
 ## [0.7.13](https://github.com/storm-software/stryke/releases/tag/convert%400.7.13) (06/01/2026)
 
 ### Miscellaneous

@@ -2,6 +2,16 @@
 
 # Changelog for Stryke - Type Checks
 
+## [0.6.16](https://github.com/storm-software/stryke/releases/tag/type-checks%400.6.16) (06/01/2026)
+
+### Bug Fixes
+
+- **monorepo:** Resolve issue causing `.test.ts` files to be included in package ([6fe5e79d](https://github.com/storm-software/stryke/commit/6fe5e79d))
+
+### Updated Dependencies
+
+- Updated **types** to **v0.12.11**
+
 ## [0.6.15](https://github.com/storm-software/stryke/releases/tag/type-checks%400.6.15) (06/01/2026)
 
 ### Miscellaneous

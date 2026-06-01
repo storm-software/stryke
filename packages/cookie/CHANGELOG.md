@@ -2,6 +2,17 @@
 
 # Changelog for Stryke - Cookie
 
+## [0.1.74](https://github.com/storm-software/stryke/releases/tag/cookie%400.1.74) (06/01/2026)
+
+### Bug Fixes
+
+- **monorepo:** Resolve issue causing `.test.ts` files to be included in package ([6fe5e79d](https://github.com/storm-software/stryke/commit/6fe5e79d))
+
+### Updated Dependencies
+
+- Updated **convert** to **v0.7.14**
+- Updated **type-checks** to **v0.6.16**
+
 ## [0.1.73](https://github.com/storm-software/stryke/releases/tag/cookie%400.1.73) (06/01/2026)
 
 ### Miscellaneous

@@ -2,6 +2,17 @@
 
 # Changelog for Stryke - Zod
 
+## [0.3.29](https://github.com/storm-software/stryke/releases/tag/zod%400.3.29) (06/01/2026)
+
+### Bug Fixes
+
+- **monorepo:** Resolve issue causing `.test.ts` files to be included in package ([6fe5e79d](https://github.com/storm-software/stryke/commit/6fe5e79d))
+
+### Updated Dependencies
+
+- Updated **json** to **v0.15.7**
+- Updated **type-checks** to **v0.6.16**
+
 ## [0.3.28](https://github.com/storm-software/stryke/releases/tag/zod%400.3.28) (06/01/2026)
 
 ### Miscellaneous

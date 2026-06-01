@@ -2,6 +2,20 @@
 
 # Changelog for Stryke - Prisma TRPC Generator
 
+## [0.13.101](https://github.com/storm-software/stryke/releases/tag/prisma-trpc-generator%400.13.101) (06/01/2026)
+
+### Bug Fixes
+
+- **monorepo:** Resolve issue causing `.test.ts` files to be included in package ([6fe5e79d](https://github.com/storm-software/stryke/commit/6fe5e79d))
+
+### Updated Dependencies
+
+- Updated **env** to **v0.20.101**
+- Updated **fs** to **v0.33.84**
+- Updated **path** to **v0.29.10**
+- Updated **string-format** to **v0.17.25**
+- Updated **types** to **v0.12.11**
+
 ## [0.13.100](https://github.com/storm-software/stryke/releases/tag/prisma-trpc-generator%400.13.100) (06/01/2026)
 
 ### Updated Dependencies
