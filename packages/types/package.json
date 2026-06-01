@@ -55,157 +55,77 @@
       "import": "./dist/array.mjs",
       "require": "./dist/array.cjs"
     },
-    "./array.test": {
-      "import": "./dist/array.test.mjs",
-      "require": "./dist/array.test.cjs"
-    },
     "./async": {
       "import": "./dist/async.mjs",
       "require": "./dist/async.cjs"
-    },
-    "./async.test": {
-      "import": "./dist/async.test.mjs",
-      "require": "./dist/async.test.cjs"
     },
     "./base": {
       "import": "./dist/base.mjs",
       "require": "./dist/base.cjs"
     },
-    "./base.test": {
-      "import": "./dist/base.test.mjs",
-      "require": "./dist/base.test.cjs"
-    },
     "./configuration": {
       "import": "./dist/configuration.mjs",
       "require": "./dist/configuration.cjs"
-    },
-    "./configuration.test": {
-      "import": "./dist/configuration.test.mjs",
-      "require": "./dist/configuration.test.cjs"
     },
     "./file": {
       "import": "./dist/file.mjs",
       "require": "./dist/file.cjs"
     },
-    "./file.test": {
-      "import": "./dist/file.test.mjs",
-      "require": "./dist/file.test.cjs"
-    },
     "./form": {
       "import": "./dist/form.mjs",
       "require": "./dist/form.cjs"
-    },
-    "./form.test": {
-      "import": "./dist/form.test.mjs",
-      "require": "./dist/form.test.cjs"
-    },
-    "./index.test": {
-      "import": "./dist/index.test.mjs",
-      "require": "./dist/index.test.cjs"
     },
     "./json": {
       "import": "./dist/json.mjs",
       "require": "./dist/json.cjs"
     },
-    "./json.test": {
-      "import": "./dist/json.test.mjs",
-      "require": "./dist/json.test.cjs"
-    },
     "./logic": {
       "import": "./dist/logic.mjs",
       "require": "./dist/logic.cjs"
-    },
-    "./logic.test": {
-      "import": "./dist/logic.test.mjs",
-      "require": "./dist/logic.test.cjs"
     },
     "./messages": {
       "import": "./dist/messages.mjs",
       "require": "./dist/messages.cjs"
     },
-    "./messages.test": {
-      "import": "./dist/messages.test.mjs",
-      "require": "./dist/messages.test.cjs"
-    },
     "./navigator": {
       "import": "./dist/navigator.mjs",
       "require": "./dist/navigator.cjs"
-    },
-    "./navigator.test": {
-      "import": "./dist/navigator.test.mjs",
-      "require": "./dist/navigator.test.cjs"
     },
     "./number": {
       "import": "./dist/number.mjs",
       "require": "./dist/number.cjs"
     },
-    "./number.test": {
-      "import": "./dist/number.test.mjs",
-      "require": "./dist/number.test.cjs"
-    },
     "./object": {
       "import": "./dist/object.mjs",
       "require": "./dist/object.cjs"
-    },
-    "./object.test": {
-      "import": "./dist/object.test.mjs",
-      "require": "./dist/object.test.cjs"
     },
     "./package-json": {
       "import": "./dist/package-json.mjs",
       "require": "./dist/package-json.cjs"
     },
-    "./package-json.test": {
-      "import": "./dist/package-json.test.mjs",
-      "require": "./dist/package-json.test.cjs"
-    },
     "./package-manager": {
       "import": "./dist/package-manager.mjs",
       "require": "./dist/package-manager.cjs"
-    },
-    "./package-manager.test": {
-      "import": "./dist/package-manager.test.mjs",
-      "require": "./dist/package-manager.test.cjs"
     },
     "./string": {
       "import": "./dist/string.mjs",
       "require": "./dist/string.cjs"
     },
-    "./string.test": {
-      "import": "./dist/string.test.mjs",
-      "require": "./dist/string.test.cjs"
-    },
     "./system": {
       "import": "./dist/system.mjs",
       "require": "./dist/system.cjs"
-    },
-    "./system.test": {
-      "import": "./dist/system.test.mjs",
-      "require": "./dist/system.test.cjs"
     },
     "./tsconfig": {
       "import": "./dist/tsconfig.mjs",
       "require": "./dist/tsconfig.cjs"
     },
-    "./tsconfig.test": {
-      "import": "./dist/tsconfig.test.mjs",
-      "require": "./dist/tsconfig.test.cjs"
-    },
     "./user": {
       "import": "./dist/user.mjs",
       "require": "./dist/user.cjs"
     },
-    "./user.test": {
-      "import": "./dist/user.test.mjs",
-      "require": "./dist/user.test.cjs"
-    },
     "./validations": {
       "import": "./dist/validations.mjs",
       "require": "./dist/validations.cjs"
-    },
-    "./validations.test": {
-      "import": "./dist/validations.test.mjs",
-      "require": "./dist/validations.test.cjs"
     },
     "./package.json": "./package.json"
   },
@@ -213,7 +133,9 @@
   "module": "./dist/index.mjs",
   "types": "./dist/index.d.cts",
   "typings": "dist/index.d.mts",
-  "files": ["dist/**/*"],
+  "files": [
+    "dist/**/*"
+  ],
   "devDependencies": {
     "@types/node": "catalog:",
     "tsdown": "catalog:"

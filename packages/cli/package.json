@@ -18,85 +18,41 @@
       "import": "./dist/create-options.mjs",
       "require": "./dist/create-options.cjs"
     },
-    "./create-options.test": {
-      "import": "./dist/create-options.test.mjs",
-      "require": "./dist/create-options.test.cjs"
-    },
     "./define-command": {
       "import": "./dist/define-command.mjs",
       "require": "./dist/define-command.cjs"
-    },
-    "./define-command.test": {
-      "import": "./dist/define-command.test.mjs",
-      "require": "./dist/define-command.test.cjs"
     },
     "./execute": {
       "import": "./dist/execute.mjs",
       "require": "./dist/execute.cjs"
     },
-    "./execute.test": {
-      "import": "./dist/execute.test.mjs",
-      "require": "./dist/execute.test.cjs"
-    },
     "./get-command": {
       "import": "./dist/get-command.mjs",
       "require": "./dist/get-command.cjs"
-    },
-    "./get-command.test": {
-      "import": "./dist/get-command.test.mjs",
-      "require": "./dist/get-command.test.cjs"
-    },
-    "./index.test": {
-      "import": "./dist/index.test.mjs",
-      "require": "./dist/index.test.cjs"
     },
     "./meta": {
       "import": "./dist/meta.mjs",
       "require": "./dist/meta.cjs"
     },
-    "./meta.test": {
-      "import": "./dist/meta.test.mjs",
-      "require": "./dist/meta.test.cjs"
-    },
     "./parse": {
       "import": "./dist/parse.mjs",
       "require": "./dist/parse.cjs"
-    },
-    "./parse.test": {
-      "import": "./dist/parse.test.mjs",
-      "require": "./dist/parse.test.cjs"
     },
     "./run": {
       "import": "./dist/run.mjs",
       "require": "./dist/run.cjs"
     },
-    "./run.test": {
-      "import": "./dist/run.test.mjs",
-      "require": "./dist/run.test.cjs"
-    },
     "./shutdown": {
       "import": "./dist/shutdown.mjs",
       "require": "./dist/shutdown.cjs"
-    },
-    "./shutdown.test": {
-      "import": "./dist/shutdown.test.mjs",
-      "require": "./dist/shutdown.test.cjs"
     },
     "./types": {
       "import": "./dist/types.mjs",
       "require": "./dist/types.cjs"
     },
-    "./types.test": {
-      "import": "./dist/types.test.mjs",
-      "require": "./dist/types.test.cjs"
-    },
     "./usage": {
       "import": "./dist/usage.mjs",
       "require": "./dist/usage.cjs"
-    },
-    "./usage.test": {
-      "import": "./dist/usage.test.mjs",
-      "require": "./dist/usage.test.cjs"
     },
     "./utils": {
       "import": "./dist/utils/index.mjs",
@@ -106,25 +62,13 @@
       "import": "./dist/utils/align-text.mjs",
       "require": "./dist/utils/align-text.cjs"
     },
-    "./utils/align-text.test": {
-      "import": "./dist/utils/align-text.test.mjs",
-      "require": "./dist/utils/align-text.test.cjs"
-    },
     "./utils/box": {
       "import": "./dist/utils/box.mjs",
       "require": "./dist/utils/box.cjs"
     },
-    "./utils/box.test": {
-      "import": "./dist/utils/box.test.mjs",
-      "require": "./dist/utils/box.test.cjs"
-    },
     "./utils/color": {
       "import": "./dist/utils/color.mjs",
       "require": "./dist/utils/color.cjs"
-    },
-    "./utils/color.test": {
-      "import": "./dist/utils/color.test.mjs",
-      "require": "./dist/utils/color.test.cjs"
     },
     "./utils/format": {
       "import": "./dist/utils/format.mjs",
@@ -134,41 +78,17 @@
       "import": "./dist/utils/format-columns.mjs",
       "require": "./dist/utils/format-columns.cjs"
     },
-    "./utils/format-columns.test": {
-      "import": "./dist/utils/format-columns.test.mjs",
-      "require": "./dist/utils/format-columns.test.cjs"
-    },
-    "./utils/format.test": {
-      "import": "./dist/utils/format.test.mjs",
-      "require": "./dist/utils/format.test.cjs"
-    },
-    "./utils/index.test": {
-      "import": "./dist/utils/index.test.mjs",
-      "require": "./dist/utils/index.test.cjs"
-    },
     "./utils/link": {
       "import": "./dist/utils/link.mjs",
       "require": "./dist/utils/link.cjs"
-    },
-    "./utils/link.test": {
-      "import": "./dist/utils/link.test.mjs",
-      "require": "./dist/utils/link.test.cjs"
     },
     "./utils/strip-ansi": {
       "import": "./dist/utils/strip-ansi.mjs",
       "require": "./dist/utils/strip-ansi.cjs"
     },
-    "./utils/strip-ansi.test": {
-      "import": "./dist/utils/strip-ansi.test.mjs",
-      "require": "./dist/utils/strip-ansi.test.cjs"
-    },
     "./utils/tree": {
       "import": "./dist/utils/tree.mjs",
       "require": "./dist/utils/tree.cjs"
-    },
-    "./utils/tree.test": {
-      "import": "./dist/utils/tree.test.mjs",
-      "require": "./dist/utils/tree.test.cjs"
     },
     "./package.json": "./package.json"
   },

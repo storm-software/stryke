@@ -1059,3 +1059,25 @@ export type StructuredCloneable =
   | StructuredCloneablePrimitive
   | StructuredCloneableData
   | StructuredCloneableCollection;
+
+/**
+ * Removes the `readonly` modifier from all fields of an object type.
+ *
+ * @template T - The object type to make mutable
+ *
+ * @example
+ * ```
+ * import type { Mutable } from '@stryke/types';
+ *
+ * type ReadonlyUser = {
+ *   readonly name: string;
+ *   readonly age: number;
+ * };
+ *
+ * type User = Mutable<ReadonlyUser>;
+ * // => { name: string; age: number; }
+ * ```
+ */
+export type Mutable<T extends object> = {
+  -readonly [K in keyof T]: T[K];
+};

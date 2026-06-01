@@ -18,197 +18,97 @@
       "import": "./dist/buffer.mjs",
       "require": "./dist/buffer.cjs"
     },
-    "./buffer.test": {
-      "import": "./dist/buffer.test.mjs",
-      "require": "./dist/buffer.test.cjs"
-    },
     "./chmod-x": {
       "import": "./dist/chmod-x.mjs",
       "require": "./dist/chmod-x.cjs"
-    },
-    "./chmod-x.test": {
-      "import": "./dist/chmod-x.test.mjs",
-      "require": "./dist/chmod-x.test.cjs"
     },
     "./command-exists": {
       "import": "./dist/command-exists.mjs",
       "require": "./dist/command-exists.cjs"
     },
-    "./command-exists.test": {
-      "import": "./dist/command-exists.test.mjs",
-      "require": "./dist/command-exists.test.cjs"
-    },
     "./compress": {
       "import": "./dist/compress.mjs",
       "require": "./dist/compress.cjs"
-    },
-    "./compress.test": {
-      "import": "./dist/compress.test.mjs",
-      "require": "./dist/compress.test.cjs"
     },
     "./constants": {
       "import": "./dist/constants.mjs",
       "require": "./dist/constants.cjs"
     },
-    "./constants.test": {
-      "import": "./dist/constants.test.mjs",
-      "require": "./dist/constants.test.cjs"
-    },
     "./copy-file": {
       "import": "./dist/copy-file.mjs",
       "require": "./dist/copy-file.cjs"
-    },
-    "./copy-file.test": {
-      "import": "./dist/copy-file.test.mjs",
-      "require": "./dist/copy-file.test.cjs"
     },
     "./exists": {
       "import": "./dist/exists.mjs",
       "require": "./dist/exists.cjs"
     },
-    "./exists.test": {
-      "import": "./dist/exists.test.mjs",
-      "require": "./dist/exists.test.cjs"
-    },
     "./get-parent-path": {
       "import": "./dist/get-parent-path.mjs",
       "require": "./dist/get-parent-path.cjs"
-    },
-    "./get-parent-path.test": {
-      "import": "./dist/get-parent-path.test.mjs",
-      "require": "./dist/get-parent-path.test.cjs"
     },
     "./get-workspace-root": {
       "import": "./dist/get-workspace-root.mjs",
       "require": "./dist/get-workspace-root.cjs"
     },
-    "./get-workspace-root.test": {
-      "import": "./dist/get-workspace-root.test.mjs",
-      "require": "./dist/get-workspace-root.test.cjs"
-    },
     "./helpers": {
       "import": "./dist/helpers.mjs",
       "require": "./dist/helpers.cjs"
-    },
-    "./helpers.test": {
-      "import": "./dist/helpers.test.mjs",
-      "require": "./dist/helpers.test.cjs"
-    },
-    "./index.test": {
-      "import": "./dist/index.test.mjs",
-      "require": "./dist/index.test.cjs"
     },
     "./install": {
       "import": "./dist/install.mjs",
       "require": "./dist/install.cjs"
     },
-    "./install.test": {
-      "import": "./dist/install.test.mjs",
-      "require": "./dist/install.test.cjs"
-    },
     "./is-file": {
       "import": "./dist/is-file.mjs",
       "require": "./dist/is-file.cjs"
-    },
-    "./is-file.test": {
-      "import": "./dist/is-file.test.mjs",
-      "require": "./dist/is-file.test.cjs"
     },
     "./json": {
       "import": "./dist/json.mjs",
       "require": "./dist/json.cjs"
     },
-    "./json.test": {
-      "import": "./dist/json.test.mjs",
-      "require": "./dist/json.test.cjs"
-    },
     "./list-files": {
       "import": "./dist/list-files.mjs",
       "require": "./dist/list-files.cjs"
-    },
-    "./list-files.test": {
-      "import": "./dist/list-files.test.mjs",
-      "require": "./dist/list-files.test.cjs"
     },
     "./package-fns": {
       "import": "./dist/package-fns.mjs",
       "require": "./dist/package-fns.cjs"
     },
-    "./package-fns.test": {
-      "import": "./dist/package-fns.test.mjs",
-      "require": "./dist/package-fns.test.cjs"
-    },
     "./read-file": {
       "import": "./dist/read-file.mjs",
       "require": "./dist/read-file.cjs"
-    },
-    "./read-file.test": {
-      "import": "./dist/read-file.test.mjs",
-      "require": "./dist/read-file.test.cjs"
     },
     "./registry": {
       "import": "./dist/registry.mjs",
       "require": "./dist/registry.cjs"
     },
-    "./registry.test": {
-      "import": "./dist/registry.test.mjs",
-      "require": "./dist/registry.test.cjs"
-    },
     "./remove-file": {
       "import": "./dist/remove-file.mjs",
       "require": "./dist/remove-file.cjs"
-    },
-    "./remove-file.test": {
-      "import": "./dist/remove-file.test.mjs",
-      "require": "./dist/remove-file.test.cjs"
     },
     "./resolve": {
       "import": "./dist/resolve.mjs",
       "require": "./dist/resolve.cjs"
     },
-    "./resolve.test": {
-      "import": "./dist/resolve.test.mjs",
-      "require": "./dist/resolve.test.cjs"
-    },
     "./semver-fns": {
       "import": "./dist/semver-fns.mjs",
       "require": "./dist/semver-fns.cjs"
-    },
-    "./semver-fns.test": {
-      "import": "./dist/semver-fns.test.mjs",
-      "require": "./dist/semver-fns.test.cjs"
     },
     "./toml": {
       "import": "./dist/toml.mjs",
       "require": "./dist/toml.cjs"
     },
-    "./toml.test": {
-      "import": "./dist/toml.test.mjs",
-      "require": "./dist/toml.test.cjs"
-    },
     "./tsconfig": {
       "import": "./dist/tsconfig.mjs",
       "require": "./dist/tsconfig.cjs"
-    },
-    "./tsconfig.test": {
-      "import": "./dist/tsconfig.test.mjs",
-      "require": "./dist/tsconfig.test.cjs"
     },
     "./write-file": {
       "import": "./dist/write-file.mjs",
       "require": "./dist/write-file.cjs"
     },
-    "./write-file.test": {
-      "import": "./dist/write-file.test.mjs",
-      "require": "./dist/write-file.test.cjs"
-    },
     "./yaml": {
       "import": "./dist/yaml.mjs",
       "require": "./dist/yaml.cjs"
-    },
-    "./yaml.test": {
-      "import": "./dist/yaml.test.mjs",
-      "require": "./dist/yaml.test.cjs"
     },
     "./package.json": "./package.json"
   },

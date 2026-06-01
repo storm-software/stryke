@@ -18,69 +18,33 @@
       "import": "./dist/agent.mjs",
       "require": "./dist/agent.cjs"
     },
-    "./agent.test": {
-      "import": "./dist/agent.test.mjs",
-      "require": "./dist/agent.test.cjs"
-    },
     "./fetch": {
       "import": "./dist/fetch.mjs",
       "require": "./dist/fetch.cjs"
-    },
-    "./fetch.test": {
-      "import": "./dist/fetch.test.mjs",
-      "require": "./dist/fetch.test.cjs"
     },
     "./format-data-uri": {
       "import": "./dist/format-data-uri.mjs",
       "require": "./dist/format-data-uri.cjs"
     },
-    "./format-data-uri.test": {
-      "import": "./dist/format-data-uri.test.mjs",
-      "require": "./dist/format-data-uri.test.cjs"
-    },
     "./get-free-port": {
       "import": "./dist/get-free-port.mjs",
       "require": "./dist/get-free-port.cjs"
-    },
-    "./get-free-port.test": {
-      "import": "./dist/get-free-port.test.mjs",
-      "require": "./dist/get-free-port.test.cjs"
     },
     "./http-proxy": {
       "import": "./dist/http-proxy.mjs",
       "require": "./dist/http-proxy.cjs"
     },
-    "./http-proxy.test": {
-      "import": "./dist/http-proxy.test.mjs",
-      "require": "./dist/http-proxy.test.cjs"
-    },
     "./https-proxy": {
       "import": "./dist/https-proxy.mjs",
       "require": "./dist/https-proxy.cjs"
-    },
-    "./https-proxy.test": {
-      "import": "./dist/https-proxy.test.mjs",
-      "require": "./dist/https-proxy.test.cjs"
-    },
-    "./index.test": {
-      "import": "./dist/index.test.mjs",
-      "require": "./dist/index.test.cjs"
     },
     "./parse-response": {
       "import": "./dist/parse-response.mjs",
       "require": "./dist/parse-response.cjs"
     },
-    "./parse-response.test": {
-      "import": "./dist/parse-response.test.mjs",
-      "require": "./dist/parse-response.test.cjs"
-    },
     "./proxy-agent": {
       "import": "./dist/proxy-agent.mjs",
       "require": "./dist/proxy-agent.cjs"
-    },
-    "./proxy-agent.test": {
-      "import": "./dist/proxy-agent.test.mjs",
-      "require": "./dist/proxy-agent.test.cjs"
     },
     "./package.json": "./package.json"
   },

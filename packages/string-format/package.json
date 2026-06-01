@@ -18,253 +18,125 @@
       "import": "./dist/acronyms.mjs",
       "require": "./dist/acronyms.cjs"
     },
-    "./acronyms.test": {
-      "import": "./dist/acronyms.test.mjs",
-      "require": "./dist/acronyms.test.cjs"
-    },
     "./articles": {
       "import": "./dist/articles.mjs",
       "require": "./dist/articles.cjs"
-    },
-    "./articles.test": {
-      "import": "./dist/articles.test.mjs",
-      "require": "./dist/articles.test.cjs"
     },
     "./camel-case": {
       "import": "./dist/camel-case.mjs",
       "require": "./dist/camel-case.cjs"
     },
-    "./camel-case.test": {
-      "import": "./dist/camel-case.test.mjs",
-      "require": "./dist/camel-case.test.cjs"
-    },
     "./combine": {
       "import": "./dist/combine.mjs",
       "require": "./dist/combine.cjs"
-    },
-    "./combine.test": {
-      "import": "./dist/combine.test.mjs",
-      "require": "./dist/combine.test.cjs"
     },
     "./conjunctions": {
       "import": "./dist/conjunctions.mjs",
       "require": "./dist/conjunctions.cjs"
     },
-    "./conjunctions.test": {
-      "import": "./dist/conjunctions.test.mjs",
-      "require": "./dist/conjunctions.test.cjs"
-    },
     "./constant-case": {
       "import": "./dist/constant-case.mjs",
       "require": "./dist/constant-case.cjs"
-    },
-    "./constant-case.test": {
-      "import": "./dist/constant-case.test.mjs",
-      "require": "./dist/constant-case.test.cjs"
     },
     "./deburr": {
       "import": "./dist/deburr.mjs",
       "require": "./dist/deburr.cjs"
     },
-    "./deburr.test": {
-      "import": "./dist/deburr.test.mjs",
-      "require": "./dist/deburr.test.cjs"
-    },
     "./decamelize": {
       "import": "./dist/decamelize.mjs",
       "require": "./dist/decamelize.cjs"
-    },
-    "./decamelize.test": {
-      "import": "./dist/decamelize.test.mjs",
-      "require": "./dist/decamelize.test.cjs"
     },
     "./escape": {
       "import": "./dist/escape.mjs",
       "require": "./dist/escape.cjs"
     },
-    "./escape.test": {
-      "import": "./dist/escape.test.mjs",
-      "require": "./dist/escape.test.cjs"
-    },
     "./format-special-cases": {
       "import": "./dist/format-special-cases.mjs",
       "require": "./dist/format-special-cases.cjs"
-    },
-    "./format-special-cases.test": {
-      "import": "./dist/format-special-cases.test.mjs",
-      "require": "./dist/format-special-cases.test.cjs"
     },
     "./get-words": {
       "import": "./dist/get-words.mjs",
       "require": "./dist/get-words.cjs"
     },
-    "./get-words.test": {
-      "import": "./dist/get-words.test.mjs",
-      "require": "./dist/get-words.test.cjs"
-    },
-    "./index.test": {
-      "import": "./dist/index.test.mjs",
-      "require": "./dist/index.test.cjs"
-    },
     "./kebab-case": {
       "import": "./dist/kebab-case.mjs",
       "require": "./dist/kebab-case.cjs"
-    },
-    "./kebab-case.test": {
-      "import": "./dist/kebab-case.test.mjs",
-      "require": "./dist/kebab-case.test.cjs"
     },
     "./list": {
       "import": "./dist/list.mjs",
       "require": "./dist/list.cjs"
     },
-    "./list.test": {
-      "import": "./dist/list.test.mjs",
-      "require": "./dist/list.test.cjs"
-    },
     "./lower-case-first": {
       "import": "./dist/lower-case-first.mjs",
       "require": "./dist/lower-case-first.cjs"
-    },
-    "./lower-case-first.test": {
-      "import": "./dist/lower-case-first.test.mjs",
-      "require": "./dist/lower-case-first.test.cjs"
     },
     "./normalize-email": {
       "import": "./dist/normalize-email.mjs",
       "require": "./dist/normalize-email.cjs"
     },
-    "./normalize-email.test": {
-      "import": "./dist/normalize-email.test.mjs",
-      "require": "./dist/normalize-email.test.cjs"
-    },
     "./ordinals": {
       "import": "./dist/ordinals.mjs",
       "require": "./dist/ordinals.cjs"
-    },
-    "./ordinals.test": {
-      "import": "./dist/ordinals.test.mjs",
-      "require": "./dist/ordinals.test.cjs"
     },
     "./package": {
       "import": "./dist/package.mjs",
       "require": "./dist/package.cjs"
     },
-    "./package.test": {
-      "import": "./dist/package.test.mjs",
-      "require": "./dist/package.test.cjs"
-    },
     "./pad": {
       "import": "./dist/pad.mjs",
       "require": "./dist/pad.cjs"
-    },
-    "./pad.test": {
-      "import": "./dist/pad.test.mjs",
-      "require": "./dist/pad.test.cjs"
     },
     "./pascal-case": {
       "import": "./dist/pascal-case.mjs",
       "require": "./dist/pascal-case.cjs"
     },
-    "./pascal-case.test": {
-      "import": "./dist/pascal-case.test.mjs",
-      "require": "./dist/pascal-case.test.cjs"
-    },
     "./period-split": {
       "import": "./dist/period-split.mjs",
       "require": "./dist/period-split.cjs"
-    },
-    "./period-split.test": {
-      "import": "./dist/period-split.test.mjs",
-      "require": "./dist/period-split.test.cjs"
     },
     "./prepositions": {
       "import": "./dist/prepositions.mjs",
       "require": "./dist/prepositions.cjs"
     },
-    "./prepositions.test": {
-      "import": "./dist/prepositions.test.mjs",
-      "require": "./dist/prepositions.test.cjs"
-    },
     "./pretty-bytes": {
       "import": "./dist/pretty-bytes.mjs",
       "require": "./dist/pretty-bytes.cjs"
-    },
-    "./pretty-bytes.test": {
-      "import": "./dist/pretty-bytes.test.mjs",
-      "require": "./dist/pretty-bytes.test.cjs"
     },
     "./pretty-path": {
       "import": "./dist/pretty-path.mjs",
       "require": "./dist/pretty-path.cjs"
     },
-    "./pretty-path.test": {
-      "import": "./dist/pretty-path.test.mjs",
-      "require": "./dist/pretty-path.test.cjs"
-    },
     "./snake-case": {
       "import": "./dist/snake-case.mjs",
       "require": "./dist/snake-case.cjs"
-    },
-    "./snake-case.test": {
-      "import": "./dist/snake-case.test.mjs",
-      "require": "./dist/snake-case.test.cjs"
     },
     "./special-cases": {
       "import": "./dist/special-cases.mjs",
       "require": "./dist/special-cases.cjs"
     },
-    "./special-cases.test": {
-      "import": "./dist/special-cases.test.mjs",
-      "require": "./dist/special-cases.test.cjs"
-    },
     "./start-case": {
       "import": "./dist/start-case.mjs",
       "require": "./dist/start-case.cjs"
-    },
-    "./start-case.test": {
-      "import": "./dist/start-case.test.mjs",
-      "require": "./dist/start-case.test.cjs"
     },
     "./strip-indents": {
       "import": "./dist/strip-indents.mjs",
       "require": "./dist/strip-indents.cjs"
     },
-    "./strip-indents.test": {
-      "import": "./dist/strip-indents.test.mjs",
-      "require": "./dist/strip-indents.test.cjs"
-    },
     "./title-case": {
       "import": "./dist/title-case.mjs",
       "require": "./dist/title-case.cjs"
-    },
-    "./title-case.test": {
-      "import": "./dist/title-case.test.mjs",
-      "require": "./dist/title-case.test.cjs"
     },
     "./unescape": {
       "import": "./dist/unescape.mjs",
       "require": "./dist/unescape.cjs"
     },
-    "./unescape.test": {
-      "import": "./dist/unescape.test.mjs",
-      "require": "./dist/unescape.test.cjs"
-    },
     "./upper-case-first": {
       "import": "./dist/upper-case-first.mjs",
       "require": "./dist/upper-case-first.cjs"
     },
-    "./upper-case-first.test": {
-      "import": "./dist/upper-case-first.test.mjs",
-      "require": "./dist/upper-case-first.test.cjs"
-    },
     "./vowels": {
       "import": "./dist/vowels.mjs",
       "require": "./dist/vowels.cjs"
-    },
-    "./vowels.test": {
-      "import": "./dist/vowels.test.mjs",
-      "require": "./dist/vowels.test.cjs"
     },
     "./package.json": "./package.json"
   },

@@ -5,6 +5,6 @@
   "namespace": "stryke",
   "repository": "https://github.com/storm-software/stryke",
   "packageManager": "pnpm",
-  "logLevel": "trace",
+  "logLevel": "info",
   "docs": "https://docs.stormsoftware.com/projects/stryke"
 }

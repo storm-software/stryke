@@ -14,41 +14,21 @@
       "import": "./dist/index.mjs",
       "require": "./dist/index.cjs"
     },
-    "./index.test": {
-      "import": "./dist/index.test.mjs",
-      "require": "./dist/index.test.cjs"
-    },
     "./parse": {
       "import": "./dist/parse.mjs",
       "require": "./dist/parse.cjs"
-    },
-    "./parse.test": {
-      "import": "./dist/parse.test.mjs",
-      "require": "./dist/parse.test.cjs"
     },
     "./split": {
       "import": "./dist/split.mjs",
       "require": "./dist/split.cjs"
     },
-    "./split.test": {
-      "import": "./dist/split.test.mjs",
-      "require": "./dist/split.test.cjs"
-    },
     "./stringify": {
       "import": "./dist/stringify.mjs",
       "require": "./dist/stringify.cjs"
     },
-    "./stringify.test": {
-      "import": "./dist/stringify.test.mjs",
-      "require": "./dist/stringify.test.cjs"
-    },
     "./types": {
       "import": "./dist/types.mjs",
       "require": "./dist/types.cjs"
-    },
-    "./types.test": {
-      "import": "./dist/types.test.mjs",
-      "require": "./dist/types.test.cjs"
     },
     "./package.json": "./package.json"
   },

@@ -18,109 +18,53 @@
       "import": "./dist/append.mjs",
       "require": "./dist/append.cjs"
     },
-    "./append.test": {
-      "import": "./dist/append.test.mjs",
-      "require": "./dist/append.test.cjs"
-    },
     "./asset-extensions": {
       "import": "./dist/asset-extensions.mjs",
       "require": "./dist/asset-extensions.cjs"
-    },
-    "./asset-extensions.test": {
-      "import": "./dist/asset-extensions.test.mjs",
-      "require": "./dist/asset-extensions.test.cjs"
     },
     "./common": {
       "import": "./dist/common.mjs",
       "require": "./dist/common.cjs"
     },
-    "./common.test": {
-      "import": "./dist/common.test.mjs",
-      "require": "./dist/common.test.cjs"
-    },
     "./correct-path": {
       "import": "./dist/correct-path.mjs",
       "require": "./dist/correct-path.cjs"
-    },
-    "./correct-path.test": {
-      "import": "./dist/correct-path.test.mjs",
-      "require": "./dist/correct-path.test.cjs"
     },
     "./cwd": {
       "import": "./dist/cwd.mjs",
       "require": "./dist/cwd.cjs"
     },
-    "./cwd.test": {
-      "import": "./dist/cwd.test.mjs",
-      "require": "./dist/cwd.test.cjs"
-    },
     "./delimiter": {
       "import": "./dist/delimiter.mjs",
       "require": "./dist/delimiter.cjs"
-    },
-    "./delimiter.test": {
-      "import": "./dist/delimiter.test.mjs",
-      "require": "./dist/delimiter.test.cjs"
     },
     "./file-path-fns": {
       "import": "./dist/file-path-fns.mjs",
       "require": "./dist/file-path-fns.cjs"
     },
-    "./file-path-fns.test": {
-      "import": "./dist/file-path-fns.test.mjs",
-      "require": "./dist/file-path-fns.test.cjs"
-    },
     "./find": {
       "import": "./dist/find.mjs",
       "require": "./dist/find.cjs"
-    },
-    "./find.test": {
-      "import": "./dist/find.test.mjs",
-      "require": "./dist/find.test.cjs"
     },
     "./glob-to-regex": {
       "import": "./dist/glob-to-regex.mjs",
       "require": "./dist/glob-to-regex.cjs"
     },
-    "./glob-to-regex.test": {
-      "import": "./dist/glob-to-regex.test.mjs",
-      "require": "./dist/glob-to-regex.test.cjs"
-    },
-    "./index.test": {
-      "import": "./dist/index.test.mjs",
-      "require": "./dist/index.test.cjs"
-    },
     "./is-equal": {
       "import": "./dist/is-equal.mjs",
       "require": "./dist/is-equal.cjs"
-    },
-    "./is-equal.test": {
-      "import": "./dist/is-equal.test.mjs",
-      "require": "./dist/is-equal.test.cjs"
     },
     "./is-parent-path": {
       "import": "./dist/is-parent-path.mjs",
       "require": "./dist/is-parent-path.cjs"
     },
-    "./is-parent-path.test": {
-      "import": "./dist/is-parent-path.test.mjs",
-      "require": "./dist/is-parent-path.test.cjs"
-    },
     "./is-root-dir": {
       "import": "./dist/is-root-dir.mjs",
       "require": "./dist/is-root-dir.cjs"
     },
-    "./is-root-dir.test": {
-      "import": "./dist/is-root-dir.test.mjs",
-      "require": "./dist/is-root-dir.test.cjs"
-    },
     "./is-type": {
       "import": "./dist/is-type.mjs",
       "require": "./dist/is-type.cjs"
-    },
-    "./is-type.test": {
-      "import": "./dist/is-type.test.mjs",
-      "require": "./dist/is-type.test.cjs"
     },
     "./join": {
       "import": "./dist/join.mjs",
@@ -130,53 +74,25 @@
       "import": "./dist/join-paths.mjs",
       "require": "./dist/join-paths.cjs"
     },
-    "./join-paths.test": {
-      "import": "./dist/join-paths.test.mjs",
-      "require": "./dist/join-paths.test.cjs"
-    },
-    "./join.test": {
-      "import": "./dist/join.test.mjs",
-      "require": "./dist/join.test.cjs"
-    },
     "./normalize": {
       "import": "./dist/normalize.mjs",
       "require": "./dist/normalize.cjs"
-    },
-    "./normalize.test": {
-      "import": "./dist/normalize.test.mjs",
-      "require": "./dist/normalize.test.cjs"
     },
     "./regex": {
       "import": "./dist/regex.mjs",
       "require": "./dist/regex.cjs"
     },
-    "./regex.test": {
-      "import": "./dist/regex.test.mjs",
-      "require": "./dist/regex.test.cjs"
-    },
     "./replace": {
       "import": "./dist/replace.mjs",
       "require": "./dist/replace.cjs"
-    },
-    "./replace.test": {
-      "import": "./dist/replace.test.mjs",
-      "require": "./dist/replace.test.cjs"
     },
     "./resolve-parent-path": {
       "import": "./dist/resolve-parent-path.mjs",
       "require": "./dist/resolve-parent-path.cjs"
     },
-    "./resolve-parent-path.test": {
-      "import": "./dist/resolve-parent-path.test.mjs",
-      "require": "./dist/resolve-parent-path.test.cjs"
-    },
     "./slash": {
       "import": "./dist/slash.mjs",
       "require": "./dist/slash.cjs"
-    },
-    "./slash.test": {
-      "import": "./dist/slash.test.mjs",
-      "require": "./dist/slash.test.cjs"
     },
     "./package.json": "./package.json"
   },

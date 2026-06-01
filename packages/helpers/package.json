@@ -18,189 +18,93 @@
       "import": "./dist/arg-identity.mjs",
       "require": "./dist/arg-identity.cjs"
     },
-    "./arg-identity.test": {
-      "import": "./dist/arg-identity.test.mjs",
-      "require": "./dist/arg-identity.test.cjs"
-    },
     "./deep-clone": {
       "import": "./dist/deep-clone.mjs",
       "require": "./dist/deep-clone.cjs"
-    },
-    "./deep-clone.test": {
-      "import": "./dist/deep-clone.test.mjs",
-      "require": "./dist/deep-clone.test.cjs"
     },
     "./deep-merge": {
       "import": "./dist/deep-merge.mjs",
       "require": "./dist/deep-merge.cjs"
     },
-    "./deep-merge.test": {
-      "import": "./dist/deep-merge.test.mjs",
-      "require": "./dist/deep-merge.test.cjs"
-    },
     "./filter-empty": {
       "import": "./dist/filter-empty.mjs",
       "require": "./dist/filter-empty.cjs"
-    },
-    "./filter-empty.test": {
-      "import": "./dist/filter-empty.test.mjs",
-      "require": "./dist/filter-empty.test.cjs"
     },
     "./flatten-object": {
       "import": "./dist/flatten-object.mjs",
       "require": "./dist/flatten-object.cjs"
     },
-    "./flatten-object.test": {
-      "import": "./dist/flatten-object.test.mjs",
-      "require": "./dist/flatten-object.test.cjs"
-    },
     "./get-field": {
       "import": "./dist/get-field.mjs",
       "require": "./dist/get-field.cjs"
-    },
-    "./get-field.test": {
-      "import": "./dist/get-field.test.mjs",
-      "require": "./dist/get-field.test.cjs"
     },
     "./get-ordered-by": {
       "import": "./dist/get-ordered-by.mjs",
       "require": "./dist/get-ordered-by.cjs"
     },
-    "./get-ordered-by.test": {
-      "import": "./dist/get-ordered-by.test.mjs",
-      "require": "./dist/get-ordered-by.test.cjs"
-    },
     "./get-unique": {
       "import": "./dist/get-unique.mjs",
       "require": "./dist/get-unique.cjs"
-    },
-    "./get-unique.test": {
-      "import": "./dist/get-unique.test.mjs",
-      "require": "./dist/get-unique.test.cjs"
     },
     "./identity": {
       "import": "./dist/identity.mjs",
       "require": "./dist/identity.cjs"
     },
-    "./identity.test": {
-      "import": "./dist/identity.test.mjs",
-      "require": "./dist/identity.test.cjs"
-    },
-    "./index.test": {
-      "import": "./dist/index.test.mjs",
-      "require": "./dist/index.test.cjs"
-    },
     "./is-equal": {
       "import": "./dist/is-equal.mjs",
       "require": "./dist/is-equal.cjs"
-    },
-    "./is-equal.test": {
-      "import": "./dist/is-equal.test.mjs",
-      "require": "./dist/is-equal.test.cjs"
     },
     "./lru-cache": {
       "import": "./dist/lru-cache.mjs",
       "require": "./dist/lru-cache.cjs"
     },
-    "./lru-cache.test": {
-      "import": "./dist/lru-cache.test.mjs",
-      "require": "./dist/lru-cache.test.cjs"
-    },
     "./match-sorter": {
       "import": "./dist/match-sorter.mjs",
       "require": "./dist/match-sorter.cjs"
-    },
-    "./match-sorter.test": {
-      "import": "./dist/match-sorter.test.mjs",
-      "require": "./dist/match-sorter.test.cjs"
     },
     "./memoize": {
       "import": "./dist/memoize.mjs",
       "require": "./dist/memoize.cjs"
     },
-    "./memoize.test": {
-      "import": "./dist/memoize.test.mjs",
-      "require": "./dist/memoize.test.cjs"
-    },
     "./noop": {
       "import": "./dist/noop.mjs",
       "require": "./dist/noop.cjs"
-    },
-    "./noop.test": {
-      "import": "./dist/noop.test.mjs",
-      "require": "./dist/noop.test.cjs"
     },
     "./omit": {
       "import": "./dist/omit.mjs",
       "require": "./dist/omit.cjs"
     },
-    "./omit.test": {
-      "import": "./dist/omit.test.mjs",
-      "require": "./dist/omit.test.cjs"
-    },
     "./pick": {
       "import": "./dist/pick.mjs",
       "require": "./dist/pick.cjs"
-    },
-    "./pick.test": {
-      "import": "./dist/pick.test.mjs",
-      "require": "./dist/pick.test.cjs"
     },
     "./remove-accents": {
       "import": "./dist/remove-accents.mjs",
       "require": "./dist/remove-accents.cjs"
     },
-    "./remove-accents.test": {
-      "import": "./dist/remove-accents.test.mjs",
-      "require": "./dist/remove-accents.test.cjs"
-    },
     "./remove-empty-items": {
       "import": "./dist/remove-empty-items.mjs",
       "require": "./dist/remove-empty-items.cjs"
-    },
-    "./remove-empty-items.test": {
-      "import": "./dist/remove-empty-items.test.mjs",
-      "require": "./dist/remove-empty-items.test.cjs"
     },
     "./set-field": {
       "import": "./dist/set-field.mjs",
       "require": "./dist/set-field.cjs"
     },
-    "./set-field.test": {
-      "import": "./dist/set-field.test.mjs",
-      "require": "./dist/set-field.test.cjs"
-    },
     "./to-deep-key": {
       "import": "./dist/to-deep-key.mjs",
       "require": "./dist/to-deep-key.cjs"
-    },
-    "./to-deep-key.test": {
-      "import": "./dist/to-deep-key.test.mjs",
-      "require": "./dist/to-deep-key.test.cjs"
     },
     "./to-path": {
       "import": "./dist/to-path.mjs",
       "require": "./dist/to-path.cjs"
     },
-    "./to-path.test": {
-      "import": "./dist/to-path.test.mjs",
-      "require": "./dist/to-path.test.cjs"
-    },
     "./unflatten-object": {
       "import": "./dist/unflatten-object.mjs",
       "require": "./dist/unflatten-object.cjs"
     },
-    "./unflatten-object.test": {
-      "import": "./dist/unflatten-object.test.mjs",
-      "require": "./dist/unflatten-object.test.cjs"
-    },
     "./union": {
       "import": "./dist/union.mjs",
       "require": "./dist/union.cjs"
-    },
-    "./union.test": {
-      "import": "./dist/union.test.mjs",
-      "require": "./dist/union.test.cjs"
     },
     "./package.json": "./package.json"
   },
