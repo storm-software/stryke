@@ -16,7 +16,7 @@
 
  ------------------------------------------------------------------- */
 
-import { joinPaths } from "@stryke/path";
+import { hasFileExtension, joinPaths } from "@stryke/path";
 import { isString } from "@stryke/type-checks";
 import type { AssetGlob } from "@stryke/types/file";
 import defu from "defu";
@@ -32,6 +32,22 @@ const DEFAULT_OPTIONS: ListOptions = {
 };
 
 /**
+ * Determines whether a string contains glob "magic" characters.
+ *
+ * @remarks
+ * This includes wildcards (`*`, `?`), character classes (`[...]`),
+ * extglob groups (`!(...)`, `+(...)`, etc.), and brace expansion
+ * (`{option1,option2}`). When any of these are present the value should be
+ * treated as an existing glob pattern instead of a plain path.
+ *
+ * @param value - The string to inspect
+ * @returns `true` if the string contains glob magic characters
+ */
+function isGlobPattern(value: string): boolean {
+  return /[*?[\]{}()!+@]/.test(value);
+}
+
+/**
  * A files and directories listing helper function
  *
  * @param filesGlob - A glob pattern to match files
@@ -43,7 +59,7 @@ export async function list<TOptions extends ListOptions>(
 ): Promise<InferListReturnType<TOptions>> {
   return glob(
     isString(filesGlob)
-      ? filesGlob.includes("*")
+      ? isGlobPattern(filesGlob) || hasFileExtension(filesGlob)
         ? filesGlob
         : joinPaths(filesGlob, "**/*")
       : filesGlob.input
@@ -71,7 +87,7 @@ export function listSync<TOptions extends ListOptions>(
 ): InferListReturnType<TOptions> {
   return glob.sync(
     isString(filesGlob)
-      ? filesGlob.includes("*")
+      ? isGlobPattern(filesGlob) || hasFileExtension(filesGlob)
         ? filesGlob
         : joinPaths(filesGlob, "**/*")
       : filesGlob.input
