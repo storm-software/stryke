@@ -2,6 +2,13 @@
 
 # Changelog for Stryke - Prisma Better Auth Generator
 
+## [0.14.100](https://github.com/storm-software/stryke/releases/tag/prisma-better-auth-generator%400.14.100) (06/01/2026)
+
+### Updated Dependencies
+
+- Updated **env** to **v0.20.100**
+- Updated **fs** to **v0.33.83**
+
 ## [0.14.99](https://github.com/storm-software/stryke/releases/tag/prisma-better-auth-generator%400.14.99) (06/01/2026)
 
 ### Miscellaneous
