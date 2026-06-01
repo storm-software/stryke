@@ -2,6 +2,12 @@
 
 # Changelog for Stryke - Fs
 
+## [0.33.83](https://github.com/storm-software/stryke/releases/tag/fs%400.33.83) (06/01/2026)
+
+### Bug Fixes
+
+- **fs:** Resolve issue with `listFiles` to handle all glob patterns ([1204dab0](https://github.com/storm-software/stryke/commit/1204dab0))
+
 ## [0.33.82](https://github.com/storm-software/stryke/releases/tag/fs%400.33.82) (06/01/2026)
 
 ### Miscellaneous
