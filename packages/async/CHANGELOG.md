@@ -2,6 +2,12 @@
 
 # Changelog for Stryke - Async
 
+## [0.1.10](https://github.com/storm-software/stryke/releases/tag/async%400.1.10) (06/01/2026)
+
+### Miscellaneous
+
+- **monorepo:** Update workspace dependencies and `vitest.config.mts` files ([998ff756](https://github.com/storm-software/stryke/commit/998ff756))
+
 ## [0.1.9](https://github.com/storm-software/stryke/releases/tag/async%400.1.9) (05/30/2026)
 
 ### Miscellaneous

@@ -2,6 +2,17 @@
 
 # Changelog for Stryke - Zod
 
+## [0.3.28](https://github.com/storm-software/stryke/releases/tag/zod%400.3.28) (06/01/2026)
+
+### Miscellaneous
+
+- **monorepo:** Update workspace dependencies and `vitest.config.mts` files ([998ff756](https://github.com/storm-software/stryke/commit/998ff756))
+
+### Updated Dependencies
+
+- Updated **json** to **v0.15.6**
+- Updated **type-checks** to **v0.6.15**
+
 ## [0.3.27](https://github.com/storm-software/stryke/releases/tag/zod%400.3.27) (05/30/2026)
 
 ### Miscellaneous

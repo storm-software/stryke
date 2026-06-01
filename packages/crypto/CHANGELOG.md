@@ -2,6 +2,18 @@
 
 # Changelog for Stryke - Crypto
 
+## [0.6.30](https://github.com/storm-software/stryke/releases/tag/crypto%400.6.30) (06/01/2026)
+
+### Miscellaneous
+
+- **monorepo:** Update workspace dependencies and `vitest.config.mts` files ([998ff756](https://github.com/storm-software/stryke/commit/998ff756))
+
+### Updated Dependencies
+
+- Updated **convert** to **v0.7.13**
+- Updated **json** to **v0.15.6**
+- Updated **type-checks** to **v0.6.15**
+
 ## [0.6.29](https://github.com/storm-software/stryke/releases/tag/crypto%400.6.29) (05/30/2026)
 
 ### Miscellaneous

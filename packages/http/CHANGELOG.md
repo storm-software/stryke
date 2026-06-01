@@ -2,6 +2,17 @@
 
 # Changelog for Stryke - HTTP
 
+## [0.12.72](https://github.com/storm-software/stryke/releases/tag/http%400.12.72) (06/01/2026)
+
+### Miscellaneous
+
+- **monorepo:** Update workspace dependencies and `vitest.config.mts` files ([998ff756](https://github.com/storm-software/stryke/commit/998ff756))
+
+### Updated Dependencies
+
+- Updated **type-checks** to **v0.6.15**
+- Updated **url** to **v0.4.33**
+
 ## [0.12.71](https://github.com/storm-software/stryke/releases/tag/http%400.12.71) (05/30/2026)
 
 ### Miscellaneous

@@ -2,6 +2,18 @@
 
 # Changelog for Stryke - Helpers
 
+## [0.10.22](https://github.com/storm-software/stryke/releases/tag/helpers%400.10.22) (06/01/2026)
+
+### Miscellaneous
+
+- **monorepo:** Update workspace dependencies and `vitest.config.mts` files ([998ff756](https://github.com/storm-software/stryke/commit/998ff756))
+
+### Updated Dependencies
+
+- Updated **convert** to **v0.7.13**
+- Updated **type-checks** to **v0.6.15**
+- Updated **types** to **v0.12.10**
+
 ## [0.10.21](https://github.com/storm-software/stryke/releases/tag/helpers%400.10.21) (05/30/2026)
 
 ### Miscellaneous

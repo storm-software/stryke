@@ -2,6 +2,12 @@
 
 # Changelog for Stryke - Open Browser
 
+## [0.2.70](https://github.com/storm-software/stryke/releases/tag/open-browser%400.2.70) (06/01/2026)
+
+### Miscellaneous
+
+- **monorepo:** Update workspace dependencies and `vitest.config.mts` files ([998ff756](https://github.com/storm-software/stryke/commit/998ff756))
+
 ## [0.2.69](https://github.com/storm-software/stryke/releases/tag/open-browser%400.2.69) (05/30/2026)
 
 ### Miscellaneous

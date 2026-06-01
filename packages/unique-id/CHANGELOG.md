@@ -2,6 +2,16 @@
 
 # Changelog for Stryke - Unique ID
 
+## [0.3.93](https://github.com/storm-software/stryke/releases/tag/unique-id%400.3.93) (06/01/2026)
+
+### Miscellaneous
+
+- **monorepo:** Update workspace dependencies and `vitest.config.mts` files ([998ff756](https://github.com/storm-software/stryke/commit/998ff756))
+
+### Updated Dependencies
+
+- Updated **hash** to **v0.13.35**
+
 ## [0.3.92](https://github.com/storm-software/stryke/releases/tag/unique-id%400.3.92) (05/30/2026)
 
 ### Miscellaneous

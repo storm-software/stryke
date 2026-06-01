@@ -2,6 +2,12 @@
 
 # Changelog for Stryke - Types
 
+## [0.12.10](https://github.com/storm-software/stryke/releases/tag/types%400.12.10) (06/01/2026)
+
+### Miscellaneous
+
+- **monorepo:** Update workspace dependencies and `vitest.config.mts` files ([998ff756](https://github.com/storm-software/stryke/commit/998ff756))
+
 ## [0.12.9](https://github.com/storm-software/stryke/releases/tag/types%400.12.9) (05/30/2026)
 
 ### Miscellaneous

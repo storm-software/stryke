@@ -2,6 +2,19 @@
 
 # Changelog for Stryke - Env
 
+## [0.20.99](https://github.com/storm-software/stryke/releases/tag/env%400.20.99) (06/01/2026)
+
+### Miscellaneous
+
+- **monorepo:** Update workspace dependencies and `vitest.config.mts` files ([998ff756](https://github.com/storm-software/stryke/commit/998ff756))
+
+### Updated Dependencies
+
+- Updated **convert** to **v0.7.13**
+- Updated **fs** to **v0.33.82**
+- Updated **path** to **v0.29.9**
+- Updated **string-format** to **v0.17.24**
+
 ## [0.20.98](https://github.com/storm-software/stryke/releases/tag/env%400.20.98) (05/30/2026)
 
 ### Miscellaneous

@@ -2,6 +2,22 @@
 
 # Changelog for Stryke - Fs
 
+## [0.33.82](https://github.com/storm-software/stryke/releases/tag/fs%400.33.82) (06/01/2026)
+
+### Miscellaneous
+
+- **monorepo:** Update workspace dependencies and `vitest.config.mts` files ([998ff756](https://github.com/storm-software/stryke/commit/998ff756))
+
+### Updated Dependencies
+
+- Updated **convert** to **v0.7.13**
+- Updated **helpers** to **v0.10.22**
+- Updated **json** to **v0.15.6**
+- Updated **path** to **v0.29.9**
+- Updated **string-format** to **v0.17.24**
+- Updated **type-checks** to **v0.6.15**
+- Updated **types** to **v0.12.10**
+
 ## [0.33.81](https://github.com/storm-software/stryke/releases/tag/fs%400.33.81) (05/30/2026)
 
 ### Miscellaneous

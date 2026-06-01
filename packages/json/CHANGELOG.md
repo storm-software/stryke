@@ -2,6 +2,17 @@
 
 # Changelog for Stryke - JSON
 
+## [0.15.6](https://github.com/storm-software/stryke/releases/tag/json%400.15.6) (06/01/2026)
+
+### Miscellaneous
+
+- **monorepo:** Update workspace dependencies and `vitest.config.mts` files ([998ff756](https://github.com/storm-software/stryke/commit/998ff756))
+
+### Updated Dependencies
+
+- Updated **type-checks** to **v0.6.15**
+- Updated **types** to **v0.12.10**
+
 ## [0.15.5](https://github.com/storm-software/stryke/releases/tag/json%400.15.5) (05/30/2026)
 
 ### Miscellaneous

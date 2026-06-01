@@ -2,6 +2,19 @@
 
 # Changelog for Stryke - Hooks
 
+## [0.4.97](https://github.com/storm-software/stryke/releases/tag/hooks%400.4.97) (06/01/2026)
+
+### Miscellaneous
+
+- **monorepo:** Update workspace dependencies and `vitest.config.mts` files ([998ff756](https://github.com/storm-software/stryke/commit/998ff756))
+
+### Updated Dependencies
+
+- Updated **async** to **v0.1.10**
+- Updated **env** to **v0.20.99**
+- Updated **type-checks** to **v0.6.15**
+- Updated **types** to **v0.12.10**
+
 ## [0.4.96](https://github.com/storm-software/stryke/releases/tag/hooks%400.4.96) (05/30/2026)
 
 ### Miscellaneous

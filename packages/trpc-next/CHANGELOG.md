@@ -2,6 +2,22 @@
 
 # Changelog for Stryke - TRPC Next
 
+## [0.5.101](https://github.com/storm-software/stryke/releases/tag/trpc-next%400.5.101) (06/01/2026)
+
+### Miscellaneous
+
+- **monorepo:** Update workspace dependencies and `vitest.config.mts` files ([998ff756](https://github.com/storm-software/stryke/commit/998ff756))
+
+### Updated Dependencies
+
+- Updated **env** to **v0.20.99**
+- Updated **fs** to **v0.33.82**
+- Updated **path** to **v0.29.9**
+- Updated **string-format** to **v0.17.24**
+- Updated **type-checks** to **v0.6.15**
+- Updated **types** to **v0.12.10**
+- Updated **url** to **v0.4.33**
+
 ## [0.5.100](https://github.com/storm-software/stryke/releases/tag/trpc-next%400.5.100) (05/30/2026)
 
 ### Miscellaneous

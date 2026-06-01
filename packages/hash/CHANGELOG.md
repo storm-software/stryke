@@ -2,6 +2,18 @@
 
 # Changelog for Stryke - Hash
 
+## [0.13.35](https://github.com/storm-software/stryke/releases/tag/hash%400.13.35) (06/01/2026)
+
+### Miscellaneous
+
+- **monorepo:** Update workspace dependencies and `vitest.config.mts` files ([998ff756](https://github.com/storm-software/stryke/commit/998ff756))
+
+### Updated Dependencies
+
+- Updated **fs** to **v0.33.82**
+- Updated **json** to **v0.15.6**
+- Updated **type-checks** to **v0.6.15**
+
 ## [0.13.34](https://github.com/storm-software/stryke/releases/tag/hash%400.13.34) (05/30/2026)
 
 ### Miscellaneous

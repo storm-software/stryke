@@ -2,6 +2,19 @@
 
 # Changelog for Stryke - Capnp
 
+## [0.12.108](https://github.com/storm-software/stryke/releases/tag/capnp%400.12.108) (06/01/2026)
+
+### Miscellaneous
+
+- **monorepo:** Update workspace dependencies and `vitest.config.mts` files ([998ff756](https://github.com/storm-software/stryke/commit/998ff756))
+
+### Updated Dependencies
+
+- Updated **convert** to **v0.7.13**
+- Updated **fs** to **v0.33.82**
+- Updated **path** to **v0.29.9**
+- Updated **types** to **v0.12.10**
+
 ## [0.12.107](https://github.com/storm-software/stryke/releases/tag/capnp%400.12.107) (05/30/2026)
 
 ### Miscellaneous
