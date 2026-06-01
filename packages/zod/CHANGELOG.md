@@ -2,6 +2,17 @@
 
 # Changelog for Stryke - Zod
 
+## [0.3.27](https://github.com/storm-software/stryke/releases/tag/zod%400.3.27) (05/30/2026)
+
+### Miscellaneous
+
+- **monorepo:** Remove remaining `jest` configuration ([1fd3d7d2](https://github.com/storm-software/stryke/commit/1fd3d7d2))
+
+### Updated Dependencies
+
+- Updated **json** to **v0.15.5**
+- Updated **type-checks** to **v0.6.14**
+
 ## [0.3.26](https://github.com/storm-software/stryke/releases/tag/zod%400.3.26) (05/30/2026)
 
 ### Miscellaneous

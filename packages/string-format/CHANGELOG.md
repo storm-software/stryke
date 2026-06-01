@@ -2,6 +2,22 @@
 
 # Changelog for Stryke - String Format
 
+## [0.17.23](https://github.com/storm-software/stryke/releases/tag/string-format%400.17.23) (05/30/2026)
+
+### Miscellaneous
+
+- **monorepo:** Remove remaining `jest` configuration ([1fd3d7d2](https://github.com/storm-software/stryke/commit/1fd3d7d2))
+
+### Bug Fixes
+
+- **monorepo:** Resolve issue with `.test.ts` exports in `package.json` file ([31d85e19](https://github.com/storm-software/stryke/commit/31d85e19))
+
+### Updated Dependencies
+
+- Updated **helpers** to **v0.10.21**
+- Updated **path** to **v0.29.8**
+- Updated **types** to **v0.12.9**
+
 ## [0.17.22](https://github.com/storm-software/stryke/releases/tag/string-format%400.17.22) (05/30/2026)
 
 ### Miscellaneous

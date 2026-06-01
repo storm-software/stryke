@@ -2,6 +2,22 @@
 
 # Changelog for Stryke - Helpers
 
+## [0.10.21](https://github.com/storm-software/stryke/releases/tag/helpers%400.10.21) (05/30/2026)
+
+### Miscellaneous
+
+- **monorepo:** Remove remaining `jest` configuration ([1fd3d7d2](https://github.com/storm-software/stryke/commit/1fd3d7d2))
+
+### Bug Fixes
+
+- **monorepo:** Resolve issue with `.test.ts` exports in `package.json` file ([31d85e19](https://github.com/storm-software/stryke/commit/31d85e19))
+
+### Updated Dependencies
+
+- Updated **convert** to **v0.7.12**
+- Updated **type-checks** to **v0.6.14**
+- Updated **types** to **v0.12.9**
+
 ## [0.10.20](https://github.com/storm-software/stryke/releases/tag/helpers%400.10.20) (05/30/2026)
 
 ### Miscellaneous

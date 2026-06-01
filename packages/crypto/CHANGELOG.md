@@ -2,6 +2,18 @@
 
 # Changelog for Stryke - Crypto
 
+## [0.6.29](https://github.com/storm-software/stryke/releases/tag/crypto%400.6.29) (05/30/2026)
+
+### Miscellaneous
+
+- **monorepo:** Remove remaining `jest` configuration ([1fd3d7d2](https://github.com/storm-software/stryke/commit/1fd3d7d2))
+
+### Updated Dependencies
+
+- Updated **convert** to **v0.7.12**
+- Updated **json** to **v0.15.5**
+- Updated **type-checks** to **v0.6.14**
+
 ## [0.6.28](https://github.com/storm-software/stryke/releases/tag/crypto%400.6.28) (05/30/2026)
 
 ### Miscellaneous

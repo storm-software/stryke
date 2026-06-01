@@ -2,6 +2,18 @@
 
 # Changelog for Stryke - Hash
 
+## [0.13.34](https://github.com/storm-software/stryke/releases/tag/hash%400.13.34) (05/30/2026)
+
+### Miscellaneous
+
+- **monorepo:** Remove remaining `jest` configuration ([1fd3d7d2](https://github.com/storm-software/stryke/commit/1fd3d7d2))
+
+### Updated Dependencies
+
+- Updated **fs** to **v0.33.81**
+- Updated **json** to **v0.15.5**
+- Updated **type-checks** to **v0.6.14**
+
 ## [0.13.33](https://github.com/storm-software/stryke/releases/tag/hash%400.13.33) (05/30/2026)
 
 ### Miscellaneous

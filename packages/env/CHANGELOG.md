@@ -2,6 +2,23 @@
 
 # Changelog for Stryke - Env
 
+## [0.20.98](https://github.com/storm-software/stryke/releases/tag/env%400.20.98) (05/30/2026)
+
+### Miscellaneous
+
+- **monorepo:** Remove remaining `jest` configuration ([1fd3d7d2](https://github.com/storm-software/stryke/commit/1fd3d7d2))
+
+### Bug Fixes
+
+- **monorepo:** Resolve issue with `.test.ts` exports in `package.json` file ([31d85e19](https://github.com/storm-software/stryke/commit/31d85e19))
+
+### Updated Dependencies
+
+- Updated **convert** to **v0.7.12**
+- Updated **fs** to **v0.33.81**
+- Updated **path** to **v0.29.8**
+- Updated **string-format** to **v0.17.23**
+
 ## [0.20.97](https://github.com/storm-software/stryke/releases/tag/env%400.20.97) (05/30/2026)
 
 ### Miscellaneous

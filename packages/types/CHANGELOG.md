@@ -2,6 +2,16 @@
 
 # Changelog for Stryke - Types
 
+## [0.12.9](https://github.com/storm-software/stryke/releases/tag/types%400.12.9) (05/30/2026)
+
+### Miscellaneous
+
+- **monorepo:** Remove remaining `jest` configuration ([1fd3d7d2](https://github.com/storm-software/stryke/commit/1fd3d7d2))
+
+### Bug Fixes
+
+- **monorepo:** Resolve issue with `.test.ts` exports in `package.json` file ([31d85e19](https://github.com/storm-software/stryke/commit/31d85e19))
+
 ## [0.12.8](https://github.com/storm-software/stryke/releases/tag/types%400.12.8) (05/30/2026)
 
 ### Miscellaneous

@@ -2,6 +2,22 @@
 
 # Changelog for Stryke - URL
 
+## [0.4.32](https://github.com/storm-software/stryke/releases/tag/url%400.4.32) (05/30/2026)
+
+### Miscellaneous
+
+- **monorepo:** Remove remaining `jest` configuration ([1fd3d7d2](https://github.com/storm-software/stryke/commit/1fd3d7d2))
+
+### Bug Fixes
+
+- **monorepo:** Resolve issue with `.test.ts` exports in `package.json` file ([31d85e19](https://github.com/storm-software/stryke/commit/31d85e19))
+
+### Updated Dependencies
+
+- Updated **json** to **v0.15.5**
+- Updated **path** to **v0.29.8**
+- Updated **type-checks** to **v0.6.14**
+
 ## [0.4.31](https://github.com/storm-software/stryke/releases/tag/url%400.4.31) (05/30/2026)
 
 ### Miscellaneous
