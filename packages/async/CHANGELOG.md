@@ -2,6 +2,12 @@
 
 # Changelog for Stryke - Async
 
+## [0.1.11](https://github.com/storm-software/stryke/releases/tag/async%400.1.11) (06/01/2026)
+
+### Bug Fixes
+
+- **monorepo:** Resolve issue causing `.test.ts` files to be included in package ([6fe5e79d](https://github.com/storm-software/stryke/commit/6fe5e79d))
+
 ## [0.1.10](https://github.com/storm-software/stryke/releases/tag/async%400.1.10) (06/01/2026)
 
 ### Miscellaneous

@@ -2,6 +2,12 @@
 
 # Changelog for Stryke - Open Browser
 
+## [0.2.71](https://github.com/storm-software/stryke/releases/tag/open-browser%400.2.71) (06/01/2026)
+
+### Bug Fixes
+
+- **monorepo:** Resolve issue causing `.test.ts` files to be included in package ([6fe5e79d](https://github.com/storm-software/stryke/commit/6fe5e79d))
+
 ## [0.2.70](https://github.com/storm-software/stryke/releases/tag/open-browser%400.2.70) (06/01/2026)
 
 ### Miscellaneous

@@ -2,6 +2,20 @@
 
 # Changelog for Stryke - CLI
 
+## [0.13.56](https://github.com/storm-software/stryke/releases/tag/cli%400.13.56) (06/01/2026)
+
+### Bug Fixes
+
+- **monorepo:** Resolve issue causing `.test.ts` files to be included in package ([6fe5e79d](https://github.com/storm-software/stryke/commit/6fe5e79d))
+
+### Updated Dependencies
+
+- Updated **convert** to **v0.7.14**
+- Updated **env** to **v0.20.101**
+- Updated **string-format** to **v0.17.25**
+- Updated **type-checks** to **v0.6.16**
+- Updated **types** to **v0.12.11**
+
 ## [0.13.55](https://github.com/storm-software/stryke/releases/tag/cli%400.13.55) (06/01/2026)
 
 ### Updated Dependencies

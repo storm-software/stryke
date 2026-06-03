@@ -2,6 +2,16 @@
 
 # Changelog for Stryke - Unique ID
 
+## [0.3.95](https://github.com/storm-software/stryke/releases/tag/unique-id%400.3.95) (06/01/2026)
+
+### Bug Fixes
+
+- **monorepo:** Resolve issue causing `.test.ts` files to be included in package ([6fe5e79d](https://github.com/storm-software/stryke/commit/6fe5e79d))
+
+### Updated Dependencies
+
+- Updated **hash** to **v0.13.37**
+
 ## [0.3.94](https://github.com/storm-software/stryke/releases/tag/unique-id%400.3.94) (06/01/2026)
 
 ### Updated Dependencies

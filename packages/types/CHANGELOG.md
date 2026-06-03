@@ -2,6 +2,12 @@
 
 # Changelog for Stryke - Types
 
+## [0.12.11](https://github.com/storm-software/stryke/releases/tag/types%400.12.11) (06/01/2026)
+
+### Bug Fixes
+
+- **monorepo:** Resolve issue causing `.test.ts` files to be included in package ([6fe5e79d](https://github.com/storm-software/stryke/commit/6fe5e79d))
+
 ## [0.12.10](https://github.com/storm-software/stryke/releases/tag/types%400.12.10) (06/01/2026)
 
 ### Miscellaneous

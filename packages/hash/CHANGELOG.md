@@ -2,6 +2,18 @@
 
 # Changelog for Stryke - Hash
 
+## [0.13.37](https://github.com/storm-software/stryke/releases/tag/hash%400.13.37) (06/01/2026)
+
+### Bug Fixes
+
+- **monorepo:** Resolve issue causing `.test.ts` files to be included in package ([6fe5e79d](https://github.com/storm-software/stryke/commit/6fe5e79d))
+
+### Updated Dependencies
+
+- Updated **fs** to **v0.33.84**
+- Updated **json** to **v0.15.7**
+- Updated **type-checks** to **v0.6.16**
+
 ## [0.13.36](https://github.com/storm-software/stryke/releases/tag/hash%400.13.36) (06/01/2026)
 
 ### Updated Dependencies

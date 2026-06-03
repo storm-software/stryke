@@ -1,6 +1,6 @@
 {
   "name": "@stryke/async",
-  "version": "0.1.10",
+  "version": "0.1.11",
   "private": false,
   "description": "A package containing asynchronous utilities used by Storm Software.",
   "repository": {

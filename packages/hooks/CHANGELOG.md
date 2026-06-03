@@ -2,6 +2,19 @@
 
 # Changelog for Stryke - Hooks
 
+## [0.4.99](https://github.com/storm-software/stryke/releases/tag/hooks%400.4.99) (06/01/2026)
+
+### Bug Fixes
+
+- **monorepo:** Resolve issue causing `.test.ts` files to be included in package ([6fe5e79d](https://github.com/storm-software/stryke/commit/6fe5e79d))
+
+### Updated Dependencies
+
+- Updated **async** to **v0.1.11**
+- Updated **env** to **v0.20.101**
+- Updated **type-checks** to **v0.6.16**
+- Updated **types** to **v0.12.11**
+
 ## [0.4.98](https://github.com/storm-software/stryke/releases/tag/hooks%400.4.98) (06/01/2026)
 
 ### Updated Dependencies

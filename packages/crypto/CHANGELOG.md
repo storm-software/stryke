@@ -2,6 +2,18 @@
 
 # Changelog for Stryke - Crypto
 
+## [0.6.31](https://github.com/storm-software/stryke/releases/tag/crypto%400.6.31) (06/01/2026)
+
+### Bug Fixes
+
+- **monorepo:** Resolve issue causing `.test.ts` files to be included in package ([6fe5e79d](https://github.com/storm-software/stryke/commit/6fe5e79d))
+
+### Updated Dependencies
+
+- Updated **convert** to **v0.7.14**
+- Updated **json** to **v0.15.7**
+- Updated **type-checks** to **v0.6.16**
+
 ## [0.6.30](https://github.com/storm-software/stryke/releases/tag/crypto%400.6.30) (06/01/2026)
 
 ### Miscellaneous
