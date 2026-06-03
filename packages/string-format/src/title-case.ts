@@ -49,6 +49,7 @@ export function titleCase<T extends string | undefined>(
   return input
     ?.replaceAll(":", " - ")
     ?.replaceAll("+", " + ")
+    ?.replaceAll("/", " / ")
     ?.split(/\s+-\s+/)
     .map(segment =>
       decamelize(segment)
