@@ -2,6 +2,13 @@
 
 # Changelog for Stryke - Cookie
 
+## [0.1.75](https://github.com/storm-software/stryke/releases/tag/cookie%400.1.75) (06/03/2026)
+
+### Updated Dependencies
+
+- Updated **convert** to **v0.7.15**
+- Updated **type-checks** to **v0.6.17**
+
 ## [0.1.74](https://github.com/storm-software/stryke/releases/tag/cookie%400.1.74) (06/01/2026)
 
 ### Bug Fixes
