@@ -2,6 +2,18 @@
 
 # Changelog for Stryke - String Format
 
+## [0.17.26](https://github.com/storm-software/stryke/releases/tag/string-format%400.17.26) (06/03/2026)
+
+### Miscellaneous
+
+- **string-format:** Update `titleCase` formatting to include the "/" divider ([3df26427](https://github.com/storm-software/stryke/commit/3df26427))
+
+### Updated Dependencies
+
+- Updated **helpers** to **v0.10.24**
+- Updated **path** to **v0.29.11**
+- Updated **types** to **v0.12.12**
+
 ## [0.17.25](https://github.com/storm-software/stryke/releases/tag/string-format%400.17.25) (06/01/2026)
 
 ### Bug Fixes
