@@ -1,4 +1,4 @@
-![Storm Software's logo banner](https://public.storm-cdn.com/storm-software/banner-1280x320.gif)
+![Storm Software's logo banner](https://public.storm-cdn.com/storm-software/media/banner-1280x320.gif)
 
 # Changelog for Stryke - HTTP
 
@@ -452,7 +452,7 @@
 - Updated **type-checks** to **v0.5.12**
 - Updated **url** to **v0.3.18**
 
-![Storm Software's logo banner](https://public.storm-cdn.com/storm-software/banner-1280x320-optimized.gif)
+![Storm Software's logo banner](https://public.storm-cdn.com/storm-software/media/banner-1280x320-optimized.gif)
 
 # Changelog for Stryke - HTTP
 

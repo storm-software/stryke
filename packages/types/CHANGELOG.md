@@ -1,4 +1,4 @@
-![Storm Software's logo banner](https://public.storm-cdn.com/storm-software/banner-1280x320.gif)
+![Storm Software's logo banner](https://public.storm-cdn.com/storm-software/media/banner-1280x320.gif)
 
 # Changelog for Stryke - Types
 
@@ -158,7 +158,7 @@
 - **monorepo:** Update Devenv and NodeJS modules
   ([154067e](https://github.com/storm-software/stryke/commit/154067e))
 
-![Storm Software's logo banner](https://public.storm-cdn.com/storm-software/banner-1280x320-optimized.gif)
+![Storm Software's logo banner](https://public.storm-cdn.com/storm-software/media/banner-1280x320-optimized.gif)
 
 # Changelog for Stryke - Types
 

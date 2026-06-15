@@ -1,4 +1,4 @@
-![Storm Software's logo banner](https://public.storm-cdn.com/storm-software/banner-1280x320.gif)
+![Storm Software's logo banner](https://public.storm-cdn.com/storm-software/media/banner-1280x320.gif)
 
 # Changelog for Stryke - CLI
 
@@ -636,7 +636,7 @@
 - Updated **types** to **v0.10.26**
 - Updated **env** to **v0.20.40**
 
-![Storm Software's logo banner](https://public.storm-cdn.com/storm-software/banner-1280x320-optimized.gif)
+![Storm Software's logo banner](https://public.storm-cdn.com/storm-software/media/banner-1280x320-optimized.gif)
 
 # Changelog for Stryke - CLI
 

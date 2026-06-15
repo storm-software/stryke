@@ -1,4 +1,4 @@
-![Storm Software's logo banner](https://public.storm-cdn.com/storm-software/banner-1280x320.gif)
+![Storm Software's logo banner](https://public.storm-cdn.com/storm-software/media/banner-1280x320.gif)
 
 # Changelog for Stryke - Unique ID
 
@@ -447,7 +447,7 @@
 
 - Updated **hash** to **v0.12.29**
 
-![Storm Software's logo banner](https://public.storm-cdn.com/storm-software/banner-1280x320-optimized.gif)
+![Storm Software's logo banner](https://public.storm-cdn.com/storm-software/media/banner-1280x320-optimized.gif)
 
 # Changelog for Stryke - Unique ID
 
