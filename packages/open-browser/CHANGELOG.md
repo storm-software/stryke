@@ -2,6 +2,12 @@
 
 # Changelog for Stryke - Open Browser
 
+## [0.2.73](https://github.com/storm-software/stryke/releases/tag/open-browser%400.2.73) (06/15/2026)
+
+### Miscellaneous
+
+- **monorepo:** Update asset references to the newly created `media` folder ([a3563a88](https://github.com/storm-software/stryke/commit/a3563a88))
+
 ## [0.2.71](https://github.com/storm-software/stryke/releases/tag/open-browser%400.2.71) (06/01/2026)
 
 ### Bug Fixes

@@ -2,6 +2,17 @@
 
 # Changelog for Stryke - Convert
 
+## [0.7.16](https://github.com/storm-software/stryke/releases/tag/convert%400.7.16) (06/15/2026)
+
+### Miscellaneous
+
+- **monorepo:** Update asset references to the newly created `media` folder ([a3563a88](https://github.com/storm-software/stryke/commit/a3563a88))
+
+### Updated Dependencies
+
+- Updated **type-checks** to **v0.6.18**
+- Updated **types** to **v0.12.13**
+
 ## [0.7.15](https://github.com/storm-software/stryke/releases/tag/convert%400.7.15) (06/03/2026)
 
 ### Updated Dependencies

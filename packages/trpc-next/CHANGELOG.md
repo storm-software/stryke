@@ -2,6 +2,22 @@
 
 # Changelog for Stryke - TRPC Next
 
+## [0.5.105](https://github.com/storm-software/stryke/releases/tag/trpc-next%400.5.105) (06/15/2026)
+
+### Miscellaneous
+
+- **monorepo:** Update asset references to the newly created `media` folder ([a3563a88](https://github.com/storm-software/stryke/commit/a3563a88))
+
+### Updated Dependencies
+
+- Updated **env** to **v0.20.103**
+- Updated **fs** to **v0.33.86**
+- Updated **path** to **v0.29.12**
+- Updated **string-format** to **v0.17.27**
+- Updated **type-checks** to **v0.6.18**
+- Updated **types** to **v0.12.13**
+- Updated **url** to **v0.4.36**
+
 ## [0.5.104](https://github.com/storm-software/stryke/releases/tag/trpc-next%400.5.104) (06/03/2026)
 
 ### Updated Dependencies

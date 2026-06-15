@@ -2,6 +2,20 @@
 
 # Changelog for Stryke - CLI
 
+## [0.13.58](https://github.com/storm-software/stryke/releases/tag/cli%400.13.58) (06/15/2026)
+
+### Miscellaneous
+
+- **monorepo:** Update asset references to the newly created `media` folder ([a3563a88](https://github.com/storm-software/stryke/commit/a3563a88))
+
+### Updated Dependencies
+
+- Updated **convert** to **v0.7.16**
+- Updated **env** to **v0.20.103**
+- Updated **string-format** to **v0.17.27**
+- Updated **type-checks** to **v0.6.18**
+- Updated **types** to **v0.12.13**
+
 ## [0.13.57](https://github.com/storm-software/stryke/releases/tag/cli%400.13.57) (06/03/2026)
 
 ### Updated Dependencies

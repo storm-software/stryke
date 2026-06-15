@@ -2,6 +2,17 @@
 
 # Changelog for Stryke - HTTP
 
+## [0.12.75](https://github.com/storm-software/stryke/releases/tag/http%400.12.75) (06/15/2026)
+
+### Miscellaneous
+
+- **monorepo:** Update asset references to the newly created `media` folder ([a3563a88](https://github.com/storm-software/stryke/commit/a3563a88))
+
+### Updated Dependencies
+
+- Updated **type-checks** to **v0.6.18**
+- Updated **url** to **v0.4.36**
+
 ## [0.12.74](https://github.com/storm-software/stryke/releases/tag/http%400.12.74) (06/03/2026)
 
 ### Updated Dependencies

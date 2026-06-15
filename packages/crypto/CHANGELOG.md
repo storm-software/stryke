@@ -2,6 +2,18 @@
 
 # Changelog for Stryke - Crypto
 
+## [0.6.33](https://github.com/storm-software/stryke/releases/tag/crypto%400.6.33) (06/15/2026)
+
+### Miscellaneous
+
+- **monorepo:** Update asset references to the newly created `media` folder ([a3563a88](https://github.com/storm-software/stryke/commit/a3563a88))
+
+### Updated Dependencies
+
+- Updated **convert** to **v0.7.16**
+- Updated **json** to **v0.15.9**
+- Updated **type-checks** to **v0.6.18**
+
 ## [0.6.32](https://github.com/storm-software/stryke/releases/tag/crypto%400.6.32) (06/03/2026)
 
 ### Updated Dependencies

@@ -2,6 +2,18 @@
 
 # Changelog for Stryke - Helpers
 
+## [0.10.25](https://github.com/storm-software/stryke/releases/tag/helpers%400.10.25) (06/15/2026)
+
+### Miscellaneous
+
+- **monorepo:** Update asset references to the newly created `media` folder ([a3563a88](https://github.com/storm-software/stryke/commit/a3563a88))
+
+### Updated Dependencies
+
+- Updated **convert** to **v0.7.16**
+- Updated **type-checks** to **v0.6.18**
+- Updated **types** to **v0.12.13**
+
 ## [0.10.24](https://github.com/storm-software/stryke/releases/tag/helpers%400.10.24) (06/03/2026)
 
 ### Updated Dependencies
