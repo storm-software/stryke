@@ -17,7 +17,11 @@
     "url": "https://stormsoftware.com/support",
     "email": "support@stormsoftware.com"
   },
-  "repository": "null//github.com/null/github.com/tree/main/packages/capnp",
+  "repository": {
+    "type": "github",
+    "url": "https://github.com/storm-software/stryke.git",
+    "directory": "packages/capnp"
+  },
   "funding": {
     "type": "github",
     "url": "https://github.com/sponsors/storm-software"

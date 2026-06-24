@@ -3,7 +3,11 @@
   "version": "0.10.24",
   "private": false,
   "description": "A package containing miscellaneous helper functions that are used across many different Storm Software projects.",
-  "repository": "null//github.com/null/github.com/tree/main/packages/helpers",
+  "repository": {
+    "type": "github",
+    "url": "https://github.com/storm-software/stryke.git",
+    "directory": "packages/helpers"
+  },
   "type": "module",
   "exports": {
     ".": {

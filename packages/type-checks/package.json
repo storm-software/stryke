@@ -3,7 +3,11 @@
   "version": "0.6.17",
   "private": false,
   "description": "A package containing various type-check functions to validate TypeScript values.",
-  "repository": "null//github.com/null/github.com/tree/main/packages/type-checks",
+  "repository": {
+    "type": "github",
+    "url": "https://github.com/storm-software/stryke.git",
+    "directory": "packages/type-checks"
+  },
   "type": "module",
   "exports": {
     ".": {

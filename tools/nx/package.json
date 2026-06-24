@@ -13,7 +13,11 @@
   ],
   "homepage": "https://stormsoftware.com",
   "bugs": "https://github.com/storm-software/stryke/issues",
-  "repository": "null//github.com/null/github.com/tree/main/tools/nx",
+  "repository": {
+    "type": "github",
+    "url": "https://github.com/storm-software/stryke.git",
+    "directory": "tools/nx"
+  },
   "license": "Apache-2.0",
   "author": {
     "name": "Storm Software",

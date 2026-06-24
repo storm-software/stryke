@@ -3,7 +3,11 @@
   "version": "0.3.96",
   "private": false,
   "description": "A package containing various helper functions to generate unique identifier strings",
-  "repository": "null//github.com/null/github.com/tree/main/packages/unique-id",
+  "repository": {
+    "type": "github",
+    "url": "https://github.com/storm-software/stryke.git",
+    "directory": "packages/unique-id"
+  },
   "type": "module",
   "exports": {
     ".": {
