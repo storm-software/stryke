@@ -6,5 +6,11 @@
   "repository": "https://github.com/storm-software/stryke",
   "packageManager": "pnpm",
   "logLevel": "info",
-  "docs": "https://docs.stormsoftware.com/projects/stryke"
+  "docs": "https://docs.stormsoftware.com/projects/stryke",
+  "release": {
+    "banner": {
+      "url": "https://public.storm-cdn.com/stryke/media/banner-1280x320-dark.gif",
+      "alt": "Stryke's logo banner"
+    }
+  }
 }

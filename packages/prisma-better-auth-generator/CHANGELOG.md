@@ -1,4 +1,4 @@
-![Storm Software's logo banner](https://public.storm-cdn.com/storm-software/media/banner-1280x320.gif)
+![Stryke's logo banner](https://public.storm-cdn.com/stryke/media/banner-1280x320.gif)
 
 # Changelog for Stryke - Prisma Better Auth Generator
 

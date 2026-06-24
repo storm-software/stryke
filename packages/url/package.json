@@ -1,12 +1,12 @@
 {
-  "name": "@stryke/url",
-  "version": "0.4.37",
+  "name": "@stryke/resolve",
+  "version": "0.0.1",
   "private": false,
-  "description": "A package containing the `StormURL` class, which is used to parse and manipulate URLs.",
+  "description": "A package containing logic to resolve file contents from various sources.",
   "repository": {
     "type": "github",
     "url": "https://github.com/storm-software/stryke.git",
-    "directory": "packages/url"
+    "directory": "packages/resolve"
   },
   "type": "module",
   "exports": {
@@ -36,10 +36,9 @@
   "module": "./dist/index.mjs",
   "types": "./dist/index.d.cts",
   "dependencies": {
-    "@stryke/json": "workspace:*",
+    "@stryke/fs": "workspace:*",
     "@stryke/path": "workspace:*",
-    "@stryke/type-checks": "workspace:*",
-    "ufo": "catalog:"
+    "@stryke/type-checks": "workspace:*"
   },
   "devDependencies": {
     "@types/node": "catalog:",

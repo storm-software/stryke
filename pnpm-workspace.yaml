@@ -40,7 +40,7 @@ catalog:
   "@storm-software/git-tools": "^2.131.83"
   "@storm-software/linting-tools": "^1.134.5"
   "@storm-software/markdownlint": ^0.30.231
-  "@storm-software/pnpm-tools": "^0.7.86"
+  "@storm-software/pnpm-tools": "^0.7.87"
   "@storm-software/prettier": "^0.59.128"
   "@storm-software/testing-tools": ^1.119.228
   "@storm-software/tsconfig": "^0.48.142"
