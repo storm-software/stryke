@@ -1,6 +1,6 @@
 /* -------------------------------------------------------------------
 
-                       ⚡ Storm Software - Stryke
+                       🗲 Storm Software - Stryke
 
  This code was released as part of the Stryke project. Stryke
  is maintained by Storm Software under the Apache-2.0 license, and is
@@ -23,7 +23,7 @@ export const isBufferExists = typeof Buffer !== "undefined";
 /**
  * Check if the provided value's type is `Buffer`
  */
-export const isBuffer: typeof Buffer.isBuffer = isBufferExists
+export const isBuffer: (value: unknown) => value is Buffer = isBufferExists
   ? Buffer.isBuffer.bind(Buffer)
   : /**
    * Check if the provided value's type is `Buffer`

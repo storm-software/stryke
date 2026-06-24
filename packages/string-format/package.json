@@ -3,11 +3,7 @@
   "version": "0.17.26",
   "private": false,
   "description": "A package containing utility functions to transform strings into various formats.",
-  "repository": {
-    "type": "github",
-    "url": "https://github.com/storm-software/stryke.git",
-    "directory": "packages/string-format"
-  },
+  "repository": "null//github.com/null/github.com/tree/main/packages/string-format",
   "type": "module",
   "exports": {
     ".": {

@@ -19,11 +19,7 @@
     "url": "https://stormsoftware.com/support",
     "email": "support@stormsoftware.com"
   },
-  "repository": {
-    "type": "github",
-    "url": "https://github.com/storm-software/stryke.git",
-    "directory": "packages/prisma-better-auth-generator"
-  },
+  "repository": "null//github.com/null/github.com/tree/main/packages/prisma-better-auth-generator",
   "funding": {
     "type": "github",
     "url": "https://github.com/sponsors/storm-software"
@@ -102,7 +98,9 @@
     "prisma-better-auth-generator-cjs": "dist/generator.cjs",
     "prisma-better-auth-generator-mjs": "dist/generator.js"
   },
-  "files": ["dist"],
+  "files": [
+    "dist"
+  ],
   "dependencies": {
     "@prisma/generator-helper": "catalog:",
     "@prisma/internals": "catalog:",

@@ -3,7 +3,7 @@
   "version": "0.0.1",
   "type": "module",
   "description": "🌩️ A monorepo containing TypeScript utility packages with shared functionality common to many Storm Software applications.",
-  "repository": "storm-software/stryke.git",
+  "repository": "null//github.com/storm-software/stryke",
   "homepage": "https://stormsoftware.com",
   "bugs": {
     "url": "https://stormsoftware.com/support",

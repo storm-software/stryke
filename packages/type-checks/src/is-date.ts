@@ -1,6 +1,6 @@
 /* -------------------------------------------------------------------
 
-                       ⚡ Storm Software - Stryke
+                       🗲 Storm Software - Stryke
 
  This code was released as part of the Stryke project. Stryke
  is maintained by Storm Software under the Apache-2.0 license, and is

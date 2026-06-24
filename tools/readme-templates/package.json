@@ -1,5 +1,6 @@
 {
   "name": "@stryke/tools-readme-templates",
   "version": "0.0.0",
-  "private": true
+  "private": true,
+  "repository": "null//github.com/null/github.com/tree/main/tools/readme-templates"
 }

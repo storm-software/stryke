@@ -3,11 +3,7 @@
   "version": "0.6.32",
   "private": false,
   "description": "A package containing cryptographic utilities used by Storm Software.",
-  "repository": {
-    "type": "github",
-    "url": "https://github.com/storm-software/stryke.git",
-    "directory": "packages/crypto"
-  },
+  "repository": "null//github.com/null/github.com/tree/main/packages/crypto",
   "type": "module",
   "exports": {
     ".": {

@@ -8,5 +8,6 @@
     ".": "./index.ts",
     "./index": "./index.ts",
     "./tsdown.config": "./tsdown.config.ts"
-  }
+  },
+  "repository": "null//github.com/null/github.com/tree/main/tools/config"
 }

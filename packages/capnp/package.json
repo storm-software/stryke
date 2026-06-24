@@ -17,11 +17,7 @@
     "url": "https://stormsoftware.com/support",
     "email": "support@stormsoftware.com"
   },
-  "repository": {
-    "type": "github",
-    "url": "https://github.com/storm-software/stryke",
-    "directory": "packages/capnp"
-  },
+  "repository": "null//github.com/null/github.com/tree/main/packages/capnp",
   "funding": {
     "type": "github",
     "url": "https://github.com/sponsors/storm-software"
@@ -126,7 +122,13 @@
     "storm-capnpc-cjs": "bin/capnpc.cjs",
     "storm-capnpc-esm": "bin/capnpc.mjs"
   },
-  "files": ["bin/**/*", "dist/**/*", "dts/**/*", "schemas/**/*", "vendor/**/*"],
+  "files": [
+    "bin/**/*",
+    "dist/**/*",
+    "dts/**/*",
+    "schemas/**/*",
+    "vendor/**/*"
+  ],
   "dependencies": {
     "@stryke/fs": "workspace:*",
     "@stryke/path": "workspace:*",
@@ -145,7 +147,8 @@
     "commander": "catalog:",
     "dts-bundle-generator": "catalog:",
     "tsdown": "catalog:",
-    "tsx": "catalog:"
+    "tsx": "catalog:",
+    "typescript": "^6.0.3"
   },
   "peerDependencies": {
     "typescript": ">=4.0.0"

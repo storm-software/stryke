@@ -3,11 +3,7 @@
   "version": "0.1.12",
   "private": false,
   "description": "A package containing asynchronous utilities used by Storm Software.",
-  "repository": {
-    "type": "github",
-    "url": "https://github.com/storm-software/stryke.git",
-    "directory": "packages/async"
-  },
+  "repository": "null//github.com/null/github.com/tree/main/packages/async",
   "type": "module",
   "exports": {
     ".": {

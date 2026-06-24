@@ -3,11 +3,7 @@
   "version": "0.1.75",
   "private": false,
   "description": "A package containing HTTP Cookie utilities used by Storm Software.",
-  "repository": {
-    "type": "github",
-    "url": "https://github.com/storm-software/stryke.git",
-    "directory": "packages/cookie"
-  },
+  "repository": "null//github.com/null/github.com/tree/main/packages/cookie",
   "type": "module",
   "exports": {
     ".": {

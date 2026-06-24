@@ -13,7 +13,7 @@ remotes:
   - git_url: https://github.com/storm-software/storm-ops
     ref: main
     configs:
-      - packages/git-tools/src/lefthook/minimal.yml
+      - packages/git-tools/src/lefthook/recommended.yml
 
 pre-push:
   parallel: true

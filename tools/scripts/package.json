@@ -8,5 +8,6 @@
   },
   "devDependencies": {
     "@types/node": "catalog:"
-  }
+  },
+  "repository": "null//github.com/null/github.com/tree/main/tools/scripts"
 }

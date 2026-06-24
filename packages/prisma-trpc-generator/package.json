@@ -16,11 +16,7 @@
     "url": "https://stormsoftware.com/support",
     "email": "support@stormsoftware.com"
   },
-  "repository": {
-    "type": "github",
-    "url": "https://github.com/storm-software/stryke.git",
-    "directory": "packages/prisma-trpc-generator"
-  },
+  "repository": "null//github.com/null/github.com/tree/main/packages/prisma-trpc-generator",
   "funding": {
     "type": "github",
     "url": "https://github.com/sponsors/storm-software"
@@ -65,7 +61,9 @@
     "prisma-trpc-generator-cjs": "dist/generator.cjs",
     "prisma-trpc-generator-mjs": "dist/generator.js"
   },
-  "files": ["dist/**/*"],
+  "files": [
+    "dist/**/*"
+  ],
   "dependencies": {
     "@prisma/generator-helper": "catalog:",
     "@prisma/internals": "catalog:",

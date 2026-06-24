@@ -3,11 +3,7 @@
   "version": "0.29.11",
   "private": false,
   "description": "A package containing various utilities that expand the functionality of NodeJs's built-in `path` module",
-  "repository": {
-    "type": "github",
-    "url": "https://github.com/storm-software/stryke.git",
-    "directory": "packages/path"
-  },
+  "repository": "null//github.com/null/github.com/tree/main/packages/path",
   "type": "module",
   "exports": {
     ".": {

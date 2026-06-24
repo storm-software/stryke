@@ -1,6 +1,6 @@
 /* -------------------------------------------------------------------
 
-                       ⚡ Storm Software - Stryke
+                       🗲 Storm Software - Stryke
 
  This code was released as part of the Stryke project. Stryke
  is maintained by Storm Software under the Apache-2.0 license, and is
@@ -23,6 +23,8 @@ import {
   uint8ArrayToString,
   utf8ArrayToString
 } from "@stryke/convert/neutral";
+import type { webcrypto } from "node:crypto";
+import type { BufferSource } from "node:stream/web";
 import { decodeBase64, encodeBase64 } from "./base-64";
 import { decodeHex, encodeHex } from "./hex";
 
@@ -33,7 +35,7 @@ import { decodeHex, encodeHex } from "./hex";
  *
  * @returns A promise that resolves to a CryptoKey object that can be used to encrypt and decrypt strings.
  */
-export async function createKey(): Promise<CryptoKey> {
+export async function createKey(): Promise<webcrypto.CryptoKey> {
   return crypto.subtle.generateKey(
     {
       name: "AES-GCM",
@@ -52,7 +54,7 @@ export async function createKey(): Promise<CryptoKey> {
  * @param key - The CryptoKey to encode
  * @returns A promise that resolves to a base64 string representing the key
  */
-export async function encodeKey(key: CryptoKey): Promise<string> {
+export async function encodeKey(key: webcrypto.CryptoKey): Promise<string> {
   const exported = await crypto.subtle.exportKey("raw", key);
 
   return encodeBase64(new Uint8Array(exported)).toString();
@@ -66,16 +68,13 @@ export async function encodeKey(key: CryptoKey): Promise<string> {
  * @param encoded - The base64 encoded key
  * @returns A promise that resolves to a CryptoKey object that can be used to encrypt and decrypt strings
  */
-export async function decodeKey(encoded: string): Promise<CryptoKey> {
+export async function decodeKey(encoded: string): Promise<webcrypto.CryptoKey> {
   const bytes = decodeBase64(encoded);
 
-  return crypto.subtle.importKey(
-    "raw",
-    bytes.buffer as ArrayBuffer,
-    "AES-GCM",
-    true,
-    ["encrypt", "decrypt"]
-  );
+  return crypto.subtle.importKey("raw", bytes, "AES-GCM", true, [
+    "encrypt",
+    "decrypt"
+  ]);
 }
 
 // The length of the initialization vector
@@ -95,7 +94,7 @@ const IV_LENGTH = 24;
  * @returns A promise that resolves to a base64 string representing the encrypted data
  */
 export async function encrypt(
-  key: CryptoKey,
+  key: webcrypto.CryptoKey,
   plaintext: string
 ): Promise<string> {
   const iv = crypto.getRandomValues(new Uint8Array(IV_LENGTH / 2));
@@ -105,7 +104,7 @@ export async function encrypt(
       iv
     },
     key,
-    stringToUtf8Array(plaintext) as BufferSource
+    stringToUtf8Array(plaintext)
   );
 
   // iv is 12, hex brings it to 24
@@ -125,7 +124,7 @@ export async function encrypt(
  * @returns A promise that resolves to the decrypted string
  */
 export async function decrypt(
-  key: CryptoKey,
+  key: webcrypto.CryptoKey,
   encrypted: string
 ): Promise<string> {
   const decrypted = await crypto.subtle.decrypt(
@@ -134,7 +133,7 @@ export async function decrypt(
       iv: decodeHex(encrypted.slice(0, IV_LENGTH)) as Uint8Array<ArrayBuffer>
     },
     key,
-    decodeBase64(encrypted.slice(IV_LENGTH)) as BufferSource
+    decodeBase64(encrypted.slice(IV_LENGTH))
   );
 
   return utf8ArrayToString(decrypted);
@@ -153,7 +152,7 @@ export async function decrypt(
  * @returns A promise that resolves to a base64 string representing the encrypted data
  */
 export async function encryptBuffer(
-  key: CryptoKey,
+  key: webcrypto.CryptoKey,
   buffer: BufferSource
 ): Promise<string> {
   const iv = crypto.getRandomValues(new Uint8Array(16));
@@ -182,7 +181,7 @@ export async function encryptBuffer(
  * @returns A promise that resolves to the decrypted string
  */
 export async function decryptBuffer(
-  key: CryptoKey,
+  key: webcrypto.CryptoKey,
   encrypted: string
 ): Promise<ArrayBuffer> {
   const concatenated = base64StringToUint8Array(encrypted);
