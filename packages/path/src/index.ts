@@ -1,6 +1,6 @@
 /* -------------------------------------------------------------------
 
-                       ⚡ Storm Software - Stryke
+                       🗲 Storm Software - Stryke
 
  This code was released as part of the Stryke project. Stryke
  is maintained by Storm Software under the Apache-2.0 license, and is
@@ -36,6 +36,7 @@ export * from "./glob-to-regex";
 export * from "./is-equal";
 export * from "./is-parent-path";
 export * from "./is-root-dir";
+export * from "./is-valid-path";
 export * from "./join-paths";
 export * from "./regex";
 export * from "./replace";

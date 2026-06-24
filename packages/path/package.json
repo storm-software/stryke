@@ -66,6 +66,10 @@
       "import": "./dist/is-type.mjs",
       "require": "./dist/is-type.cjs"
     },
+    "./is-valid-path": {
+      "import": "./dist/is-valid-path.mjs",
+      "require": "./dist/is-valid-path.cjs"
+    },
     "./join": {
       "import": "./dist/join.mjs",
       "require": "./dist/join.cjs"

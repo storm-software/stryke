@@ -1,6 +1,6 @@
 /* -------------------------------------------------------------------
 
-                       ⚡ Storm Software - Stryke
+                       🗲 Storm Software - Stryke
 
  This code was released as part of the Stryke project. Stryke
  is maintained by Storm Software under the Apache-2.0 license, and is
@@ -29,5 +29,9 @@ export const ROOT_FOLDER_REGEX = /^\/([A-Z]:)?$/i;
 export const FILE_EXTENSION_REGEX = /\.[0-9a-z]+$/i;
 export const FULL_FILE_EXTENSION_REGEX = /(\.d)?\.[0-9a-z]+(\.map)?$/i;
 
-export const PACKAGE_PATH_REGEX = /^@\w+\/.*$/;
-export const NPM_SCOPED_PACKAGE_REGEX = /^(?:@[\w-]+\/)?[\w-]+$/;
+export const PACKAGE_PATH_REGEX =
+  // eslint-disable-next-line regexp/prefer-w
+  /^@(?![._])[a-z0-9-._~]+\/(?![._])[a-z0-9-._~]+(?:\/[a-z0-9-._~]+)*$/i;
+export const NPM_SCOPED_PACKAGE_REGEX =
+  // eslint-disable-next-line regexp/prefer-w
+  /^(?:@(?![._])[a-z0-9-._~]+\/)?(?![._])[a-z0-9-._~]+$/i;
