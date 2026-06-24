@@ -2,6 +2,20 @@
 
 # Changelog for Stryke - Unique ID
 
+## [0.3.98](https://github.com/storm-software/stryke/releases/tag/unique-id%400.3.98) (06/24/2026)
+
+### Miscellaneous
+
+- **monorepo:** Run linting on workspace packages' source code ([9a9d276f](https://github.com/storm-software/stryke/commit/9a9d276f))
+
+### Bug Fixes
+
+- **monorepo:** Resolve issue with `repository` property in workspace projects' `package.json` files ([7fa24f42](https://github.com/storm-software/stryke/commit/7fa24f42))
+
+### Updated Dependencies
+
+- Updated **hash** to **v0.13.40**
+
 ## [0.3.97](https://github.com/storm-software/stryke/releases/tag/unique-id%400.3.97) (06/15/2026)
 
 ### Miscellaneous

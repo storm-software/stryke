@@ -2,6 +2,26 @@
 
 # Changelog for Stryke - Path
 
+## [0.29.13](https://github.com/storm-software/stryke/releases/tag/path%400.29.13) (06/24/2026)
+
+### Miscellaneous
+
+- **monorepo:** Run linting on workspace packages' source code ([9a9d276f](https://github.com/storm-software/stryke/commit/9a9d276f))
+
+### Bug Fixes
+
+- **monorepo:** Resolve issue with `repository` property in workspace projects' `package.json` files ([7fa24f42](https://github.com/storm-software/stryke/commit/7fa24f42))
+
+### Features
+
+- **path:** Added `isValidPath` helper function ([3e9744bd](https://github.com/storm-software/stryke/commit/3e9744bd))
+
+### Updated Dependencies
+
+- Updated **convert** to **v0.7.17**
+- Updated **type-checks** to **v0.6.19**
+- Updated **types** to **v0.12.14**
+
 ## [0.29.12](https://github.com/storm-software/stryke/releases/tag/path%400.29.12) (06/15/2026)
 
 ### Miscellaneous

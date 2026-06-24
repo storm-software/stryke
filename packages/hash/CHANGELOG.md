@@ -2,6 +2,22 @@
 
 # Changelog for Stryke - Hash
 
+## [0.13.40](https://github.com/storm-software/stryke/releases/tag/hash%400.13.40) (06/24/2026)
+
+### Miscellaneous
+
+- **monorepo:** Run linting on workspace packages' source code ([9a9d276f](https://github.com/storm-software/stryke/commit/9a9d276f))
+
+### Bug Fixes
+
+- **monorepo:** Resolve issue with `repository` property in workspace projects' `package.json` files ([7fa24f42](https://github.com/storm-software/stryke/commit/7fa24f42))
+
+### Updated Dependencies
+
+- Updated **fs** to **v0.33.87**
+- Updated **json** to **v0.15.10**
+- Updated **type-checks** to **v0.6.19**
+
 ## [0.13.39](https://github.com/storm-software/stryke/releases/tag/hash%400.13.39) (06/15/2026)
 
 ### Miscellaneous

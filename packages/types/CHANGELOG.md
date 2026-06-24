@@ -2,6 +2,16 @@
 
 # Changelog for Stryke - Types
 
+## [0.12.14](https://github.com/storm-software/stryke/releases/tag/types%400.12.14) (06/24/2026)
+
+### Miscellaneous
+
+- **monorepo:** Run linting on workspace packages' source code ([9a9d276f](https://github.com/storm-software/stryke/commit/9a9d276f))
+
+### Bug Fixes
+
+- **monorepo:** Resolve issue with `repository` property in workspace projects' `package.json` files ([7fa24f42](https://github.com/storm-software/stryke/commit/7fa24f42))
+
 ## [0.12.13](https://github.com/storm-software/stryke/releases/tag/types%400.12.13) (06/15/2026)
 
 ### Miscellaneous
