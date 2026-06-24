@@ -2,6 +2,12 @@
 
 # Changelog for Stryke - Async
 
+## [0.1.13](https://github.com/storm-software/stryke/releases/tag/async%400.1.13) (06/15/2026)
+
+### Miscellaneous
+
+- **monorepo:** Update asset references to the newly created `media` folder ([a3563a88](https://github.com/storm-software/stryke/commit/a3563a88))
+
 ## [0.1.11](https://github.com/storm-software/stryke/releases/tag/async%400.1.11) (06/01/2026)
 
 ### Bug Fixes

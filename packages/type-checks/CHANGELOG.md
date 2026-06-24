@@ -2,6 +2,16 @@
 
 # Changelog for Stryke - Type Checks
 
+## [0.6.18](https://github.com/storm-software/stryke/releases/tag/type-checks%400.6.18) (06/15/2026)
+
+### Miscellaneous
+
+- **monorepo:** Update asset references to the newly created `media` folder ([a3563a88](https://github.com/storm-software/stryke/commit/a3563a88))
+
+### Updated Dependencies
+
+- Updated **types** to **v0.12.13**
+
 ## [0.6.17](https://github.com/storm-software/stryke/releases/tag/type-checks%400.6.17) (06/03/2026)
 
 ### Updated Dependencies

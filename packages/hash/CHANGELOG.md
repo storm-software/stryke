@@ -2,6 +2,18 @@
 
 # Changelog for Stryke - Hash
 
+## [0.13.39](https://github.com/storm-software/stryke/releases/tag/hash%400.13.39) (06/15/2026)
+
+### Miscellaneous
+
+- **monorepo:** Update asset references to the newly created `media` folder ([a3563a88](https://github.com/storm-software/stryke/commit/a3563a88))
+
+### Updated Dependencies
+
+- Updated **fs** to **v0.33.86**
+- Updated **json** to **v0.15.9**
+- Updated **type-checks** to **v0.6.18**
+
 ## [0.13.38](https://github.com/storm-software/stryke/releases/tag/hash%400.13.38) (06/03/2026)
 
 ### Updated Dependencies

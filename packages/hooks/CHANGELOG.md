@@ -2,6 +2,19 @@
 
 # Changelog for Stryke - Hooks
 
+## [0.4.101](https://github.com/storm-software/stryke/releases/tag/hooks%400.4.101) (06/15/2026)
+
+### Miscellaneous
+
+- **monorepo:** Update asset references to the newly created `media` folder ([a3563a88](https://github.com/storm-software/stryke/commit/a3563a88))
+
+### Updated Dependencies
+
+- Updated **async** to **v0.1.13**
+- Updated **env** to **v0.20.103**
+- Updated **type-checks** to **v0.6.18**
+- Updated **types** to **v0.12.13**
+
 ## [0.4.100](https://github.com/storm-software/stryke/releases/tag/hooks%400.4.100) (06/03/2026)
 
 ### Updated Dependencies

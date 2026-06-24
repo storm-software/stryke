@@ -2,6 +2,19 @@
 
 # Changelog for Stryke - Capnp
 
+## [0.12.112](https://github.com/storm-software/stryke/releases/tag/capnp%400.12.112) (06/15/2026)
+
+### Miscellaneous
+
+- **monorepo:** Update asset references to the newly created `media` folder ([a3563a88](https://github.com/storm-software/stryke/commit/a3563a88))
+
+### Updated Dependencies
+
+- Updated **convert** to **v0.7.16**
+- Updated **fs** to **v0.33.86**
+- Updated **path** to **v0.29.12**
+- Updated **types** to **v0.12.13**
+
 ## [0.12.111](https://github.com/storm-software/stryke/releases/tag/capnp%400.12.111) (06/03/2026)
 
 ### Updated Dependencies

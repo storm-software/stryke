@@ -2,6 +2,22 @@
 
 # Changelog for Stryke - Fs
 
+## [0.33.86](https://github.com/storm-software/stryke/releases/tag/fs%400.33.86) (06/15/2026)
+
+### Miscellaneous
+
+- **monorepo:** Update asset references to the newly created `media` folder ([a3563a88](https://github.com/storm-software/stryke/commit/a3563a88))
+
+### Updated Dependencies
+
+- Updated **convert** to **v0.7.16**
+- Updated **helpers** to **v0.10.25**
+- Updated **json** to **v0.15.9**
+- Updated **path** to **v0.29.12**
+- Updated **string-format** to **v0.17.27**
+- Updated **type-checks** to **v0.6.18**
+- Updated **types** to **v0.12.13**
+
 ## [0.33.85](https://github.com/storm-software/stryke/releases/tag/fs%400.33.85) (06/03/2026)
 
 ### Updated Dependencies

@@ -2,6 +2,17 @@
 
 # Changelog for Stryke - JSON
 
+## [0.15.9](https://github.com/storm-software/stryke/releases/tag/json%400.15.9) (06/15/2026)
+
+### Miscellaneous
+
+- **monorepo:** Update asset references to the newly created `media` folder ([a3563a88](https://github.com/storm-software/stryke/commit/a3563a88))
+
+### Updated Dependencies
+
+- Updated **type-checks** to **v0.6.18**
+- Updated **types** to **v0.12.13**
+
 ## [0.15.8](https://github.com/storm-software/stryke/releases/tag/json%400.15.8) (06/03/2026)
 
 ### Updated Dependencies

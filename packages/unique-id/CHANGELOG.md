@@ -2,6 +2,16 @@
 
 # Changelog for Stryke - Unique ID
 
+## [0.3.97](https://github.com/storm-software/stryke/releases/tag/unique-id%400.3.97) (06/15/2026)
+
+### Miscellaneous
+
+- **monorepo:** Update asset references to the newly created `media` folder ([a3563a88](https://github.com/storm-software/stryke/commit/a3563a88))
+
+### Updated Dependencies
+
+- Updated **hash** to **v0.13.39**
+
 ## [0.3.96](https://github.com/storm-software/stryke/releases/tag/unique-id%400.3.96) (06/03/2026)
 
 ### Updated Dependencies

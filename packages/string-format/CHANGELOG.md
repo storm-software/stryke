@@ -2,6 +2,18 @@
 
 # Changelog for Stryke - String Format
 
+## [0.17.27](https://github.com/storm-software/stryke/releases/tag/string-format%400.17.27) (06/15/2026)
+
+### Miscellaneous
+
+- **monorepo:** Update asset references to the newly created `media` folder ([a3563a88](https://github.com/storm-software/stryke/commit/a3563a88))
+
+### Updated Dependencies
+
+- Updated **helpers** to **v0.10.25**
+- Updated **path** to **v0.29.12**
+- Updated **types** to **v0.12.13**
+
 ## [0.17.26](https://github.com/storm-software/stryke/releases/tag/string-format%400.17.26) (06/03/2026)
 
 ### Miscellaneous
