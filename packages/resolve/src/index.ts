@@ -16,9 +16,9 @@
 
  ------------------------------------------------------------------- */
 
+export * from "./bundle";
 export * from "./constants";
 export * from "./helpers";
-export * from "./regex";
-export * from "./storm-url";
+export * from "./resolve";
+export * from "./type-checks";
 export * from "./types";
-export * from "./validate";

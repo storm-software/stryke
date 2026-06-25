@@ -59,6 +59,8 @@
       "@stryke/type-checks/*": ["./packages/type-checks/src/*"],
       "@stryke/types": ["./packages/types/src/index.ts"],
       "@stryke/types/*": ["./packages/types/src/*"],
+      "@stryke/resolve": ["./packages/resolve/src/index.ts"],
+      "@stryke/resolve/*": ["./packages/resolve/src/*"],
       "@stryke/unique-id": ["./packages/unique-id/src/index.ts"],
       "@stryke/unique-id/*": ["./packages/unique-id/src/*"],
       "@stryke/url": ["./packages/url/src/index.ts"],

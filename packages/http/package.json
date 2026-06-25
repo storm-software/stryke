@@ -55,9 +55,12 @@
     "@stryke/type-checks": "workspace:*",
     "@stryke/url": "workspace:*",
     "defu": "catalog:",
+    "mime-types": "catalog:",
+    "ufo": "catalog:",
     "undici": "catalog:"
   },
   "devDependencies": {
+    "@types/mime-types": "catalog:",
     "@types/node": "catalog:",
     "tsdown": "catalog:",
     "undici-types": "catalog:"

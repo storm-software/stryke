@@ -28,7 +28,7 @@ This package is part of Storm Software's **🌩️ Stryke** monorepo. Stryke pac
 
 <h3 align="center">💻 Visit <a href="https://stormsoftware.com" target="_blank">stormsoftware.com</a> to stay up to date with this developer</h3><br />
 
-[![Version](https://img.shields.io/badge/version-0.2.54-1fb2a6.svg?style=for-the-badge&color=1fb2a6)](https://github.com/storm-software/stryke)&nbsp;[![Commitizen friendly](https://img.shields.io/badge/commitizen-friendly-brightgreen.svg?style=for-the-badge&logo=commitlint&color=1fb2a6)](http://commitizen.github.io/cz-cli/)&nbsp;![semantic-release](https://img.shields.io/badge/%20%20%F0%9F%93%A6%F0%9F%9A%80-semantic--release-e10079.svg?style=for-the-badge&color=1fb2a6)&nbsp;![GitHub Workflow Status (with event)](https://img.shields.io/github/actions/workflow/status/storm-software/stryke/release.yml?style=for-the-badge&logo=github-actions&color=1fb2a6)
+[![Version](https://img.shields.io/badge/version-0.4.12-1fb2a6.svg?style=for-the-badge&color=1fb2a6)](https://github.com/storm-software/stryke)&nbsp;[![Commitizen friendly](https://img.shields.io/badge/commitizen-friendly-brightgreen.svg?style=for-the-badge&logo=commitlint&color=1fb2a6)](http://commitizen.github.io/cz-cli/)&nbsp;![semantic-release](https://img.shields.io/badge/%20%20%F0%9F%93%A6%F0%9F%9A%80-semantic--release-e10079.svg?style=for-the-badge&color=1fb2a6)&nbsp;![GitHub Workflow Status (with event)](https://img.shields.io/github/actions/workflow/status/storm-software/stryke/release.yml?style=for-the-badge&logo=github-actions&color=1fb2a6)
 
 > [!IMPORTANT] Important
 > This repository, and the apps, libraries, and tools contained within, is still in it's initial development phase. As a result, bugs and issues are expected with it's usage. When the main development phase completes, a proper release will be performed, the packages will be available through NPM (and other distributions), and this message will be removed. However, in the meantime, please feel free to report any issues you may come across.
@@ -45,29 +45,30 @@ This package is part of Storm Software's **🌩️ Stryke** monorepo. Stryke pac
 
 <!-- END header -->
 
-# Stryke - Open Browser
+# Stryke - Resolve
 
-A package containing a helper function to open URLs in the default browser.
+A package for resolving and loading file content from various sources. It provides a unified interface for working with files, whether they are local or remote, and supports various protocols such as HTTP, HTTPS, and FTP.
 
 <!-- START doctoc -->
 <!-- DON'T EDIT THIS SECTION, INSTEAD RE-RUN doctoc TO UPDATE -->
 
 ## Table of Contents
 
-- [Installing](#installing)
-- [Reduced Package Size](#reduced-package-size)
-- [Development](#development)
-  - [Building](#building)
-  - [Running unit tests](#running-unit-tests)
-  - [Linting](#linting)
-- [Acknowledgements](#acknowledgements)
-- [Storm Workspaces](#storm-workspaces)
-- [Roadmap](#roadmap)
-- [Support](#support)
-- [License](#license)
-- [Changelog](#changelog)
-- [Contributing](#contributing)
-- [Contributors](#contributors)
+- [Stryke - Resolve](#stryke---resolve)
+  - [Table of Contents](#table-of-contents)
+  - [Installing](#installing)
+  - [Reduced Package Size](#reduced-package-size)
+  - [Development](#development)
+    - [Building](#building)
+    - [Running unit tests](#running-unit-tests)
+    - [Linting](#linting)
+  - [Storm Workspaces](#storm-workspaces)
+  - [Roadmap](#roadmap)
+  - [Support](#support)
+  - [License](#license)
+  - [Changelog](#changelog)
+  - [Contributing](#contributing)
+  - [Contributors](#contributors)
 
 <!-- END doctoc -->
 
@@ -76,14 +77,14 @@ A package containing a helper function to open URLs in the default browser.
 Using [pnpm](http://pnpm.io):
 
 ```bash
-pnpm add -D @stryke/cli
+pnpm add -D @stryke/resolve
 ```
 
 <details>
   <summary>Using npm</summary>
 
 ```bash
-npm install -D @stryke/cli
+npm install -D @stryke/resolve
 ```
 
 </details>
@@ -92,7 +93,7 @@ npm install -D @stryke/cli
   <summary>Using yarn</summary>
 
 ```bash
-yarn add -D @stryke/cli
+yarn add -D @stryke/resolve
 ```
 
 </details>
@@ -111,25 +112,15 @@ commands are available to assist in development.
 
 ### Building
 
-Run `nx build cli` to build the library.
+Run `nx build resolve` to build the library.
 
 ### Running unit tests
 
-Run `nx test cli` to execute the unit tests via [Vitest](https://vitest.dev).
+Run `nx test resolve` to execute the unit tests via [Vitest](https://vitest.dev).
 
 ### Linting
 
-Run `nx lint cli` to run [ESLint](https://eslint.org/) on the package.
-
-## Acknowledgements
-
-Huge thanks to the [Unjs team](https://unjs.dev) for all their work on the
-[ciity](https://github.com/unjs/citty) project. The ciity API has been largely
-adopted here and much of the base code for this package codes from their
-repository.
-
-<div align="right">[ <a href="#table-of-contents">Back to top ▲</a> ]</div>
-<br />
+Run `nx lint resolve` to run [ESLint](https://eslint.org/) on the package.
 
 <!-- START footer -->
 <!-- prettier-ignore-start -->

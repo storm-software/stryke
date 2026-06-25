@@ -193,7 +193,7 @@ Open System uses [Jest](https://jestjs.io/) for unit testing and
 
 ## Running Unit Tests
 
-Run `pnpm test` to execute the unit tests via [Jest](https://jestjs.io).
+Run `pnpm test` to execute the unit tests via [Vitest](https://vitest.dev).
 
 Run `pnpm affected:test` to execute the unit tests affected by a change.
 

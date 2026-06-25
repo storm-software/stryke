@@ -1,6 +1,6 @@
 /* -------------------------------------------------------------------
 
-                       ⚡ Storm Software - Stryke
+                       🗲 Storm Software - Stryke
 
  This code was released as part of the Stryke project. Stryke
  is maintained by Storm Software under the Apache-2.0 license, and is
@@ -16,7 +16,19 @@
 
  ------------------------------------------------------------------- */
 
-export default [
-  "**/vite.config.{mjs,js,ts,mts}",
-  "**/vitest.config.{mjs,js,ts,mts}"
-];
+export const VALID_OBJECT_SOURCE_EXTENSIONS = [
+  "ts",
+  "cts",
+  "mts",
+  "tsx",
+  "js",
+  "cjs",
+  "mjs",
+  "jsx",
+  "json",
+  "jsonc",
+  "json5",
+  "yaml",
+  "yml",
+  "toml"
+] as const as string[];

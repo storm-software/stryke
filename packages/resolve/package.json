@@ -1,18 +1,22 @@
 {
-  "name": "@stryke/url",
-  "version": "0.4.37",
+  "name": "@stryke/resolve",
+  "version": "0.0.1",
   "private": false,
-  "description": "A package containing the `StormURL` class, which is used to parse and manipulate URLs.",
+  "description": "A package containing logic to resolve file contents from various sources.",
   "repository": {
     "type": "github",
     "url": "https://github.com/storm-software/stryke.git",
-    "directory": "packages/url"
+    "directory": "packages/resolve"
   },
   "type": "module",
   "exports": {
     ".": {
       "import": "./dist/index.mjs",
       "require": "./dist/index.cjs"
+    },
+    "./bundle": {
+      "import": "./dist/bundle.mjs",
+      "require": "./dist/bundle.cjs"
     },
     "./constants": {
       "import": "./dist/constants.mjs",
@@ -22,21 +26,17 @@
       "import": "./dist/helpers.mjs",
       "require": "./dist/helpers.cjs"
     },
-    "./regex": {
-      "import": "./dist/regex.mjs",
-      "require": "./dist/regex.cjs"
+    "./resolve": {
+      "import": "./dist/resolve.mjs",
+      "require": "./dist/resolve.cjs"
     },
-    "./storm-url": {
-      "import": "./dist/storm-url.mjs",
-      "require": "./dist/storm-url.cjs"
+    "./type-checks": {
+      "import": "./dist/type-checks.mjs",
+      "require": "./dist/type-checks.cjs"
     },
     "./types": {
       "import": "./dist/types.mjs",
       "require": "./dist/types.cjs"
-    },
-    "./validate": {
-      "import": "./dist/validate.mjs",
-      "require": "./dist/validate.cjs"
     },
     "./package.json": "./package.json"
   },
@@ -46,9 +46,16 @@
   "dependencies": {
     "@stryke/fs": "workspace:*",
     "@stryke/path": "workspace:*",
-    "@stryke/type-checks": "workspace:*"
+    "@stryke/type-checks": "workspace:*",
+    "defu": "catalog:",
+    "esbuild": "catalog:",
+    "jiti": "catalog:",
+    "smol-toml": "catalog:",
+    "typescript": "^6.0.3",
+    "yaml": "catalog:"
   },
   "devDependencies": {
+    "@stryke/types": "workspace:*",
     "@types/node": "catalog:",
     "tsdown": "catalog:"
   },

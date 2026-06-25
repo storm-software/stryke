@@ -126,7 +126,7 @@ Run `nx build unique-id` to build the library.
 
 ### Running unit tests
 
-Run `nx test unique-id` to execute the unit tests via [Jest](https://jestjs.io).
+Run `nx test unique-id` to execute the unit tests via [Vitest](https://vitest.dev).
 
 ### Linting
 

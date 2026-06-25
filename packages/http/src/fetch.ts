@@ -19,7 +19,9 @@
 import { isSetString } from "@stryke/type-checks/is-set-string";
 import { isValidURL } from "@stryke/url/helpers";
 import { defu } from "defu";
-import type { RequestInfo } from "undici";
+import { contentType } from "mime-types";
+import { parseFilename } from "ufo";
+import type { RequestInfo, RequestInit } from "undici";
 import { fetch as undiciFetch } from "undici";
 import { getProxyAgent } from "./proxy-agent";
 
@@ -30,6 +32,25 @@ export type FetchRequestOptions = RequestInit & {
    * @defaultValue 5000
    */
   timeout?: number;
+
+  /**
+   * Number of retries for the fetch request
+   *
+   * @defaultValue 0
+   */
+  retries?: number;
+
+  /**
+   * Delay between retries in milliseconds
+   *
+   * @defaultValue 1000
+   */
+  retryDelay?: number;
+
+  /**
+   * Function to determine if a retry should be attempted based on the error and attempt number
+   */
+  retryOn?: (error: any, attempt: number) => boolean;
 };
 
 /**
@@ -50,19 +71,32 @@ export async function fetchRequest(
   const abort = new AbortController();
   setTimeout(() => abort.abort(), options.timeout ?? 5000);
 
+  const type = contentType(parseFilename(input.toString()) || "");
+
   return undiciFetch(
     input,
-    defu(options, {
-      agent: getProxyAgent(),
-      signal: abort.signal,
-      headers: {
-        // The file format is based off of the user agent, make sure woff2 files are fetched
-        "User-Agent":
-          "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) " +
-          "AppleWebKit/537.36 (KHTML, like Gecko) " +
-          "Chrome/104.0.0.0 Safari/537.36"
-      }
-    })
+    defu(
+      options,
+      {
+        agent: getProxyAgent(),
+        signal: abort.signal,
+        headers: {
+          // The file format is based off of the user agent, make sure woff2 files are fetched
+          "User-Agent":
+            "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) " +
+            "AppleWebKit/537.36 (KHTML, like Gecko) " +
+            "Chrome/104.0.0.0 Safari/537.36"
+        }
+      },
+      type
+        ? {
+            headers: {
+              "Content-Type": type,
+              Accept: type
+            }
+          }
+        : {}
+    )
   );
 }
 

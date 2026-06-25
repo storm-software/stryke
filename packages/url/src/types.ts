@@ -125,3 +125,19 @@ export interface StormURLInterface extends URL {
    */
   [PROTOCOL_RELATIVE_SYMBOL]?: boolean;
 }
+
+/**
+ * A type that represents a GitHub repository reference string.
+ *
+ * @remarks
+ * A GitHub repository reference string, starting with either `"github:"` or `"gh:"`, an optional branch or tag, and optionally including a specific file path within the repository (for example: `"github:main:storm-software/stryke/packages/url/src/types.ts"`). It is also valid to provide the branch or tag after the file path (for example: `"github:storm-software/stryke/packages/url/src/types.ts@main"`).
+ */
+export type GitHubReference = `github:${string}` | `gh:${string}`;
+
+/**
+ * A type that represents a GitLab repository reference string.
+ *
+ * @remarks
+ * A GitLab repository reference string, starting with either `"gitlab:"` or `"gl:"`, an optional branch or tag, and optionally including a specific file path within the repository (for example: `"gitlab:master:storm-software/stryke/packages/url/src/types.ts"`). It is also valid to provide the branch or tag after the file path (for example: `"gitlab:storm-software/stryke/packages/url/src/types.ts@master"`).
+ */
+export type GitLabReference = `gitlab:${string}` | `gl:${string}`;

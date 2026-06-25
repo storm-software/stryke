@@ -1,6 +1,6 @@
 /* -------------------------------------------------------------------
 
-                       ⚡ Storm Software - Stryke
+                       🗲 Storm Software - Stryke
 
  This code was released as part of the Stryke project. Stryke
  is maintained by Storm Software under the Apache-2.0 license, and is
@@ -16,8 +16,8 @@
 
  ------------------------------------------------------------------- */
 
-import type { CreateNodesResultV2, CreateNodesV2 } from "@nx/devkit/index.js";
-import { createNodesFromFiles, readJsonFile } from "@nx/devkit/index.js";
+import type { CreateNodes, CreateNodesResultArray } from "@nx/devkit";
+import { createNodesFromFiles, readJsonFile } from "@nx/devkit";
 import {
   getProjectConfigFromProjectRoot,
   getProjectRoot
@@ -28,6 +28,10 @@ import { join } from "node:path";
 import { readNxJson } from "nx/src/config/nx-json.js";
 import type { ProjectConfiguration } from "nx/src/config/workspace-json-project-json.js";
 import { readTargetsFromPackageJson } from "nx/src/utils/package-json.js";
+import {
+  detectPackageManager,
+  getPackageManagerCommand
+} from "nx/src/utils/package-manager.js";
 
 /* eslint-disable no-console */
 
@@ -35,9 +39,9 @@ export const name = "stryke/package-build";
 
 export interface StrykePackageBuildPluginOptions {}
 
-export const createNodesV2: CreateNodesV2<StrykePackageBuildPluginOptions> = [
+export const createNodesV2: CreateNodes<StrykePackageBuildPluginOptions> = [
   "packages/*/project.json",
-  async (configFiles, options, context): Promise<CreateNodesResultV2> => {
+  async (configFiles, options, context): Promise<CreateNodesResultArray> => {
     return createNodesFromFiles(
       (configFile, options, context) => {
         try {
@@ -73,12 +77,17 @@ export const createNodesV2: CreateNodesV2<StrykePackageBuildPluginOptions> = [
           );
 
           const nxJson = readNxJson(context.workspaceRoot);
+          const packageManagerCommand = getPackageManagerCommand(
+            detectPackageManager(context.workspaceRoot),
+            context.workspaceRoot
+          );
           const targets: ProjectConfiguration["targets"] =
             readTargetsFromPackageJson(
               packageJson,
               nxJson,
               projectRoot,
-              context.workspaceRoot
+              context.workspaceRoot,
+              packageManagerCommand
             );
 
           if (project?.name && !project?.name.startsWith("tools")) {
@@ -225,7 +234,7 @@ export const createNodesV2: CreateNodesV2<StrykePackageBuildPluginOptions> = [
         }
       },
       configFiles,
-      options!,
+      options,
       context
     );
   }
