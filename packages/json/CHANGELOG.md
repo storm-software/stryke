@@ -1,3 +1,22 @@
+![Stryke's logo banner](https://public.storm-cdn.com/stryke/media/banner-1280x320-dark.gif)
+
+# Changelog for Stryke - JSON
+
+## [0.15.11](https://github.com/storm-software/stryke/releases/tag/json%400.15.11) (06/25/2026)
+
+### Miscellaneous
+
+- **monorepo:** Update banner assets used in `README.md` and `CHANGELOG.md` files ([ddd30b46](https://github.com/storm-software/stryke/commit/ddd30b46))
+
+### Features
+
+- **resolve:** Initial check-in of the `resolve` package ([b0e61db9](https://github.com/storm-software/stryke/commit/b0e61db9))
+
+### Updated Dependencies
+
+- Updated **type-checks** to **v0.6.20**
+- Updated **types** to **v0.12.15**
+
 ![Stryke's logo banner](https://public.storm-cdn.com/stryke/media/banner-1280x320.gif)
 
 # Changelog for Stryke - JSON

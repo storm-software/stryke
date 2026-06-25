@@ -1,3 +1,23 @@
+![Stryke's logo banner](https://public.storm-cdn.com/stryke/media/banner-1280x320-dark.gif)
+
+# Changelog for Stryke - Hash
+
+## [0.13.41](https://github.com/storm-software/stryke/releases/tag/hash%400.13.41) (06/25/2026)
+
+### Miscellaneous
+
+- **monorepo:** Update banner assets used in `README.md` and `CHANGELOG.md` files ([ddd30b46](https://github.com/storm-software/stryke/commit/ddd30b46))
+
+### Features
+
+- **resolve:** Initial check-in of the `resolve` package ([b0e61db9](https://github.com/storm-software/stryke/commit/b0e61db9))
+
+### Updated Dependencies
+
+- Updated **fs** to **v0.33.88**
+- Updated **json** to **v0.15.11**
+- Updated **type-checks** to **v0.6.20**
+
 ![Stryke's logo banner](https://public.storm-cdn.com/stryke/media/banner-1280x320.gif)
 
 # Changelog for Stryke - Hash

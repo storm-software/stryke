@@ -1,3 +1,22 @@
+![Stryke's logo banner](https://public.storm-cdn.com/stryke/media/banner-1280x320-dark.gif)
+
+# Changelog for Stryke - HTTP
+
+## [0.12.77](https://github.com/storm-software/stryke/releases/tag/http%400.12.77) (06/25/2026)
+
+### Miscellaneous
+
+- **monorepo:** Update banner assets used in `README.md` and `CHANGELOG.md` files ([ddd30b46](https://github.com/storm-software/stryke/commit/ddd30b46))
+
+### Features
+
+- **resolve:** Initial check-in of the `resolve` package ([b0e61db9](https://github.com/storm-software/stryke/commit/b0e61db9))
+
+### Updated Dependencies
+
+- Updated **type-checks** to **v0.6.20**
+- Updated **url** to **v0.4.38**
+
 ![Stryke's logo banner](https://public.storm-cdn.com/stryke/media/banner-1280x320.gif)
 
 # Changelog for Stryke - HTTP

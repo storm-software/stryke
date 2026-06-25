@@ -1,3 +1,27 @@
+![Stryke's logo banner](https://public.storm-cdn.com/stryke/media/banner-1280x320-dark.gif)
+
+# Changelog for Stryke - TRPC Next
+
+## [0.5.107](https://github.com/storm-software/stryke/releases/tag/trpc-next%400.5.107) (06/25/2026)
+
+### Miscellaneous
+
+- **monorepo:** Update banner assets used in `README.md` and `CHANGELOG.md` files ([ddd30b46](https://github.com/storm-software/stryke/commit/ddd30b46))
+
+### Features
+
+- **resolve:** Initial check-in of the `resolve` package ([b0e61db9](https://github.com/storm-software/stryke/commit/b0e61db9))
+
+### Updated Dependencies
+
+- Updated **env** to **v0.20.105**
+- Updated **fs** to **v0.33.88**
+- Updated **path** to **v0.29.14**
+- Updated **string-format** to **v0.17.29**
+- Updated **type-checks** to **v0.6.20**
+- Updated **types** to **v0.12.15**
+- Updated **url** to **v0.4.38**
+
 ![Stryke's logo banner](https://public.storm-cdn.com/stryke/media/banner-1280x320.gif)
 
 # Changelog for Stryke - TRPC Next
