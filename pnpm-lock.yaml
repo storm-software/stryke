@@ -415,6 +415,7 @@ overrides:
 
 patchedDependencies:
   capnp-es@0.0.11: 503a440bd2bef41c0cb22819bc4ced5a7f04993fb999f0d944e284220f14916b
+  mlly@1.7.4: 77a86c596d73bd2b8eeae3bf08ff4018aa35af2eb9f521da2e3209a3925f9525
 
 importers:
 
@@ -807,7 +808,7 @@ importers:
         version: 11.1.0
       mlly:
         specifier: 'catalog:'
-        version: 1.7.4
+        version: 1.7.4(patch_hash=77a86c596d73bd2b8eeae3bf08ff4018aa35af2eb9f521da2e3209a3925f9525)
       nanotar:
         specifier: 'catalog:'
         version: 0.2.1
@@ -20893,7 +20894,7 @@ snapshots:
     optionalDependencies:
       typescript: 6.0.3
 
-  mlly@1.7.4:
+  mlly@1.7.4(patch_hash=77a86c596d73bd2b8eeae3bf08ff4018aa35af2eb9f521da2e3209a3925f9525):
     dependencies:
       acorn: 8.17.0
       pathe: 2.0.3

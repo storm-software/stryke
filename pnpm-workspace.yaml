@@ -189,6 +189,7 @@ overrides:
   simple-git: ">=3.27.0"
 patchedDependencies:
   capnp-es@0.0.11: "patches/capnp-es@0.0.11.patch"
+  mlly@1.7.4: patches/mlly@1.7.4.patch
 trustPolicy: "off"
 useNodeVersion: "26.2.0"
 shamefullyHoist: true

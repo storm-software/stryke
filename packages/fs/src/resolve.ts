@@ -28,6 +28,7 @@ import {
 } from "@stryke/path/file-path-fns";
 import { isAbsolutePath, isNpmScopedPackage } from "@stryke/path/is-type";
 import { joinPaths } from "@stryke/path/join-paths";
+import type { ResolveFileSystem } from "mlly";
 import { interopDefault, resolvePath, resolvePathSync } from "mlly";
 import { existsSync } from "./exists";
 import { getWorkspaceRoot } from "./get-workspace-root";
@@ -67,6 +68,14 @@ export interface ResolveOptions {
    * Conditions to consider when resolving package exports.
    */
   conditions?: string[];
+
+  /**
+   * A custom file system interface to use when resolving the module.
+   *
+   * @remarks
+   * Any method that is not provided falls back to the corresponding Node.js `fs` implementation. This can be used to resolve modules against an in-memory or virtual file system.
+   */
+  fs?: ResolveFileSystem;
 }
 
 /**
@@ -230,7 +239,8 @@ export async function resolve(
     result = await resolvePath(path, {
       url: paths,
       extensions: options.extensions ?? DEFAULT_EXTENSIONS,
-      conditions: options.conditions
+      conditions: options.conditions,
+      fs: options.fs
     });
   } catch (err) {
     error = err as Error;
@@ -286,7 +296,8 @@ export function resolveSync(path: string, options: ResolveOptions = {}) {
     result = resolvePathSync(path, {
       url: paths,
       extensions: options.extensions ?? DEFAULT_EXTENSIONS,
-      conditions: options.conditions
+      conditions: options.conditions,
+      fs: options.fs
     });
   } catch (err) {
     error = err as Error;

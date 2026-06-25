@@ -1,0 +1,363 @@
+diff --git a/dist/index.cjs b/dist/index.cjs
+index 045062e5662cdc93546533b19f24dfacb7616d67..09078cb122698980a8648c7d9a194aa0a0cd30b0 100644
+--- a/dist/index.cjs
++++ b/dist/index.cjs
+@@ -22,6 +22,25 @@ const path__default = /*#__PURE__*/_interopDefaultCompat(path);
+ const v8__default = /*#__PURE__*/_interopDefaultCompat(v8);
+ 
+ const BUILTIN_MODULES = new Set(node_module.builtinModules);
++
++// Allows consumers to provide a custom file system interface that is used for
++// the synchronous file system operations performed while resolving modules.
++let _activeFileSystem;
++function _fsStatSync(...args) {
++  return (_activeFileSystem?.statSync ?? fs.statSync)(...args);
++}
++function _fsRealpathSync(...args) {
++  return (_activeFileSystem?.realpathSync ?? fs.realpathSync)(...args);
++}
++function _fsReadFileSync(...args) {
++  return (_activeFileSystem?.readFileSync ?? fs__default.readFileSync)(...args);
++}
++// Allows consumers to provide custom asynchronous file system methods that are
++// used for the asynchronous file system operations performed while resolving
++// modules. Any method that is not provided falls back to `node:fs/promises`.
++function _fsReadFile(fileSystem, ...args) {
++  return (fileSystem?.readFile ?? fs.promises.readFile)(...args);
++}
+ function normalizeSlash(path) {
+   return path.replace(/\\/g, "/");
+ }
+@@ -579,7 +598,7 @@ function read(jsonPath, {base, specifier}) {
+   let string;
+ 
+   try {
+-    string = fs__default.readFileSync(path__default.toNamespacedPath(jsonPath), 'utf8');
++    string = _fsReadFileSync(path__default.toNamespacedPath(jsonPath), 'utf8');
+   } catch (error) {
+     const exception = /** @type {ErrnoException} */ (error);
+ 
+@@ -986,7 +1005,7 @@ function emitLegacyIndexDeprecation(url, packageJsonUrl, base, main) {
+ function tryStatSync(path) {
+   // Note: from Node 15 onwards we can use `throwIfNoEntry: false` instead.
+   try {
+-    return fs.statSync(path)
++    return _fsStatSync(path)
+   } catch {
+     // Note: in Node code this returns `new Stats`,
+     // but in Node 22 that’s marked as a deprecated internal API.
+@@ -1007,7 +1026,7 @@ function tryStatSync(path) {
+  * @returns {boolean}
+  */
+ function fileExists(url) {
+-  const stats = fs.statSync(url, {throwIfNoEntry: false});
++  const stats = _fsStatSync(url, {throwIfNoEntry: false});
+   const isFile = stats ? stats.isFile() : undefined;
+   return isFile === null || isFile === undefined ? false : isFile
+ }
+@@ -1125,7 +1144,7 @@ function finalizeResolution(resolved, base, preserveSymlinks) {
+   }
+ 
+   {
+-    const real = fs.realpathSync(filePath);
++    const real = _fsRealpathSync(filePath);
+     const {search, hash} = resolved;
+     resolved = node_url.pathToFileURL(real + (filePath.endsWith(path__default.sep) ? '/' : ''));
+     resolved.search = search;
+@@ -2038,6 +2057,17 @@ function _tryModuleResolve(id, url, conditions) {
+   }
+ }
+ function _resolve(id, options = {}) {
++  const _previousFileSystem = _activeFileSystem;
++  if (options && options.fs) {
++    _activeFileSystem = options.fs;
++  }
++  try {
++    return _resolveImpl(id, options);
++  } finally {
++    _activeFileSystem = _previousFileSystem;
++  }
++}
++function _resolveImpl(id, options = {}) {
+   if (typeof id !== "string") {
+     if (id instanceof URL) {
+       id = fileURLToPath(id);
+@@ -2056,7 +2086,7 @@ function _resolve(id, options = {}) {
+   }
+   if (pathe.isAbsolute(id)) {
+     try {
+-      const stat = fs.statSync(id);
++      const stat = _fsStatSync(id);
+       if (stat.isFile()) {
+         return pathToFileURL(id);
+       }
+@@ -2608,7 +2638,7 @@ async function isValidNodeImport(id, _options = {}) {
+   if (/\.(\w+-)?esm?(-\w+)?\.js$|\/(esm?)\//.test(resolvedPath)) {
+     return false;
+   }
+-  const code = options.code || await fs.promises.readFile(resolvedPath, "utf8").catch(() => {
++  const code = options.code || await _fsReadFile(options.fs, resolvedPath, "utf8").catch(() => {
+   }) || "";
+   return !hasESMSyntax(code, { stripComments: options.stripComments });
+ }
+diff --git a/dist/index.d.cts b/dist/index.d.cts
+index 9b80ef5bee652fd312cf8bb693cf23614d2779b4..1e51166dbdd1899dc3667184e52efc0ea9b8288d 100644
+--- a/dist/index.d.cts
++++ b/dist/index.d.cts
+@@ -1,3 +1,29 @@
++interface ResolveFileSystem {
++    /**
++     * Synchronously returns information about a file system entry.
++     */
++    statSync?: (path: string | URL, options?: any) => any;
++    /**
++     * Synchronously resolves the canonical path for the given path.
++     */
++    realpathSync?: (path: string | URL) => string;
++    /**
++     * Synchronously reads the entire contents of a file.
++     */
++    readFileSync?: (path: string | URL, options?: any) => string | Buffer;
++    /**
++     * Asynchronously returns information about a file system entry.
++     */
++    stat?: (path: string | URL, options?: any) => Promise<any>;
++    /**
++     * Asynchronously resolves the canonical path for the given path.
++     */
++    realpath?: (path: string | URL) => Promise<string>;
++    /**
++     * Asynchronously reads the entire contents of a file.
++     */
++    readFile?: (path: string | URL, options?: any) => Promise<string | Buffer>;
++}
+ interface ResolveOptions {
+     /**
+      * A URL, path or array of URLs/paths to resolve against.
+@@ -11,6 +37,12 @@ interface ResolveOptions {
+      * Conditions to consider when resolving package exports.
+      */
+     conditions?: string[];
++    /**
++     * A custom file system interface used for the synchronous file system
++     * operations performed while resolving modules. Any method that is not
++     * provided falls back to the corresponding Node.js `fs` implementation.
++     */
++    fs?: ResolveFileSystem;
+ }
+ /**
+  * Synchronously resolves a module path based on the options provided.
+@@ -560,4 +592,4 @@ declare function isNodeBuiltin(id?: string): boolean;
+  */
+ declare function getProtocol(id: string): string | undefined;
+ 
+-export { type CommonjsContext, DYNAMIC_IMPORT_RE, type DeclarationExport, type DefaultExport, type DetectSyntaxOptions, type DynamicImport, type ESMExport, type ESMImport, ESM_STATIC_IMPORT_RE, EXPORT_DECAL_RE, EXPORT_DECAL_TYPE_RE, type EvaluateOptions, type NamedExport, type ParsedStaticImport, type ResolveOptions, type StaticImport, type TypeImport, type ValidNodeImportOptions, createCommonJS, createResolve, detectSyntax, evalModule, fileURLToPath, findDynamicImports, findExportNames, findExports, findStaticImports, findTypeExports, findTypeImports, getProtocol, hasCJSSyntax, hasESMSyntax, interopDefault, isNodeBuiltin, isValidNodeImport, loadModule, loadURL, lookupNodeModuleSubpath, normalizeid, parseNodeModulePath, parseStaticImport, parseTypeImport, pathToFileURL, resolve, resolveImports, resolveModuleExportNames, resolvePath, resolvePathSync, resolveSync, sanitizeFilePath, sanitizeURIComponent, toDataURL, transformModule };
++export { type CommonjsContext, DYNAMIC_IMPORT_RE, type DeclarationExport, type DefaultExport, type DetectSyntaxOptions, type DynamicImport, type ESMExport, type ESMImport, ESM_STATIC_IMPORT_RE, EXPORT_DECAL_RE, EXPORT_DECAL_TYPE_RE, type EvaluateOptions, type NamedExport, type ParsedStaticImport, type ResolveFileSystem, type ResolveOptions, type StaticImport, type TypeImport, type ValidNodeImportOptions, createCommonJS, createResolve, detectSyntax, evalModule, fileURLToPath, findDynamicImports, findExportNames, findExports, findStaticImports, findTypeExports, findTypeImports, getProtocol, hasCJSSyntax, hasESMSyntax, interopDefault, isNodeBuiltin, isValidNodeImport, loadModule, loadURL, lookupNodeModuleSubpath, normalizeid, parseNodeModulePath, parseStaticImport, parseTypeImport, pathToFileURL, resolve, resolveImports, resolveModuleExportNames, resolvePath, resolvePathSync, resolveSync, sanitizeFilePath, sanitizeURIComponent, toDataURL, transformModule };
+diff --git a/dist/index.d.mts b/dist/index.d.mts
+index 9b80ef5bee652fd312cf8bb693cf23614d2779b4..1e51166dbdd1899dc3667184e52efc0ea9b8288d 100644
+--- a/dist/index.d.mts
++++ b/dist/index.d.mts
+@@ -1,3 +1,29 @@
++interface ResolveFileSystem {
++    /**
++     * Synchronously returns information about a file system entry.
++     */
++    statSync?: (path: string | URL, options?: any) => any;
++    /**
++     * Synchronously resolves the canonical path for the given path.
++     */
++    realpathSync?: (path: string | URL) => string;
++    /**
++     * Synchronously reads the entire contents of a file.
++     */
++    readFileSync?: (path: string | URL, options?: any) => string | Buffer;
++    /**
++     * Asynchronously returns information about a file system entry.
++     */
++    stat?: (path: string | URL, options?: any) => Promise<any>;
++    /**
++     * Asynchronously resolves the canonical path for the given path.
++     */
++    realpath?: (path: string | URL) => Promise<string>;
++    /**
++     * Asynchronously reads the entire contents of a file.
++     */
++    readFile?: (path: string | URL, options?: any) => Promise<string | Buffer>;
++}
+ interface ResolveOptions {
+     /**
+      * A URL, path or array of URLs/paths to resolve against.
+@@ -11,6 +37,12 @@ interface ResolveOptions {
+      * Conditions to consider when resolving package exports.
+      */
+     conditions?: string[];
++    /**
++     * A custom file system interface used for the synchronous file system
++     * operations performed while resolving modules. Any method that is not
++     * provided falls back to the corresponding Node.js `fs` implementation.
++     */
++    fs?: ResolveFileSystem;
+ }
+ /**
+  * Synchronously resolves a module path based on the options provided.
+@@ -560,4 +592,4 @@ declare function isNodeBuiltin(id?: string): boolean;
+  */
+ declare function getProtocol(id: string): string | undefined;
+ 
+-export { type CommonjsContext, DYNAMIC_IMPORT_RE, type DeclarationExport, type DefaultExport, type DetectSyntaxOptions, type DynamicImport, type ESMExport, type ESMImport, ESM_STATIC_IMPORT_RE, EXPORT_DECAL_RE, EXPORT_DECAL_TYPE_RE, type EvaluateOptions, type NamedExport, type ParsedStaticImport, type ResolveOptions, type StaticImport, type TypeImport, type ValidNodeImportOptions, createCommonJS, createResolve, detectSyntax, evalModule, fileURLToPath, findDynamicImports, findExportNames, findExports, findStaticImports, findTypeExports, findTypeImports, getProtocol, hasCJSSyntax, hasESMSyntax, interopDefault, isNodeBuiltin, isValidNodeImport, loadModule, loadURL, lookupNodeModuleSubpath, normalizeid, parseNodeModulePath, parseStaticImport, parseTypeImport, pathToFileURL, resolve, resolveImports, resolveModuleExportNames, resolvePath, resolvePathSync, resolveSync, sanitizeFilePath, sanitizeURIComponent, toDataURL, transformModule };
++export { type CommonjsContext, DYNAMIC_IMPORT_RE, type DeclarationExport, type DefaultExport, type DetectSyntaxOptions, type DynamicImport, type ESMExport, type ESMImport, ESM_STATIC_IMPORT_RE, EXPORT_DECAL_RE, EXPORT_DECAL_TYPE_RE, type EvaluateOptions, type NamedExport, type ParsedStaticImport, type ResolveFileSystem, type ResolveOptions, type StaticImport, type TypeImport, type ValidNodeImportOptions, createCommonJS, createResolve, detectSyntax, evalModule, fileURLToPath, findDynamicImports, findExportNames, findExports, findStaticImports, findTypeExports, findTypeImports, getProtocol, hasCJSSyntax, hasESMSyntax, interopDefault, isNodeBuiltin, isValidNodeImport, loadModule, loadURL, lookupNodeModuleSubpath, normalizeid, parseNodeModulePath, parseStaticImport, parseTypeImport, pathToFileURL, resolve, resolveImports, resolveModuleExportNames, resolvePath, resolvePathSync, resolveSync, sanitizeFilePath, sanitizeURIComponent, toDataURL, transformModule };
+diff --git a/dist/index.d.ts b/dist/index.d.ts
+index 9b80ef5bee652fd312cf8bb693cf23614d2779b4..1e51166dbdd1899dc3667184e52efc0ea9b8288d 100644
+--- a/dist/index.d.ts
++++ b/dist/index.d.ts
+@@ -1,3 +1,29 @@
++interface ResolveFileSystem {
++    /**
++     * Synchronously returns information about a file system entry.
++     */
++    statSync?: (path: string | URL, options?: any) => any;
++    /**
++     * Synchronously resolves the canonical path for the given path.
++     */
++    realpathSync?: (path: string | URL) => string;
++    /**
++     * Synchronously reads the entire contents of a file.
++     */
++    readFileSync?: (path: string | URL, options?: any) => string | Buffer;
++    /**
++     * Asynchronously returns information about a file system entry.
++     */
++    stat?: (path: string | URL, options?: any) => Promise<any>;
++    /**
++     * Asynchronously resolves the canonical path for the given path.
++     */
++    realpath?: (path: string | URL) => Promise<string>;
++    /**
++     * Asynchronously reads the entire contents of a file.
++     */
++    readFile?: (path: string | URL, options?: any) => Promise<string | Buffer>;
++}
+ interface ResolveOptions {
+     /**
+      * A URL, path or array of URLs/paths to resolve against.
+@@ -11,6 +37,12 @@ interface ResolveOptions {
+      * Conditions to consider when resolving package exports.
+      */
+     conditions?: string[];
++    /**
++     * A custom file system interface used for the synchronous file system
++     * operations performed while resolving modules. Any method that is not
++     * provided falls back to the corresponding Node.js `fs` implementation.
++     */
++    fs?: ResolveFileSystem;
+ }
+ /**
+  * Synchronously resolves a module path based on the options provided.
+@@ -560,4 +592,4 @@ declare function isNodeBuiltin(id?: string): boolean;
+  */
+ declare function getProtocol(id: string): string | undefined;
+ 
+-export { type CommonjsContext, DYNAMIC_IMPORT_RE, type DeclarationExport, type DefaultExport, type DetectSyntaxOptions, type DynamicImport, type ESMExport, type ESMImport, ESM_STATIC_IMPORT_RE, EXPORT_DECAL_RE, EXPORT_DECAL_TYPE_RE, type EvaluateOptions, type NamedExport, type ParsedStaticImport, type ResolveOptions, type StaticImport, type TypeImport, type ValidNodeImportOptions, createCommonJS, createResolve, detectSyntax, evalModule, fileURLToPath, findDynamicImports, findExportNames, findExports, findStaticImports, findTypeExports, findTypeImports, getProtocol, hasCJSSyntax, hasESMSyntax, interopDefault, isNodeBuiltin, isValidNodeImport, loadModule, loadURL, lookupNodeModuleSubpath, normalizeid, parseNodeModulePath, parseStaticImport, parseTypeImport, pathToFileURL, resolve, resolveImports, resolveModuleExportNames, resolvePath, resolvePathSync, resolveSync, sanitizeFilePath, sanitizeURIComponent, toDataURL, transformModule };
++export { type CommonjsContext, DYNAMIC_IMPORT_RE, type DeclarationExport, type DefaultExport, type DetectSyntaxOptions, type DynamicImport, type ESMExport, type ESMImport, ESM_STATIC_IMPORT_RE, EXPORT_DECAL_RE, EXPORT_DECAL_TYPE_RE, type EvaluateOptions, type NamedExport, type ParsedStaticImport, type ResolveFileSystem, type ResolveOptions, type StaticImport, type TypeImport, type ValidNodeImportOptions, createCommonJS, createResolve, detectSyntax, evalModule, fileURLToPath, findDynamicImports, findExportNames, findExports, findStaticImports, findTypeExports, findTypeImports, getProtocol, hasCJSSyntax, hasESMSyntax, interopDefault, isNodeBuiltin, isValidNodeImport, loadModule, loadURL, lookupNodeModuleSubpath, normalizeid, parseNodeModulePath, parseStaticImport, parseTypeImport, pathToFileURL, resolve, resolveImports, resolveModuleExportNames, resolvePath, resolvePathSync, resolveSync, sanitizeFilePath, sanitizeURIComponent, toDataURL, transformModule };
+diff --git a/dist/index.mjs b/dist/index.mjs
+index 721aa5aac6411ae03c9963da7e5ec80aa1730769..52393596c9213eaad97a201d07757cadcc2874b9 100644
+--- a/dist/index.mjs
++++ b/dist/index.mjs
+@@ -12,6 +12,25 @@ import v8 from 'node:v8';
+ import { format, inspect } from 'node:util';
+ 
+ const BUILTIN_MODULES = new Set(builtinModules);
++
++// Allows consumers to provide a custom file system interface that is used for
++// the synchronous file system operations performed while resolving modules.
++let _activeFileSystem;
++function _fsStatSync(...args) {
++  return (_activeFileSystem?.statSync ?? statSync)(...args);
++}
++function _fsRealpathSync(...args) {
++  return (_activeFileSystem?.realpathSync ?? realpathSync)(...args);
++}
++function _fsReadFileSync(...args) {
++  return (_activeFileSystem?.readFileSync ?? fs.readFileSync)(...args);
++}
++// Allows consumers to provide custom asynchronous file system methods that are
++// used for the asynchronous file system operations performed while resolving
++// modules. Any method that is not provided falls back to `node:fs/promises`.
++function _fsReadFile(fileSystem, ...args) {
++  return (fileSystem?.readFile ?? promises.readFile)(...args);
++}
+ function normalizeSlash(path) {
+   return path.replace(/\\/g, "/");
+ }
+@@ -569,7 +588,7 @@ function read(jsonPath, {base, specifier}) {
+   let string;
+ 
+   try {
+-    string = fs.readFileSync(path.toNamespacedPath(jsonPath), 'utf8');
++    string = _fsReadFileSync(path.toNamespacedPath(jsonPath), 'utf8');
+   } catch (error) {
+     const exception = /** @type {ErrnoException} */ (error);
+ 
+@@ -976,7 +995,7 @@ function emitLegacyIndexDeprecation(url, packageJsonUrl, base, main) {
+ function tryStatSync(path) {
+   // Note: from Node 15 onwards we can use `throwIfNoEntry: false` instead.
+   try {
+-    return statSync(path)
++    return _fsStatSync(path)
+   } catch {
+     // Note: in Node code this returns `new Stats`,
+     // but in Node 22 that’s marked as a deprecated internal API.
+@@ -997,7 +1016,7 @@ function tryStatSync(path) {
+  * @returns {boolean}
+  */
+ function fileExists(url) {
+-  const stats = statSync(url, {throwIfNoEntry: false});
++  const stats = _fsStatSync(url, {throwIfNoEntry: false});
+   const isFile = stats ? stats.isFile() : undefined;
+   return isFile === null || isFile === undefined ? false : isFile
+ }
+@@ -1115,7 +1134,7 @@ function finalizeResolution(resolved, base, preserveSymlinks) {
+   }
+ 
+   {
+-    const real = realpathSync(filePath);
++    const real = _fsRealpathSync(filePath);
+     const {search, hash} = resolved;
+     resolved = pathToFileURL$1(real + (filePath.endsWith(path.sep) ? '/' : ''));
+     resolved.search = search;
+@@ -2028,6 +2047,17 @@ function _tryModuleResolve(id, url, conditions) {
+   }
+ }
+ function _resolve(id, options = {}) {
++  const _previousFileSystem = _activeFileSystem;
++  if (options && options.fs) {
++    _activeFileSystem = options.fs;
++  }
++  try {
++    return _resolveImpl(id, options);
++  } finally {
++    _activeFileSystem = _previousFileSystem;
++  }
++}
++function _resolveImpl(id, options = {}) {
+   if (typeof id !== "string") {
+     if (id instanceof URL) {
+       id = fileURLToPath(id);
+@@ -2046,7 +2076,7 @@ function _resolve(id, options = {}) {
+   }
+   if (isAbsolute(id)) {
+     try {
+-      const stat = statSync(id);
++      const stat = _fsStatSync(id);
+       if (stat.isFile()) {
+         return pathToFileURL(id);
+       }
+@@ -2598,7 +2628,7 @@ async function isValidNodeImport(id, _options = {}) {
+   if (/\.(\w+-)?esm?(-\w+)?\.js$|\/(esm?)\//.test(resolvedPath)) {
+     return false;
+   }
+-  const code = options.code || await promises.readFile(resolvedPath, "utf8").catch(() => {
++  const code = options.code || await _fsReadFile(options.fs, resolvedPath, "utf8").catch(() => {
+   }) || "";
+   return !hasESMSyntax(code, { stripComments: options.stripComments });
+ }
