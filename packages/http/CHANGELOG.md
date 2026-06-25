@@ -2,6 +2,17 @@
 
 # Changelog for Stryke - HTTP
 
+## [0.12.78](https://github.com/storm-software/stryke/releases/tag/http%400.12.78) (06/25/2026)
+
+### Features
+
+- **resolve:** Added separate `extractGitHubReference` and `extractGitLabReference` helpers ([f0516823](https://github.com/storm-software/stryke/commit/f0516823))
+
+### Updated Dependencies
+
+- Updated **type-checks** to **v0.6.21**
+- Updated **url** to **v0.4.39**
+
 ## [0.12.77](https://github.com/storm-software/stryke/releases/tag/http%400.12.77) (06/25/2026)
 
 ### Miscellaneous

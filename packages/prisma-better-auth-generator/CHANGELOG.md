@@ -2,6 +2,19 @@
 
 # Changelog for Stryke - Prisma Better Auth Generator
 
+## [0.14.106](https://github.com/storm-software/stryke/releases/tag/prisma-better-auth-generator%400.14.106) (06/25/2026)
+
+### Features
+
+- **fs:** Added `fs` option to allow custom file system interfaces ([fc9f5cae](https://github.com/storm-software/stryke/commit/fc9f5cae))
+
+### Updated Dependencies
+
+- Updated **env** to **v0.20.106**
+- Updated **fs** to **v0.33.89**
+- Updated **path** to **v0.29.15**
+- Updated **string-format** to **v0.17.30**
+
 ## [0.14.105](https://github.com/storm-software/stryke/releases/tag/prisma-better-auth-generator%400.14.105) (06/25/2026)
 
 ### Miscellaneous

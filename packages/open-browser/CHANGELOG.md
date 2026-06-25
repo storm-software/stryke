@@ -2,6 +2,12 @@
 
 # Changelog for Stryke - Open Browser
 
+## [0.2.76](https://github.com/storm-software/stryke/releases/tag/open-browser%400.2.76) (06/25/2026)
+
+### Features
+
+- **fs:** Added `fs` option to allow custom file system interfaces ([fc9f5cae](https://github.com/storm-software/stryke/commit/fc9f5cae))
+
 ## [0.2.75](https://github.com/storm-software/stryke/releases/tag/open-browser%400.2.75) (06/25/2026)
 
 ### Miscellaneous
