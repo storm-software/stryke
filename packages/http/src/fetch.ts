@@ -36,7 +36,7 @@ export type FetchRequestOptions = RequestInit & {
   /**
    * Number of retries for the fetch request
    *
-   * @defaultValue 0
+   * @defaultValue 3
    */
   retries?: number;
 
@@ -68,36 +68,67 @@ export async function fetchRequest(
     throw new Error(`Invalid URL format provided: ${input}`);
   }
 
-  const abort = new AbortController();
-  setTimeout(() => abort.abort(), options.timeout ?? 5000);
+  const {
+    retries = 3,
+    retryDelay = 1000,
+    retryOn,
+    timeout = 5000,
+    ...requestOptions
+  } = options;
 
   const type = contentType(parseFilename(input.toString()) || "");
 
-  return undiciFetch(
-    input,
-    defu(
-      options,
-      {
-        agent: getProxyAgent(),
-        signal: abort.signal,
-        headers: {
-          // The file format is based off of the user agent, make sure woff2 files are fetched
-          "User-Agent":
-            "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) " +
-            "AppleWebKit/537.36 (KHTML, like Gecko) " +
-            "Chrome/104.0.0.0 Safari/537.36"
-        }
-      },
-      type
-        ? {
+  const delay = async (ms: number) =>
+    new Promise(resolve => {
+      setTimeout(resolve, ms);
+    });
+
+  for (let attempt = 0; ; attempt++) {
+    const abort = new AbortController();
+    const timeoutId = setTimeout(() => abort.abort(), timeout);
+
+    try {
+      const response = await undiciFetch(
+        input,
+        defu(
+          requestOptions,
+          {
+            agent: getProxyAgent(),
+            signal: abort.signal,
             headers: {
-              "Content-Type": type,
-              Accept: type
+              // The file format is based off of the user agent, make sure woff2 files are fetched
+              "User-Agent":
+                "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) " +
+                "AppleWebKit/537.36 (KHTML, like Gecko) " +
+                "Chrome/104.0.0.0 Safari/537.36"
             }
-          }
-        : {}
-    )
-  );
+          },
+          type
+            ? {
+                headers: {
+                  "Content-Type": type,
+                  Accept: type
+                }
+              }
+            : {}
+        )
+      );
+
+      clearTimeout(timeoutId);
+      return response;
+    } catch (error) {
+      clearTimeout(timeoutId);
+
+      const shouldRetry = retryOn ? retryOn(error, attempt + 1) : true;
+      if (attempt >= retries || !shouldRetry) {
+        throw error;
+      }
+
+      if (retryDelay > 0) {
+        await delay(retryDelay);
+      }
+    }
+  }
 }
 
 export const fetch = fetchRequest;

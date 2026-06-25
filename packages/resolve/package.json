@@ -26,6 +26,10 @@
       "import": "./dist/helpers.mjs",
       "require": "./dist/helpers.cjs"
     },
+    "./regex": {
+      "import": "./dist/regex.mjs",
+      "require": "./dist/regex.cjs"
+    },
     "./resolve": {
       "import": "./dist/resolve.mjs",
       "require": "./dist/resolve.cjs"
@@ -45,8 +49,11 @@
   "types": "./dist/index.d.cts",
   "dependencies": {
     "@stryke/fs": "workspace:*",
+    "@stryke/http": "workspace:*",
     "@stryke/path": "workspace:*",
     "@stryke/type-checks": "workspace:*",
+    "@stryke/types": "workspace:*",
+    "@stryke/url": "workspace:*",
     "defu": "catalog:",
     "esbuild": "catalog:",
     "jiti": "catalog:",
@@ -55,7 +62,6 @@
     "yaml": "catalog:"
   },
   "devDependencies": {
-    "@stryke/types": "workspace:*",
     "@types/node": "catalog:",
     "tsdown": "catalog:"
   },

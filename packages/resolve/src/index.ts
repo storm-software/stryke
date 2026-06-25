@@ -19,6 +19,7 @@
 export * from "./bundle";
 export * from "./constants";
 export * from "./helpers";
+export * from "./regex";
 export * from "./resolve";
 export * from "./type-checks";
 export * from "./types";

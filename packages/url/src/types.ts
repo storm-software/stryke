@@ -16,6 +16,8 @@
 
  ------------------------------------------------------------------- */
 
+import type { URLProtocol } from "./constants";
+
 export interface StormURLOptions {
   /**
    * Should the URL be decoded
@@ -34,7 +36,7 @@ export interface StormURLOptions {
    *
    * @defaultValue "https"
    */
-  defaultProtocol?: string;
+  defaultProtocol?: URLProtocol;
 }
 
 export const PROTOCOL_RELATIVE_SYMBOL: unique symbol =
@@ -127,17 +129,12 @@ export interface StormURLInterface extends URL {
 }
 
 /**
- * A type that represents a GitHub repository reference string.
+ * A type that represents a URL string reference.
  *
  * @remarks
- * A GitHub repository reference string, starting with either `"github:"` or `"gh:"`, an optional branch or tag, and optionally including a specific file path within the repository (for example: `"github:main:storm-software/stryke/packages/url/src/types.ts"`). It is also valid to provide the branch or tag after the file path (for example: `"github:storm-software/stryke/packages/url/src/types.ts@main"`).
+ * A `URLString` is one of the following shapes: a protocol followed by `://` and the remainder of the URL (for example: `"https://example.com"`), a protocol-relative reference starting with `//` (for example: `"//example.com"`), or a protocol followed by an opaque value (for example: `"mailto:example@example.com"`).
  */
-export type GitHubReference = `github:${string}` | `gh:${string}`;
-
-/**
- * A type that represents a GitLab repository reference string.
- *
- * @remarks
- * A GitLab repository reference string, starting with either `"gitlab:"` or `"gl:"`, an optional branch or tag, and optionally including a specific file path within the repository (for example: `"gitlab:master:storm-software/stryke/packages/url/src/types.ts"`). It is also valid to provide the branch or tag after the file path (for example: `"gitlab:storm-software/stryke/packages/url/src/types.ts@master"`).
- */
-export type GitLabReference = `gitlab:${string}` | `gl:${string}`;
+export type URLString =
+  | `${URLProtocol}://${string}`
+  | `//${string}`
+  | `${URLProtocol}:${string}`;

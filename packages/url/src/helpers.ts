@@ -16,12 +16,8 @@
 
  ------------------------------------------------------------------- */
 
-import {
-  VALID_GITHUB_REPO_REFERENCE_REGEX,
-  VALID_GITLAB_REPO_REFERENCE_REGEX,
-  VALID_URL_REGEX
-} from "./regex";
-import type { GitHubReference, GitLabReference } from "./types";
+import { URL_STRING_REGEX, VALID_URL_REGEX } from "./regex";
+import type { URLString } from "./types";
 
 export function formatLocalePath(locale: string) {
   let result = locale;
@@ -54,31 +50,11 @@ export function isValidURL(input: string): boolean {
 }
 
 /**
- * Check if a string is a valid GitHub repository reference, including optional branches and file paths.
- *
- * @remarks
- * A GitHub repository reference string, starting with either `"github:"` or `"gh:"`, and optionally including a specific file path within the repository (for example: `"github:storm-software/stryke/src/types.ts@main"`).
+ * Check if a string is a valid URL string reference.
  *
  * @param input - The string to check.
- * @returns `true` if the string is a valid GitHub repository reference, otherwise `false`.
+ * @returns `true` if the string is a valid URL string reference, otherwise `false`.
  */
-export function isValidGitHubRepoReference(
-  input: string
-): input is GitHubReference {
-  return VALID_GITHUB_REPO_REFERENCE_REGEX.test(input);
-}
-
-/**
- * Check if a string is a valid GitLab repository reference, including optional branches and file paths.
- *
- * @remarks
- * A GitLab repository reference string, starting with either `"gitlab:"` or `"gl:"`, and optionally including a specific file path within the repository (for example: `"gitlab:storm-software/stryke/src/types.ts@master"`).
- *
- * @param input - The string to check.
- * @returns `true` if the string is a valid GitLab repository reference, otherwise `false`.
- */
-export function isValidGitLabRepoReference(
-  input: string
-): input is GitLabReference {
-  return VALID_GITLAB_REPO_REFERENCE_REGEX.test(input);
+export function isURLString(input: string): input is URLString {
+  return URL_STRING_REGEX.test(input);
 }

@@ -20,6 +20,7 @@ TLDS
 mobi
 callto
 rtsp
+rtmp
 vchar
 htab
 CAGR

@@ -16,17 +16,17 @@
 
  ------------------------------------------------------------------- */
 
-import { VALID_PROTOCOLS, VALID_TLDS } from "./constants";
+import { URL_PROTOCOLS, URL_TOP_LEVEL_DOMAINS } from "./constants";
 
 /**
  * A regex source string that matches any of the valid TLDs (case-insensitive).
  */
-export const VALID_TLD_PATTERN = `(?:${[...new Set(VALID_TLDS)].sort((a, b) => b.length - a.length).join("|")})`;
+export const VALID_TLD_PATTERN = `(?:${[...new Set(URL_TOP_LEVEL_DOMAINS)].sort((a, b) => b.length - a.length).join("|")})`;
 
 /**
  * A regex source string that matches any of the valid protocols (case-insensitive).
  */
-export const VALID_PROTOCOL_PATTERN = `(?:${[...new Set(VALID_PROTOCOLS)].sort((a, b) => b.length - a.length).join("|")})`;
+export const VALID_PROTOCOL_PATTERN = `(?:${[...new Set(URL_PROTOCOLS)].sort((a, b) => b.length - a.length).join("|")})`;
 
 /**
  * A regex that matches valid URLs, including various protocols, domain names, IP addresses, ports, and paths. The regex is case-insensitive and supports a wide range of URL formats. It also includes support for internationalized domain names (IDNs) and various protocols.
@@ -39,19 +39,18 @@ export const VALID_URL_REGEX = new RegExp(
 );
 
 /**
- * A regex that matches valid GitHub repository references, including optional branches.
- *
- * @remarks
- * A GitHub repository reference string, starting with either `"github:"` or `"gh:"`, an optional branch or tag, and optionally including a specific file path within the repository (for example: `"github:main:storm-software/power-plant/packages/base/resolve/src/types.ts"`). It is also valid to provide the branch or tag after the file path (for example: `"github:storm-software/power-plant/packages/base/resolve/src/types.ts@main"`).
+ * A regex source string that matches any of the protocols supported by the `URLProtocol` type (case-insensitive). Longer protocols are listed first to avoid partial matches.
  */
-export const VALID_GITHUB_REPO_REFERENCE_REGEX =
-  /^(?:github|gh):(?:[^\s/:@]+:)?[^\s/:@]+\/[^\s/:@]+(?:\/[^\s:@]+)?(?:@[^\s/:@]+)?$/i;
+export const URL_PROTOCOL_REGEX =
+  "(?:https|http|ftps|ftp|wss|ws|file|data|blob|mailto|tel|urn|sips|sip|sms|nfs|ssh|git|svn|rsync|rtsp|rtmp|mms)";
 
 /**
- * A regex that matches valid GitLab repository references, including optional branches.
+ * A regex that matches valid URL string references.
  *
  * @remarks
- * A GitLab repository reference string, starting with either `"gitlab:"` or `"gl:"`, an optional branch or tag, and optionally including a specific file path within the repository (for example: `"gitlab:master:storm-software/power-plant/packages/base/resolve/src/types.ts"`). It is also valid to provide the branch or tag after the file path (for example: `"gitlab:storm-software/power-plant/packages/base/resolve/src/types.ts@master"`).
+ * A {@link URLString} is one of the following shapes: a protocol followed by `://` and the remainder of the URL (for example: `"https://example.com"`), a protocol-relative reference starting with `//` (for example: `"//example.com"`), or a protocol followed by an opaque value (for example: `"mailto:hello@example.com"`).
  */
-export const VALID_GITLAB_REPO_REFERENCE_REGEX =
-  /^(?:gitlab|gl):(?:[^\s/:@]+:)?[^\s/:@]+\/[^\s/:@]+(?:\/[^\s:@]+)?(?:@[^\s/:@]+)?$/i;
+export const URL_STRING_REGEX = new RegExp(
+  `^(?:\\/\\/\\S+|${URL_PROTOCOL_REGEX}:\\S*)$`,
+  "i"
+);

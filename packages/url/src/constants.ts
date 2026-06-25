@@ -16,7 +16,7 @@
 
  ------------------------------------------------------------------- */
 
-export const VALID_TLDS = [
+export const URL_TOP_LEVEL_DOMAINS = [
   // Generic TLDs
   "com",
   "org",
@@ -346,7 +346,15 @@ export const VALID_TLDS = [
   "zw"
 ] as const;
 
-export const VALID_PROTOCOLS = [
+/**
+ * A type that represents a valid URL top-level domain (TLD).
+ *
+ * @remarks
+ * This type includes common generic TLDs (gTLDs) such as `.com`, `.org`, and `.net`, as well as country-code TLDs (ccTLDs) such as `.us`, `.uk`, and `.de`. It can be used to specify the TLD of a URL in a type-safe manner.
+ */
+export type URLTopLevelDomain = (typeof URL_TOP_LEVEL_DOMAINS)[number];
+
+export const URL_PROTOCOLS = [
   "http",
   "https",
   "mailto",
@@ -375,3 +383,11 @@ export const VALID_PROTOCOLS = [
   "sftp",
   "wss"
 ] as const;
+
+/**
+ * A type that represents a valid URL protocol.
+ *
+ * @remarks
+ * This type includes common URL protocols such as HTTP, HTTPS, FTP, and others. It can be used to specify the protocol of a URL in a type-safe manner.
+ */
+export type URLProtocol = (typeof URL_PROTOCOLS)[number];

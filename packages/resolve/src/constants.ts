@@ -32,3 +32,6 @@ export const VALID_OBJECT_SOURCE_EXTENSIONS = [
   "yml",
   "toml"
 ] as const as string[];
+
+export type ValidObjectSourceExtension =
+  (typeof VALID_OBJECT_SOURCE_EXTENSIONS)[number];

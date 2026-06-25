@@ -23,13 +23,11 @@ import type {
   FileReference,
   FileReferenceInput
 } from "@stryke/types/configuration";
-import {
-  isValidGitHubRepoReference,
-  isValidGitLabRepoReference,
-  isValidURL
-} from "@stryke/url/helpers";
+import { isValidURL } from "@stryke/url/helpers";
 import { VALID_OBJECT_SOURCE_EXTENSIONS } from "./constants";
 import { extractFilePath } from "./helpers";
+import { GITHUB_REFERENCE_REGEX, GITLAB_REFERENCE_REGEX } from "./regex";
+import type { GitHubReference, GitLabReference, URLReference } from "./types";
 
 /**
  * Checks if a given file name has a valid object source file extension.
@@ -52,6 +50,38 @@ export function isFileReference(input: any): input is FileReference {
 }
 
 /**
+ * Check if a string is a valid GitHub repository reference, including optional branches and file paths.
+ *
+ * @remarks
+ * A GitHub repository reference string, starting with either `"github:"` or `"gh:"`, and optionally including a specific file path within the repository (for example: `"github:storm-software/stryke/src/types.ts@main"`).
+ *
+ * @param input - The string to check.
+ * @returns `true` if the string is a valid GitHub repository reference, otherwise `false`.
+ */
+export function isGitHubReference(input: string): input is GitHubReference {
+  return GITHUB_REFERENCE_REGEX.test(input);
+}
+
+/**
+ * Check if a string is a valid GitLab repository reference, including optional branches and file paths.
+ *
+ * @remarks
+ * A GitLab repository reference string, starting with either `"gitlab:"` or `"gl:"`, and optionally including a specific file path within the repository (for example: `"gitlab:storm-software/stryke/src/types.ts@master"`).
+ *
+ * @param input - The string to check.
+ * @returns `true` if the string is a valid GitLab repository reference, otherwise `false`.
+ */
+export function isGitLabReference(input: string): input is GitLabReference {
+  return GITLAB_REFERENCE_REGEX.test(input);
+}
+
+export function isURLReference(input: any): input is URLReference {
+  return (
+    isGitHubReference(input) || isGitLabReference(input) || isValidURL(input)
+  );
+}
+
+/**
  * Checks if the provided entry is a file reference string.
  *
  * @remarks
@@ -70,8 +100,8 @@ export function isFileReferenceString(input: any): input is string {
   return (
     isValidURL(file) ||
     isValidPath(file) ||
-    isValidGitHubRepoReference(file) ||
-    isValidGitLabRepoReference(file)
+    isGitHubReference(file) ||
+    isGitLabReference(file)
   );
 }
 

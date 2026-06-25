@@ -1100,12 +1100,21 @@ importers:
       '@stryke/fs':
         specifier: workspace:*
         version: link:../fs
+      '@stryke/http':
+        specifier: workspace:*
+        version: link:../http
       '@stryke/path':
         specifier: workspace:*
         version: link:../path
       '@stryke/type-checks':
         specifier: workspace:*
         version: link:../type-checks
+      '@stryke/types':
+        specifier: workspace:*
+        version: link:../types
+      '@stryke/url':
+        specifier: workspace:*
+        version: link:../url
       defu:
         specifier: 'catalog:'
         version: 6.1.7
@@ -1125,9 +1134,6 @@ importers:
         specifier: 'catalog:'
         version: 2.9.0
     devDependencies:
-      '@stryke/types':
-        specifier: workspace:*
-        version: link:../types
       '@types/node':
         specifier: 'catalog:'
         version: 24.13.2

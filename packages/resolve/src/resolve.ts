@@ -16,12 +16,28 @@
 
  ------------------------------------------------------------------- */
 
+import { resolve as resolveFile } from "@stryke/fs/resolve";
 import { fetchRequest } from "@stryke/http/fetch";
+import { isValidPath } from "@stryke/path/is-valid-path";
 import { isSetString } from "@stryke/type-checks/is-set-string";
 import { isURL } from "@stryke/type-checks/is-url";
-import { isValidURL } from "@stryke/url/helpers";
-import { isFileReference } from "./type-checks";
-import type { ResolveInput, ResolveOptions } from "./types";
+import { isURLString, isValidURL } from "@stryke/url/helpers";
+import { bundle } from "./bundle";
+import { extractGitHubReference, extractGitLabReference } from "./helpers";
+import {
+  isFileReference,
+  isGitHubReference,
+  isGitLabReference
+} from "./type-checks";
+import type {
+  FilePathResolveOptions,
+  GitHubReference,
+  GitLabReference,
+  InferResolveOptions,
+  ResolveInput,
+  URLReference,
+  URLResolveOptions
+} from "./types";
 
 /**
  * Fetches the content of a URL and returns it as a string.
@@ -30,8 +46,8 @@ import type { ResolveInput, ResolveOptions } from "./types";
  * @returns A promise that resolves to the content of the URL as a string.
  */
 export async function resolveURL(
-  input: string | URL,
-  options: ResolveOptions = {}
+  input: URLReference | URL,
+  options: URLResolveOptions = {}
 ): Promise<string> {
   let value!: string;
   if (isSetString(input)) {
@@ -68,15 +84,112 @@ export async function resolveURL(
 }
 
 /**
- * Compiles a type definition to a module and returns the specified export from the module.
+ * Resolve a file in a GitHub repository via a {@link GitHubReference} string.
  *
- * @param input - The type definition to compile. This can be either a string or a {@link FileReference} object.
- * @param options - Optional overrides for the ESBuild configuration.
- * @returns A promise that resolves to the compiled module.
+ * @remarks
+ * A GitHub repository reference string, starting with either `"github:"` or `"gh:"`, an optional branch or tag, and optionally including a specific file path within the repository (for example: `"github:main:storm-software/stryke/packages/base/resolve/src/types.ts"`). It is also valid to provide the branch or tag after the file path (for example: `"github:storm-software/stryke/packages/resolve/src/types.ts@main"`).
+ *
+ * @param input - The {@link GitHubReference} string to resolve.
+ * @param options - Optional overrides for the fetch configuration.
+ * @returns A promise that resolves to the content of the file as a string.
+ */
+export async function resolveGitHub(
+  input: GitHubReference,
+  options: URLResolveOptions = {}
+): Promise<string> {
+  const { owner, repo, branch, filePath } = extractGitHubReference(input);
+
+  return resolveURL(
+    `https://raw.githubusercontent.com/${owner}/${repo}/${encodeURIComponent(
+      branch
+    )}${
+      filePath
+        ? `/${filePath
+            .split("/")
+            .filter(Boolean)
+            .map(segment => encodeURIComponent(segment))
+            .join("/")}`
+        : ""
+    }`,
+    options
+  );
+}
+
+/**
+ * Resolves a file in a GitLab repository via a {@link GitLabReference} string.
+ *
+ * @remarks
+ * A GitLab repository reference string, starting with either `"gitlab:"` or `"gl:"`, an optional branch or tag, and optionally including a specific file path within the repository (for example: `"gitlab:master:storm-software/stryke/packages/resolve/src/types.ts"`). It is also valid to provide the branch or tag after the file path (for example: `"gitlab:storm-software/stryke/packages/resolve/src/types.ts@master"`).
+ *
+ * @param input - The {@link GitLabReference} string to resolve.
+ * @param options - Optional overrides for the fetch configuration.
+ * @returns A promise that resolves to the content of the file as a string.
+ */
+export async function resolveGitLab(
+  input: GitLabReference,
+  options: URLResolveOptions = {}
+): Promise<string> {
+  const { owner, repo, branch, filePath } = extractGitLabReference(input);
+
+  return resolveURL(
+    `https://gitlab.com/${owner}/${repo}/-/raw/${encodeURIComponent(branch)}${
+      filePath
+        ? `/${filePath
+            .split("/")
+            .filter(Boolean)
+            .map(segment => encodeURIComponent(segment))
+            .join("/")}`
+        : ""
+    }`,
+    options
+  );
+}
+
+/**
+ * Resolves a file path to its content as a string.
+ *
+ * @remarks
+ * Valid inputs include the following two options:
+ * 1. A file path string (for example: `"./src/types.ts"`).
+ * 2. A TypeScript module name string (for example: `"@stryke/resolve"`), and optionally a specific module export from the package (for example: `"@stryke/resolve/some-module"`).
+ *
+ * @param input - The file path or module name string to resolve.
+ * @param options -
+ */
+export async function resolveFilePath(
+  input: string,
+  options: FilePathResolveOptions = {}
+): Promise<string> {
+  if (!isValidPath(input)) {
+    throw new Error(
+      `The provided input "${String(input)}" is not a valid file path. Please provide a valid file path to resolve.`
+    );
+  }
+
+  const result = await bundle(await resolveFile(input, options), options);
+
+  return result.text;
+}
+
+/**
+ * Resolves a file reference to its content as a string.
+ *
+ * @remarks
+ * The `ResolveInput` type can be one of the following variants:
+ * - A file path string (for example: `"./src/types.ts"`).
+ * - A URL string (for example: `"https://example.com/config.json"`).
+ * - A GitHub repository reference string, starting with either `"github:"` or `"gh:"`, an optional branch or tag, and optionally including a specific file path within the repository (for example: `"github:main:storm-software/stryke/packages/base/resolve/src/types.ts"`). It is also valid to provide the branch or tag after the file path (for example: `"github:storm-software/stryke/packages/resolve/src/types.ts@main"`).
+ * - A GitLab repository reference string, starting with either `"gitlab:"` or `"gl:"`, an optional branch or tag, and optionally including a specific file path within the repository (for example: `"gitlab:master:storm-software/stryke/packages/resolve/src/types.ts"`). It is also valid to provide the branch or tag after the file path (for example: `"gitlab:storm-software/stryke/packages/resolve/src/types.ts@master"`).
+ * - A TypeScript module name string (for example: `"@stryke/resolve"`), and optionally a specific module export from the package (for example: `"@stryke/resolve/some-module"`).
+ * - A {@link URL} object, which represents a URL to fetch the file from.
+ *
+ * @param input - The file reference to resolve. This can be either a string or a {@link FileReference} object.
+ * @param options - Optional
+ * @returns A promise that resolves to the content of the file as a string.
  */
 export async function resolve(
   input: ResolveInput,
-  options?: ResolveOptions
+  options?: InferResolveOptions<typeof input>
 ): Promise<string> {
   let file!: string | URL;
   if (isFileReference(input)) {
@@ -90,10 +203,22 @@ export async function resolve(
   }
 
   if (
-    (isSetString(file) && isValidURL(file) && !file.startsWith("file://")) ||
+    (isSetString(file) &&
+      (isValidURL(file) || isURLString(file)) &&
+      !file.startsWith("file://")) ||
     isURL(file)
   ) {
+    if (isSetString(file) && !isURLString(file)) {
+      file = new URL(file);
+    }
+
     return resolveURL(file, options);
+  } else if (isGitHubReference(file)) {
+    return resolveGitHub(file, options);
+  } else if (isGitLabReference(file)) {
+    return resolveGitLab(file, options);
+  } else if (isValidPath(file)) {
+    return resolveFilePath(file, options);
   }
 
   throw new Error(
@@ -102,15 +227,15 @@ export async function resolve(
 }
 
 /**
- * Safely compiles a type definition to a module and returns the specified export from the module.
+ * Safely resolves a file reference to its content as a string.
  *
- * @param input - The type definition to compile. This can be either a string or a {@link FileReference} object.
+ * @param input - The file reference to resolve. This can be either a string or a {@link FileReference} object.
  * @param options - Optional overrides for the ESBuild configuration.
- * @returns A promise that resolves to the compiled module.
+ * @returns A promise that resolves to the content of the file as a string, or `undefined` if the resolution fails.
  */
 export async function resolveSafe(
   input: ResolveInput,
-  options?: ResolveOptions
+  options?: InferResolveOptions<typeof input>
 ): Promise<string | undefined> {
   try {
     return await resolve(input, options);
