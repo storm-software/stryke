@@ -26,6 +26,10 @@
       "import": "./dist/helpers.mjs",
       "require": "./dist/helpers.cjs"
     },
+    "./load": {
+      "import": "./dist/load.mjs",
+      "require": "./dist/load.cjs"
+    },
     "./regex": {
       "import": "./dist/regex.mjs",
       "require": "./dist/regex.cjs"

@@ -63,8 +63,20 @@ export type URLReference = URLString | GitHubReference | GitLabReference;
  */
 export type ResolveInput = string | URLReference | URL;
 
-export interface BaseResolveOptions {
+export interface BaseResolveOptions extends BundleOptions {
+  /**
+   * The file extension to use when resolving the file reference.
+   */
   extension?: string;
+
+  /**
+   * Whether to skip the bundling step when resolving the file reference.
+   *
+   * @defaultValue false
+   * @remarks
+   * If set to `true`, the bundling step will be skipped, and the file reference will be resolved directly without bundling. This can be useful when you want to resolve a file reference without modifying its contents or when you want to avoid the overhead of bundling.
+   */
+  skipBundle?: boolean;
 }
 
 export interface URLResolveOptions extends BaseResolveOptions {
@@ -78,10 +90,13 @@ export interface URLResolveOptions extends BaseResolveOptions {
 export type BundleOptions = DeepPartial<
   Omit<
     BuildOptions,
-    | "logLevel"
     | "entryPoints"
     | "write"
+    | "stdin"
     | "sourcemap"
+    | "sourceRoot"
+    | "sourcefile"
+    | "sourcesContent"
     | "splitting"
     | "treeShaking"
     | "bundle"
@@ -90,14 +105,36 @@ export type BundleOptions = DeepPartial<
     | "metafile"
     | "outfile"
     | "outdir"
-    | "allowOverwrite"
     | "outbase"
+    | "outExtension"
+    | "banner"
+    | "footer"
+    | "inject"
+    | "define"
+    | "legalComments"
+    | "allowOverwrite"
+    | "publicPath"
+    | "entryNames"
+    | "chunkNames"
+    | "assetNames"
+    | "absWorkingDir"
+    | "absPaths"
+    | "lineLimit"
+    | "color"
+    | "logLevel"
+    | "logLimit"
+    | "logOverride"
   >
->;
+> & {
+  /**
+   * The current working directory to use for resolving entry points and other file paths.
+   *
+   * @defaultValue `process.cwd()`
+   */
+  cwd?: string;
+};
 
-export type FilePathResolveOptions = BaseResolveOptions &
-  FSResolveOptions &
-  BundleOptions;
+export type FilePathResolveOptions = BaseResolveOptions & FSResolveOptions;
 
 export type InferResolveOptions<T extends ResolveInput> = T extends URLReference
   ? URLResolveOptions
@@ -122,3 +159,12 @@ export type InferResolveOptions<T extends ResolveInput> = T extends URLReference
  * - A {@link URL} object, which represents a URL to fetch the file from.
  */
 export type LoadInput = ResolveInput | FileReference;
+
+export type InferLoadOptions<T extends LoadInput> = InferResolveOptions<
+  T extends FileReference ? T["file"] : T
+> & {
+  /**
+   * Whether to enable extended logging for the load operation.
+   */
+  debug?: boolean;
+};

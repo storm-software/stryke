@@ -17,12 +17,17 @@
  ------------------------------------------------------------------- */
 
 import { resolve as resolveFile } from "@stryke/fs/resolve";
+import { omit } from "@stryke/helpers/omit";
 import { fetchRequest } from "@stryke/http/fetch";
+import { findFileExtensionSafe } from "@stryke/path/find";
 import { isValidPath } from "@stryke/path/is-valid-path";
 import { isSetString } from "@stryke/type-checks/is-set-string";
 import { isURL } from "@stryke/type-checks/is-url";
 import { isURLString, isValidURL } from "@stryke/url/helpers";
+import { readFile } from "node:fs/promises";
+import { parseFilename } from "ufo";
 import { bundle } from "./bundle";
+import { BUNDLE_EXTENSIONS } from "./constants";
 import { extractGitHubReference, extractGitLabReference } from "./helpers";
 import {
   isFileReference,
@@ -154,7 +159,7 @@ export async function resolveGitLab(
  * 2. A TypeScript module name string (for example: `"@stryke/resolve"`), and optionally a specific module export from the package (for example: `"@stryke/resolve/some-module"`).
  *
  * @param input - The file path or module name string to resolve.
- * @param options -
+ * @param options - Optional overrides for the file path resolution.
  */
 export async function resolveFilePath(
   input: string,
@@ -166,9 +171,9 @@ export async function resolveFilePath(
     );
   }
 
-  const result = await bundle(await resolveFile(input, options), options);
+  const path = await resolveFile(input, options);
 
-  return result.text;
+  return readFile(path, { encoding: "utf8" });
 }
 
 /**
@@ -184,12 +189,12 @@ export async function resolveFilePath(
  * - A {@link URL} object, which represents a URL to fetch the file from.
  *
  * @param input - The file reference to resolve. This can be either a string or a {@link FileReference} object.
- * @param options - Optional
+ * @param options - Optional overrides for the file resolution.
  * @returns A promise that resolves to the content of the file as a string.
  */
 export async function resolve(
   input: ResolveInput,
-  options?: InferResolveOptions<typeof input>
+  options: InferResolveOptions<typeof input> = {}
 ): Promise<string> {
   let file!: string | URL;
   if (isFileReference(input)) {
@@ -202,6 +207,7 @@ export async function resolve(
     );
   }
 
+  let content!: string;
   if (
     (isSetString(file) &&
       (isValidURL(file) || isURLString(file)) &&
@@ -212,18 +218,38 @@ export async function resolve(
       file = new URL(file);
     }
 
-    return resolveURL(file, options);
+    content = await resolveURL(file, options);
   } else if (isGitHubReference(file)) {
-    return resolveGitHub(file, options);
+    content = await resolveGitHub(file, options);
   } else if (isGitLabReference(file)) {
-    return resolveGitLab(file, options);
+    content = await resolveGitLab(file, options);
   } else if (isValidPath(file)) {
-    return resolveFilePath(file, options);
+    content = await resolveFilePath(file, options);
+  } else {
+    throw new Error(
+      `The provided input "${String(input)}" could not be resolved. Please provide a valid input to resolve.`
+    );
   }
 
-  throw new Error(
-    `The provided input "${String(input)}" could not be resolved. Please provide a valid input to resolve.`
-  );
+  if (
+    !options.skipBundle &&
+    ((options.extension && BUNDLE_EXTENSIONS.includes(options.extension)) ||
+      (isURL(file) &&
+        parseFilename(input.toString()) &&
+        BUNDLE_EXTENSIONS.includes(
+          parseFilename(input.toString())!.replace(/\.[^/.]+$/, "")
+        )) ||
+      (isSetString(file) &&
+        findFileExtensionSafe(file) &&
+        BUNDLE_EXTENSIONS.includes(findFileExtensionSafe(file))))
+  ) {
+    return bundle(content, {
+      ...omit(options, ["extension", "skipBundle"]),
+      originalInput: input
+    }).then(result => result.text);
+  }
+
+  return content;
 }
 
 /**
