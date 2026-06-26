@@ -2,6 +2,22 @@
 
 # Changelog for Stryke - Fs
 
+## [0.33.89](https://github.com/storm-software/stryke/releases/tag/fs%400.33.89) (06/25/2026)
+
+### Features
+
+- **fs:** Added `fs` option to allow custom file system interfaces ([fc9f5cae](https://github.com/storm-software/stryke/commit/fc9f5cae))
+
+### Updated Dependencies
+
+- Updated **convert** to **v0.7.19**
+- Updated **helpers** to **v0.10.28**
+- Updated **json** to **v0.15.12**
+- Updated **path** to **v0.29.15**
+- Updated **string-format** to **v0.17.30**
+- Updated **type-checks** to **v0.6.21**
+- Updated **types** to **v0.12.16**
+
 ## [0.33.88](https://github.com/storm-software/stryke/releases/tag/fs%400.33.88) (06/25/2026)
 
 ### Miscellaneous

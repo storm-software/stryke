@@ -2,6 +2,12 @@
 
 # Changelog for Stryke - Types
 
+## [0.12.16](https://github.com/storm-software/stryke/releases/tag/types%400.12.16) (06/25/2026)
+
+### Features
+
+- **fs:** Added `fs` option to allow custom file system interfaces ([fc9f5cae](https://github.com/storm-software/stryke/commit/fc9f5cae))
+
 ## [0.12.15](https://github.com/storm-software/stryke/releases/tag/types%400.12.15) (06/25/2026)
 
 ### Miscellaneous

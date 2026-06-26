@@ -2,6 +2,19 @@
 
 # Changelog for Stryke - URL
 
+## [0.4.39](https://github.com/storm-software/stryke/releases/tag/url%400.4.39) (06/25/2026)
+
+### Features
+
+- **resolve:** Added separate `extractGitHubReference` and `extractGitLabReference` helpers ([f0516823](https://github.com/storm-software/stryke/commit/f0516823))
+
+### Updated Dependencies
+
+- Updated **fs** to **v0.33.89**
+- Updated **json** to **v0.15.12**
+- Updated **path** to **v0.29.15**
+- Updated **type-checks** to **v0.6.21**
+
 ## [0.4.38](https://github.com/storm-software/stryke/releases/tag/url%400.4.38) (06/25/2026)
 
 ### Miscellaneous

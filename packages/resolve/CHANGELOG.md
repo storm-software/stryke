@@ -2,6 +2,24 @@
 
 # Changelog for Stryke - Resolve
 
+## [0.0.3](https://github.com/storm-software/stryke/releases/tag/resolve%400.0.3) (06/25/2026)
+
+### Features
+
+- **resolve:** Added `load` module and bundling logic ([1d81fd94](https://github.com/storm-software/stryke/commit/1d81fd94))
+- **resolve:** Added separate `extractGitHubReference` and `extractGitLabReference` helpers ([f0516823](https://github.com/storm-software/stryke/commit/f0516823))
+
+### Updated Dependencies
+
+- Updated **convert** to **v0.7.19**
+- Updated **fs** to **v0.33.89**
+- Updated **helpers** to **v0.10.28**
+- Updated **http** to **v0.12.78**
+- Updated **path** to **v0.29.15**
+- Updated **type-checks** to **v0.6.21**
+- Updated **types** to **v0.12.16**
+- Updated **url** to **v0.4.39**
+
 ## [0.0.2](https://github.com/storm-software/stryke/releases/tag/resolve%400.0.2) (06/25/2026)
 
 ### Features

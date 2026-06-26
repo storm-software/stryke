@@ -2,6 +2,19 @@
 
 # Changelog for Stryke - Capnp
 
+## [0.12.115](https://github.com/storm-software/stryke/releases/tag/capnp%400.12.115) (06/25/2026)
+
+### Features
+
+- **fs:** Added `fs` option to allow custom file system interfaces ([fc9f5cae](https://github.com/storm-software/stryke/commit/fc9f5cae))
+
+### Updated Dependencies
+
+- Updated **convert** to **v0.7.19**
+- Updated **fs** to **v0.33.89**
+- Updated **path** to **v0.29.15**
+- Updated **types** to **v0.12.16**
+
 ## [0.12.114](https://github.com/storm-software/stryke/releases/tag/capnp%400.12.114) (06/25/2026)
 
 ### Miscellaneous
