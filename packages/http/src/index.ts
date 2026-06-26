@@ -16,11 +16,6 @@
 
  ------------------------------------------------------------------- */
 
-export * from "./agent";
 export * from "./fetch";
 export * from "./format-data-uri";
 export * from "./get-free-port";
-export * from "./http-proxy";
-export * from "./https-proxy";
-export * from "./parse-response";
-export * from "./proxy-agent";

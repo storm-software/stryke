@@ -43,9 +43,9 @@ export interface BufferConversionsInterface {
  *
  *  @example
  * ```typescript
- * import { makeDataUriToBuffer } from "@stryke/core/http";
+ * import { convertDataURIToBuffer } from "@stryke/http";
  *
- * const dataUriToBuffer = makeDataUriToBuffer({
+ * const dataUriToBuffer = convertDataURIToBuffer({
  *   base64ToArrayBuffer: (base64) => Buffer.from(base64, "base64").buffer,
  *   stringToBuffer: (str) => Buffer.from(str, "utf8")https://avatars.githubusercontent.com/u/99053093?s=64&v=4.buffer,
  * });
@@ -65,7 +65,7 @@ export interface BufferConversionsInterface {
  * @returns An object containing the parsed data URI properties and the decoded data as a Buffer instance.
  * @throws `TypeError` if `uri` is not a valid Data URI
  */
-export const makeDataUriToBuffer =
+export const convertDataURIToBuffer =
   (convert: BufferConversionsInterface) =>
   (uri: string | URL): ParsedDataURI => {
     uri = String(uri);

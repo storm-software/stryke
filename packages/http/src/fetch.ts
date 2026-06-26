@@ -22,8 +22,7 @@ import { defu } from "defu";
 import { contentType } from "mime-types";
 import { parseFilename } from "ufo";
 import type { RequestInfo, RequestInit } from "undici";
-import { fetch as undiciFetch } from "undici";
-import { getProxyAgent } from "./proxy-agent";
+import { fetch as undici } from "undici";
 
 export type FetchRequestOptions = RequestInit & {
   /**
@@ -52,6 +51,9 @@ export type FetchRequestOptions = RequestInit & {
    */
   retryOn?: (error: any, attempt: number) => boolean;
 };
+
+export const DEFAULT_USER_AGENT =
+  "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/104.0.0.0 Safari/537.36";
 
 /**
  * Fetches a resource from a URL.
@@ -88,19 +90,14 @@ export async function fetchRequest(
     const timeoutId = setTimeout(() => abort.abort(), timeout);
 
     try {
-      const response = await undiciFetch(
+      const response = await undici(
         input,
         defu(
           requestOptions,
           {
-            agent: getProxyAgent(),
             signal: abort.signal,
             headers: {
-              // The file format is based off of the user agent, make sure woff2 files are fetched
-              "User-Agent":
-                "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) " +
-                "AppleWebKit/537.36 (KHTML, like Gecko) " +
-                "Chrome/104.0.0.0 Safari/537.36"
+              "User-Agent": DEFAULT_USER_AGENT
             }
           },
           type
