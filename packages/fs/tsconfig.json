@@ -4,6 +4,6 @@
     "types": ["node", "tinyexec"],
     "outDir": "../../dist/out-tsc"
   },
-  "include": ["src/**/*.ts"],
+  "include": ["src/**/*.ts", "tsdown.config.ts"],
   "exclude": ["vitest.config.ts", "src/**/*.spec.ts", "src/**/*.test.ts"]
 }

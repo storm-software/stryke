@@ -118,7 +118,7 @@ export function defineTSDownConfig(options: TSDownOptions | TSDownOptions[]) {
             console.log(` ✔ ${option.name} build completed successfully!`);
           },
           ...option,
-          entry: updateEntry(option.entry ?? "!src/*.test.{ts,tsx}")
+          entry: updateEntry(option.entry ?? "src/*.{ts,tsx}")
         }))
       )
     : defineConfig({
@@ -127,7 +127,7 @@ export function defineTSDownConfig(options: TSDownOptions | TSDownOptions[]) {
           console.log(` ✔ ${options.name} build completed successfully!`);
         },
         ...options,
-        entry: updateEntry(options.entry ?? "!src/*.test.{ts,tsx}")
+        entry: updateEntry(options.entry ?? "src/*.{ts,tsx}")
       });
 }
 

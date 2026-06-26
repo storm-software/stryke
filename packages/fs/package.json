@@ -128,7 +128,6 @@
     "chalk": "catalog:",
     "defu": "catalog:",
     "glob": "catalog:",
-    "mlly": "catalog:",
     "nanotar": "catalog:",
     "semver": "catalog:",
     "smol-toml": "catalog:",
@@ -138,6 +137,7 @@
   "devDependencies": {
     "@types/node": "catalog:",
     "@types/semver": "catalog:",
+    "mlly": "catalog:",
     "tsdown": "catalog:"
   },
   "publishConfig": {
