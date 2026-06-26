@@ -2,6 +2,22 @@
 
 # Changelog for Stryke - Fs
 
+## [0.33.90](https://github.com/storm-software/stryke/releases/tag/fs%400.33.90) (06/26/2026)
+
+### Bug Fixes
+
+- **fs:** Ensure `mlly` patch is bundled with package ([c5133970](https://github.com/storm-software/stryke/commit/c5133970))
+
+### Updated Dependencies
+
+- Updated **convert** to **v0.7.20**
+- Updated **helpers** to **v0.10.29**
+- Updated **json** to **v0.15.13**
+- Updated **path** to **v0.29.16**
+- Updated **string-format** to **v0.17.31**
+- Updated **type-checks** to **v0.6.22**
+- Updated **types** to **v0.12.17**
+
 ## [0.33.89](https://github.com/storm-software/stryke/releases/tag/fs%400.33.89) (06/25/2026)
 
 ### Features

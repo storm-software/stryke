@@ -2,6 +2,16 @@
 
 # Changelog for Stryke - Types
 
+## [0.12.17](https://github.com/storm-software/stryke/releases/tag/types%400.12.17) (06/26/2026)
+
+### Miscellaneous
+
+- **monorepo:** Run linter fixes on workspace source code ([8287f55c](https://github.com/storm-software/stryke/commit/8287f55c))
+
+### Features
+
+- **types:** Added `FileSystemInterface` and `fs` module ([43c52cc7](https://github.com/storm-software/stryke/commit/43c52cc7))
+
 ## [0.12.16](https://github.com/storm-software/stryke/releases/tag/types%400.12.16) (06/25/2026)
 
 ### Features
