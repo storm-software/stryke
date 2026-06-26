@@ -31,6 +31,7 @@ import { parse as parseToml } from "smol-toml";
 import { parseFilename } from "ufo";
 import { parse as parseYaml } from "yaml";
 import { resolve } from "./resolve";
+import { isURLReference } from "./type-checks";
 import type { InferLoadOptions, LoadInput } from "./types";
 
 /**
@@ -77,18 +78,20 @@ export async function load<TResult>(
 
   let resolved: any;
   try {
-    const filename = joinPaths(
-      options?.cwd ?? process.cwd(),
-      (isValidURL(fileReference.file)
-        ? parseFilename(fileReference.file)
-        : findFileName(
-            fileReference.file.includes(":")
-              ? fileReference.file.slice(
-                  fileReference.file.lastIndexOf(":") + 1
-                )
-              : fileReference.file
-          )) || "module.js"
-    );
+    const filename = isURLReference(fileReference.file)
+      ? joinPaths(
+          options?.cwd ?? process.cwd(),
+          (isValidURL(fileReference.file)
+            ? parseFilename(fileReference.file)
+            : findFileName(
+                fileReference.file.includes(":")
+                  ? fileReference.file.slice(
+                      fileReference.file.lastIndexOf(":") + 1
+                    )
+                  : fileReference.file
+              )) || "module.js"
+        )
+      : fileReference.file;
 
     const jiti = createJiti(options?.cwd ?? process.cwd());
     resolved = await jiti.evalModule(content, {

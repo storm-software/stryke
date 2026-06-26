@@ -18,7 +18,7 @@
 
 import { findFileExtensionSafe } from "@stryke/path/find";
 import { isValidPath } from "@stryke/path/is-valid-path";
-import { isSetString, isString } from "@stryke/type-checks";
+import { isSetString, isString, isURL } from "@stryke/type-checks";
 import type {
   FileReference,
   FileReferenceInput
@@ -27,7 +27,13 @@ import { isValidURL } from "@stryke/url/helpers";
 import { VALID_OBJECT_SOURCE_EXTENSIONS } from "./constants";
 import { extractFilePath } from "./helpers";
 import { GITHUB_REFERENCE_REGEX, GITLAB_REFERENCE_REGEX } from "./regex";
-import type { GitHubReference, GitLabReference, URLReference } from "./types";
+import type {
+  GitHubReference,
+  GitLabReference,
+  LoadInput,
+  ResolveInput,
+  URLReference
+} from "./types";
 
 /**
  * Checks if a given file name has a valid object source file extension.
@@ -116,4 +122,34 @@ export function isFileReferenceString(input: any): input is string {
  */
 export function isFileReferenceInput(input: any): input is FileReferenceInput {
   return isFileReference(input) || isFileReferenceString(input);
+}
+
+/**
+ * Checks if the provided entry is a valid {@link ResolveInput}.
+ *
+ * @remarks
+ * A {@link ResolveInput} can be either a file reference string, a URL reference, or a valid URL.
+ *
+ * @param input - The input to check.
+ * @returns `true` if the input is a valid {@link ResolveInput}, otherwise `false`.
+ */
+export function isResolveInput(input: any): input is ResolveInput {
+  return (
+    (isSetString(input) && isValidPath(input)) ||
+    isURLReference(input) ||
+    isURL(input)
+  );
+}
+
+/**
+ * Checks if the provided entry is a valid {@link LoadInput}.
+ *
+ * @remarks
+ * A {@link LoadInput} can be either a {@link ResolveInput} or a {@link FileReference}.
+ *
+ * @param input - The input to check.
+ * @returns `true` if the input is a valid {@link LoadInput}, otherwise `false`.
+ */
+export function isLoadInput(input: any): input is LoadInput {
+  return isResolveInput(input) || isFileReference(input);
 }
