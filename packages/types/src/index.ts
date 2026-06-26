@@ -31,6 +31,7 @@ export * from "./base";
 export * from "./configuration";
 export * from "./file";
 export * from "./form";
+export * from "./fs";
 export * from "./json";
 export * from "./logic";
 export * from "./messages";

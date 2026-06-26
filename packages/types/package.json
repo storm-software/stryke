@@ -75,6 +75,10 @@
       "import": "./dist/form.mjs",
       "require": "./dist/form.cjs"
     },
+    "./fs": {
+      "import": "./dist/fs.mjs",
+      "require": "./dist/fs.cjs"
+    },
     "./json": {
       "import": "./dist/json.mjs",
       "require": "./dist/json.cjs"

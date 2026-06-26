@@ -62,8 +62,12 @@ TEAMFOUNDATIONCOLLECTIONURI
 TDDIUM
 eciesjs
 fdir
+statfs
 
 # Names
 Dodds
 Reardon
 smol
+
+# Node.js fs
+statfs
