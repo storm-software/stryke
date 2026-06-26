@@ -2,6 +2,18 @@
 
 # Changelog for Stryke - Fs
 
+## [0.33.92](https://github.com/storm-software/stryke/releases/tag/fs%400.33.92) (06/26/2026)
+
+### Updated Dependencies
+
+- Updated **convert** to **v0.7.22**
+- Updated **helpers** to **v0.10.31**
+- Updated **json** to **v0.15.15**
+- Updated **path** to **v0.29.18**
+- Updated **string-format** to **v0.17.33**
+- Updated **type-checks** to **v0.6.24**
+- Updated **types** to **v0.12.19**
+
 ## [0.33.91](https://github.com/storm-software/stryke/releases/tag/fs%400.33.91) (06/26/2026)
 
 ### Updated Dependencies
