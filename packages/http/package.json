@@ -1,6 +1,6 @@
 {
   "name": "@stryke/http",
-  "version": "0.12.80",
+  "version": "0.12.81",
   "private": false,
   "description": "A package containing HTTP communication utilities used by Storm Software.",
   "repository": {
@@ -14,10 +14,6 @@
       "import": "./dist/index.mjs",
       "require": "./dist/index.cjs"
     },
-    "./agent": {
-      "import": "./dist/agent.mjs",
-      "require": "./dist/agent.cjs"
-    },
     "./fetch": {
       "import": "./dist/fetch.mjs",
       "require": "./dist/fetch.cjs"
@@ -29,22 +25,6 @@
     "./get-free-port": {
       "import": "./dist/get-free-port.mjs",
       "require": "./dist/get-free-port.cjs"
-    },
-    "./http-proxy": {
-      "import": "./dist/http-proxy.mjs",
-      "require": "./dist/http-proxy.cjs"
-    },
-    "./https-proxy": {
-      "import": "./dist/https-proxy.mjs",
-      "require": "./dist/https-proxy.cjs"
-    },
-    "./parse-response": {
-      "import": "./dist/parse-response.mjs",
-      "require": "./dist/parse-response.cjs"
-    },
-    "./proxy-agent": {
-      "import": "./dist/proxy-agent.mjs",
-      "require": "./dist/proxy-agent.cjs"
     },
     "./package.json": "./package.json"
   },

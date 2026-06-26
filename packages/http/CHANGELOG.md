@@ -2,6 +2,12 @@
 
 # Changelog for Stryke - HTTP
 
+## [0.12.81](https://github.com/storm-software/stryke/releases/tag/http%400.12.81) (06/26/2026)
+
+### Bug Fixes
+
+- **http:** Resolve issue with unused code in package ([8f4cbd11](https://github.com/storm-software/stryke/commit/8f4cbd11))
+
 ## [0.12.80](https://github.com/storm-software/stryke/releases/tag/http%400.12.80) (06/26/2026)
 
 ### Updated Dependencies
