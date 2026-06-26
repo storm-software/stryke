@@ -158,6 +158,7 @@ overrides:
   "@stryke/json": "workspace:*"
   "@stryke/open-browser": "workspace:*"
   "@stryke/path": "workspace:*"
+  "@stryke/date": "workspace:*"
   "@stryke/resolve": "workspace:*"
   "@stryke/prisma-better-auth-generator": "workspace:*"
   "@stryke/prisma-trpc-generator": "workspace:*"
