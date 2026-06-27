@@ -2,6 +2,23 @@
 
 # Changelog for Stryke - Resolve
 
+## [0.0.7](https://github.com/storm-software/stryke/releases/tag/resolve%400.0.7) (06/26/2026)
+
+### Features
+
+- **resolve:** Added `isResolveInput` and `isLoadInput` helper functions ([69eb77f7](https://github.com/storm-software/stryke/commit/69eb77f7))
+
+### Updated Dependencies
+
+- Updated **convert** to **v0.7.22**
+- Updated **fs** to **v0.33.92**
+- Updated **helpers** to **v0.10.31**
+- Updated **http** to **v0.12.82**
+- Updated **path** to **v0.29.18**
+- Updated **type-checks** to **v0.6.24**
+- Updated **types** to **v0.12.19**
+- Updated **url** to **v0.4.42**
+
 ## [0.0.6](https://github.com/storm-software/stryke/releases/tag/resolve%400.0.6) (06/26/2026)
 
 ### Updated Dependencies
