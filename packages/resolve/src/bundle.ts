@@ -16,12 +16,14 @@
 
  ------------------------------------------------------------------- */
 
+import { resolve as resolveFilePath } from "@stryke/fs/resolve";
 import { omit } from "@stryke/helpers/omit";
 import { findFileExtensionSafe } from "@stryke/path/find";
 import { isRelativePath } from "@stryke/path/is-type";
 import { joinPaths } from "@stryke/path/join-paths";
 import { isURL } from "@stryke/type-checks/is-url";
 import { isURLString, isValidURL } from "@stryke/url/helpers";
+import defu from "defu";
 import type { Loader, OutputFile, Plugin } from "esbuild";
 import { build } from "esbuild";
 import { extractGitHubReference, extractGitLabReference } from "./helpers";
@@ -32,12 +34,39 @@ import type { BundleOptions, ResolveInput } from "./types";
 export function plugin(
   options: BundleOptions & { originalInput: ResolveInput }
 ): Plugin {
+  const isLocalFile =
+    !isURL(options.originalInput) &&
+    !isURLString(options.originalInput) &&
+    !isGitHubReference(options.originalInput) &&
+    !isGitLabReference(options.originalInput);
+
   return {
-    name: "stryke:bundle",
+    name: "stryke",
     setup(build) {
       build.onResolve({ filter: /.*/ }, async args => {
         let path = args.path;
-        if (isRelativePath(path)) {
+        if (isLocalFile) {
+          path = await resolveFilePath(
+            path,
+            defu(
+              options.fs
+                ? {
+                    ...options.fs,
+                    stat: options.fs.statAsync,
+                    realpath: options.fs.realpathAsync,
+                    readFile: options.fs.readFileAsync
+                  }
+                : {},
+              {
+                paths: [options.cwd, args.resolveDir, args.importer].filter(
+                  Boolean
+                ) as string[],
+                extensions: options.resolveExtensions,
+                conditions: options.conditions
+              }
+            )
+          );
+        } else if (isRelativePath(path)) {
           if (
             isURL(options.originalInput) ||
             isURLString(options.originalInput)
@@ -71,22 +100,27 @@ export function plugin(
 
             path = `gitlab:${owner}/${repo}/${joinPaths(directory, path)}@${branch}`;
           }
+        } else {
+          return;
         }
 
-        return { path, namespace: "stryke-bundle" };
+        return { path, namespace: !options.fs ? "stryke" : undefined };
       });
 
-      build.onLoad({ filter: /.*/, namespace: "stryke-bundle" }, async args => {
-        const contents = await resolve(args.path, {
-          ...options,
-          skipBundle: true
-        });
+      build.onLoad(
+        { filter: /.*/, namespace: !options.fs ? "stryke" : undefined },
+        async args => {
+          const contents = await resolve(args.path, {
+            ...options,
+            skipBundle: true
+          });
 
-        return {
-          contents,
-          loader: (findFileExtensionSafe(args.path) || "ts") as Loader
-        };
-      });
+          return {
+            contents,
+            loader: (findFileExtensionSafe(args.path) || "ts") as Loader
+          };
+        }
+      );
     }
   };
 }
@@ -111,7 +145,7 @@ export async function bundle(
   const result = await build({
     platform: "node",
     format: "esm",
-    ...omit(options, ["cwd", "originalInput"]),
+    ...omit(options, ["cwd", "fs", "originalInput"]),
     logLevel: "silent",
     stdin: {
       contents

@@ -126,7 +126,13 @@
     "storm-capnpc-cjs": "bin/capnpc.cjs",
     "storm-capnpc-esm": "bin/capnpc.mjs"
   },
-  "files": ["bin", "dist", "dts", "schemas", "vendor"],
+  "files": [
+    "bin",
+    "dist",
+    "dts",
+    "schemas",
+    "vendor"
+  ],
   "dependencies": {
     "@stryke/fs": "workspace:*",
     "@stryke/path": "workspace:*",

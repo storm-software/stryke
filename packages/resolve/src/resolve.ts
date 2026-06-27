@@ -24,6 +24,7 @@ import { isValidPath } from "@stryke/path/is-valid-path";
 import { isSetString } from "@stryke/type-checks/is-set-string";
 import { isURL } from "@stryke/type-checks/is-url";
 import { isURLString, isValidURL } from "@stryke/url/helpers";
+import { defu } from "defu";
 import { readFile } from "node:fs/promises";
 import { parseFilename } from "ufo";
 import { bundle } from "./bundle";
@@ -171,9 +172,32 @@ export async function resolveFilePath(
     );
   }
 
-  const path = await resolveFile(input, options);
+  const path = await resolveFile(
+    input,
+    defu(
+      options.fs
+        ? {
+            ...options.fs,
+            stat: options.fs.statAsync,
+            realpath: options.fs.realpathAsync,
+            readFile: options.fs.readFileAsync
+          }
+        : {},
+      options.cwd
+        ? {
+            paths: [options.cwd]
+          }
+        : {},
+      {
+        extensions: options.resolveExtensions,
+        conditions: options.conditions
+      }
+    )
+  );
 
-  return readFile(path, { encoding: "utf8" });
+  return (await (options.fs?.readFileAsync
+    ? options.fs.readFileAsync(path, "utf8")
+    : readFile(path, "utf8"))) as string;
 }
 
 /**
