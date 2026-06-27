@@ -2,6 +2,22 @@
 
 # Changelog for Stryke - Fs
 
+## [0.33.94](https://github.com/storm-software/stryke/releases/tag/fs%400.33.94) (06/27/2026)
+
+### Bug Fixes
+
+- **types:** Update `FileSystemInterface` structure to mimic "node:fs" ([3e85d1d9](https://github.com/storm-software/stryke/commit/3e85d1d9))
+
+### Updated Dependencies
+
+- Updated **convert** to **v0.7.24**
+- Updated **helpers** to **v0.10.33**
+- Updated **json** to **v0.15.17**
+- Updated **path** to **v0.29.20**
+- Updated **string-format** to **v0.17.35**
+- Updated **type-checks** to **v0.6.26**
+- Updated **types** to **v0.12.21**
+
 ## [0.33.93](https://github.com/storm-software/stryke/releases/tag/fs%400.33.93) (06/27/2026)
 
 ### Updated Dependencies

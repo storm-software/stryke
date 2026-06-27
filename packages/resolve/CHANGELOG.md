@@ -2,6 +2,23 @@
 
 # Changelog for Stryke - Resolve
 
+## [0.0.9](https://github.com/storm-software/stryke/releases/tag/resolve%400.0.9) (06/27/2026)
+
+### Bug Fixes
+
+- **types:** Update `FileSystemInterface` structure to mimic "node:fs" ([3e85d1d9](https://github.com/storm-software/stryke/commit/3e85d1d9))
+
+### Updated Dependencies
+
+- Updated **convert** to **v0.7.24**
+- Updated **fs** to **v0.33.94**
+- Updated **helpers** to **v0.10.33**
+- Updated **http** to **v0.12.84**
+- Updated **path** to **v0.29.20**
+- Updated **type-checks** to **v0.6.26**
+- Updated **types** to **v0.12.21**
+- Updated **url** to **v0.4.44**
+
 ## [0.0.8](https://github.com/storm-software/stryke/releases/tag/resolve%400.0.8) (06/27/2026)
 
 ### Bug Fixes

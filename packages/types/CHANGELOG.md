@@ -2,6 +2,12 @@
 
 # Changelog for Stryke - Types
 
+## [0.12.21](https://github.com/storm-software/stryke/releases/tag/types%400.12.21) (06/27/2026)
+
+### Bug Fixes
+
+- **types:** Update `FileSystemInterface` structure to mimic "node:fs" ([3e85d1d9](https://github.com/storm-software/stryke/commit/3e85d1d9))
+
 ## [0.12.20](https://github.com/storm-software/stryke/releases/tag/types%400.12.20) (06/27/2026)
 
 ### Bug Fixes
