@@ -18,7 +18,7 @@
 
 import type { DeepPartial } from "@stryke/types/base";
 import type { FileReference } from "@stryke/types/configuration";
-import type { FileSystemInterface } from "@stryke/types/fs";
+import type { FileSystemInterfaceOptions } from "@stryke/types/fs";
 import type { URLString } from "@stryke/url/types";
 import type { BuildOptions } from "esbuild";
 
@@ -139,7 +139,7 @@ export type BundleOptions = DeepPartial<
    * @remarks
    * If provided, this custom file system interface will be used for resolving file references instead of the default Node.js file system. This can be useful for testing or when working with virtual file systems.
    */
-  fs?: Partial<FileSystemInterface>;
+  fs?: FileSystemInterfaceOptions;
 };
 
 export type FilePathResolveOptions = BaseResolveOptions;

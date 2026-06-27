@@ -175,14 +175,7 @@ export async function resolveFilePath(
   const path = await resolveFile(
     input,
     defu(
-      options.fs
-        ? {
-            ...options.fs,
-            stat: options.fs.statAsync,
-            realpath: options.fs.realpathAsync,
-            readFile: options.fs.readFileAsync
-          }
-        : {},
+      options.fs ?? {},
       options.cwd
         ? {
             paths: [options.cwd]
@@ -195,9 +188,9 @@ export async function resolveFilePath(
     )
   );
 
-  return (await (options.fs?.readFileAsync
-    ? options.fs.readFileAsync(path, "utf8")
-    : readFile(path, "utf8"))) as string;
+  return options.fs?.promises?.readFile
+    ? options.fs.promises.readFile(path, "utf8")
+    : readFile(path, "utf8");
 }
 
 /**

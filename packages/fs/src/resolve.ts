@@ -28,7 +28,7 @@ import {
 } from "@stryke/path/file-path-fns";
 import { isAbsolutePath, isNpmScopedPackage } from "@stryke/path/is-type";
 import { joinPaths } from "@stryke/path/join-paths";
-import type { ResolveFileSystem } from "mlly";
+import type { FileSystemInterfaceOptions } from "@stryke/types/fs";
 import { interopDefault, resolvePath, resolvePathSync } from "mlly";
 import { existsSync } from "./exists";
 import { getWorkspaceRoot } from "./get-workspace-root";
@@ -75,7 +75,15 @@ export interface ResolveOptions {
    * @remarks
    * Any method that is not provided falls back to the corresponding Node.js `fs` implementation. This can be used to resolve modules against an in-memory or virtual file system.
    */
-  fs?: ResolveFileSystem;
+  fs?: Pick<
+    FileSystemInterfaceOptions,
+    "statSync" | "realpathSync" | "readFileSync"
+  > & {
+    promises?: Pick<
+      NonNullable<FileSystemInterfaceOptions["promises"]>,
+      "stat" | "realpath" | "readFile"
+    >;
+  };
 }
 
 /**
@@ -241,6 +249,15 @@ export async function resolve(
       extensions: options.extensions ?? DEFAULT_EXTENSIONS,
       conditions: options.conditions,
       fs: options.fs
+        ? {
+            statSync: options.fs.statSync,
+            realpathSync: options.fs.realpathSync,
+            readFileSync: options.fs.readFileSync,
+            stat: options.fs.promises?.stat,
+            realpath: options.fs.promises?.realpath,
+            readFile: options.fs.promises?.readFile
+          }
+        : undefined
     });
   } catch (err) {
     error = err as Error;
@@ -298,6 +315,15 @@ export function resolveSync(path: string, options: ResolveOptions = {}) {
       extensions: options.extensions ?? DEFAULT_EXTENSIONS,
       conditions: options.conditions,
       fs: options.fs
+        ? {
+            statSync: options.fs.statSync,
+            realpathSync: options.fs.realpathSync,
+            readFileSync: options.fs.readFileSync,
+            stat: options.fs.promises?.stat,
+            realpath: options.fs.promises?.realpath,
+            readFile: options.fs.promises?.readFile
+          }
+        : undefined
     });
   } catch (err) {
     error = err as Error;

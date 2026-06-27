@@ -16,60 +16,8 @@
 
  ------------------------------------------------------------------- */
 
-import type { Abortable } from "node:events";
-import type {
-  BigIntStats,
-  BigIntStatsFs,
-  BigIntStatsListener,
-  BufferEncodingOption,
-  CopyOptions,
-  CopySyncOptions,
-  Dir,
-  Dirent,
-  EncodingOption,
-  FSWatcher,
-  GlobOptions,
-  GlobOptionsWithFileTypes,
-  GlobOptionsWithoutFileTypes,
-  MakeDirectoryOptions,
-  Mode,
-  NoParamCallback,
-  ObjectEncodingOptions,
-  OpenAsBlobOptions,
-  OpenDirOptions,
-  OpenMode,
-  PathLike,
-  PathOrFileDescriptor,
-  ReadOptions,
-  ReadOptionsWithBuffer,
-  ReadPosition,
-  ReadStream,
-  RmDirOptions,
-  RmOptions,
-  StatFsOptions,
-  StatOptions,
-  StatSyncOptions,
-  StatWatcher,
-  Stats,
-  StatsFs,
-  StatsListener,
-  TimeLike,
-  WatchFileOptions,
-  WatchListener,
-  WatchOptions,
-  WatchOptionsWithBufferEncoding,
-  WatchOptionsWithStringEncoding,
-  WriteFileOptions,
-  WriteOptions,
-  WriteStream
-} from "node:fs";
-import type {
-  DisposableTempDir,
-  FileChangeInfo,
-  FileHandle,
-  FlagAndOpenMode
-} from "node:fs/promises";
-import type { Stream } from "node:stream";
+import type * as fs from "node:fs";
+import type * as promises from "node:fs/promises";
 
 /**
  * An interface describing the exports of the Node.js promise-based [`node:fs/promises`](https://nodejs.org/api/fs.html#promises-api) module.
@@ -85,464 +33,193 @@ export interface PromisesFileSystemInterface {
    *
    * @see https://nodejs.org/api/fs.html#fspromisesaccesspath-mode
    */
-  access: (path: PathLike, mode?: number | undefined) => Promise<void>;
-
+  access: typeof promises.access;
   /**
    * Asynchronously appends data to a file, creating the file if it does not yet exist.
    *
    * @see https://nodejs.org/api/fs.html#fspromisesappendfilepath-data-options
    */
-  appendFile: (
-    path: PathLike | FileHandle,
-    data: string | Uint8Array<ArrayBufferLike>,
-    options?:
-      | (ObjectEncodingOptions &
-          FlagAndOpenMode & {
-            flush?: boolean | undefined;
-          })
-      | BufferEncoding
-      | null
-      | undefined
-  ) => Promise<void>;
-
+  appendFile: typeof promises.appendFile;
   /**
    * Asynchronously changes the permissions of a file.
    *
    * @see https://nodejs.org/api/fs.html#fspromiseschmodpath-mode
    */
-  chmod: (path: PathLike, mode: Mode) => Promise<void>;
-
+  chmod: typeof promises.chmod;
   /**
    * Asynchronously changes owner and group of a file.
    *
    * @see https://nodejs.org/api/fs.html#fspromiseschownpath-uid-gid
    */
-  chown: (path: PathLike, uid: number, gid: number) => Promise<void>;
-
+  chown: typeof promises.chown;
   /**
    * Asynchronously copies `src` to `dest`.
    *
    * @see https://nodejs.org/api/fs.html#fspromisescopyfilesrc-dest-mode
    */
-  copyFile: (
-    src: PathLike,
-    dest: PathLike,
-    mode?: number | undefined
-  ) => Promise<void>;
-
+  copyFile: typeof promises.copyFile;
   /**
    * Asynchronously copies directory structures and files.
    *
    * @see https://nodejs.org/api/fs.html#fspromisescpsrc-dest-options
    */
-  cp: (
-    source: string | URL,
-    destination: string | URL,
-    opts?: CopyOptions | undefined
-  ) => Promise<void>;
-
+  cp: typeof promises.cp;
   /**
    * Asynchronously expands glob patterns and yields matching entries.
    *
    * @see https://nodejs.org/api/fs.html#fspromisesglobpattern-options
    */
-  glob:
-    | ((pattern: string | readonly string[]) => AsyncIterator<string>)
-    | ((
-        pattern: string | readonly string[],
-        options: GlobOptionsWithFileTypes
-      ) => AsyncIterator<Dirent<string>>)
-    | ((
-        pattern: string | readonly string[],
-        options: GlobOptionsWithoutFileTypes
-      ) => AsyncIterator<string>)
-    | ((
-        pattern: string | readonly string[],
-        options: GlobOptions
-      ) => AsyncIterator<string | Dirent<string>>);
-
+  glob: typeof promises.glob;
   /**
    * Changes the permissions on a symbolic link.
    *
    * @see https://nodejs.org/api/fs.html#fspromiseslchmodpath-mode
    */
-  lchmod: (path: PathLike, mode: Mode) => Promise<void>;
-
+  lchmod: typeof promises.lchmod;
   /**
    * Changes owner and group on a symbolic link.
    *
    * @see https://nodejs.org/api/fs.html#fspromiseslchownpath-uid-gid
    */
-  lchown: (path: PathLike, uid: number, gid: number) => Promise<void>;
-
+  lchown: typeof promises.lchown;
   /**
    * Changes access and modification times on a symbolic link.
    *
    * @see https://nodejs.org/api/fs.html#fspromiseslutimespath-atime-mtime
    */
-  lutimes: (path: PathLike, atime: TimeLike, mtime: TimeLike) => Promise<void>;
-
+  lutimes: typeof promises.lutimes;
   /**
    * Creates a new hard link.
    *
    * @see https://nodejs.org/api/fs.html#fspromiseslinkexistingpath-newpath
    */
-  link: (existingPath: PathLike, newPath: PathLike) => Promise<void>;
-
+  link: typeof promises.link;
   /**
    * Retrieves stats for a symbolic link path.
    *
    * @see https://nodejs.org/api/fs.html#fspromiseslstatpath-options
    */
-  lstat:
-    | ((
-        path: PathLike,
-        opts?: (StatOptions & { bigint?: false | undefined }) | undefined
-      ) => Promise<Stats>)
-    | ((
-        path: PathLike,
-        opts: StatOptions & { bigint: true }
-      ) => Promise<BigIntStats>)
-    | ((
-        path: PathLike,
-        opts?: StatOptions | undefined
-      ) => Promise<Stats | BigIntStats>);
-
+  lstat: typeof promises.lstat;
   /**
    * Asynchronously creates a directory.
    *
    * @see https://nodejs.org/api/fs.html#fspromisesmkdirpath-options
    */
-  mkdir:
-    | ((
-        path: PathLike,
-        options: MakeDirectoryOptions & { recursive: true }
-      ) => Promise<string | undefined>)
-    | ((
-        path: PathLike,
-        options?:
-          | Mode
-          | (MakeDirectoryOptions & { recursive?: false | undefined })
-          | null
-          | undefined
-      ) => Promise<void>)
-    | ((
-        path: PathLike,
-        options?: Mode | MakeDirectoryOptions | null | undefined
-      ) => Promise<string | undefined>);
-
+  mkdir: typeof promises.mkdir;
   /**
    * Creates a unique temporary directory.
    *
    * @see https://nodejs.org/api/fs.html#fspromisesmkdtempprefix-options
    */
-  mkdtemp:
-    | ((
-        prefix: string,
-        options?: ObjectEncodingOptions | BufferEncoding | null | undefined
-      ) => Promise<string>)
-    | ((
-        prefix: string,
-        options: BufferEncodingOption
-      ) => Promise<NonSharedBuffer>)
-    | ((
-        prefix: string,
-        options?: ObjectEncodingOptions | BufferEncoding | null | undefined
-      ) => Promise<string | NonSharedBuffer>);
-
+  mkdtemp: typeof promises.mkdtemp;
   /**
    * Creates a unique async-disposable temporary directory.
    *
    * @see https://nodejs.org/api/fs.html#fspromisesmkdtempdisposableprefix-options
    */
-  mkdtempDisposable: (
-    prefix: PathLike,
-    options?: EncodingOption
-  ) => Promise<DisposableTempDir>;
-
+  mkdtempDisposable: typeof promises.mkdtempDisposable;
   /**
    * Opens a file and returns a file handle.
    *
    * @see https://nodejs.org/api/fs.html#fspromisesopenpath-flags-mode
    */
-  open: (
-    path: PathLike,
-    flags?: string | number | undefined,
-    mode?: Mode | undefined
-  ) => Promise<FileHandle>;
-
+  open: typeof promises.open;
   /**
    * Opens a directory for async iteration.
    *
    * @see https://nodejs.org/api/fs.html#fspromisesopendirpath-options
    */
-  opendir: (
-    path: PathLike,
-    options?: OpenDirOptions | undefined
-  ) => Promise<Dir>;
-
+  opendir: typeof promises.opendir;
   /**
    * Reads directory entries.
    *
    * @see https://nodejs.org/api/fs.html#fspromisesreaddirpath-options
    */
-  readdir:
-    | ((
-        path: PathLike,
-        options?:
-          | BufferEncoding
-          | (ObjectEncodingOptions & {
-              withFileTypes?: false | undefined;
-              recursive?: boolean | undefined;
-            })
-          | null
-          | undefined
-      ) => Promise<string[]>)
-    | ((
-        path: PathLike,
-        options:
-          | "buffer"
-          | {
-              encoding: "buffer";
-              withFileTypes?: false | undefined;
-              recursive?: boolean | undefined;
-            }
-      ) => Promise<NonSharedBuffer[]>)
-    | ((
-        path: PathLike,
-        options?:
-          | BufferEncoding
-          | (ObjectEncodingOptions & {
-              withFileTypes?: false | undefined;
-              recursive?: boolean | undefined;
-            })
-          | null
-          | undefined
-      ) => Promise<string[] | NonSharedBuffer[]>)
-    | ((
-        path: PathLike,
-        options: ObjectEncodingOptions & {
-          withFileTypes: true;
-          recursive?: boolean | undefined;
-        }
-      ) => Promise<Dirent<string>[]>)
-    | ((
-        path: PathLike,
-        options: {
-          encoding: "buffer";
-          withFileTypes: true;
-          recursive?: boolean | undefined;
-        }
-      ) => Promise<Dirent<NonSharedBuffer>[]>);
-
+  readdir: typeof promises.readdir;
   /**
    * Reads the entire contents of a file.
    *
    * @see https://nodejs.org/api/fs.html#fspromisesreadfilepath-options
    */
-  readFile:
-    | ((
-        path: PathLike | FileHandle,
-        options?:
-          | ({
-              encoding?: null | undefined;
-              flag?: OpenMode | undefined;
-            } & Abortable)
-          | null
-          | undefined
-      ) => Promise<NonSharedBuffer>)
-    | ((
-        path: PathLike | FileHandle,
-        options:
-          | BufferEncoding
-          | ({
-              encoding: BufferEncoding;
-              flag?: OpenMode | undefined;
-            } & Abortable)
-      ) => Promise<string>)
-    | ((
-        path: PathLike | FileHandle,
-        options?:
-          | BufferEncoding
-          | (ObjectEncodingOptions &
-              Abortable & {
-                flag?: OpenMode | undefined;
-              })
-          | null
-          | undefined
-      ) => Promise<string | NonSharedBuffer>);
-
+  readFile: typeof promises.readFile;
   /**
    * Reads the value of a symbolic link.
    *
    * @see https://nodejs.org/api/fs.html#fspromisesreadlinkpath-options
    */
-  readlink:
-    | ((
-        path: PathLike,
-        options?: ObjectEncodingOptions | BufferEncoding | null | undefined
-      ) => Promise<string>)
-    | ((
-        path: PathLike,
-        options: BufferEncodingOption
-      ) => Promise<NonSharedBuffer>)
-    | ((
-        path: PathLike,
-        options?: string | ObjectEncodingOptions | null | undefined
-      ) => Promise<string | NonSharedBuffer>);
-
+  readlink: typeof promises.readlink;
   /**
    * Resolves a path to its canonical absolute path.
    *
    * @see https://nodejs.org/api/fs.html#fspromisesrealpathpath-options
    */
-  realpath:
-    | ((
-        path: PathLike,
-        options?: ObjectEncodingOptions | BufferEncoding | null | undefined
-      ) => Promise<string>)
-    | ((
-        path: PathLike,
-        options: BufferEncodingOption
-      ) => Promise<NonSharedBuffer>)
-    | ((
-        path: PathLike,
-        options?: ObjectEncodingOptions | BufferEncoding | null | undefined
-      ) => Promise<string | NonSharedBuffer>);
-
+  realpath: typeof promises.realpath;
   /**
    * Renames a file or directory.
    *
    * @see https://nodejs.org/api/fs.html#fspromisesrenameoldpath-newpath
    */
-  rename: (oldPath: PathLike, newPath: PathLike) => Promise<void>;
-
+  rename: typeof promises.rename;
   /**
    * Removes files and directories.
    *
    * @see https://nodejs.org/api/fs.html#fspromisesrmpath-options
    */
-  rm: (path: PathLike, options?: RmOptions | undefined) => Promise<void>;
-
+  rm: typeof promises.rm;
   /**
    * Removes a directory.
    *
    * @see https://nodejs.org/api/fs.html#fspromisesrmdirpath-options
    */
-  rmdir: (path: PathLike, options?: RmDirOptions | undefined) => Promise<void>;
-
+  rmdir: typeof promises.rmdir;
   /**
    * Retrieves stats for a path.
    *
    * @see https://nodejs.org/api/fs.html#fspromisesstatpath-options
    */
-  stat:
-    | ((
-        path: PathLike,
-        opts?: (StatOptions & { bigint?: false | undefined }) | undefined
-      ) => Promise<Stats>)
-    | ((
-        path: PathLike,
-        opts: StatOptions & { bigint: true }
-      ) => Promise<BigIntStats>)
-    | ((
-        path: PathLike,
-        opts?: StatOptions | undefined
-      ) => Promise<Stats | BigIntStats>);
-
+  stat: typeof promises.stat;
   /**
    * Retrieves filesystem stats for a path.
    *
    * @see https://nodejs.org/api/fs.html#fspromisesstatfspath-options
    */
-  statfs:
-    | ((
-        path: PathLike,
-        opts?: (StatFsOptions & { bigint?: false | undefined }) | undefined
-      ) => Promise<StatsFs>)
-    | ((
-        path: PathLike,
-        opts: StatFsOptions & { bigint: true }
-      ) => Promise<BigIntStatsFs>)
-    | ((
-        path: PathLike,
-        opts?: StatFsOptions | undefined
-      ) => Promise<StatsFs | BigIntStatsFs>);
-
+  statfs: typeof promises.statfs;
   /**
    * Creates a symbolic link.
    *
    * @see https://nodejs.org/api/fs.html#fspromisessymlinktarget-path-type
    */
-  symlink: (
-    target: PathLike,
-    path: PathLike,
-    type?: string | null | undefined
-  ) => Promise<void>;
-
+  symlink: typeof promises.symlink;
   /**
    * Truncates a file to the specified length.
    *
    * @see https://nodejs.org/api/fs.html#fspromisestruncatepath-len
    */
-  truncate: (path: PathLike, len?: number | undefined) => Promise<void>;
-
+  truncate: typeof promises.truncate;
   /**
    * Removes a file or symbolic link.
    *
    * @see https://nodejs.org/api/fs.html#fspromisesunlinkpath
    */
-  unlink: (path: PathLike) => Promise<void>;
-
+  unlink: typeof promises.unlink;
   /**
    * Changes access and modification times of a file.
    *
    * @see https://nodejs.org/api/fs.html#fspromisesutimespath-atime-mtime
    */
-  utimes: (path: PathLike, atime: TimeLike, mtime: TimeLike) => Promise<void>;
-
+  utimes: typeof promises.utimes;
   /**
    * Watches for filesystem changes and yields events.
    *
    * @see https://nodejs.org/api/fs.html#fspromiseswatchfilename-options
    */
-  watch:
-    | ((
-        filename: PathLike,
-        options?: BufferEncoding | WatchOptionsWithStringEncoding | undefined
-      ) => AsyncIterator<FileChangeInfo<string>>)
-    | ((
-        filename: PathLike,
-        options: "buffer" | WatchOptionsWithBufferEncoding
-      ) => AsyncIterator<FileChangeInfo<NonSharedBuffer>>)
-    | ((
-        filename: PathLike,
-        options: BufferEncoding | "buffer" | WatchOptions
-      ) => AsyncIterator<FileChangeInfo<string | NonSharedBuffer>>);
-
+  watch: typeof promises.watch;
   /**
    * Asynchronously writes data to a file.
    *
    * @see https://nodejs.org/api/fs.html#fspromiseswritefilefile-data-options
    */
-  writeFile: (
-    file: PathLike | FileHandle,
-    data:
-      | string
-      | ArrayBufferView<ArrayBufferLike>
-      | Iterable<string | ArrayBufferView<ArrayBufferLike>>
-      | AsyncIterable<string | ArrayBufferView<ArrayBufferLike>>
-      | Stream,
-    options?:
-      | BufferEncoding
-      | (ObjectEncodingOptions & {
-          mode?: Mode | undefined;
-          flag?: OpenMode | undefined;
-          flush?: boolean | undefined;
-        } & Abortable)
-      | null
-      | undefined
-  ) => Promise<void>;
+  writeFile: typeof promises.writeFile;
 }
 
 /**
@@ -563,1042 +240,297 @@ export interface BaseFileSystemInterface {
    *
    * @see https://nodejs.org/api/fs.html#fsaccesspath-mode-callback
    */
-  access:
-    | ((
-        path: PathLike,
-        mode: number | undefined,
-        callback: NoParamCallback
-      ) => void)
-    | ((path: PathLike, callback: NoParamCallback) => void);
-
+  access: typeof fs.access;
   /**
    * Asynchronously append data to a file, creating the file if it does not yet exist.
    *
    * @see https://nodejs.org/api/fs.html#fsappendfilepath-data-options-callback
    */
-  appendFile:
-    | ((
-        path: PathOrFileDescriptor,
-        data: string | Uint8Array<ArrayBufferLike>,
-        options: WriteFileOptions,
-        callback: NoParamCallback
-      ) => void)
-    | ((
-        file: PathOrFileDescriptor,
-        data: string | Uint8Array<ArrayBufferLike>,
-        callback: NoParamCallback
-      ) => void);
-
+  appendFile: typeof fs.appendFile;
   /**
    * Asynchronously changes the permissions of a file.
    *
    * @see https://nodejs.org/api/fs.html#fschmodpath-mode-callback
    */
-  chmod: (path: PathLike, mode: Mode, callback: NoParamCallback) => void;
-
+  chmod: typeof fs.chmod;
   /**
    * Asynchronously changes the owner and group of a file.
    *
    * @see https://nodejs.org/api/fs.html#fschownpath-uid-gid-callback
    */
-  chown: (
-    path: PathLike,
-    uid: number,
-    gid: number,
-    callback: NoParamCallback
-  ) => void;
-
+  chown: typeof fs.chown;
   /**
    * Closes the file descriptor.
    *
    * @see https://nodejs.org/api/fs.html#fsclosefd-callback
    */
-  close: (fd: number, callback?: NoParamCallback | undefined) => void;
-
+  close: typeof fs.close;
   /**
    * Asynchronously copies `src` to `dest`, overwriting `dest` by default if it already exists.
    *
    * @see https://nodejs.org/api/fs.html#fscopyfilesrc-dest-mode-callback
    */
-  copyFile:
-    | ((src: PathLike, dest: PathLike, callback: NoParamCallback) => void)
-    | ((
-        src: PathLike,
-        dest: PathLike,
-        mode: number,
-        callback: NoParamCallback
-      ) => void);
-
+  copyFile: typeof fs.copyFile;
   /**
    * Asynchronously copies the entire directory structure from `src` to `dest`, including subdirectories and files.
    *
    * @see https://nodejs.org/api/fs.html#fscpsrc-dest-options-callback
    */
-  cp:
-    | ((
-        source: string | URL,
-        destination: string | URL,
-        callback: (err: NodeJS.ErrnoException | null) => void
-      ) => void)
-    | ((
-        source: string | URL,
-        destination: string | URL,
-        opts: CopyOptions,
-        callback: (err: NodeJS.ErrnoException | null) => void
-      ) => void);
-
+  cp: typeof fs.cp;
   /**
    * Returns a new {@link https://nodejs.org/api/fs.html#class-fsreadstream | `fs.ReadStream`} object.
    *
    * @see https://nodejs.org/api/fs.html#fscreatereadstreampath-options
    */
-  createReadStream: (
-    path: PathLike,
-    options?: BufferEncoding | undefined
-  ) => ReadStream;
-
+  createReadStream: typeof fs.createReadStream;
   /**
    * Returns a new {@link https://nodejs.org/api/fs.html#class-fswritestream | `fs.WriteStream`} object.
    *
    * @see https://nodejs.org/api/fs.html#fscreatewritestreampath-options
    */
-  createWriteStream: (
-    path: PathLike,
-    options?: BufferEncoding | undefined
-  ) => WriteStream;
-
+  createWriteStream: typeof fs.createWriteStream;
   /**
    * Tests whether or not the given path exists by checking with the file system.
    *
    * @deprecated Use {@link FileSystemInterface.access | `access`} or {@link FileSystemInterface.stat | `stat`} instead.
    * @see https://nodejs.org/api/fs.html#fsexistspath-callback
    */
-  exists: (path: PathLike, callback: (exists: boolean) => void) => void;
-
+  exists: typeof fs.exists;
   /**
    * Sets the permissions on the file referenced by the supplied file descriptor.
    *
    * @see https://nodejs.org/api/fs.html#fsfchmodfd-mode-callback
    */
-  fchmod: (fd: number, mode: Mode, callback: NoParamCallback) => void;
-
+  fchmod: typeof fs.fchmod;
   /**
    * Sets the owner of the file referenced by the supplied file descriptor.
    *
    * @see https://nodejs.org/api/fs.html#fsfchownfd-uid-gid-callback
    */
-  fchown: (
-    fd: number,
-    uid: number,
-    gid: number,
-    callback: NoParamCallback
-  ) => void;
-
+  fchown: typeof fs.fchown;
   /**
    * Forces all currently queued I/O operations associated with the file to the operating system's synchronized I/O completion state.
    *
    * @see https://nodejs.org/api/fs.html#fsfdatasyncfd-callback
    */
-  fdatasync: (fd: number, callback: NoParamCallback) => void;
-
+  fdatasync: typeof fs.fdatasync;
   /**
    * Invokes the callback with the {@link https://nodejs.org/api/fs.html#class-fsstats | `fs.Stats`} for the file descriptor.
    *
    * @see https://nodejs.org/api/fs.html#fsfstatfd-options-callback
    */
-  fstat:
-    | ((
-        fd: number,
-        callback: (err: NodeJS.ErrnoException | null, stats: Stats) => void
-      ) => void)
-    | ((
-        fd: number,
-        options: (StatOptions & { bigint?: false | undefined }) | undefined,
-        callback: (err: NodeJS.ErrnoException | null, stats: Stats) => void
-      ) => void)
-    | ((
-        fd: number,
-        options: StatOptions & { bigint: true },
-        callback: (
-          err: NodeJS.ErrnoException | null,
-          stats: BigIntStats
-        ) => void
-      ) => void)
-    | ((
-        fd: number,
-        options: StatOptions | undefined,
-        callback: (
-          err: NodeJS.ErrnoException | null,
-          stats: Stats | BigIntStats
-        ) => void
-      ) => void);
-
+  fstat: typeof fs.fstat;
   /**
    * Requests that all data for the open file descriptor is flushed to the storage device.
    *
    * @see https://nodejs.org/api/fs.html#fsfsyncfd-callback
    */
-  fsync: (fd: number, callback: NoParamCallback) => void;
-
+  fsync: typeof fs.fsync;
   /**
    * Truncates the file descriptor to the supplied length.
    *
    * @see https://nodejs.org/api/fs.html#fsftruncatefd-len-callback
    */
-  ftruncate:
-    | ((fd: number, len: number | undefined, callback: NoParamCallback) => void)
-    | ((fd: number, callback: NoParamCallback) => void);
-
+  ftruncate: typeof fs.ftruncate;
   /**
    * Changes the file system timestamps of the object referenced by the supplied file descriptor.
    *
    * @see https://nodejs.org/api/fs.html#fsfutimesfd-atime-mtime-callback
    */
-  futimes: (
-    fd: number,
-    atime: TimeLike,
-    mtime: TimeLike,
-    callback: NoParamCallback
-  ) => void;
-
+  futimes: typeof fs.futimes;
   /**
    * Retrieves the files matching the specified glob pattern.
    *
    * @see https://nodejs.org/api/fs.html#fsglobpattern-options-callback
    */
-  glob:
-    | ((
-        pattern: string | readonly string[],
-        callback: (err: NodeJS.ErrnoException | null, matches: string[]) => void
-      ) => void)
-    | ((
-        pattern: string | readonly string[],
-        options: GlobOptionsWithFileTypes,
-        callback: (
-          err: NodeJS.ErrnoException | null,
-          matches: Dirent<string>[]
-        ) => void
-      ) => void)
-    | ((
-        pattern: string | readonly string[],
-        options: GlobOptionsWithoutFileTypes,
-        callback: (err: NodeJS.ErrnoException | null, matches: string[]) => void
-      ) => void)
-    | ((
-        pattern: string | readonly string[],
-        options: GlobOptions,
-        callback: (
-          err: NodeJS.ErrnoException | null,
-          matches: string[] | Dirent<string>[]
-        ) => void
-      ) => void);
-
+  glob: typeof fs.glob;
   /**
    * Changes the permissions on a symbolic link.
    *
    * @see https://nodejs.org/api/fs.html#fslchmodpath-mode-callback
    */
-  lchmod: (path: PathLike, mode: Mode, callback: NoParamCallback) => void;
-
+  lchmod: typeof fs.lchmod;
   /**
    * Sets the owner of the symbolic link path.
    *
    * @see https://nodejs.org/api/fs.html#fslchownpath-uid-gid-callback
    */
-  lchown: (
-    path: PathLike,
-    uid: number,
-    gid: number,
-    callback: NoParamCallback
-  ) => void;
-
+  lchown: typeof fs.lchown;
   /**
    * Changes the access and modification times of a symbolic link without dereferencing it.
    *
    * @see https://nodejs.org/api/fs.html#fslutimespath-atime-mtime-callback
    */
-  lutimes: (
-    path: PathLike,
-    atime: TimeLike,
-    mtime: TimeLike,
-    callback: NoParamCallback
-  ) => void;
-
+  lutimes: typeof fs.lutimes;
   /**
    * Creates a new hard link from `existingPath` to `newPath`.
    *
    * @see https://nodejs.org/api/fs.html#fslinkexistingpath-newpath-callback
    */
-  link: (
-    existingPath: PathLike,
-    newPath: PathLike,
-    callback: NoParamCallback
-  ) => void;
-
+  link: typeof fs.link;
   /**
    * Retrieves the {@link https://nodejs.org/api/fs.html#class-fsstats | `fs.Stats`} for the symbolic link referred to by `path`.
    *
    * @see https://nodejs.org/api/fs.html#fslstatpath-options-callback
    */
-  lstat:
-    | ((
-        path: PathLike,
-        callback: (err: NodeJS.ErrnoException | null, stats: Stats) => void
-      ) => void)
-    | ((
-        path: PathLike,
-        options: (StatOptions & { bigint?: false | undefined }) | undefined,
-        callback: (err: NodeJS.ErrnoException | null, stats: Stats) => void
-      ) => void)
-    | ((
-        path: PathLike,
-        options: StatOptions & { bigint: true },
-        callback: (
-          err: NodeJS.ErrnoException | null,
-          stats: BigIntStats
-        ) => void
-      ) => void)
-    | ((
-        path: PathLike,
-        options: StatOptions | undefined,
-        callback: (
-          err: NodeJS.ErrnoException | null,
-          stats: Stats | BigIntStats
-        ) => void
-      ) => void);
-
+  lstat: typeof fs.lstat;
   /**
    * Asynchronously creates a directory.
    *
    * @see https://nodejs.org/api/fs.html#fsmkdirpath-options-callback
    */
-  mkdir:
-    | ((
-        path: PathLike,
-        options: MakeDirectoryOptions & { recursive: true },
-        callback: (
-          err: NodeJS.ErrnoException | null,
-          path?: string | undefined
-        ) => void
-      ) => void)
-    | ((
-        path: PathLike,
-        options:
-          | Mode
-          | (MakeDirectoryOptions & { recursive?: false | undefined })
-          | null
-          | undefined,
-        callback: NoParamCallback
-      ) => void)
-    | ((
-        path: PathLike,
-        options: Mode | MakeDirectoryOptions | null | undefined,
-        callback: (
-          err: NodeJS.ErrnoException | null,
-          path?: string | undefined
-        ) => void
-      ) => void)
-    | ((path: PathLike, callback: NoParamCallback) => void);
-
+  mkdir: typeof fs.mkdir;
   /**
    * Creates a unique temporary directory by appending six random characters to the required `prefix`.
    *
    * @see https://nodejs.org/api/fs.html#fsmkdtempprefix-options-callback
    */
-  mkdtemp:
-    | ((
-        prefix: string,
-        options: EncodingOption,
-        callback: (err: NodeJS.ErrnoException | null, folder: string) => void
-      ) => void)
-    | ((
-        prefix: string,
-        options: BufferEncodingOption,
-        callback: (
-          err: NodeJS.ErrnoException | null,
-          folder: NonSharedBuffer
-        ) => void
-      ) => void)
-    | ((
-        prefix: string,
-        options: EncodingOption,
-        callback: (
-          err: NodeJS.ErrnoException | null,
-          folder: string | NonSharedBuffer
-        ) => void
-      ) => void)
-    | ((
-        prefix: string,
-        callback: (err: NodeJS.ErrnoException | null, folder: string) => void
-      ) => void);
-
+  mkdtemp: typeof fs.mkdtemp;
   /**
    * Asynchronous file open. Creates, opens, or truncates a file.
    *
    * @see https://nodejs.org/api/fs.html#fsopenpath-flags-mode-callback
    */
-  open:
-    | ((
-        path: PathLike,
-        flags: OpenMode | undefined,
-        mode: Mode | null | undefined,
-        callback: (err: NodeJS.ErrnoException | null, fd: number) => void
-      ) => void)
-    | ((
-        path: PathLike,
-        flags: OpenMode | undefined,
-        callback: (err: NodeJS.ErrnoException | null, fd: number) => void
-      ) => void)
-    | ((
-        path: PathLike,
-        callback: (err: NodeJS.ErrnoException | null, fd: number) => void
-      ) => void);
-
+  open: typeof fs.open;
   /**
    * Returns a {@link https://nodejs.org/api/buffer.html#class-blob | `Blob`} whose data is backed by the given file.
    *
    * @see https://nodejs.org/api/fs.html#fsopenasblobpath-options
    */
-  openAsBlob: (
-    path: PathLike,
-    options?: OpenAsBlobOptions | undefined
-  ) => Promise<Blob>;
-
+  openAsBlob: typeof fs.openAsBlob;
   /**
    * Asynchronously opens a directory.
    *
    * @see https://nodejs.org/api/fs.html#fsopendirpath-options-callback
    */
-  opendir:
-    | ((
-        path: PathLike,
-        cb: (err: NodeJS.ErrnoException | null, dir: Dir) => void
-      ) => void)
-    | ((
-        path: PathLike,
-        options: OpenDirOptions,
-        cb: (err: NodeJS.ErrnoException | null, dir: Dir) => void
-      ) => void);
-
+  opendir: typeof fs.opendir;
   /**
    * Reads data from the file specified by the file descriptor `fd`.
    *
    * @see https://nodejs.org/api/fs.html#fsreadfd-buffer-offset-length-position-callback
    */
-  read:
-    | (<TBuffer extends NodeJS.ArrayBufferView>(
-        fd: number,
-        buffer: TBuffer,
-        offset: number,
-        length: number,
-        position: ReadPosition | null,
-        callback: (
-          err: NodeJS.ErrnoException | null,
-          bytesRead: number,
-          buffer: TBuffer
-        ) => void
-      ) => void)
-    | (<TBuffer extends NodeJS.ArrayBufferView = NonSharedBuffer>(
-        fd: number,
-        options: ReadOptionsWithBuffer<TBuffer>,
-        callback: (
-          err: NodeJS.ErrnoException | null,
-          bytesRead: number,
-          buffer: TBuffer
-        ) => void
-      ) => void)
-    | (<TBuffer extends NodeJS.ArrayBufferView>(
-        fd: number,
-        buffer: TBuffer,
-        options: ReadOptions,
-        callback: (
-          err: NodeJS.ErrnoException | null,
-          bytesRead: number,
-          buffer: TBuffer
-        ) => void
-      ) => void)
-    | (<TBuffer extends NodeJS.ArrayBufferView>(
-        fd: number,
-        buffer: TBuffer,
-        callback: (
-          err: NodeJS.ErrnoException | null,
-          bytesRead: number,
-          buffer: TBuffer
-        ) => void
-      ) => void)
-    | ((
-        fd: number,
-        callback: (
-          err: NodeJS.ErrnoException | null,
-          bytesRead: number,
-          buffer: NonSharedBuffer
-        ) => void
-      ) => void);
-
+  read: typeof fs.read;
   /**
    * Reads the contents of a directory.
    *
    * @see https://nodejs.org/api/fs.html#fsreaddirpath-options-callback
    */
-  readdir:
-    | ((
-        path: PathLike,
-        options:
-          | BufferEncoding
-          | {
-              encoding: BufferEncoding | null;
-              withFileTypes?: false | undefined;
-              recursive?: boolean | undefined;
-            }
-          | null
-          | undefined,
-        callback: (err: NodeJS.ErrnoException | null, files: string[]) => void
-      ) => void)
-    | ((
-        path: PathLike,
-        options:
-          | "buffer"
-          | {
-              encoding: "buffer";
-              withFileTypes?: false | undefined;
-              recursive?: boolean | undefined;
-            },
-        callback: (
-          err: NodeJS.ErrnoException | null,
-          files: NonSharedBuffer[]
-        ) => void
-      ) => void)
-    | ((
-        path: PathLike,
-        options:
-          | BufferEncoding
-          | (ObjectEncodingOptions & {
-              withFileTypes?: false | undefined;
-              recursive?: boolean | undefined;
-            })
-          | null
-          | undefined,
-        callback: (
-          err: NodeJS.ErrnoException | null,
-          files: string[] | NonSharedBuffer[]
-        ) => void
-      ) => void)
-    | ((
-        path: PathLike,
-        callback: (err: NodeJS.ErrnoException | null, files: string[]) => void
-      ) => void)
-    | ((
-        path: PathLike,
-        options: ObjectEncodingOptions & {
-          withFileTypes: true;
-          recursive?: boolean | undefined;
-        },
-        callback: (
-          err: NodeJS.ErrnoException | null,
-          files: Dirent<string>[]
-        ) => void
-      ) => void)
-    | ((
-        path: PathLike,
-        options: {
-          encoding: "buffer";
-          withFileTypes: true;
-          recursive?: boolean | undefined;
-        },
-        callback: (
-          err: NodeJS.ErrnoException | null,
-          files: Dirent<NonSharedBuffer>[]
-        ) => void
-      ) => void);
-
+  readdir: typeof fs.readdir;
   /**
    * Asynchronously reads the entire contents of a file.
    *
    * @see https://nodejs.org/api/fs.html#fsreadfilepath-options-callback
    */
-  readFile:
-    | ((
-        path: PathOrFileDescriptor,
-        options:
-          | ({
-              encoding?: null | undefined;
-              flag?: string | undefined;
-            } & Abortable)
-          | null
-          | undefined,
-        callback: (
-          err: NodeJS.ErrnoException | null,
-          data: NonSharedBuffer
-        ) => void
-      ) => void)
-    | ((
-        path: PathOrFileDescriptor,
-        options:
-          | BufferEncoding
-          | ({
-              encoding: BufferEncoding;
-              flag?: string | undefined;
-            } & Abortable),
-        callback: (err: NodeJS.ErrnoException | null, data: string) => void
-      ) => void)
-    | ((
-        path: PathOrFileDescriptor,
-        options:
-          | BufferEncoding
-          | (ObjectEncodingOptions & { flag?: string | undefined } & Abortable)
-          | null
-          | undefined,
-        callback: (
-          err: NodeJS.ErrnoException | null,
-          data: string | NonSharedBuffer
-        ) => void
-      ) => void)
-    | ((
-        path: PathOrFileDescriptor,
-        callback: (
-          err: NodeJS.ErrnoException | null,
-          data: NonSharedBuffer
-        ) => void
-      ) => void);
-
+  readFile: typeof fs.readFile;
   /**
    * Reads the contents of the symbolic link referred to by `path`.
    *
    * @see https://nodejs.org/api/fs.html#fsreadlinkpath-options-callback
    */
-  readlink:
-    | ((
-        path: PathLike,
-        options: EncodingOption,
-        callback: (
-          err: NodeJS.ErrnoException | null,
-          linkString: string
-        ) => void
-      ) => void)
-    | ((
-        path: PathLike,
-        options: BufferEncodingOption,
-        callback: (
-          err: NodeJS.ErrnoException | null,
-          linkString: NonSharedBuffer
-        ) => void
-      ) => void)
-    | ((
-        path: PathLike,
-        options: EncodingOption,
-        callback: (
-          err: NodeJS.ErrnoException | null,
-          linkString: string | NonSharedBuffer
-        ) => void
-      ) => void)
-    | ((
-        path: PathLike,
-        callback: (
-          err: NodeJS.ErrnoException | null,
-          linkString: string
-        ) => void
-      ) => void);
-
+  readlink: typeof fs.readlink;
   /**
    * Reads from a file specified by `fd` and writes to an array of `ArrayBufferView`s.
    *
    * @see https://nodejs.org/api/fs.html#fsreadvfd-buffers-position-callback
    */
-  readv:
-    | (<TBuffers extends readonly NodeJS.ArrayBufferView[]>(
-        fd: number,
-        buffers: TBuffers,
-        cb: (
-          err: NodeJS.ErrnoException | null,
-          bytesRead: number,
-          buffers: TBuffers
-        ) => void
-      ) => void)
-    | (<TBuffers extends readonly NodeJS.ArrayBufferView[]>(
-        fd: number,
-        buffers: TBuffers,
-        position: number | null,
-        cb: (
-          err: NodeJS.ErrnoException | null,
-          bytesRead: number,
-          buffers: TBuffers
-        ) => void
-      ) => void);
-
+  readv: typeof fs.readv;
   /**
    * Asynchronously computes the canonical pathname by resolving `.`, `..`, and symbolic links.
    *
    * @see https://nodejs.org/api/fs.html#fsrealpathpath-options-callback
    */
-  realpath:
-    | ((
-        path: PathLike,
-        options: EncodingOption,
-        callback: (
-          err: NodeJS.ErrnoException | null,
-          resolvedPath: string
-        ) => void
-      ) => void)
-    | ((
-        path: PathLike,
-        options: BufferEncodingOption,
-        callback: (
-          err: NodeJS.ErrnoException | null,
-          resolvedPath: NonSharedBuffer
-        ) => void
-      ) => void)
-    | ((
-        path: PathLike,
-        options: EncodingOption,
-        callback: (
-          err: NodeJS.ErrnoException | null,
-          resolvedPath: string | NonSharedBuffer
-        ) => void
-      ) => void)
-    | ((
-        path: PathLike,
-        callback: (
-          err: NodeJS.ErrnoException | null,
-          resolvedPath: string
-        ) => void
-      ) => void);
-
+  realpath: typeof fs.realpath;
   /**
    * Asynchronously renames the file at `oldPath` to the path provided as `newPath`.
    *
    * @see https://nodejs.org/api/fs.html#fsrenameoldpath-newpath-callback
    */
-  rename: (
-    oldPath: PathLike,
-    newPath: PathLike,
-    callback: NoParamCallback
-  ) => void;
-
+  rename: typeof fs.rename;
   /**
    * Removes the directory identified by `path`.
    *
    * @see https://nodejs.org/api/fs.html#fsrmdirpath-options-callback
    */
-  rmdir:
-    | ((path: PathLike, callback: NoParamCallback) => void)
-    | ((
-        path: PathLike,
-        options: RmDirOptions,
-        callback: NoParamCallback
-      ) => void);
-
+  rmdir: typeof fs.rmdir;
   /**
    * Asynchronously removes files and directories (modeled on the standard POSIX `rm` utility).
    *
    * @see https://nodejs.org/api/fs.html#fsrmpath-options-callback
    */
-  rm:
-    | ((path: PathLike, callback: NoParamCallback) => void)
-    | ((path: PathLike, options: RmOptions, callback: NoParamCallback) => void);
-
+  rm: typeof fs.rm;
   /**
    * Asynchronously retrieves the {@link https://nodejs.org/api/fs.html#class-fsstats | `fs.Stats`} for the supplied `path`.
    *
    * @see https://nodejs.org/api/fs.html#fsstatpath-options-callback
    */
-  stat:
-    | ((
-        path: PathLike,
-        callback: (err: NodeJS.ErrnoException | null, stats: Stats) => void
-      ) => void)
-    | ((
-        path: PathLike,
-        options: (StatOptions & { bigint?: false | undefined }) | undefined,
-        callback: (err: NodeJS.ErrnoException | null, stats: Stats) => void
-      ) => void)
-    | ((
-        path: PathLike,
-        options: StatOptions & { bigint: true },
-        callback: (
-          err: NodeJS.ErrnoException | null,
-          stats: BigIntStats
-        ) => void
-      ) => void)
-    | ((
-        path: PathLike,
-        options: StatOptions | undefined,
-        callback: (
-          err: NodeJS.ErrnoException | null,
-          stats: Stats | BigIntStats
-        ) => void
-      ) => void);
-
+  stat: typeof fs.stat;
   /**
    * Asynchronously retrieves information about the mounted file system which contains `path`.
    *
    * @see https://nodejs.org/api/fs.html#fsstatfspath-options-callback
    */
   // cspell:disable-next-line
-  statfs:
-    | ((
-        path: PathLike,
-        callback: (err: NodeJS.ErrnoException | null, stats: StatsFs) => void
-      ) => void)
-    | ((
-        path: PathLike,
-        options: (StatFsOptions & { bigint?: false | undefined }) | undefined,
-        callback: (err: NodeJS.ErrnoException | null, stats: StatsFs) => void
-      ) => void)
-    | ((
-        path: PathLike,
-        options: StatFsOptions & { bigint: true },
-        callback: (
-          err: NodeJS.ErrnoException | null,
-          stats: BigIntStatsFs
-        ) => void
-      ) => void)
-    | ((
-        path: PathLike,
-        options: StatFsOptions | undefined,
-        callback: (
-          err: NodeJS.ErrnoException | null,
-          stats: StatsFs | BigIntStatsFs
-        ) => void
-      ) => void);
-
+  statfs: typeof fs.statfs;
   /**
    * Creates a symbolic link.
    *
    * @see https://nodejs.org/api/fs.html#fssymlinktarget-path-type-callback
    */
-  symlink:
-    | ((
-        target: PathLike,
-        path: PathLike,
-        type: "dir" | "file" | "junction" | null | undefined,
-        callback: NoParamCallback
-      ) => void)
-    | ((target: PathLike, path: PathLike, callback: NoParamCallback) => void);
-
+  symlink: typeof fs.symlink;
   /**
    * Truncates the file referenced by `path` to the supplied length.
    *
    * @see https://nodejs.org/api/fs.html#fstruncatepath-len-callback
    */
-  truncate:
-    | ((
-        path: PathLike,
-        len: number | undefined,
-        callback: NoParamCallback
-      ) => void)
-    | ((path: PathLike, callback: NoParamCallback) => void);
-
+  truncate: typeof fs.truncate;
   /**
    * Asynchronously removes a file or symbolic link.
    *
    * @see https://nodejs.org/api/fs.html#fsunlinkpath-callback
    */
-  unlink: (path: PathLike, callback: NoParamCallback) => void;
-
+  unlink: typeof fs.unlink;
   /**
    * Stops watching for changes on the supplied `filename`.
    *
    * @see https://nodejs.org/api/fs.html#fsunwatchfilefilename-listener
    */
-  unwatchFile:
-    | ((filename: PathLike, listener?: StatsListener | undefined) => void)
-    | ((
-        filename: PathLike,
-        listener?: BigIntStatsListener | undefined
-      ) => void);
-
+  unwatchFile: typeof fs.unwatchFile;
   /**
    * Changes the file system timestamps of the object referenced by `path`.
    *
    * @see https://nodejs.org/api/fs.html#fsutimespath-atime-mtime-callback
    */
-  utimes: (
-    path: PathLike,
-    atime: TimeLike,
-    mtime: TimeLike,
-    callback: NoParamCallback
-  ) => void;
-
+  utimes: typeof fs.utimes;
   /**
    * Watches for changes on `filename`, where `filename` is either a file or a directory.
    *
    * @see https://nodejs.org/api/fs.html#fswatchfilename-options-listener
    */
-  watch:
-    | ((
-        filename: PathLike,
-        options?:
-          | BufferEncoding
-          | WatchOptionsWithStringEncoding
-          | null
-          | undefined,
-        listener?: WatchListener<string> | undefined
-      ) => FSWatcher)
-    | ((
-        filename: PathLike,
-        options: "buffer" | WatchOptionsWithBufferEncoding,
-        listener: WatchListener<NonSharedBuffer>
-      ) => FSWatcher)
-    | ((
-        filename: PathLike,
-        options: BufferEncoding | "buffer" | WatchOptions | null,
-        listener: WatchListener<string | NonSharedBuffer>
-      ) => FSWatcher)
-    | ((filename: PathLike, listener: WatchListener<string>) => FSWatcher);
-
+  watch: typeof fs.watch;
   /**
    * Watches for changes on `filename` by polling its {@link https://nodejs.org/api/fs.html#class-fsstats | `fs.Stats`}.
    *
    * @see https://nodejs.org/api/fs.html#fswatchfilefilename-options-listener
    */
-  watchFile:
-    | ((
-        filename: PathLike,
-        options:
-          | (WatchFileOptions & { bigint?: false | undefined })
-          | undefined,
-        listener: StatsListener
-      ) => StatWatcher)
-    | ((
-        filename: PathLike,
-        options: (WatchFileOptions & { bigint: true }) | undefined,
-        listener: BigIntStatsListener
-      ) => StatWatcher)
-    | ((filename: PathLike, listener: StatsListener) => StatWatcher);
-
+  watchFile: typeof fs.watchFile;
   /**
    * Writes a buffer or string to the file specified by `fd`.
    *
    * @see https://nodejs.org/api/fs.html#fswritefd-buffer-offset-length-position-callback
    */
-  write:
-    | (<TBuffer extends NodeJS.ArrayBufferView>(
-        fd: number,
-        buffer: TBuffer,
-        offset: number | null | undefined,
-        length: number | null | undefined,
-        position: number | null | undefined,
-        callback: (
-          err: NodeJS.ErrnoException | null,
-          written: number,
-          buffer: TBuffer
-        ) => void
-      ) => void)
-    | (<TBuffer extends NodeJS.ArrayBufferView>(
-        fd: number,
-        buffer: TBuffer,
-        offset: number | null | undefined,
-        length: number | null | undefined,
-        callback: (
-          err: NodeJS.ErrnoException | null,
-          written: number,
-          buffer: TBuffer
-        ) => void
-      ) => void)
-    | (<TBuffer extends NodeJS.ArrayBufferView>(
-        fd: number,
-        buffer: TBuffer,
-        offset: number | null | undefined,
-        callback: (
-          err: NodeJS.ErrnoException | null,
-          written: number,
-          buffer: TBuffer
-        ) => void
-      ) => void)
-    | (<TBuffer extends NodeJS.ArrayBufferView>(
-        fd: number,
-        buffer: TBuffer,
-        callback: (
-          err: NodeJS.ErrnoException | null,
-          written: number,
-          buffer: TBuffer
-        ) => void
-      ) => void)
-    | (<TBuffer extends NodeJS.ArrayBufferView>(
-        fd: number,
-        buffer: TBuffer,
-        options: WriteOptions,
-        callback: (
-          err: NodeJS.ErrnoException | null,
-          written: number,
-          buffer: TBuffer
-        ) => void
-      ) => void)
-    | ((
-        fd: number,
-        string: string,
-        position: number | null | undefined,
-        encoding: BufferEncoding | null | undefined,
-        callback: (
-          err: NodeJS.ErrnoException | null,
-          written: number,
-          str: string
-        ) => void
-      ) => void)
-    | ((
-        fd: number,
-        string: string,
-        position: number | null | undefined,
-        callback: (
-          err: NodeJS.ErrnoException | null,
-          written: number,
-          str: string
-        ) => void
-      ) => void)
-    | ((
-        fd: number,
-        string: string,
-        callback: (
-          err: NodeJS.ErrnoException | null,
-          written: number,
-          str: string
-        ) => void
-      ) => void);
-
+  write: typeof fs.write;
   /**
    * Asynchronously writes data to a file, replacing the file if it already exists.
    *
    * @see https://nodejs.org/api/fs.html#fswritefilefile-data-options-callback
    */
-  writeFile:
-    | ((
-        file: PathOrFileDescriptor,
-        data: string | ArrayBufferView<ArrayBufferLike>,
-        options: WriteFileOptions,
-        callback: NoParamCallback
-      ) => void)
-    | ((
-        path: PathOrFileDescriptor,
-        data: string | ArrayBufferView<ArrayBufferLike>,
-        callback: NoParamCallback
-      ) => void);
-
+  writeFile: typeof fs.writeFile;
   /**
    * Writes an array of `ArrayBufferView`s to the file specified by `fd`.
    *
    * @see https://nodejs.org/api/fs.html#fswritevfd-buffers-position-callback
    */
-  writev:
-    | (<TBuffers extends readonly NodeJS.ArrayBufferView[]>(
-        fd: number,
-        buffers: TBuffers,
-        cb: (
-          err: NodeJS.ErrnoException | null,
-          bytesWritten: number,
-          buffers: TBuffers
-        ) => void
-      ) => void)
-    | (<TBuffers extends readonly NodeJS.ArrayBufferView[]>(
-        fd: number,
-        buffers: TBuffers,
-        position: number | null,
-        cb: (
-          err: NodeJS.ErrnoException | null,
-          bytesWritten: number,
-          buffers: TBuffers
-        ) => void
-      ) => void);
-
+  writev: typeof fs.writev;
   // ---------------------------------------------------------------------------
   // Synchronous API
   // ---------------------------------------------------------------------------
@@ -1608,553 +540,263 @@ export interface BaseFileSystemInterface {
    *
    * @see https://nodejs.org/api/fs.html#fsaccesssyncpath-mode
    */
-  accessSync: (path: PathLike, mode?: number | undefined) => void;
-
+  accessSync: typeof fs.accessSync;
   /**
    * Synchronously append data to a file, creating the file if it does not yet exist.
    *
    * @see https://nodejs.org/api/fs.html#fsappendfilesyncpath-data-options
    */
-  appendFileSync: (
-    path: PathOrFileDescriptor,
-    data: string | Uint8Array<ArrayBufferLike>,
-    options?: WriteFileOptions | undefined
-  ) => void;
-
+  appendFileSync: typeof fs.appendFileSync;
   /**
    * Synchronously changes the permissions of a file.
    *
    * @see https://nodejs.org/api/fs.html#fschmodsyncpath-mode
    */
-  chmodSync: (path: PathLike, mode: Mode) => void;
-
+  chmodSync: typeof fs.chmodSync;
   /**
    * Synchronously changes the owner and group of a file.
    *
    * @see https://nodejs.org/api/fs.html#fschownsyncpath-uid-gid
    */
-  chownSync: (path: PathLike, uid: number, gid: number) => void;
-
+  chownSync: typeof fs.chownSync;
   /**
    * Closes the file descriptor synchronously.
    *
    * @see https://nodejs.org/api/fs.html#fsclosesyncfd
    */
-  closeSync: (fd: number) => void;
-
+  closeSync: typeof fs.closeSync;
   /**
    * Synchronously copies `src` to `dest`, overwriting `dest` by default if it already exists.
    *
    * @see https://nodejs.org/api/fs.html#fscopyfilesyncsrc-dest-mode
    */
-  copyFileSync: (
-    src: PathLike,
-    dest: PathLike,
-    mode?: number | undefined
-  ) => void;
-
+  copyFileSync: typeof fs.copyFileSync;
   /**
    * Synchronously copies the entire directory structure from `src` to `dest`, including subdirectories and files.
    *
    * @see https://nodejs.org/api/fs.html#fscpsyncsrc-dest-options
    */
-  cpSync: (
-    source: string | URL,
-    destination: string | URL,
-    opts?: CopySyncOptions | undefined
-  ) => void;
-
+  cpSync: typeof fs.cpSync;
   /**
    * Returns `true` if the path exists, `false` otherwise.
    *
    * @see https://nodejs.org/api/fs.html#fsexistssyncpath
    */
-  existsSync: (path: PathLike) => boolean;
-
+  existsSync: typeof fs.existsSync;
   /**
    * Synchronously sets the permissions on the file referenced by the supplied file descriptor.
    *
    * @see https://nodejs.org/api/fs.html#fsfchmodsyncfd-mode
    */
-  fchmodSync: (fd: number, mode: Mode) => void;
-
+  fchmodSync: typeof fs.fchmodSync;
   /**
    * Synchronously sets the owner of the file referenced by the supplied file descriptor.
    *
    * @see https://nodejs.org/api/fs.html#fsfchownsyncfd-uid-gid
    */
-  fchownSync: (fd: number, uid: number, gid: number) => void;
-
+  fchownSync: typeof fs.fchownSync;
   /**
    * Synchronously forces all currently queued I/O operations associated with the file to the operating system's synchronized I/O completion state.
    *
    * @see https://nodejs.org/api/fs.html#fsfdatasyncsyncfd
    */
-  fdatasyncSync: (fd: number) => void;
-
+  fdatasyncSync: typeof fs.fdatasyncSync;
   /**
    * Retrieves the {@link https://nodejs.org/api/fs.html#class-fsstats | `fs.Stats`} for the file descriptor.
    *
    * @see https://nodejs.org/api/fs.html#fsfstatsyncfd-options
    */
-  fstatSync:
-    | ((
-        fd: number,
-        options?: (StatOptions & { bigint?: false | undefined }) | undefined
-      ) => Stats)
-    | ((fd: number, options: StatOptions & { bigint: true }) => BigIntStats)
-    | ((fd: number, options?: StatOptions | undefined) => Stats | BigIntStats);
-
+  fstatSync: typeof fs.fstatSync;
   /**
    * Requests that all data for the open file descriptor is flushed to the storage device synchronously.
    *
    * @see https://nodejs.org/api/fs.html#fsfsyncsyncfd
    */
-  fsyncSync: (fd: number) => void;
-
+  fsyncSync: typeof fs.fsyncSync;
   /**
    * Truncates the file descriptor synchronously.
    *
    * @see https://nodejs.org/api/fs.html#fsftruncatesyncfd-len
    */
-  ftruncateSync: (fd: number, len?: number | undefined) => void;
-
+  ftruncateSync: typeof fs.ftruncateSync;
   /**
    * Synchronous version of {@link FileSystemInterface.futimes | `futimes`}.
    *
    * @see https://nodejs.org/api/fs.html#fsfutimessyncfd-atime-mtime
    */
-  futimesSync: (fd: number, atime: TimeLike, mtime: TimeLike) => void;
-
+  futimesSync: typeof fs.futimesSync;
   /**
    * Synchronously retrieves the files matching the specified glob pattern.
    *
    * @see https://nodejs.org/api/fs.html#fsglobsyncpattern-options
    */
-  globSync:
-    | ((pattern: string | readonly string[]) => string[])
-    | ((
-        pattern: string | readonly string[],
-        options: GlobOptionsWithFileTypes
-      ) => Dirent<string>[])
-    | ((
-        pattern: string | readonly string[],
-        options: GlobOptionsWithoutFileTypes
-      ) => string[])
-    | ((
-        pattern: string | readonly string[],
-        options: GlobOptions
-      ) => string[] | Dirent<string>[]);
-
+  globSync: typeof fs.globSync;
   /**
    * Synchronously changes the permissions on a symbolic link.
    *
    * @see https://nodejs.org/api/fs.html#fslchmodsyncpath-mode
    */
-  lchmodSync: (path: PathLike, mode: Mode) => void;
-
+  lchmodSync: typeof fs.lchmodSync;
   /**
    * Synchronously sets the owner of the symbolic link path.
    *
    * @see https://nodejs.org/api/fs.html#fslchownsyncpath-uid-gid
    */
-  lchownSync: (path: PathLike, uid: number, gid: number) => void;
-
+  lchownSync: typeof fs.lchownSync;
   /**
    * Synchronously changes the access and modification times of a symbolic link without dereferencing it.
    *
    * @see https://nodejs.org/api/fs.html#fslutimessyncpath-atime-mtime
    */
-  lutimesSync: (path: PathLike, atime: TimeLike, mtime: TimeLike) => void;
-
+  lutimesSync: typeof fs.lutimesSync;
   /**
    * Creates a new hard link from `existingPath` to `newPath` synchronously.
    *
    * @see https://nodejs.org/api/fs.html#fslinksyncexistingpath-newpath
    */
-  linkSync: (existingPath: PathLike, newPath: PathLike) => void;
-
+  linkSync: typeof fs.linkSync;
   /**
    * Retrieves the {@link https://nodejs.org/api/fs.html#class-fsstats | `fs.Stats`} for the symbolic link referred to by `path`.
    *
    * @see https://nodejs.org/api/fs.html#fslstatsyncpath-options
    */
-  lstatSync:
-    | ((path: PathLike, options?: undefined) => Stats)
-    | ((
-        path: PathLike,
-        options?:
-          | (StatSyncOptions & {
-              bigint?: false | undefined;
-              throwIfNoEntry: false;
-            })
-          | undefined
-      ) => Stats | undefined)
-    | ((
-        path: PathLike,
-        options: StatSyncOptions & { bigint: true; throwIfNoEntry: false }
-      ) => BigIntStats | undefined)
-    | ((
-        path: PathLike,
-        options?: (StatSyncOptions & { bigint?: false | undefined }) | undefined
-      ) => Stats)
-    | ((
-        path: PathLike,
-        options: StatSyncOptions & { bigint: true }
-      ) => BigIntStats)
-    | ((
-        path: PathLike,
-        options: StatSyncOptions & {
-          bigint: boolean;
-          throwIfNoEntry?: false | undefined;
-        }
-      ) => Stats | BigIntStats)
-    | ((
-        path: PathLike,
-        options?: StatSyncOptions | undefined
-      ) => Stats | BigIntStats | undefined);
-
+  lstatSync: typeof fs.lstatSync;
   /**
    * Synchronously creates a directory.
    *
    * @see https://nodejs.org/api/fs.html#fsmkdirsyncpath-options
    */
-  mkdirSync:
-    | ((
-        path: PathLike,
-        options: MakeDirectoryOptions & { recursive: true }
-      ) => string | undefined)
-    | ((
-        path: PathLike,
-        options?:
-          | Mode
-          | (MakeDirectoryOptions & { recursive?: false | undefined })
-          | null
-          | undefined
-      ) => void)
-    | ((
-        path: PathLike,
-        options?: Mode | MakeDirectoryOptions | null | undefined
-      ) => string | undefined);
-
+  mkdirSync: typeof fs.mkdirSync;
   /**
    * Creates a unique temporary directory synchronously, returning the created directory path.
    *
    * @see https://nodejs.org/api/fs.html#fsmkdtempsyncprefix-options
    */
-  mkdtempSync:
-    | ((prefix: string, options?: EncodingOption) => string)
-    | ((prefix: string, options: BufferEncodingOption) => NonSharedBuffer)
-    | ((prefix: string, options?: EncodingOption) => string | NonSharedBuffer);
-
+  mkdtempSync: typeof fs.mkdtempSync;
   /**
    * Synchronously opens a directory.
    *
    * @see https://nodejs.org/api/fs.html#fsopendirsyncpath-options
    */
-  opendirSync: (path: PathLike, options?: OpenDirOptions | undefined) => Dir;
-
+  opendirSync: typeof fs.opendirSync;
   /**
    * Returns an integer representing the file descriptor by opening the file synchronously.
    *
    * @see https://nodejs.org/api/fs.html#fsopensyncpath-flags-mode
    */
-  openSync: (
-    path: PathLike,
-    flags: OpenMode,
-    mode?: Mode | null | undefined
-  ) => number;
-
+  openSync: typeof fs.openSync;
   /**
    * Synchronously reads the contents of a directory.
    *
    * @see https://nodejs.org/api/fs.html#fsreaddirsyncpath-options
    */
-  readdirSync:
-    | ((
-        path: PathLike,
-        options?:
-          | BufferEncoding
-          | {
-              encoding: BufferEncoding | null;
-              withFileTypes?: false | undefined;
-              recursive?: boolean | undefined;
-            }
-          | null
-          | undefined
-      ) => string[])
-    | ((
-        path: PathLike,
-        options:
-          | "buffer"
-          | {
-              encoding: "buffer";
-              withFileTypes?: false | undefined;
-              recursive?: boolean | undefined;
-            }
-      ) => NonSharedBuffer[])
-    | ((
-        path: PathLike,
-        options?:
-          | BufferEncoding
-          | (ObjectEncodingOptions & {
-              withFileTypes?: false | undefined;
-              recursive?: boolean | undefined;
-            })
-          | null
-          | undefined
-      ) => string[] | NonSharedBuffer[])
-    | ((
-        path: PathLike,
-        options: ObjectEncodingOptions & {
-          withFileTypes: true;
-          recursive?: boolean | undefined;
-        }
-      ) => Dirent<string>[])
-    | ((
-        path: PathLike,
-        options: {
-          encoding: "buffer";
-          withFileTypes: true;
-          recursive?: boolean | undefined;
-        }
-      ) => Dirent<NonSharedBuffer>[]);
-
+  readdirSync: typeof fs.readdirSync;
   /**
    * Returns the contents of the `path` synchronously.
    *
    * @see https://nodejs.org/api/fs.html#fsreadfilesyncpath-options
    */
-  readFileSync:
-    | ((
-        path: PathOrFileDescriptor,
-        options?:
-          | { encoding?: null | undefined; flag?: string | undefined }
-          | null
-          | undefined
-      ) => NonSharedBuffer)
-    | ((
-        path: PathOrFileDescriptor,
-        options:
-          | BufferEncoding
-          | { encoding: BufferEncoding; flag?: string | undefined }
-      ) => string)
-    | ((
-        path: PathOrFileDescriptor,
-        options?:
-          | BufferEncoding
-          | (ObjectEncodingOptions & { flag?: string | undefined })
-          | null
-          | undefined
-      ) => string | NonSharedBuffer);
-
+  readFileSync: typeof fs.readFileSync;
   /**
    * Synchronously reads the contents of the symbolic link referred to by `path`.
    *
    * @see https://nodejs.org/api/fs.html#fsreadlinksyncpath-options
    */
-  readlinkSync:
-    | ((path: PathLike, options?: EncodingOption) => string)
-    | ((path: PathLike, options: BufferEncodingOption) => NonSharedBuffer)
-    | ((path: PathLike, options?: EncodingOption) => string | NonSharedBuffer);
-
+  readlinkSync: typeof fs.readlinkSync;
   /**
    * Returns the number of bytes read from the file specified by `fd` synchronously.
    *
    * @see https://nodejs.org/api/fs.html#fsreadsyncfd-buffer-offset-length-position
    */
-  readSync:
-    | ((
-        fd: number,
-        buffer: ArrayBufferView<ArrayBufferLike>,
-        offset: number,
-        length: number,
-        position: ReadPosition | null
-      ) => number)
-    | ((
-        fd: number,
-        buffer: ArrayBufferView<ArrayBufferLike>,
-        opts?: ReadOptions | undefined
-      ) => number);
-
+  readSync: typeof fs.readSync;
   /**
    * Synchronously reads from a file specified by `fd` and writes to an array of `ArrayBufferView`s.
    *
    * @see https://nodejs.org/api/fs.html#fsreadvsyncfd-buffers-position
    */
-  readvSync: (
-    fd: number,
-    buffers: readonly ArrayBufferView<ArrayBufferLike>[],
-    position?: number | undefined
-  ) => number;
-
+  readvSync: typeof fs.readvSync;
   /**
    * Returns the resolved pathname synchronously.
    *
    * @see https://nodejs.org/api/fs.html#fsrealpathsyncpath-options
    */
-  realpathSync:
-    | ((path: PathLike, options?: EncodingOption) => string)
-    | ((path: PathLike, options: BufferEncodingOption) => NonSharedBuffer)
-    | ((path: PathLike, options?: EncodingOption) => string | NonSharedBuffer);
-
+  realpathSync: typeof fs.realpathSync;
   /**
    * Synchronously renames the file at `oldPath` to the path provided as `newPath`.
    *
    * @see https://nodejs.org/api/fs.html#fsrenamesyncoldpath-newpath
    */
-  renameSync: (oldPath: PathLike, newPath: PathLike) => void;
-
+  renameSync: typeof fs.renameSync;
   /**
    * Synchronously removes the directory identified by `path`.
    *
    * @see https://nodejs.org/api/fs.html#fsrmdirsyncpath-options
    */
-  rmdirSync: (path: PathLike, options?: RmDirOptions | undefined) => void;
-
+  rmdirSync: typeof fs.rmdirSync;
   /**
    * Synchronously removes files and directories (modeled on the standard POSIX `rm` utility).
    *
    * @see https://nodejs.org/api/fs.html#fsrmsyncpath-options
    */
-  rmSync: (path: PathLike, options?: RmOptions | undefined) => void;
-
+  rmSync: typeof fs.rmSync;
   /**
    * Synchronously retrieves the {@link https://nodejs.org/api/fs.html#class-fsstats | `fs.Stats`} for the supplied `path`.
    *
    * @see https://nodejs.org/api/fs.html#fsstatsyncpath-options
    */
-  statSync:
-    | ((path: PathLike, options?: undefined) => Stats)
-    | ((
-        path: PathLike,
-        options?:
-          | (StatSyncOptions & {
-              bigint?: false | undefined;
-              throwIfNoEntry: false;
-            })
-          | undefined
-      ) => Stats | undefined)
-    | ((
-        path: PathLike,
-        options: StatSyncOptions & { bigint: true; throwIfNoEntry: false }
-      ) => BigIntStats | undefined)
-    | ((
-        path: PathLike,
-        options?: (StatSyncOptions & { bigint?: false | undefined }) | undefined
-      ) => Stats)
-    | ((
-        path: PathLike,
-        options: StatSyncOptions & { bigint: true }
-      ) => BigIntStats)
-    | ((
-        path: PathLike,
-        options: StatSyncOptions & {
-          bigint: boolean;
-          throwIfNoEntry?: false | undefined;
-        }
-      ) => Stats | BigIntStats)
-    | ((
-        path: PathLike,
-        options?: StatSyncOptions | undefined
-      ) => Stats | BigIntStats | undefined);
-
+  statSync: typeof fs.statSync;
   /**
    * Synchronously retrieves information about the mounted file system which contains `path`.
    *
    * @see https://nodejs.org/api/fs.html#fsstatfssyncpath-options
    */
   // cspell:disable-next-line
-  statfsSync:
-    | ((
-        path: PathLike,
-        options?: (StatFsOptions & { bigint?: false | undefined }) | undefined
-      ) => StatsFs)
-    | ((
-        path: PathLike,
-        options: StatFsOptions & { bigint: true }
-      ) => BigIntStatsFs)
-    | ((
-        path: PathLike,
-        options?: StatFsOptions | undefined
-      ) => StatsFs | BigIntStatsFs);
-
+  statfsSync: typeof fs.statfsSync;
   /**
    * Creates a symbolic link synchronously.
    *
    * @see https://nodejs.org/api/fs.html#fssymlinksynctarget-path-type
    */
-  symlinkSync: (
-    target: PathLike,
-    path: PathLike,
-    type?: "dir" | "file" | "junction" | null | undefined
-  ) => void;
-
+  symlinkSync: typeof fs.symlinkSync;
   /**
    * Truncates the file referenced by `path` to the supplied length synchronously.
    *
    * @see https://nodejs.org/api/fs.html#fstruncatesyncpath-len
    */
-  truncateSync: (path: PathLike, len?: number | undefined) => void;
-
+  truncateSync: typeof fs.truncateSync;
   /**
    * Synchronously removes a file or symbolic link.
    *
    * @see https://nodejs.org/api/fs.html#fsunlinksyncpath
    */
-  unlinkSync: (path: PathLike) => void;
-
+  unlinkSync: typeof fs.unlinkSync;
   /**
    * Synchronously changes the file system timestamps of the object referenced by `path`.
    *
    * @see https://nodejs.org/api/fs.html#fsutimessyncpath-atime-mtime
    */
-  utimesSync: (path: PathLike, atime: TimeLike, mtime: TimeLike) => void;
-
+  utimesSync: typeof fs.utimesSync;
   /**
    * Synchronously writes data to a file, replacing the file if it already exists.
    *
    * @see https://nodejs.org/api/fs.html#fswritefilesyncfile-data-options
    */
-  writeFileSync: (
-    file: PathOrFileDescriptor,
-    data: string | ArrayBufferView<ArrayBufferLike>,
-    options?: WriteFileOptions | undefined
-  ) => void;
-
+  writeFileSync: typeof fs.writeFileSync;
   /**
    * Writes a buffer or string to the file specified by `fd` synchronously, returning the number of bytes written.
    *
    * @see https://nodejs.org/api/fs.html#fswritesyncfd-buffer-offset-length-position
    */
-  writeSync:
-    | ((
-        fd: number,
-        buffer: ArrayBufferView<ArrayBufferLike>,
-        offset?: number | null | undefined,
-        length?: number | null | undefined,
-        position?: number | null | undefined
-      ) => number)
-    | ((
-        fd: number,
-        string: string,
-        position?: number | null | undefined,
-        encoding?: BufferEncoding | null | undefined
-      ) => number);
-
+  writeSync: typeof fs.writeSync;
   /**
    * Writes an array of `ArrayBufferView`s to the file specified by `fd` synchronously.
    *
    * @see https://nodejs.org/api/fs.html#fswritevsyncfd-buffers-position
    */
-  writevSync: (
-    fd: number,
-    buffers: readonly ArrayBufferView<ArrayBufferLike>[],
-    position?: number | undefined
-  ) => number;
+  writevSync: typeof fs.writevSync;
 }
 
-export interface NodejsFileSystemInterface extends BaseFileSystemInterface {
+export interface FileSystemInterface extends BaseFileSystemInterface {
   /**
    * The promise-based file system API, equivalent to the [`node:fs/promises`](https://nodejs.org/api/fs.html#promises-api) module.
    *
@@ -2163,17 +805,11 @@ export interface NodejsFileSystemInterface extends BaseFileSystemInterface {
   promises: PromisesFileSystemInterface;
 }
 
-/**
- * An interface describing the exports of the Node.js [`node:fs`](https://nodejs.org/api/fs.html) and [`node:fs/promises`](https://nodejs.org/api/fs.html#promises-api) modules.
- *
- * @remarks
- * This interface mirrors the shape of the built-in `node:fs` module so that a custom file system implementation (for example, an in-memory, virtual, or remote file system) can be provided anywhere a real file system is expected. Each member is typed against its corresponding `node:fs` export, which preserves all of the original call signatures and overloads. Exports of `node:fs/promises` are available as `Async`-suffixed members of this interface (for example, `readFile` becomes `readFileAsync`).
- *
- * @see https://nodejs.org/api/fs.html
- * @see https://nodejs.org/api/fs.html#promises-api
- */
-export type FileSystemInterface = BaseFileSystemInterface & {
-  [key in keyof PromisesFileSystemInterface as key extends `${string}Async`
-    ? key
-    : `${key}Async`]: PromisesFileSystemInterface[key];
+export type FileSystemInterfaceOptions = Partial<FileSystemInterface> & {
+  /**
+   * The promise-based file system API, equivalent to the [`node:fs/promises`](https://nodejs.org/api/fs.html#promises-api) module.
+   *
+   * @see https://nodejs.org/api/fs.html#promises-api
+   */
+  promises?: Partial<PromisesFileSystemInterface>;
 };

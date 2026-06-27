@@ -48,23 +48,13 @@ export function plugin(
         if (isLocalFile) {
           path = await resolveFilePath(
             path,
-            defu(
-              options.fs
-                ? {
-                    ...options.fs,
-                    stat: options.fs.statAsync,
-                    realpath: options.fs.realpathAsync,
-                    readFile: options.fs.readFileAsync
-                  }
-                : {},
-              {
-                paths: [options.cwd, args.resolveDir, args.importer].filter(
-                  Boolean
-                ) as string[],
-                extensions: options.resolveExtensions,
-                conditions: options.conditions
-              }
-            )
+            defu(options.fs ?? {}, {
+              paths: [options.cwd, args.resolveDir, args.importer].filter(
+                Boolean
+              ) as string[],
+              extensions: options.resolveExtensions,
+              conditions: options.conditions
+            })
           );
         } else if (isRelativePath(path)) {
           if (
