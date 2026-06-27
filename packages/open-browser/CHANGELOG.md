@@ -2,6 +2,12 @@
 
 # Changelog for Stryke - Open Browser
 
+## [0.2.80](https://github.com/storm-software/stryke/releases/tag/open-browser%400.2.80) (06/27/2026)
+
+### Bug Fixes
+
+- **resolve:** Resolve issue with `esbuild` version ([159bf662](https://github.com/storm-software/stryke/commit/159bf662))
+
 ## [0.2.76](https://github.com/storm-software/stryke/releases/tag/open-browser%400.2.76) (06/25/2026)
 
 ### Features

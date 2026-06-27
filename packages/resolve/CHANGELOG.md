@@ -2,6 +2,23 @@
 
 # Changelog for Stryke - Resolve
 
+## [0.0.8](https://github.com/storm-software/stryke/releases/tag/resolve%400.0.8) (06/27/2026)
+
+### Bug Fixes
+
+- **resolve:** Resolve issue with `esbuild` version ([159bf662](https://github.com/storm-software/stryke/commit/159bf662))
+
+### Updated Dependencies
+
+- Updated **convert** to **v0.7.23**
+- Updated **fs** to **v0.33.93**
+- Updated **helpers** to **v0.10.32**
+- Updated **http** to **v0.12.83**
+- Updated **path** to **v0.29.19**
+- Updated **type-checks** to **v0.6.25**
+- Updated **types** to **v0.12.20**
+- Updated **url** to **v0.4.43**
+
 ## [0.0.7](https://github.com/storm-software/stryke/releases/tag/resolve%400.0.7) (06/26/2026)
 
 ### Features

@@ -2,6 +2,19 @@
 
 # Changelog for Stryke - Capnp
 
+## [0.12.119](https://github.com/storm-software/stryke/releases/tag/capnp%400.12.119) (06/27/2026)
+
+### Bug Fixes
+
+- **resolve:** Resolve issue with `esbuild` version ([159bf662](https://github.com/storm-software/stryke/commit/159bf662))
+
+### Updated Dependencies
+
+- Updated **convert** to **v0.7.23**
+- Updated **fs** to **v0.33.93**
+- Updated **path** to **v0.29.19**
+- Updated **types** to **v0.12.20**
+
 ## [0.12.118](https://github.com/storm-software/stryke/releases/tag/capnp%400.12.118) (06/26/2026)
 
 ### Updated Dependencies

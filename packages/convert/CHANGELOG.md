@@ -2,6 +2,13 @@
 
 # Changelog for Stryke - Convert
 
+## [0.7.23](https://github.com/storm-software/stryke/releases/tag/convert%400.7.23) (06/27/2026)
+
+### Updated Dependencies
+
+- Updated **type-checks** to **v0.6.25**
+- Updated **types** to **v0.12.20**
+
 ## [0.7.22](https://github.com/storm-software/stryke/releases/tag/convert%400.7.22) (06/26/2026)
 
 ### Updated Dependencies

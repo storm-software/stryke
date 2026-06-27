@@ -2,6 +2,12 @@
 
 # Changelog for Stryke - Types
 
+## [0.12.20](https://github.com/storm-software/stryke/releases/tag/types%400.12.20) (06/27/2026)
+
+### Bug Fixes
+
+- **resolve:** Resolve issue with `esbuild` version ([159bf662](https://github.com/storm-software/stryke/commit/159bf662))
+
 ## [0.12.17](https://github.com/storm-software/stryke/releases/tag/types%400.12.17) (06/26/2026)
 
 ### Miscellaneous

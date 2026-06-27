@@ -1,6 +1,6 @@
 {
   "name": "@stryke/capnp",
-  "version": "0.12.118",
+  "version": "0.12.119",
   "private": false,
   "description": "A package to assist in running the Cap'n Proto compiler and creating Cap'n Proto serialization protocol schemas.",
   "keywords": [
@@ -126,13 +126,7 @@
     "storm-capnpc-cjs": "bin/capnpc.cjs",
     "storm-capnpc-esm": "bin/capnpc.mjs"
   },
-  "files": [
-    "bin",
-    "dist",
-    "dts",
-    "schemas",
-    "vendor"
-  ],
+  "files": ["bin", "dist", "dts", "schemas", "vendor"],
   "dependencies": {
     "@stryke/fs": "workspace:*",
     "@stryke/path": "workspace:*",

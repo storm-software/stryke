@@ -1,6 +1,6 @@
 {
   "name": "@stryke/http",
-  "version": "0.12.82",
+  "version": "0.12.83",
   "private": false,
   "description": "A package containing HTTP communication utilities used by Storm Software.",
   "repository": {
