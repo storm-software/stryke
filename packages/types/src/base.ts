@@ -25,12 +25,7 @@ import type { TypedArray } from "./array";
  * This includes all primitive types except `symbol`, which cannot be serialized.
  */
 export type SerializablePrimitive =
-  | null
-  | undefined
-  | string
-  | number
-  | boolean
-  | bigint;
+  null | undefined | string | number | boolean | bigint;
 
 /**
  * Matches any primitive JavaScript value.
@@ -653,10 +648,9 @@ export type Except<
   KeysType extends keyof ObjectType,
   Options extends ExceptOptions = { requireExactProps: false }
 > = {
-  [KeyType in keyof ObjectType as Filter<
-    KeyType,
-    KeysType
-  >]: ObjectType[KeyType];
+  [
+    KeyType in keyof ObjectType as Filter<KeyType, KeysType>
+  ]: ObjectType[KeyType];
 } & (Options["requireExactProps"] extends true
   ? Partial<Record<KeysType, never>>
   : Record<string, never>);
@@ -979,14 +973,7 @@ type StructuredCloneablePrimitive =
   | string;
 
 type StructuredCloneableData =
-  | ArrayBuffer
-  | DataView
-  | Date
-  | Error
-  | RegExp
-  | TypedArray
-  | Blob
-  | File;
+  ArrayBuffer | DataView | Date | Error | RegExp | TypedArray | Blob | File;
 
 // DOM exclusive types
 // | AudioData

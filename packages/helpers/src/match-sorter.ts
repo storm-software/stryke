@@ -59,9 +59,7 @@ interface KeyAttributesOptions<ItemType> {
 }
 
 type KeyOption<ItemType> =
-  | KeyAttributesOptions<ItemType>
-  | ValueGetterKey<ItemType>
-  | string;
+  KeyAttributesOptions<ItemType> | ValueGetterKey<ItemType> | string;
 
 interface MatchSorterOptions<ItemType = unknown> {
   keys?: ReadonlyArray<KeyOption<ItemType>>;

@@ -39,7 +39,7 @@ function equal(a: any, b: any) {
       length = a.length;
 
       if (length != b.length) return false;
-      for (let i = length; i-- !== 0; ) if (!equal(a[i], b[i])) return false;
+      for (let i = length; i-- !== 0;) if (!equal(a[i], b[i])) return false;
       return true;
     }
 
@@ -74,7 +74,7 @@ function equal(a: any, b: any) {
       length = a.length;
 
       if (length != b.length) return false;
-      for (let i = length; i-- !== 0; ) if (a[i] !== b[i]) return false;
+      for (let i = length; i-- !== 0;) if (a[i] !== b[i]) return false;
       return true;
     }
 
@@ -105,7 +105,7 @@ function equal(a: any, b: any) {
       return false;
     }
 
-    for (let i = length; i-- !== 0; ) {
+    for (let i = length; i-- !== 0;) {
       if (
         !isSet(i) ||
         !isSetString(keys[i]) ||
@@ -115,7 +115,7 @@ function equal(a: any, b: any) {
       }
     }
 
-    for (let i = length; i-- !== 0; ) {
+    for (let i = length; i-- !== 0;) {
       if (
         Array.isArray(keys) &&
         (keys[i] === "_owner" || keys[i] === "__v" || keys[i] === "__o") &&

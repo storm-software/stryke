@@ -35,12 +35,7 @@ export interface ResolvedCommand {
 }
 
 export type ArgType =
-  | "boolean"
-  | "string"
-  | "number"
-  | "enum"
-  | "positional"
-  | undefined;
+  "boolean" | "string" | "number" | "enum" | "positional" | undefined;
 
 export interface BaseArgDef<
   T extends ArgType,
@@ -68,11 +63,7 @@ export type PositionalArgDef = Omit<
 >;
 
 export type ArgDef =
-  | BooleanArgDef
-  | StringArgDef
-  | NumberArgDef
-  | PositionalArgDef
-  | EnumArgDef;
+  BooleanArgDef | StringArgDef | NumberArgDef | PositionalArgDef | EnumArgDef;
 
 export type ArgsDef = Record<string, ArgDef>;
 

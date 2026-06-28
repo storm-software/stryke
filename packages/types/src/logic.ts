@@ -146,8 +146,7 @@ export type LessThan<A extends number, B extends number> = number extends A | B
     : true;
 
 export type GreaterThan<A extends number, B extends number> = number extends
-  | A
-  | B
+  A | B
   ? never
   : [
         IsEqual<A, PositiveInfinity>,

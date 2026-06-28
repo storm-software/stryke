@@ -18,7 +18,4 @@
 
 export type PackageManager = "npm" | "yarn" | "pnpm" | "bun";
 export type PackageManagerLockFile =
-  | "package-lock.json"
-  | "yarn.lock"
-  | "pnpm-lock.yaml"
-  | "bun.lock";
+  "package-lock.json" | "yarn.lock" | "pnpm-lock.yaml" | "bun.lock";

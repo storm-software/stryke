@@ -62,8 +62,7 @@ export type NegativeInfinity = -1e999;
  * ```
  */
 export type Finite<T extends number> = T extends
-  | PositiveInfinity
-  | NegativeInfinity
+  PositiveInfinity | NegativeInfinity
   ? never
   : T;
 

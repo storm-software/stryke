@@ -135,6 +135,4 @@ export interface StormURLInterface extends URL {
  * A `URLString` is one of the following shapes: a protocol followed by `://` and the remainder of the URL (for example: `"https://example.com"`), a protocol-relative reference starting with `//` (for example: `"//example.com"`), or a protocol followed by an opaque value (for example: `"mailto:example@example.com"`).
  */
 export type URLString =
-  | `${URLProtocol}://${string}`
-  | `//${string}`
-  | `${URLProtocol}:${string}`;
+  `${URLProtocol}://${string}` | `//${string}` | `${URLProtocol}:${string}`;

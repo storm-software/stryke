@@ -23,7 +23,9 @@
   "main": "./dist/index.cjs",
   "module": "./dist/index.mjs",
   "types": "./dist/index.d.cts",
-  "files": ["openChrome.applescript"],
+  "files": [
+    "openChrome.applescript"
+  ],
   "dependencies": {
     "cross-spawn": "catalog:"
   },

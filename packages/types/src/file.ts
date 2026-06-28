@@ -45,10 +45,7 @@ export type FileResult = {
  * A valid `picomatch` glob pattern, or array of patterns.
  */
 export type FilterPattern =
-  | ReadonlyArray<string | RegExp>
-  | string
-  | RegExp
-  | null;
+  ReadonlyArray<string | RegExp> | string | RegExp | null;
 
 export interface FileInputOutput {
   input: string;

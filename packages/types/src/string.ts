@@ -144,16 +144,7 @@ export type UpperCaseCharacters =
   | "Z";
 
 export type StringDigit =
-  | "0"
-  | "1"
-  | "2"
-  | "3"
-  | "4"
-  | "5"
-  | "6"
-  | "7"
-  | "8"
-  | "9";
+  "0" | "1" | "2" | "3" | "4" | "5" | "6" | "7" | "8" | "9";
 
 export type Whitespace =
   | "\u{9}" // '\t'

@@ -50,11 +50,7 @@ export type InnerNode<T> = [T, Record<string, Tree<T>>];
 
 export type PrimitiveTypeAnnotation = "number" | "undefined" | "bigint";
 export type LeafTypeAnnotation =
-  | PrimitiveTypeAnnotation
-  | "regexp"
-  | "Date"
-  | "Error"
-  | "URL";
+  PrimitiveTypeAnnotation | "regexp" | "Date" | "Error" | "URL";
 
 export type TypedArrayAnnotation = ["typed-array", string];
 export type ClassTypeAnnotation = ["class", string];
@@ -102,9 +98,7 @@ export interface JsonParserResult {
   json: JsonValue;
   meta?: {
     values?:
-      | Tree<TypeAnnotation>
-      | Record<string, Tree<TypeAnnotation>>
-      | undefined;
+      Tree<TypeAnnotation> | Record<string, Tree<TypeAnnotation>> | undefined;
     referentialEqualities?:
       | Record<string, string[]>
       | [string[]]
@@ -368,11 +362,7 @@ export interface JsonSchemaUndefinedType extends JsonSchemaMetadata {
 }
 
 export type JsonSchemaPrimitive =
-  | "string"
-  | "number"
-  | "integer"
-  | "boolean"
-  | "null";
+  "string" | "number" | "integer" | "boolean" | "null";
 
 export type JsonSchemaUnionType = JsonSchemaMetadata &
   (JsonSchemaPrimitiveUnionType | JsonSchemaAnyOfType);

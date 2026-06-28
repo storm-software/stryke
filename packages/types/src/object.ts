@@ -145,8 +145,7 @@ export type LiteralKeyOf<T> = keyof {
  * ```
  */
 export type LiteralUnion<LiteralType, BaseType extends Primitive> =
-  | (BaseType & Record<never, never>)
-  | LiteralType;
+  (BaseType & Record<never, never>) | LiteralType;
 
 /**
  * Create an object type with the given key `<Key>` and value `<Value>`.
@@ -201,17 +200,15 @@ export type ObjectValue<T, K> = K extends keyof T
 export type Paths<T> = InnerPaths<T>;
 
 type InnerPaths<T, Depth extends number = 0> = T extends
-  | NonRecursiveType
-  | ReadonlyMap<unknown, unknown>
-  | ReadonlySet<unknown>
+  NonRecursiveType | ReadonlyMap<unknown, unknown> | ReadonlySet<unknown>
   ? never
   : IsAny<T> extends true
     ? never
     : T extends UnknownArray
       ? number extends T["length"]
         ? // We need to handle the fixed and non-fixed index part of the array separately.
-            | InternalPaths<VariablePartOfArray<T>[number][], Depth>
-            | InternalPaths<StaticPartOfArray<T>, Depth>
+          | InternalPaths<VariablePartOfArray<T>[number][], Depth>
+          | InternalPaths<StaticPartOfArray<T>, Depth>
         : InternalPaths<T, Depth>
       : T extends object
         ? InternalPaths<T, Depth>
@@ -224,15 +221,16 @@ export type InternalPaths<
 > = T extends EmptyObject | readonly []
   ? never
   : {
-      [Key in keyof T]: Key extends number | string // Limit `Key` to string or number.
+      [Key in keyof T]: Key extends
+        number | string // Limit `Key` to string or number.
         ? // If `Key` is a number, return `Key | `${Key}``, because both `array[0]` and `array['0']` work.
-            | Key
-            | (LessThan<TDepth, 15> extends true // Limit the depth to prevent infinite recursion
-                ? IsNever<InnerPaths<T[Key], Sum<TDepth, 1>>> extends false
-                  ? `${Key}.${InnerPaths<T[Key], Sum<TDepth, 1>>}`
-                  : never
-                : never)
-            | ToString<Key>
+          | Key
+          | (LessThan<TDepth, 15> extends true // Limit the depth to prevent infinite recursion
+              ? IsNever<InnerPaths<T[Key], Sum<TDepth, 1>>> extends false
+                ? `${Key}.${InnerPaths<T[Key], Sum<TDepth, 1>>}`
+                : never
+              : never)
+          | ToString<Key>
         : never;
     }[(T extends UnknownArray ? number : unknown) & keyof T];
 
@@ -723,9 +721,8 @@ type PrefixTupleAccessor<
 
 type PrefixObjectAccessor<T extends object, TDepth extends any[]> = {
   [K in keyof T]-?: K extends number | string
-    ?
-        | `${PrefixFromDepth<K, TDepth>}${DeepKey<T[K], [TDepth]>}`
-        | PrefixFromDepth<K, TDepth>
+    ? | `${PrefixFromDepth<K, TDepth>}${DeepKey<T[K], [TDepth]>}`
+      | PrefixFromDepth<K, TDepth>
     : never;
 }[keyof T];
 

@@ -120,16 +120,16 @@ export function parseRawArgs<T = Dictionary<any>>(
     }
   }
 
-  for (i = opts.boolean.length; i-- > 0; ) {
+  for (i = opts.boolean.length; i-- > 0;) {
     arr = toArray(opts.alias[opts.boolean[i]!]);
-    for (j = arr.length; j-- > 0; ) {
+    for (j = arr.length; j-- > 0;) {
       opts.boolean.push(arr[j]!);
     }
   }
 
-  for (i = opts.string.length; i-- > 0; ) {
+  for (i = opts.string.length; i-- > 0;) {
     arr = toArray(opts.alias[opts.string[i]!]);
-    for (j = arr.length; j-- > 0; ) {
+    for (j = arr.length; j-- > 0;) {
       opts.string.push(arr[j]!);
     }
   }

@@ -20,8 +20,7 @@ export interface BaseContext<
   TPrisma = any | undefined,
   TSession = { user?: any } | undefined,
   THeaders extends { [k: string]: string } | undefined =
-    | { [k: string]: string }
-    | undefined
+    { [k: string]: string } | undefined
 > {
   /**
    * The Prisma Client instance.

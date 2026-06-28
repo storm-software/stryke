@@ -99,8 +99,7 @@ export interface RuleFieldMapInterface<
 }
 
 export type IRules<TContext extends Record<string, any> = Record<string, any>> =
-  | ShieldRule<TContext>
-  | RuleTypeMapInterface<TContext>;
+  ShieldRule<TContext> | RuleTypeMapInterface<TContext>;
 
 export type IFallbackErrorMapperType<
   TContext extends Record<string, any> = Record<string, any>

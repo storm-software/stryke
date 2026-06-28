@@ -25,8 +25,7 @@ declare const Netlify: undefined | unknown;
 declare const fastly: undefined | unknown;
 declare const Bun: undefined | unknown;
 declare const Deno:
-  | undefined
-  | { env: { toObject: () => EnvObject; [key: string]: unknown } };
+  undefined | { env: { toObject: () => EnvObject; [key: string]: unknown } };
 
 declare const navigator: undefined | { userAgent: string };
 
@@ -36,8 +35,7 @@ declare global {
   const fastly: undefined | unknown;
   const Bun: undefined | unknown;
   declare const Deno:
-    | undefined
-    | { env: { toObject: () => EnvObject; [key: string]: unknown } };
+    undefined | { env: { toObject: () => EnvObject; [key: string]: unknown } };
 
   const process: Record<string, any> & {
     env: EnvObject;
@@ -57,8 +55,7 @@ declare global {
   const __env__: undefined | EnvObject;
 
   const Deno:
-    | undefined
-    | { env: { toObject: () => EnvObject; [key: string]: unknown } };
+    undefined | { env: { toObject: () => EnvObject; [key: string]: unknown } };
 
   interface ImportMeta {
     env: EnvObject;

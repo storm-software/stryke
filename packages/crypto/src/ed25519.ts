@@ -217,8 +217,7 @@ export async function verifySignature(
   try {
     // Get the signature
     const signatures = obj.signatures as
-      | Record<string, Record<string, string>>
-      | undefined;
+      Record<string, Record<string, string>> | undefined;
     const signature = signatures?.[serverName]?.[keyId];
     if (!signature) {
       return false;

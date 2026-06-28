@@ -19,11 +19,7 @@
 import type { FilterPattern } from "./file";
 
 export type JSX =
-  | "preserve"
-  | "react"
-  | "react-jsx"
-  | "react-jsxdev"
-  | "react-native";
+  "preserve" | "react" | "react-jsx" | "react-jsxdev" | "react-native";
 
 export type Module =
   | "CommonJS"
@@ -1061,10 +1057,7 @@ export type WatchDirectoryKind =
   | "FixedChunkSizePolling";
 
 export type PollingWatchKind =
-  | "FixedInterval"
-  | "PriorityInterval"
-  | "DynamicPriority"
-  | "FixedChunkSize";
+  "FixedInterval" | "PriorityInterval" | "DynamicPriority" | "FixedChunkSize";
 
 export interface WatchOptions {
   /**

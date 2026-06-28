@@ -310,6 +310,4 @@ type PackageJsonExportsObject = {
 };
 
 type PackageJsonExports =
-  | string
-  | PackageJsonExportsObject
-  | Array<string | PackageJsonExportsObject>;
+  string | PackageJsonExportsObject | Array<string | PackageJsonExportsObject>;
