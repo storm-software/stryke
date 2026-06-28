@@ -29,10 +29,10 @@ import { build } from "esbuild";
 import { extractGitHubReference, extractGitLabReference } from "./helpers";
 import { resolve } from "./resolve";
 import { isGitHubReference, isGitLabReference } from "./type-checks";
-import type { BundleOptions, ResolveInput } from "./types";
+import type { BundleOptions, ResolveReference } from "./types";
 
 export function plugin(
-  options: BundleOptions & { originalInput: ResolveInput }
+  options: BundleOptions & { originalInput: ResolveReference }
 ): Plugin {
   const isLocalFile =
     !isURL(options.originalInput) &&
@@ -124,7 +124,7 @@ export function plugin(
  */
 export async function bundle(
   contents: string,
-  options: BundleOptions & { originalInput?: ResolveInput } = {}
+  options: BundleOptions & { originalInput?: ResolveReference } = {}
 ): Promise<OutputFile> {
   if (!options.originalInput) {
     throw new Error(

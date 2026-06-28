@@ -53,7 +53,7 @@ export type URLReference = URLString | GitHubReference | GitLabReference;
  * A type that represents the input for resolving a file reference.
  *
  * @remarks
- * The `ResolveInput` type can be one of the following variants:
+ * The `ResolveReference` type can be one of the following variants:
  * - A file path string (for example: `"./src/types.ts"`).
  * - A {@link URLString | URL string} (for example: `"https://example.com/config.json"`).
  * - A {@link GitHubReference | GitHub repository reference string}, starting with either `"github:"` or `"gh:"`, an optional branch or tag, and optionally including a specific file path within the repository (for example: `"github:main:storm-software/stryke/packages/base/resolve/src/types.ts"`). It is also valid to provide the branch or tag after the file path (for example: `"github:storm-software/stryke/packages/resolve/src/types.ts@main"`).
@@ -61,7 +61,7 @@ export type URLReference = URLString | GitHubReference | GitLabReference;
  * - A TypeScript module name string (for example: `"@stryke/resolve"`), and optionally a specific module export from the package (for example: `"@stryke/resolve/some-module"`).
  * - A {@link URL} object, which represents a URL to fetch the file from.
  */
-export type ResolveInput = string | URLReference | URL;
+export type ResolveReference = string | URLReference | URL;
 
 export interface BaseResolveOptions extends BundleOptions {
   /**
@@ -144,19 +144,20 @@ export type BundleOptions = DeepPartial<
 
 export type FilePathResolveOptions = BaseResolveOptions;
 
-export type InferResolveOptions<T extends ResolveInput> = T extends URLReference
-  ? URLResolveOptions
-  : T extends URL
+export type InferResolveOptions<T extends ResolveReference> =
+  T extends URLReference
     ? URLResolveOptions
-    : T extends string
-      ? FilePathResolveOptions
-      : never;
+    : T extends URL
+      ? URLResolveOptions
+      : T extends string
+        ? FilePathResolveOptions
+        : never;
 
 /**
  * A type that represents the input for loading a file reference.
  *
  * @remarks
- * The `LoadInput` type can be one of the following variants:
+ * The `LoadReference` type can be one of the following variants:
  * - A file path string (for example: `"./src/types.ts"`).
  * - A URL string (for example: `"https://example.com/config.json"`).
  * - A {@link GitHubReference | GitHub repository reference string}, starting with either `"github:"` or `"gh:"`, an optional branch or tag, and optionally including a specific file path within the repository (for example: `"github:main:storm-software/stryke/packages/resolve/src/types.ts"`). It is also valid to provide the branch or tag after the file path (for example: `"github:storm-software/stryke/packages/resolve/src/types.ts@main"`).
@@ -166,9 +167,9 @@ export type InferResolveOptions<T extends ResolveInput> = T extends URLReference
  * - A {@link FileReference} object, which contains information about a file reference.
  * - A {@link URL} object, which represents a URL to fetch the file from.
  */
-export type LoadInput = ResolveInput | FileReference;
+export type LoadReference = ResolveReference | FileReference;
 
-export type InferLoadOptions<T extends LoadInput> = InferResolveOptions<
+export type InferLoadOptions<T extends LoadReference> = InferResolveOptions<
   T extends FileReference ? T["file"] : T
 > & {
   /**

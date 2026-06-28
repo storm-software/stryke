@@ -32,7 +32,7 @@ import { parseFilename } from "ufo";
 import { parse as parseYaml } from "yaml";
 import { resolve } from "./resolve";
 import { isURLReference } from "./type-checks";
-import type { InferLoadOptions, LoadInput } from "./types";
+import type { InferLoadOptions, LoadReference } from "./types";
 
 /**
  * Loads a file from the specified input, which can be a string, a {@link FileReference} object, or a {@link URL} object. The function resolves the file reference and returns the content of the file as a string.
@@ -45,16 +45,16 @@ import type { InferLoadOptions, LoadInput } from "./types";
  *
  * The function also accepts optional overrides for the file resolution process through the `options` parameter.
  *
- * @param input - The file reference to load. This can be either a string, a {@link FileReference} object, or a {@link URL} object.
+ * @param reference - The file reference to load. This can be either a string, a {@link FileReference} object, or a {@link URL} object.
  * @param options - Optional overrides for the file resolution process.
  * @returns A promise that resolves to the content of the file as a string.
  */
 export async function load<TResult>(
-  input: LoadInput,
-  options: InferLoadOptions<typeof input> = {}
+  reference: LoadReference,
+  options: InferLoadOptions<typeof reference> = {}
 ): Promise<TResult> {
   const fileReference = extractFileReference(
-    isURL(input) ? input.toString() : input
+    isURL(reference) ? reference.toString() : reference
   );
   if (!fileReference) {
     throw new Error(
@@ -149,16 +149,16 @@ export async function load<TResult>(
  *
  * The function also accepts optional overrides for the file resolution process through the `options` parameter.
  *
- * @param input - The file reference to load. This can be either a string, a {@link FileReference} object, or a {@link URL} object.
+ * @param reference - The file reference to load. This can be either a string, a {@link FileReference} object, or a {@link URL} object.
  * @param options - Optional overrides for the file resolution process.
  * @returns The content of the file as a string, or `undefined` if an error occurs.
  */
 export async function loadSafe<TResult>(
-  input: LoadInput,
-  options: InferLoadOptions<typeof input> = {}
+  reference: LoadReference,
+  options: InferLoadOptions<typeof reference> = {}
 ): Promise<TResult | undefined> {
   try {
-    return await load<TResult>(input, options);
+    return await load<TResult>(reference, options);
   } catch {
     return undefined;
   }

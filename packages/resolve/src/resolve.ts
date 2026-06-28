@@ -40,7 +40,7 @@ import type {
   GitHubReference,
   GitLabReference,
   InferResolveOptions,
-  ResolveInput,
+  ResolveReference,
   URLReference,
   URLResolveOptions
 } from "./types";
@@ -48,32 +48,32 @@ import type {
 /**
  * Fetches the content of a URL and returns it as a string.
  *
- * @param input - The URL to fetch. This can be either a string or a {@link URL} object.
+ * @param reference - The URL to fetch. This can be either a string or a {@link URL} object.
  * @returns A promise that resolves to the content of the URL as a string.
  */
 export async function resolveURL(
-  input: URLReference | URL,
+  reference: URLReference | URL,
   options: URLResolveOptions = {}
 ): Promise<string> {
   let value!: string;
-  if (isSetString(input)) {
-    if (!isValidURL(input)) {
+  if (isSetString(reference)) {
+    if (!isValidURL(reference)) {
       throw new Error(
-        `The provided input "${input}" is not a valid URL. Please provide a valid URL to fetch the file.`
+        `The provided input "${reference}" is not a valid URL. Please provide a valid URL to fetch the file.`
       );
     }
-    if (input.startsWith("file://")) {
+    if (reference.startsWith("file://")) {
       throw new Error(
-        `The provided input "${input}" is a file URL. Please provide a valid HTTP or HTTPS URL to fetch the file.`
+        `The provided input "${reference}" is a file URL. Please provide a valid HTTP or HTTPS URL to fetch the file.`
       );
     }
 
-    value = input;
-  } else if (isURL(input)) {
-    value = input.toString();
+    value = reference;
+  } else if (isURL(reference)) {
+    value = reference.toString();
   } else {
     throw new Error(
-      `The provided input "${String(input)}" is not a valid string or URL. Please provide a valid URL to fetch the file.`
+      `The provided input "${String(reference)}" is not a valid string or URL. Please provide a valid URL to fetch the file.`
     );
   }
 
@@ -95,15 +95,15 @@ export async function resolveURL(
  * @remarks
  * A GitHub repository reference string, starting with either `"github:"` or `"gh:"`, an optional branch or tag, and optionally including a specific file path within the repository (for example: `"github:main:storm-software/stryke/packages/base/resolve/src/types.ts"`). It is also valid to provide the branch or tag after the file path (for example: `"github:storm-software/stryke/packages/resolve/src/types.ts@main"`).
  *
- * @param input - The {@link GitHubReference} string to resolve.
+ * @param reference - The {@link GitHubReference} string to resolve.
  * @param options - Optional overrides for the fetch configuration.
  * @returns A promise that resolves to the content of the file as a string.
  */
 export async function resolveGitHub(
-  input: GitHubReference,
+  reference: GitHubReference,
   options: URLResolveOptions = {}
 ): Promise<string> {
-  const { owner, repo, branch, filePath } = extractGitHubReference(input);
+  const { owner, repo, branch, filePath } = extractGitHubReference(reference);
 
   return resolveURL(
     `https://raw.githubusercontent.com/${owner}/${repo}/${encodeURIComponent(
@@ -127,15 +127,15 @@ export async function resolveGitHub(
  * @remarks
  * A GitLab repository reference string, starting with either `"gitlab:"` or `"gl:"`, an optional branch or tag, and optionally including a specific file path within the repository (for example: `"gitlab:master:storm-software/stryke/packages/resolve/src/types.ts"`). It is also valid to provide the branch or tag after the file path (for example: `"gitlab:storm-software/stryke/packages/resolve/src/types.ts@master"`).
  *
- * @param input - The {@link GitLabReference} string to resolve.
+ * @param reference - The {@link GitLabReference} string to resolve.
  * @param options - Optional overrides for the fetch configuration.
  * @returns A promise that resolves to the content of the file as a string.
  */
 export async function resolveGitLab(
-  input: GitLabReference,
+  reference: GitLabReference,
   options: URLResolveOptions = {}
 ): Promise<string> {
-  const { owner, repo, branch, filePath } = extractGitLabReference(input);
+  const { owner, repo, branch, filePath } = extractGitLabReference(reference);
 
   return resolveURL(
     `https://gitlab.com/${owner}/${repo}/-/raw/${encodeURIComponent(branch)}${
@@ -159,21 +159,21 @@ export async function resolveGitLab(
  * 1. A file path string (for example: `"./src/types.ts"`).
  * 2. A TypeScript module name string (for example: `"@stryke/resolve"`), and optionally a specific module export from the package (for example: `"@stryke/resolve/some-module"`).
  *
- * @param input - The file path or module name string to resolve.
+ * @param reference - The file path or module name string to resolve.
  * @param options - Optional overrides for the file path resolution.
  */
 export async function resolveFilePath(
-  input: string,
+  reference: string,
   options: FilePathResolveOptions = {}
 ): Promise<string> {
-  if (!isValidPath(input)) {
+  if (!isValidPath(reference)) {
     throw new Error(
-      `The provided input "${String(input)}" is not a valid file path. Please provide a valid file path to resolve.`
+      `The provided input "${String(reference)}" is not a valid file path. Please provide a valid file path to resolve.`
     );
   }
 
   const path = await resolveFile(
-    input,
+    reference,
     defu(
       options.fs ?? {},
       options.cwd
@@ -197,7 +197,7 @@ export async function resolveFilePath(
  * Resolves a file reference to its content as a string.
  *
  * @remarks
- * The `ResolveInput` type can be one of the following variants:
+ * The `ResolveReference` type can be one of the following variants:
  * - A file path string (for example: `"./src/types.ts"`).
  * - A URL string (for example: `"https://example.com/config.json"`).
  * - A GitHub repository reference string, starting with either `"github:"` or `"gh:"`, an optional branch or tag, and optionally including a specific file path within the repository (for example: `"github:main:storm-software/stryke/packages/base/resolve/src/types.ts"`). It is also valid to provide the branch or tag after the file path (for example: `"github:storm-software/stryke/packages/resolve/src/types.ts@main"`).
@@ -205,22 +205,22 @@ export async function resolveFilePath(
  * - A TypeScript module name string (for example: `"@stryke/resolve"`), and optionally a specific module export from the package (for example: `"@stryke/resolve/some-module"`).
  * - A {@link URL} object, which represents a URL to fetch the file from.
  *
- * @param input - The file reference to resolve. This can be either a string or a {@link FileReference} object.
+ * @param reference - The file reference to resolve. This can be either a string or a {@link FileReference} object.
  * @param options - Optional overrides for the file resolution.
  * @returns A promise that resolves to the content of the file as a string.
  */
 export async function resolve(
-  input: ResolveInput,
-  options: InferResolveOptions<typeof input> = {}
+  reference: ResolveReference,
+  options: InferResolveOptions<typeof reference> = {}
 ): Promise<string> {
   let file!: string | URL;
-  if (isFileReference(input)) {
-    file = input.file;
-  } else if (isSetString(input) || isURL(input)) {
-    file = input;
+  if (isFileReference(reference)) {
+    file = reference.file;
+  } else if (isSetString(reference) || isURL(reference)) {
+    file = reference;
   } else {
     throw new Error(
-      `The provided input "${String(input)}" is not a valid string, URL, or FileReference. Please provide a valid input to resolve.`
+      `The provided input "${String(reference)}" is not a valid string, URL, or FileReference. Please provide a valid input to resolve.`
     );
   }
 
@@ -244,7 +244,7 @@ export async function resolve(
     content = await resolveFilePath(file, options);
   } else {
     throw new Error(
-      `The provided input "${String(input)}" could not be resolved. Please provide a valid input to resolve.`
+      `The provided input "${String(reference)}" could not be resolved. Please provide a valid input to resolve.`
     );
   }
 
@@ -252,9 +252,9 @@ export async function resolve(
     !options.skipBundle &&
     ((options.extension && BUNDLE_EXTENSIONS.includes(options.extension)) ||
       (isURL(file) &&
-        parseFilename(input.toString()) &&
+        parseFilename(reference.toString()) &&
         BUNDLE_EXTENSIONS.includes(
-          parseFilename(input.toString())!.replace(/\.[^/.]+$/, "")
+          parseFilename(reference.toString())!.replace(/\.[^/.]+$/, "")
         )) ||
       (isSetString(file) &&
         findFileExtensionSafe(file) &&
@@ -262,7 +262,7 @@ export async function resolve(
   ) {
     return bundle(content, {
       ...omit(options, ["extension", "skipBundle"]),
-      originalInput: input
+      originalInput: reference
     }).then(result => result.text);
   }
 
@@ -272,16 +272,16 @@ export async function resolve(
 /**
  * Safely resolves a file reference to its content as a string.
  *
- * @param input - The file reference to resolve. This can be either a string or a {@link FileReference} object.
+ * @param reference - The file reference to resolve. This can be either a string or a {@link FileReference} object.
  * @param options - Optional overrides for the ESBuild configuration.
  * @returns A promise that resolves to the content of the file as a string, or `undefined` if the resolution fails.
  */
 export async function resolveSafe(
-  input: ResolveInput,
-  options?: InferResolveOptions<typeof input>
+  reference: ResolveReference,
+  options?: InferResolveOptions<typeof reference>
 ): Promise<string | undefined> {
   try {
-    return await resolve(input, options);
+    return await resolve(reference, options);
   } catch {
     return undefined;
   }

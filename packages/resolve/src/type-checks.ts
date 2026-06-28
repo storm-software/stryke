@@ -30,8 +30,8 @@ import { GITHUB_REFERENCE_REGEX, GITLAB_REFERENCE_REGEX } from "./regex";
 import type {
   GitHubReference,
   GitLabReference,
-  LoadInput,
-  ResolveInput,
+  LoadReference,
+  ResolveReference,
   URLReference
 } from "./types";
 
@@ -125,15 +125,15 @@ export function isFileReferenceInput(input: any): input is FileReferenceInput {
 }
 
 /**
- * Checks if the provided entry is a valid {@link ResolveInput}.
+ * Checks if the provided entry is a valid {@link ResolveReference}.
  *
  * @remarks
- * A {@link ResolveInput} can be either a file reference string, a URL reference, or a valid URL.
+ * A {@link ResolveReference} can be either a file reference string, a URL reference, or a valid URL.
  *
  * @param input - The input to check.
- * @returns `true` if the input is a valid {@link ResolveInput}, otherwise `false`.
+ * @returns `true` if the input is a valid {@link ResolveReference}, otherwise `false`.
  */
-export function isResolveInput(input: any): input is ResolveInput {
+export function isResolveReference(input: any): input is ResolveReference {
   return (
     (isSetString(input) && isValidPath(input)) ||
     isURLReference(input) ||
@@ -142,14 +142,14 @@ export function isResolveInput(input: any): input is ResolveInput {
 }
 
 /**
- * Checks if the provided entry is a valid {@link LoadInput}.
+ * Checks if the provided entry is a valid {@link LoadReference}.
  *
  * @remarks
- * A {@link LoadInput} can be either a {@link ResolveInput} or a {@link FileReference}.
+ * A {@link LoadReference} can be either a {@link ResolveReference} or a {@link FileReference}.
  *
  * @param input - The input to check.
- * @returns `true` if the input is a valid {@link LoadInput}, otherwise `false`.
+ * @returns `true` if the input is a valid {@link LoadReference}, otherwise `false`.
  */
-export function isLoadInput(input: any): input is LoadInput {
-  return isResolveInput(input) || isFileReference(input);
+export function isLoadReference(input: any): input is LoadReference {
+  return isResolveReference(input) || isFileReference(input);
 }
