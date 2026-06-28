@@ -2,6 +2,20 @@
 
 # Changelog for Stryke - CLI
 
+## [0.13.67](https://github.com/storm-software/stryke/releases/tag/cli%400.13.67) (06/28/2026)
+
+### Miscellaneous
+
+- **monorepo:** Run linting script on workspace packages ([4c5bc254](https://github.com/storm-software/stryke/commit/4c5bc254))
+
+### Updated Dependencies
+
+- Updated **convert** to **v0.7.25**
+- Updated **env** to **v0.20.112**
+- Updated **string-format** to **v0.17.36**
+- Updated **type-checks** to **v0.6.27**
+- Updated **types** to **v0.12.22**
+
 ## [0.13.66](https://github.com/storm-software/stryke/releases/tag/cli%400.13.66) (06/27/2026)
 
 ### Updated Dependencies

@@ -2,6 +2,17 @@
 
 # Changelog for Stryke - JSON
 
+## [0.15.18](https://github.com/storm-software/stryke/releases/tag/json%400.15.18) (06/28/2026)
+
+### Miscellaneous
+
+- **monorepo:** Run linting script on workspace packages ([4c5bc254](https://github.com/storm-software/stryke/commit/4c5bc254))
+
+### Updated Dependencies
+
+- Updated **type-checks** to **v0.6.27**
+- Updated **types** to **v0.12.22**
+
 ## [0.15.17](https://github.com/storm-software/stryke/releases/tag/json%400.15.17) (06/27/2026)
 
 ### Updated Dependencies

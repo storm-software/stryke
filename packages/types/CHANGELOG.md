@@ -2,6 +2,12 @@
 
 # Changelog for Stryke - Types
 
+## [0.12.22](https://github.com/storm-software/stryke/releases/tag/types%400.12.22) (06/28/2026)
+
+### Miscellaneous
+
+- **monorepo:** Run linting script on workspace packages ([4c5bc254](https://github.com/storm-software/stryke/commit/4c5bc254))
+
 ## [0.12.21](https://github.com/storm-software/stryke/releases/tag/types%400.12.21) (06/27/2026)
 
 ### Bug Fixes

@@ -2,6 +2,19 @@
 
 # Changelog for Stryke - Hooks
 
+## [0.4.110](https://github.com/storm-software/stryke/releases/tag/hooks%400.4.110) (06/28/2026)
+
+### Miscellaneous
+
+- **monorepo:** Run linting script on workspace packages ([4c5bc254](https://github.com/storm-software/stryke/commit/4c5bc254))
+
+### Updated Dependencies
+
+- Updated **async** to **v0.1.22**
+- Updated **env** to **v0.20.112**
+- Updated **type-checks** to **v0.6.27**
+- Updated **types** to **v0.12.22**
+
 ## [0.4.109](https://github.com/storm-software/stryke/releases/tag/hooks%400.4.109) (06/27/2026)
 
 ### Updated Dependencies

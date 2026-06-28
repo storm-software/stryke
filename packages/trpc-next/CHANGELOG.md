@@ -2,6 +2,22 @@
 
 # Changelog for Stryke - TRPC Next
 
+## [0.5.114](https://github.com/storm-software/stryke/releases/tag/trpc-next%400.5.114) (06/28/2026)
+
+### Miscellaneous
+
+- **monorepo:** Run linting script on workspace packages ([4c5bc254](https://github.com/storm-software/stryke/commit/4c5bc254))
+
+### Updated Dependencies
+
+- Updated **env** to **v0.20.112**
+- Updated **fs** to **v0.33.95**
+- Updated **path** to **v0.29.21**
+- Updated **string-format** to **v0.17.36**
+- Updated **type-checks** to **v0.6.27**
+- Updated **types** to **v0.12.22**
+- Updated **url** to **v0.4.45**
+
 ## [0.5.113](https://github.com/storm-software/stryke/releases/tag/trpc-next%400.5.113) (06/27/2026)
 
 ### Updated Dependencies
