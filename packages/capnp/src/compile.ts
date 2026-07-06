@@ -81,7 +81,7 @@ export async function capnpc(
 
     dataBuf = await new Promise<Buffer>(resolve => {
       exec(
-        `capnpc ${opts.join(" ")} ${schemas.join(" ")}`,
+        `capnp compile ${opts.join(" ")} ${schemas.join(" ")}`,
         { encoding: "buffer" },
         (error, stdout, stderr) => {
           if (stderr.length > 0) {

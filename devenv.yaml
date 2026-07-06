@@ -5,6 +5,8 @@ inputs:
     flake: false
   nixpkgs:
     url: github:cachix/devenv-nixpkgs/rolling
+  nixpkgs-unstable:
+    url: github:NixOS/nixpkgs/nixos-unstable
   treefmt-nix:
     url: github:numtide/treefmt-nix
     inputs:
