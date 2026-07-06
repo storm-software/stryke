@@ -2,6 +2,19 @@
 
 # Changelog for Stryke - Prisma Better Auth Generator
 
+## [0.14.113](https://github.com/storm-software/stryke/releases/tag/prisma-better-auth-generator%400.14.113) (07/06/2026)
+
+### Miscellaneous
+
+- **capnp:** Update CLI tool to use new `capnp` application name ([b4dfef2d](https://github.com/storm-software/stryke/commit/b4dfef2d))
+
+### Updated Dependencies
+
+- Updated **env** to **v0.20.113**
+- Updated **fs** to **v0.33.96**
+- Updated **path** to **v0.29.22**
+- Updated **string-format** to **v0.17.37**
+
 ## [0.14.112](https://github.com/storm-software/stryke/releases/tag/prisma-better-auth-generator%400.14.112) (06/28/2026)
 
 ### Miscellaneous
