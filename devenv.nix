@@ -10,4 +10,8 @@
     ];
     disableHint = true;
   };
+
+  packages = with pkgs; [
+    capnproto
+  ];
 }
