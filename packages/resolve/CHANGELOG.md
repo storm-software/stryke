@@ -2,6 +2,23 @@
 
 # Changelog for Stryke - Resolve
 
+## [0.0.10](https://github.com/storm-software/stryke/releases/tag/resolve%400.0.10) (06/28/2026)
+
+### Features
+
+- **resolve:** Update input parameter names to `ResolveReference` and `LoadReference` ([12b47f88](https://github.com/storm-software/stryke/commit/12b47f88))
+
+### Updated Dependencies
+
+- Updated **convert** to **v0.7.25**
+- Updated **fs** to **v0.33.95**
+- Updated **helpers** to **v0.10.34**
+- Updated **http** to **v0.12.85**
+- Updated **path** to **v0.29.21**
+- Updated **type-checks** to **v0.6.27**
+- Updated **types** to **v0.12.22**
+- Updated **url** to **v0.4.45**
+
 ## [0.0.9](https://github.com/storm-software/stryke/releases/tag/resolve%400.0.9) (06/27/2026)
 
 ### Bug Fixes

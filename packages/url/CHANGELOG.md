@@ -2,6 +2,19 @@
 
 # Changelog for Stryke - URL
 
+## [0.4.45](https://github.com/storm-software/stryke/releases/tag/url%400.4.45) (06/28/2026)
+
+### Miscellaneous
+
+- **monorepo:** Run linting script on workspace packages ([4c5bc254](https://github.com/storm-software/stryke/commit/4c5bc254))
+
+### Updated Dependencies
+
+- Updated **fs** to **v0.33.95**
+- Updated **json** to **v0.15.18**
+- Updated **path** to **v0.29.21**
+- Updated **type-checks** to **v0.6.27**
+
 ## [0.4.44](https://github.com/storm-software/stryke/releases/tag/url%400.4.44) (06/27/2026)
 
 ### Updated Dependencies

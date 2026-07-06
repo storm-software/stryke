@@ -2,6 +2,19 @@
 
 # Changelog for Stryke - Capnp
 
+## [0.12.121](https://github.com/storm-software/stryke/releases/tag/capnp%400.12.121) (06/28/2026)
+
+### Miscellaneous
+
+- **monorepo:** Run linting script on workspace packages ([4c5bc254](https://github.com/storm-software/stryke/commit/4c5bc254))
+
+### Updated Dependencies
+
+- Updated **convert** to **v0.7.25**
+- Updated **fs** to **v0.33.95**
+- Updated **path** to **v0.29.21**
+- Updated **types** to **v0.12.22**
+
 ## [0.12.120](https://github.com/storm-software/stryke/releases/tag/capnp%400.12.120) (06/27/2026)
 
 ### Updated Dependencies

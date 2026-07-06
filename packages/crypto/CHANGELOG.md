@@ -2,6 +2,18 @@
 
 # Changelog for Stryke - Crypto
 
+## [0.6.42](https://github.com/storm-software/stryke/releases/tag/crypto%400.6.42) (06/28/2026)
+
+### Miscellaneous
+
+- **monorepo:** Run linting script on workspace packages ([4c5bc254](https://github.com/storm-software/stryke/commit/4c5bc254))
+
+### Updated Dependencies
+
+- Updated **convert** to **v0.7.25**
+- Updated **json** to **v0.15.18**
+- Updated **type-checks** to **v0.6.27**
+
 ## [0.6.41](https://github.com/storm-software/stryke/releases/tag/crypto%400.6.41) (06/27/2026)
 
 ### Updated Dependencies

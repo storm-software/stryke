@@ -2,6 +2,12 @@
 
 # Changelog for Stryke - Open Browser
 
+## [0.2.82](https://github.com/storm-software/stryke/releases/tag/open-browser%400.2.82) (06/28/2026)
+
+### Miscellaneous
+
+- **monorepo:** Run linting script on workspace packages ([4c5bc254](https://github.com/storm-software/stryke/commit/4c5bc254))
+
 ## [0.2.80](https://github.com/storm-software/stryke/releases/tag/open-browser%400.2.80) (06/27/2026)
 
 ### Bug Fixes

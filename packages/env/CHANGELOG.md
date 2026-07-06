@@ -2,6 +2,19 @@
 
 # Changelog for Stryke - Env
 
+## [0.20.112](https://github.com/storm-software/stryke/releases/tag/env%400.20.112) (06/28/2026)
+
+### Miscellaneous
+
+- **monorepo:** Run linting script on workspace packages ([4c5bc254](https://github.com/storm-software/stryke/commit/4c5bc254))
+
+### Updated Dependencies
+
+- Updated **convert** to **v0.7.25**
+- Updated **fs** to **v0.33.95**
+- Updated **path** to **v0.29.21**
+- Updated **string-format** to **v0.17.36**
+
 ## [0.20.111](https://github.com/storm-software/stryke/releases/tag/env%400.20.111) (06/27/2026)
 
 ### Updated Dependencies

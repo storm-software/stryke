@@ -2,6 +2,20 @@
 
 # Changelog for Stryke - Prisma TRPC Generator
 
+## [0.13.112](https://github.com/storm-software/stryke/releases/tag/prisma-trpc-generator%400.13.112) (06/28/2026)
+
+### Miscellaneous
+
+- **monorepo:** Run linting script on workspace packages ([4c5bc254](https://github.com/storm-software/stryke/commit/4c5bc254))
+
+### Updated Dependencies
+
+- Updated **env** to **v0.20.112**
+- Updated **fs** to **v0.33.95**
+- Updated **path** to **v0.29.21**
+- Updated **string-format** to **v0.17.36**
+- Updated **types** to **v0.12.22**
+
 ## [0.13.111](https://github.com/storm-software/stryke/releases/tag/prisma-trpc-generator%400.13.111) (06/27/2026)
 
 ### Updated Dependencies
