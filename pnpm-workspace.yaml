@@ -31,26 +31,26 @@ catalog:
   "@prisma/internals": ^6.19.3
   "@prisma/prisma-schema-wasm": ^6.6.0-41.9061db3b0058e3d3731c6fe68a1b77061bed4861
   "@standard-schema/spec": ^1.1.0
-  "@storm-software/build-tools": ^0.158.246
-  "@storm-software/config": ^1.138.23
-  "@storm-software/config-tools": ^1.190.86
-  "@storm-software/cspell": ^0.46.154
-  "@storm-software/esbuild": ^0.53.247
-  "@storm-software/eslint": ^0.170.119
-  "@storm-software/eslint-plugin-tsdoc": ^0.0.49
-  "@storm-software/git-tools": ^2.131.94
-  "@storm-software/linting-tools": ^1.134.16
-  "@storm-software/markdownlint": ^0.30.242
-  "@storm-software/pnpm-tools": ^0.7.97
-  "@storm-software/prettier": ^0.59.139
-  "@storm-software/testing-tools": ^1.119.239
-  "@storm-software/tsconfig": ^0.48.153
-  "@storm-software/tsdoc": ^0.13.239
-  "@storm-software/unbuild": ^0.57.247
-  "@storm-software/untyped": ^0.24.228
-  "@storm-software/workspace-tools": ^1.296.66
-  "@swc-node/register": ^1.11.1
-  "@swc/core": ^1.15.43
+  "@storm-software/build-tools": ^0.158.267
+  "@storm-software/config": ^1.138.44
+  "@storm-software/config-tools": ^1.190.107
+  "@storm-software/cspell": ^0.46.175
+  "@storm-software/esbuild": ^0.53.268
+  "@storm-software/eslint": ^0.170.141
+  "@storm-software/eslint-plugin-tsdoc": ^0.0.70
+  "@storm-software/git-tools": ^2.131.115
+  "@storm-software/linting-tools": ^1.134.37
+  "@storm-software/markdownlint": ^0.30.263
+  "@storm-software/pnpm-tools": ^0.7.118
+  "@storm-software/prettier": ^0.59.160
+  "@storm-software/testing-tools": ^1.119.260
+  "@storm-software/tsconfig": ^0.48.174
+  "@storm-software/tsdoc": ^0.13.260
+  "@storm-software/unbuild": ^0.57.268
+  "@storm-software/untyped": ^0.24.249
+  "@storm-software/workspace-tools": ^1.296.87
+  "@swc-node/register": ^1.12.1
+  "@swc/core": ^1.15.46
   "@swc/helpers": ^0.5.23
   "@swc/wasm": ^1.10.14
   "@tanstack/react-query": ^5.101.2
@@ -63,7 +63,7 @@ catalog:
   "@types/cross-spawn": ^6.0.6
   "@types/figlet": ^1.7.0
   "@types/mime-types": ^3.0.1
-  "@types/node": ^24.13.2
+  "@types/node": ^24.13.3
   "@types/pluralize": ^0.0.33
   "@types/react": ^19.2.17
   "@types/react-dom": ^19.2.3
@@ -74,16 +74,16 @@ catalog:
   capnp-es: ^0.0.11
   chalk: ^5.6.2
   commander: ^14.0.3
-  conventional-changelog-storm-software: ^0.3.247
+  conventional-changelog-storm-software: ^0.3.268
   copyfiles: ^2.4.1
   cross-spawn: ^7.0.6
   defu: ^6.1.7
   dts-bundle-generator: ^9.5.1
   esbuild: ^0.28.1
-  eslint: ^9.39.4
+  eslint: ^9.39.5
   eslint-flat-config-utils: ^2.1.4
   execa: ^9.6.1
-  figlet: ^1.11.0
+  figlet: ^1.11.2
   glob: ^11.1.0
   hex2dec: ^1.1.2
   human-id: ^4.2.0
@@ -92,7 +92,7 @@ catalog:
   js-xxhash: ^4.0.0
   jsonc-parser: 3.3.1
   knip: 5.43.6
-  lefthook: ^1.13.6
+  lefthook: ^2.0.6
   lines-and-columns: 2.0.4
   ls-lint: ^0.1.2
   markdownlint-cli2: ^0.17.2
@@ -104,7 +104,7 @@ catalog:
   p-queue: ^9.3.1
   parenthesis: ^3.1.8
   pluralize: ^8.0.0
-  prettier: ^3.9.4
+  prettier: ^3.9.5
   react: ^19.2.7
   react-dom: ^19.2.7
   react-native: ^0.77.3
@@ -121,15 +121,15 @@ catalog:
   ts-node: ^10.9.2
   tsdown: ^0.21.10
   tslib: ^2.8.1
-  tsx: ^4.23.0
+  tsx: ^4.23.1
   typescript: ^6.0.3
   ufo: ^1.6.4
   unbuild: ^3.3.1
   undici: ^7.28.0
   undici-types: ^7.28.0
   verdaccio: 6.5.2
-  vite: ^8.1.3
-  vitest: ~4.1.9
+  vite: ^8.1.5
+  vitest: ~4.1.10
   yaml: ^2.9.0
   zod: ^4.4.3
   zod-to-json-schema: ^3.25.2

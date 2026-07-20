@@ -15,6 +15,7 @@ out
 packages/capnp/src/vendor/_capnp/*.ts
 
 # build
+.pnpm-store
 
 # dependencies
 node_modules

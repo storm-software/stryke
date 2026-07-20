@@ -32,6 +32,8 @@ export type Module =
   | "ES2022"
   | "ESNext"
   | "Node16"
+  | "Node18"
+  | "Node20"
   | "NodeNext"
   | "Preserve"
   | "None"
@@ -46,6 +48,8 @@ export type Module =
   | "es2022"
   | "esnext"
   | "node16"
+  | "node18"
+  | "node20"
   | "nodenext"
   | "preserve"
   | "none";
@@ -69,6 +73,9 @@ export type Target =
   | "ES2020"
   | "ES2021"
   | "ES2022"
+  | "ES2023"
+  | "ES2024"
+  | "ES2025"
   | "ESNext"
   // Lowercase alternatives
   | "es3"
@@ -82,6 +89,9 @@ export type Target =
   | "es2020"
   | "es2021"
   | "es2022"
+  | "es2023"
+  | "es2024"
+  | "es2025"
   | "esnext";
 
 export type Lib =
@@ -101,6 +111,8 @@ export type Lib =
   | "ES2016"
   | "ES2016.Array.Include"
   | "ES2017"
+  | "ES2017.ArrayBuffer"
+  | "ES2017.Date"
   | "ES2017.Intl"
   | "ES2017.Object"
   | "ES2017.SharedMemory"
@@ -114,17 +126,21 @@ export type Lib =
   | "ES2018.Regexp"
   | "ES2019"
   | "ES2019.Array"
+  | "ES2019.Intl"
   | "ES2019.Object"
   | "ES2019.String"
   | "ES2019.Symbol"
   | "ES2020"
   | "ES2020.BigInt"
+  | "ES2020.Date"
+  | "ES2020.Intl"
+  | "ES2020.Number"
   | "ES2020.Promise"
+  | "ES2020.SharedMemory"
   | "ES2020.String"
   | "ES2020.Symbol.WellKnown"
-  | "ES2020.SharedMemory"
-  | "ES2020.Intl"
   | "ES2021"
+  | "ES2021.Intl"
   | "ES2021.Promise"
   | "ES2021.String"
   | "ES2021.WeakRef"
@@ -133,22 +149,54 @@ export type Lib =
   | "ES2022.Error"
   | "ES2022.Intl"
   | "ES2022.Object"
+  | "ES2022.RegExp"
   | "ES2022.SharedMemory"
   | "ES2022.String"
-  | "ES2022.RegExp"
+  | "ES2023"
+  | "ES2023.Array"
+  | "ES2023.Collection"
+  | "ES2023.Intl"
+  | "ES2024"
+  | "ES2024.ArrayBuffer"
+  | "ES2024.Collection"
+  | "ES2024.Object"
+  | "ES2024.Promise"
+  | "ES2024.Regexp"
+  | "ES2024.SharedMemory"
+  | "ES2024.String"
+  | "ES2025"
+  | "ES2025.Collection"
+  | "ES2025.Float16"
+  | "ES2025.Intl"
+  | "ES2025.Iterator"
+  | "ES2025.Promise"
+  | "ES2025.RegExp"
   | "ESNext"
   | "ESNext.Array"
   | "ESNext.AsyncIterable"
   | "ESNext.BigInt"
+  | "ESNext.Collection"
+  | "ESNext.Decorators"
+  | "ESNext.Disposable"
+  | "ESNext.Error"
+  | "ESNext.Float16"
   | "ESNext.Intl"
+  | "ESNext.Iterator"
+  | "ESNext.Object"
   | "ESNext.Promise"
+  | "ESNext.Regexp"
   | "ESNext.String"
   | "ESNext.Symbol"
+  | "ESNext.Temporal"
   | "ESNext.WeakRef"
   | "DOM"
+  | "DOM.AsyncIterable"
   | "DOM.Iterable"
+  | "Decorators"
+  | "Decorators.Legacy"
   | "ScriptHost"
   | "WebWorker"
+  | "WebWorker.AsyncIterable"
   | "WebWorker.ImportScripts"
   | "WebWorker.Iterable"
   // Lowercase alternatives
@@ -168,6 +216,8 @@ export type Lib =
   | "es2016"
   | "es2016.array.include"
   | "es2017"
+  | "es2017.arraybuffer"
+  | "es2017.date"
   | "es2017.intl"
   | "es2017.object"
   | "es2017.sharedmemory"
@@ -181,17 +231,21 @@ export type Lib =
   | "es2018.regexp"
   | "es2019"
   | "es2019.array"
+  | "es2019.intl"
   | "es2019.object"
   | "es2019.string"
   | "es2019.symbol"
   | "es2020"
   | "es2020.bigint"
+  | "es2020.date"
+  | "es2020.intl"
+  | "es2020.number"
   | "es2020.promise"
+  | "es2020.sharedmemory"
   | "es2020.string"
   | "es2020.symbol.wellknown"
-  | "es2020.sharedmemory"
-  | "es2020.intl"
   | "es2021"
+  | "es2021.intl"
   | "es2021.promise"
   | "es2021.string"
   | "es2021.weakref"
@@ -200,22 +254,54 @@ export type Lib =
   | "es2022.error"
   | "es2022.intl"
   | "es2022.object"
+  | "es2022.regexp"
   | "es2022.sharedmemory"
   | "es2022.string"
-  | "es2022.regexp"
+  | "es2023"
+  | "es2023.array"
+  | "es2023.collection"
+  | "es2023.intl"
+  | "es2024"
+  | "es2024.arraybuffer"
+  | "es2024.collection"
+  | "es2024.object"
+  | "es2024.promise"
+  | "es2024.regexp"
+  | "es2024.sharedmemory"
+  | "es2024.string"
+  | "es2025"
+  | "es2025.collection"
+  | "es2025.float16"
+  | "es2025.intl"
+  | "es2025.iterator"
+  | "es2025.promise"
+  | "es2025.regexp"
   | "esnext"
   | "esnext.array"
   | "esnext.asynciterable"
   | "esnext.bigint"
+  | "esnext.collection"
+  | "esnext.decorators"
+  | "esnext.disposable"
+  | "esnext.error"
+  | "esnext.float16"
   | "esnext.intl"
+  | "esnext.iterator"
+  | "esnext.object"
   | "esnext.promise"
+  | "esnext.regexp"
   | "esnext.string"
   | "esnext.symbol"
+  | "esnext.temporal"
   | "esnext.weakref"
   | "dom"
+  | "dom.asynciterable"
   | "dom.iterable"
+  | "decorators"
+  | "decorators.legacy"
   | "scripthost"
   | "webworker"
+  | "webworker.asynciterable"
   | "webworker.importscripts"
   | "webworker.iterable";
 
@@ -268,7 +354,7 @@ export type ModuleResolution =
 
 export type ModuleDetection = "auto" | "legacy" | "force";
 
-export type IgnoreDeprecations = "5.0";
+export type IgnoreDeprecations = "5.0" | "6.0";
 
 export interface CompilerOptions {
   /**
@@ -420,7 +506,7 @@ export interface CompilerOptions {
   /**
    * Specify module code generation: 'None', 'CommonJS', 'AMD', 'System', 'UMD', 'ES6', 'ES2015' or 'ESNext'. Only 'AMD' and 'System' can be used in conjunction with `--outFile`. 'ES6' and 'ES2015' values may be used when targeting 'ES5' or lower.
    *
-   * @defaultValue ['ES3', 'ES5'].includes(target) ? 'CommonJS' : 'ES6'
+   * Default: `'ESNext'` since TypeScript 6.0, `['ES3', 'ES5'].includes(target) ? 'CommonJS' : 'ES6'` before.
    */
   module?: Module;
 
@@ -437,6 +523,13 @@ export interface CompilerOptions {
    * @defaultValue 'LF'
    */
   newLine?: NewLine;
+
+  /**
+   * Disable full type checking (only critical parse and emit errors will be reported).
+   *
+   * @defaultValue false
+   */
+  noCheck?: boolean;
 
   /**
    * Do not emit output.
@@ -522,7 +615,16 @@ export interface CompilerOptions {
   skipLibCheck?: boolean;
 
   /**
+   * Enforce stable type ordering.
+   *
+   * @defaultValue false
+   */
+  stableTypeOrdering?: boolean;
+
+  /**
    * Concatenate and emit output to single file.
+   *
+   * @deprecated since TypeScript 6.0.
    */
   outFile?: string;
 
@@ -567,6 +669,13 @@ export interface CompilerOptions {
   removeComments?: boolean;
 
   /**
+   * Rewrite '.ts', '.tsx', '.mts', and '.cts' file extensions in relative import paths to their JavaScript equivalent in output files.
+   *
+   * @defaultValue false
+   */
+  rewriteRelativeImportExtensions?: boolean;
+
+  /**
    * Specifies the root directory of input files.
    *
    * Use to control the output directory structure with `--outDir`.
@@ -579,6 +688,13 @@ export interface CompilerOptions {
    * @defaultValue false
    */
   isolatedModules?: boolean;
+
+  /**
+   * Require sufficient annotation on exports so other tools can trivially generate declaration files.
+   *
+   * @defaultValue false
+   */
+  isolatedDeclarations?: boolean;
 
   /**
    * Generates corresponding '.map' file.
@@ -616,7 +732,7 @@ export interface CompilerOptions {
   /**
    * Specify ECMAScript target version.
    *
-   * @defaultValue 'es3'
+   * Default: Current-year ES version since TypeScript 6.0, `'es3'` before.
    */
   target?: Target;
 
@@ -694,6 +810,13 @@ export interface CompilerOptions {
   noUncheckedIndexedAccess?: boolean;
 
   /**
+   * Report error if failed to find a source file for a side effect import.
+   *
+   * Default: `true` since TypeScript 6.0, `false` before.
+   */
+  noUncheckedSideEffectImports?: boolean;
+
+  /**
    * Report errors for fallthrough cases in switch statement.
    *
    * @defaultValue false
@@ -729,7 +852,14 @@ export interface CompilerOptions {
   generateCpuProfile?: string;
 
   /**
+   * Generates an event trace and a list of types.
+   */
+  generateTrace?: boolean;
+
+  /**
    * Base directory to resolve non-relative module names.
+   *
+   * @deprecated since TypeScript 6.0.
    */
   baseUrl?: string;
 
@@ -852,7 +982,7 @@ export interface CompilerOptions {
   /**
    * Enable all strict type checking options.
    *
-   * @defaultValue false
+   * Default: `true` since TypeScript 6.0, `false` before.
    */
   strict?: boolean;
 
@@ -867,6 +997,7 @@ export interface CompilerOptions {
    * Provide full support for iterables in `for-of`, spread, and destructuring when targeting `ES5` or `ES3`.
    *
    * @defaultValue false
+   * @deprecated since TypeScript 6.0.
    */
   downlevelIteration?: boolean;
 
@@ -876,6 +1007,13 @@ export interface CompilerOptions {
    * @defaultValue false
    */
   checkJs?: boolean;
+
+  /**
+   * Built-in iterators are instantiated with a `TReturn` type of undefined instead of `any`.
+   *
+   * @defaultValue false
+   */
+  strictBuiltinIteratorReturn?: boolean;
 
   /**
    * Disable bivariant parameter checking for function types.
@@ -1040,6 +1178,20 @@ export interface CompilerOptions {
    * Suppress deprecation warnings
    */
   ignoreDeprecations?: IgnoreDeprecations;
+
+  /**
+   * Do not allow runtime constructs that are not part of ECMAScript.
+   *
+   * @defaultValue false
+   */
+  erasableSyntaxOnly?: boolean;
+
+  /**
+   * Enable lib replacement.
+   *
+   * Default: `false` since TypeScript 6.0, `true` before.
+   */
+  libReplacement?: boolean;
 }
 
 export type WatchFileKind =
@@ -1113,6 +1265,11 @@ export interface TypeAcquisition {
    * Specifies a list of type declarations to be excluded from auto type acquisition. For example, `['jquery', 'lodash']`.
    */
   exclude?: string[];
+
+  /**
+   * Disable inferring what types should be added based on filenames in a project.
+   */
+  disableFilenameBasedTypeAcquisition?: boolean;
 }
 
 export interface References {
@@ -1141,7 +1298,7 @@ export interface References {
 }
 
 /**
- * Type for [TypeScript's `tsconfig.json` file](https://www.typescriptlang.org/docs/handbook/tsconfig-json.html) (TypeScript 3.7).
+ * Type for [TypeScript's `tsconfig.json` file](https://www.typescriptlang.org/docs/handbook/tsconfig-json.html) (TypeScript 6.0).
  */
 export interface TsConfigJson {
   /**
