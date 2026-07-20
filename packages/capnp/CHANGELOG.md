@@ -2,6 +2,19 @@
 
 # Changelog for Stryke - Capnp
 
+## [0.12.122](https://github.com/storm-software/stryke/releases/tag/capnp%400.12.122) (07/06/2026)
+
+### Miscellaneous
+
+- **capnp:** Update CLI tool to use new `capnp` application name ([b4dfef2d](https://github.com/storm-software/stryke/commit/b4dfef2d))
+
+### Updated Dependencies
+
+- Updated **convert** to **v0.7.26**
+- Updated **fs** to **v0.33.96**
+- Updated **path** to **v0.29.22**
+- Updated **types** to **v0.12.23**
+
 ## [0.12.121](https://github.com/storm-software/stryke/releases/tag/capnp%400.12.121) (06/28/2026)
 
 ### Miscellaneous
