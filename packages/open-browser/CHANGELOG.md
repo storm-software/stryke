@@ -2,6 +2,12 @@
 
 # Changelog for Stryke - Open Browser
 
+## [0.2.84](https://github.com/storm-software/stryke/releases/tag/open-browser%400.2.84) (07/20/2026)
+
+### Miscellaneous
+
+- **types:** Update `TsConfigFile` and `PackageJson` to use latest schemas ([b99ebf2a](https://github.com/storm-software/stryke/commit/b99ebf2a))
+
 ## [0.2.82](https://github.com/storm-software/stryke/releases/tag/open-browser%400.2.82) (06/28/2026)
 
 ### Miscellaneous

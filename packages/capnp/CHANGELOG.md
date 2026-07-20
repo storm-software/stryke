@@ -2,6 +2,19 @@
 
 # Changelog for Stryke - Capnp
 
+## [0.12.123](https://github.com/storm-software/stryke/releases/tag/capnp%400.12.123) (07/20/2026)
+
+### Miscellaneous
+
+- **types:** Update `TsConfigFile` and `PackageJson` to use latest schemas ([b99ebf2a](https://github.com/storm-software/stryke/commit/b99ebf2a))
+
+### Updated Dependencies
+
+- Updated **convert** to **v0.7.27**
+- Updated **fs** to **v0.33.97**
+- Updated **path** to **v0.29.23**
+- Updated **types** to **v0.12.24**
+
 ## [0.12.122](https://github.com/storm-software/stryke/releases/tag/capnp%400.12.122) (07/06/2026)
 
 ### Miscellaneous

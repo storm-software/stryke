@@ -2,6 +2,12 @@
 
 # Changelog for Stryke - Types
 
+## [0.12.24](https://github.com/storm-software/stryke/releases/tag/types%400.12.24) (07/20/2026)
+
+### Miscellaneous
+
+- **types:** Update `TsConfigFile` and `PackageJson` to use latest schemas ([b99ebf2a](https://github.com/storm-software/stryke/commit/b99ebf2a))
+
 ## [0.12.22](https://github.com/storm-software/stryke/releases/tag/types%400.12.22) (06/28/2026)
 
 ### Miscellaneous
