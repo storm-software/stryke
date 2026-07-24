@@ -61,7 +61,7 @@ jobs:
       - start
     steps:
       - name: Checkout [Pull Request]
-        uses: actions/checkout@34e114876b0b11c390a56381ad16ebd13914f8d5 # v4.3.1
+        uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262 # v4.4.0
         if: ${{ github.event_name == 'pull_request' }}
         with:
           # By default, PRs will be checked-out based on the Merge Commit, but we want the actual branch HEAD.
@@ -72,7 +72,7 @@ jobs:
           persist-credentials: false
 
       - name: Checkout `main` branch
-        uses: actions/checkout@34e114876b0b11c390a56381ad16ebd13914f8d5 # v4.3.1
+        uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262 # v4.4.0
         if: ${{ github.event_name != 'pull_request' }}
         with:
           # We need to fetch all branches and commits so that Nx affected has a base to compare against.
