@@ -2,6 +2,20 @@
 
 # Changelog for Stryke - Prisma TRPC Generator
 
+## [0.13.116](https://github.com/storm-software/stryke/releases/tag/prisma-trpc-generator%400.13.116) (07/26/2026)
+
+### Miscellaneous
+
+- **monorepo:** Update CI workflow SHA hashes ([be8fc460](https://github.com/storm-software/stryke/commit/be8fc460))
+
+### Updated Dependencies
+
+- Updated **env** to **v0.20.116**
+- Updated **fs** to **v0.33.99**
+- Updated **path** to **v0.29.25**
+- Updated **string-format** to **v0.17.40**
+- Updated **types** to **v0.12.26**
+
 ## [0.13.115](https://github.com/storm-software/stryke/releases/tag/prisma-trpc-generator%400.13.115) (07/26/2026)
 
 ### Updated Dependencies

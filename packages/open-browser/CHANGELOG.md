@@ -2,6 +2,12 @@
 
 # Changelog for Stryke - Open Browser
 
+## [0.2.86](https://github.com/storm-software/stryke/releases/tag/open-browser%400.2.86) (07/26/2026)
+
+### Miscellaneous
+
+- **monorepo:** Update CI workflow SHA hashes ([be8fc460](https://github.com/storm-software/stryke/commit/be8fc460))
+
 ## [0.2.84](https://github.com/storm-software/stryke/releases/tag/open-browser%400.2.84) (07/20/2026)
 
 ### Miscellaneous

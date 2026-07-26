@@ -2,6 +2,12 @@
 
 # Changelog for Stryke - Types
 
+## [0.12.26](https://github.com/storm-software/stryke/releases/tag/types%400.12.26) (07/26/2026)
+
+### Miscellaneous
+
+- **monorepo:** Update CI workflow SHA hashes ([be8fc460](https://github.com/storm-software/stryke/commit/be8fc460))
+
 ## [0.12.24](https://github.com/storm-software/stryke/releases/tag/types%400.12.24) (07/20/2026)
 
 ### Miscellaneous

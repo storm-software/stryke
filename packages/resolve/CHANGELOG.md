@@ -2,6 +2,23 @@
 
 # Changelog for Stryke - Resolve
 
+## [0.0.14](https://github.com/storm-software/stryke/releases/tag/resolve%400.0.14) (07/26/2026)
+
+### Miscellaneous
+
+- **resolve:** Update logic to rewrite type exports in bundler ([05e1dea4](https://github.com/storm-software/stryke/commit/05e1dea4))
+
+### Updated Dependencies
+
+- Updated **convert** to **v0.7.29**
+- Updated **fs** to **v0.33.99**
+- Updated **helpers** to **v0.10.38**
+- Updated **http** to **v0.12.89**
+- Updated **path** to **v0.29.25**
+- Updated **type-checks** to **v0.6.31**
+- Updated **types** to **v0.12.26**
+- Updated **url** to **v0.4.49**
+
 ## [0.0.13](https://github.com/storm-software/stryke/releases/tag/resolve%400.0.13) (07/26/2026)
 
 ### Updated Dependencies

@@ -2,6 +2,19 @@
 
 # Changelog for Stryke - Capnp
 
+## [0.12.125](https://github.com/storm-software/stryke/releases/tag/capnp%400.12.125) (07/26/2026)
+
+### Miscellaneous
+
+- **monorepo:** Update CI workflow SHA hashes ([be8fc460](https://github.com/storm-software/stryke/commit/be8fc460))
+
+### Updated Dependencies
+
+- Updated **convert** to **v0.7.29**
+- Updated **fs** to **v0.33.99**
+- Updated **path** to **v0.29.25**
+- Updated **types** to **v0.12.26**
+
 ## [0.12.124](https://github.com/storm-software/stryke/releases/tag/capnp%400.12.124) (07/26/2026)
 
 ### Updated Dependencies

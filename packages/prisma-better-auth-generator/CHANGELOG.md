@@ -2,6 +2,19 @@
 
 # Changelog for Stryke - Prisma Better Auth Generator
 
+## [0.14.116](https://github.com/storm-software/stryke/releases/tag/prisma-better-auth-generator%400.14.116) (07/26/2026)
+
+### Miscellaneous
+
+- **monorepo:** Update CI workflow SHA hashes ([be8fc460](https://github.com/storm-software/stryke/commit/be8fc460))
+
+### Updated Dependencies
+
+- Updated **env** to **v0.20.116**
+- Updated **fs** to **v0.33.99**
+- Updated **path** to **v0.29.25**
+- Updated **string-format** to **v0.17.40**
+
 ## [0.14.115](https://github.com/storm-software/stryke/releases/tag/prisma-better-auth-generator%400.14.115) (07/26/2026)
 
 ### Updated Dependencies

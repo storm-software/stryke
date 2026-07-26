@@ -2,6 +2,13 @@
 
 # Changelog for Stryke - Zod
 
+## [0.3.44](https://github.com/storm-software/stryke/releases/tag/zod%400.3.44) (07/26/2026)
+
+### Updated Dependencies
+
+- Updated **json** to **v0.15.22**
+- Updated **type-checks** to **v0.6.31**
+
 ## [0.3.43](https://github.com/storm-software/stryke/releases/tag/zod%400.3.43) (07/26/2026)
 
 ### Updated Dependencies
