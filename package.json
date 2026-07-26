@@ -118,7 +118,12 @@
   },
   "namespace": "@stryke",
   "nx": {
-    "includedScripts": ["lint", "format", "commit", "release"]
+    "includedScripts": [
+      "lint",
+      "format",
+      "commit",
+      "release"
+    ]
   },
   "prettier": "@storm-software/prettier/config.json",
   "triggerEmptyDevReleaseByIncrementingThisNumber": 0
