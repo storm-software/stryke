@@ -38,6 +38,7 @@ export function useBattery() {
   >(defaultBatteryManagerState);
 
   const key = "getBattery" as keyof typeof navigator;
+  // eslint-disable-next-line ts/unbound-method
   const getBattery = navigator[key] as () => Promise<BatteryManager>;
 
   useEffect(() => {

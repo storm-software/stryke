@@ -31,6 +31,16 @@ import { resolve } from "./resolve";
 import { isGitHubReference, isGitLabReference } from "./type-checks";
 import type { BundleOptions, ResolveReference } from "./types";
 
+/**
+ * Rewrites type-only imports/exports so esbuild still walks them while collecting the original TypeScript sources for schema generation.
+ */
+function rewriteTypeOnlyImports(source: string) {
+  return source
+    .replace(/\bimport\s+type\s+/g, "import ")
+    .replace(/\bexport\s+type\s+\*\s+from/g, "export * from")
+    .replace(/\bexport\s+type\s+\{/g, "export {");
+}
+
 export function plugin(
   options: BundleOptions & { originalInput: ResolveReference }
 ): Plugin {
@@ -106,7 +116,7 @@ export function plugin(
           });
 
           return {
-            contents,
+            contents: rewriteTypeOnlyImports(contents),
             loader: (findFileExtensionSafe(args.path) || "ts") as Loader
           };
         }
@@ -138,7 +148,7 @@ export async function bundle(
     ...omit(options, ["cwd", "fs", "originalInput"]),
     logLevel: "silent",
     stdin: {
-      contents
+      contents: rewriteTypeOnlyImports(contents)
     },
     write: false,
     sourcemap: false,

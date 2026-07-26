@@ -16,6 +16,8 @@
 
  ------------------------------------------------------------------- */
 
+/* eslint-disable ts/unbound-method */
+
 import { isEqual } from "@stryke/type-checks/is-equal";
 import type { NetworkInformation, NetworkState } from "@stryke/types/navigator";
 import { useRef, useSyncExternalStore } from "react";
