@@ -2,6 +2,12 @@
 
 # Changelog for Stryke - Types
 
+## [0.12.27](https://github.com/storm-software/stryke/releases/tag/types%400.12.27) (08/02/2026)
+
+### Miscellaneous
+
+- **monorepo:** Update workflow action's SHA versions ([bc574b67](https://github.com/storm-software/stryke/commit/bc574b67))
+
 ## [0.12.26](https://github.com/storm-software/stryke/releases/tag/types%400.12.26) (07/26/2026)
 
 ### Miscellaneous

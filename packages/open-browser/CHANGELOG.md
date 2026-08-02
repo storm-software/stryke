@@ -2,6 +2,12 @@
 
 # Changelog for Stryke - Open Browser
 
+## [0.2.87](https://github.com/storm-software/stryke/releases/tag/open-browser%400.2.87) (08/02/2026)
+
+### Miscellaneous
+
+- **monorepo:** Update workflow action's SHA versions ([bc574b67](https://github.com/storm-software/stryke/commit/bc574b67))
+
 ## [0.2.86](https://github.com/storm-software/stryke/releases/tag/open-browser%400.2.86) (07/26/2026)
 
 ### Miscellaneous

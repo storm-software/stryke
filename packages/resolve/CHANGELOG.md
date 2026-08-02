@@ -2,6 +2,23 @@
 
 # Changelog for Stryke - Resolve
 
+## [0.0.15](https://github.com/storm-software/stryke/releases/tag/resolve%400.0.15) (08/02/2026)
+
+### Bug Fixes
+
+- **resolve:** Resolve issue applying options to `resolve` function ([b859d641](https://github.com/storm-software/stryke/commit/b859d641))
+
+### Updated Dependencies
+
+- Updated **convert** to **v0.7.30**
+- Updated **fs** to **v0.33.100**
+- Updated **helpers** to **v0.10.39**
+- Updated **http** to **v0.12.90**
+- Updated **path** to **v0.29.26**
+- Updated **type-checks** to **v0.6.32**
+- Updated **types** to **v0.12.27**
+- Updated **url** to **v0.4.50**
+
 ## [0.0.14](https://github.com/storm-software/stryke/releases/tag/resolve%400.0.14) (07/26/2026)
 
 ### Miscellaneous

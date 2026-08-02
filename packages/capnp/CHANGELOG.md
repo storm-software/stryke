@@ -2,6 +2,19 @@
 
 # Changelog for Stryke - Capnp
 
+## [0.12.126](https://github.com/storm-software/stryke/releases/tag/capnp%400.12.126) (08/02/2026)
+
+### Miscellaneous
+
+- **monorepo:** Update workflow action's SHA versions ([bc574b67](https://github.com/storm-software/stryke/commit/bc574b67))
+
+### Updated Dependencies
+
+- Updated **convert** to **v0.7.30**
+- Updated **fs** to **v0.33.100**
+- Updated **path** to **v0.29.26**
+- Updated **types** to **v0.12.27**
+
 ## [0.12.125](https://github.com/storm-software/stryke/releases/tag/capnp%400.12.125) (07/26/2026)
 
 ### Miscellaneous
