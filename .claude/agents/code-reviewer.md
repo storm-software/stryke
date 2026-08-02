@@ -1,1 +1,1 @@
-/nix/store/imhmzpmhzs6xjd1yjvzwwjvaccvk0lzi-claude-agents-code-reviewer.md
+/nix/store/29kspxbxkwr1hzy3706fjrg5d52fhlpi-claude-agents-code-reviewer.md

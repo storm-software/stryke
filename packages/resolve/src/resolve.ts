@@ -175,7 +175,6 @@ export async function resolveFilePath(
   const path = await resolveFile(
     reference,
     defu(
-      options.fs ?? {},
       options.cwd
         ? {
             paths: [options.cwd]
@@ -184,7 +183,8 @@ export async function resolveFilePath(
       {
         extensions: options.resolveExtensions,
         conditions: options.conditions
-      }
+      },
+      options
     )
   );
 
