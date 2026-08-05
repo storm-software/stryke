@@ -2,6 +2,12 @@
 
 # Changelog for Stryke - Types
 
+## [0.12.28](https://github.com/storm-software/stryke/releases/tag/types%400.12.28) (08/05/2026)
+
+### Bug Fixes
+
+- **resolve:** Resolve issue in `bundle` with missing `loader` option ([45c7645e](https://github.com/storm-software/stryke/commit/45c7645e))
+
 ## [0.12.27](https://github.com/storm-software/stryke/releases/tag/types%400.12.27) (08/02/2026)
 
 ### Miscellaneous
