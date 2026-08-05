@@ -21,6 +21,7 @@ import { omit } from "@stryke/helpers/omit";
 import { findFileExtensionSafe } from "@stryke/path/find";
 import { isRelativePath } from "@stryke/path/is-type";
 import { joinPaths } from "@stryke/path/join-paths";
+import { replacePath } from "@stryke/path/replace";
 import { isURL } from "@stryke/type-checks/is-url";
 import { isURLString, isValidURL } from "@stryke/url/helpers";
 import defu from "defu";
@@ -30,7 +31,6 @@ import { extractGitHubReference, extractGitLabReference } from "./helpers";
 import { resolve } from "./resolve";
 import { isGitHubReference, isGitLabReference } from "./type-checks";
 import type { BundleOptions, ResolveReference } from "./types";
-import { replacePath } from "@stryke/path/replace";
 
 /**
  * Rewrites type-only imports/exports so esbuild still walks them while collecting the original TypeScript sources for schema generation.
@@ -146,7 +146,7 @@ export async function bundle(
   const result = await build({
     platform: "node",
     format: "esm",
-    ...omit(options, ["cwd", "fs", "originalInput"]),
+    ...omit(options, ["cwd", "fs", "originalInput", "plugins"]),
     logLevel: "silent",
     stdin: {
       contents: rewriteTypeOnlyImports(contents),
@@ -154,7 +154,8 @@ export async function bundle(
       sourcefile: options.cwd
         ? replacePath(options.cwd, options.originalInput.toString())
         : options.originalInput.toString(),
-      loader: (findFileExtensionSafe(options.originalInput.toString()) || "ts") as Loader
+      loader: (findFileExtensionSafe(options.originalInput.toString()) ||
+        "ts") as Loader
     },
     write: false,
     sourcemap: false,
@@ -165,7 +166,14 @@ export async function bundle(
     keepNames: true,
     metafile: false,
     absWorkingDir: options.cwd,
-    plugins: [plugin({ ...options, originalInput: options.originalInput })]
+    plugins: [
+      ...(options.plugins
+        ? Array.isArray(options.plugins)
+          ? options.plugins
+          : [options.plugins]
+        : []),
+      plugin({ ...options, originalInput: options.originalInput })
+    ]
   });
   if (result.errors.length > 0) {
     throw new Error(

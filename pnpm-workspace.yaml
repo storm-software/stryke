@@ -32,24 +32,24 @@ catalog:
   "@prisma/internals": ^6.19.3
   "@prisma/prisma-schema-wasm": ^6.6.0-41.9061db3b0058e3d3731c6fe68a1b77061bed4861
   "@standard-schema/spec": ^1.1.0
-  "@storm-software/build-tools": ^0.158.270
-  "@storm-software/config": ^1.138.47
-  "@storm-software/config-tools": ^1.190.110
-  "@storm-software/cspell": ^0.46.178
-  "@storm-software/esbuild": ^0.53.271
-  "@storm-software/eslint": ^0.170.144
-  "@storm-software/eslint-plugin-tsdoc": ^0.0.73
-  "@storm-software/git-tools": ^2.131.118
-  "@storm-software/linting-tools": ^1.134.40
-  "@storm-software/markdownlint": ^0.30.266
-  "@storm-software/pnpm-tools": ^0.7.121
-  "@storm-software/prettier": ^0.59.163
-  "@storm-software/testing-tools": ^1.119.263
-  "@storm-software/tsconfig": ^0.48.177
-  "@storm-software/tsdoc": ^0.13.263
-  "@storm-software/unbuild": ^0.57.271
-  "@storm-software/untyped": ^0.24.252
-  "@storm-software/workspace-tools": ^1.296.90
+  "@storm-software/build-tools": ^0.158.271
+  "@storm-software/config": ^1.138.48
+  "@storm-software/config-tools": ^1.190.111
+  "@storm-software/cspell": ^0.46.179
+  "@storm-software/esbuild": ^0.53.272
+  "@storm-software/eslint": ^0.170.145
+  "@storm-software/eslint-plugin-tsdoc": ^0.0.74
+  "@storm-software/git-tools": ^2.131.119
+  "@storm-software/linting-tools": ^1.134.41
+  "@storm-software/markdownlint": ^0.30.267
+  "@storm-software/pnpm-tools": ^0.7.122
+  "@storm-software/prettier": ^0.59.164
+  "@storm-software/testing-tools": ^1.119.264
+  "@storm-software/tsconfig": ^0.48.178
+  "@storm-software/tsdoc": ^0.13.264
+  "@storm-software/unbuild": ^0.57.272
+  "@storm-software/untyped": ^0.24.253
+  "@storm-software/workspace-tools": ^1.296.91
   "@swc-node/register": ^1.12.1
   "@swc/core": ^1.15.47
   "@swc/helpers": ^0.5.23
@@ -75,7 +75,7 @@ catalog:
   capnp-es: ^0.0.11
   chalk: ^5.6.2
   commander: ^14.0.3
-  conventional-changelog-storm-software: ^0.3.271
+  conventional-changelog-storm-software: ^0.3.272
   copyfiles: ^2.4.1
   cross-spawn: ^7.0.6
   defu: ^6.1.7
