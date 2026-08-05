@@ -68,7 +68,7 @@ catalog:
   "@types/react": ^19.2.18
   "@types/react-dom": ^19.2.4
   "@types/react-native": 0.72.8
-  "@types/semver": ^7.7.1
+  "@types/semver": ^7.8.0
   "@types/type-is": 1.6.7
   buffer: 6.0.3
   capnp-es: ^0.0.11
@@ -121,7 +121,7 @@ catalog:
   ts-node: ^10.9.2
   tsdown: ^0.21.10
   tslib: ^2.8.1
-  tsx: ^4.23.1
+  tsx: ^4.23.5
   typescript: ^6.0.3
   ufo: ^1.6.4
   unbuild: ^3.3.1
