@@ -2,6 +2,20 @@
 
 # Changelog for Stryke - Prisma TRPC Generator
 
+## [0.13.118](https://github.com/storm-software/stryke/releases/tag/prisma-trpc-generator%400.13.118) (08/05/2026)
+
+### Bug Fixes
+
+- **resolve:** Resolve issue in `bundle` with missing `loader` option ([45c7645e](https://github.com/storm-software/stryke/commit/45c7645e))
+
+### Updated Dependencies
+
+- Updated **env** to **v0.20.118**
+- Updated **fs** to **v0.33.101**
+- Updated **path** to **v0.29.27**
+- Updated **string-format** to **v0.17.42**
+- Updated **types** to **v0.12.28**
+
 ## [0.13.117](https://github.com/storm-software/stryke/releases/tag/prisma-trpc-generator%400.13.117) (08/02/2026)
 
 ### Miscellaneous

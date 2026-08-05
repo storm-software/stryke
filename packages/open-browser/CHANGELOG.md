@@ -2,6 +2,12 @@
 
 # Changelog for Stryke - Open Browser
 
+## [0.2.88](https://github.com/storm-software/stryke/releases/tag/open-browser%400.2.88) (08/05/2026)
+
+### Bug Fixes
+
+- **resolve:** Resolve issue in `bundle` with missing `loader` option ([45c7645e](https://github.com/storm-software/stryke/commit/45c7645e))
+
 ## [0.2.87](https://github.com/storm-software/stryke/releases/tag/open-browser%400.2.87) (08/02/2026)
 
 ### Miscellaneous

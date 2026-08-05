@@ -2,6 +2,19 @@
 
 # Changelog for Stryke - Prisma Better Auth Generator
 
+## [0.14.118](https://github.com/storm-software/stryke/releases/tag/prisma-better-auth-generator%400.14.118) (08/05/2026)
+
+### Bug Fixes
+
+- **resolve:** Resolve issue in `bundle` with missing `loader` option ([45c7645e](https://github.com/storm-software/stryke/commit/45c7645e))
+
+### Updated Dependencies
+
+- Updated **env** to **v0.20.118**
+- Updated **fs** to **v0.33.101**
+- Updated **path** to **v0.29.27**
+- Updated **string-format** to **v0.17.42**
+
 ## [0.14.117](https://github.com/storm-software/stryke/releases/tag/prisma-better-auth-generator%400.14.117) (08/02/2026)
 
 ### Miscellaneous

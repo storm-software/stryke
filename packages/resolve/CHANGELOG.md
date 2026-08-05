@@ -2,6 +2,23 @@
 
 # Changelog for Stryke - Resolve
 
+## [0.0.16](https://github.com/storm-software/stryke/releases/tag/resolve%400.0.16) (08/05/2026)
+
+### Bug Fixes
+
+- **resolve:** Resolve issue in `bundle` with missing `loader` option ([45c7645e](https://github.com/storm-software/stryke/commit/45c7645e))
+
+### Updated Dependencies
+
+- Updated **convert** to **v0.7.31**
+- Updated **fs** to **v0.33.101**
+- Updated **helpers** to **v0.10.40**
+- Updated **http** to **v0.12.91**
+- Updated **path** to **v0.29.27**
+- Updated **type-checks** to **v0.6.33**
+- Updated **types** to **v0.12.28**
+- Updated **url** to **v0.4.51**
+
 ## [0.0.15](https://github.com/storm-software/stryke/releases/tag/resolve%400.0.15) (08/02/2026)
 
 ### Bug Fixes
