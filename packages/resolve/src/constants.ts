@@ -20,6 +20,8 @@ export const JS_EXTENSIONS = ["js", "cjs", "mjs"] as const as string[];
 
 export const TS_EXTENSIONS = ["ts", "cts", "mts"] as const as string[];
 
+export const JSON_EXTENSIONS = ["json", "jsonc", "json5"] as const as string[];
+
 export const BUNDLE_EXTENSIONS = [
   ...JS_EXTENSIONS,
   ...TS_EXTENSIONS,
@@ -29,9 +31,7 @@ export const BUNDLE_EXTENSIONS = [
 
 export const VALID_OBJECT_SOURCE_EXTENSIONS = [
   ...BUNDLE_EXTENSIONS,
-  "json",
-  "jsonc",
-  "json5",
+  ...JSON_EXTENSIONS,
   "yaml",
   "yml",
   "toml"

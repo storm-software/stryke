@@ -2,7 +2,26 @@ import { mkdtemp, rm, writeFile } from "node:fs/promises";
 import { tmpdir } from "node:os";
 import { join } from "node:path";
 import { describe, expect, it } from "vitest";
-import { bundle } from "../src/bundle";
+import { bundle, toLoader } from "../src/bundle";
+
+describe("toLoader", () => {
+  it.each([
+    ["js", "js"],
+    ["cjs", "js"],
+    ["mjs", "js"],
+    ["jsx", "jsx"],
+    ["ts", "ts"],
+    ["cts", "ts"],
+    ["mts", "ts"],
+    ["tsx", "tsx"],
+    ["json", "json"],
+    ["css", "css"],
+    ["", "ts"],
+    ["unknown", "ts"]
+  ] as const)("maps %s to %s", (extension, loader) => {
+    expect(toLoader(extension)).toBe(loader);
+  });
+});
 
 describe("bundle", () => {
   it("bundles an existing TypeScript module", async () => {

@@ -27,10 +27,46 @@ import { isURLString, isValidURL } from "@stryke/url/helpers";
 import defu from "defu";
 import type { Loader, OutputFile, Plugin } from "esbuild";
 import { build } from "esbuild";
+import { JS_EXTENSIONS, JSON_EXTENSIONS, TS_EXTENSIONS } from "./constants";
 import { extractGitHubReference, extractGitLabReference } from "./helpers";
 import { resolve } from "./resolve";
 import { isGitHubReference, isGitLabReference } from "./type-checks";
 import type { BundleOptions, ResolveReference } from "./types";
+
+/**
+ * Maps a file extension to an esbuild {@link Loader}.
+ *
+ * @remarks
+ * Follows esbuild's default extension → loader mapping
+ * (see https://esbuild.github.io/api/#loader and https://esbuild.github.io/content-types/).
+ * Extensions like `mjs`/`cjs` are not themselves loaders — they resolve to `js`;
+ * `mts`/`cts` resolve to `ts`.
+ *
+ * @param fileExtension - Extension without a leading dot (e.g. `"ts"`, `"mjs"`).
+ * @returns The matching esbuild loader, defaulting to `"ts"`.
+ */
+export function toLoader(fileExtension: string): Loader {
+  if (JS_EXTENSIONS.includes(fileExtension)) {
+    return "js";
+  }
+  if (fileExtension === "jsx") {
+    return "jsx";
+  }
+  if (TS_EXTENSIONS.includes(fileExtension)) {
+    return "ts";
+  }
+  if (fileExtension === "tsx") {
+    return "tsx";
+  }
+  if (JSON_EXTENSIONS.includes(fileExtension)) {
+    return "json";
+  }
+  if (fileExtension === "css") {
+    return "css";
+  }
+
+  return "ts";
+}
 
 /**
  * Rewrites type-only imports/exports so esbuild still walks them while collecting the original TypeScript sources for schema generation.
@@ -118,7 +154,7 @@ export function plugin(
 
           return {
             contents: rewriteTypeOnlyImports(contents),
-            loader: (findFileExtensionSafe(args.path) || "ts") as Loader
+            loader: toLoader(findFileExtensionSafe(args.path))
           };
         }
       );
@@ -143,6 +179,9 @@ export async function bundle(
     );
   }
 
+  const fileExtension = findFileExtensionSafe(options.originalInput.toString());
+  const loader = toLoader(fileExtension);
+
   const result = await build({
     platform: "node",
     format: "esm",
@@ -154,8 +193,7 @@ export async function bundle(
       sourcefile: options.cwd
         ? replacePath(options.cwd, options.originalInput.toString())
         : options.originalInput.toString(),
-      loader: (findFileExtensionSafe(options.originalInput.toString()) ||
-        "ts") as Loader
+      loader
     },
     write: false,
     sourcemap: false,
