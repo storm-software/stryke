@@ -94,6 +94,7 @@
     "@types/node": "catalog:",
     "conventional-changelog-storm-software": "catalog:",
     "copyfiles": "catalog:",
+    "ajv": "catalog:",
     "eslint": "catalog:",
     "eslint-flat-config-utils": "catalog:",
     "knip": "catalog:",

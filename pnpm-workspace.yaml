@@ -10,6 +10,7 @@ allowBuilds:
   sharp: true
   unrs-resolver: true
 catalog:
+  ajv: 6.15.0
   "@antfu/install-pkg": ^1.1.0
   "@antfu/ni": ^23.3.1
   "@cloudflare/workers-types": ^4.20260702.1
@@ -80,7 +81,7 @@ catalog:
   defu: ^6.1.7
   dts-bundle-generator: ^9.5.1
   esbuild: ^0.28.1
-  eslint: ^9.39.5
+  eslint: ^10.8.0
   eslint-flat-config-utils: ^2.1.4
   execa: ^9.6.1
   figlet: ^1.11.4
@@ -175,20 +176,6 @@ overrides:
   cookie: ">=0.7.0"
   debug: ">=4.4.0"
   follow-redirects: ">=1.15.9"
-  got: ">=14.4.5"
-  ip: ">=2.0.1"
-  loader-utils: ">=3.3.1"
-  markdown-it: ">=14.1.0"
-  micromatch: ">=4.0.8"
-  next: ">=13.4.20-canary.13"
-  node-fetch: ">=3.3.2"
-  nth-check: ">=2.1.1"
-  parse-path: ">=7.0.0"
-  parse-url: ">=9.2.0"
-  path-to-regexp: ">=0.1.12"
-  postcss: ">=8.5.1"
-  shell-quote: ">=1.8.2"
-  simple-git: ">=3.27.0"
 patchedDependencies:
   capnp-es@0.0.11: patches/capnp-es@0.0.11.patch
   mlly@1.7.4: patches/mlly@1.7.4.patch

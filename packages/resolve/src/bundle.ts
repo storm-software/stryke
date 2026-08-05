@@ -30,6 +30,7 @@ import { extractGitHubReference, extractGitLabReference } from "./helpers";
 import { resolve } from "./resolve";
 import { isGitHubReference, isGitLabReference } from "./type-checks";
 import type { BundleOptions, ResolveReference } from "./types";
+import { replacePath } from "@stryke/path/replace";
 
 /**
  * Rewrites type-only imports/exports so esbuild still walks them while collecting the original TypeScript sources for schema generation.
@@ -148,7 +149,12 @@ export async function bundle(
     ...omit(options, ["cwd", "fs", "originalInput"]),
     logLevel: "silent",
     stdin: {
-      contents: rewriteTypeOnlyImports(contents)
+      contents: rewriteTypeOnlyImports(contents),
+      resolveDir: options.cwd,
+      sourcefile: options.cwd
+        ? replacePath(options.cwd, options.originalInput.toString())
+        : options.originalInput.toString(),
+      loader: (findFileExtensionSafe(options.originalInput.toString()) || "ts") as Loader
     },
     write: false,
     sourcemap: false,
