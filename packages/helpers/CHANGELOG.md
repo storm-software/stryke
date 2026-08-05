@@ -2,6 +2,14 @@
 
 # Changelog for Stryke - Helpers
 
+## [0.10.42](https://github.com/storm-software/stryke/releases/tag/helpers%400.10.42) (08/05/2026)
+
+### Updated Dependencies
+
+- Updated **convert** to **v0.7.33**
+- Updated **type-checks** to **v0.6.35**
+- Updated **types** to **v0.12.30**
+
 ## [0.10.41](https://github.com/storm-software/stryke/releases/tag/helpers%400.10.41) (08/05/2026)
 
 ### Updated Dependencies

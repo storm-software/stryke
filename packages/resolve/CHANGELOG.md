@@ -2,6 +2,23 @@
 
 # Changelog for Stryke - Resolve
 
+## [0.0.18](https://github.com/storm-software/stryke/releases/tag/resolve%400.0.18) (08/05/2026)
+
+### Bug Fixes
+
+- **resolve:** Resolve issue with invalid `loader` selection ([1c41a711](https://github.com/storm-software/stryke/commit/1c41a711))
+
+### Updated Dependencies
+
+- Updated **convert** to **v0.7.33**
+- Updated **fs** to **v0.33.103**
+- Updated **helpers** to **v0.10.42**
+- Updated **http** to **v0.12.93**
+- Updated **path** to **v0.29.29**
+- Updated **type-checks** to **v0.6.35**
+- Updated **types** to **v0.12.30**
+- Updated **url** to **v0.4.53**
+
 ## [0.0.17](https://github.com/storm-software/stryke/releases/tag/resolve%400.0.17) (08/05/2026)
 
 ### Miscellaneous
