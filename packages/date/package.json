@@ -1,6 +1,6 @@
 {
   "name": "@stryke/date",
-  "version": "0.0.10",
+  "version": "0.0.11",
   "private": false,
   "description": "A utility package that helps with date manipulation and formatting.",
   "repository": {
