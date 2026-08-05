@@ -2,6 +2,23 @@
 
 # Changelog for Stryke - Resolve
 
+## [0.0.17](https://github.com/storm-software/stryke/releases/tag/resolve%400.0.17) (08/05/2026)
+
+### Miscellaneous
+
+- **resolve:** Ensure `plugins` option is not overriden when applied to `bundle` function ([30dbe6bd](https://github.com/storm-software/stryke/commit/30dbe6bd))
+
+### Updated Dependencies
+
+- Updated **convert** to **v0.7.32**
+- Updated **fs** to **v0.33.102**
+- Updated **helpers** to **v0.10.41**
+- Updated **http** to **v0.12.92**
+- Updated **path** to **v0.29.28**
+- Updated **type-checks** to **v0.6.34**
+- Updated **types** to **v0.12.29**
+- Updated **url** to **v0.4.52**
+
 ## [0.0.16](https://github.com/storm-software/stryke/releases/tag/resolve%400.0.16) (08/05/2026)
 
 ### Bug Fixes

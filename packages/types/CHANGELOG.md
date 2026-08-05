@@ -2,6 +2,12 @@
 
 # Changelog for Stryke - Types
 
+## [0.12.29](https://github.com/storm-software/stryke/releases/tag/types%400.12.29) (08/05/2026)
+
+### Miscellaneous
+
+- **monorepo:** Format `package.json` files ([a36ab9f8](https://github.com/storm-software/stryke/commit/a36ab9f8))
+
 ## [0.12.28](https://github.com/storm-software/stryke/releases/tag/types%400.12.28) (08/05/2026)
 
 ### Bug Fixes
