@@ -61,11 +61,11 @@
   "module": "./dist/index.mjs",
   "types": "./dist/index.d.cts",
   "bin": {
-    "prisma-trpc-generator": "dist/generator.js",
-    "prisma-trpc-generator-cjs": "dist/generator.cjs",
-    "prisma-trpc-generator-mjs": "dist/generator.js"
+    "prisma-trpc-generator": "./dist/generator.mjs"
   },
-  "files": ["dist"],
+  "files": [
+    "dist"
+  ],
   "dependencies": {
     "@prisma/generator-helper": "catalog:",
     "@prisma/internals": "catalog:",

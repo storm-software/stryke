@@ -30,7 +30,7 @@ export default defineTSDownConfig([
     clean: true,
     exports: false,
     deps: {
-      skipNodeModulesBundle: true
+      neverBundle: true
     }
   }
 ]);

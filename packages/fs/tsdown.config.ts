@@ -21,7 +21,7 @@ import { defineTSDownConfig } from "@stryke/tools-config/tsdown.config";
 export default defineTSDownConfig({
   name: "fs",
   deps: {
-    skipNodeModulesBundle: true,
-    onlyBundle: ["mlly"]
+    neverBundle: true,
+    onlyBundle: ["mlly", /^mlly\//]
   }
 });

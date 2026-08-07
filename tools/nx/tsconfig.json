@@ -3,7 +3,8 @@
   "compilerOptions": {
     "rootDir": "../..",
     "types": ["node"],
-    "outDir": "dist"
+    "outDir": "dist",
+    "ignoreDeprecations": "6.0"
   },
   "include": [
     "executors.ts",

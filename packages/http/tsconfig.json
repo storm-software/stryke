@@ -3,7 +3,8 @@
   "compilerOptions": {
     "lib": ["ESNext"],
     "types": ["node", "undici-types"],
-    "outDir": "../../dist/out-tsc"
+    "outDir": "../../dist/out-tsc",
+    "ignoreDeprecations": "6.0"
   },
   "include": ["src/**/*.ts"],
   "exclude": ["vitest.config.ts", "src/**/*.spec.ts", "src/**/*.test.ts"]

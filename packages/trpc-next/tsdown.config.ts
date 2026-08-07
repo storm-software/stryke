@@ -26,11 +26,10 @@ export default defineTSDownConfig([
     entry: ["src/**/*.ts", "src/**/*.tsx"],
     tsconfig: "tsconfig.json",
     dts: {
-      parallel: true,
       newContext: true
     },
     deps: {
-      skipNodeModulesBundle: true
+      neverBundle: true
     }
   }
 ]);

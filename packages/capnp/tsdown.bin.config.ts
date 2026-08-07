@@ -26,8 +26,7 @@ export default defineTSDownConfig({
   exports: false,
   unbundle: false,
   deps: {
-    neverBundle: ["typescript"],
-    alwaysBundle: ["capnp-es"],
-    skipNodeModulesBundle: false
+    neverBundle: true,
+    onlyBundle: ["capnp-es", /^capnp-es\//]
   }
 });

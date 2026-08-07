@@ -15,7 +15,8 @@
     "removeComments": false,
     "verbatimModuleSyntax": false,
     "skipDefaultLibCheck": false,
-    "skipLibCheck": false
+    "skipLibCheck": false,
+    "ignoreDeprecations": "6.0"
   },
   "include": [
     "src/**/*.ts",

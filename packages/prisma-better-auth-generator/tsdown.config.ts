@@ -23,8 +23,7 @@ export default defineTSDownConfig([
     name: "prisma-better-auth-generator",
     entry: ["src/index.ts", "src/generator.ts"],
     deps: {
-      neverBundle: ["esbuild", "typescript"],
-      skipNodeModulesBundle: false
+      neverBundle: true
     }
   }
 ]);
