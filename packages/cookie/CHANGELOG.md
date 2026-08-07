@@ -2,6 +2,17 @@
 
 # Changelog for Stryke - Cookie
 
+## [0.1.94](https://github.com/storm-software/stryke/releases/tag/cookie%400.1.94) (08/07/2026)
+
+### Bug Fixes
+
+- **monorepo:** Resolve issue with packages' dependency bundling ([9cd6d34d](https://github.com/storm-software/stryke/commit/9cd6d34d))
+
+### Updated Dependencies
+
+- Updated **convert** to **v0.7.34**
+- Updated **type-checks** to **v0.6.36**
+
 ## [0.1.93](https://github.com/storm-software/stryke/releases/tag/cookie%400.1.93) (08/05/2026)
 
 ### Updated Dependencies

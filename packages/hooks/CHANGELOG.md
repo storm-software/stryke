@@ -2,6 +2,19 @@
 
 # Changelog for Stryke - Hooks
 
+## [0.4.119](https://github.com/storm-software/stryke/releases/tag/hooks%400.4.119) (08/07/2026)
+
+### Bug Fixes
+
+- **monorepo:** Resolve issue with packages' dependency bundling ([9cd6d34d](https://github.com/storm-software/stryke/commit/9cd6d34d))
+
+### Updated Dependencies
+
+- Updated **async** to **v0.1.31**
+- Updated **env** to **v0.20.121**
+- Updated **type-checks** to **v0.6.36**
+- Updated **types** to **v0.12.31**
+
 ## [0.4.118](https://github.com/storm-software/stryke/releases/tag/hooks%400.4.118) (08/05/2026)
 
 ### Updated Dependencies

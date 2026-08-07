@@ -2,6 +2,12 @@
 
 # Changelog for Stryke - Types
 
+## [0.12.31](https://github.com/storm-software/stryke/releases/tag/types%400.12.31) (08/07/2026)
+
+### Bug Fixes
+
+- **monorepo:** Resolve issue with packages' dependency bundling ([9cd6d34d](https://github.com/storm-software/stryke/commit/9cd6d34d))
+
 ## [0.12.29](https://github.com/storm-software/stryke/releases/tag/types%400.12.29) (08/05/2026)
 
 ### Miscellaneous

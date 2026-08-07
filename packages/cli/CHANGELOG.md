@@ -2,6 +2,20 @@
 
 # Changelog for Stryke - CLI
 
+## [0.13.76](https://github.com/storm-software/stryke/releases/tag/cli%400.13.76) (08/07/2026)
+
+### Bug Fixes
+
+- **monorepo:** Resolve issue with packages' dependency bundling ([9cd6d34d](https://github.com/storm-software/stryke/commit/9cd6d34d))
+
+### Updated Dependencies
+
+- Updated **convert** to **v0.7.34**
+- Updated **env** to **v0.20.121**
+- Updated **string-format** to **v0.17.45**
+- Updated **type-checks** to **v0.6.36**
+- Updated **types** to **v0.12.31**
+
 ## [0.13.75](https://github.com/storm-software/stryke/releases/tag/cli%400.13.75) (08/05/2026)
 
 ### Updated Dependencies

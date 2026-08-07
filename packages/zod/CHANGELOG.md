@@ -2,6 +2,17 @@
 
 # Changelog for Stryke - Zod
 
+## [0.3.49](https://github.com/storm-software/stryke/releases/tag/zod%400.3.49) (08/07/2026)
+
+### Bug Fixes
+
+- **monorepo:** Resolve issue with packages' dependency bundling ([9cd6d34d](https://github.com/storm-software/stryke/commit/9cd6d34d))
+
+### Updated Dependencies
+
+- Updated **json** to **v0.15.27**
+- Updated **type-checks** to **v0.6.36**
+
 ## [0.3.48](https://github.com/storm-software/stryke/releases/tag/zod%400.3.48) (08/05/2026)
 
 ### Updated Dependencies

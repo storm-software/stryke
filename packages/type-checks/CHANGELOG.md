@@ -2,6 +2,16 @@
 
 # Changelog for Stryke - Type Checks
 
+## [0.6.36](https://github.com/storm-software/stryke/releases/tag/type-checks%400.6.36) (08/07/2026)
+
+### Bug Fixes
+
+- **monorepo:** Resolve issue with packages' dependency bundling ([9cd6d34d](https://github.com/storm-software/stryke/commit/9cd6d34d))
+
+### Updated Dependencies
+
+- Updated **types** to **v0.12.31**
+
 ## [0.6.35](https://github.com/storm-software/stryke/releases/tag/type-checks%400.6.35) (08/05/2026)
 
 ### Updated Dependencies

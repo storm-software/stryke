@@ -2,6 +2,17 @@
 
 # Changelog for Stryke - Convert
 
+## [0.7.34](https://github.com/storm-software/stryke/releases/tag/convert%400.7.34) (08/07/2026)
+
+### Bug Fixes
+
+- **monorepo:** Resolve issue with packages' dependency bundling ([9cd6d34d](https://github.com/storm-software/stryke/commit/9cd6d34d))
+
+### Updated Dependencies
+
+- Updated **type-checks** to **v0.6.36**
+- Updated **types** to **v0.12.31**
+
 ## [0.7.33](https://github.com/storm-software/stryke/releases/tag/convert%400.7.33) (08/05/2026)
 
 ### Updated Dependencies

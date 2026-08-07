@@ -2,6 +2,22 @@
 
 # Changelog for Stryke - Fs
 
+## [0.33.104](https://github.com/storm-software/stryke/releases/tag/fs%400.33.104) (08/07/2026)
+
+### Bug Fixes
+
+- **monorepo:** Resolve issue with packages' dependency bundling ([9cd6d34d](https://github.com/storm-software/stryke/commit/9cd6d34d))
+
+### Updated Dependencies
+
+- Updated **convert** to **v0.7.34**
+- Updated **helpers** to **v0.10.43**
+- Updated **json** to **v0.15.27**
+- Updated **path** to **v0.29.30**
+- Updated **string-format** to **v0.17.45**
+- Updated **type-checks** to **v0.6.36**
+- Updated **types** to **v0.12.31**
+
 ## [0.33.103](https://github.com/storm-software/stryke/releases/tag/fs%400.33.103) (08/05/2026)
 
 ### Updated Dependencies

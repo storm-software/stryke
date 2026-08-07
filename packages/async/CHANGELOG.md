@@ -2,6 +2,12 @@
 
 # Changelog for Stryke - Async
 
+## [0.1.31](https://github.com/storm-software/stryke/releases/tag/async%400.1.31) (08/07/2026)
+
+### Bug Fixes
+
+- **monorepo:** Resolve issue with packages' dependency bundling ([9cd6d34d](https://github.com/storm-software/stryke/commit/9cd6d34d))
+
 ## [0.1.15](https://github.com/storm-software/stryke/releases/tag/async%400.1.15) (06/25/2026)
 
 ### Miscellaneous

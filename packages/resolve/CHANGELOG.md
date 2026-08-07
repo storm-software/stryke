@@ -2,6 +2,23 @@
 
 # Changelog for Stryke - Resolve
 
+## [0.0.19](https://github.com/storm-software/stryke/releases/tag/resolve%400.0.19) (08/07/2026)
+
+### Bug Fixes
+
+- **monorepo:** Resolve issue with packages' dependency bundling ([9cd6d34d](https://github.com/storm-software/stryke/commit/9cd6d34d))
+
+### Updated Dependencies
+
+- Updated **convert** to **v0.7.34**
+- Updated **fs** to **v0.33.104**
+- Updated **helpers** to **v0.10.43**
+- Updated **http** to **v0.12.94**
+- Updated **path** to **v0.29.30**
+- Updated **type-checks** to **v0.6.36**
+- Updated **types** to **v0.12.31**
+- Updated **url** to **v0.4.54**
+
 ## [0.0.18](https://github.com/storm-software/stryke/releases/tag/resolve%400.0.18) (08/05/2026)
 
 ### Bug Fixes

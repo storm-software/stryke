@@ -2,6 +2,18 @@
 
 # Changelog for Stryke - Helpers
 
+## [0.10.43](https://github.com/storm-software/stryke/releases/tag/helpers%400.10.43) (08/07/2026)
+
+### Bug Fixes
+
+- **monorepo:** Resolve issue with packages' dependency bundling ([9cd6d34d](https://github.com/storm-software/stryke/commit/9cd6d34d))
+
+### Updated Dependencies
+
+- Updated **convert** to **v0.7.34**
+- Updated **type-checks** to **v0.6.36**
+- Updated **types** to **v0.12.31**
+
 ## [0.10.42](https://github.com/storm-software/stryke/releases/tag/helpers%400.10.42) (08/05/2026)
 
 ### Updated Dependencies

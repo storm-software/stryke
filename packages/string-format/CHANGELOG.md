@@ -2,6 +2,18 @@
 
 # Changelog for Stryke - String Format
 
+## [0.17.45](https://github.com/storm-software/stryke/releases/tag/string-format%400.17.45) (08/07/2026)
+
+### Bug Fixes
+
+- **monorepo:** Resolve issue with packages' dependency bundling ([9cd6d34d](https://github.com/storm-software/stryke/commit/9cd6d34d))
+
+### Updated Dependencies
+
+- Updated **helpers** to **v0.10.43**
+- Updated **path** to **v0.29.30**
+- Updated **types** to **v0.12.31**
+
 ## [0.17.44](https://github.com/storm-software/stryke/releases/tag/string-format%400.17.44) (08/05/2026)
 
 ### Updated Dependencies

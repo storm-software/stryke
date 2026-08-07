@@ -2,6 +2,12 @@
 
 # Changelog for Stryke - Open Browser
 
+## [0.2.91](https://github.com/storm-software/stryke/releases/tag/open-browser%400.2.91) (08/07/2026)
+
+### Bug Fixes
+
+- **monorepo:** Resolve issue with packages' dependency bundling ([9cd6d34d](https://github.com/storm-software/stryke/commit/9cd6d34d))
+
 ## [0.2.89](https://github.com/storm-software/stryke/releases/tag/open-browser%400.2.89) (08/05/2026)
 
 ### Miscellaneous

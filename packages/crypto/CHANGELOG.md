@@ -2,6 +2,18 @@
 
 # Changelog for Stryke - Crypto
 
+## [0.6.51](https://github.com/storm-software/stryke/releases/tag/crypto%400.6.51) (08/07/2026)
+
+### Bug Fixes
+
+- **monorepo:** Resolve issue with packages' dependency bundling ([9cd6d34d](https://github.com/storm-software/stryke/commit/9cd6d34d))
+
+### Updated Dependencies
+
+- Updated **convert** to **v0.7.34**
+- Updated **json** to **v0.15.27**
+- Updated **type-checks** to **v0.6.36**
+
 ## [0.6.50](https://github.com/storm-software/stryke/releases/tag/crypto%400.6.50) (08/05/2026)
 
 ### Updated Dependencies

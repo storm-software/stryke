@@ -2,6 +2,12 @@
 
 # Changelog for Stryke - Date
 
+## [0.0.15](https://github.com/storm-software/stryke/releases/tag/date%400.0.15) (08/07/2026)
+
+### Bug Fixes
+
+- **monorepo:** Resolve issue with packages' dependency bundling ([9cd6d34d](https://github.com/storm-software/stryke/commit/9cd6d34d))
+
 ## [0.0.2](https://github.com/storm-software/stryke/releases/tag/date%400.0.2) (06/26/2026)
 
 ### Features

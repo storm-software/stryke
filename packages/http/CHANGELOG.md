@@ -2,6 +2,17 @@
 
 # Changelog for Stryke - HTTP
 
+## [0.12.94](https://github.com/storm-software/stryke/releases/tag/http%400.12.94) (08/07/2026)
+
+### Bug Fixes
+
+- **monorepo:** Resolve issue with packages' dependency bundling ([9cd6d34d](https://github.com/storm-software/stryke/commit/9cd6d34d))
+
+### Updated Dependencies
+
+- Updated **type-checks** to **v0.6.36**
+- Updated **url** to **v0.4.54**
+
 ## [0.12.93](https://github.com/storm-software/stryke/releases/tag/http%400.12.93) (08/05/2026)
 
 ### Updated Dependencies

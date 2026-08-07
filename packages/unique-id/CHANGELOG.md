@@ -2,6 +2,16 @@
 
 # Changelog for Stryke - Unique ID
 
+## [0.3.115](https://github.com/storm-software/stryke/releases/tag/unique-id%400.3.115) (08/07/2026)
+
+### Bug Fixes
+
+- **monorepo:** Resolve issue with packages' dependency bundling ([9cd6d34d](https://github.com/storm-software/stryke/commit/9cd6d34d))
+
+### Updated Dependencies
+
+- Updated **hash** to **v0.13.57**
+
 ## [0.3.114](https://github.com/storm-software/stryke/releases/tag/unique-id%400.3.114) (08/05/2026)
 
 ### Updated Dependencies

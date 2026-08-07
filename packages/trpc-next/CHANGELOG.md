@@ -2,6 +2,22 @@
 
 # Changelog for Stryke - TRPC Next
 
+## [0.5.123](https://github.com/storm-software/stryke/releases/tag/trpc-next%400.5.123) (08/07/2026)
+
+### Bug Fixes
+
+- **monorepo:** Resolve issue with packages' dependency bundling ([9cd6d34d](https://github.com/storm-software/stryke/commit/9cd6d34d))
+
+### Updated Dependencies
+
+- Updated **env** to **v0.20.121**
+- Updated **fs** to **v0.33.104**
+- Updated **path** to **v0.29.30**
+- Updated **string-format** to **v0.17.45**
+- Updated **type-checks** to **v0.6.36**
+- Updated **types** to **v0.12.31**
+- Updated **url** to **v0.4.54**
+
 ## [0.5.122](https://github.com/storm-software/stryke/releases/tag/trpc-next%400.5.122) (08/05/2026)
 
 ### Updated Dependencies
