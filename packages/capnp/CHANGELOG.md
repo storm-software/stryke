@@ -2,6 +2,16 @@
 
 # Changelog for Stryke - Capnp
 
+## [0.12.131](https://github.com/storm-software/stryke/releases/tag/capnp%400.12.131) (08/07/2026)
+
+### Bug Fixes
+
+- **capnp:** Resolve issue with incorrect dependency bundling option ([bfdb0f55](https://github.com/storm-software/stryke/commit/bfdb0f55))
+
+### Updated Dependencies
+
+- Updated **fs** to **v0.33.105**
+
 ## [0.12.130](https://github.com/storm-software/stryke/releases/tag/capnp%400.12.130) (08/07/2026)
 
 ### Bug Fixes

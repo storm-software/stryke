@@ -2,6 +2,12 @@
 
 # Changelog for Stryke - Fs
 
+## [0.33.105](https://github.com/storm-software/stryke/releases/tag/fs%400.33.105) (08/07/2026)
+
+### Bug Fixes
+
+- **capnp:** Resolve issue with incorrect dependency bundling option ([bfdb0f55](https://github.com/storm-software/stryke/commit/bfdb0f55))
+
 ## [0.33.104](https://github.com/storm-software/stryke/releases/tag/fs%400.33.104) (08/07/2026)
 
 ### Bug Fixes
