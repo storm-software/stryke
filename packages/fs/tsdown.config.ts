@@ -20,8 +20,9 @@ import { defineTSDownConfig } from "@stryke/tools-config/tsdown.config";
 
 export default defineTSDownConfig({
   name: "fs",
+  unbundle: false,
   deps: {
     neverBundle: true,
-    alwaysBundle: ["mlly", /^mlly\//, "acorn", /^acorn/, "pathe", "ufo", "pkg-types"]
+    alwaysBundle: ["mlly", /^mlly\//]
   }
 });

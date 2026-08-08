@@ -38,6 +38,8 @@
       "import": "./dist/copy-file.mjs",
       "require": "./dist/copy-file.cjs"
     },
+    "./dist-C1qqbtMY": "./dist/dist-C1qqbtMY.mjs",
+    "./dist-DaZumHaQ": "./dist/dist-DaZumHaQ.cjs",
     "./exists": {
       "import": "./dist/exists.mjs",
       "require": "./dist/exists.cjs"
@@ -90,6 +92,7 @@
       "import": "./dist/resolve.mjs",
       "require": "./dist/resolve.cjs"
     },
+    "./rolldown-runtime-C24Yb2bl": "./dist/rolldown-runtime-C24Yb2bl.cjs",
     "./semver-fns": {
       "import": "./dist/semver-fns.mjs",
       "require": "./dist/semver-fns.cjs"
@@ -125,13 +128,17 @@
     "@stryke/string-format": "workspace:*",
     "@stryke/type-checks": "workspace:*",
     "@stryke/types": "workspace:*",
+    "acorn": "catalog:",
     "chalk": "catalog:",
     "defu": "catalog:",
     "glob": "catalog:",
     "nanotar": "catalog:",
+    "pathe": "catalog:",
+    "pkg-types": "catalog:",
     "semver": "catalog:",
     "smol-toml": "catalog:",
     "tinyexec": "catalog:",
+    "ufo": "catalog:",
     "yaml": "catalog:"
   },
   "devDependencies": {
