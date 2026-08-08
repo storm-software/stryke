@@ -103,6 +103,7 @@
     "markdownlint-cli2": "catalog:",
     "nx": "catalog:",
     "prettier": "catalog:",
+    "prettier-plugin-sh": "catalog:",
     "rimraf": "catalog:",
     "sherif": "catalog:",
     "tsdown": "catalog:",
