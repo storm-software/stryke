@@ -27,24 +27,24 @@ catalog:
   "@prisma/generator-helper": ^6.19.3
   "@prisma/internals": ^6.19.3
   "@standard-schema/spec": ^1.1.0
-  "@storm-software/build-tools": ^0.158.285
-  "@storm-software/config": ^1.138.62
-  "@storm-software/config-tools": ^1.190.125
-  "@storm-software/cspell": ^0.46.193
-  "@storm-software/esbuild": ^0.53.286
-  "@storm-software/eslint": ^0.170.159
-  "@storm-software/eslint-plugin-tsdoc": ^0.0.88
-  "@storm-software/git-tools": ^2.131.133
-  "@storm-software/linting-tools": ^1.134.55
-  "@storm-software/markdownlint": ^0.30.281
-  "@storm-software/pnpm-tools": ^0.7.136
-  "@storm-software/prettier": ^0.59.178
-  "@storm-software/testing-tools": ^1.119.278
-  "@storm-software/tsconfig": ^0.48.192
-  "@storm-software/tsdoc": ^0.13.278
-  "@storm-software/unbuild": ^0.57.286
-  "@storm-software/untyped": ^0.24.267
-  "@storm-software/workspace-tools": ^1.296.106
+  "@storm-software/build-tools": ^0.158.287
+  "@storm-software/config": ^1.138.64
+  "@storm-software/config-tools": ^1.190.127
+  "@storm-software/cspell": ^0.46.195
+  "@storm-software/esbuild": ^0.53.288
+  "@storm-software/eslint": ^0.170.161
+  "@storm-software/eslint-plugin-tsdoc": ^0.0.90
+  "@storm-software/git-tools": ^2.131.135
+  "@storm-software/linting-tools": ^1.134.57
+  "@storm-software/markdownlint": ^0.30.283
+  "@storm-software/pnpm-tools": ^0.7.138
+  "@storm-software/prettier": ^0.59.180
+  "@storm-software/testing-tools": ^1.119.280
+  "@storm-software/tsconfig": ^0.48.194
+  "@storm-software/tsdoc": ^0.13.280
+  "@storm-software/unbuild": ^0.57.288
+  "@storm-software/untyped": ^0.24.269
+  "@storm-software/workspace-tools": ^1.296.108
   "@swc-node/register": ^1.12.1
   "@swc/core": ^1.15.47
   "@swc/helpers": ^0.5.23
@@ -67,14 +67,14 @@ catalog:
   capnp-es: ^0.0.11
   chalk: ^5.6.2
   commander: ^14.0.3
-  conventional-changelog-storm-software: ^0.3.286
+  conventional-changelog-storm-software: ^0.3.288
   copyfiles: ^2.4.1
   cross-spawn: ^7.0.6
   defu: ^6.1.7
   dts-bundle-generator: ^9.5.1
   esbuild: ^0.28.1
   debug: ^4.4.3
-  eslint: ^10.8.0
+  eslint: ^10.8.1
   eslint-flat-config-utils: ^2.1.4
   execa: ^9.6.1
   figlet: ^1.11.4
@@ -114,7 +114,7 @@ catalog:
   ts-morph: ^25.0.1
   tsdown: ^0.22.14
   tslib: ^2.8.1
-  tsx: ^4.23.10
+  tsx: ^4.23.11
   ufo: ^1.6.4
   undici: ^7.29.0
   undici-types: ^7.29.0
