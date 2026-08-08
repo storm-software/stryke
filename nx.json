@@ -20,13 +20,13 @@
       }
     },
     "@storm-software/workspace-tools/plugins/typescript/untyped",
-    "./dist/plugins/package-build.js",
     {
       "plugin": "@storm-software/workspace-tools/plugins/typescript/tsdown",
       "options": {
         "projectLinks": "reference"
       }
-    }
+    },
+    "./dist/plugins/package-build.js"
   ],
   "analytics": false
 }

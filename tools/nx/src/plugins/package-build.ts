@@ -91,25 +91,27 @@ export const createNodesV2: CreateNodes<StrykePackageBuildPluginOptions> = [
             );
 
           if (project?.name && !project?.name.startsWith("tools")) {
-            if (existsSync(join(projectRoot, "tsdown.config.ts"))) {
+            const hasCustomTsdownConfig = existsSync(
+              join(projectRoot, "tsdown.config.ts")
+            );
+
+            if (hasCustomTsdownConfig) {
               console.log(
                 `[${name}]: ${project.name} project at ${projectRoot} contains custom tsdown.config.ts`
               );
 
-              targets.build ??= {
+              targets["build-base"] ??= {
                 cache: true,
                 inputs: [
                   "typescript",
                   "^production",
                   "{workspaceRoot}/tools/config/tsdown.config.ts"
                 ],
-                outputs: ["{workspaceRoot}/dist/{projectRoot}"],
-                dependsOn: ["^build"],
-                command: `tsdown --config \"${
-                  existsSync(join(projectRoot, "tsdown.config.ts"))
-                    ? "tsdown.config.ts"
-                    : ""
-                }\" --cwd \"${join(context.workspaceRoot, projectRoot)}\"`,
+                outputs: ["{projectRoot}/dist"],
+                command: `tsdown --config \"tsdown.config.ts\" --cwd \"${join(
+                  context.workspaceRoot,
+                  projectRoot
+                )}\"`,
                 defaultConfiguration: "production",
                 options: {
                   cwd: projectRoot,
@@ -138,7 +140,7 @@ export const createNodesV2: CreateNodes<StrykePackageBuildPluginOptions> = [
                   "^production",
                   "{workspaceRoot}/tools/config/tsdown.config.ts"
                 ],
-                outputs: ["{workspaceRoot}/dist/{projectRoot}"],
+                outputs: ["{projectRoot}/dist"],
                 command: `tsdown \"src/**/*.ts\" --config \"../../tools/config/tsdown.config.ts\" --cwd \"${join(
                   context.workspaceRoot,
                   projectRoot
@@ -159,31 +161,33 @@ export const createNodesV2: CreateNodes<StrykePackageBuildPluginOptions> = [
                   }
                 }
               };
-
-              targets.build ??= {
-                cache: true,
-                inputs: [
-                  "{workspaceRoot}/LICENSE",
-                  "{projectRoot}/dist",
-                  "{projectRoot}/*.md",
-                  "{projectRoot}/package.json"
-                ],
-                outputs: [`{workspaceRoot}/dist/${projectRoot}`],
-                executor: "nx:run-commands",
-                dependsOn: ["build-base", "^build"],
-                options: {
-                  commands: [
-                    `pnpm copyfiles LICENSE dist/${projectRoot}`,
-                    `pnpm copyfiles --up=2 ./${projectRoot}/*.md ./${
-                      projectRoot
-                    }/package.json dist/${projectRoot}`,
-                    `pnpm copyfiles --up=3 "./${projectRoot}/dist/**/*" dist/${
-                      projectRoot
-                    }/dist`
-                  ]
-                }
-              };
             }
+
+            // Always set packaging `build` so it wins over the tsdown plugin's
+            // compile target for packages with a custom tsdown.config.ts.
+            targets.build = {
+              cache: true,
+              inputs: [
+                "{workspaceRoot}/LICENSE",
+                "{projectRoot}/dist",
+                "{projectRoot}/*.md",
+                "{projectRoot}/package.json"
+              ],
+              outputs: [`{workspaceRoot}/dist/${projectRoot}`],
+              executor: "nx:run-commands",
+              dependsOn: ["build-base", "^build"],
+              options: {
+                commands: [
+                  `pnpm copyfiles LICENSE dist/${projectRoot}`,
+                  `pnpm copyfiles --up=2 ./${projectRoot}/*.md ./${
+                    projectRoot
+                  }/package.json dist/${projectRoot}`,
+                  `pnpm copyfiles --up=3 "./${projectRoot}/dist/**/*" dist/${
+                    projectRoot
+                  }/dist`
+                ]
+              }
+            };
           }
 
           let relativeRoot = projectRoot
