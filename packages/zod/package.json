@@ -91,6 +91,7 @@
     "zod-to-json-schema": "catalog:"
   },
   "devDependencies": {
+    "@stryke/tools-config": "workspace:*",
     "tsdown": "catalog:",
     "zod": "catalog:"
   },

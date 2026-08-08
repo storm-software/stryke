@@ -22,7 +22,7 @@
       "import": "./dist/validate.mjs",
       "require": "./dist/validate.cjs"
     },
-    "./package.json": "./package.json"
+    "./*": "./*"
   },
   "main": "./dist/index.cjs",
   "module": "./dist/index.mjs",

@@ -30,7 +30,7 @@
       "import": "./dist/types.mjs",
       "require": "./dist/types.cjs"
     },
-    "./package.json": "./package.json"
+    "./*": "./*"
   },
   "main": "./dist/index.cjs",
   "module": "./dist/index.mjs",

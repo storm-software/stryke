@@ -82,7 +82,7 @@
       "import": "./dist/use-previous.mjs",
       "require": "./dist/use-previous.cjs"
     },
-    "./package.json": "./package.json"
+    "./*": "./*"
   },
   "main": "./dist/index.cjs",
   "module": "./dist/index.mjs",
@@ -97,6 +97,7 @@
     "react-native": "catalog:"
   },
   "devDependencies": {
+    "@stryke/tools-config": "workspace:*",
     "@types/react": "catalog:",
     "@types/react-dom": "catalog:",
     "@types/react-native": "catalog:",

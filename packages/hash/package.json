@@ -78,6 +78,7 @@
     "ohash": "catalog:"
   },
   "devDependencies": {
+    "@stryke/tools-config": "workspace:*",
     "@types/node": "catalog:",
     "tsdown": "catalog:"
   },

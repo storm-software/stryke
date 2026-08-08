@@ -194,7 +194,7 @@
       "import": "./dist/type-detect.mjs",
       "require": "./dist/type-detect.cjs"
     },
-    "./package.json": "./package.json"
+    "./*": "./*"
   },
   "main": "./dist/index.cjs",
   "module": "./dist/index.mjs",

@@ -66,7 +66,7 @@
       "import": "./dist/utils/strip-comments.mjs",
       "require": "./dist/utils/strip-comments.cjs"
     },
-    "./package.json": "./package.json"
+    "./*": "./*"
   },
   "main": "./dist/index.cjs",
   "module": "./dist/index.mjs",
@@ -81,6 +81,7 @@
   },
   "devDependencies": {
     "@standard-schema/spec": "catalog:",
+    "@stryke/tools-config": "workspace:*",
     "@types/node": "catalog:",
     "tsdown": "catalog:"
   },

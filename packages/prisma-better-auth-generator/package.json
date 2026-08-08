@@ -54,11 +54,35 @@
       "import": "./dist/index.mjs",
       "require": "./dist/index.cjs"
     },
+    "./access-control": {
+      "import": "./dist/access-control.mjs",
+      "require": "./dist/access-control.cjs"
+    },
+    "./config": {
+      "import": "./dist/config.mjs",
+      "require": "./dist/config.cjs"
+    },
     "./generator": {
       "import": "./dist/generator.mjs",
       "require": "./dist/generator.cjs"
     },
-    "./package.json": "./package.json"
+    "./prisma-generator": {
+      "import": "./dist/prisma-generator.mjs",
+      "require": "./dist/prisma-generator.cjs"
+    },
+    "./project": {
+      "import": "./dist/project.mjs",
+      "require": "./dist/project.cjs"
+    },
+    "./utils/get-jiti": {
+      "import": "./dist/utils/get-jiti.mjs",
+      "require": "./dist/utils/get-jiti.cjs"
+    },
+    "./utils/get-prisma-internals": {
+      "import": "./dist/utils/get-prisma-internals.mjs",
+      "require": "./dist/utils/get-prisma-internals.cjs"
+    },
+    "./*": "./*"
   },
   "main": "./dist/index.cjs",
   "module": "./dist/index.mjs",
@@ -66,12 +90,16 @@
   "bin": {
     "prisma-better-auth-generator": "./dist/generator.mjs"
   },
-  "files": ["dist"],
+  "files": [
+    "dist"
+  ],
   "dependencies": {
     "@prisma/generator-helper": "catalog:",
     "@prisma/internals": "catalog:",
+    "@stryke/env": "workspace:*",
     "@stryke/fs": "workspace:*",
     "@stryke/path": "workspace:*",
+    "@stryke/string-format": "workspace:*",
     "esbuild": "catalog:",
     "jiti": "catalog:",
     "prettier": "catalog:",
@@ -79,6 +107,7 @@
     "zod": "catalog:"
   },
   "devDependencies": {
+    "@stryke/tools-config": "workspace:*",
     "@types/pluralize": "catalog:",
     "pluralize": "catalog:",
     "tsdown": "catalog:"

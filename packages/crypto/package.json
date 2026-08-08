@@ -91,6 +91,7 @@
   },
   "devDependencies": {
     "@cloudflare/workers-types": "catalog:",
+    "@stryke/tools-config": "workspace:*",
     "@types/node": "catalog:",
     "tsdown": "catalog:"
   },

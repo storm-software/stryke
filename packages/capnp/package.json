@@ -126,18 +126,26 @@
     "storm-capnpc-cjs": "bin/capnpc.cjs",
     "storm-capnpc-esm": "bin/capnpc.mjs"
   },
-  "files": ["bin", "dist", "dts", "schemas", "vendor"],
+  "files": [
+    "bin",
+    "dist",
+    "dts",
+    "schemas",
+    "vendor"
+  ],
   "dependencies": {
+    "@storm-software/config": "catalog:",
+    "@storm-software/config-tools": "catalog:",
+    "@stryke/convert": "workspace:*",
     "@stryke/fs": "workspace:*",
     "@stryke/path": "workspace:*",
+    "@stryke/types": "workspace:*",
     "defu": "catalog:",
     "hex2dec": "catalog:",
     "nanotar": "catalog:"
   },
   "devDependencies": {
-    "@storm-software/config": "catalog:",
-    "@storm-software/config-tools": "catalog:",
-    "@storm-software/testing-tools": "catalog:",
+    "@stryke/tools-config": "workspace:*",
     "@types/node": "catalog:",
     "@types/semver": "catalog:",
     "capnp-es": "catalog:",

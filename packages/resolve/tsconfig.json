@@ -1,11 +1,51 @@
 {
   "extends": "../../tsconfig.base.json",
   "compilerOptions": {
-    "lib": ["ESNext"],
-    "types": ["node"],
+    "lib": [
+      "ESNext"
+    ],
+    "types": [
+      "node"
+    ],
     "outDir": "../../dist/out-tsc",
-    "ignoreDeprecations": "6.0"
+    "ignoreDeprecations": "6.0",
+    "composite": true,
+    "incremental": true
   },
-  "include": ["src/**/*.ts", "src/**/*.json"],
-  "exclude": ["vitest.config.ts", "src/**/*.spec.ts", "src/**/*.test.ts"]
+  "include": [
+    "src/**/*.ts",
+    "src/**/*.json"
+  ],
+  "exclude": [
+    "vitest.config.ts",
+    "src/**/*.spec.ts",
+    "src/**/*.test.ts"
+  ],
+  "composite": true,
+  "references": [
+    {
+      "path": "../convert"
+    },
+    {
+      "path": "../fs"
+    },
+    {
+      "path": "../helpers"
+    },
+    {
+      "path": "../http"
+    },
+    {
+      "path": "../path"
+    },
+    {
+      "path": "../type-checks"
+    },
+    {
+      "path": "../types"
+    },
+    {
+      "path": "../url"
+    }
+  ]
 }

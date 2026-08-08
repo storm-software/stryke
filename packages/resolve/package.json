@@ -46,13 +46,15 @@
       "import": "./dist/types.mjs",
       "require": "./dist/types.cjs"
     },
-    "./package.json": "./package.json"
+    "./*": "./*"
   },
   "main": "./dist/index.cjs",
   "module": "./dist/index.mjs",
   "types": "./dist/index.d.cts",
   "dependencies": {
+    "@stryke/convert": "workspace:*",
     "@stryke/fs": "workspace:*",
+    "@stryke/helpers": "workspace:*",
     "@stryke/http": "workspace:*",
     "@stryke/path": "workspace:*",
     "@stryke/type-checks": "workspace:*",

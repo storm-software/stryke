@@ -71,6 +71,7 @@
   "module": "./dist/index.mjs",
   "types": "./dist/index.d.cts",
   "devDependencies": {
+    "@stryke/tools-config": "workspace:*",
     "@types/node": "catalog:",
     "tsdown": "catalog:"
   },

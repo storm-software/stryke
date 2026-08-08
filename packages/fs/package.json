@@ -110,7 +110,7 @@
       "import": "./dist/yaml.mjs",
       "require": "./dist/yaml.cjs"
     },
-    "./package.json": "./package.json"
+    "./*": "./*"
   },
   "main": "./dist/index.cjs",
   "module": "./dist/index.mjs",
@@ -135,6 +135,7 @@
     "yaml": "catalog:"
   },
   "devDependencies": {
+    "@stryke/tools-config": "workspace:*",
     "@types/node": "catalog:",
     "@types/semver": "catalog:",
     "mlly": "catalog:",
@@ -142,8 +143,5 @@
   },
   "publishConfig": {
     "access": "public"
-  },
-  "inlinedDependencies": {
-    "mlly": "1.7.4"
   }
 }

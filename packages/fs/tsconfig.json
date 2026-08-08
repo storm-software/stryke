@@ -1,10 +1,48 @@
 {
   "extends": "../../tsconfig.base.json",
   "compilerOptions": {
-    "types": ["node", "tinyexec"],
+    "types": [
+      "node",
+      "tinyexec"
+    ],
     "outDir": "../../dist/out-tsc",
-    "ignoreDeprecations": "6.0"
+    "ignoreDeprecations": "6.0",
+    "composite": true,
+    "incremental": true
   },
-  "include": ["src/**/*.ts", "tsdown.config.ts"],
-  "exclude": ["vitest.config.ts", "src/**/*.spec.ts", "src/**/*.test.ts"]
+  "include": [
+    "src/**/*.ts"
+  ],
+  "exclude": [
+    "vitest.config.ts",
+    "src/**/*.spec.ts",
+    "src/**/*.test.ts"
+  ],
+  "composite": true,
+  "references": [
+    {
+      "path": "../../tools/config"
+    },
+    {
+      "path": "../convert"
+    },
+    {
+      "path": "../helpers"
+    },
+    {
+      "path": "../json"
+    },
+    {
+      "path": "../path"
+    },
+    {
+      "path": "../string-format"
+    },
+    {
+      "path": "../type-checks"
+    },
+    {
+      "path": "../types"
+    }
+  ]
 }

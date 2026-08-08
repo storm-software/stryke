@@ -26,7 +26,7 @@
       "import": "./dist/get-free-port.mjs",
       "require": "./dist/get-free-port.cjs"
     },
-    "./package.json": "./package.json"
+    "./*": "./*"
   },
   "main": "./dist/index.cjs",
   "module": "./dist/index.mjs",

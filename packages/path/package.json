@@ -98,7 +98,7 @@
       "import": "./dist/slash.mjs",
       "require": "./dist/slash.cjs"
     },
-    "./package.json": "./package.json"
+    "./*": "./*"
   },
   "main": "./dist/index.cjs",
   "module": "./dist/index.mjs",

@@ -138,14 +138,15 @@
       "import": "./dist/vowels.mjs",
       "require": "./dist/vowels.cjs"
     },
-    "./package.json": "./package.json"
+    "./*": "./*"
   },
   "main": "./dist/index.cjs",
   "module": "./dist/index.mjs",
   "types": "./dist/index.d.cts",
   "dependencies": {
     "@stryke/helpers": "workspace:*",
-    "@stryke/path": "workspace:*"
+    "@stryke/path": "workspace:*",
+    "@stryke/types": "workspace:*"
   },
   "devDependencies": {
     "tsdown": "catalog:"

@@ -42,7 +42,7 @@
       "import": "./dist/uuid.mjs",
       "require": "./dist/uuid.cjs"
     },
-    "./package.json": "./package.json"
+    "./*": "./*"
   },
   "main": "./dist/index.cjs",
   "module": "./dist/index.mjs",

@@ -106,7 +106,7 @@
       "import": "./dist/union.mjs",
       "require": "./dist/union.cjs"
     },
-    "./package.json": "./package.json"
+    "./*": "./*"
   },
   "main": "./dist/index.cjs",
   "module": "./dist/index.mjs",

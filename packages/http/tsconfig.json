@@ -1,11 +1,33 @@
 {
   "extends": "../../tsconfig.base.json",
   "compilerOptions": {
-    "lib": ["ESNext"],
-    "types": ["node", "undici-types"],
+    "lib": [
+      "ESNext"
+    ],
+    "types": [
+      "node",
+      "undici-types"
+    ],
     "outDir": "../../dist/out-tsc",
-    "ignoreDeprecations": "6.0"
+    "ignoreDeprecations": "6.0",
+    "composite": true,
+    "incremental": true
   },
-  "include": ["src/**/*.ts"],
-  "exclude": ["vitest.config.ts", "src/**/*.spec.ts", "src/**/*.test.ts"]
+  "include": [
+    "src/**/*.ts"
+  ],
+  "exclude": [
+    "vitest.config.ts",
+    "src/**/*.spec.ts",
+    "src/**/*.test.ts"
+  ],
+  "composite": true,
+  "references": [
+    {
+      "path": "../type-checks"
+    },
+    {
+      "path": "../url"
+    }
+  ]
 }

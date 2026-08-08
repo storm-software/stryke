@@ -90,7 +90,7 @@
       "import": "./dist/utils/tree.mjs",
       "require": "./dist/utils/tree.cjs"
     },
-    "./package.json": "./package.json"
+    "./*": "./*"
   },
   "main": "./dist/index.cjs",
   "module": "./dist/index.mjs",

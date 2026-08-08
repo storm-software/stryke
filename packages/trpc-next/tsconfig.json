@@ -2,16 +2,54 @@
   "extends": "../../tsconfig.base.json",
   "compilerOptions": {
     "jsx": "react-jsx",
-    "lib": ["ESNext", "DOM", "DOM.Iterable"],
-    "types": ["@trpc/next"],
+    "lib": [
+      "ESNext",
+      "DOM",
+      "DOM.Iterable"
+    ],
+    "types": [
+      "@trpc/next"
+    ],
     "outDir": "../../dist/out-tsc",
-    "ignoreDeprecations": "6.0"
+    "ignoreDeprecations": "6.0",
+    "composite": true,
+    "incremental": true
   },
   "include": [
     "src/**/*.ts",
     "src/**/*.tsx",
-    "src/**/*.json",
-    "tsdown.config.ts"
+    "src/**/*.json"
   ],
-  "exclude": ["vitest.config.ts", "src/**/*.spec.ts", "src/**/*.test.ts"]
+  "exclude": [
+    "vitest.config.ts",
+    "src/**/*.spec.ts",
+    "src/**/*.test.ts"
+  ],
+  "composite": true,
+  "references": [
+    {
+      "path": "../../tools/config"
+    },
+    {
+      "path": "../env"
+    },
+    {
+      "path": "../fs"
+    },
+    {
+      "path": "../path"
+    },
+    {
+      "path": "../string-format"
+    },
+    {
+      "path": "../type-checks"
+    },
+    {
+      "path": "../types"
+    },
+    {
+      "path": "../url"
+    }
+  ]
 }

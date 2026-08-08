@@ -23,13 +23,13 @@ import {
   writeInfo,
   writeSuccess,
   writeWarning
-} from "@storm-software/config-tools/logger/console";
+} from "@storm-software/config-tools";
 import {
   exitWithError,
   exitWithSuccess,
   findWorkspaceRootSafe,
   handleProcess
-} from "@storm-software/config-tools/utilities";
+} from "@storm-software/config-tools";
 import { existsSync } from "@stryke/fs/exists";
 import { findFilePath } from "@stryke/path/file-path-fns";
 import { joinPaths } from "@stryke/path/join-paths";

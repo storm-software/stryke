@@ -74,7 +74,7 @@
       "import": "./dist/types.mjs",
       "require": "./dist/types.cjs"
     },
-    "./package.json": "./package.json"
+    "./*": "./*"
   },
   "main": "./dist/index.cjs",
   "module": "./dist/index.mjs",
@@ -98,6 +98,7 @@
     "superjson": "catalog:"
   },
   "devDependencies": {
+    "@stryke/tools-config": "workspace:*",
     "@types/react": "catalog:",
     "@types/react-dom": "catalog:",
     "@types/react-native": "catalog:",

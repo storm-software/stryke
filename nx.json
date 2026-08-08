@@ -15,7 +15,7 @@
     {
       "plugin": "@storm-software/workspace-tools/plugins/typescript",
       "options": {
-        "projectLinks": "alias",
+        "projectLinks": "reference",
         "enableTypeCheck": false
       }
     },
@@ -24,7 +24,7 @@
     {
       "plugin": "@storm-software/workspace-tools/plugins/typescript/tsdown",
       "options": {
-        "projectLinks": "alias"
+        "projectLinks": "reference"
       }
     }
   ],

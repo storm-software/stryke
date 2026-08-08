@@ -2,7 +2,11 @@
   "extends": "../../tsconfig.base.json",
   "compilerOptions": {
     "rootDir": "../..",
-    "types": ["node", "capnp-es", "./types/nanotar.d.ts"],
+    "types": [
+      "node",
+      "capnp-es",
+      "./types/nanotar.d.ts"
+    ],
     "strict": false,
     "noFallthroughCasesInSwitch": true,
     "noImplicitOverride": false,
@@ -16,15 +20,36 @@
     "verbatimModuleSyntax": false,
     "skipDefaultLibCheck": false,
     "skipLibCheck": false,
-    "ignoreDeprecations": "6.0"
+    "ignoreDeprecations": "6.0",
+    "composite": true,
+    "incremental": true
   },
   "include": [
     "src/**/*.ts",
     "bin/**/*.ts",
-    "schemas/**/*.ts",
-    "types/**/*",
-    "tsdown.config.ts",
-    "tsdown.bin.config.ts"
+    "types/**/*"
   ],
-  "exclude": ["vitest.config.ts", "src/**/*.spec.ts", "src/**/*.test.ts"]
+  "exclude": [
+    "vitest.config.ts",
+    "src/**/*.spec.ts",
+    "src/**/*.test.ts"
+  ],
+  "composite": true,
+  "references": [
+    {
+      "path": "../../tools/config"
+    },
+    {
+      "path": "../convert"
+    },
+    {
+      "path": "../fs"
+    },
+    {
+      "path": "../path"
+    },
+    {
+      "path": "../types"
+    }
+  ]
 }

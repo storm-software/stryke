@@ -22,6 +22,6 @@ export default defineTSDownConfig({
   name: "fs",
   deps: {
     neverBundle: true,
-    alwaysBundle: ["mlly", /^mlly\//]
+    alwaysBundle: ["mlly", /^mlly\//, "acorn", /^acorn/, "pathe", "ufo", "pkg-types"]
   }
 });
