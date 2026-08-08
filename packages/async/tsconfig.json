@@ -20,7 +20,6 @@
     "src/**/*.spec.ts",
     "src/**/*.test.ts"
   ],
-  "composite": true,
   "references": [
     {
       "path": "../../tools/config"

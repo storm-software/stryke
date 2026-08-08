@@ -5,7 +5,11 @@
   "sourceRoot": "packages/prisma-better-auth-generator/src",
   "targets": {
     "nx-release-publish": {
-      "executor": "@storm-software/workspace-tools:npm-publish"
+      "executor": "@storm-software/workspace-tools:npm-publish",
+      "dependsOn": [
+        "build",
+        "^nx-release-publish"
+      ]
     }
   },
   "tags": ["platform:node"]
