@@ -27,24 +27,24 @@ catalog:
   "@prisma/generator-helper": ^6.19.3
   "@prisma/internals": ^6.19.3
   "@standard-schema/spec": ^1.1.0
-  "@storm-software/build-tools": ^0.158.288
+  "@storm-software/build-tools": ^0.158.289
   "@storm-software/config": ^1.138.65
-  "@storm-software/config-tools": ^1.190.128
+  "@storm-software/config-tools": ^1.190.129
   "@storm-software/cspell": ^0.46.196
-  "@storm-software/esbuild": ^0.53.289
-  "@storm-software/eslint": ^0.170.163
+  "@storm-software/esbuild": ^0.53.290
+  "@storm-software/eslint": ^0.170.164
   "@storm-software/eslint-plugin-tsdoc": ^0.0.92
-  "@storm-software/git-tools": ^2.131.136
-  "@storm-software/linting-tools": ^1.134.58
+  "@storm-software/git-tools": ^2.131.137
+  "@storm-software/linting-tools": ^1.134.59
   "@storm-software/markdownlint": ^0.30.284
-  "@storm-software/pnpm-tools": ^0.7.140
+  "@storm-software/pnpm-tools": ^0.7.141
   "@storm-software/prettier": ^0.59.182
   "@storm-software/testing-tools": ^1.119.281
   "@storm-software/tsconfig": ^0.48.195
   "@storm-software/tsdoc": ^0.13.281
-  "@storm-software/unbuild": ^0.57.289
-  "@storm-software/untyped": ^0.24.270
-  "@storm-software/workspace-tools": ^1.296.111
+  "@storm-software/unbuild": ^0.57.290
+  "@storm-software/untyped": ^0.24.271
+  "@storm-software/workspace-tools": ^1.296.112
   "@swc-node/register": ^1.12.1
   "@swc/core": ^1.15.47
   "@swc/helpers": ^0.5.23
@@ -67,7 +67,7 @@ catalog:
   capnp-es: ^0.0.11
   chalk: ^5.6.2
   commander: ^14.0.3
-  conventional-changelog-storm-software: ^0.3.289
+  conventional-changelog-storm-software: ^0.3.290
   copyfiles: ^2.4.1
   cross-spawn: ^7.0.6
   defu: ^6.1.7

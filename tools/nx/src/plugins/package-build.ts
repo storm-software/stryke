@@ -171,12 +171,14 @@ export const createNodesV2: CreateNodes<StrykePackageBuildPluginOptions> = [
                 "{workspaceRoot}/LICENSE",
                 "{projectRoot}/dist",
                 "{projectRoot}/*.md",
-                "{projectRoot}/package.json"
+                "{projectRoot}/package.json",
+                "{workspaceRoot}/tools/scripts/src/prepare-package-json.mjs"
               ],
               outputs: [`{workspaceRoot}/dist/${projectRoot}`],
               executor: "nx:run-commands",
               dependsOn: ["build-base", "^build"],
               options: {
+                parallel: false,
                 commands: [
                   `pnpm copyfiles LICENSE dist/${projectRoot}`,
                   `pnpm copyfiles --up=2 ./${projectRoot}/*.md ./${
@@ -184,7 +186,8 @@ export const createNodesV2: CreateNodes<StrykePackageBuildPluginOptions> = [
                   }/package.json dist/${projectRoot}`,
                   `pnpm copyfiles --up=3 "./${projectRoot}/dist/**/*" dist/${
                     projectRoot
-                  }/dist`
+                  }/dist`,
+                  `node ./tools/scripts/src/prepare-package-json.mjs dist/${projectRoot}/package.json`
                 ]
               }
             };
