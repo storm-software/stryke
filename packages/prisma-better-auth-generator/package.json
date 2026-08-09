@@ -90,9 +90,7 @@
   "bin": {
     "prisma-better-auth-generator": "./dist/generator.mjs"
   },
-  "files": [
-    "dist"
-  ],
+  "files": ["dist"],
   "dependencies": {
     "@prisma/generator-helper": "catalog:",
     "@prisma/internals": "catalog:",

@@ -48,7 +48,7 @@
   ],
   "prettier.requireConfig": true,
   "prettier.bracketSameLine": true,
-  "prettier.configPath": "./node_modules/@storm-software/prettier/config.json",
+  "prettier.configPath": "./node_modules/@storm-software/prettier/config.mjs",
   "prettier.ignorePath": "./node_modules/@storm-software/prettier/.prettierignore",
   "prettier.enableDebugLogs": false,
   "prettier.enable": true,

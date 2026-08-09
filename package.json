@@ -75,6 +75,7 @@
     "@storm-software/cspell": "catalog:",
     "@storm-software/esbuild": "catalog:",
     "@storm-software/eslint": "catalog:",
+    "@storm-software/eslint-plugin-pnpm": "catalog:",
     "@storm-software/eslint-plugin-tsdoc": "catalog:",
     "@storm-software/git-tools": "catalog:",
     "@storm-software/linting-tools": "catalog:",
@@ -103,7 +104,6 @@
     "markdownlint-cli2": "catalog:",
     "nx": "catalog:",
     "prettier": "catalog:",
-    "prettier-plugin-sh": "catalog:",
     "rimraf": "catalog:",
     "sherif": "catalog:",
     "tsdown": "catalog:",
@@ -120,13 +120,8 @@
   },
   "namespace": "@stryke",
   "nx": {
-    "includedScripts": [
-      "lint",
-      "format",
-      "commit",
-      "release"
-    ]
+    "includedScripts": ["lint", "format", "commit", "release"]
   },
-  "prettier": "@storm-software/prettier/config.json",
+  "prettier": "@storm-software/prettier/config",
   "triggerEmptyDevReleaseByIncrementingThisNumber": 0
 }
