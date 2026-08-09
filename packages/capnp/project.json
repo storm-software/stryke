@@ -53,7 +53,10 @@
     },
     "build": {
       "cache": true,
-      "inputs": ["{projectRoot}/dist/**/*"],
+      "inputs": [
+        "{projectRoot}/dist/**/*",
+        "{workspaceRoot}/tools/scripts/src/prepare-package-json.mjs"
+      ],
       "outputs": ["{workspaceRoot}/dist/packages/capnp/**/*"],
       "executor": "nx:run-commands",
       "dependsOn": ["build-dts", "build-base", "build-schema", "build-bin"],
@@ -64,9 +67,10 @@
           "pnpm copyfiles --up=4 \"./packages/capnp/dist/src/**/*\" dist/packages/capnp/dist",
           "pnpm copyfiles --up=4 \"./packages/capnp/dist/bin/**/*\" dist/packages/capnp/bin",
           "pnpm copyfiles --up=4 \"./packages/capnp/dist/dts/**/*\" dist/packages/capnp/dts",
-          "pnpm copyfiles --up=4 \"./packages/capnp/dist/schemas/**/*\" dist/packages/capnp/schemas"
+          "pnpm copyfiles --up=4 \"./packages/capnp/dist/schemas/**/*\" dist/packages/capnp/schemas",
+          "node ./tools/scripts/src/prepare-package-json.mjs dist/packages/capnp/package.json"
         ],
-        "parallel": true
+        "parallel": false
       }
     },
     "test-schema": {

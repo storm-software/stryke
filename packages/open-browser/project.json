@@ -8,19 +8,18 @@
       "executor": "nx:run-commands",
       "dependsOn": ["build-base"],
       "options": {
+        "parallel": false,
         "commands": [
           "pnpm copyfiles LICENSE dist/packages/open-browser",
           "pnpm copyfiles --up=2 ./packages/open-browser/*.md ./packages/open-browser/openChrome.applescript ./packages/open-browser/package.json dist/packages/open-browser",
-          "pnpm copyfiles --up=3 \"./packages/open-browser/dist/*\" dist/packages/open-browser/dist"
+          "pnpm copyfiles --up=3 \"./packages/open-browser/dist/*\" dist/packages/open-browser/dist",
+          "node ./tools/scripts/src/prepare-package-json.mjs dist/packages/open-browser/package.json"
         ]
       }
     },
     "nx-release-publish": {
       "executor": "@storm-software/workspace-tools:npm-publish",
-      "dependsOn": [
-        "build",
-        "^nx-release-publish"
-      ]
+      "dependsOn": ["build", "^nx-release-publish"]
     }
   },
   "tags": ["platform:node"]
