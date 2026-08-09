@@ -37,14 +37,14 @@ catalog:
   "@storm-software/git-tools": ^2.131.136
   "@storm-software/linting-tools": ^1.134.58
   "@storm-software/markdownlint": ^0.30.284
-  "@storm-software/pnpm-tools": ^0.7.139
+  "@storm-software/pnpm-tools": ^0.7.140
   "@storm-software/prettier": ^0.59.182
   "@storm-software/testing-tools": ^1.119.281
   "@storm-software/tsconfig": ^0.48.195
   "@storm-software/tsdoc": ^0.13.281
   "@storm-software/unbuild": ^0.57.289
   "@storm-software/untyped": ^0.24.270
-  "@storm-software/workspace-tools": ^1.296.110
+  "@storm-software/workspace-tools": ^1.296.111
   "@swc-node/register": ^1.12.1
   "@swc/core": ^1.15.47
   "@swc/helpers": ^0.5.23
