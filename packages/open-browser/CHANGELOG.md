@@ -2,6 +2,12 @@
 
 # Changelog for Stryke - Open Browser
 
+## [0.2.96](https://github.com/storm-software/stryke/releases/tag/open-browser%400.2.96) (08/09/2026)
+
+### Bug Fixes
+
+- **capnp:** Resolve package release issues ([552b2b74](https://github.com/storm-software/stryke/commit/552b2b74))
+
 ## [0.2.92](https://github.com/storm-software/stryke/releases/tag/open-browser%400.2.92) (08/08/2026)
 
 ### Bug Fixes
