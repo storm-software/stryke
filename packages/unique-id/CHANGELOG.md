@@ -2,6 +2,12 @@
 
 # Changelog for Stryke - Unique ID
 
+## [0.3.118](https://github.com/storm-software/stryke/releases/tag/unique-id%400.3.118) (08/08/2026)
+
+### Updated Dependencies
+
+- Updated **hash** to **v0.13.60**
+
 ## [0.3.117](https://github.com/storm-software/stryke/releases/tag/unique-id%400.3.117) (08/08/2026)
 
 ### Bug Fixes
