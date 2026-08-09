@@ -2,6 +2,14 @@
 
 # Changelog for Stryke - String Format
 
+## [0.17.50](https://github.com/storm-software/stryke/releases/tag/string-format%400.17.50) (08/09/2026)
+
+### Updated Dependencies
+
+- Updated **helpers** to **v0.10.48**
+- Updated **path** to **v0.29.35**
+- Updated **types** to **v0.12.36**
+
 ## [0.17.49](https://github.com/storm-software/stryke/releases/tag/string-format%400.17.49) (08/08/2026)
 
 ### Updated Dependencies
