@@ -2,6 +2,23 @@
 
 # Changelog for Stryke - URL
 
+## [0.4.56](https://github.com/storm-software/stryke/releases/tag/url%400.4.56) (08/08/2026)
+
+### Bug Fixes
+
+- **monorepo:** Resolve issue with missing dependencies for release target ([6728ce67](https://github.com/storm-software/stryke/commit/6728ce67))
+
+### Source Code Improvements
+
+- **monorepo:** Update workspace to use project references instead of path aliases ([e1d14562](https://github.com/storm-software/stryke/commit/e1d14562))
+
+### Updated Dependencies
+
+- Updated **fs** to **v0.33.106**
+- Updated **json** to **v0.15.28**
+- Updated **path** to **v0.29.31**
+- Updated **type-checks** to **v0.6.37**
+
 ## [0.4.55](https://github.com/storm-software/stryke/releases/tag/url%400.4.55) (08/07/2026)
 
 ### Updated Dependencies

@@ -2,6 +2,22 @@
 
 # Changelog for Stryke - Helpers
 
+## [0.10.44](https://github.com/storm-software/stryke/releases/tag/helpers%400.10.44) (08/08/2026)
+
+### Bug Fixes
+
+- **monorepo:** Resolve issue with missing dependencies for release target ([6728ce67](https://github.com/storm-software/stryke/commit/6728ce67))
+
+### Source Code Improvements
+
+- **monorepo:** Update workspace to use project references instead of path aliases ([e1d14562](https://github.com/storm-software/stryke/commit/e1d14562))
+
+### Updated Dependencies
+
+- Updated **convert** to **v0.7.35**
+- Updated **type-checks** to **v0.6.37**
+- Updated **types** to **v0.12.32**
+
 ## [0.10.43](https://github.com/storm-software/stryke/releases/tag/helpers%400.10.43) (08/07/2026)
 
 ### Bug Fixes

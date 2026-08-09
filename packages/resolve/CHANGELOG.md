@@ -2,6 +2,27 @@
 
 # Changelog for Stryke - Resolve
 
+## [0.0.21](https://github.com/storm-software/stryke/releases/tag/resolve%400.0.21) (08/08/2026)
+
+### Bug Fixes
+
+- **monorepo:** Resolve issue with missing dependencies for release target ([6728ce67](https://github.com/storm-software/stryke/commit/6728ce67))
+
+### Source Code Improvements
+
+- **monorepo:** Update workspace to use project references instead of path aliases ([e1d14562](https://github.com/storm-software/stryke/commit/e1d14562))
+
+### Updated Dependencies
+
+- Updated **convert** to **v0.7.35**
+- Updated **fs** to **v0.33.106**
+- Updated **helpers** to **v0.10.44**
+- Updated **http** to **v0.12.96**
+- Updated **path** to **v0.29.31**
+- Updated **type-checks** to **v0.6.37**
+- Updated **types** to **v0.12.32**
+- Updated **url** to **v0.4.56**
+
 ## [0.0.20](https://github.com/storm-software/stryke/releases/tag/resolve%400.0.20) (08/07/2026)
 
 ### Updated Dependencies

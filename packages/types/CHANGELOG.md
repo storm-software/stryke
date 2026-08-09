@@ -2,6 +2,16 @@
 
 # Changelog for Stryke - Types
 
+## [0.12.32](https://github.com/storm-software/stryke/releases/tag/types%400.12.32) (08/08/2026)
+
+### Bug Fixes
+
+- **monorepo:** Resolve issue with missing dependencies for release target ([6728ce67](https://github.com/storm-software/stryke/commit/6728ce67))
+
+### Source Code Improvements
+
+- **monorepo:** Update workspace to use project references instead of path aliases ([e1d14562](https://github.com/storm-software/stryke/commit/e1d14562))
+
 ## [0.12.31](https://github.com/storm-software/stryke/releases/tag/types%400.12.31) (08/07/2026)
 
 ### Bug Fixes

@@ -2,6 +2,28 @@
 
 # Changelog for Stryke - Fs
 
+## [0.33.106](https://github.com/storm-software/stryke/releases/tag/fs%400.33.106) (08/08/2026)
+
+### Bug Fixes
+
+- **monorepo:** Resolve issue with missing linter and formatter tools dependencies ([90732410](https://github.com/storm-software/stryke/commit/90732410))
+- **monorepo:** Resolve issue with missing dependencies for release target ([6728ce67](https://github.com/storm-software/stryke/commit/6728ce67))
+- **fs:** Resolve issue with bundled dependencies ([067431db](https://github.com/storm-software/stryke/commit/067431db))
+
+### Source Code Improvements
+
+- **monorepo:** Update workspace to use project references instead of path aliases ([e1d14562](https://github.com/storm-software/stryke/commit/e1d14562))
+
+### Updated Dependencies
+
+- Updated **convert** to **v0.7.35**
+- Updated **helpers** to **v0.10.44**
+- Updated **json** to **v0.15.28**
+- Updated **path** to **v0.29.31**
+- Updated **string-format** to **v0.17.46**
+- Updated **type-checks** to **v0.6.37**
+- Updated **types** to **v0.12.32**
+
 ## [0.33.105](https://github.com/storm-software/stryke/releases/tag/fs%400.33.105) (08/07/2026)
 
 ### Bug Fixes

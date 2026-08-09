@@ -2,6 +2,23 @@
 
 # Changelog for Stryke - Hooks
 
+## [0.4.121](https://github.com/storm-software/stryke/releases/tag/hooks%400.4.121) (08/08/2026)
+
+### Bug Fixes
+
+- **monorepo:** Resolve issue with missing dependencies for release target ([6728ce67](https://github.com/storm-software/stryke/commit/6728ce67))
+
+### Source Code Improvements
+
+- **monorepo:** Update workspace to use project references instead of path aliases ([e1d14562](https://github.com/storm-software/stryke/commit/e1d14562))
+
+### Updated Dependencies
+
+- Updated **async** to **v0.1.32**
+- Updated **env** to **v0.20.123**
+- Updated **type-checks** to **v0.6.37**
+- Updated **types** to **v0.12.32**
+
 ## [0.4.120](https://github.com/storm-software/stryke/releases/tag/hooks%400.4.120) (08/07/2026)
 
 ### Updated Dependencies

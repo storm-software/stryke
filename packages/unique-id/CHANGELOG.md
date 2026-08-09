@@ -2,6 +2,20 @@
 
 # Changelog for Stryke - Unique ID
 
+## [0.3.117](https://github.com/storm-software/stryke/releases/tag/unique-id%400.3.117) (08/08/2026)
+
+### Bug Fixes
+
+- **monorepo:** Resolve issue with missing dependencies for release target ([6728ce67](https://github.com/storm-software/stryke/commit/6728ce67))
+
+### Source Code Improvements
+
+- **monorepo:** Update workspace to use project references instead of path aliases ([e1d14562](https://github.com/storm-software/stryke/commit/e1d14562))
+
+### Updated Dependencies
+
+- Updated **hash** to **v0.13.59**
+
 ## [0.3.116](https://github.com/storm-software/stryke/releases/tag/unique-id%400.3.116) (08/07/2026)
 
 ### Updated Dependencies

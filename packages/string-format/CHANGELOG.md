@@ -2,6 +2,22 @@
 
 # Changelog for Stryke - String Format
 
+## [0.17.46](https://github.com/storm-software/stryke/releases/tag/string-format%400.17.46) (08/08/2026)
+
+### Bug Fixes
+
+- **monorepo:** Resolve issue with missing dependencies for release target ([6728ce67](https://github.com/storm-software/stryke/commit/6728ce67))
+
+### Source Code Improvements
+
+- **monorepo:** Update workspace to use project references instead of path aliases ([e1d14562](https://github.com/storm-software/stryke/commit/e1d14562))
+
+### Updated Dependencies
+
+- Updated **helpers** to **v0.10.44**
+- Updated **path** to **v0.29.31**
+- Updated **types** to **v0.12.32**
+
 ## [0.17.45](https://github.com/storm-software/stryke/releases/tag/string-format%400.17.45) (08/07/2026)
 
 ### Bug Fixes

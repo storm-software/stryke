@@ -2,6 +2,16 @@
 
 # Changelog for Stryke - Open Browser
 
+## [0.2.92](https://github.com/storm-software/stryke/releases/tag/open-browser%400.2.92) (08/08/2026)
+
+### Bug Fixes
+
+- **monorepo:** Resolve issue with missing dependencies for release target ([6728ce67](https://github.com/storm-software/stryke/commit/6728ce67))
+
+### Source Code Improvements
+
+- **monorepo:** Update workspace to use project references instead of path aliases ([e1d14562](https://github.com/storm-software/stryke/commit/e1d14562))
+
 ## [0.2.91](https://github.com/storm-software/stryke/releases/tag/open-browser%400.2.91) (08/07/2026)
 
 ### Bug Fixes

@@ -2,6 +2,16 @@
 
 # Changelog for Stryke - Async
 
+## [0.1.32](https://github.com/storm-software/stryke/releases/tag/async%400.1.32) (08/08/2026)
+
+### Bug Fixes
+
+- **monorepo:** Resolve issue with missing dependencies for release target ([6728ce67](https://github.com/storm-software/stryke/commit/6728ce67))
+
+### Source Code Improvements
+
+- **monorepo:** Update workspace to use project references instead of path aliases ([e1d14562](https://github.com/storm-software/stryke/commit/e1d14562))
+
 ## [0.1.31](https://github.com/storm-software/stryke/releases/tag/async%400.1.31) (08/07/2026)
 
 ### Bug Fixes

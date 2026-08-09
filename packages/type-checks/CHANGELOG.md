@@ -2,6 +2,20 @@
 
 # Changelog for Stryke - Type Checks
 
+## [0.6.37](https://github.com/storm-software/stryke/releases/tag/type-checks%400.6.37) (08/08/2026)
+
+### Bug Fixes
+
+- **monorepo:** Resolve issue with missing dependencies for release target ([6728ce67](https://github.com/storm-software/stryke/commit/6728ce67))
+
+### Source Code Improvements
+
+- **monorepo:** Update workspace to use project references instead of path aliases ([e1d14562](https://github.com/storm-software/stryke/commit/e1d14562))
+
+### Updated Dependencies
+
+- Updated **types** to **v0.12.32**
+
 ## [0.6.36](https://github.com/storm-software/stryke/releases/tag/type-checks%400.6.36) (08/07/2026)
 
 ### Bug Fixes

@@ -2,6 +2,22 @@
 
 # Changelog for Stryke - Hash
 
+## [0.13.59](https://github.com/storm-software/stryke/releases/tag/hash%400.13.59) (08/08/2026)
+
+### Bug Fixes
+
+- **monorepo:** Resolve issue with missing dependencies for release target ([6728ce67](https://github.com/storm-software/stryke/commit/6728ce67))
+
+### Source Code Improvements
+
+- **monorepo:** Update workspace to use project references instead of path aliases ([e1d14562](https://github.com/storm-software/stryke/commit/e1d14562))
+
+### Updated Dependencies
+
+- Updated **fs** to **v0.33.106**
+- Updated **json** to **v0.15.28**
+- Updated **type-checks** to **v0.6.37**
+
 ## [0.13.58](https://github.com/storm-software/stryke/releases/tag/hash%400.13.58) (08/07/2026)
 
 ### Updated Dependencies

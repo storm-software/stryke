@@ -2,6 +2,21 @@
 
 # Changelog for Stryke - Cookie
 
+## [0.1.95](https://github.com/storm-software/stryke/releases/tag/cookie%400.1.95) (08/08/2026)
+
+### Bug Fixes
+
+- **monorepo:** Resolve issue with missing dependencies for release target ([6728ce67](https://github.com/storm-software/stryke/commit/6728ce67))
+
+### Source Code Improvements
+
+- **monorepo:** Update workspace to use project references instead of path aliases ([e1d14562](https://github.com/storm-software/stryke/commit/e1d14562))
+
+### Updated Dependencies
+
+- Updated **convert** to **v0.7.35**
+- Updated **type-checks** to **v0.6.37**
+
 ## [0.1.94](https://github.com/storm-software/stryke/releases/tag/cookie%400.1.94) (08/07/2026)
 
 ### Bug Fixes

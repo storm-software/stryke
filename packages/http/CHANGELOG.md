@@ -2,6 +2,21 @@
 
 # Changelog for Stryke - HTTP
 
+## [0.12.96](https://github.com/storm-software/stryke/releases/tag/http%400.12.96) (08/08/2026)
+
+### Bug Fixes
+
+- **monorepo:** Resolve issue with missing dependencies for release target ([6728ce67](https://github.com/storm-software/stryke/commit/6728ce67))
+
+### Source Code Improvements
+
+- **monorepo:** Update workspace to use project references instead of path aliases ([e1d14562](https://github.com/storm-software/stryke/commit/e1d14562))
+
+### Updated Dependencies
+
+- Updated **type-checks** to **v0.6.37**
+- Updated **url** to **v0.4.56**
+
 ## [0.12.95](https://github.com/storm-software/stryke/releases/tag/http%400.12.95) (08/07/2026)
 
 ### Updated Dependencies

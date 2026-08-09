@@ -2,6 +2,24 @@
 
 # Changelog for Stryke - Capnp
 
+## [0.12.132](https://github.com/storm-software/stryke/releases/tag/capnp%400.12.132) (08/08/2026)
+
+### Bug Fixes
+
+- **monorepo:** Resolve issue with missing linter and formatter tools dependencies ([90732410](https://github.com/storm-software/stryke/commit/90732410))
+- **monorepo:** Resolve issue with missing dependencies for release target ([6728ce67](https://github.com/storm-software/stryke/commit/6728ce67))
+
+### Source Code Improvements
+
+- **monorepo:** Update workspace to use project references instead of path aliases ([e1d14562](https://github.com/storm-software/stryke/commit/e1d14562))
+
+### Updated Dependencies
+
+- Updated **convert** to **v0.7.35**
+- Updated **fs** to **v0.33.106**
+- Updated **path** to **v0.29.31**
+- Updated **types** to **v0.12.32**
+
 ## [0.12.131](https://github.com/storm-software/stryke/releases/tag/capnp%400.12.131) (08/07/2026)
 
 ### Bug Fixes

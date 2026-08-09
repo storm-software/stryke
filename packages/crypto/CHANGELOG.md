@@ -2,6 +2,22 @@
 
 # Changelog for Stryke - Crypto
 
+## [0.6.52](https://github.com/storm-software/stryke/releases/tag/crypto%400.6.52) (08/08/2026)
+
+### Bug Fixes
+
+- **monorepo:** Resolve issue with missing dependencies for release target ([6728ce67](https://github.com/storm-software/stryke/commit/6728ce67))
+
+### Source Code Improvements
+
+- **monorepo:** Update workspace to use project references instead of path aliases ([e1d14562](https://github.com/storm-software/stryke/commit/e1d14562))
+
+### Updated Dependencies
+
+- Updated **convert** to **v0.7.35**
+- Updated **json** to **v0.15.28**
+- Updated **type-checks** to **v0.6.37**
+
 ## [0.6.51](https://github.com/storm-software/stryke/releases/tag/crypto%400.6.51) (08/07/2026)
 
 ### Bug Fixes

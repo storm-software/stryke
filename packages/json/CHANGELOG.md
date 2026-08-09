@@ -2,6 +2,21 @@
 
 # Changelog for Stryke - JSON
 
+## [0.15.28](https://github.com/storm-software/stryke/releases/tag/json%400.15.28) (08/08/2026)
+
+### Bug Fixes
+
+- **monorepo:** Resolve issue with missing dependencies for release target ([6728ce67](https://github.com/storm-software/stryke/commit/6728ce67))
+
+### Source Code Improvements
+
+- **monorepo:** Update workspace to use project references instead of path aliases ([e1d14562](https://github.com/storm-software/stryke/commit/e1d14562))
+
+### Updated Dependencies
+
+- Updated **type-checks** to **v0.6.37**
+- Updated **types** to **v0.12.32**
+
 ## [0.15.27](https://github.com/storm-software/stryke/releases/tag/json%400.15.27) (08/07/2026)
 
 ### Bug Fixes

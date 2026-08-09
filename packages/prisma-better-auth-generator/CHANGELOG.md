@@ -2,6 +2,24 @@
 
 # Changelog for Stryke - Prisma Better Auth Generator
 
+## [0.14.123](https://github.com/storm-software/stryke/releases/tag/prisma-better-auth-generator%400.14.123) (08/08/2026)
+
+### Bug Fixes
+
+- **monorepo:** Resolve issue with missing linter and formatter tools dependencies ([90732410](https://github.com/storm-software/stryke/commit/90732410))
+- **monorepo:** Resolve issue with missing dependencies for release target ([6728ce67](https://github.com/storm-software/stryke/commit/6728ce67))
+
+### Source Code Improvements
+
+- **monorepo:** Update workspace to use project references instead of path aliases ([e1d14562](https://github.com/storm-software/stryke/commit/e1d14562))
+
+### Updated Dependencies
+
+- Updated **env** to **v0.20.123**
+- Updated **fs** to **v0.33.106**
+- Updated **path** to **v0.29.31**
+- Updated **string-format** to **v0.17.46**
+
 ## [0.14.122](https://github.com/storm-software/stryke/releases/tag/prisma-better-auth-generator%400.14.122) (08/07/2026)
 
 ### Updated Dependencies
