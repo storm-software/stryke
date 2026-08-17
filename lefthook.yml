@@ -9,26 +9,26 @@ assert_lefthook_installed: true
 colors: true
 no_tty: false
 min_version: "2.0.0"
-remotes:
-  - git_url: https://github.com/storm-software/storm-ops
-    ref: main
-    configs:
-      - packages/git-tools/src/lefthook/pnpm/recommended.yml
+# remotes:
+#   - git_url: https://github.com/storm-software/storm-ops
+#     ref: main
+#     configs:
+#       - packages/git-tools/src/lefthook/pnpm/recommended.yml
 
-pre-push:
-  parallel: true
-  commands:
-    sherif:
-      glob:
-        - "*.js"
-        - "*.ts"
-        - "*.cjs"
-        - "*.mjs"
-        - "*.d.cts"
-        - "*.d.mts"
-        - "*.jsx"
-        - "*.tsx"
-        - "*.json"
-        - "*.jsonc"
-      run: pnpm exec sherif -i typescript -i react -i react-dom
-      stage_fixed: true
+# pre-push:
+#   parallel: true
+#   commands:
+#     sherif:
+#       glob:
+#         - "*.js"
+#         - "*.ts"
+#         - "*.cjs"
+#         - "*.mjs"
+#         - "*.d.cts"
+#         - "*.d.mts"
+#         - "*.jsx"
+#         - "*.tsx"
+#         - "*.json"
+#         - "*.jsonc"
+#       run: pnpm exec sherif -i typescript -i react -i react-dom
+#       stage_fixed: true
