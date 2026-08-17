@@ -2,6 +2,19 @@
 
 # Changelog for Stryke - Env
 
+## [0.20.128](https://github.com/storm-software/stryke/releases/tag/env%400.20.128) (08/17/2026)
+
+### Bug Fixes
+
+- **env:** Resolve issue with missing typescript declarations ([0d39d282](https://github.com/storm-software/stryke/commit/0d39d282))
+
+### Updated Dependencies
+
+- Updated **convert** to **v0.7.40**
+- Updated **fs** to **v0.33.111**
+- Updated **path** to **v0.29.36**
+- Updated **string-format** to **v0.17.51**
+
 ## [0.20.127](https://github.com/storm-software/stryke/releases/tag/env%400.20.127) (08/09/2026)
 
 ### Updated Dependencies
