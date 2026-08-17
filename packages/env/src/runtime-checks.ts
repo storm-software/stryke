@@ -16,6 +16,21 @@
 
  ------------------------------------------------------------------- */
 
+type EnvObject = Record<string, string | undefined>;
+
+declare global {
+  const EdgeRuntime: undefined | unknown;
+  const Netlify: undefined | unknown;
+  const fastly: undefined | unknown;
+  const Bun: undefined | unknown;
+  const Deno:
+    undefined | { env: { toObject: () => EnvObject; [key: string]: unknown } };
+
+  interface ImportMeta {
+    env: EnvObject;
+  }
+}
+
 // https://runtime-keys.proposal.wintercg.org/
 export type RuntimeName =
   | "workerd"

@@ -1,25 +1,12 @@
 {
   "extends": "../../tsconfig.base.json",
   "compilerOptions": {
-    "types": [
-      "node",
-      "./env"
-    ],
-    "outDir": "../../dist/out-tsc",
-    "ignoreDeprecations": "6.0",
+    "incremental": true,
     "composite": true,
-    "incremental": true
+    "types": ["node", "./env"],
+    "outDir": "../../dist/out-tsc",
+    "ignoreDeprecations": "6.0"
   },
-  "include": [
-    "src/**/*.ts",
-    "env.d.ts"
-  ],
-  "exclude": [
-    "vitest.config.ts",
-    "src/**/*.spec.ts",
-    "src/**/*.test.ts"
-  ],
-  "composite": true,
   "references": [
     {
       "path": "../convert"
@@ -33,5 +20,7 @@
     {
       "path": "../string-format"
     }
-  ]
+  ],
+  "include": ["src/**/*.ts"],
+  "exclude": ["vitest.config.ts", "src/**/*.spec.ts", "src/**/*.test.ts"]
 }
