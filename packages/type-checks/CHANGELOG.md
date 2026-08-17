@@ -2,6 +2,12 @@
 
 # Changelog for Stryke - Type Checks
 
+## [0.6.43](https://github.com/storm-software/stryke/releases/tag/type-checks%400.6.43) (08/17/2026)
+
+### Updated Dependencies
+
+- Updated **types** to **v0.12.38**
+
 ## [0.6.42](https://github.com/storm-software/stryke/releases/tag/type-checks%400.6.42) (08/17/2026)
 
 ### Updated Dependencies
