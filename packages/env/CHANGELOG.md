@@ -2,6 +2,19 @@
 
 # Changelog for Stryke - Env
 
+## [0.20.129](https://github.com/storm-software/stryke/releases/tag/env%400.20.129) (08/17/2026)
+
+### Miscellaneous
+
+- **env:** Remove `runtime-checks` from index module exports ([9bbb0e5c](https://github.com/storm-software/stryke/commit/9bbb0e5c))
+
+### Updated Dependencies
+
+- Updated **convert** to **v0.7.41**
+- Updated **fs** to **v0.33.112**
+- Updated **path** to **v0.29.37**
+- Updated **string-format** to **v0.17.52**
+
 ## [0.20.128](https://github.com/storm-software/stryke/releases/tag/env%400.20.128) (08/17/2026)
 
 ### Bug Fixes

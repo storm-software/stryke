@@ -2,6 +2,19 @@
 
 # Changelog for Stryke - Resolve
 
+## [0.0.27](https://github.com/storm-software/stryke/releases/tag/resolve%400.0.27) (08/17/2026)
+
+### Updated Dependencies
+
+- Updated **convert** to **v0.7.41**
+- Updated **fs** to **v0.33.112**
+- Updated **helpers** to **v0.10.50**
+- Updated **http** to **v0.12.102**
+- Updated **path** to **v0.29.37**
+- Updated **type-checks** to **v0.6.43**
+- Updated **types** to **v0.12.38**
+- Updated **url** to **v0.4.62**
+
 ## [0.0.26](https://github.com/storm-software/stryke/releases/tag/resolve%400.0.26) (08/17/2026)
 
 ### Updated Dependencies
