@@ -14,6 +14,27 @@ describe("correct-path.ts", () => {
     expect(normalizeWindowsPath("c:\\repo\\stryke\\src")).toBe("C:/repo/stryke/src");
   });
 
+  it("does not prefix a slash onto Windows drive paths", () => {
+    expect(correctPath("C:/Users/test/AppData/Local/StormSoftware/Data")).toBe(
+      "C:/Users/test/AppData/Local/StormSoftware/Data"
+    );
+    expect(correctPath("C:\\Users\\test\\AppData\\Local\\StormSoftware\\Data")).toBe(
+      "C:/Users/test/AppData/Local/StormSoftware/Data"
+    );
+    expect(correctPath("/C:/Users/test/AppData/Local/StormSoftware/Data")).toBe(
+      "C:/Users/test/AppData/Local/StormSoftware/Data"
+    );
+  });
+
+  it("collapses duplicated Windows drive prefixes", () => {
+    expect(correctPath("C:/C:/Users/test/AppData/Local/StormSoftware/Data")).toBe(
+      "C:/Users/test/AppData/Local/StormSoftware/Data"
+    );
+    expect(normalizeWindowsPath("C:\\C:\\Users\\test\\AppData\\Local")).toBe(
+      "C:/Users/test/AppData/Local"
+    );
+  });
+
   it("returns dot for empty paths", () => {
     expect(correctPath("")).toBe(".");
   });

@@ -10,4 +10,16 @@ describe("join-paths.ts", () => {
     expect(joinPaths("C:\\", "Users", "Public", "..", "Documents", "file.txt")).toBe("C:/Users/Documents/file.txt");
     expect(join("/root", "folder", ".", "subfolder", "file.txt")).toBe("/root/folder/subfolder/file.txt");
   });
+
+  it("joins Windows app-data paths without duplicating the drive letter", () => {
+    expect(
+      joinPaths("C:\\Users\\test\\AppData\\Local", "StormSoftware", "Data")
+    ).toBe("C:/Users/test/AppData/Local/StormSoftware/Data");
+    expect(
+      joinPaths("C:/", "C:/Users/test/AppData/Local", "StormSoftware", "Data")
+    ).toBe("C:/Users/test/AppData/Local/StormSoftware/Data");
+    expect(
+      joinPaths("/C:/Users/test/AppData/Local", "StormSoftware", "Data")
+    ).toBe("C:/Users/test/AppData/Local/StormSoftware/Data");
+  });
 });

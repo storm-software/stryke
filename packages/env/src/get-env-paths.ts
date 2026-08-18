@@ -27,6 +27,16 @@ const homedir = os.homedir();
 const tmpdir = os.tmpdir();
 
 /**
+ * Collapse `/C:/...` and `C:/C:/...` so Windows does not resolve them as `C:\C:\...`.
+ */
+function normalizeEnvPath(filePath: string): string {
+  return filePath
+    .replace(/\\/g, "/")
+    .replace(/^\/+([A-Z]:)/i, "$1")
+    .replace(/^([A-Z]:)(?:\/+\1)+/i, "$1");
+}
+
+/**
  * Options for the `getEnvPaths` function.
  */
 export interface GetEnvPathsOptions {
@@ -205,21 +215,21 @@ export function getEnvPaths(options: GetEnvPathsOptions = {}): EnvPaths {
     if (result[key as keyof EnvPaths]) {
       const filePath = result[key as keyof EnvPaths];
 
-      ret[key as keyof EnvPaths] =
+      ret[key as keyof EnvPaths] = normalizeEnvPath(
         options.appId &&
-        options.appId !== options.orgId &&
-        options.appId !== options.nestedDir
+          options.appId !== options.orgId &&
+          options.appId !== options.nestedDir
           ? joinPaths(filePath, options.appId)
-          : filePath;
+          : joinPaths(filePath)
+      );
 
       if (
         options.nestedDir &&
         options.nestedDir !== options.orgId &&
         options.nestedDir !== options.appId
       ) {
-        ret[key as keyof EnvPaths] = joinPaths(
-          ret[key as keyof EnvPaths],
-          options.nestedDir
+        ret[key as keyof EnvPaths] = normalizeEnvPath(
+          joinPaths(ret[key as keyof EnvPaths], options.nestedDir)
         );
       }
     }

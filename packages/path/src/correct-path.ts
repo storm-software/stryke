@@ -37,7 +37,10 @@ export function normalizeWindowsPath(input = "") {
     return input;
   }
 
-  return slash(input).replace(DRIVE_LETTER_START_REGEX, r => r.toUpperCase());
+  return slash(input)
+    .replace(/^\/+([A-Z]:)/i, "$1")
+    .replace(DRIVE_LETTER_START_REGEX, r => r.toUpperCase())
+    .replace(/^([A-Z]:)(?:\/+\1)+/i, "$1");
 }
 
 /**
@@ -82,11 +85,8 @@ export function correctPath(path?: string) {
     return `//${path}`;
   }
 
-  return !path.startsWith("/") &&
-    isPathAbsolute &&
-    !DRIVE_LETTER_REGEX.test(path)
-    ? `/${path}`
-    : path;
+  // Do not prefix `/` onto `C:/Users` — Windows resolves `/C:/Users` as `C:\C:\Users`.
+  return isPathAbsolute && !isAbsolutePath(path) ? `/${path}` : path;
 }
 
 /**

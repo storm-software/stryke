@@ -31,7 +31,9 @@ function normalizeWindowsPath(input = "") {
   }
   return input
     .replace(/\\/g, "/")
-    .replace(DRIVE_LETTER_START_REGEX, r => r.toUpperCase());
+    .replace(/^\/+([A-Z]:)/i, "$1")
+    .replace(DRIVE_LETTER_START_REGEX, r => r.toUpperCase())
+    .replace(/^([A-Z]:)(?:\/+\1)+/i, "$1");
 }
 
 function correctPaths(path?: string) {
