@@ -2,6 +2,19 @@
 
 # Changelog for Stryke - Env
 
+## [0.20.130](https://github.com/storm-software/stryke/releases/tag/env%400.20.130) (08/18/2026)
+
+### Bug Fixes
+
+- **env:** Resolve issue determining path on windows machines ([65f1c74d](https://github.com/storm-software/stryke/commit/65f1c74d))
+
+### Updated Dependencies
+
+- Updated **convert** to **v0.7.42**
+- Updated **fs** to **v0.33.113**
+- Updated **path** to **v0.29.38**
+- Updated **string-format** to **v0.17.53**
+
 ## [0.20.129](https://github.com/storm-software/stryke/releases/tag/env%400.20.129) (08/17/2026)
 
 ### Miscellaneous

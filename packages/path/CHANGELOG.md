@@ -2,6 +2,18 @@
 
 # Changelog for Stryke - Path
 
+## [0.29.38](https://github.com/storm-software/stryke/releases/tag/path%400.29.38) (08/18/2026)
+
+### Bug Fixes
+
+- **env:** Resolve issue determining path on windows machines ([65f1c74d](https://github.com/storm-software/stryke/commit/65f1c74d))
+
+### Updated Dependencies
+
+- Updated **convert** to **v0.7.42**
+- Updated **type-checks** to **v0.6.44**
+- Updated **types** to **v0.12.39**
+
 ## [0.29.37](https://github.com/storm-software/stryke/releases/tag/path%400.29.37) (08/17/2026)
 
 ### Updated Dependencies
