@@ -2,6 +2,13 @@
 
 # Changelog for Stryke - Types
 
+## [0.12.40](https://github.com/storm-software/stryke/releases/tag/types%400.12.40) (08/23/2026)
+
+### Bug Fixes
+
+- **monorepo:** Rename `help` and `error` message types ([8d05a85f](https://github.com/storm-software/stryke/commit/8d05a85f))
+- **types:** Rename `help` and `error` message types ([f9fce20e](https://github.com/storm-software/stryke/commit/f9fce20e))
+
 ## [0.12.32](https://github.com/storm-software/stryke/releases/tag/types%400.12.32) (08/08/2026)
 
 ### Bug Fixes
