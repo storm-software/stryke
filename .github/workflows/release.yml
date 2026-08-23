@@ -22,7 +22,7 @@ env:
 
 jobs:
   start:
-    name: "Send in process notification"
+    name: "Send in progress notification"
     runs-on: ubuntu-latest
     permissions:
       contents: write
@@ -38,7 +38,7 @@ jobs:
           subtitle: "Deployment for ${{ github.repository }} has started - #${{
             github.run_number }}"
           description:
-            "Deployment for ${{ github.repository }} is currently in process -
+            "Deployment for ${{ github.repository }} is currently in progress -
             #${{ github.run_number }}. Click here to view the changes associated
             with this deployment: ${{ github.event.pull_request.html_url ||
             github.event.head_commit.url }} "
@@ -49,7 +49,7 @@ jobs:
           telegram-chat: ${{ secrets.STORM_BOT_TELEGRAM_NOTIFICATION_CHAT }}
           discord-webhook: ${{ secrets.STORM_BOT_DISCORD_WEBHOOK}}
 
-  process:
+  release:
     name: "Release"
     if: always() && !cancelled() && !contains(needs.*.result, 'failure') &&
       github.event.pull_request.draft == false
@@ -60,26 +60,6 @@ jobs:
     needs:
       - start
     steps:
-      - name: Checkout [Pull Request]
-        uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262 # v4.4.0
-        if: ${{ github.event_name == 'pull_request' }}
-        with:
-          # By default, PRs will be checked-out based on the Merge Commit, but we want the actual branch HEAD.
-          ref: ${{ github.event.pull_request.head.sha }}
-          # We need to fetch all branches and commits so that Nx affected has a base to compare against.
-          fetch-depth: 0
-          token: ${{ secrets.STORM_BOT_GITHUB_TOKEN }}
-          persist-credentials: false
-
-      - name: Checkout `main` branch
-        uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262 # v4.4.0
-        if: ${{ github.event_name != 'pull_request' }}
-        with:
-          # We need to fetch all branches and commits so that Nx affected has a base to compare against.
-          fetch-depth: 0
-          token: ${{ secrets.STORM_BOT_GITHUB_TOKEN }}
-          persist-credentials: false
-
       - name: Setup workspace
         uses: storm-software/action-devenv-setup@main
         with:
@@ -87,33 +67,27 @@ jobs:
           gpg-private-key: ${{ secrets.STORM_BOT_GPG_PRIVATE_KEY }}
           gpg-passphrase: ${{ secrets.STORM_BOT_GPG_PASSPHRASE }}
           storm-bot-github-token: ${{ secrets.STORM_BOT_GITHUB_TOKEN }}
-
-      - name: Derive appropriate SHAs for base and head for `nx affected` commands
-        id: setSHAs
-        uses: nrwl/nx-set-shas@3e9ad7370203c1e93d109be57f3b72eb0eb511b1 # v4.4.0
-        with:
-          main-branch-name: main
-          workflow-id: release.yml
-          set-environment-variables-for-job: true
-          error-on-no-successful-workflow: true
+          cachix-auth-token: ${{ secrets.CACHIX_AUTH_TOKEN }}
 
       - name: Release repository updates
-        run: devenv --profile production shell release ${{ steps.setSHAs.outputs.base }} ${{ steps.setSHAs.outputs.head }}
-        env:
-          NX_BASE: ${{ steps.setSHAs.outputs.base }}
-          NX_HEAD: ${{ steps.setSHAs.outputs.head }}
-          GITHUB_ACTOR: ${{ github.actor }}
-          GITHUB_TOKEN: ${{ github.token }}
-          STORM_BOT_GITHUB_TOKEN: ${{ secrets.STORM_BOT_GITHUB_TOKEN }}
-          STORM_WORKSPACE_ROOT: ${{ github.workspace }}
-          STORM_REPOSITORY: ${{ github.repositoryUrl }}
-          NPM_TOKEN: ${{ secrets.STORM_BOT_NPM_TOKEN }}
-          CLOUDFLARE_API_TOKEN: ${{ secrets.STORM_BOT_CLOUDFLARE_TOKEN }}
-          TAG: ${{ inputs.tag }}
+        uses: storm-software/action-release@main
+        with:
+          tag: ${{ inputs.tag }}
+          env: |
+            {
+              "GITHUB_ACTOR": "${{ github.actor }}",
+              "GITHUB_REPOSITORY": "${{ github.repository }}",
+              "GITHUB_TOKEN": "${{ github.token }}",
+              "STORM_BOT_GITHUB_TOKEN": "${{ secrets.STORM_BOT_GITHUB_TOKEN }}",
+              "STORM_WORKSPACE_ROOT": "${{ github.workspace }}",
+              "STORM_REPOSITORY": "${{ github.repositoryUrl }}",
+              "NPM_TOKEN": "${{ secrets.STORM_BOT_NPM_TOKEN }}",
+              "CLOUDFLARE_API_TOKEN": "${{ secrets.STORM_BOT_CLOUDFLARE_TOKEN }}"
+            }
 
   success:
     needs:
-      - process
+      - release
     if: ${{ success() }}
     name: Send success notification
     runs-on: ubuntu-latest
@@ -139,7 +113,7 @@ jobs:
 
   failure:
     needs:
-      - process
+      - release
     if: ${{ failure() }}
     name: Send failure notification
     runs-on: ubuntu-latest
@@ -165,7 +139,7 @@ jobs:
 
   cancelled:
     needs:
-      - process
+      - release
     if: ${{ cancelled() }}
     name: Send cancelled notification
     runs-on: ubuntu-latest

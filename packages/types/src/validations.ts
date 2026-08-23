@@ -29,19 +29,27 @@ export type ValidationDetail<TMessageType extends MessageType = MessageType> =
     path?: string | null;
   };
 
-export type ErrorValidationDetail = ValidationDetail<"error">;
+export type DangerValidationDetail = ValidationDetail<"danger">;
 export type WarningValidationDetail = ValidationDetail<"warning">;
 export type InfoValidationDetail = ValidationDetail<"info">;
-export type HelpValidationDetail = ValidationDetail<"help">;
+export type DiscoveryValidationDetail = ValidationDetail<"discovery">;
 export type SuccessValidationDetail = ValidationDetail<"success">;
+export type PositiveValidationDetail = ValidationDetail<"positive">;
+export type NegativeValidationDetail = ValidationDetail<"negative">;
 
 export type InferValidationType<TMessageType extends MessageType> =
-  TMessageType extends "error"
-    ? ErrorValidationDetail
+  TMessageType extends "danger"
+    ? DangerValidationDetail
     : TMessageType extends "warning"
       ? WarningValidationDetail
-      : TMessageType extends "help"
-        ? InfoValidationDetail
+      : TMessageType extends "discovery"
+        ? DiscoveryValidationDetail
         : TMessageType extends "info"
-          ? SuccessValidationDetail
-          : ValidationDetail;
+          ? InfoValidationDetail
+          : TMessageType extends "success"
+            ? SuccessValidationDetail
+            : TMessageType extends "positive"
+              ? PositiveValidationDetail
+              : TMessageType extends "negative"
+                ? NegativeValidationDetail
+                : ValidationDetail;
