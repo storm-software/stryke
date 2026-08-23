@@ -16,7 +16,14 @@
 
  ------------------------------------------------------------------- */
 
-export type MessageType = "help" | "error" | "warning" | "info" | "success";
+export type MessageType =
+  | "discovery"
+  | "danger"
+  | "warning"
+  | "info"
+  | "success"
+  | "positive"
+  | "negative";
 
 export type MessageDetails<TMessageType extends MessageType = MessageType> =
   | {
@@ -32,8 +39,10 @@ export type MessageDetails<TMessageType extends MessageType = MessageType> =
       params?: Record<string, any>;
     };
 
-export type HelpMessageDetails = MessageDetails<"help">;
-export type ErrorMessageDetails = MessageDetails<"error">;
+export type DiscoveryMessageDetails = MessageDetails<"discovery">;
+export type DangerMessageDetails = MessageDetails<"danger">;
 export type WarningMessageDetails = MessageDetails<"warning">;
 export type InfoMessageDetails = MessageDetails<"info">;
 export type SuccessMessageDetails = MessageDetails<"success">;
+export type PositiveMessageDetails = MessageDetails<"positive">;
+export type NegativeMessageDetails = MessageDetails<"negative">;

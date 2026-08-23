@@ -27,26 +27,26 @@ catalog:
   "@prisma/generator-helper": ^6.19.3
   "@prisma/internals": ^6.19.3
   "@standard-schema/spec": ^1.1.0
-  "@storm-software/build-tools": ^0.158.293
-  "@storm-software/config": ^1.138.69
-  "@storm-software/config-tools": ^1.190.133
-  "@storm-software/cspell": ^0.46.200
-  "@storm-software/esbuild": ^0.53.294
-  "@storm-software/eslint": ^0.170.168
-  "@storm-software/eslint-plugin-tsdoc": ^0.0.96
-  "@storm-software/git-tools": ^2.131.141
-  "@storm-software/linting-tools": ^1.134.63
-  "@storm-software/markdownlint": ^0.30.288
-  "@storm-software/pnpm-tools": ^0.7.147
-  "@storm-software/prettier": ^0.59.186
-  "@storm-software/testing-tools": ^1.119.285
-  "@storm-software/tsconfig": ^0.48.199
-  "@storm-software/tsdoc": ^0.13.285
-  "@storm-software/unbuild": ^0.57.294
-  "@storm-software/untyped": ^0.24.275
-  "@storm-software/workspace-tools": ^1.297.2
+  "@storm-software/build-tools": ^0.158.294
+  "@storm-software/config": ^1.138.70
+  "@storm-software/config-tools": ^1.190.134
+  "@storm-software/cspell": ^0.46.201
+  "@storm-software/esbuild": ^0.53.295
+  "@storm-software/eslint": ^0.170.169
+  "@storm-software/eslint-plugin-tsdoc": ^0.0.97
+  "@storm-software/git-tools": ^2.131.142
+  "@storm-software/linting-tools": ^1.134.64
+  "@storm-software/markdownlint": ^0.30.289
+  "@storm-software/pnpm-tools": ^0.7.148
+  "@storm-software/prettier": ^0.59.187
+  "@storm-software/testing-tools": ^1.119.286
+  "@storm-software/tsconfig": ^0.48.200
+  "@storm-software/tsdoc": ^0.13.286
+  "@storm-software/unbuild": ^0.57.295
+  "@storm-software/untyped": ^0.24.276
+  "@storm-software/workspace-tools": ^1.297.3
   "@swc-node/register": ^1.12.1
-  "@swc/core": ^1.16.0
+  "@swc/core": ^1.16.1
   "@swc/helpers": ^0.5.23
   "@tanstack/react-query": ^5.101.4
   "@taplo/cli": ^0.7.0
@@ -67,20 +67,20 @@ catalog:
   capnp-es: ^0.0.11
   chalk: ^5.6.2
   commander: ^14.0.3
-  conventional-changelog-storm-software: ^0.3.294
+  conventional-changelog-storm-software: ^0.3.295
   copyfiles: ^2.4.1
   cross-spawn: ^7.0.6
   defu: ^6.1.7
   dts-bundle-generator: ^9.5.1
   esbuild: ^0.28.2
   debug: ^4.4.3
-  eslint: ^10.8.1
+  eslint: ^10.9.0
   eslint-flat-config-utils: ^2.1.4
   execa: ^9.6.1
   figlet: ^1.11.4
   glob: ^11.1.0
   hex2dec: ^1.1.2
-  human-id: ^4.2.0
+  human-id: ^4.2.1
   is-unicode-supported: ^2.1.0
   jiti: ^2.7.0
   js-xxhash: ^4.0.0
@@ -119,8 +119,8 @@ catalog:
   undici: ^7.29.0
   undici-types: ^7.29.0
   verdaccio: 6.5.2
-  vite: ^8.2.1
-  vitest: ~4.1.10
+  vite: ^8.2.2
+  vitest: ~4.1.11
   yaml: ^2.9.0
   zod: ^4.4.3
   zod-to-json-schema: ^3.25.2
@@ -128,7 +128,7 @@ catalog:
   acorn: ^8.18.0
   pathe: ^2.0.3
   pkg-types: ^2.3.1
-  "@storm-software/eslint-plugin-pnpm": ^0.0.96
+  "@storm-software/eslint-plugin-pnpm": ^0.0.97
 patchedDependencies:
   capnp-es@0.0.11: patches/capnp-es@0.0.11.patch
   mlly@1.7.4: patches/mlly@1.7.4.patch
