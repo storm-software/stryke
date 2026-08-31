@@ -156,6 +156,42 @@ export function formatYYYYMMDDHHmmss(
 }
 
 /**
+ * A utility function that formats a Date object into a string in the format "MM-DD-YYYY HH:mm:ss".
+ *
+ * @param date - The Date object to be formatted.
+ * @param options - Optional configuration for formatting the date, including a custom separator.
+ * @returns A string representing the formatted date in "MM-DD-YYYY HH:mm:ss" format.
+ */
+export function formatMMDDYYYYHHmmss(
+  date: Date,
+  options?: FormatDateOptions
+): string {
+  const hours = String(date.getHours()).padStart(2, "0");
+  const minutes = String(date.getMinutes()).padStart(2, "0");
+  const seconds = String(date.getSeconds()).padStart(2, "0");
+
+  return `${formatMMDDYYYY(date, options)} ${hours}:${minutes}:${seconds}`;
+}
+
+/**
+ * A utility function that formats a Date object into a string in the format "DD-MM-YYYY HH:mm:ss".
+ *
+ * @param date - The Date object to be formatted.
+ * @param options - Optional configuration for formatting the date, including a custom separator.
+ * @returns A string representing the formatted date in "DD-MM-YYYY HH:mm:ss" format.
+ */
+export function formatDDMMYYYYHHmmss(
+  date: Date,
+  options?: FormatDateOptions
+): string {
+  const hours = String(date.getHours()).padStart(2, "0");
+  const minutes = String(date.getMinutes()).padStart(2, "0");
+  const seconds = String(date.getSeconds()).padStart(2, "0");
+
+  return `${formatDDMMYYYY(date, options)} ${hours}:${minutes}:${seconds}`;
+}
+
+/**
  * A utility function that formats a Date object into a string in the format "YYYY-MM-DDTHH:mm:ss".
  *
  * @remarks
@@ -226,6 +262,8 @@ export function formatDate(
     | "MMDDYYYY"
     | "DDMMYYYY"
     | "YYYY-MM-DD HH:mm:ss"
+    | "MM-DD-YYYY HH:mm:ss"
+    | "DD-MM-YYYY HH:mm:ss"
     | "YYYY-MM-DDTHH:mm:ss",
   options?: FormatDateOptions
 ): string {
@@ -256,6 +294,10 @@ export function formatDate(
       return formatDDMMYYYY(date, { separator: "", ...options });
     case "YYYY-MM-DD HH:mm:ss":
       return formatYYYYMMDDHHmmss(date, options);
+    case "MM-DD-YYYY HH:mm:ss":
+      return formatMMDDYYYYHHmmss(date, options);
+    case "DD-MM-YYYY HH:mm:ss":
+      return formatDDMMYYYYHHmmss(date, options);
     case "YYYY-MM-DDTHH:mm:ss":
       return formatYYYYMMDDTHHMMSS(date, options);
     default:
