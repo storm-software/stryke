@@ -2,6 +2,12 @@
 
 # Changelog for Stryke - Date
 
+## [0.0.25](https://github.com/storm-software/stryke/releases/tag/date%400.0.25) (08/31/2026)
+
+### Features
+
+- **date:** Added new formats to package ([79be5ef1](https://github.com/storm-software/stryke/commit/79be5ef1))
+
 ## [0.0.16](https://github.com/storm-software/stryke/releases/tag/date%400.0.16) (08/08/2026)
 
 ### Bug Fixes
