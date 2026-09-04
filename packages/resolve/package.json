@@ -1,6 +1,6 @@
 {
   "name": "@stryke/resolve",
-  "version": "0.0.30",
+  "version": "0.0.31",
   "private": false,
   "description": "A package containing logic to resolve file contents from various sources.",
   "repository": {

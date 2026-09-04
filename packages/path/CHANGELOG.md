@@ -2,6 +2,18 @@
 
 # Changelog for Stryke - Path
 
+## [0.29.41](https://github.com/storm-software/stryke/releases/tag/path%400.29.41) (09/04/2026)
+
+### Bug Fixes
+
+- **path:** Remove unneeded package dependency ([eaeaf2fd](https://github.com/storm-software/stryke/commit/eaeaf2fd))
+
+### Updated Dependencies
+
+- Updated **convert** to **v0.7.45**
+- Updated **type-checks** to **v0.6.47**
+- Updated **types** to **v0.12.42**
+
 ## [0.29.40](https://github.com/storm-software/stryke/releases/tag/path%400.29.40) (08/31/2026)
 
 ### Updated Dependencies
