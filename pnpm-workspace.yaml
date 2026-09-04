@@ -61,7 +61,7 @@ catalog:
   "@types/node": ^24.13.3
   "@types/pluralize": ^0.0.33
   "@types/react": ^19.2.18
-  "@types/react-dom": ^19.2.5
+  "@types/react-dom": ^19.2.7
   "@types/react-native": 0.72.8
   "@types/semver": ^7.8.0
   buffer: 6.0.3
@@ -128,7 +128,7 @@ catalog:
   zx: ^8.8.5
   acorn: ^8.18.0
   pathe: ^2.0.3
-  pkg-types: ^2.3.1
+  pkg-types: ^2.3.2
   "@storm-software/eslint-plugin-pnpm": ^0.0.97
 patchedDependencies:
   capnp-es@0.0.11: patches/capnp-es@0.0.11.patch
