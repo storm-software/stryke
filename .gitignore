@@ -11,6 +11,8 @@ out
 .nx
 **/.rolldown
 
+graphify-out
+
 # capnproto
 packages/capnp/src/vendor/_capnp/*.ts
 

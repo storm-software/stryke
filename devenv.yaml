@@ -9,3 +9,5 @@ inputs:
     url: github:NixOS/nixpkgs/nixos-unstable
 imports:
   - storm-ops/devenv-modules/pnpm
+  - storm-ops/devenv-modules/graphify
+  - storm-ops/devenv-modules/agents
