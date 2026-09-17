@@ -2,6 +2,19 @@
 
 # Changelog for Stryke - Hooks
 
+## [0.4.132](https://github.com/storm-software/stryke/releases/tag/hooks%400.4.132) (09/17/2026)
+
+### Miscellaneous
+
+- **monorepo:** Update workspace packages' dependencies and devenv modules ([4878de31](https://github.com/storm-software/stryke/commit/4878de31))
+
+### Updated Dependencies
+
+- Updated **async** to **v0.1.43**
+- Updated **env** to **v0.20.134**
+- Updated **type-checks** to **v0.6.48**
+- Updated **types** to **v0.12.43**
+
 ## [0.4.131](https://github.com/storm-software/stryke/releases/tag/hooks%400.4.131) (09/04/2026)
 
 ### Updated Dependencies

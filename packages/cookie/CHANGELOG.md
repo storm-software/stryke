@@ -2,6 +2,17 @@
 
 # Changelog for Stryke - Cookie
 
+## [0.1.106](https://github.com/storm-software/stryke/releases/tag/cookie%400.1.106) (09/17/2026)
+
+### Miscellaneous
+
+- **monorepo:** Update workspace packages' dependencies and devenv modules ([4878de31](https://github.com/storm-software/stryke/commit/4878de31))
+
+### Updated Dependencies
+
+- Updated **convert** to **v0.7.46**
+- Updated **type-checks** to **v0.6.48**
+
 ## [0.1.105](https://github.com/storm-software/stryke/releases/tag/cookie%400.1.105) (09/04/2026)
 
 ### Updated Dependencies

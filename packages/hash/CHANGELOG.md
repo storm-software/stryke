@@ -2,6 +2,18 @@
 
 # Changelog for Stryke - Hash
 
+## [0.13.70](https://github.com/storm-software/stryke/releases/tag/hash%400.13.70) (09/17/2026)
+
+### Miscellaneous
+
+- **monorepo:** Update workspace packages' dependencies and devenv modules ([4878de31](https://github.com/storm-software/stryke/commit/4878de31))
+
+### Updated Dependencies
+
+- Updated **fs** to **v0.33.117**
+- Updated **json** to **v0.15.39**
+- Updated **type-checks** to **v0.6.48**
+
 ## [0.13.69](https://github.com/storm-software/stryke/releases/tag/hash%400.13.69) (09/04/2026)
 
 ### Updated Dependencies

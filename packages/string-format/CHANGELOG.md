@@ -2,6 +2,18 @@
 
 # Changelog for Stryke - String Format
 
+## [0.17.57](https://github.com/storm-software/stryke/releases/tag/string-format%400.17.57) (09/17/2026)
+
+### Miscellaneous
+
+- **monorepo:** Update workspace packages' dependencies and devenv modules ([4878de31](https://github.com/storm-software/stryke/commit/4878de31))
+
+### Updated Dependencies
+
+- Updated **helpers** to **v0.10.55**
+- Updated **path** to **v0.29.42**
+- Updated **types** to **v0.12.43**
+
 ## [0.17.56](https://github.com/storm-software/stryke/releases/tag/string-format%400.17.56) (09/04/2026)
 
 ### Updated Dependencies

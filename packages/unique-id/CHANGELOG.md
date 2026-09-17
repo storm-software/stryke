@@ -2,6 +2,16 @@
 
 # Changelog for Stryke - Unique ID
 
+## [0.3.128](https://github.com/storm-software/stryke/releases/tag/unique-id%400.3.128) (09/17/2026)
+
+### Miscellaneous
+
+- **monorepo:** Update workspace packages' dependencies and devenv modules ([4878de31](https://github.com/storm-software/stryke/commit/4878de31))
+
+### Updated Dependencies
+
+- Updated **hash** to **v0.13.70**
+
 ## [0.3.127](https://github.com/storm-software/stryke/releases/tag/unique-id%400.3.127) (09/04/2026)
 
 ### Updated Dependencies

@@ -2,6 +2,23 @@
 
 # Changelog for Stryke - Resolve
 
+## [0.0.32](https://github.com/storm-software/stryke/releases/tag/resolve%400.0.32) (09/17/2026)
+
+### Miscellaneous
+
+- **monorepo:** Update workspace packages' dependencies and devenv modules ([4878de31](https://github.com/storm-software/stryke/commit/4878de31))
+
+### Updated Dependencies
+
+- Updated **convert** to **v0.7.46**
+- Updated **fs** to **v0.33.117**
+- Updated **helpers** to **v0.10.55**
+- Updated **http** to **v0.12.107**
+- Updated **path** to **v0.29.42**
+- Updated **type-checks** to **v0.6.48**
+- Updated **types** to **v0.12.43**
+- Updated **url** to **v0.4.67**
+
 ## [0.0.31](https://github.com/storm-software/stryke/releases/tag/resolve%400.0.31) (09/04/2026)
 
 ### Updated Dependencies
