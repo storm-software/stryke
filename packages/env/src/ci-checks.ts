@@ -22,7 +22,9 @@
  * @returns True if the current environment is a CI environment.
  */
 export const isCI = (
-  env: Record<string, string | undefined> = process.env
+  env: Record<string, string | undefined> = typeof process !== "undefined"
+    ? process.env
+    : {}
 ): boolean => {
   // From https://github.com/watson/ci-info/blob/44e98cebcdf4403f162195fbcf90b1f69fc6e047/index.js#L54-L61
   // Evaluating at runtime makes it possible to change the values in our tests
@@ -104,6 +106,13 @@ export const isCI = (
  * @param stream - The stream to check
  * @returns True if the current process is interactive
  */
-export const isInteractive = (stream = process.stdin): boolean => {
-  return Boolean(stream?.isTTY && process.env.TERM !== "dumb");
+export const isInteractive = (
+  stream = typeof process !== "undefined" ? process.stdin : undefined
+): boolean => {
+  if (!stream) {
+    return false;
+  }
+  const term = typeof process !== "undefined" ? process.env.TERM : undefined;
+
+  return Boolean(stream?.isTTY && term !== "dumb");
 };

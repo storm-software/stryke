@@ -53,39 +53,48 @@ export interface RuntimeInfo {
  *
  * Use `runtime === "node"` if you need strict check for Node.js runtime.
  */
-export const isNode = process?.release?.name === "node";
+export const isNode =
+  typeof process !== "undefined" &&
+  process?.release?.name === "node";
 
 /**
  * Indicates if running in Bun runtime.
  */
-export const isBun = Boolean(Bun) || Boolean(process?.versions?.bun);
+export const isBun =
+  (typeof Bun !== "undefined" && Boolean(Bun)) ||
+  (typeof process !== "undefined" && Boolean(process?.versions?.bun));
 
 /**
  * Indicates if running in Deno runtime.
  */
-export const isDeno = Boolean(Deno);
+export const isDeno = typeof Deno !== "undefined" && Boolean(Deno);
 
 /**
  * Indicates if running in Fastly runtime.
  */
-export const isFastly = Boolean(fastly);
+export const isFastly =
+  typeof fastly !== "undefined" && Boolean(fastly);
 
 /**
  * Indicates if running in Netlify runtime.
  */
-export const isNetlify = Boolean(Netlify);
+export const isNetlify =
+  typeof Netlify !== "undefined" && Boolean(Netlify);
 
 /**
  *
  * Indicates if running in EdgeLight (Vercel Edge) runtime.
  */
-export const isEdgeLight = Boolean(EdgeRuntime);
+export const isEdgeLight =
+  typeof EdgeRuntime !== "undefined" && Boolean(EdgeRuntime);
 // https://developers.cloudflare.com/workers/runtime-apis/web-standards/#navigatoruseragent
 
 /**
  * Indicates if running in Cloudflare Workers runtime.
  */
-export const isWorkerd = navigator?.userAgent === "Cloudflare-Workers";
+export const isWorkerd =
+  typeof navigator !== "undefined" &&
+  navigator?.userAgent === "Cloudflare-Workers";
 
 /**
  * Indicates if the code is running on the server-side

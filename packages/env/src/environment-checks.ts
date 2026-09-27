@@ -18,20 +18,32 @@
 
 import { isCI } from "./ci-checks";
 
+const proc = typeof process !== "undefined" ? process : undefined;
+
 /** Value of process.platform */
-export const platform = process?.platform || "";
+export const platform = proc?.platform || "";
 
 /** Detect if stdout.TTY is available */
-export const hasTTY = Boolean(process?.stdout && process?.stdout.isTTY);
+export const hasTTY = Boolean(proc?.stdout?.isTTY);
+
+const readEnv = (read: () => string | undefined) => {
+  try {
+    return read();
+  } catch {
+    return undefined;
+  }
+};
 
 /** Detect if `DEBUG` environment variable is set */
-export const isDebug = Boolean(process.env.DEBUG);
+export const isDebug = Boolean(
+  readEnv(() => process.env.DEBUG)
+);
 
 /** Detect the `NODE_ENV` environment variable */
 const mode =
-  process.env.STORM_MODE ||
-  process.env.NEXT_PUBLIC_VERCEL_ENV ||
-  process.env.NODE_ENV ||
+  readEnv(() => process.env.STORM_MODE) ||
+  readEnv(() => process.env.NEXT_PUBLIC_VERCEL_ENV) ||
+  readEnv(() => process.env.NODE_ENV) ||
   "production";
 
 /** Detect if the application is running in a staging environment */
@@ -83,7 +95,7 @@ export function isTestMode(mode: string) {
 
 /** Detect if `NODE_ENV` environment variable is `test` */
 export const isTest =
-  isTestMode(mode) || isStaging || Boolean(process.env.TEST);
+  isTestMode(mode) || isStaging || Boolean(readEnv(() => process.env.TEST));
 
 /**
  * Check if the current environment is development.
@@ -120,7 +132,7 @@ export function toMode(mode: string): "production" | "development" | "test" {
 
 /** Detect if MINIMAL environment variable is set, running in CI or test or TTY is unavailable */
 export const isMinimal =
-  Boolean(process.env.MINIMAL) || isCI() || isTest || !hasTTY;
+  Boolean(readEnv(() => process.env.MINIMAL)) || isCI() || isTest || !hasTTY;
 
 /** Detect if process.platform is Windows */
 export const isWindows = /^win/i.test(platform);
@@ -133,9 +145,9 @@ export const isMacOS = /^darwin/i.test(platform);
 
 /** Color Support */
 export const isColorSupported =
-  !process.env.NO_COLOR &&
-  (Boolean(process.env.FORCE_COLOR) ||
-    ((hasTTY || isWindows) && process.env.TERM !== "dumb") ||
+  !readEnv(() => process.env.NO_COLOR) &&
+  (Boolean(readEnv(() => process.env.FORCE_COLOR)) ||
+    ((hasTTY || isWindows) && readEnv(() => process.env.TERM) !== "dumb") ||
     isCI());
 
 function parseVersion(versionString = "") {
@@ -167,34 +179,41 @@ function parseVersion(versionString = "") {
  * @returns Whether hyperlinks are supported
  */
 export function isHyperlinkSupported(
-  stream: NodeJS.WriteStream = process.stdout
+  stream: NodeJS.WriteStream | undefined = proc?.stdout
 ): boolean {
-  if (process.env.FORCE_HYPERLINK) {
+  if (!proc) {
+    return false;
+  }
+
+  const forceHyperlink = readEnv(() => process.env.FORCE_HYPERLINK);
+  if (forceHyperlink) {
     return !(
-      process.env.FORCE_HYPERLINK.length > 0 &&
-      Number.parseInt(process.env.FORCE_HYPERLINK, 10) === 0
+      forceHyperlink.length > 0 &&
+      Number.parseInt(forceHyperlink, 10) === 0
     );
   }
 
   // Netlify does not run a TTY, it does not need `supportsColor` check
-  if (process.env.NETLIFY) {
+  if (readEnv(() => process.env.NETLIFY)) {
     return true;
   } else if (!isColorSupported) {
     return false;
   } else if (stream && !stream.isTTY) {
     return false;
-  } else if ("WT_SESSION" in process.env) {
+  } else if ("WT_SESSION" in proc.env) {
     return true;
-  } else if (process.platform === "win32") {
+  } else if (proc.platform === "win32") {
     return false;
   } else if (isCI()) {
     return false;
-  } else if (process.env.TEAMCITY_VERSION) {
+  } else if (readEnv(() => process.env.TEAMCITY_VERSION)) {
     return false;
-  } else if (process.env.TERM_PROGRAM) {
-    const version = parseVersion(process.env.TERM_PROGRAM_VERSION);
+  } else if (readEnv(() => process.env.TERM_PROGRAM)) {
+    const termProgram = readEnv(() => process.env.TERM_PROGRAM);
+    const termProgramVersion = readEnv(() => process.env.TERM_PROGRAM_VERSION);
+    const version = parseVersion(termProgramVersion);
 
-    switch (process.env.TERM_PROGRAM) {
+    switch (termProgram) {
       case "iTerm.app": {
         if (version.major === 3) {
           return version.minor !== undefined && version.minor >= 1;
@@ -207,7 +226,7 @@ export function isHyperlinkSupported(
       }
       case "vscode": {
         // Cursor forked VS Code and supports hyperlinks in 0.x.x
-        if (process.env.CURSOR_TRACE_ID) {
+        if (readEnv(() => process.env.CURSOR_TRACE_ID)) {
           return true;
         }
 
@@ -223,13 +242,14 @@ export function isHyperlinkSupported(
     }
   }
 
-  if (process.env.VTE_VERSION) {
+  const vteVersion = readEnv(() => process.env.VTE_VERSION);
+  if (vteVersion) {
     // 0.50.0 was supposed to support hyperlinks, but throws a segfault
-    if (process.env.VTE_VERSION === "0.50.0") {
+    if (vteVersion === "0.50.0") {
       return false;
     }
 
-    const version = parseVersion(process.env.VTE_VERSION);
+    const version = parseVersion(vteVersion);
 
     return (
       (version.major !== undefined && version.major > 0) ||
@@ -237,7 +257,7 @@ export function isHyperlinkSupported(
     );
   }
 
-  if (process.env.TERM === "alacritty") {
+  if (readEnv(() => process.env.TERM) === "alacritty") {
     return true;
   }
 
@@ -246,6 +266,6 @@ export function isHyperlinkSupported(
 
 /** Node.js versions */
 export const nodeVersion =
-  (process?.versions?.node || "").replace(/^v/, "") || null;
+  (proc?.versions?.node || "").replace(/^v/, "") || null;
 
 export const nodeMajorVersion = Number(nodeVersion?.split(".")[0]) || null;
