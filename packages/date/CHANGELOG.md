@@ -2,6 +2,12 @@
 
 # Changelog for Stryke - Date
 
+## [0.0.27](https://github.com/storm-software/stryke/releases/tag/date%400.0.27) (09/17/2026)
+
+### Miscellaneous
+
+- **monorepo:** Update workspace packages' dependencies and devenv modules ([4878de31](https://github.com/storm-software/stryke/commit/4878de31))
+
 ## [0.0.25](https://github.com/storm-software/stryke/releases/tag/date%400.0.25) (08/31/2026)
 
 ### Features

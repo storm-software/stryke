@@ -2,6 +2,12 @@
 
 # Changelog for Stryke - Async
 
+## [0.1.43](https://github.com/storm-software/stryke/releases/tag/async%400.1.43) (09/17/2026)
+
+### Miscellaneous
+
+- **monorepo:** Update workspace packages' dependencies and devenv modules ([4878de31](https://github.com/storm-software/stryke/commit/4878de31))
+
 ## [0.1.32](https://github.com/storm-software/stryke/releases/tag/async%400.1.32) (08/08/2026)
 
 ### Bug Fixes

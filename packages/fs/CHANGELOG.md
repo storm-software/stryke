@@ -2,6 +2,22 @@
 
 # Changelog for Stryke - Fs
 
+## [0.33.117](https://github.com/storm-software/stryke/releases/tag/fs%400.33.117) (09/17/2026)
+
+### Miscellaneous
+
+- **monorepo:** Update workspace packages' dependencies and devenv modules ([4878de31](https://github.com/storm-software/stryke/commit/4878de31))
+
+### Updated Dependencies
+
+- Updated **convert** to **v0.7.46**
+- Updated **helpers** to **v0.10.55**
+- Updated **json** to **v0.15.39**
+- Updated **path** to **v0.29.42**
+- Updated **string-format** to **v0.17.57**
+- Updated **type-checks** to **v0.6.48**
+- Updated **types** to **v0.12.43**
+
 ## [0.33.116](https://github.com/storm-software/stryke/releases/tag/fs%400.33.116) (09/04/2026)
 
 ### Updated Dependencies

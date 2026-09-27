@@ -2,6 +2,22 @@
 
 # Changelog for Stryke - TRPC Next
 
+## [0.5.136](https://github.com/storm-software/stryke/releases/tag/trpc-next%400.5.136) (09/17/2026)
+
+### Miscellaneous
+
+- **monorepo:** Update workspace packages' dependencies and devenv modules ([4878de31](https://github.com/storm-software/stryke/commit/4878de31))
+
+### Updated Dependencies
+
+- Updated **env** to **v0.20.134**
+- Updated **fs** to **v0.33.117**
+- Updated **path** to **v0.29.42**
+- Updated **string-format** to **v0.17.57**
+- Updated **type-checks** to **v0.6.48**
+- Updated **types** to **v0.12.43**
+- Updated **url** to **v0.4.67**
+
 ## [0.5.135](https://github.com/storm-software/stryke/releases/tag/trpc-next%400.5.135) (09/04/2026)
 
 ### Updated Dependencies

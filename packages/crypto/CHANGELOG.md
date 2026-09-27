@@ -2,6 +2,18 @@
 
 # Changelog for Stryke - Crypto
 
+## [0.6.63](https://github.com/storm-software/stryke/releases/tag/crypto%400.6.63) (09/17/2026)
+
+### Miscellaneous
+
+- **monorepo:** Update workspace packages' dependencies and devenv modules ([4878de31](https://github.com/storm-software/stryke/commit/4878de31))
+
+### Updated Dependencies
+
+- Updated **convert** to **v0.7.46**
+- Updated **json** to **v0.15.39**
+- Updated **type-checks** to **v0.6.48**
+
 ## [0.6.62](https://github.com/storm-software/stryke/releases/tag/crypto%400.6.62) (09/04/2026)
 
 ### Updated Dependencies

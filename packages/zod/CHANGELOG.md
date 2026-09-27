@@ -2,6 +2,17 @@
 
 # Changelog for Stryke - Zod
 
+## [0.3.61](https://github.com/storm-software/stryke/releases/tag/zod%400.3.61) (09/17/2026)
+
+### Miscellaneous
+
+- **monorepo:** Update workspace packages' dependencies and devenv modules ([4878de31](https://github.com/storm-software/stryke/commit/4878de31))
+
+### Updated Dependencies
+
+- Updated **json** to **v0.15.39**
+- Updated **type-checks** to **v0.6.48**
+
 ## [0.3.60](https://github.com/storm-software/stryke/releases/tag/zod%400.3.60) (09/04/2026)
 
 ### Updated Dependencies

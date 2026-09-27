@@ -2,6 +2,17 @@
 
 # Changelog for Stryke - Convert
 
+## [0.7.46](https://github.com/storm-software/stryke/releases/tag/convert%400.7.46) (09/17/2026)
+
+### Miscellaneous
+
+- **monorepo:** Update workspace packages' dependencies and devenv modules ([4878de31](https://github.com/storm-software/stryke/commit/4878de31))
+
+### Updated Dependencies
+
+- Updated **type-checks** to **v0.6.48**
+- Updated **types** to **v0.12.43**
+
 ## [0.7.45](https://github.com/storm-software/stryke/releases/tag/convert%400.7.45) (09/04/2026)
 
 ### Updated Dependencies

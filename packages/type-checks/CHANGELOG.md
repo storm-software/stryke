@@ -2,6 +2,16 @@
 
 # Changelog for Stryke - Type Checks
 
+## [0.6.48](https://github.com/storm-software/stryke/releases/tag/type-checks%400.6.48) (09/17/2026)
+
+### Miscellaneous
+
+- **monorepo:** Update workspace packages' dependencies and devenv modules ([4878de31](https://github.com/storm-software/stryke/commit/4878de31))
+
+### Updated Dependencies
+
+- Updated **types** to **v0.12.43**
+
 ## [0.6.47](https://github.com/storm-software/stryke/releases/tag/type-checks%400.6.47) (09/04/2026)
 
 ### Updated Dependencies
