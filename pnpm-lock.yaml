@@ -742,6 +742,9 @@ importers:
         specifier: 'catalog:'
         version: 6.1.7
     devDependencies:
+      '@stryke/tools-config':
+        specifier: workspace:*
+        version: link:../../tools/config
       '@types/node':
         specifier: 'catalog:'
         version: 24.19.0
