@@ -17,25 +17,65 @@
  ------------------------------------------------------------------- */
 
 export type MessageType =
-  | "discovery"
-  | "danger"
-  | "warning"
-  | "info"
-  | "success"
-  | "positive"
-  | "negative";
+  "discovery" | "danger" | "warning" | "info" | "success";
 
 export type MessageDetails<TMessageType extends MessageType = MessageType> =
   | {
-      code: string;
-      message?: string;
+      /**
+       * The type of the message.
+       */
       type: TMessageType;
+
+      /**
+       * The code identifying the message.
+       */
+      code: string;
+
+      /**
+       * The main message content.
+       */
+      message?: string;
+
+      /**
+       * An extended version of the message providing more details.
+       */
+      extendedMessage?: string;
+
+      /**
+       * Parameters associated with the message, providing additional context.
+       *
+       * @remarks
+       * If the {@link MessageDetails.message | message} or {@link MessageDetails.extendedMessage | extendedMessage} contains placeholder parameters, the corresponding values should be provided in this record. Example placeholder parameter usage: `"This message uses a {placeholder} parameter"` - the `params` record should include a key `placeholder` with the appropriate value, for example `{ placeholder: "value" }` -\> `"This message uses a value parameter"`.
+       */
       params?: Record<string, any>;
     }
   | {
-      code?: string;
-      message: string;
+      /**
+       * The type of the message.
+       */
       type: TMessageType;
+
+      /**
+       * The code identifying the message.
+       */
+      code?: string;
+
+      /**
+       * The main message content.
+       */
+      message: string;
+
+      /**
+       * An extended version of the message providing more details.
+       */
+      extendedMessage?: string;
+
+      /**
+       * Parameters associated with the message, providing additional context.
+       *
+       * @remarks
+       * If the {@link MessageDetails.message | message} or {@link MessageDetails.extendedMessage | extendedMessage} contains placeholder parameters, the corresponding values should be provided in this record. Example placeholder parameter usage: `"This message uses a {placeholder} parameter"` - the `params` record should include a key `placeholder` with the appropriate value, for example `{ placeholder: "value" }` -\> `"This message uses a value parameter"`.
+       */
       params?: Record<string, any>;
     };
 
@@ -44,5 +84,3 @@ export type DangerMessageDetails = MessageDetails<"danger">;
 export type WarningMessageDetails = MessageDetails<"warning">;
 export type InfoMessageDetails = MessageDetails<"info">;
 export type SuccessMessageDetails = MessageDetails<"success">;
-export type PositiveMessageDetails = MessageDetails<"positive">;
-export type NegativeMessageDetails = MessageDetails<"negative">;
