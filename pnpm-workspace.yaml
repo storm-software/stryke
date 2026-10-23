@@ -14,42 +14,42 @@ catalog:
   "@antfu/install-pkg": ^1.1.0
   "@antfu/ni": ^23.3.1
   "@cloudflare/workers-types": ^4.20260702.1
-  "@dotenvx/dotenvx": 1.35.0
+  "@dotenvx/dotenvx": 1.75.1
   "@js-temporal/polyfill": ^0.5.1
   "@ls-lint/ls-lint": ^2.3.2
-  "@nx/devkit": 23.1.1
-  "@nx/eslint": 23.1.1
-  "@nx/eslint-plugin": 23.1.1
-  "@nx/js": 23.1.1
-  "@nx/plugin": 23.1.1
-  "@nx/vite": 23.1.1
-  "@nx/vitest": 23.1.1
-  "@nx/workspace": 23.1.1
+  "@nx/devkit": 23.3.1
+  "@nx/eslint": 23.3.1
+  "@nx/eslint-plugin": 23.3.1
+  "@nx/js": 23.3.1
+  "@nx/plugin": 23.3.1
+  "@nx/vite": 23.3.1
+  "@nx/vitest": 23.3.1
+  "@nx/workspace": 23.3.1
   "@prisma/generator-helper": ^6.19.3
   "@prisma/internals": ^6.19.3
   "@standard-schema/spec": ^1.1.0
-  "@storm-software/build-tools": ^0.158.310
-  "@storm-software/config": ^1.138.86
-  "@storm-software/config-tools": ^1.190.150
-  "@storm-software/cspell": ^0.46.217
-  "@storm-software/esbuild": ^0.53.311
-  "@storm-software/eslint": ^0.170.185
-  "@storm-software/eslint-plugin-tsdoc": ^0.0.113
-  "@storm-software/git-tools": ^2.132.7
-  "@storm-software/linting-tools": ^1.134.80
-  "@storm-software/markdownlint": ^0.30.305
-  "@storm-software/pnpm-tools": ^0.7.164
-  "@storm-software/prettier": ^0.59.203
-  "@storm-software/testing-tools": ^1.119.302
-  "@storm-software/tsconfig": ^0.48.216
-  "@storm-software/tsdoc": ^0.13.302
-  "@storm-software/unbuild": ^0.57.311
-  "@storm-software/untyped": ^0.24.292
-  "@storm-software/workspace-tools": ^1.297.19
+  "@storm-software/build-tools": ^0.158.314
+  "@storm-software/config": ^1.138.90
+  "@storm-software/config-tools": ^1.190.154
+  "@storm-software/cspell": ^0.46.221
+  "@storm-software/esbuild": ^0.53.315
+  "@storm-software/eslint": ^0.170.189
+  "@storm-software/eslint-plugin-tsdoc": ^0.0.117
+  "@storm-software/git-tools": ^2.132.11
+  "@storm-software/linting-tools": ^1.134.84
+  "@storm-software/markdownlint": ^0.30.309
+  "@storm-software/pnpm-tools": ^0.7.168
+  "@storm-software/prettier": ^0.59.207
+  "@storm-software/testing-tools": ^1.119.306
+  "@storm-software/tsconfig": ^0.48.220
+  "@storm-software/tsdoc": ^0.13.306
+  "@storm-software/unbuild": ^0.57.315
+  "@storm-software/untyped": ^0.24.296
+  "@storm-software/workspace-tools": ^1.297.24
   "@swc-node/register": ^1.12.1
-  "@swc/core": ^1.16.18
+  "@swc/core": ^1.16.20
   "@swc/helpers": ^0.5.23
-  "@tanstack/react-query": ^5.104.4
+  "@tanstack/react-query": ^5.104.5
   "@taplo/cli": ^0.7.0
   "@trpc/client": ^11.19.0
   "@trpc/next": ^11.19.0
@@ -62,13 +62,13 @@ catalog:
   "@types/pluralize": ^0.0.33
   "@types/react": ^19.3.0
   "@types/react-dom": ^19.3.0
-  "@types/react-native": 0.72.8
+  "@types/react-native": 0.73.0
   "@types/semver": ^7.8.0
   buffer: 6.0.3
-  capnp-es: ^0.0.11
+  capnp-es: ^0.0.16
   chalk: ^5.6.2
   commander: ^14.0.3
-  conventional-changelog-storm-software: ^0.3.311
+  conventional-changelog-storm-software: ^0.3.315
   copyfiles: ^2.4.1
   cross-spawn: ^7.0.6
   defu: ^6.1.7
@@ -86,14 +86,14 @@ catalog:
   jiti: ^2.7.0
   js-xxhash: ^4.0.0
   jsonc-parser: 3.3.1
-  knip: 5.43.6
+  knip: 5.88.1
   lefthook: ^2.2.2
   lines-and-columns: 2.0.4
   ls-lint: ^0.1.2
-  markdownlint-cli2: ^0.17.2
+  markdownlint-cli2: ^0.24.0
   mime-types: ^3.0.2
-  mlly: 1.7.4
-  nanotar: ^0.2.1
+  mlly: 1.8.2
+  nanotar: ^0.3.0
   nx: 23.1.1
   ohash: ^2.0.12
   p-queue: ^9.3.5
@@ -104,23 +104,23 @@ catalog:
   react-dom: ^19.3.1
   react-native: ^0.77.3
   rimraf: ^6.1.3
-  semver: 7.7.1
+  semver: 7.8.5
   server-only: ^0.0.1
-  sherif: 1.3.0
+  sherif: 1.13.0
   smol-toml: ^1.9.1
   string-width: ^7.2.0
   superjson: ^2.2.6
   terminal-link: ^3.0.0
   tinyexec: ^0.3.2
   ts-morph: ^25.0.1
-  tsdown: ^0.22.14
+  tsdown: ^0.23.2
   tslib: ^2.8.1
   tsx: ^4.23.15
   ufo: ^1.6.4
   undici: ^7.30.1
   undici-types: ^7.30.1
-  verdaccio: 6.5.2
-  vite: ^8.3.4
+  verdaccio: 6.10.7
+  vite: ^8.3.5
   vitest: ~4.1.12
   yaml: ^2.9.1
   zod: ^4.6.7
@@ -128,8 +128,8 @@ catalog:
   zx: ^8.8.5
   acorn: ^8.19.0
   pathe: ^2.0.3
-  pkg-types: ^2.3.3
-  "@storm-software/eslint-plugin-pnpm": ^0.0.113
+  pkg-types: ^2.4.0
+  "@storm-software/eslint-plugin-pnpm": ^0.0.117
 patchedDependencies:
   capnp-es@0.0.11: patches/capnp-es@0.0.11.patch
   mlly@1.7.4: patches/mlly@1.7.4.patch
