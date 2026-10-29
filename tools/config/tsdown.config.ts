@@ -37,7 +37,9 @@ export const DEFAULT_OPTIONS: Omit<Partial<UserConfig>, "name"> = {
   tsconfig: "./tsconfig.json",
   minify: false,
   dts: true,
-  shims: true,
+  // Shims inject `node:url`/`node:path` imports into every ESM file, which
+  // crashes browser bundles. Packages that need `__dirname` should opt in.
+  shims: false,
   fixedExtension: true,
   nodeProtocol: true,
   unbundle: true,
