@@ -2,6 +2,12 @@
 
 # Changelog for Stryke - Open Browser
 
+## [0.2.106](https://github.com/storm-software/stryke/releases/tag/open-browser%400.2.106) (10/29/2026)
+
+### Bug Fixes
+
+- **open-browser:** Remove unused dependency ([107a16aa](https://github.com/storm-software/stryke/commit/107a16aa))
+
 ## [0.2.104](https://github.com/storm-software/stryke/releases/tag/open-browser%400.2.104) (09/17/2026)
 
 ### Miscellaneous

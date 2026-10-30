@@ -2,6 +2,22 @@
 
 # Changelog for Stryke - Fs
 
+## [0.33.119](https://github.com/storm-software/stryke/releases/tag/fs%400.33.119) (10/29/2026)
+
+### Bug Fixes
+
+- **types:** Resolve issue with updated `MessageType` values ([97223f58](https://github.com/storm-software/stryke/commit/97223f58))
+
+### Updated Dependencies
+
+- Updated **convert** to **v0.7.48**
+- Updated **helpers** to **v0.10.57**
+- Updated **json** to **v0.15.41**
+- Updated **path** to **v0.29.44**
+- Updated **string-format** to **v0.17.59**
+- Updated **type-checks** to **v0.6.50**
+- Updated **types** to **v0.12.45**
+
 ## [0.33.118](https://github.com/storm-software/stryke/releases/tag/fs%400.33.118) (09/27/2026)
 
 ### Updated Dependencies

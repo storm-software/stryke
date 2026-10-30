@@ -2,6 +2,13 @@
 
 # Changelog for Stryke - Types
 
+## [0.12.45](https://github.com/storm-software/stryke/releases/tag/types%400.12.45) (10/29/2026)
+
+### Bug Fixes
+
+- **types:** Resolve issue with updated `MessageType` values ([97223f58](https://github.com/storm-software/stryke/commit/97223f58))
+- **types:** Update structure of `MessageDetail` type definiion ([d14af5b0](https://github.com/storm-software/stryke/commit/d14af5b0))
+
 ## [0.12.43](https://github.com/storm-software/stryke/releases/tag/types%400.12.43) (09/17/2026)
 
 ### Miscellaneous
