@@ -34,8 +34,6 @@ export type WarningValidationDetail = ValidationDetail<"warning">;
 export type InfoValidationDetail = ValidationDetail<"info">;
 export type DiscoveryValidationDetail = ValidationDetail<"discovery">;
 export type SuccessValidationDetail = ValidationDetail<"success">;
-export type PositiveValidationDetail = ValidationDetail<"positive">;
-export type NegativeValidationDetail = ValidationDetail<"negative">;
 
 export type InferValidationType<TMessageType extends MessageType> =
   TMessageType extends "danger"
@@ -48,8 +46,4 @@ export type InferValidationType<TMessageType extends MessageType> =
           ? InfoValidationDetail
           : TMessageType extends "success"
             ? SuccessValidationDetail
-            : TMessageType extends "positive"
-              ? PositiveValidationDetail
-              : TMessageType extends "negative"
-                ? NegativeValidationDetail
-                : ValidationDetail;
+            : ValidationDetail;
