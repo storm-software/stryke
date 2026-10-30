@@ -28,35 +28,35 @@ catalog:
   "@prisma/generator-helper": ^6.19.3
   "@prisma/internals": ^6.19.3
   "@standard-schema/spec": ^1.1.0
-  "@storm-software/build-tools": ^0.158.310
-  "@storm-software/config": ^1.138.86
-  "@storm-software/config-tools": ^1.190.150
-  "@storm-software/cspell": ^0.46.217
-  "@storm-software/esbuild": ^0.53.311
-  "@storm-software/eslint": ^0.170.185
-  "@storm-software/eslint-plugin-tsdoc": ^0.0.113
-  "@storm-software/git-tools": ^2.132.7
-  "@storm-software/linting-tools": ^1.134.80
-  "@storm-software/markdownlint": ^0.30.305
-  "@storm-software/pnpm-tools": ^0.7.164
-  "@storm-software/prettier": ^0.59.203
-  "@storm-software/testing-tools": ^1.119.302
-  "@storm-software/tsconfig": ^0.48.216
-  "@storm-software/tsdoc": ^0.13.302
-  "@storm-software/unbuild": ^0.57.311
-  "@storm-software/untyped": ^0.24.292
-  "@storm-software/workspace-tools": ^1.297.19
+  "@storm-software/build-tools": ^0.158.315
+  "@storm-software/config": ^1.138.91
+  "@storm-software/config-tools": ^1.190.155
+  "@storm-software/cspell": ^0.46.222
+  "@storm-software/esbuild": ^0.53.316
+  "@storm-software/eslint": ^0.170.190
+  "@storm-software/eslint-plugin-tsdoc": ^0.0.118
+  "@storm-software/git-tools": ^2.133.0
+  "@storm-software/linting-tools": ^1.134.85
+  "@storm-software/markdownlint": ^0.30.310
+  "@storm-software/pnpm-tools": ^0.7.169
+  "@storm-software/prettier": ^0.59.208
+  "@storm-software/testing-tools": ^1.119.307
+  "@storm-software/tsconfig": ^0.48.221
+  "@storm-software/tsdoc": ^0.13.307
+  "@storm-software/unbuild": ^0.57.316
+  "@storm-software/untyped": ^0.24.297
+  "@storm-software/workspace-tools": ^1.297.25
   "@swc-node/register": ^1.12.1
-  "@swc/core": ^1.16.18
+  "@swc/core": ^1.16.20
   "@swc/helpers": ^0.5.23
-  "@tanstack/react-query": ^5.104.4
+  "@tanstack/react-query": ^5.105.0
   "@taplo/cli": ^0.7.0
-  "@trpc/client": ^11.19.0
-  "@trpc/next": ^11.19.0
-  "@trpc/server": ^11.19.0
-  "@trpc/tanstack-react-query": ^11.19.0
+  "@trpc/client": ^11.22.1
+  "@trpc/next": ^11.22.1
+  "@trpc/server": ^11.22.1
+  "@trpc/tanstack-react-query": ^11.22.1
   "@types/cross-spawn": ^6.0.6
-  "@types/figlet": ^1.7.0
+  "@types/figlet": ^1.12.0
   "@types/mime-types": ^3.0.1
   "@types/node": ^24.19.2
   "@types/pluralize": ^0.0.33
@@ -68,7 +68,7 @@ catalog:
   capnp-es: ^0.0.11
   chalk: ^5.6.2
   commander: ^14.0.3
-  conventional-changelog-storm-software: ^0.3.311
+  conventional-changelog-storm-software: ^0.3.316
   copyfiles: ^2.4.1
   cross-spawn: ^7.0.6
   defu: ^6.1.7
@@ -98,6 +98,7 @@ catalog:
   ohash: ^2.0.12
   p-queue: ^9.3.5
   parenthesis: ^3.1.8
+  picocolors: ^1.1.1
   pluralize: ^8.0.0
   prettier: ^3.9.10
   react: ^19.3.1
@@ -120,7 +121,7 @@ catalog:
   undici: ^7.30.1
   undici-types: ^7.30.1
   verdaccio: 6.5.2
-  vite: ^8.3.4
+  vite: ^8.3.5
   vitest: ~4.1.12
   yaml: ^2.9.1
   zod: ^4.6.7
@@ -128,8 +129,8 @@ catalog:
   zx: ^8.8.5
   acorn: ^8.19.0
   pathe: ^2.0.3
-  pkg-types: ^2.3.3
-  "@storm-software/eslint-plugin-pnpm": ^0.0.113
+  pkg-types: ^2.4.0
+  "@storm-software/eslint-plugin-pnpm": ^0.0.118
 patchedDependencies:
   capnp-es@0.0.11: patches/capnp-es@0.0.11.patch
   mlly@1.7.4: patches/mlly@1.7.4.patch

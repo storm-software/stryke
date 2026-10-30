@@ -25,7 +25,8 @@
   "types": "./dist/index.d.cts",
   "files": ["openChrome.applescript"],
   "dependencies": {
-    "cross-spawn": "catalog:"
+    "cross-spawn": "catalog:",
+    "picocolors": "catalog:"
   },
   "devDependencies": {
     "@types/cross-spawn": "catalog:",
